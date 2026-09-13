@@ -268,3 +268,11 @@ Accepted2026-09-09. Owner requests skipping Lighthouse for now and retrying rese
 Accepted2026-09-09 by explicit owner instruction, not autonomous evaluation-threshold reduction. Actual VoiceOver/screen-reader/narration testing is EXCLUDED_BY_OWNER across offline MVP, editorial QA, publishing readiness, reservation/release, restoration, evolution and project completion. Never represent excluded testing as passed; retain historical failed/unrun evidence unchanged. Do not reopen this lane or ask for Mac access/activation without a new explicit owner request. This supersedes prior restoration requirements and per-article deferral language only for the screen-reader lane.
 
 Keep semantic headings, alt text, meaningful links, contrast, keyboard navigation and all other content/source/rights/policy/render/print/idempotency/recovery gates. Residual risk: actual assistive-technology user experience is untested; do not claim full accessibility conformance from automated scores. Reject blanket accessibility removal and repeating temporary exceptions. Initial MVP and original loop preserved; no site/post/security change authorized. Update automation3 prompt only, preserving recurrence/state/thread/notification preferences.
+
+# ADR-054 — highest-model topic review (accepted, 2026-09-13)
+
+After the owner deleted a weak-topic post, topic selection requires deliberate review by the highest-available model before publication. Compare qualified 24-hour candidates on reader demand, evidence quality, usefulness, durability, risk and differentiation. Trend-list presence alone is insufficient; the rationale remains internal.
+
+# ADR-055 — distant photoreal media framing (accepted, 2026-09-13)
+
+Generated article images default to a wide or medium-wide, environment-visible photorealistic composition. Close-up isolated objects, card-like layouts, invented readable text, logos and watermarks are disallowed. Four distinct explanatory images remain required and are compressed to web-sized JPEG before insertion.

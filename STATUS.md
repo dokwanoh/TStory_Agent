@@ -1121,3 +1121,7 @@ Owner requested one additional article. Current top-five candidate screening ide
 Local artifacts: `content/fasttrack/2026-09-13-sallimnamja/article.md`, `run.md`, and four photorealistic generated web-sized JPEGs under `media/`. Pre-save editor checks: title present, public mode selected, four images, two KBS links, no forbidden strategy terms. Generated PNGs were converted to JPEG before insertion to keep the editor payload within the proven size range.
 
 Chrome authenticated editor final save was clicked once. Manager returned to `/manage/posts/` with a new row at `2026-09-13 19:21`, category `카테고리 없음` (new-editor category picker was not exposed); home topic remained default. Anonymous RSS/public readback confirmed the title, KBS link, exactly four images, and absence of internal strategy terms. External write count for this run: one owner-requested post creation.
+
+## 2026-09-13 owner correction — topic and media quality gate
+
+Owner deleted the 19:21 post as too weak. Durable rules updated in tistory-editorial-cycle ADR-054/055 and project ADR-054/055: require highest-available-model editorial comparison before selecting a topic, and generate distant, environment-visible photorealistic images with a wide or medium-wide camera position. The deleted article is not reused and no publication is claimed from it.
