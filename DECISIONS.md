@@ -284,3 +284,7 @@ Use an official project or agency image first when its reuse terms are clear, an
 # ADR-057 — native transfer and encoding fail-closed (accepted, 2026-09-13)
 
 Direct DOM or hidden-field injection is forbidden for production article body transfer after post 85 exposed mojibake. Use the native editor input surface and native file-picker upload only. Verify readable Korean and intended image count before save, then verify anonymous public HTML for UTF-8 replacement characters, body text and image count. Any failure blocks completion and duplicate creation.
+
+# ADR-058 — source-led, original synthesis (accepted, 2026-09-13)
+
+A linked article is a research lead, never copy to reproduce. Search related keywords across multiple independent sources, cross-check dates and claims, and create a new reader-facing angle. Every article includes a concise summary, confirmed versus undecided facts, practical implications or next checks, and source links. Do not mirror source wording, structure or headline.
