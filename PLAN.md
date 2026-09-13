@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Integrated saved reservation observation
+
+- Completed: actual80 representative thumbnail fname equals first editor image URL; no image pixel audit or writes.
+- Completed: failing-first combined snapshot;11browser cases pass, types/compile/checker pass. Actual modal tag visibility required pre-dialog sampling, not a weaker gate.
+- Completed: actual80 integrated same-ID snapshot equals after reload;4media/4tags/representative0/time/category/home observed. Full offline278pass/1existing failure, no merge clearance. Evidence prepared for scoped commit/push.
+- Deferred: reviewed local asset/editor-byte binding and actual prepare/upload/save adapter; one-program reservation remains unfinished.
+
 ## Reservation panel observation, 2026-09-13
 
 - Completed: actual80 panel inspected without final save: selected 예약, date button2026-09-13, dateHour19/dateMinute00.

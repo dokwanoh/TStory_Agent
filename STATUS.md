@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 integrated reservation readback
+
+Combined integrated/editor/tags/settings/manager browser regression:73passed in63.23s. No new code failure in that lane; legacy offline failure below remains separate.
+
+Combined manager/editor/settings/tags/representative observations in a typed read-only adapter. Actual80 thumbnail fname identifies first body image exactly; no pixel/image-display audit. Reader rejects mismatching title/ID/slug/time, unsupported reservation/visibility or ambiguous representative. Tags are sampled before modal opening because live modal hides accessible tag links; no visibility gate weakened. Initial fixture zero-sized thumbnail and live modal tag issue were diagnosed and corrected in sampling/fixture design.
+
+Requested module absence RED; new11browser cases pass in11.22s. Types0errors, compileall exit0, programming checker clean2files. Full offline278pass/1pre-existing status-substring failure in11.96s remains, no merge clearance. Actual80 combined result:19:00KST, sports/home sports general,4media,4tags,representative_index0; second cancel/reload/reopen result with fresh tags equals first. Hash and scope in docs/41_integrated_reservation_readback.md. No final save/input/upload/scheduler mutation; dedicated browser closed, debug journal removed after findings preserved. Readback integration advanced, but reviewed local assets/editor bytes binding and actual prepare/upload/save remain. Overall40–50% estimate unchanged; the next outcome is still one program-driven reservation, not claimed achieved here.
+
 ## 2026-09-13 reservation-form settings readback
 
 Extended existing publish-panel reader to distinguish existing_at from scheduled_at. Actual80 exposes separate visible date button/hour/minute controls when 예약 is selected; strict date/time parsing and unique/visible field checks reject unsupported inputs. Current mode remains ineligible. No action inside reader; selected PUBLIC is a setting, not proof of public release.
