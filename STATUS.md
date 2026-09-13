@@ -1168,3 +1168,9 @@ Owner explicitly requested 게시하세요 for the first of the two linked-sourc
 Public URL: `https://nedamma.tistory.com/entry/9%EC%9B%94-28%EC%9D%BC-%EC%9B%94%EC%9A%94%EC%9D%BC-%EC%A0%95%EB%A7%90-%ED%95%98%EB%A3%A8-%EB%8D%94-%EC%89%AC%EB%8A%94-%EA%B1%B8%EA%B9%8C-%EB%8B%AC%EB%A0%A5%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EB%B3%BC-%EA%B2%83`. Independent anonymous fetch returned HTTP 200; UTF-8 decode replacement count `0`, title present, raw HTML `<img>` count `2` (not a four-image contract pass). The editor observation before publish contained one inserted body image; the local package has additional media, but they were not claimed as live uploads.
 
 This is a verified public creation, not a claim that the second Dongtan draft was published. No Lighthouse, print, screen-reader, external-ad or pixel/image audit was run per owner exclusions. The remaining media completeness and classification limitations stay visible for follow-up rather than being silently passed.
+
+## 2026-09-14 continuation — Arkmer Dongtan next-post attempt
+
+Prepared the second linked-source article with four distant, environment-visible photorealistic images. The intended placement is deliberate: cover after the opening paragraph, neighborhood context before the confirmed/undecided section, checklist context before the five checks, and transit/lifestyle context before the closing synthesis. Assets and provenance are in `content/fasttrack/2026-09-13-arkmer-dongtan/media/`.
+
+The native editor contains the title, readable Korean body, links and tags, but image insertion could not be completed: the Chrome extension debugger detached while resuming the native picker route. No save or publish action was performed, so external write count for this continuation is `0`. The draft remains local and eligible for a later retry; no duplicate post was created.
