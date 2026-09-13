@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-053 — keep growth tactics out of reader-facing copy (2026-09-13)
+
+Owner identified the public paragraph that disclosed Google Trends KR RSS, top-five status, seasonal long-tail reasoning and topic-selection rationale as an operating secret. Going forward, reader-facing articles must not expose internal growth tactics, trend-source names, candidate ranking, scoring logic or why the system selected the topic. Keep those details in manifests, `STATUS.md`, `DECISIONS.md` and internal evidence only. Public copy should frame the reader-facing phenomenon naturally without mentioning `Google Trends`, `실검`, `상위 5위권`, `선정 이유`, ranking/scoring criteria or comparable operating secrets unless the owner explicitly requests a transparent case-study article.
+
 ## ADR-052 — choose from top-five trends by traffic potential and risk (2026-09-13)
 
 Owner clarified that the system should not rigidly chase only the top realtime keyword; it should inspect the top-five current trend candidates and choose the likely best traffic opportunity after considering broad audience demand, topical longevity, policy/reputation risk, factual verifiability, monetization risk and blog fit. In the 2026-09-13 replacement run, Google Trends KR RSS showed the first five candidates as `이더리움`, `한지은`, `당구`, `신상열`, and `고구마`; `고구마` was selected because it is seasonal, broad, low-risk and suitable for 생활정보/요리 search intent. Rejected alternatives: finance/investment framing without stronger evidence, celebrity/private-person curiosity, and low-reader-value gossip angles.

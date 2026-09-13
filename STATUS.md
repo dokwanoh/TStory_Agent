@@ -1103,3 +1103,13 @@ Anonymous live readback verified the new title, absence of the old weather title
 - `7ae6f8c7e1e4b5904b75f4e8be1c8e92a72d01bc60972ef90c59594712b3d64b`
 
 Follow-up loop change: implement ADR-052 in topic selection. For fast-track trend posts, inspect the top-five current candidates, score by likely traffic value and risk, and choose the best safe opportunity. Do not publish celebrity/private-person curiosity or financial advice angles merely because they rank higher.
+
+## 2026-09-13 19:11KST public post81 strategy-disclosure cleanup verified
+
+Owner flagged the reader-facing `왜 갑자기 고구마가 뜬 걸까?` section as exposing operating secrets: Google Trends KR RSS, top-five status, long-tail reasoning and topic-selection rationale. Corrected the same public post ID 81, not a duplicate post. Replaced that section and the opening line with reader-facing copy about seasonal sweet-potato interest, cooking questions and practical value. The internal trend source and selection rationale remain in repository memory only.
+
+Editor pre-save readback showed title unchanged, category `생활정보`, home topic `요리`, public mode checked, four images present, and no occurrences of `Google Trends`, `상위 5위권`, `이 주제를 고른 이유`, or `검색어 상위권` in editor text. The first attempt to remove the section matched too broad a live-editor range and temporarily reduced the unsaved editor body to one image; this was detected before save and recovered by replacing the full unsaved editor body from `content/fasttrack/2026-09-13-sweet-potato-trend/article_public.html`.
+
+Anonymous live readback verified the new reader-facing section `요즘 왜 고구마 얘기가 자꾸 보일까?`, no forbidden strategy terms, old weather title absent, four image tags/data images, image hashes matching the local web JPEGs, and the Nongsaro link present.
+
+ADR-053 records the durable loop rule: public article copy must not expose internal trend-source names, candidate ranking, scoring criteria, traffic rationale or topic-selection reasoning unless the owner explicitly asks for a transparent case-study post.
