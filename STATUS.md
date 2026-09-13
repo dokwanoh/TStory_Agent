@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 blank HTML input transport candidate
+
+Added optional default-dry-run input primitive restricted to blank new editor, with body digest check and exact source/title echo. Existing post paths, nonempty title/body and unsupported surfaces are blocked. No scheduler/executor integration or final-save action. Actual blank-editor discovery confirmed exact HTML mode confirmation and CodeMirror textarea; old autosave restoration was dismissed, no title/body inserted. Platform automatic draft storage during discovery is UNKNOWN, not proven absent.
+
+Requested-module absence RED then8synthetic Chrome cases pass in6.58s; basedpyright0errors/0warnings, compileall exit0, programming checker clean2files. SDK driver initially lacked PYTHONPATH; corrected invocation produced dry_run/input_verified/blocked for default/input/replay. This fixture uses an ordinary textarea, not a live CodeMirror implementation. Full offline278pass/1pre-existing status-text failure in11.22s, unchanged; no merge clearance.
+
+Evidence/limits: docs/42_blank_html_input.md. Real text insertion may autosave and awaits one-rehearsal authorization; no additional release or modification of80. Overall40–50% remains an unmeasured management estimate. Input candidate advances implementation but one-program reservation, media integration and runtime cutover remain unverified.
+
 ## 2026-09-13 integrated reservation readback
 
 Combined integrated/editor/tags/settings/manager browser regression:73passed in63.23s. No new code failure in that lane; legacy offline failure below remains separate.

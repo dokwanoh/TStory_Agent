@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Blank HTML input transport
+
+- Completed: read-only discovery of new editor, actual HTML mode confirmation and CodeMirror textarea; no title/body inserted.
+- Completed: default-dry-run, new-editor-only title/source transport; absent-module RED then8local browser cases pass. SDK default/input/replay yields dry_run/input_verified/blocked; types/compile/checker pass.
+- Completed: evidence in docs/42_blank_html_input.md; full offline278pass/1pre-existing status-text failure. No merge clearance.
+- Blocked: actual text insertion rehearsal requires explicit scope because new editor can autosave. Source echo in a local textarea is not live CodeMirror validation. No existing post mutation or scheduler cutover; media/save integration remains deferred.
+
 ## Integrated saved reservation observation
 
 - Completed: actual80 representative thumbnail fname equals first editor image URL; no image pixel audit or writes.
