@@ -1141,3 +1141,7 @@ Anonymous readback: RSS item and public URL returned HTTP 200; exact title prese
 ## 2026-09-13 incident — body encoding regression
 
 Post 85 was incorrectly marked successful before a character-level public-body check. Anonymous HTML readback shows mojibake in the body (replacement characters and UTF-8/legacy-decoding artifacts), while the title remains readable and four images remain present. Two local repair attempts using direct hidden-field/HTML injection and URL-encoded payloads did not correct the saved representation; a third typing attempt did not reach the iframe and was not saved. No additional post was created. This is a failed verification, not a pass. The article requires manual editor correction or a newly validated input route before any further save.
+
+## 2026-09-13 recovery follow-up
+
+Enabled the owner-approved AppleScript accessibility path and replaced the body through the editor's real paste surface. Anonymous readback now shows correct UTF-8 Korean (`replacement=0`) and the public title/body are readable. The paste replacement removed the four inline images (`imgs=0`); this remains an incomplete media gate and is not silently passed.
