@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 actual HTML input rehearsal succeeded
+
+This-turn regression: browser_tests/test_html_input.py8passed in6.21s; basedpyright0errors/0warnings. Documentation-only changes; no full-suite rerun or new merge clearance.
+
+ADR-050 owner approval consumed for one new-editor identity html-input-rehearsal-20260913-1800. Existing module on actual authenticated dedicated Chrome: blank_title=True, input_result=input_verified, replay_result=blocked, title_equal=True, source_equal=True. Korean heading/two paragraphs preserved exactly in source. No final save/reservation/public release, upload, old-post change or scheduler cutover. Context closed normally; temporary autosave persistence UNKNOWN and not a confirmed resumable draft. No duplicate rehearsal on continuation.
+
+Evidence and exact synthetic bytes/hash: docs/42_blank_html_input.md. This is actual CodeMirror source/title input proof, not rich-rendering, media preservation, saved-state or complete reservation proof. No production code changes this increment; previous full-suite legacy failure and merge hold remain. Overall40–50% broad estimate retained; next major gate is reviewed full-media input through one verified reservation.
+
 ## 2026-09-13 blank HTML input transport candidate
 
 Added optional default-dry-run input primitive restricted to blank new editor, with body digest check and exact source/title echo. Existing post paths, nonempty title/body and unsupported surfaces are blocked. No scheduler/executor integration or final-save action. Actual blank-editor discovery confirmed exact HTML mode confirmation and CodeMirror textarea; old autosave restoration was dismissed, no title/body inserted. Platform automatic draft storage during discovery is UNKNOWN, not proven absent.

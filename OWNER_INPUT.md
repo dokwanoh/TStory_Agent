@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — owner input register
 
+2026-09-13: owner explicitly approves one new-editor test-text input rehearsal, acknowledging possible automatic temporary storage. No final save, public release, reservation, upload, existing-post mutation or scheduler cutover. Identity: html-input-rehearsal-20260913-1800; do not duplicate after uncertain input.
+
 2026-09-13: owner requests continued implementation and overall progress in every report. Show the broad readiness range, current verified increment and remaining major gates; distinguish readiness from traffic attainment and measured work percentage. No new publishing/cost/permission authority follows.
 
 2026-09-13 09:04KST: owner explicitly approves completing SAME F1 draft and reserving it for today12:00 in answer to precise reassignment question. Preserve uploaded cover and same editor; no duplicate/no08success claim. Scoped single-article continuation; existing facts/freshness/rights/representation/saved-state gates retained. Noon slot consumes this one article, not an additional catch-up post.

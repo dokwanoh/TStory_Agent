@@ -1,5 +1,23 @@
 # Blank HTML input transport candidate
 
+## Actual one-editor rehearsal, 2026-09-13 after18:00KST
+
+ADR-050 explicit approval consumed. Existing code from781a577, installed `.venv` Playwright, dedicated browser-profile, normal mode-confirm dialog only. No code changes required. Actual result: blank_title=True; input_result=input_verified; replay_result=blocked; title_equal=True; source_equal=True; final_save_called=false. Context closed normally. No existing post visited/modified, upload, reservation, publication or scheduler change in this rehearsal.
+
+Title: `[비발행 테스트] html-input-rehearsal-20260913-1800`.
+
+Exact source (LF between lines, no trailing newline):
+
+```html
+<h2>자동 입력 검증</h2>
+<p>공개하지 않는 테스트 문구입니다.</p>
+<p>문단 구분과 한글 입력을 확인합니다.</p>
+```
+
+SHA-256: `a4f7f292718b0c2a1a97792e5c78aa368eac4514be103bbeee66fa6235843cea`.
+
+This supersedes the earlier missing-live-source-proof statement below only for these short synthetic bytes. It does not prove arbitrary long documents, mode conversion, four-media preservation, server autosave persistence or final delivery. Automatic temporary storage may remain; no deletion/cleanup performed. Do not repeat the consumed one-editor approval or restore unknown older drafts. Editorial skill protection restricted the operation to blank new content; existing-image whole-body replacement remains unsupported.
+
 Checked2026-09-13. Optional Playwright module: `delivery/playwright_html_input.py`.
 
 ## Contract and limits

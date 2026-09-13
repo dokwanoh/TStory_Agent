@@ -1,11 +1,17 @@
 # TISTORY GROWTH OS — execution plan
 
+## Approved one-editor input rehearsal
+
+- Completed: explicit owner approval recorded for html-input-rehearsal-20260913-1800; no final save/reservation/release.
+- Completed: actual authenticated blank HTML editor input_verified; replay blocked; exact title/source comparisons true. No code correction needed.
+- Completed: result/consumed approval/limits recorded in docs/42_blank_html_input.md and ADR-050 for scoped commit/push. Full-media input, saved-state verification and reservation integration remain deferred, not covered by this rehearsal.
+
 ## Blank HTML input transport
 
 - Completed: read-only discovery of new editor, actual HTML mode confirmation and CodeMirror textarea; no title/body inserted.
 - Completed: default-dry-run, new-editor-only title/source transport; absent-module RED then8local browser cases pass. SDK default/input/replay yields dry_run/input_verified/blocked; types/compile/checker pass.
 - Completed: evidence in docs/42_blank_html_input.md; full offline278pass/1pre-existing status-text failure. No merge clearance.
-- Blocked: actual text insertion rehearsal requires explicit scope because new editor can autosave. Source echo in a local textarea is not live CodeMirror validation. No existing post mutation or scheduler cutover; media/save integration remains deferred.
+- Resolved by ADR-050: actual text insertion rehearsal approved and source/title echo verified. No existing post mutation or scheduler cutover; media/save integration remains deferred.
 
 ## Integrated saved reservation observation
 

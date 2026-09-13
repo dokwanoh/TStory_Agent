@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-050 — one-editor input rehearsal (2026-09-13)
+
+Owner answered yes to the explicit request to insert test text into one new editor with possible autosave, without final save/publication/reservation. Use existing authorized profile and normal HTML controls; no API/session extraction. Scope is html-input-rehearsal-20260913-1800, consumed by the actual successful title/source input. Existing articles and scheduler remain untouched. Prefer this bounded rehearsal over declaring fixture-only source echo production-ready. Input success does not grant further test creations, image/save operations or runtime cutover. Evidence: docs/42_blank_html_input.md.
+
 ## ADR-049 — future neighbor-blog commenting workstream (2026-09-13)
 
 Owner requests a subagent for commenting on neighbor blogs between stages2and3 in the immediately preceding list: after scheduled operations/recovery/alerts, before performance collection/refresh/learning. Owner will supply detailed instructions when that stage arrives. Record BL-012 only; do not spawn or implement a speculative agent, visit targets or post comments now. This is future planning, not current external-write consent or automatic repeal of the Genesis automatic-comment prohibition. At entry, explicitly settle that conflict, scoped posting authority, permitted targets, cadence, substantive relevance and platform compliance. Spam, repetitive promotion and ranking manipulation remain excluded. Current delivery work retains first priority.
