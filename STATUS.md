@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 automation slice H — existing publication settings
+
+Overall readiness remains approximately40–50%, with50–60% remaining; this is a management estimate, not measured effort or traffic attainment. Owner requests this progress range and remaining main gates in every ongoing report. Updated checkpoint/plan supersede earlier browser-blocker wording with dated recovery evidence.
+
+Added read-only publish-dialog adapter for existing date/title/visibility/home topic/slug. Proposed current/reservation inputs, wrong identities, ambiguous or invalid fields are rejected. RED absent module → synthetic Chrome13pass in12.32s; actual79 settings equal after cancel/reload/reopen, no field mutation or final save. Types0errors, compileall exit0, programming checker clean2files. Full offline278pass/1existing status-substring failure remains; test/historical evidence unchanged, no merge clearance. docs/39_publish_settings_reader.md records scope/limits. Dedicated browser closed normally; no post/media/scheduler writes. Next: complete metadata binding and reviewed input/upload/reservation integration.
+
 ## 2026-09-13 automation slice G — actual editor content reader
 
 Full offline suite:278passed/1pre-existing status-substring failure in10.42s (`test_status_does_not_claim_unearned_completion`). Left historical evidence and test unchanged; no PR/merge clearance. This failure is separate from the11passing new browser cases.
