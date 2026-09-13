@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## Automation slice E — one-shot reservation coordinator
+
+- Completed: failing-first local coordination tests for dry-run, authorization denial, stop/deadline, persistent claim before preparation, one save and independent readback.
+- Completed: dependency-free coordinator reusing SaveIntentJournal and reservation comparator; actual editor implementation remains deferred, no live writer cutover.
+- Completed: real SQLite library rehearsal and separate-process replay hold; twelve new tests, strict types/compilation/checker pass. Full suite278pass/1pre-existing status-text failure. Evidence: docs/35_reservation_execution.md; scoped commit/push, no PR/merge clearance.
+
 ## Automation slice D — bounded normal sign-in
 
 - Completed: failing-first deterministic login flow tests; normal login/account selection at most once each, all other states stop.

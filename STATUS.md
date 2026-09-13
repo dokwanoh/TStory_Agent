@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 automation slice E — local reservation coordination
+
+Added reservation_execution.py and12tests: default dry-run has no surface calls or intent consumption; authorization/kill/deadline gates; committed slot claim before preparation; renewed authorization before one save; independent readback comparator; unknown/mismatch/exception paths retain the hold. Deadline crossing during authorization was observed failing before the second timing check. This is a library coordinator with an injected surface, not a completed Tistory editor/publisher or authenticated approval verifier.
+
+Verification: new12tests pass in0.35s; full suite278pass/1known legacy status-substring failure in9.25s; basedpyright0errors/0warnings; compileall exit0; programming rule checker no violations in2files; diff-check clean. Manual SDK driver used real temporary SQLite: normal fixture VERIFIED, separate child process HELD with only authorization called, denied-quality fixture BLOCKED. Temporary driver DB removed by context cleanup. External writes0/model calls0; no browser/editor/scheduler change. Proof limits and next adapter boundary: docs/35_reservation_execution.md. Existing failing documentation test and missing clean-checkout content fixture debt remain; no PR/merge pass.
+
 ## 2026-09-13 automation slice D — bounded sign-in recovery
 
 Implemented optional Playwright adapter plus dependency-free bounded state machine. Actual dedicated Chrome close/reopen started at LOGIN; the code clicked the normal login and selected the previously authorized saved account, returned READY on the exact manager origin/path, then an attached-state wait confirmed existing article79. No password/cookie read, new article, editor/media write, model call or scheduler cutover. The process remains open; session permanence and unattended deployment are not claimed.
