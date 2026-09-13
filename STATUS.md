@@ -1145,3 +1145,7 @@ Post 85 was incorrectly marked successful before a character-level public-body c
 ## 2026-09-13 recovery follow-up
 
 Enabled the owner-approved AppleScript accessibility path and replaced the body through the editor's real paste surface. Anonymous readback now shows correct UTF-8 Korean (`replacement=0`) and the public title/body are readable. The paste replacement removed the four inline images (`imgs=0`); this remains an incomplete media gate and is not silently passed.
+
+## 2026-09-13 deletion of post 85
+
+Owner explicitly confirmed deletion after the failed encoding/media recovery. Deleted only post ID 85 through the Tistory management list. RSS readback returns zero matches for the title. No other post was modified.
