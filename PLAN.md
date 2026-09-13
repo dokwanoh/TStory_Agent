@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## Automation slice F — observed manager-row reader
+
+- Completed: real DOM-backed optional Playwright reader and failing-first synthetic Chrome cases; exact target, single row/fields, typed date and visibility setting.
+- Completed: live read-only article79 extraction matches after reload; absent-page target returns None. Browser12pass, full278pass/1known legacy status failure, types/checker/compilation pass. Evidence: docs/36_manager_reader.md; scoped feature-branch delivery, no merge clearance.
+- Deferred: editor writes and complete reservation readback. A manager visibility setting is not proof of public release; no scheduler cutover.
+
 ## Automation slice E — one-shot reservation coordinator
 
 - Completed: failing-first local coordination tests for dry-run, authorization denial, stop/deadline, persistent claim before preparation, one save and independent readback.

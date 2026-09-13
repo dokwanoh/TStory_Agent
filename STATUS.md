@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 automation slice F — real manager metadata reader
+
+Optional playwright_manager.py observes a specific numeric post ID from exact nedamma manager origin/path and heading, requiring a single row/title/date/category/visibility control. Returns a typed summary or None for unsupported/ambiguous observations; no clicks, navigation or mutation inside reader. Live article79 title/URL/category스포츠/listed12:00/public-setting extracted and identical after explicit operator reload; unknown ID999999999 returned None on the current page. No post/editor/upload/scheduler writes. Visibility is a setting, not public-release proof; no complete ReservationObservation is fabricated from list metadata.
+
+TDD module-absence RED then optional real-Chrome fixture12pass in11.15s; full offline278pass/1known legacy status-substring failure in9.80s; basedpyright0errors/0warnings; compileall exit0; programming checker no violations in2files. Fixture requests are fulfilled locally; owner/browser content not committed. Documentation: docs/36_manager_reader.md. Remaining: saved editor body/media/settings reader and actual input/upload/save adapter; scheduler unchanged and PR/merge blocked by existing gates.
+
 ## 2026-09-13 automation slice E — local reservation coordination
 
 Added reservation_execution.py and12tests: default dry-run has no surface calls or intent consumption; authorization/kill/deadline gates; committed slot claim before preparation; renewed authorization before one save; independent readback comparator; unknown/mismatch/exception paths retain the hold. Deadline crossing during authorization was observed failing before the second timing check. This is a library coordinator with an injected surface, not a completed Tistory editor/publisher or authenticated approval verifier.
