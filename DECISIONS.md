@@ -280,3 +280,7 @@ Generated article images default to a wide or medium-wide, environment-visible p
 # ADR-056 — official media first, generated fallback (accepted, 2026-09-13)
 
 Use an official project or agency image first when its reuse terms are clear, and retain visible attribution plus repository provenance. If no official image exists or permission is unclear, do not copy it; generate a distant, environment-visible photorealistic fallback. Never present generated fallback media as an official project photograph.
+
+# ADR-057 — native transfer and encoding fail-closed (accepted, 2026-09-13)
+
+Direct DOM or hidden-field injection is forbidden for production article body transfer after post 85 exposed mojibake. Use the native editor input surface and native file-picker upload only. Verify readable Korean and intended image count before save, then verify anonymous public HTML for UTF-8 replacement characters, body text and image count. Any failure blocks completion and duplicate creation.
