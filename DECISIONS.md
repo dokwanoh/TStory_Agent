@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-051 — photorealistic web-sized article media baseline (2026-09-13)
+
+Owner rejected the previous fast-track generated card images as visually weak and requested real photos or photorealistic, real-photo-grade generated images. For ordinary Tistory issue/explainer posts, the media baseline is now photorealistic or clearly licensed real-photo-quality imagery unless the article specifically calls for diagrams. If real photos are used, rights/provenance must be clear before publication. If generated photoreal images are used, do not present them as documentary evidence, user experience or official/source material.
+
+The successful recovery for public post81 showed that inserting four full-size generated PNG data URIs caused Tistory to reject save with “게시글을 작성하는데 실패했습니다.” The promoted route is: generate or select four high-quality images, preserve provenance locally, convert oversized generated assets to web-sized JPEGs before editor insertion, save once, then verify the public/private HTML by title/body/link presence, image count and compact image hashes. Owner-excluded visual checks remain excluded; hash/readback verification is the evidence lane.
+
 ## ADR-050 — one-editor input rehearsal (2026-09-13)
 
 Owner answered yes to the explicit request to insert test text into one new editor with possible autosave, without final save/publication/reservation. Use existing authorized profile and normal HTML controls; no API/session extraction. Scope is html-input-rehearsal-20260913-1800, consumed by the actual successful title/source input. Existing articles and scheduler remain untouched. Prefer this bounded rehearsal over declaring fixture-only source echo production-ready. Input success does not grant further test creations, image/save operations or runtime cutover. Evidence: docs/42_blank_html_input.md.

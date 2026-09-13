@@ -1069,3 +1069,20 @@ Chrome normal authenticated editor: stale 17:48 autosave prompt dismissed; title
 Readback: manager returned to `/manage/posts/`, post count now 75, new row displayed title at `2026-09-13 18:25`, category `카테고리 없음`. Public URL found: `https://nedamma.tistory.com/entry/%EC%98%A4%EB%8A%98-%EB%B0%A4-%EB%AD%90-%EC%9E%85%EC%A7%80-%EA%B8%B0%EC%83%81%EC%B2%AD%EC%9D%B4-%EC%BD%95-%EC%A7%91%EC%9D%80-%E2%80%98%ED%81%B0-%EC%9D%BC%EA%B5%90%EC%B0%A8%E2%80%99-%EC%B2%B4%ED%81%AC%ED%8F%AC%EC%9D%B8%ED%8A%B8`. Anonymous public fetch confirmed title, core body phrase, KMA link and four image tags/data images.
 
 Limitation: category selection remained unavailable in this fast-track new-editor route, so the stored category is `카테고리 없음`; home topic `생활정보` was selected. Images were embedded as data URI cards rather than uploaded via normal file picker; this succeeded for public HTML readback but is not yet the preferred long-term media pipeline.
+
+## 2026-09-13 18:43KST public post81 photoreal media replacement verified
+
+Owner rejected the first fast-track card-style images as too low quality and requested real-photo or photorealistic media. Used `imagegen` and `tistory-editorial-cycle`. Generated four photorealistic lifestyle/weather images, copied them into `content/fasttrack/2026-09-13-evening-weather/media/`, then converted them with macOS `sips` into web-sized JPEGs before editor insertion.
+
+Initial recovery attempt: replacing the four editor images with full-size 1254x1254 PNG data URIs produced a Tistory alert, `게시글을 작성하는데 실패했습니다. 잠시 후 다시 시도해주세요.` Root cause treated as oversized inline data; no duplicate post or repeated save attempt was made.
+
+Promoted successful route: converted the same images to `photo-cover-web.jpg`, `photo-evening-walk-web.jpg`, `photo-weather-check-web.jpg`, and `photo-outfit-kit-web.jpg` at 900px max dimension and 140–220KB each. Replaced the four existing images in public post ID 81 through the authenticated Chrome editor, preserving title, body, tags, official links, public state, home topic and post identity. Final `공개 발행` save returned to `/manage/posts/`.
+
+Anonymous public readback verified the live URL still contains the title, core body phrase, KMA short-term forecast link, Tistory policy link and exactly four image tags/data images. The four live image hashes match the local web JPEGs in order:
+
+- `48925239a2b460e944304e16f6bf86ad5e9993708501893f36c4902322481e27`
+- `3e414b72964037a12809bed164e8c35c448b23521ca6507791fb90dac4a4ca19`
+- `22432f4f8cd2d8732505ed30f5025c3e9ddeca85dd883f2025ac90ffd474ef19`
+- `297c1d67da50dcd44ca188c4e8f3ba7afe785bdfe47dde6f8edd79d19f053e67`
+
+ADR-051 records the new media baseline: ordinary article images should be real-photo quality or photorealistic with clear provenance, converted to web-sized JPEG before editor insertion unless a different reviewed media route is intentionally selected. Do not claim generated photoreal images as documentary evidence or first-person experience.
