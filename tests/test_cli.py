@@ -18,6 +18,7 @@ def _project(tmp_path: Path) -> Path:
         ROOT,
         root,
         ignore=shutil.ignore_patterns(
+            ".git", ".venv", "browser-profile",
             ".artifacts",
             ".omo",
             ".pytest_cache",

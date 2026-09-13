@@ -9,12 +9,22 @@ from tistory_growth_os.audit.project import audit_project
 ROOT = Path(__file__).parents[1]
 
 
+def test_runtime_browser_and_packages_are_not_repository_secret_inputs(tmp_path: Path) -> None:
+    from tistory_growth_os.audit.secrets import audit_secrets
+
+    for name in ("browser-profile", ".venv"):
+        folder = tmp_path / name
+        folder.mkdir()
+        (folder / "runtime.txt").write_text("Bearer " + "a" * 24, encoding="utf-8")
+    assert audit_secrets(tmp_path).matches == ()
+
+
 def _copy_project(destination: Path) -> Path:
     root = destination / "project"
     _ = shutil.copytree(
         ROOT,
         root,
-        ignore=shutil.ignore_patterns(".omo", ".artifacts", "__pycache__", ".pytest_cache"),
+        ignore=shutil.ignore_patterns(".omo", ".artifacts", "__pycache__", ".pytest_cache", ".git", ".venv", "browser-profile"),
     )
     return root
 

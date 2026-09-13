@@ -9,7 +9,7 @@ from typing import Final
 from .models import SecretMatch, SecretsReport
 
 
-_SKIP_DIRS: Final = frozenset({".artifacts", ".git", ".mypy_cache", ".omo", ".pytest_cache", ".ruff_cache", "__pycache__"})
+_SKIP_DIRS: Final = frozenset({".artifacts", ".git", ".mypy_cache", ".omo", ".pytest_cache", ".ruff_cache", "__pycache__", ".venv", "browser-profile"})
 _TEXT_SUFFIXES: Final = frozenset({"", ".css", ".html", ".json", ".md", ".py", ".toml", ".txt", ".yaml", ".yml"})
 
 
