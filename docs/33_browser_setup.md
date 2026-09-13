@@ -33,4 +33,8 @@ This proves browser control and profile persistence, NOT authenticated-session p
 
 ## Sources
 
+### Authentication follow-up, 2026-09-13
+
+After owner authentication, normal Kakao account selection reached the target management page and its known article79 control. Full browser restart did NOT retain direct Tistory authentication: it redirected to the login page. Normal yellow-login → saved owner-designated account selection restored management access without password entry. Keep these separate outcomes; localStorage persistence is not proof of authenticated-session persistence. The current operator process remains open, and future worker startup must reconcile normal UI authentication before any article actions. Do not copy cookies, export storage or suppress security controls. Unexpected credentials/MFA/permissions require owner handoff. This follow-up performed no article writes and does not deploy a publisher.
+
 Checked2026-09-13: [Playwright package](https://pypi.org/project/playwright/), [persistent browser context and Chrome channel](https://playwright.dev/python/docs/api/class-browsertype#browser-type-launch-persistent-context), [installation](https://playwright.dev/python/docs/intro). Recheck when Playwright/Chrome changes or launch compatibility fails. Pinning the Python packages does not pin auto-updated system Chrome.
