@@ -4,6 +4,7 @@
 
 | ID | Deferred item | Why deferred | Entry condition |
 | --- | --- | --- | --- |
+| BL-012 | Neighbor-blog commenting subagent, between scheduled operations/recovery and performance learning | Owner requests future workstream; detailed instructions promised later, OWNER_DECISION_REQUIRED; no agent created or comments authorized now | At that stage obtain target/scope, content rules, frequency, review/posting authority and current platform-policy checks; explicitly reconcile original automatic-comment prohibition. No repetitive promotional comments, link spam or search manipulation; no current implementation/activation |
 | BL-011 | Gemini detailed-print and Lighthouse certification | ADR-022 historical deferral; actual screen-reader testing removed from backlog by owner ADR-037, not passed | Resume remaining print/Lighthouse work only; no screen-reader restoration or new installation/settings permission inferred |
 | BL-001 | Remaining public asset verification and media provenance | Article-only extraction and bounded response audit complete: 139 images lack alt; rights UNKNOWN; 16 of 52 query-free addresses unresolved; signed image references not fetched | Evidence of rights and image purpose; separately scoped rendering checks; respect robots/access limits; no reuse or external modification without approval |
 | BL-002 | Search Console, GA4, and Naver telemetry connectors | Read-only availability and public privacy boundary are unknown | ODR-001/ODR-005 plus scoped access approval |

@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-049 — future neighbor-blog commenting workstream (2026-09-13)
+
+Owner requests a subagent for commenting on neighbor blogs between stages2and3 in the immediately preceding list: after scheduled operations/recovery/alerts, before performance collection/refresh/learning. Owner will supply detailed instructions when that stage arrives. Record BL-012 only; do not spawn or implement a speculative agent, visit targets or post comments now. This is future planning, not current external-write consent or automatic repeal of the Genesis automatic-comment prohibition. At entry, explicitly settle that conflict, scoped posting authority, permitted targets, cadence, substantive relevance and platform compliance. Spam, repetitive promotion and ranking manipulation remain excluded. Current delivery work retains first priority.
+
 ## ADR-048 — owner order delivery → operations → learning → generation (2026-09-13)
 
 Owner explicitly chooses1,3,4,2 from the four remaining areas in the preceding report:1actual input/upload/reservation/readback;3single daily worker/recovery/alerts;4performance collection/refresh/self-improvement;2low-cost research/writing/review automation. This supersedes earlier suggestions placing generation before operational stability or telemetry. Preserve this mapping even where old documents used different local numbered lists.

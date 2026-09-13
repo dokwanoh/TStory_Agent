@@ -2,6 +2,8 @@
 
 ## Owner execution order — 1→3→4→2 (2026-09-13)
 
+Owner addition (ADR-049): between the Operations stage below and Learning, reserve a neighbor-blog commenting subagent workstream (BL-012). Detailed instructions will be supplied later; status OWNER_DECISION_REQUIRED, not implemented or activated. Do not spawn an agent or post comments now. This placement refers to stages2and3 of the last displayed execution list, not the original owner priority labels.
+
 1. Delivery: actual body/media input, reservation save and independent same-ID content/settings readback. Immediate work remains browser connection recovery and complete fixed-package E2E.
 2. Operations (owner3): single scheduled worker, persistent recovery, kill switch and alerts; shadow before any approved single-writer cutover.
 3. Learning (owner4): authorized performance collection, data-quality checks, refresh decisions and evaluated improvement loop, initially using existing posts.

@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 future community workstream recorded
+
+Added owner-requested neighbor-blog commenting subagent as BL-012/ADR-049, after operations/recovery and before learning. Detailed instructions deferred by owner; no interview now, no subagent spawned, no implementation or external comments. Planning/memory synchronized only. Original automatic-comment restriction remains pending explicit reconciliation before any future activation; current delivery priority unchanged.
+
 ## 2026-09-13 owner priority update
 
 Owner selects1→3→4→2: delivery first, scheduled operations/recovery second, performance/refresh/learning third, low-cost generation last. Recorded ADR-048 and synchronized AGENTS/PLAN/progress checkpoint. This is a priority change, not feature completion or new publishing/data/spend authority. Fresh reviewed package supply remains separate until generation is integrated; missing/ineligible slots skip. Current browser connection recovery and complete fixed-package delivery remain the next technical work. No runtime/scheduler/post changes in this documentation increment.
