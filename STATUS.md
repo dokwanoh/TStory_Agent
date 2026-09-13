@@ -1058,3 +1058,14 @@ Metadata classification and bounded public asset inspection are complete for 63 
 - Representative canonical/description/Open Graph metadata checked on the newest and oldest sitemap entries.
 - Public audit artifact → `docs/09_public_asset_audit.md`; external writes → `0`.
 - First documentation-contract run found one heading-format mismatch (`ODR-001` annotation inside the required ID parentheses). The annotation was moved to body text; the final full run passed all 132 tests.
+# 2026-09-13 18:25KST fast-track public post verified
+
+Owner requested one fast-track new article publication. Used `tistory-editorial-cycle`; excluded owner-removed gates: VoiceOver/narration, Lighthouse, external-ad audits, all print checks and web image pixel/lightbox checks. New article title: `오늘 밤 뭐 입지? 기상청이 콕 집은 ‘큰 일교차’ 체크포인트`.
+
+Local artifacts: `content/fasttrack/2026-09-13-evening-weather/article.md`, four 1254x1254 PNGs under `content/fasttrack/2026-09-13-evening-weather/media/`, and run record `content/fasttrack/2026-09-13-evening-weather/run.md`. Local checks: article SHA256 `ef743a835c1d80a1019fa77982665d790770aae99e8c4acac5057e5d9fd44384`; four image refs; two official links; no removed operational footer pattern.
+
+Chrome normal authenticated editor: stale 17:48 autosave prompt dismissed; title/body/tags inserted through Apple Events JavaScript into the active Tistory editor. Pre-save check observed title match, public mode, home topic `생활정보`, four images, two links and body text. Final `공개 발행` clicked once.
+
+Readback: manager returned to `/manage/posts/`, post count now 75, new row displayed title at `2026-09-13 18:25`, category `카테고리 없음`. Public URL found: `https://nedamma.tistory.com/entry/%EC%98%A4%EB%8A%98-%EB%B0%A4-%EB%AD%90-%EC%9E%85%EC%A7%80-%EA%B8%B0%EC%83%81%EC%B2%AD%EC%9D%B4-%EC%BD%95-%EC%A7%91%EC%9D%80-%E2%80%98%ED%81%B0-%EC%9D%BC%EA%B5%90%EC%B0%A8%E2%80%99-%EC%B2%B4%ED%81%AC%ED%8F%AC%EC%9D%B8%ED%8A%B8`. Anonymous public fetch confirmed title, core body phrase, KMA link and four image tags/data images.
+
+Limitation: category selection remained unavailable in this fast-track new-editor route, so the stored category is `카테고리 없음`; home topic `생활정보` was selected. Images were embedded as data URI cards rather than uploaded via normal file picker; this succeeded for public HTML readback but is not yet the preferred long-term media pipeline.
