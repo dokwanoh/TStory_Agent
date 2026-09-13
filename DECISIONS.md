@@ -276,3 +276,7 @@ After the owner deleted a weak-topic post, topic selection requires deliberate r
 # ADR-055 — distant photoreal media framing (accepted, 2026-09-13)
 
 Generated article images default to a wide or medium-wide, environment-visible photorealistic composition. Close-up isolated objects, card-like layouts, invented readable text, logos and watermarks are disallowed. Four distinct explanatory images remain required and are compressed to web-sized JPEG before insertion.
+
+# ADR-056 — official media first, generated fallback (accepted, 2026-09-13)
+
+Use an official project or agency image first when its reuse terms are clear, and retain visible attribution plus repository provenance. If no official image exists or permission is unclear, do not copy it; generate a distant, environment-visible photorealistic fallback. Never present generated fallback media as an official project photograph.

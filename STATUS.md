@@ -1125,3 +1125,7 @@ Chrome authenticated editor final save was clicked once. Manager returned to `/m
 ## 2026-09-13 owner correction — topic and media quality gate
 
 Owner deleted the 19:21 post as too weak. Durable rules updated in tistory-editorial-cycle ADR-054/055 and project ADR-054/055: require highest-available-model editorial comparison before selecting a topic, and generate distant, environment-visible photorealistic images with a wide or medium-wide camera position. The deleted article is not reused and no publication is claimed from it.
+
+## 2026-09-13 owner correction — official-media priority
+
+Owner requires official project/agency imagery to be preferred whenever available, with visible attribution and repository provenance. If no official image exists or reuse permission is unclear, use the distant photorealistic fallback and never represent it as an official photograph. Rule recorded as tistory-editorial-cycle ADR-056 and project ADR-056.
