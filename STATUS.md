@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 automation slice G — actual editor content reader
+
+Full offline suite:278passed/1pre-existing status-substring failure in10.42s (`test_status_does_not_claim_unearned_completion`). Left historical evidence and test unchanged; no PR/merge clearance. This failure is separate from the11passing new browser cases.
+
+Recovered the dedicated Playwright connection through normal profile launch; manager READY without additional login this time. Opened existing79 using the observed CSS edit link. Added a read-only typed native-editor snapshot adapter: exact identity/surface, nonempty body/title, four distinct HTTPS image sources and ordered alt/filename data, native HTML hash, collection stability checks. Unsupported observations return None; SDK errors propagate. This does not certify reservation settings, representative, tags, image bytes or original-package equivalence.
+
+TDD absent-module RED → real-Chrome synthetic fixture11pass in11.04s. Actual79 reader succeeded, wrong80 rejected, native snapshot equal after explicit reload. basedpyright0errors/0warnings, compileall exit0, programming checker no violations2files. Native body SHA and limitations recorded in docs/38_editor_content_reader.md. Dedicated inspection context closed normally; profile preserved. No post/editor/media/scheduler writes, no new authentication request. Next: publish-settings reader and actual reviewed input/upload/save integration, not standalone deployment completion.
+
 ## 2026-09-13 future community workstream recorded
 
 Added owner-requested neighbor-blog commenting subagent as BL-012/ADR-049, after operations/recovery and before learning. Detailed instructions deferred by owner; no interview now, no subagent spawned, no implementation or external comments. Planning/memory synchronized only. Original automatic-comment restriction remains pending explicit reconciliation before any future activation; current delivery priority unchanged.
