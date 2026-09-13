@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 noon heartbeat — native reservation released
+
+Article79's previously verified12:00reservation is now publicly readable in a separate non-owner-login browser by12:03KST. Fresh manager73posts shows same79/title/스포츠/12:00 without reservation prefix. Full text, four ordered alts, three headings, two source links and tags manually matched original/editor; saved panel retains 공개/home스포츠일반/date12:00. No finalsave, upload or new post; verification tabs closed. Exact server transition second UNKNOWN. Record: content/scheduled/2026-09-13/1200/run.md. Native reservation→public outcome verified for79; standalone Playwright publisher is not certified. Separate automation-profile Kakao authentication remains owner-handoff pending, with its login window left open. Existing operational schedule unchanged.
+
 ## 2026-09-13 approved browser setup slice C
 
 Validation: PYTHONPATH=src pytest -q tests/test_save_intents.py tests/test_reservation_readback.py →40passed in0.08s. Initial invocation without PYTHONPATH failed collection because this src-layout package is not globally installed; corrected invocation above passes, no test/code changes. basedpyright0errors/0warnings; git diff --check clean. Full suite was not repeated for this setup/documentation-only change; earlier legacy status test and clean-checkout fixture debt remain unresolved, so no PR/merge pass is claimed.
