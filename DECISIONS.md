@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-052 — choose from top-five trends by traffic potential and risk (2026-09-13)
+
+Owner clarified that the system should not rigidly chase only the top realtime keyword; it should inspect the top-five current trend candidates and choose the likely best traffic opportunity after considering broad audience demand, topical longevity, policy/reputation risk, factual verifiability, monetization risk and blog fit. In the 2026-09-13 replacement run, Google Trends KR RSS showed the first five candidates as `이더리움`, `한지은`, `당구`, `신상열`, and `고구마`; `고구마` was selected because it is seasonal, broad, low-risk and suitable for 생활정보/요리 search intent. Rejected alternatives: finance/investment framing without stronger evidence, celebrity/private-person curiosity, and low-reader-value gossip angles.
+
 ## ADR-051 — photorealistic web-sized article media baseline (2026-09-13)
 
 Owner rejected the previous fast-track generated card images as visually weak and requested real photos or photorealistic, real-photo-grade generated images. For ordinary Tistory issue/explainer posts, the media baseline is now photorealistic or clearly licensed real-photo-quality imagery unless the article specifically calls for diagrams. If real photos are used, rights/provenance must be clear before publication. If generated photoreal images are used, do not present them as documentary evidence, user experience or official/source material.

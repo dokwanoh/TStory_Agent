@@ -1086,3 +1086,20 @@ Anonymous public readback verified the live URL still contains the title, core b
 - `297c1d67da50dcd44ca188c4e8f3ba7afe785bdfe47dde6f8edd79d19f053e67`
 
 ADR-051 records the new media baseline: ordinary article images should be real-photo quality or photorealistic with clear provenance, converted to web-sized JPEG before editor insertion unless a different reviewed media route is intentionally selected. Do not claim generated photoreal images as documentary evidence or first-person experience.
+
+## 2026-09-13 18:58KST public post81 replaced with top-five trend candidate
+
+Owner rejected the weather subject and clarified that the system should choose from the current top-five trend candidates by likely traffic value rather than rigidly using the top-ranked term. Google Trends KR RSS read at the run time showed the top-five candidates as `이더리움`, `한지은`, `당구`, `신상열`, and `고구마`. Selected `고구마` because it offers broad seasonal 생활정보/요리 intent, low reputation/privacy risk, lower finance/compliance risk than crypto, and practical reader value.
+
+Replaced existing public post ID 81 in the authenticated Chrome editor, preserving one remote identity and avoiding duplicate creation. New title: `고구마 소금물에 담그면 진짜 더 맛있을까? 지금 뜬 이유 정리`. Category readback in manager: `생활정보`; home topic pre-save readback: `요리`; URL slug was updated to the new Korean title slug.
+
+Local artifacts are under `content/fasttrack/2026-09-13-sweet-potato-trend/` with `article.md`, `article.html`, `run.json`, and four web JPEGs in `media/`. Four photorealistic generated images were inserted as web-sized JPEG data images after local compression. Unused fifth cafe image remains local only and was not inserted.
+
+Anonymous live readback verified the new title, absence of the old weather title, core body phrase `오늘 검색어 상위권에 고구마`, Google Trends RSS link, Nongsaro link, exactly four image tags/data images, and image hashes matching local web JPEGs:
+
+- `c695d06fdc233c690632a94c596093913c9eb64750cbada3db20138eda4956dd`
+- `ad38494a5838965b233108d8eb84145993eda9770824ba1e6ae617a168cb1ac4`
+- `e1e86c227ea582c991b7353bae64bc8208745e66ddd43b136e4103475debd4bf`
+- `7ae6f8c7e1e4b5904b75f4e8be1c8e92a72d01bc60972ef90c59594712b3d64b`
+
+Follow-up loop change: implement ADR-052 in topic selection. For fast-track trend posts, inspect the top-five current candidates, score by likely traffic value and risk, and choose the best safe opportunity. Do not publish celebrity/private-person curiosity or financial advice angles merely because they rank higher.
