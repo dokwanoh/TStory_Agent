@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 evening preparation — local package, explicit Mac lock
+
+Overall readiness40–50% remains a management estimate. Prepared five fresh issue drafts and selected Rybakina USOpen result with official WTA score/ranking evidence, original four-image package, local hashes and scoped review at content/scheduled/2026-09-13/1900/. Target same-date19:00KST; no late catchup. Fresh manager73posts/today78and79, no19:00entry observed. Same sole new editor contains verified title only; body empty/uploads0/finalsave0, autosave timestamp observed but no numeric post identity or reservation verified.
+
+Normal native UI had clipboard timeout and inconsistent screen/AX evidence; extension returned Debugger unattached. Bounded CUA reset/window-focus and dropdown probes ended with explicit tool message that Mac is locked and automatic unlock paused due to physical input; manual unlock required. Stopped at security boundary, no bypass/login request/save retry. This does not prove every earlier symptom has the same cause. Run record preserves resume point; after unlock reconcile same editor and future target, otherwise skip. No scheduler cutover/change, existing code tests not rerun for this content-only preparation, no new implementation/merge completion claimed.
+
 ## 2026-09-13 automation slice H — existing publication settings
 
 Overall readiness remains approximately40–50%, with50–60% remaining; this is a management estimate, not measured effort or traffic attainment. Owner requests this progress range and remaining main gates in every ongoing report. Updated checkpoint/plan supersede earlier browser-blocker wording with dated recovery evidence.
