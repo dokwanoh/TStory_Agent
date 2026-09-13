@@ -1,10 +1,17 @@
 # TISTORY GROWTH OS — execution plan
 
+## Live tag readback correction, 2026-09-13
+
+- Completed: independently reopened80; repeated snapshot stable but display # prefix causes expected-set mismatch.
+- Completed: prefix/empty/collision tests3fail before fix; normalization then combined36pass, types/compilation/checker pass.
+- Completed: actual80 expected set/reload/wrong-ID checks; manager still reserved19:00, no save or scheduler changes. Full offline278pass/1pre-existing failure, no merge clearance. Evidence prepared for scoped commit/push.
+- Deferred: representative binding and reserved-row reader support (current manager adapter returned None on80); complete program-driven delivery remains separate.
+
 ## Automation slice I — tag readback
 
 - Completed: failing-first browser test (absent read_editor_tags function).
 - Completed: read-only typed tag snapshot; no editor input or final save.
-- Completed: real-Chrome fixture33pass, typed SDK rehearsal, types/compilation/checker pass. Full suite278pass/1pre-existing status-text failure; no merge clearance. Representative binding and live tag-adapter certification remain separate next work, not implied by synthetic success.
+- Completed: original real-Chrome fixture33pass, typed SDK rehearsal, types/compilation/checker pass. Follow-up above corrects display-prefix fixture gap and certifies actual80 tag readback. Full suite278pass/1pre-existing status-text failure; no merge clearance. Representative binding remains separate.
 
 ## Owner execution order — 1→3→4→2 (2026-09-13)
 

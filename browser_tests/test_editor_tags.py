@@ -8,12 +8,15 @@ from tistory_growth_os.domain.ids import PostId
 
 
 @pytest.mark.parametrize('case', ['valid', 'reordered', 'duplicate', 'empty', 'missing',
-                                 'wrong_id', 'origin', 'hidden', 'new_editor'])
+                                 'wrong_id', 'origin', 'hidden', 'new_editor',
+                                 'display_prefix', 'prefix_duplicate', 'prefix_empty'])
 def test_tag_readback_when_editor_identity_and_labels_are_observed(case: str) -> None:
     # Given: a synthetic editor, with all requests fulfilled locally.
     variants = {
         'valid': ('테니스', 'US오픈'), 'reordered': ('US오픈', '테니스'),
         'duplicate': ('테니스', '테니스'), 'empty': ('', 'US오픈'), 'missing': (),
+        'display_prefix': ('#테니스', '#US오픈'),
+        'prefix_duplicate': ('#테니스', '테니스'), 'prefix_empty': ('#', '#US오픈'),
     }
     tags = variants.get(case, variants['valid'])
     hidden = ' hidden' if case == 'hidden' else ''
@@ -36,7 +39,7 @@ def test_tag_readback_when_editor_identity_and_labels_are_observed(case: str) ->
         # When: reading existing tags without clicking or changing the page.
         result = reader.read_editor_tags(page, identity)
         # Then: tag order is immaterial, uncertainty fails closed, no writes occur.
-        if case in ('valid', 'reordered'):
+        if case in ('valid', 'reordered', 'display_prefix'):
             assert result is not None
             assert result.post_id == PostId('80')
             assert result.tags == frozenset(('테니스', 'US오픈'))

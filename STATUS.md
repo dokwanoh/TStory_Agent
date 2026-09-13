@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 actual tag reader — display-prefix fix verified
+
+Dedicated Chrome profile reached manager READY without new credentials. First discovery required a visible edit link and found none; scoped row80 DOM exposed the unique hidden /manage/post/80 href, which was opened read-only. Actual saved editor and explicit reload both returned # prefixed tags, failing the expected set. DOM confirmed inner text #테니스 versus aria-label 테니스 태그 수정; all four share this display convention. Wrong editor identity81 was rejected. This was a fixture gap, not a login or saved-content defect.
+
+TDD prefix/normalized-collision/empty-marker cases:3failed/9passed in9.50s before fix. Minimal normalization removes one leading display #; empty/duplicate checks follow normalization, stable readback still compares raw display labels. Combined editor/tag/settings browser suite36passed in32.41s, basedpyright0errors, compileall exit0, programming checker clean2files. Full offline278passed/1pre-existing status substring failure in13.96s; unchanged test/history, no merge clearance.
+
+Actual80 after fix: expected_match True; reload_equal True; wrong_identity_rejected True, tags {테니스, US오픈, 리바키나, 사발렌카}. Returned to manager: reservation title remains, listed date2026-09-13 19:00. No content input/upload/final save/scheduler mutation; dedicated context closed normally. Current inspection is not future public-release proof. read_manager_post returned None for reserved80; complete reserved-row support remains a separate gap, not masked as success. No debug trace/secret artifacts retained. Overall independent-automation readiness40–50% estimate remains; next complete reservation/representative metadata binding, then reviewed input/upload/save integration.
+
 ## 2026-09-13 automation slice I — typed tag reader
 
 Added read_editor_tags to the existing editor adapter: exact numeric saved-editor origin/path, visible nonempty title, nonempty distinct visible tag labels, stable repeated label observation; returns frozen tag set with post identity or None. No clicks/navigation/input/upload/save. Representative binding and complete reservation comparison are not inferred.

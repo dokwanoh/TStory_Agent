@@ -41,12 +41,13 @@ def read_editor_tags(page: Page, post_id: PostId) -> EditorTagsSnapshot | None:
     if title.count() != 1 or not title.is_visible() or not title.input_value().strip():
         return None
     links = page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'))
-    labels = tuple(label.strip() for label in links.all_inner_texts())
+    displayed = tuple(label.strip() for label in links.all_inner_texts())
+    labels = tuple(label.removeprefix('#').strip() for label in displayed)
     if (not labels or any(not label for label in labels)
             or len(set(labels)) != len(labels)
             or any(not link.is_visible() for link in links.all())
             or page.url != original_url
-            or tuple(label.strip() for label in links.all_inner_texts()) != labels):
+            or tuple(label.strip() for label in links.all_inner_texts()) != displayed):
         return None
     return EditorTagsSnapshot(post_id, frozenset(labels))
 
