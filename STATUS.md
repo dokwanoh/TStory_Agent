@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-14 requested reader-v4 revision — local copy ready, media route blocked
+
+Applied the requested friendly Korean rewrite and stronger paragraph spacing to both local source drafts. The 9월 28일 article now has a visibly separated `30초 요약` block in the editorial source, and the Dongtan draft has the same summary treatment plus conversational phrasing and emojis. The existing Chrome editor body for the unsaved Dongtan draft was updated through the native accessibility input surface and read back with the new text.
+
+Attempted the authorized native Chrome photo route for the four Dongtan assets. The editor menu opens, but selecting 사진 leaves an inaccessible/untargetable `열기` modal; CUA cannot observe or operate the file chooser, and no upload count or image appeared. No final save, public mutation, or duplicate creation was attempted because the required four-image gate is not met. The already-public 9월 28일 post was not modified for the same reason: its current public HTML has only two images and needs a same-ID edit with four verified images. External writes in this increment: 0.
+
+Next resume point: recover the native file-picker surface, insert four images in the recorded order, verify visible editor image count and body, then perform one authorized save per existing/new identity and anonymous readback. Lighthouse, print, screen-reader, external-ad and pixel/image checks remain excluded by owner policy.
+
 ## 2026-09-13 actual HTML input rehearsal succeeded
 
 This-turn regression: browser_tests/test_html_input.py8passed in6.21s; basedpyright0errors/0warnings. Documentation-only changes; no full-suite rerun or new merge clearance.
