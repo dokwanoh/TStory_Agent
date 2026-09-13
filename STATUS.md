@@ -8,6 +8,8 @@ Attempted the authorized native Chrome photo route for the four Dongtan assets. 
 
 Next resume point: recover the native file-picker surface, insert four images in the recorded order, verify visible editor image count and body, then perform one authorized save per existing/new identity and anonymous readback. Lighthouse, print, screen-reader, external-ad and pixel/image checks remain excluded by owner policy.
 
+Additional recovery attempt at 07:22KST used the keyboard-open route and exact local cover path; the editor returned with `0개의 파일을 업로드 중입니다` and no image node. This confirms the current chooser interaction did not select a file; it is not a successful upload.
+
 ## 2026-09-13 actual HTML input rehearsal succeeded
 
 This-turn regression: browser_tests/test_html_input.py8passed in6.21s; basedpyright0errors/0warnings. Documentation-only changes; no full-suite rerun or new merge clearance.
