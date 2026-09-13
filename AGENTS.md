@@ -18,6 +18,8 @@ ADR-040 (owner decision2026-09-12): print-image verification is EXCLUDED_BY_OWNE
 
 ## Project operating rules
 
+- Owner priority (2026-09-13, ADR-048): implement delivery/input/upload/reservation/readback first; single scheduled worker/recovery/alerts second; performance collection/refresh/learning third; low-cost LLM research/writing/review automation last (owner labels 1→3→4→2). Until generation automation exists, consume separately reviewed eligible packages; never reuse stale content or fill empty slots by weakening gates. This order does not authorize scheduler cutover, new data access or costs by itself.
+
 - ADR-039 (owner decision2026-09-12): Lighthouse and third-party/external-ad investigation, auditing, scoring, remediation, monitoring and restoration are EXCLUDED_BY_OWNER from ALL TISTORY GROWTH OS manual/recurring preparation, publication, reservation, verification, recovery and completion loops. Do not run them, substitute another whole-site audit, create follow-up work, request exceptions, or block delivery because of missing scores or external-ad findings. No automatic restoration, including after skin/template changes; only a new explicit owner decision can restore them. This supersedes ADR-038, the Sep12 manual Lighthouse requirement and historical restoration notes. Preserve historical findings as history, never PASS. Retain our own article facts/freshness/rights/policy, four images/alts, headings/meaningful links, readability/contrast/keyboard/render/print and exact save/reservation/public readback checks. No ad hiding/settings changes, removal of commercial disclosures, global accessibility certification, or broader publishing authority.
 
 

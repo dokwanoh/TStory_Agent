@@ -1,5 +1,14 @@
 # TISTORY GROWTH OS — execution plan
 
+## Owner execution order — 1→3→4→2 (2026-09-13)
+
+1. Delivery: actual body/media input, reservation save and independent same-ID content/settings readback. Immediate work remains browser connection recovery and complete fixed-package E2E.
+2. Operations (owner3): single scheduled worker, persistent recovery, kill switch and alerts; shadow before any approved single-writer cutover.
+3. Learning (owner4): authorized performance collection, data-quality checks, refresh decisions and evaluated improvement loop, initially using existing posts.
+4. Generation (owner2): low-cost evaluated model for research/Top5 drafts/four assets/review, integrated only after the preceding delivery/operations/learning foundations.
+
+Priority-update increment completed: AGENTS, ADR-048 and progress checkpoint aligned. Remaining feature work above is not completed by this ordering decision. Before generation integration, reviewed fresh packages are supplied separately; an empty/ineligible slot is skipped, not filled with old content. Existing budget/access/quality/cutover boundaries remain.
+
 ## 2026-09-13 overall progress reconciliation
 
 - Completed: distinguish original M0–M6 readiness from agent-free program delivery; updated remaining acceptance work in docs/37_progress_checkpoint.md and roadmap.

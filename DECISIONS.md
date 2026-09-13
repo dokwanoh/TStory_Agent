@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-048 — owner order delivery → operations → learning → generation (2026-09-13)
+
+Owner explicitly chooses1,3,4,2 from the four remaining areas in the preceding report:1actual input/upload/reservation/readback;3single daily worker/recovery/alerts;4performance collection/refresh/self-improvement;2low-cost research/writing/review automation. This supersedes earlier suggestions placing generation before operational stability or telemetry. Preserve this mapping even where old documents used different local numbered lists.
+
+Rationale: establish a reliable delivery and measurement path before optimizing content-generation models. Until the final stage, consume independently reviewed eligible packages; maintain release-time24h freshness and skip missing/expired packages. Telemetry can begin with existing posts when data access is approved. Reject quota filling with stale fixtures, presenting supplied-package operation as autonomous generation, or removing existing quality gates. Priority is not new authority for analytics access, spending, live scheduler cutover, account configuration or old-post mutations. Existing agent scheduler remains unchanged until a separately verified/approved single-writer transition.
+
 ## ADR-047 — approved isolated Playwright setup (2026-09-13)
 
 Owner answered yes to project-only Playwright installation and dedicated automation profile. Use isolated .venv and ignored browser-profile, preserve installed personal Chrome and all user data. Reuse the supported Chrome channel if available rather than downloading an unnecessary second browser; keep Chromium sandbox enabled. Official persistent-context documentation requires a separate user-data directory and only one active instance per directory. No session/cookie export, stealth, authentication bypass or live scheduler migration. Core offline dependencies remain unchanged; browser tooling is an explicit separate environment.

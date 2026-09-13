@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 owner priority update
+
+Owner selects1→3→4→2: delivery first, scheduled operations/recovery second, performance/refresh/learning third, low-cost generation last. Recorded ADR-048 and synchronized AGENTS/PLAN/progress checkpoint. This is a priority change, not feature completion or new publishing/data/spend authority. Fresh reviewed package supply remains separate until generation is integrated; missing/ineligible slots skip. Current browser connection recovery and complete fixed-package delivery remain the next technical work. No runtime/scheduler/post changes in this documentation increment.
+
 ## 2026-09-13 overall remaining-work checkpoint
 
 Reconciled original milestones and independent-worker readiness in docs/37_progress_checkpoint.md; roadmap now labels old M3 scope hold historical rather than current. Overall40–50% readiness is a broad management estimate, not measured effort/traffic. Autonomous generation/complete editor delivery/worker recovery/telemetry remain substantive gaps, not finishing touches. No new code or deployment pass claimed.
