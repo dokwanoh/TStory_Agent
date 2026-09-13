@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 evening reservation — article80 verified
+
+Owner-unlocked continuation completed the same sole editor, not a duplicate. One final save at approximately16:54KST created article80; manager74posts shows selected Rybakina title with reservation prefix, category스포츠 and2026-09-13 19:00. Opened observed /manage/post/80 link and independently read back full prose, three headings, two official WTA links, four ordered alt-labelled images, four tags and category. Saved publish panel retains 공개/home스포츠일반/date2026-09-13/hour19/min00 and correct cover representative. Cancelled readback panel and left editor without another save; manager reservation remains. Public release at19:00 is future/unverified, not claimed now.
+
+Native transfer recovered using separately observed body focus before HTML paste, exact GoTo path setValue/file selection/Open, and keyboard numeric controls with readback. Score image inserted at wrong position was moved and lost alt restored before save; temporary duplicate undone. Final saved editor has four images and no placeholder text. No credentials/settings/profile/scheduler changes. Evidence/local review and media hashes: content/scheduled/2026-09-13/1900/run.md and review.md. Excluded print/VoiceOver/Lighthouse/ad/web-image-pixel checks remain excluded, not passed. Content/native-delivery change only; code suite not rerun and known legacy test failure remains. Overall independent-automation readiness40–50% management estimate: this agent-assisted success does not complete unattended input/upload/reservation integration.
+
 ## 2026-09-13 evening preparation — local package, explicit Mac lock
 
 Overall readiness40–50% remains a management estimate. Prepared five fresh issue drafts and selected Rybakina USOpen result with official WTA score/ranking evidence, original four-image package, local hashes and scoped review at content/scheduled/2026-09-13/1900/. Target same-date19:00KST; no late catchup. Fresh manager73posts/today78and79, no19:00entry observed. Same sole new editor contains verified title only; body empty/uploads0/finalsave0, autosave timestamp observed but no numeric post identity or reservation verified.
