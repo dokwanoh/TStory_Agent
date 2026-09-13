@@ -12,7 +12,9 @@ PYTHONPATH=src pytest -q
 See [the guard contract](docs/30_save_intent_guard.md) and
 [repository delivery policy](docs/31_repository_delivery.md).
 
-Earlier offline MVP code and operational documents remain in the owner's local
-workspace pending a separate inspected import. They are not part of this initial
-slice. No credentials, browser state, generated articles or runtime databases
-belong in this repository.
+The feature branch also preserves the earlier offline MVP, contracts, tests and
+project memory. This is an unmerged import: a legacy status-document test still
+fails because it rejects the word `published` even in a negative diagnostic.
+Do not interpret that known failure as waived or this branch as merge-ready.
+No credentials, browser state, generated articles or runtime databases belong
+in this repository. Local account labels and home paths are redacted.

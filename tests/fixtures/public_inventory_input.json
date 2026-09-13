@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "blog_url": "https://nedamma.tistory.com",
+  "checked_date": "2026-09-07",
+  "posts": [
+    {
+      "canonical_url": "https://nedamma.tistory.com/entry/marvel-2020",
+      "title": "2020년 마블 개봉 예정 영화와 상영 예정일 정리",
+      "published_at": "2020-02-10T00:11:02+09:00",
+      "modified_at": "2020-02-10T00:11:02+09:00",
+      "category": "생활정보"
+    },
+    {
+      "canonical_url": "https://nedamma.tistory.com/entry/albendazole",
+      "title": "알벤다졸 복용 방법과 부작용",
+      "published_at": "2020-01-11T10:00:00+09:00",
+      "modified_at": "2020-01-11T10:00:00+09:00",
+      "category": "생활정보"
+    },
+    {
+      "canonical_url": "https://nedamma.tistory.com/entry/catfish-effect",
+      "title": "메기효과란 무엇인가",
+      "published_at": "2020-01-05T10:00:00+09:00",
+      "modified_at": "2020-01-05T10:00:00+09:00",
+      "category": "경제"
+    }
+  ]
+}

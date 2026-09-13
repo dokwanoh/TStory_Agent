@@ -25,6 +25,12 @@ The wider local workspace has an existing failing status-document wording test
 waived or deleted: the wider import remains separate and unmerged. Passing this
 small slice does not certify the earlier workspace, browser adapter or publisher.
 
+The subsequent preservation commit imports that wider offline workspace into the
+same unmerged feature branch with its failing test intact. Runtime/content/session
+data remain excluded. One static design-state Markdown is deliberately included
+for existing test reproducibility, not the other harness logs or state. Passing
+contract/audit checks is not a substitute for the failing full-suite gate.
+
 Final LLM selection targets the lowest total accepted-article cost among models
 passing unchanged task evaluations. Include retries and image/research costs;
 no automatic premium fallback or weaker acceptance thresholds.

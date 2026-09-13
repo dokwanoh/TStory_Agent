@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "local_package_only",
+  "review_id": "review_gemini_v2_final_20260907",
+  "reviewer_id": "gemini_editorial_check",
+  "reviewer_kind": "independent_agent",
+  "decision": "approved",
+  "subject_sha256": "855a746627c92ea90e94d1f65773eac8fc55f0dba28b345f32966e0dcc0902f3",
+  "reviewed_at": "2026-09-07T11:07:32Z",
+  "valid_until": "2026-09-07T17:07:32Z",
+  "evidence_valid_until": "2026-09-07T23:07:32Z",
+  "policy_valid_until": "2026-09-08T11:05:00Z"
+}
