@@ -65,3 +65,41 @@ def test_unknown_or_ambiguous_manager_surface_never_returns_a_post(case: str) ->
         page.goto(url)
         identity = PostId('79, input') if case == 'unsafe_id' else PostId('79')
         assert read_manager_post(page, identity) is None
+
+
+@pytest.mark.parametrize('case', ['reserved', 'plain_title', 'unknown_marker',
+                                 'duplicate_marker', 'hidden_marker', 'conflicting_visibility'])
+def test_reserved_row_when_visibility_label_is_empty(case: str) -> None:
+    # Given: the observed reservation marker, distinct from owner-authored title text.
+    marker = '<span class="info_status">[예약]</span>'
+    variants = {
+        'plain_title': '[예약]',
+        'unknown_marker': marker.replace('[예약]', '[다른상태]'),
+        'duplicate_marker': marker + marker,
+        'hidden_marker': marker.replace('class=', 'hidden class='),
+    }
+    row = row_html().replace('[예약]', variants.get(case, marker))
+    if case != 'conflicting_visibility':
+        row = row.replace('>공개<', '><')
+    html = '<h2>티스토리 관리센터 본문</h2><ul>' + row + '</ul>'
+    requests: list[str] = []
+
+    def serve(route: Route) -> None:
+        requests.append(route.request.method)
+        route.fulfill(content_type='text/html; charset=utf-8', body=html)
+
+    with sync_playwright() as p, closing(p.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
+        page = browser.new_page(service_workers='block')
+        page.route('**/*', serve)
+        page.goto('https://nedamma.tistory.com/manage/posts/')
+        # When: reading a reservation without inferring visibility or release success.
+        result = read_manager_post(page, PostId('79'))
+        # Then: only the supported structural reservation is accepted.
+        if case == 'reserved':
+            assert result is not None
+            assert result.reserved is True
+            assert result.visibility is None
+            assert result.listed_at == datetime.fromisoformat('2030-01-01T12:00:00+09:00')
+        else:
+            assert result is None
+        assert requests == ['GET']

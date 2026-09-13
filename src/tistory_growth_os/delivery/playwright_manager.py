@@ -23,7 +23,8 @@ class ManagerPostSummary:
     url: str
     category: str
     listed_at: datetime
-    visibility: ManagerVisibility
+    visibility: ManagerVisibility | None
+    reserved: bool
 
 
 def read_manager_post(page: Page, post_id: PostId) -> ManagerPostSummary | None:
@@ -61,9 +62,17 @@ def read_manager_post(page: Page, post_id: PostId) -> ManagerPostSummary | None:
         listed_at = datetime.strptime(stamp, '%Y-%m-%d %H:%M').replace(tzinfo=KST)
     except ValueError:
         return None
-    visibility = {'공개': ManagerVisibility.PUBLIC, '비공개': ManagerVisibility.PRIVATE,
-                  '보호': ManagerVisibility.PROTECTED}.get(setting.inner_text(timeout=3000).strip())
-    category_text = category.inner_text(timeout=3000).strip()
-    if visibility is None or page.url != original_url:
+    marker = title.locator('.info_status')
+    if marker.count() > 1:
         return None
-    return ManagerPostSummary(post_id, display_title, target_url, category_text, listed_at, visibility)
+    reserved = marker.count() == 1
+    if reserved and (not marker.is_visible() or marker.inner_text(timeout=3000).strip() != '[예약]'):
+        return None
+    setting_text = setting.inner_text(timeout=3000).strip()
+    visibility = {'공개': ManagerVisibility.PUBLIC, '비공개': ManagerVisibility.PRIVATE,
+                  '보호': ManagerVisibility.PROTECTED}.get(setting_text)
+    category_text = category.inner_text(timeout=3000).strip()
+    if ((reserved and bool(setting_text)) or (not reserved and visibility is None)
+            or page.url != original_url):
+        return None
+    return ManagerPostSummary(post_id, display_title, target_url, category_text, listed_at, visibility, reserved)

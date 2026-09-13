@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Reserved manager row support, 2026-09-13
+
+- Completed: actual80 field inspection identifies empty visibility label on reserved row, not missing date/title.
+- Completed: structural marker inspected;6cases added,2fail before fix; typed reserved flag with unknown visibility implemented.
+- Completed: actual80 reload equality, actual79 public/nonreserved and missing-ID checks. Manager/settings31pass, types/compilation/checker pass; full278pass/1known legacy failure. Evidence prepared for scoped commit/push, no merge clearance or editor/save/scheduler writes.
+- Deferred: representative/editor-settings binding and complete input/upload/save integration remain next acceptance work.
+
 ## Live tag readback correction, 2026-09-13
 
 - Completed: independently reopened80; repeated snapshot stable but display # prefix causes expected-set mismatch.

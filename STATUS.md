@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 reserved manager-row observation
+
+Resolved actual80 reader gap: all fields were unique but platform leaves visibility label empty and supplies a structural .info_status reservation marker. ManagerPostSummary now separates reserved boolean from optional visibility; reserved80 does not imply PUBLIC. Unknown/hidden/duplicate marker, plain title imitation or conflicting nonempty setting fails closed. Existing publish-dialog visibility contract unchanged; reader remains read-only.
+
+RED2failed/16passed in15.42s; minimum implementation then manager/settings browser31passed in26.37s. basedpyright0errors, compileall exit0, programming checker clean2files. Full offline278passed/1pre-existing status substring failure in13.78s, unchanged; no merge clearance. Actual SDK80: reserved=True, visibility=None, sports category and19:00KST today; reload_equal True. Existing79 PUBLIC/nonreserved and missing-ID rejection verified. No editor input/save/upload/scheduler changes; dedicated context closed, debug journal removed after findings preserved here. docs/36_manager_reader.md contains contract/evidence. Overall automation readiness40–50% management estimate remains: representative/full reservation binding and reviewed input/upload/save E2E are still next, not declared complete.
+
 ## 2026-09-13 actual tag reader — display-prefix fix verified
 
 Dedicated Chrome profile reached manager READY without new credentials. First discovery required a visible edit link and found none; scoped row80 DOM exposed the unique hidden /manage/post/80 href, which was opened read-only. Actual saved editor and explicit reload both returned # prefixed tags, failing the expected set. DOM confirmed inner text #테니스 versus aria-label 테니스 태그 수정; all four share this display convention. Wrong editor identity81 was rejected. This was a fixture gap, not a login or saved-content defect.
