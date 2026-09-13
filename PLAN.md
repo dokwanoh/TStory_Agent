@@ -4,7 +4,7 @@
 
 Owner addition (ADR-049): between the Operations stage below and Learning, reserve a neighbor-blog commenting subagent workstream (BL-012). Detailed instructions will be supplied later; status OWNER_DECISION_REQUIRED, not implemented or activated. Do not spawn an agent or post comments now. This placement refers to stages2and3 of the last displayed execution list, not the original owner priority labels.
 
-1. Delivery: actual body/media input, reservation save and independent same-ID content/settings readback. Immediate work remains browser connection recovery and complete fixed-package E2E.
+1. Delivery: actual body/media input, reservation save and independent same-ID content/settings readback. Connection recovery and native body/existing publish-settings readers are verified (slices G/H); complete metadata binding and fixed-package E2E remain.
 2. Operations (owner3): single scheduled worker, persistent recovery, kill switch and alerts; shadow before any approved single-writer cutover.
 3. Learning (owner4): authorized performance collection, data-quality checks, refresh decisions and evaluated improvement loop, initially using existing posts.
 4. Generation (owner2): low-cost evaluated model for research/Top5 drafts/four assets/review, integrated only after the preceding delivery/operations/learning foundations.
@@ -12,6 +12,8 @@ Owner addition (ADR-049): between the Operations stage below and Learning, reser
 Priority-update increment completed: AGENTS, ADR-048 and progress checkpoint aligned. Remaining feature work above is not completed by this ordering decision. Before generation integration, reviewed fresh packages are supplied separately; an empty/ineligible slot is skipped, not filled with old content. Existing budget/access/quality/cutover boundaries remain.
 
 ## 2026-09-13 overall progress reconciliation
+
+Latest continuation: G/H completed with synthetic browser tests and actual79 reload readback. The older connection-blocker entries below are historical and resolved for those observations. Next milestone remains complete program-driven reservation, not claimed complete. Owner requests overall readiness in every report: approximately40–50% until a meaningful acceptance gate changes; traffic attainment UNKNOWN. Feature details: docs/38_editor_content_reader.md and docs/39_publish_settings_reader.md.
 
 - Completed: distinguish original M0–M6 readiness from agent-free program delivery; updated remaining acceptance work in docs/37_progress_checkpoint.md and roadmap.
 - Blocked this increment: fresh saved-editor discovery. Manager URL read succeeded; role-based edit link timed out, interrupted operator REPL lost its driver connection, then native screen-control inventory timed out. No confirmed login expiry and no article/save/upload operation. Previous live-reader success remains dated evidence, not current connection health.
