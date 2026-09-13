@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## 2026-09-13 overall progress reconciliation
+
+- Completed: distinguish original M0–M6 readiness from agent-free program delivery; updated remaining acceptance work in docs/37_progress_checkpoint.md and roadmap.
+- Blocked this increment: fresh saved-editor discovery. Manager URL read succeeded; role-based edit link timed out, interrupted operator REPL lost its driver connection, then native screen-control inventory timed out. No confirmed login expiry and no article/save/upload operation. Previous live-reader success remains dated evidence, not current connection health.
+- Deferred until healthy browser connection: saved body/media/settings reader, normal input/upload/save integration and complete fixed-package E2E. Do not request credentials or migrate the active scheduler merely to address this tool interruption.
+
 ## Automation slice F — observed manager-row reader
 
 - Completed: real DOM-backed optional Playwright reader and failing-first synthetic Chrome cases; exact target, single row/fields, typed date and visibility setting.

@@ -1,5 +1,9 @@
 # 08. 전달 로드맵
 
+## 2026-09-13 현재 해석
+
+아래 초기 로드맵의 M3 승인 대기/범위 밖 표현은 역사적 초기 조건이다. 이후 ADR-031/032 등으로 에이전트 보조 게시·예약 운영이 승인됐고,79번의 예약→정시 공개가 관측됐다. 이것을 독립 Python 게시기의 완료로 해석하지 않는다. 최신 준비도와 남은 합격 조건은 [진행 현황](37_progress_checkpoint.md)을 따른다. 전체40~50% 진행/50~60% 잔여는 기능 준비도에 대한 관리용 추정이며, 공수·유입 성장률·일정 예측이 아니다. 비공개 성과 baseline과 M4/M6 운영 근거는 여전히 미확보다.
+
 ## Milestone 0 — Resurrection Audit
 
 환경·정책 조사와 provisional AS-IS를 만들고 공개 inventory와 private telemetry 접근을 분리한다. 2026-09-07에 URL, sitemap/RSS/robots, 63개 entry의 HTTP 상태와 대표 위험 표본을 읽기 전용으로 확인했다. 이어서 63개 전부에 metadata-only intent hint·freshness·risk·action candidate를 생성했다. 후속 공개 자산 조사에서는 이미지 139개와 query-free 주소 52개를 확인했고, 36개 HEAD 2xx와 16개 미해결을 구분했다. 이미지 권리·실제 렌더링/재생과 현재 performance baseline은 여전히 `UNKNOWN`이다. 과거 문체는 미래 전략 입력에서 제외한다. 완료 조건은 사실·가설·미확정이 구분되고 각 unknown이 무엇을 막는지 설명되는 것이다.

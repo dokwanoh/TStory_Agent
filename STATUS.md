@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 overall remaining-work checkpoint
+
+Reconciled original milestones and independent-worker readiness in docs/37_progress_checkpoint.md; roadmap now labels old M3 scope hold historical rather than current. Overall40–50% readiness is a broad management estimate, not measured effort/traffic. Autonomous generation/complete editor delivery/worker recovery/telemetry remain substantive gaps, not finishing touches. No new code or deployment pass claimed.
+
+Fresh editor discovery blocked: management URL confirmed, edit-role locator timed out; operator REPL interrupt was followed by Playwright driver connection closed, native screen inventory timeout. No successful new editor observation, post/editor/media write, save or scheduler change. This is tool connection evidence, not confirmed login expiry; do not request owner reauthentication without a real auth screen. Earlier live observations remain dated, not current session-health guarantees. Next: recover browser connection then complete saved-content/input/upload integration. Prior tests278pass/1legacy status failure are historical; this increment changes documentation only.
+
 ## 2026-09-13 automation slice F — real manager metadata reader
 
 Optional playwright_manager.py observes a specific numeric post ID from exact nedamma manager origin/path and heading, requiring a single row/title/date/category/visibility control. Returns a typed summary or None for unsupported/ambiguous observations; no clicks, navigation or mutation inside reader. Live article79 title/URL/category스포츠/listed12:00/public-setting extracted and identical after explicit operator reload; unknown ID999999999 returned None on the current page. No post/editor/upload/scheduler writes. Visibility is a setting, not public-release proof; no complete ReservationObservation is fabricated from list metadata.
