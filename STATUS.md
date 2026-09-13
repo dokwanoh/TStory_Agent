@@ -1129,3 +1129,11 @@ Owner deleted the 19:21 post as too weak. Durable rules updated in tistory-edito
 ## 2026-09-13 owner correction — official-media priority
 
 Owner requires official project/agency imagery to be preferred whenever available, with visible attribution and repository provenance. If no official image exists or reuse permission is unclear, use the distant photorealistic fallback and never represent it as an official photograph. Rule recorded as tistory-editorial-cycle ADR-056 and project ADR-056.
+
+## 2026-09-13 21:04KST public post — e편한세상 동탄역 어반원
+
+Owner requested a new publication challenge for the e편한세상 동탄역 어반원 subject. Official e편한세상 pages were used for the supply data, price ranges, historical schedule and project links. Two official page images were embedded with visible attribution; two distant photorealistic context images were embedded as explicitly non-official reference images. Public copy does not expose internal trend selection or operating strategy.
+
+Chrome authenticated editor accepted the title/body and four-image representation. Category was left unselected per the current owner rule; home topic remained unselected. One `공개 발행` action was performed.
+
+Anonymous readback: RSS item and public URL returned HTTP 200; exact title present; description length 191,595 bytes; exactly four image tags; official `elife.co.kr` links present. Public URL: `https://nedamma.tistory.com/entry/e%ED%8E%B8%ED%95%9C%EC%84%B8%EC%83%81-%EB%8F%99%ED%83%84%EC%97%AD-%EC%96%B4%EB%B0%98%EC%9B%90-%EB%B6%84%EC%96%91%EC%A0%95%EB%B3%B4-%ED%83%80%EC%9E%85%C2%B7%EB%B6%84%EC%96%91%EA%B0%80%C2%B7%EC%9D%BC%EC%A0%95-%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0`.
