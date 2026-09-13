@@ -1160,3 +1160,11 @@ Updated local drafts (not published):
 - `content/fasttrack/2026-09-13-arkmer-dongtan/article.md`: document-first due-diligence checklist; separates promotional figures from items requiring the official housing recruitment notice.
 
 Both drafts include a concise summary, independent source links, checked dates, uncertainty boundaries and practical next checks. No editor write, upload, schedule or external service call occurred in this run.
+
+## 2026-09-13 23:40KST owner-approved public fast-track — 추석 뒤 9월 28일 휴일 여부
+
+Owner explicitly requested 게시하세요 for the first of the two linked-source drafts. Using the already authenticated Chrome Tistory editor, entered the reviewed Korean synthesis and performed one native `공개 발행` action. The manager readback after redirect/reload showed the new row (`inpCheck86`), public state, timestamp `2026-09-13 23:40`, and category `카테고리 없음`; home topic remained `선택 안 함` because the new-editor topic control was not selected.
+
+Public URL: `https://nedamma.tistory.com/entry/9%EC%9B%94-28%EC%9D%BC-%EC%9B%94%EC%9A%94%EC%9D%BC-%EC%A0%95%EB%A7%90-%ED%95%98%EB%A3%A8-%EB%8D%94-%EC%89%AC%EB%8A%94-%EA%B1%B8%EA%B9%8C-%EB%8B%AC%EB%A0%A5%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EB%B3%BC-%EA%B2%83`. Independent anonymous fetch returned HTTP 200; UTF-8 decode replacement count `0`, title present, raw HTML `<img>` count `2` (not a four-image contract pass). The editor observation before publish contained one inserted body image; the local package has additional media, but they were not claimed as live uploads.
+
+This is a verified public creation, not a claim that the second Dongtan draft was published. No Lighthouse, print, screen-reader, external-ad or pixel/image audit was run per owner exclusions. The remaining media completeness and classification limitations stay visible for follow-up rather than being silently passed.
