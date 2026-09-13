@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Automation slice D — bounded normal sign-in
+
+- Completed: failing-first deterministic login flow tests; normal login/account selection at most once each, all other states stop.
+- Completed: optional Playwright adapter for observed UI only; no secret reading or article writes. Runtime profile/package folders excluded from repository test copies and source-secret audit inputs.
+- Completed: seven unit tests, nine real-Chrome fixture tests, strict types and actual dedicated-profile close/reopen normal-login recovery. Evidence: docs/34_bounded_signin.md. Full suite has one pre-existing status-text failure; no PR/merge pass.
+- Deferred beyond this increment: editor adapter and scheduler cutover. Existing scheduler remains the sole live writer.
+
 ## Approved setup slice C — project browser environment
 
 - Completed: Playwright1.62.0 and dependencies installed in project-only .venv; pip check passes.
