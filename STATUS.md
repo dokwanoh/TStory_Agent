@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 approved browser setup slice C
+
+Validation: PYTHONPATH=src pytest -q tests/test_save_intents.py tests/test_reservation_readback.py →40passed in0.08s. Initial invocation without PYTHONPATH failed collection because this src-layout package is not globally installed; corrected invocation above passes, no test/code changes. basedpyright0errors/0warnings; git diff --check clean. Full suite was not repeated for this setup/documentation-only change; earlier legacy status test and clean-checkout fixture debt remain unresolved, so no PR/merge pass is claimed.
+
+Installed Playwright1.62.0 in project-only .venv with greenlet3.5.5, pyee13.0.1 and typing_extensions4.16.0; pip check passes. Created ignored browser-profile mode0700. Actual headful Chrome152.0.7977.83 with sandbox enabled passed fresh local interaction and close/reopen synthetic storage persistence. Removed only the test marker and closed both rehearsal contexts. No personal-profile/cookie copying, Tistory actions, model calls, global configuration or scheduler change. Authenticated-session persistence remains untested. Reproduction/limits: docs/33_browser_setup.md. This supersedes the older installation-unavailable observation below, not its historical result.
+
 ## 2026-09-13 automation slice B — deterministic reservation readback
 
 Implemented typed reservation content/target/observation, exact field comparator and canonical KST daily slots. Tests written first: absent module red; explicit invalid-slot assertions3failed before constructor guard, then green. Focused save-intent/readback40passed; whole local suite258passed/1known legacy status failure in10.36s; basedpyright0errors/0warnings; compileall exit0. New modules151/133total lines; no Any/cast/type-ignore, mutable record, network or model dependency. The module owns reservation-record equivalence and time-slot values only, not editorial approval or remote authority.

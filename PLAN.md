@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Approved setup slice C — project browser environment
+
+- Completed: Playwright1.62.0 and dependencies installed in project-only .venv; pip check passes.
+- Completed: ignored browser-profile mode0700; real Chrome launch/close/reopen and synthetic storage persistence pass.
+- Completed: pinned versions and setup evidence recorded; focused40tests and type check pass. Scoped feature-branch delivery follows; no live delivery or scheduler cutover in this setup.
+- Deferred: dedicated-profile authentication and real editor adapter. Existing session and live scheduler remain unchanged; setup does not certify these future steps.
+
 ## Active automation slice B — reservation readback
 
 - Completed: failing-first tests and typed reservation expectations, exact saved-state comparator and KST daily slots.

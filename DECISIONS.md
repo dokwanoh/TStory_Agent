@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## ADR-047 — approved isolated Playwright setup (2026-09-13)
+
+Owner answered yes to project-only Playwright installation and dedicated automation profile. Use isolated .venv and ignored browser-profile, preserve installed personal Chrome and all user data. Reuse the supported Chrome channel if available rather than downloading an unnecessary second browser; keep Chromium sandbox enabled. Official persistent-context documentation requires a separate user-data directory and only one active instance per directory. No session/cookie export, stealth, authentication bypass or live scheduler migration. Core offline dependencies remain unchanged; browser tooling is an explicit separate environment.
+
 ## ADR-046 — standing commit, push and gated auto-merge (2026-09-13)
 
 Owner explicitly authorizes these operations for every ordinary scoped repository change without renewed confirmation. Supersedes ADR-045's initial upload confirmation requirement. Keep reviewed feature branches, exact-commit tests/reviews and verified merge result; never bypass failed gates or protected workflows. No public conversion, billing or forced history changes. Repo private; protection API returns403 plan restriction; requested allow_auto_merge=true still reads false. This is a platform limitation, not owner indecision. First upload excludes earlier broad local artifacts/code awaiting inspected import, and does not hide their existing test failure. Protocol is docs/31_repository_delivery.md.
