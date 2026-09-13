@@ -1149,3 +1149,14 @@ Enabled the owner-approved AppleScript accessibility path and replaced the body 
 ## 2026-09-13 deletion of post 85
 
 Owner explicitly confirmed deletion after the failed encoding/media recovery. Deleted only post ID 85 through the Tistory management list. RSS readback returns zero matches for the title. No other post was modified.
+
+## 2026-09-13 local drafts — linked-source original synthesis
+
+Owner requested two new articles from an Edaily holiday lead and a WowTV Dongtan lead, with related-keyword research and original angles rather than source reproduction. Cross-checked the holiday topic against the Korea Astronomy and Space Science Institute 2026 calendar notice and the National Law Information Center holiday regulation. Cross-checked the Dongtan topic against the project’s official homepage plus NewsPim and Edaily reports.
+
+Updated local drafts (not published):
+
+- `content/fasttrack/2026-09-13-chuseok-extra-holiday/article.md`: confirmed-vs-undecided calendar explainer with a practical planning checklist; explicitly states that 9/28 is not confirmed as a temporary holiday.
+- `content/fasttrack/2026-09-13-arkmer-dongtan/article.md`: document-first due-diligence checklist; separates promotional figures from items requiring the official housing recruitment notice.
+
+Both drafts include a concise summary, independent source links, checked dates, uncertainty boundaries and practical next checks. No editor write, upload, schedule or external service call occurred in this run.
