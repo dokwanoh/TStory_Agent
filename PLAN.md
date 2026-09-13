@@ -1,9 +1,17 @@
 # TISTORY GROWTH OS — execution plan
 
+## Active automation slice B — reservation readback
+
+- Completed: failing-first tests and typed reservation expectations, exact saved-state comparator and KST daily slots.
+- Completed: actual local library/SQLite rehearsal, focused40tests and type check; scoped commit/push is the delivery step.
+- Blocked/deferred: live browser adapter, live scheduler cutover and PR merge. This local comparator grants no remote authority and does not certify browser observations.
+
+The previous import is committed/pushed as64b23b9. Clean checkout has224passes/3failures: legacy status wording plus two tests requiring an intentionally excluded pilot content fixture. Original workspace has226passes/1failure. Neither result is a merge pass.
+
 ## 2026-09-13 safe offline-MVP import
 
 - Completed: inspect import file types, secret-pattern scan and repository audit; redact local home paths and saved account labels from shareable memory.
-- In progress: commit/push source, contracts, reproducible fixtures and required project docs; preserve one explicitly inspected design-state Markdown fixture, not other harness state.
+- Completed: import commit/push64b23b9; preserved one explicitly inspected design-state Markdown fixture. Clean-checkout testing found two missing pilot-fixture dependencies, recorded above; import is not certified reproducible yet.
 - Blocked: merge readiness. Legacy status substring test fails; do not weaken it, hide operational evidence or call the import green. Native auto-merge is independently not enabled.
 
 ## 2026-09-13 automation implementation slice A

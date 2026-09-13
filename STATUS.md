@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 automation slice B — deterministic reservation readback
+
+Implemented typed reservation content/target/observation, exact field comparator and canonical KST daily slots. Tests written first: absent module red; explicit invalid-slot assertions3failed before constructor guard, then green. Focused save-intent/readback40passed; whole local suite258passed/1known legacy status failure in10.36s; basedpyright0errors/0warnings; compileall exit0. New modules151/133total lines; no Any/cast/type-ignore, mutable record, network or model dependency. The module owns reservation-record equivalence and time-slot values only, not editorial approval or remote authority.
+
+Manual public-library/real-SQLite driver: noon prepare09:00/release12:00+09:00, matchingVERIFIED, wrong bodyMISMATCH/body_digest, missing observationUNKNOWN/missing_readback, restart retryfalse. All inputs synthetic; external_write_count0/model_calls0, no browser/login/post/schedule actions. Details docs/32_reservation_readback.md. Operational Python Playwright probe false; installation and dedicated-profile scope require owner approval before live reader work.
+
+Recovered prior interrupted import check: clean detached64b23b9 had224passed/3failed, not226/1. Additional two failures require content/pilots/chuseok-2026/offline-request.review-required.json, excluded by content privacy rule. Record reproducibility debt; do not mark branch green, waive tests or merge. Existing worktree contains that file, explaining its different total. No PR review/merge attempted.
+
 ## 2026-09-13 offline MVP import verification
 
 Prepared the existing offline implementation, schemas, fixtures/tests and project memory for the designated private feature branch. This is preservation/import, not a new milestone pass. Redacted local home paths and saved-login labels in shareable Markdown; generated article content/media, .artifacts, runtime DBs, credentials and harness logs remain excluded. One inspected .omo/frontend-design/state.md is included because existing design-contract tests read this static document; no other .omo files are imported and runtime has no .omo dependency.
