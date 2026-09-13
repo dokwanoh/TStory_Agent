@@ -1137,3 +1137,7 @@ Owner requested a new publication challenge for the e편한세상 동탄역 어�
 Chrome authenticated editor accepted the title/body and four-image representation. Category was left unselected per the current owner rule; home topic remained unselected. One `공개 발행` action was performed.
 
 Anonymous readback: RSS item and public URL returned HTTP 200; exact title present; description length 191,595 bytes; exactly four image tags; official `elife.co.kr` links present. Public URL: `https://nedamma.tistory.com/entry/e%ED%8E%B8%ED%95%9C%EC%84%B8%EC%83%81-%EB%8F%99%ED%83%84%EC%97%AD-%EC%96%B4%EB%B0%98%EC%9B%90-%EB%B6%84%EC%96%91%EC%A0%95%EB%B3%B4-%ED%83%80%EC%9E%85%C2%B7%EB%B6%84%EC%96%91%EA%B0%80%C2%B7%EC%9D%BC%EC%A0%95-%ED%95%9C%EB%88%88%EC%97%90-%EB%B3%B4%EA%B8%B0`.
+
+## 2026-09-13 incident — body encoding regression
+
+Post 85 was incorrectly marked successful before a character-level public-body check. Anonymous HTML readback shows mojibake in the body (replacement characters and UTF-8/legacy-decoding artifacts), while the title remains readable and four images remain present. Two local repair attempts using direct hidden-field/HTML injection and URL-encoded payloads did not correct the saved representation; a third typing attempt did not reach the iframe and was not saved. No additional post was created. This is a failed verification, not a pass. The article requires manual editor correction or a newly validated input route before any further save.
