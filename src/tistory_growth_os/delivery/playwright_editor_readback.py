@@ -24,6 +24,33 @@ class EditorContentSnapshot:
     media: tuple[EditorImage, ...]
 
 
+@dataclass(frozen=True, slots=True)
+class EditorTagsSnapshot:
+    post_id: PostId
+    tags: frozenset[str]
+
+
+def read_editor_tags(page: Page, post_id: PostId) -> EditorTagsSnapshot | None:
+    original_url = page.url
+    parsed = urlsplit(original_url)
+    if (re.fullmatch(r'[1-9][0-9]*', post_id) is None
+            or parsed.scheme != 'https' or parsed.netloc != 'nedamma.tistory.com'
+            or parsed.path != f'/manage/newpost/{post_id}'):
+        return None
+    title = page.locator('#post-title-inp')
+    if title.count() != 1 or not title.is_visible() or not title.input_value().strip():
+        return None
+    links = page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'))
+    labels = tuple(label.strip() for label in links.all_inner_texts())
+    if (not labels or any(not label for label in labels)
+            or len(set(labels)) != len(labels)
+            or any(not link.is_visible() for link in links.all())
+            or page.url != original_url
+            or tuple(label.strip() for label in links.all_inner_texts()) != labels):
+        return None
+    return EditorTagsSnapshot(post_id, frozenset(labels))
+
+
 def read_editor_content(page: Page, post_id: PostId) -> EditorContentSnapshot | None:
     original_url = page.url
     parsed = urlsplit(original_url)

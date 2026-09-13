@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## Automation slice I — tag readback
+
+- Completed: failing-first browser test (absent read_editor_tags function).
+- Completed: read-only typed tag snapshot; no editor input or final save.
+- Completed: real-Chrome fixture33pass, typed SDK rehearsal, types/compilation/checker pass. Full suite278pass/1pre-existing status-text failure; no merge clearance. Representative binding and live tag-adapter certification remain separate next work, not implied by synthetic success.
+
 ## Owner execution order — 1→3→4→2 (2026-09-13)
 
 Owner addition (ADR-049): between the Operations stage below and Learning, reserve a neighbor-blog commenting subagent workstream (BL-012). Detailed instructions will be supplied later; status OWNER_DECISION_REQUIRED, not implemented or activated. Do not spawn an agent or post comments now. This placement refers to stages2and3 of the last displayed execution list, not the original owner priority labels.

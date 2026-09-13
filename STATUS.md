@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 automation slice I — typed tag reader
+
+Added read_editor_tags to the existing editor adapter: exact numeric saved-editor origin/path, visible nonempty title, nonempty distinct visible tag labels, stable repeated label observation; returns frozen tag set with post identity or None. No clicks/navigation/input/upload/save. Representative binding and complete reservation comparison are not inferred.
+
+RED missing function AttributeError; new browser9pass in7.72s; combined editor/tag/settings33pass in27.66s, all synthetic requests locally fulfilled in real Chrome. basedpyright0errors, compileall exit0, programming checker clean2files. Manual SDK fixture returned expected tag snapshot for80 and None for81. Initial driver used incompatible system Python/greenlet; rerun with project .venv. Its first fixture omitted UTF-8 and correctly returned None for misdecoded labels; explicit UTF-8 returned the expected Korean tag. No package or code change to mask those rehearsal setup mistakes. Full suite278pass/1pre-existing STATUS substring failure in11.30s, unchanged; no merge clearance. Actual Tistory tag adapter not certified by fixture results.80reservation untouched, no external writes/session or scheduler changes. Overall readiness40–50% estimate remains.
+
 ## 2026-09-13 evening reservation — article80 verified
 
 Owner-unlocked continuation completed the same sole editor, not a duplicate. One final save at approximately16:54KST created article80; manager74posts shows selected Rybakina title with reservation prefix, category스포츠 and2026-09-13 19:00. Opened observed /manage/post/80 link and independently read back full prose, three headings, two official WTA links, four ordered alt-labelled images, four tags and category. Saved publish panel retains 공개/home스포츠일반/date2026-09-13/hour19/min00 and correct cover representative. Cancelled readback panel and left editor without another save; manager reservation remains. Public release at19:00 is future/unverified, not claimed now.
