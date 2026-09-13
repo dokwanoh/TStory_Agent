@@ -60,3 +60,44 @@ def test_saved_panel_reads_only_unambiguous_observed_settings(case: str) -> None
         else:
             assert result is None
         assert requests == ['GET']
+
+
+@pytest.mark.parametrize('case', ['valid', 'missing', 'invalid_day', 'hour', 'minute',
+                                 'hidden', 'duplicate', 'current'])
+def test_reservation_form_when_date_and_time_are_explicit(case: str) -> None:
+    # Given: separate reservation controls observed on the saved editor.
+    controls = '<button class="btn_reserve">2030-01-01</button>'
+    controls += '<input id="dateHour" type="number" value="19">'
+    controls += '<input id="dateMinute" type="number" value="00">'
+    html = panel_html().replace('2030-01-01 12:00', '예약').replace('</div>', controls + '</div>')
+    variants = {
+        'missing': html.replace('id="dateHour"', 'id="other"'),
+        'invalid_day': html.replace('2030-01-01', '2030-02-30'),
+        'hour': html.replace('value="19"', 'value="24"'),
+        'minute': html.replace('value="00"', 'value="60"'),
+        'hidden': html.replace('class="btn_reserve"', 'class="btn_reserve" hidden'),
+        'duplicate': html.replace('</div>', controls + '</div>'),
+        'current': html.replace('class="btn_date on">예약', 'class="btn_date on">현재'),
+    }
+    requests: list[str] = []
+
+    def serve(route: Route) -> None:
+        requests.append(route.request.method)
+        route.fulfill(content_type='text/html; charset=utf-8', body=variants.get(case, html))
+
+    with sync_playwright() as p, closing(p.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
+        page = browser.new_page(service_workers='block')
+        page.route('**/*', serve)
+        page.goto('https://nedamma.tistory.com/manage/newpost/80')
+        # When: reading the form without submitting it.
+        result = read_publish_settings(page, PostId('80'))
+        # Then: scheduled time is explicit and is not an existing publication timestamp.
+        if case == 'valid':
+            assert result is not None
+            assert result.existing_at is None
+            assert result.scheduled_at == datetime.fromisoformat('2030-01-01T19:00:00+09:00')
+            assert result.visibility is ManagerVisibility.PUBLIC
+            assert result.home_topic == '스포츠일반'
+        else:
+            assert result is None
+        assert requests == ['GET']

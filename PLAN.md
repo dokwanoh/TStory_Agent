@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Reservation panel observation, 2026-09-13
+
+- Completed: actual80 panel inspected without final save: selected 예약, date button2026-09-13, dateHour19/dateMinute00.
+- Completed:8new cases,1failure before implementation; explicit scheduled_at separate from existing_at, strict visible date/time controls.
+- Completed: actual80 cancel/reload/reopen equal and manager time matches; wrong81 rejected. Manager/settings39pass, types/compilation/checker pass; full278pass/1known legacy failure. Evidence prepared for scoped commit/push. No post or scheduler mutation, no merge clearance.
+- Deferred: representative/complete metadata binding and actual reviewed input/upload/save integration.
+
 ## Reserved manager row support, 2026-09-13
 
 - Completed: actual80 field inspection identifies empty visibility label on reserved row, not missing date/title.

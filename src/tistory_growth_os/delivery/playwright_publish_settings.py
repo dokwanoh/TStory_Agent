@@ -16,8 +16,9 @@ class PublishSettingsSnapshot:
     title: str
     visibility: ManagerVisibility
     home_topic: str
-    existing_at: datetime
+    existing_at: datetime | None
     slug: str
+    scheduled_at: datetime | None
 
 
 def read_publish_settings(page: Page, post_id: PostId) -> PublishSettingsSnapshot | None:
@@ -38,10 +39,23 @@ def read_publish_settings(page: Page, post_id: PostId) -> PublishSettingsSnapsho
     if any(item.count() != 1 for item in (title, home, date, selected, slug_input)):
         return None
     stamp = date.inner_text(timeout=3000).strip()
+    reserved = stamp == '예약'
+    if reserved:
+        day = panel.locator('button.btn_reserve')
+        hour = panel.locator('input#dateHour[type=number]')
+        minute = panel.locator('input#dateMinute[type=number]')
+        if any(item.count() != 1 or not item.is_visible() for item in (day, hour, minute)):
+            return None
+        day_text = day.inner_text(timeout=3000).strip()
+        hour_text = hour.input_value(timeout=3000)
+        minute_text = minute.input_value(timeout=3000)
+        if any(re.fullmatch(r'[0-9]{1,2}', value) is None for value in (hour_text, minute_text)):
+            return None
+        stamp = f'{day_text} {hour_text.zfill(2)}:{minute_text.zfill(2)}'
     if re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}', stamp) is None:
         return None
     try:
-        existing_at = datetime.strptime(stamp, '%Y-%m-%d %H:%M').replace(tzinfo=KST)
+        observed_at = datetime.strptime(stamp, '%Y-%m-%d %H:%M').replace(tzinfo=KST)
     except ValueError:
         return None
     visibility = {'20': ManagerVisibility.PUBLIC, '15': ManagerVisibility.PROTECTED,
@@ -53,4 +67,6 @@ def read_publish_settings(page: Page, post_id: PostId) -> PublishSettingsSnapsho
             or any(character in slug for character in '/?#%\\') or slug in ('.', '..')
             or page.url != original_url):
         return None
-    return PublishSettingsSnapshot(post_id, title_text, visibility, home_text, existing_at, slug)
+    return PublishSettingsSnapshot(post_id, title_text, visibility, home_text,
+                                   None if reserved else observed_at, slug,
+                                   observed_at if reserved else None)

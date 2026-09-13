@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-13 reservation-form settings readback
+
+Extended existing publish-panel reader to distinguish existing_at from scheduled_at. Actual80 exposes separate visible date button/hour/minute controls when 예약 is selected; strict date/time parsing and unique/visible field checks reject unsupported inputs. Current mode remains ineligible. No action inside reader; selected PUBLIC is a setting, not proof of public release.
+
+RED1failed/20passed in17.82s; extended manager/settings browser39passed in34.33s. Types0errors, compileall exit0, programming checker clean2files. Full offline278passed/1pre-existing STATUS substring failure in16.00s; no test/history weakening or merge clearance. Actual SDK80 scheduled2026-09-13T19:00+09:00/PUBLIC/home스포츠일반/title/slug readback equals after cancel/reload/reopen; manager reservation timestamp matches, wrong81 rejected. No fields changed, final save/upload/scheduler writes0; dedicated context closed normally. docs/39_publish_settings_reader.md records scope. Overall automation readiness40–50% estimate remains; representative/full metadata binding and actual reviewed input/upload/save integration remain, not finishing claims.
+
 ## 2026-09-13 reserved manager-row observation
 
 Resolved actual80 reader gap: all fields were unique but platform leaves visibility label empty and supplies a structural .info_status reservation marker. ManagerPostSummary now separates reserved boolean from optional visibility; reserved80 does not imply PUBLIC. Unknown/hidden/duplicate marker, plain title imitation or conflicting nonempty setting fails closed. Existing publish-dialog visibility contract unchanged; reader remains read-only.
