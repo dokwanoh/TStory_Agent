@@ -10,6 +10,8 @@ Next resume point: recover the native file-picker surface, insert four images in
 
 Additional recovery attempt at 07:22KST used the keyboard-open route and exact local cover path; the editor returned with `0개의 파일을 업로드 중입니다` and no image node. This confirms the current chooser interaction did not select a file; it is not a successful upload.
 
+Additional native-picker retry at 07:34KST: the chooser was navigated through the visible Finder action to the Dongtan `media/` folder, and `cover-web.jpg` reached a verified selected state with the native `열기` button enabled. After opening, Tistory again inserted the filename as body text and exposed a missing-image node while the upload counter stayed at `0개의 파일을 업로드 중입니다`. The malformed insertion was removed by restoring the body through the normal editor. No save, publish, or external state change was performed.
+
 ## 2026-09-13 actual HTML input rehearsal succeeded
 
 This-turn regression: browser_tests/test_html_input.py8passed in6.21s; basedpyright0errors/0warnings. Documentation-only changes; no full-suite rerun or new merge clearance.
