@@ -1113,3 +1113,11 @@ Editor pre-save readback showed title unchanged, category `생활정보`, home t
 Anonymous live readback verified the new reader-facing section `요즘 왜 고구마 얘기가 자꾸 보일까?`, no forbidden strategy terms, old weather title absent, four image tags/data images, image hashes matching the local web JPEGs, and the Nongsaro link present.
 
 ADR-053 records the durable loop rule: public article copy must not expose internal trend-source names, candidate ranking, scoring criteria, traffic rationale or topic-selection reasoning unless the owner explicitly asks for a transparent case-study post.
+
+## 2026-09-13 19:21KST new public post — 살림하는 남자들
+
+Owner requested one additional article. Current top-five candidate screening identified `살림하는 남자들`; public copy contains only reader-facing KBS schedule information and does not expose internal trend sources, ranking or selection rationale. KBS official digital schedule was checked for 2026-09-13 and lists the program at 21:20.
+
+Local artifacts: `content/fasttrack/2026-09-13-sallimnamja/article.md`, `run.md`, and four photorealistic generated web-sized JPEGs under `media/`. Pre-save editor checks: title present, public mode selected, four images, two KBS links, no forbidden strategy terms. Generated PNGs were converted to JPEG before insertion to keep the editor payload within the proven size range.
+
+Chrome authenticated editor final save was clicked once. Manager returned to `/manage/posts/` with a new row at `2026-09-13 19:21`, category `카테고리 없음` (new-editor category picker was not exposed); home topic remained default. Anonymous RSS/public readback confirmed the title, KBS link, exactly four images, and absence of internal strategy terms. External write count for this run: one owner-requested post creation.
