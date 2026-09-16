@@ -1228,3 +1228,7 @@ The preparation trigger was checked at the scheduled time. A fresh public search
 ## 2026-09-16 09:10KST alt-control recheck
 
 Selected the first image in the same editor and opened the inline `대체 텍스트 삽입` control. The visual editor showed only the image selection frame; no editable alt field or dialog appeared in the native accessibility tree. No typing, mode switch, save, reservation, or publish action followed. Four image nodes and the previously selected `생활정보` category remain intact; the draft stays unsaved and unreserved.
+
+## 2026-09-16 09:12KST alt-control bounded retry
+
+A bounded native retry used fresh image selection, inline alt-button activation and double-click. The editor again exposed no editable alt field or dialog and left the four image nodes unchanged. No further typing or save attempt was made. This route is recorded as `BLOCKED_ALT_CONTROL` rather than a platform-wide diagnosis; existing draft identity and local assets remain preserved.
