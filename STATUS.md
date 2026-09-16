@@ -1292,3 +1292,18 @@ Recovery note on 2026-09-17: an accidental text-selection deletion temporarily r
 The autosaved editor was discarded through the native confirmation, then a clean editor was populated with the reviewed Seoul bus title/body. Four reviewed JPEGs were uploaded one at a time through the native macOS picker. Fresh editor AX readback showed four image nodes with the intended alt labels: normal-flow, live-check, backup-route and cover; the cover was selected and visibly marked `대표`. The upload queue read `0개의 파일을 업로드 중입니다`, and the title/body remained readable Korean. Lighthouse, print and screen-reader lanes were not run per owner exclusions.
 
 With the owner's prior save approval, the publication form was left at its default private mode and `비공개 저장` was clicked once. The manager then showed new post ID `87`, title `서울 시내버스 파업 피했다는데, 오늘 출근길 뭐가 달라질까? 🚌`, timestamp `2026-09-17 07:04`, category `카테고리 없음`, and visibility `비공개`. Reopening the saved entry read back the same title, two body sentences, four image nodes and all four alt labels. This is a verified private save (`saved_private`), not a reservation or public publication; no scheduler/public action was performed.
+
+## 2026-09-17 weather article private save
+
+The clean editor was populated with the reviewed weather article titled `오늘 아침 10도대, 낮엔 30도? 9월 17일 일교차 출근 준비 체크리스트 ☀️🧥`. One reviewed weather image was uploaded through the native macOS picker and its alt text was confirmed in the editor AX tree as `가을 아침 출근길의 서울 도심과 맑은 하늘`. The publication form remained at the default private setting and `비공개 저장` was activated once. Manager readback shows new post ID `77`, timestamp `2026-09-17 07:34`, category `카테고리 없음`, and visibility `비공개`. This is a verified private save (`saved_private`); no reservation or public publication was performed. The article currently has one confirmed image rather than the four-image target, so it is not a four-image editorial certification.
+## 2026-09-17 — 아크메르 동탄 관련글 사전 패키지
+
+- 원고: `content/fasttrack/2026-09-17-acmer-dongtan/article.md`
+- 실행 기록: `content/fasttrack/2026-09-17-acmer-dongtan/run.md`
+- QA 계약: `content/fasttrack/2026-09-17-acmer-dongtan/qa.json`
+- 상태: `blocked_pre_external` / `external_write_count=0`
+- 확인: 출처 링크·확인일·독창적 재구성·개인 경험 미사용 PASS
+- 차단: 4개 미디어 생성 도구 HTTP 429 사용량 제한, 공식 이미지 재사용 라이선스 불명확
+- 차단: 최신 독립 보도가 2026-09-10으로 24시간 예약 발행 신선도 기준 미충족
+- 제외: Lighthouse·인쇄·화면 낭독은 소유자 영구 제외 규칙 적용
+- 원격 편집기: 열지 않음/저장·예약·게시 미실행. 외부 게시 직전 단계까지의 로컬 준비만 완료.
