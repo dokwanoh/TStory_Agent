@@ -1275,6 +1275,8 @@ Follow-up upload on 2026-09-17: with the owner's approval, `normal-flow.jpg` was
 
 Owner route discovery on 2026-09-17: the owner reported successful alt entry by typing directly into the visible description field immediately below each image, without using the inline `대체 텍스트 삽입` toolbar. Record this as the preferred candidate route for the next native-editor rehearsal; it is not yet independently re-read or a saved-state proof.
 
+Direct-entry probe on 2026-09-17: attempting to type through the AX placeholder in the current recovered editor inserted into the body rather than the intended image description, and was immediately undone. The current autosaved editor therefore cannot safely validate the owner's direct-entry route; a clean editor with one-at-a-time insertion is required before any save.
+
 Continuation after route confirmation: the reviewed `normal-flow.jpg` was inserted through the same native picker and the editor readback now shows two image nodes (cover with confirmed alt, second image still unlabeled). The remaining two reviewed assets were not uploaded because the second image's inline toolbar moved partially off-screen during scrolling; no blind coordinate or DOM fallback was used. Chrome zoom was restored to 100%. No save, reservation or publication occurred.
 
 Second-image alt continuation: after selecting `normal-flow.jpg`, scrolling it into view and activating the visible inline-toolbar gear, the native alt dialog accepted `서울 도심 버스전용차로와 여러 대의 시내버스가 보이는 출근길`. Clicking the visible `확인` button produced a fresh AX readback labeled `이미지 서울 도심 버스전용차로와 여러 대의 시내버스가 보이는 출근길`. The alt-control blocker is resolved for this route; the remaining two assets were not uploaded, and no save, reservation or publication occurred.
