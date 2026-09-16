@@ -1252,3 +1252,7 @@ Selected the first image in the same editor and opened the inline `대체 텍스
 ## 2026-09-16 09:12KST alt-control bounded retry
 
 A bounded native retry used fresh image selection, inline alt-button activation and double-click. The editor again exposed no editable alt field or dialog and left the four image nodes unchanged. No further typing or save attempt was made. This route is recorded as `BLOCKED_ALT_CONTROL` rather than a platform-wide diagnosis; existing draft identity and local assets remain preserved.
+
+## 2026-09-16 Seoul bus stale-image deletion and picker retry
+
+Per explicit owner confirmation, the stale apartment image left in the unsaved editor was deleted through the native editor. Fresh readback shows the Seoul bus title/body and no confirmed apartment image node. A reviewed bus cover (`content/fasttrack/2026-09-16-seoul-bus-deal/media/cover.jpg`) was then selected in the native macOS picker; the picker displayed the correct 900×600 JPEG preview, but activating `열기` returned to the editor with `0개의 파일을 업로드 중입니다` and no new image node. The first upload therefore remains `BLOCKED_NATIVE_FILE_CHOOSER`. No alt dialog, save, reservation or publication was attempted; external write count remains 0.
