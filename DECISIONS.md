@@ -288,3 +288,7 @@ Direct DOM or hidden-field injection is forbidden for production article body tr
 # ADR-058 — source-led, original synthesis (accepted, 2026-09-13)
 
 A linked article is a research lead, never copy to reproduce. Search related keywords across multiple independent sources, cross-check dates and claims, and create a new reader-facing angle. Every article includes a concise summary, confirmed versus undecided facts, practical implications or next checks, and source links. Do not mirror source wording, structure or headline.
+
+# ADR-059 — bounded media re-entry (accepted, 2026-09-17)
+
+The owner explicitly authorizes uploading the two remaining reviewed bus media files to the current unsaved editor through the normal native file picker, followed by native alt-text entry. This narrowly supersedes ADR-050's upload prohibition for the current editor identity only. Final save, reservation, release, publication, existing-post mutation and scheduler cutover remain prohibited. DOM/hidden-field injection and unrelated files or destinations remain disallowed. The purpose is to complete the nonpublication input rehearsal without expanding delivery authority.

@@ -2,6 +2,8 @@
 
 ADR-050 (owner2026-09-13): one new-editor nonpublication input rehearsal html-input-rehearsal-20260913-1800 is approved, including possible automatic temporary storage. No final save, reservation, release, upload, existing-post mutation or scheduler cutover. Approval is consumed by the recorded input; do not create another test identity on continuation. Exact source/title echo is not saved-state proof.
 
+ADR-059 (owner2026-09-17): supersedes ADR-050 only for the current unsaved editor identity: two remaining reviewed bus media files may be uploaded through the normal native file picker and receive alt text. Final save, reservation, release, publication, existing-post mutation and scheduler cutover remain prohibited. No DOM/hidden-field injection or unrelated destination is authorized.
+
 ADR-047 (owner2026-09-13): approved project-only Playwright installation and a separate automation browser profile. Do not copy personal profiles/cookies or change system permissions. Profile/runtime packages remain ignored, outside committed artifacts. This approves setup and local browser rehearsal, not live publisher cutover, session permanence, security bypass or any removed audit lane.
 
 ADR-046 (owner2026-09-13): standing authorization to commit scoped changes, push feature branches and auto-merge reviewed PRs after exact-commit checks pass in dokwanoh/TStory_Agent; do not ask per change. Preserve secrets exclusions and branch protections. No force push, admin bypass, privacy conversion, plan purchase or gate waiver. Native auto-merge remains unavailable/not enabled in the observed private-repository configuration; record holds accurately rather than push directly to main. See docs/31_repository_delivery.md.
