@@ -292,3 +292,7 @@ A linked article is a research lead, never copy to reproduce. Search related key
 # ADR-059 — bounded media re-entry (accepted, 2026-09-17)
 
 The owner explicitly authorizes uploading the two remaining reviewed bus media files to the current unsaved editor through the normal native file picker, followed by native alt-text entry. This narrowly supersedes ADR-050's upload prohibition for the current editor identity only. Final save, reservation, release, publication, existing-post mutation and scheduler cutover remain prohibited. DOM/hidden-field injection and unrelated files or destinations remain disallowed. The purpose is to complete the nonpublication input rehearsal without expanding delivery authority.
+
+# ADR-060 — direct per-image description route (accepted, 2026-09-17)
+
+The owner observed that entering text directly in the description field beneath each image succeeds more reliably than activating the inline alt-text toolbar. Prefer this visible, per-image route for future native-editor rehearsals, while requiring fresh readback to bind each value to the intended image. This changes input method only; it adds no save, reservation or publication authority.
