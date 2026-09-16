@@ -1215,6 +1215,10 @@ Per owner request, the malformed Arkmer editor state is not being repaired. A fr
 
 Media preparation completed locally: four generated, non-documentary photorealistic JPEGs (`cover.jpg`, `normal-flow.jpg`, `live-check.jpg`, `backup-route.jpg`), each 900×600 and below the web-size threshold. The article now references all four with descriptive alt text. Native editor insertion and any save/reservation remain unattempted pending the separate delivery boundary.
 
+## 2026-09-16 owner discard — Arkmer work
+
+Owner instructed that all Arkmer-related work be discarded. The dedicated local directories `content/fasttrack/2026-09-13-arkmer-dongtan/` and `content/fasttrack/2026-09-13-dongtan-urbanone/`, including their media and run records, were moved to the recoverable macOS Trash location `/Users/yeondu/.Trash/tistory-arkmer-discard-20260916/`. Historical STATUS and scheduled-run entries remain as audit history and are not active deliverables. No remote Tistory post was deleted or modified.
+
 Additional continuation on 2026-09-16: the cleaned editor reached Tistory's publication-settings form via `완료`; the default visibility is `비공개`, home topic is `선택 안 함`, and the only available commit action is `비공개 저장`. Because this new Arkmer post is outside the currently scoped private-delivery approvals, the save action was not performed. No reservation, public publication, deletion, or settings change occurred.
 
 Scheduled preparation 2026-09-16 05:12KST for the 08:00 release slot: current web research yielded three plausible fresh leads (Chuseok food-price comparison, Sep16 fog/weather, and holiday livestock supply) but not five independently qualified candidates with complete source, rights, review and four-image packages. The existing editor was an unrelated unsaved state and was not reused. Run artifacts are `content/scheduled/2026-09-16/0800/research.md` and `run.md`; slot outcome is `not_reserved`, external write count 0, with no late publication or rollover.
