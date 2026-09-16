@@ -1224,3 +1224,7 @@ Alt-text recovery was tested only on the first selected image. The inline alt co
 ## 2026-09-16 09:01KST scheduled 12:00 preparation
 
 The preparation trigger was checked at the scheduled time. A fresh public search produced several dated schedules and announcements, but not five independently qualified occurrences with precise event times inside the trailing 24-hour window. The candidate evidence and rejection reasons are recorded in `content/scheduled/2026-09-16/1200/research.md`; execution record is `content/scheduled/2026-09-16/1200/run.md`. Existing Arkmer editor state was not reused, no new editor was opened, and no reservation or other remote write occurred. Outcome: `not_reserved`; no catch-up or rollover.
+
+## 2026-09-16 09:10KST alt-control recheck
+
+Selected the first image in the same editor and opened the inline `대체 텍스트 삽입` control. The visual editor showed only the image selection frame; no editable alt field or dialog appeared in the native accessibility tree. No typing, mode switch, save, reservation, or publish action followed. Four image nodes and the previously selected `생활정보` category remain intact; the draft stays unsaved and unreserved.
