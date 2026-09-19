@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-20 spawn-budget recurrence repair
+
+Implemented tools/spawn_run.py and tools/test_spawn_run.py; operating contract docs/44_spawn_run_budget.md. Existing owner reset78→0 retained; successful first real gpt-6-astra child made count1, adopted without a second reset. Second gpt-6-astra child also created/completed; its independent review found bootstrap/path issues, fixed with failing-first regressions, then returned scoped PASS. Same-run retry never resets, active/closed/unknown/crash/drift/symlink states are held. Native hook/global config/cap60 unchanged. Root-only serialized children and fresh native idle inventory are required operator controls, not automatic process discovery.
+
+Validation: 11 CLI tests PASS including the actual installed OMO hook in temporary sessions: same-run count60→denial61/60; closed prior run→next distinct run→native allow/count1. Production-module basedpyright0errors/0warnings (explicit installed typeshed path), ruff PASS, py_compile PASS. No packages installed. Python wrapper initially lacked nodejs_wheel; direct installed JS+typeshed worked. Full unrelated content suite not rerun; known historical failure remains historical. Two real reviewer requests succeeded; no denials/unknown outcomes in this repair, not a topic or publication certification.
+
+Automation3 prompt now requires this lifecycle; exact original prompt prefix, schedule, ACTIVE status and target thread preserved on readback. Backup: .artifacts/spawn-budget-20260920/automation-before.toml. Existing05:00 slot remains unreserved; no catch-up, publication, or quality-gate waiver. Changes to earlier dirty files were preserved.
+
 ## 2026-09-14 requested reader-v4 revision — local copy ready, media route blocked
 
 Applied the requested friendly Korean rewrite and stronger paragraph spacing to both local source drafts. The 9월 28일 article now has a visibly separated `30초 요약` block in the editorial source, and the Dongtan draft has the same summary treatment plus conversational phrasing and emojis. The existing Chrome editor body for the unsaved Dongtan draft was updated through the native accessibility input surface and read back with the new text.

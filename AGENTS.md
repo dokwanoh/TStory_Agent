@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — repository instructions
 
+Owner-approved spawn lifecycle (2026-09-20): before any child creation, follow docs/44_spawn_run_budget.md and tools/spawn_run.py. Preserve native cap60; root-only, one running child, no nested creation. Stable per-operation run IDs; same-run retries never reset. Fresh native child inventory is required before begin/close. Initial adoption preserves existing attempts. Different operations rotate only after explicit prior closure; unknown state fails closed. Never use exhaustion or a failed candidate to invent a new run. Existing publication gates/schedule remain unchanged.
+
 ADR-050 (owner2026-09-13): one new-editor nonpublication input rehearsal html-input-rehearsal-20260913-1800 is approved, including possible automatic temporary storage. No final save, reservation, release, upload, existing-post mutation or scheduler cutover. Approval is consumed by the recorded input; do not create another test identity on continuation. Exact source/title echo is not saved-state proof.
 
 ADR-059 (owner2026-09-17): supersedes ADR-050 only for the current unsaved editor identity: two remaining reviewed bus media files may be uploaded through the normal native file picker and receive alt text. Final save, reservation, release, publication, existing-post mutation and scheduler cutover remain prohibited. No DOM/hidden-field injection or unrelated destination is authorized.

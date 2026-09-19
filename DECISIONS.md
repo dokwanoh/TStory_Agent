@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Owner-approved per-operation spawn lifecycle — 2026-09-20
+
+Owner requested recurrence prevention plus real generation retry. Retain OMO cap60 and installed hook; use project-local begin/adopt/close against the actual stock counter with archives, stable run identity, exclusive lifecycle lock and fail-closed interrupted transitions. Reject global cap increase, plugin-cache patching, false session namespace and resets on retry. Native child-state inventory remains an operator check, with root-only serialized children; not a claim of an independent unattended worker. Details and recovery limits: docs/44_spawn_run_budget.md. Existing dirty changes and prior goal state are preserved.
+
 ## ADR-053 — keep growth tactics out of reader-facing copy (2026-09-13)
 
 Owner identified the public paragraph that disclosed Google Trends KR RSS, top-five status, seasonal long-tail reasoning and topic-selection rationale as an operating secret. Going forward, reader-facing articles must not expose internal growth tactics, trend-source names, candidate ranking, scoring logic or why the system selected the topic. Keep those details in manifests, `STATUS.md`, `DECISIONS.md` and internal evidence only. Public copy should frame the reader-facing phenomenon naturally without mentioning `Google Trends`, `실검`, `상위 5위권`, `선정 이유`, ranking/scoring criteria or comparable operating secrets unless the owner explicitly requests a transparent case-study article.
