@@ -40,7 +40,7 @@ def configure_new_reservation(page: Page, request: NewReservationIntent, *, dry_
     panel = page.get_by_role('dialog').filter(has=page.locator('legend').filter(has_text='발행정보 입력폼'))
     if panel.count() != 1 or panel.locator('.tit_publish').inner_text().strip() != request.content.title:
         return 'blocked'
-    panel.locator('label[for=open20]').click()
+    panel.locator('#open20').check()
     panel.locator('#home_subject button').click()
     home = page.get_by_role('menuitem', name='- ' + request.content.home_topic, exact=True)
     if home.count() != 1 or not home.is_visible():

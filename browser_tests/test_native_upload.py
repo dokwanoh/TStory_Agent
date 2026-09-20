@@ -9,17 +9,21 @@ from tistory_growth_os.delivery import playwright_html_input as writer
 from tistory_growth_os.domain.ids import MediaId
 
 
-@pytest.mark.parametrize('case', ['valid', 'dry_run', 'wrong_digest', 'wrong_title', 'existing_post', 'existing_image'])
+@pytest.mark.parametrize('case', ['valid', 'pending', 'dry_run', 'wrong_digest', 'wrong_title', 'existing_post', 'existing_image'])
 def test_upload_uses_file_chooser_once_for_verified_new_editor(case: str, tmp_path: Path) -> None:
+    # Given: the native editor may insert a temporary blob before its upload completes.
     asset = tmp_path / 'cover.jpg'
     _ = asset.write_bytes(b'fixture-image-content')
     digest = sha256(asset.read_bytes()).hexdigest()
     existing = '<img data-filename="cover.jpg" src="https://cdn.example/old.jpg">' if case == 'existing_image' else ''
+    receipt = ("i.src='blob:https://nedamma.tistory.com/pending'; const name=this.files[0].name; "
+               "setTimeout(()=>{i.src='https://cdn.example/new.jpg';i.dataset.filename=name},700);") if case == 'pending' else (
+               "i.src='https://cdn.example/new.jpg'; i.dataset.filename=this.files[0].name;")
     html = f'''<textarea id="post-title-inp">검수된 시험 제목</textarea>
     <button aria-label="첨부" onclick="document.querySelector('[role=menuitem]').hidden=false">첨부</button>
     <button hidden role="menuitem" onclick="document.querySelector('input').click()">사진</button>
     <input type="file" hidden onchange="const i=document.createElement('img');
-    i.src='https://cdn.example/new.jpg'; i.dataset.filename=this.files[0].name;
+    {receipt}
     document.querySelector('iframe').contentDocument.body.appendChild(i)">
     <iframe id="editor-tistory_ifr" srcdoc='<body id="tinymce" contenteditable="true">{existing}</body>'></iframe>'''
     selections: list[str] = []
@@ -38,8 +42,10 @@ def test_upload_uses_file_chooser_once_for_verified_new_editor(case: str, tmp_pa
         _ = page.goto('https://nedamma.tistory.com/manage/newpost' + suffix)
         request = writer.LocalUpload(MediaId('cover'), asset, '0' * 64 if case == 'wrong_digest' else digest,
                                      '다른 제목' if case == 'wrong_title' else '검수된 시험 제목')
+        # When: one native file selection starts the upload.
         result = writer.upload_local_media(page, request, dry_run=case == 'dry_run')
-        if case == 'valid':
+        # Then: pending metadata must settle without a second file selection.
+        if case in ('valid', 'pending'):
             assert result is not None
             assert result.asset_id == MediaId('cover')
             assert result.filename == 'cover.jpg'

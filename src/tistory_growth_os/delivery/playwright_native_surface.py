@@ -134,7 +134,7 @@ class NativeSurface:
             return False
         stamp = request.scheduled_at.astimezone(KST)
         expected_category = request.content.category or '카테고리 없음'
-        observed_tags = tuple(sorted(text.removeprefix('#').strip() for text in self.page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$')).all_inner_texts()))
+        observed_tags = tuple(sorted(text.removeprefix('#').strip() for text in self.page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'), include_hidden=True).all_inner_texts()))
         if (self.page.locator('#post-title-inp').input_value() != request.content.title
                 or panel.locator('.tit_publish').inner_text().strip() != request.content.title
                 or self.page.locator('#category-btn').inner_text().replace('더보기', '').strip() != expected_category

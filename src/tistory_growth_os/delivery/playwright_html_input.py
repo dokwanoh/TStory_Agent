@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from enum import StrEnum
 from hashlib import sha256
 from pathlib import Path
+import re
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Page, expect
@@ -94,6 +95,8 @@ def upload_local_media(page: Page, request: LocalUpload, *, dry_run: bool = True
     selection.value.set_files(request.path.resolve(), timeout=10000)
     expect(images).to_have_count(before + 1, timeout=15000)
     uploaded = images.nth(before)
+    expect(uploaded).to_have_attribute('data-filename', request.path.name, timeout=15000)
+    expect(uploaded).to_have_attribute('src', re.compile(r'^https://'), timeout=15000)
     source = uploaded.get_attribute('src')
     if (uploaded.get_attribute('data-filename') != request.path.name or not source
             or urlsplit(source).scheme != 'https'

@@ -48,6 +48,8 @@ def manager_fixture(identities: tuple[str, ...]) -> str:
 
 @pytest.mark.parametrize(('case', 'expected'), [
     ('valid', ExecutionState.VERIFIED),
+    ('zero_height_label', ExecutionState.VERIFIED),
+    ('modal_hidden_tags', ExecutionState.VERIFIED),
     ('body_mismatch', ExecutionState.MISMATCH),
     ('extra_identity', ExecutionState.UNKNOWN),
 ])
@@ -57,6 +59,10 @@ def test_native_flow_when_saved_surfaces_are_reconciled(case: str, expected: Exe
     directory = Path(__file__).parent
     html = (directory / 'native_surface_fixture.html').read_text().replace(
         '{{ARTICLE_INPUT}}', (directory / 'article_input_fixture.html').read_text())
+    if case == 'zero_height_label':
+        html = html.replace('<label for="open20">', '<label for="open20" style="display:block;height:0;overflow:hidden">')
+    if case == 'modal_hidden_tags':
+        html = html.replace('const cover =', "document.querySelectorAll('a[aria-label]').forEach(link => link.setAttribute('aria-hidden','true')); const cover =")
     if case == 'body_mismatch':
         html = html.replace('/* SAVED_BODY_VARIANT */',
                             "frame.contentDocument.querySelector('p').textContent = '변조 본문';")
@@ -80,6 +86,7 @@ def test_native_flow_when_saved_surfaces_are_reconciled(case: str, expected: Exe
     database = tmp_path / 'save-intents.sqlite3'
     with sync_playwright() as runtime, closing(runtime.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
         page = browser.new_page(service_workers='block')
+        page.set_default_timeout(3000)
         _ = page.route('**/*', serve)
         _ = page.goto('https://nedamma.tistory.com/manage/posts/')
         surface = NativeSurface(page, article, lambda: False, lambda _request, _now: ())
