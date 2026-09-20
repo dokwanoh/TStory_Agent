@@ -104,7 +104,8 @@ separate component playground.
 
 ### Source link and evidence callout
 
-- Preparation source anchors retain descriptive evidence text plus source domain.
+- Preparation source anchors use the reader-facing section question plus source domain;
+  never expose internal source-support/research notes, and link each destination once.
   Apply `word-break:keep-all;overflow-wrap:anywhere` to these anchors so Korean
   words and endings stay together while an unusually long domain can still wrap.
 

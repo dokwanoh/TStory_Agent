@@ -32,6 +32,8 @@ def test_full_preparation_outputs_native_package(tmp_path: Path) -> None:
     assert 'example.org' in (package / 'article.html').read_text()
     assert '관련 근거 자세히 보기' not in (package / 'article.html').read_text()
     assert 'word-break:keep-all;overflow-wrap:anywhere' in (package / 'article.html').read_text()
+    assert 'Fixture-only source' not in (package / 'article.html').read_text()
+    assert (package / 'article.html').read_text().count('href="https://example.org/official"') == 1
     assert 'Runtime media evidence' in (package / 'evidence.md').read_text()
     assert 'Taxonomy contract' in (package / 'evidence.md').read_text()
     assert 'media/01.jpg SHA-256' in (package / 'quality.md').read_text()
