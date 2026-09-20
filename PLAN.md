@@ -6,7 +6,7 @@
 - Completed locally: typed stage contracts, bounded existing-auth CLI adapter and durable one-identity orchestration; tests first. Reuse native-immediate package/readback contracts, preserve independent exact-byte review.
 - Acceptance: one command reaches a locally reviewed native package or an explicit held stage; invalid/stale/unsupported/duplicate media or failed review never yields a release-ready package. Dry-run makes zero model/network calls; replay does not repeat expensive stages or create duplicate identity; no publisher imports/calls in orchestration.
 - Validation: fixture full CLI happy/hold/replay plus focused/full regressions/types; actual research/media/provider run separately recorded, never inferred from fixture success. No new dependency or paid API without approval.
-- Live certification held: real initial and bounded expanded research returned zero qualified candidates. Same-ID replay makes no new model calls. Actual prose/media/review chain is not certified by fixture success. Evidence: docs/58_independent_preparation.md.
+- Completed actual certification: run005 reached local_package_reviewed, all11 independent checks passed and existing immediate package loader returned REVIEW_APPROVED/media4. Same-ID replay reused every checkpoint with no new provider calls. During development a known rejected render/review was archived before corrected exact-byte re-review; no blind retry or quality waiver. Evidence: docs/58_independent_preparation.md. Production publish invocation, scheduling resumption and fleet reliability are separate remaining scope, not claimed complete.
 
 ## 2026-09-20 — approved CLI update and live comparison
 

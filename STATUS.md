@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-21 — independent preparation actual success and replay verified
+
+Runtime clock ownership and explicit rejection diagnostics fixed the empty/UNKNOWN research failure. Bounded reuse of prior UNVERIFIED leads now preserves useful public research without adopting previous approvals. Actual run004 reached five candidates, selection, prose and four newly generated images. Codex0.155.1 JSONL omits image-generation items; same-session native generation outputs now provide immutable local hash evidence without falsifying the original CLI receipt. No source/candidate date or failed semantic grade was changed into PASS.
+
+Run004 independent review correctly held six checks. Run005 first passed10/11; its voice rejection identified internal support notes leaking into source-link copy. Renderer now uses reader-facing question/domain labels, deduplicates URLs and preserves Korean wrapping. Old failed inspection/review records are archived in rejected-review-1, not overwritten. Same-ID re-review approved all11checks with no issues; no new research/writing/media calls. Actual package SHA690591082101fd05653f9ca64a6d0a3d4f6b3ec40e05949fc26d53325df41171, existing loader REVIEW_APPROVED/media4. Whole CLI replay reused all5checkpoints and returned the identical package. This is development recovery followed by real completion, not a first-attempt zero-defect run.
+
+Code6c5b61e6753a2cc7064acb3a38bad1048efc3a37 and earlier fixes committed/pushed. Full final suite616passed/174.98s; focused flow22passed/3.07s; fresh source/scoped types0errors/0warnings; no-excuse12files; compile/diff/help/dry-run and invalid-ID safe hold pass. Final two independent link-QA reviewers passed all6fresh captures, evidence `.artifacts/preparation-link-qa/review.md`; final fixture has3deduplicated anchors, not the historical8. No PR merge or production/blog writes claimed. STOP, recurring and reservation pauses retained. Current task local preparation is complete; automatic publish invocation is separate. Detailed evidence: docs/58_independent_preparation.md.
+
 ## 2026-09-21 — independent preparation connected; live content completion held
 
 One explicit local command now connects research, final Astra selection, structured original prose/four media, separate-session exact-byte quality review and native-immediate package export. No publisher invocation, authority file, reservation, scheduler or new paid API. Owner's token-savings work is stopped; previous next-step suggestions about comparison are superseded.
