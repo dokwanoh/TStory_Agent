@@ -58,6 +58,19 @@ class NewReservationExecutor:
         if saved.post_id in prior:
             return NewReservationResult(ExecutionResult(ExecutionState.MISMATCH, ("identity_preexisting",)))
         target = bind_new_reservation(request, saved, prior)
+        self.journal.record_receipt(slot.key, request.package_digest, saved)
+        return self._verify(target)
+
+    def recover(self, request: NewReservationIntent) -> NewReservationResult:
+        saved = self.journal.receipt(DailySlot(request.scheduled_at).key, request.package_digest)
+        if saved is None:
+            return NewReservationResult(ExecutionResult(ExecutionState.UNKNOWN, ("missing_save_identity",)))
+        target = ReservationTarget(saved.post_id, saved.url, request.scheduled_at, request.content)
+        if self.surface.stopped():
+            return NewReservationResult(ExecutionResult(ExecutionState.BLOCKED, ("kill_switch",)), target)
+        return self._verify(target)
+
+    def _verify(self, target: ReservationTarget) -> NewReservationResult:
         observation = self.surface.readback(target)
         check = verify_reservation(target, observation, self.surface.now())
         match check.status:
