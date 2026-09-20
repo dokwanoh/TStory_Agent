@@ -1,6 +1,15 @@
 from __future__ import annotations
 
+from datetime import datetime
 from pathlib import Path
+
+import pytest
+
+from tistory_growth_os.delivery.immediate_readback import ImmediateTarget, verify_immediate_publication
+from tistory_growth_os.delivery.new_reservation_identity import SavedIdentity
+from tistory_growth_os.delivery.reservation_readback import ReservationContent, ReservationMedia
+from tistory_growth_os.domain.ids import MediaId, PostId
+from tistory_growth_os.domain.publishing_future import VerificationStatus
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,21 +84,20 @@ def test_phase_matrix_keeps_external_writes_out_of_the_offline_slice() -> None:
     assert "external_write_count=0" in specification
 
 
-def test_status_does_not_claim_unearned_completion() -> None:
-    # Given: implementation and end-to-end validation have not happened yet.
-    # When: the durable status document is inspected.
-    # Then: it uses pending wording rather than unsupported completion claims.
-    status = (ROOT / "STATUS.md").read_text(encoding="utf-8").lower()
+@pytest.mark.parametrize("title", ["published", "not published", "게시 완료", "검증 대기"])
+def test_status_does_not_claim_unearned_completion(title: str) -> None:
+    # Given: wording and a saved identity are not observed publication evidence.
+    now = datetime.fromisoformat("2030-01-01T12:00:00+09:00")
+    media = tuple(ReservationMedia(MediaId(str(index)), f"사진 {index}") for index in range(4))
+    content = ReservationContent(title, "a" * 64, media, MediaId("0"), None, "생활정보", ())
+    target = ImmediateTarget(SavedIdentity(PostId("1"), "https://nedamma.tistory.com/1"), content, now)
 
-    forbidden_claims = (
-        "implementation complete",
-        "all tests passed",
-        "published",
-        "external write completed",
-    )
-    for claim in forbidden_claims:
-        assert claim not in status, claim
-    assert "pending" in status
+    # When: the actual completion gate receives no readback, regardless of wording.
+    result = verify_immediate_publication(target, None, now)
+
+    # Then: completion stays unknown with an explicit missing-evidence diagnostic.
+    assert result.status is VerificationStatus.UNKNOWN
+    assert result.mismatches == ("missing_readback",)
 
 
 def test_owner_interview_has_at_most_seven_grouped_decisions() -> None:
