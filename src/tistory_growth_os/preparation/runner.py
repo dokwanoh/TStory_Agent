@@ -12,7 +12,7 @@ from ..contracts.json_decode import parse_json
 from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, datetime_value, text
 from . import prompts
-from .contracts import PreparationError, check_quality, parse_research, select_candidate
+from .contracts import PreparationError, check_quality, parse_research, select_candidate, stamp_research
 from .editorial import CATEGORIES, TOPICS, parse_draft
 from .package import PackageInput, assemble, promote, write_immutable
 from .provider import Provider, StageRequest
@@ -31,6 +31,14 @@ def utc_now() -> datetime:
     return datetime.now(timezone.utc)
 
 
+def recorded_research(store: StageStore, request: StageRequest, clock: Callable[[], datetime]) -> str:
+    source = store.run(request)
+    timing = store.directory / 'research-checked-at.txt'
+    if not timing.exists():
+        write_immutable(timing, clock().isoformat().encode())
+    return stamp_research(source, datetime.fromisoformat(timing.read_text()))
+
+
 def execute(run: PreparationRun, provider: Provider) -> Path:
     store = StageStore(run.directory, provider)
     initial = Fields.parse(parse_json((run.directory / 'input.json').read_text()), '',
@@ -42,24 +50,24 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     if not timedelta(0) <= run.clock() - cutoff < timedelta(hours=24):
         raise PreparationError('run_expired')
     base = prompts.BOUNDARY + '\nCutoff: ' + cutoff.isoformat() + '\nHistory: ' + history
-    research_source = store.run(StageRequest('research', base + '\n' + prompts.RESEARCH
-                               + '\nSignals:\n' + text(initial, 'signals'), run.directory))
+    research_source = recorded_research(store, StageRequest('research', base + '\n' + prompts.RESEARCH
+                               + '\nSignals:\n' + text(initial, 'signals'), run.directory), run.clock)
     research_sessions = {store.receipt('research').session_id}
     try:
         research = parse_research(research_source, run.clock())
     except PreparationError as error:
-        if error.code != 'five_qualified_candidates_required':
+        if error.code not in ('five_qualified_candidates_required', 'research_shortfall_undocumented'):
             raise
         expansion = run.directory / 'research-expansion'
         expansion.mkdir(exist_ok=True)
         expanded_store = StageStore(expansion, provider)
-        research_source = expanded_store.run(StageRequest('research', base + '\n' + prompts.RESEARCH
+        research_source = recorded_research(expanded_store, StageRequest('research', base + '\n' + prompts.RESEARCH
             + '\nThe first source search returned insufficient candidates. Make ONE broader search pass: '
             + 'use different categories and primary organizations, Korean AND international science, space, '
             + 'consumer technology, public services, culture and sports announcements. Search date-specific '
             + 'primary newsrooms and open evidence. Do not repeat only policy searches. Keep the same cutoff '
             + 'and all gates; do not treat a fresh crawl as a new event. Return five only if qualified. '
-            + '\nPrevious rejected results:\n' + research_source, expansion))
+            + '\nPrevious rejected results:\n' + research_source, expansion), run.clock)
         research_sessions.add(expanded_store.receipt('research').session_id)
         research = parse_research(research_source, run.clock())
     selection = store.run(StageRequest('selection', base + '\n' + prompts.SELECTION

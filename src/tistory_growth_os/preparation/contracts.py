@@ -3,8 +3,9 @@ from datetime import datetime, timedelta
 from typing import Final
 from urllib.parse import urlsplit
 
-from ..contracts.json_ast import JsonObject
+from ..contracts.json_ast import JsonArray, JsonMember, JsonObject, JsonString
 from ..contracts.json_decode import parse_json
+from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, as_object, boolean, datetime_value, identifier, strings, text
 from ..research.intake import public_source_url
 
@@ -36,8 +37,45 @@ CHECKS: Final = ('facts', 'freshness', 'rights', 'originality', 'reader_value', 
                 'images', 'diversity', 'classification', 'web_text_accessibility', 'policy')
 
 
+def stamp_research(source: str, recorded_at: datetime) -> str:
+    fields = Fields(as_object(parse_json(source), ''), '', ())
+    candidates: list[JsonObject] = []
+    for raw in array(fields, 'candidates', False):
+        candidate = Fields(as_object(raw, '/candidates'), '/candidates', ())
+        sources: list[JsonObject] = []
+        for entry in array(candidate, 'sources', True):
+            item = as_object(entry, '/sources')
+            sources.append(JsonObject(tuple(JsonMember(member.key,
+                JsonString(recorded_at.isoformat()) if member.key == 'checked_at'
+                and member.value == JsonString('RUNTIME') else member.value) for member in item.members)))
+        candidates.append(JsonObject(tuple(JsonMember(member.key,
+            JsonArray(tuple(sources)) if member.key == 'sources' else member.value)
+            for member in candidate.value.members)))
+    return encode_json(JsonObject(tuple(JsonMember(member.key,
+        JsonArray(tuple(candidates)) if member.key == 'candidates' else member.value)
+        for member in fields.value.members)))
+
+
 def parse_research(source: str, now: datetime) -> Research:
-    fields = Fields.parse(parse_json(source), '', ('candidates', 'policy_sources'))
+    value = as_object(parse_json(source), '')
+    keys = ('candidates', 'policy_sources')
+    diagnostics = value.get('search_notes') is not None
+    if diagnostics:
+        keys += ('search_notes', 'rejected_leads')
+    fields = Fields.parse(value, '', keys)
+    rejected = ()
+    if diagnostics:
+        _ = text(fields, 'search_notes')
+        rejected = array(fields, 'rejected_leads', False)
+        for raw in rejected:
+            entry = Fields.parse(raw, '/rejected_leads', ('lead', 'reason', 'source_urls'))
+            _ = text(entry, 'lead')
+            _ = text(entry, 'reason')
+            rejected_urls = strings(entry, 'source_urls', False, r'https://\S+')
+            if any(not public_source_url(url) for url in rejected_urls):
+                raise PreparationError('rejection_source_url_invalid')
+        if len(array(fields, 'candidates', False)) < 5 and not rejected:
+            raise PreparationError('research_shortfall_undocumented')
     candidates: list[Candidate] = []
     for raw in array(fields, 'candidates', False):
         item = Fields.parse(raw, '/candidates', ('id', 'title', 'event_at', 'event_time_basis',

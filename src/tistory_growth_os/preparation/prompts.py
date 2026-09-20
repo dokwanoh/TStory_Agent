@@ -11,17 +11,26 @@ or remote-image pixel/lightbox checks. Local media identity, alt, rights and con
 If blocked, return an empty collection or failed checks; never invent data to satisfy a schema.
 '''
 
-RESEARCH: Final = '''Use live public web search and OPEN the primary sources, not snippets alone.
+RESEARCH: Final = '''First investigate dated ISSUE candidates; policy collection comes LAST.
+Use live public web search and OPEN the primary sources, not snippets alone.
 Find FIVE distinct low-risk news/announcement candidates actually occurring within the trailing24h
 at the provided cutoff. RSS is just a starting signal. Broaden keywords/categories if a lead fails.
 Exclude unverified, duplicate, financial/medical/legal advice, gossip and stale issues. Compare with history.
 Each needs at least two independent source domains including an official primary source, source support
 paraphrases, claim-source links, explicit event timestamp and its precision/basis. Date-only timestamps
 use the earliest possible instant in the source timezone; reject if this cannot prove strict24h freshness.
-Use the actual current UTC time for source checked_at, never a future guess. Include a separate original
+For sources actually checked, set checked_at to the literal RUNTIME. The host stamps the research
+receipt time from its UTC clock after completion. Do NOT search time websites or guess current time.
+RUNTIME records when research was reported, not proof of truth; independently verify source contents.
+Never replace actual event_at with that runtime timestamp. Include a separate original
 Korean short draft of at least300characters for EACH of the five candidates, not copied source structure.
 Rank reasoning covers demand/evidence/usefulness/durability/risk/differentiation, not just popularity.
-Also open current official Tistory content/copyright and Google people-first/spam policies; return URLs.
+Keep every qualified candidate even if fewer than five qualify; do not turn a partial result into [].
+For each rejected lead record its concrete title, reason and public source URLs in rejected_leads.
+Explain the searched categories and observed evidence gaps in search_notes. Empty candidate results
+without rejection evidence are invalid. Do not assume history incompleteness prevents research.
+After candidate work, open current official Tistory content/copyright and Google people-first/spam policies.
+Policy URLs alone are not completion of candidate research. Never fabricate candidates to fill the batch.
 Do not write local files or use shell/browser/account tools: web search/open only.
 '''
 

@@ -6,7 +6,7 @@ import pytest
 
 from tests.preparation_fixture import FixtureProvider, NOW, research_response
 from tistory_growth_os.preparation.contracts import PreparationError, parse_research
-from tistory_growth_os.preparation.runner import PreparationRun, execute
+from tistory_growth_os.preparation.runner import PreparationRun, execute, recorded_research
 from tistory_growth_os.preparation.storage import StageStore
 from tistory_growth_os.preparation.provider import StageRequest, StageResponse
 from tistory_growth_os.preparation.package import promote
@@ -165,3 +165,20 @@ def test_receipt_preserves_repeated_web_search_calls(tmp_path: Path) -> None:
     store = StageStore(tmp_path, repeated)
     _ = store.run(StageRequest('research', 'fixture', tmp_path))
     assert store.receipt('research').tool_kinds == ('web_search', 'web_search')
+
+
+def test_research_runtime_timestamp_is_frozen_on_replay(tmp_path: Path) -> None:
+    fixture = FixtureProvider()
+
+    def runtime_source(request: StageRequest) -> StageResponse:
+        response = fixture(request)
+        return StageResponse(response.response.replace('"checked_at": "' + NOW.isoformat() + '"',
+            '"checked_at": "RUNTIME"'), response.session_id, response.tool_kinds)
+
+    store = StageStore(tmp_path, runtime_source)
+    request = StageRequest('research', 'fixture', tmp_path)
+    first = recorded_research(store, request, lambda: NOW)
+    replay = recorded_research(store, request, lambda: NOW + timedelta(hours=1))
+    assert first == replay
+    assert fixture.calls == ['research']
+    assert len(parse_research(replay, NOW).candidates) == 5
