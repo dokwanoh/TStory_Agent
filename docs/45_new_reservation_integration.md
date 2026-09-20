@@ -13,6 +13,10 @@
 
 ## Work tracking
 
+2026-09-20 continuation: manager inventory implementation COMPLETE with Chrome fixtures; live inventory certification BLOCKED by isolated-profile authentication. Observed personal-profile manager has80posts and six numbered pages; new reader traverses native numbered links, rejects filtered/duplicate/missing/changing inventories and returns IDs only when the observed total matches. Native writer/runner remain NOT_COMPLETE. Existing92 remains untouched. Production cutover remains held until real route verification.
+
+Exact-profile runtime observation: project Chrome PID45902 (created by us, no editor window) was handed off to installed Playwright using the same browser-profile, without touching personal Chrome. Normal yellow login reached accounts.kakao.com/login/ with visible password input1 and saved-account heading0. This is OWNER_REQUIRED, not a locator inference. Browser remains open under interactive session19167 for owner authentication. No credentials/cookies accessed, no remote editorial writes. Once authenticated, reuse this context rather than relaunching another competing profile owner.
+
 Current increment: receipt recovery COMPLETE; native readback-to-domain bridge COMPLETE in fixture Chrome. Actual input/upload/save adapter and live E2E remain subsequent implementation, not a claim of cutover. No scheduled production worker switch in this increment.
 
 - Discovery COMPLETE: source ReservationExecutor, ReservationAttempt, ReservationTarget and current readers inspected; actual saved editor route redirects /manage/post/91 to /manage/newpost/91.

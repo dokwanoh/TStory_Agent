@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from enum import StrEnum
 import re
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urljoin, urlsplit
 
 from playwright.sync_api import Page
 
@@ -25,6 +25,59 @@ class ManagerPostSummary:
     listed_at: datetime
     visibility: ManagerVisibility | None
     reserved: bool
+
+
+def read_manager_inventory(page: Page) -> frozenset[PostId] | None:
+    collected: set[PostId] = set()
+    expected_total: int | None = None
+    for number in range(1, 1001):
+        url = urlsplit(page.url)
+        query = parse_qs(url.query, keep_blank_values=True)
+        if (url.scheme != 'https' or url.netloc != 'nedamma.tistory.com'
+                or url.path.rstrip('/') != '/manage/posts' or url.fragment
+                or query.get('category', ['-3']) != ['-3']
+                or query.get('visibility', ['all']) != ['all']
+                or query.get('searchKeyword', ['']) != ['']
+                or query.get('page', ['1']) != [str(number)]):
+            return None
+        heading = page.get_by_role('heading', name='티스토리 관리센터 본문', exact=True)
+        count = page.locator('#mArticle h3 .txt_count')
+        if heading.count() != 1 or count.count() != 1:
+            return None
+        total_text = count.inner_text().strip().replace(',', '')
+        if re.fullmatch(r'[0-9]+', total_text) is None:
+            return None
+        total = int(total_text)
+        if expected_total is None:
+            expected_total = total
+        if total != expected_total:
+            return None
+        current: set[PostId] = set()
+        for checkbox in page.locator('#mArticle input[id^="inpCheck"]').all():
+            identifier = checkbox.get_attribute('id')
+            match_id = re.fullmatch(r'inpCheck([1-9][0-9]*)', identifier or '')
+            if match_id is None:
+                return None
+            post_id = PostId(match_id.group(1))
+            if post_id in current or post_id in collected:
+                return None
+            current.add(post_id)
+        collected.update(current)
+        if len(collected) == expected_total:
+            return frozenset(collected)
+        if not current or len(collected) > expected_total:
+            return None
+        next_page = page.locator('.list_paging a.link_num').filter(has_text=re.compile(f'^{number + 1}$'))
+        if next_page.count() != 1:
+            return None
+        destination = urljoin(page.url, next_page.get_attribute('href') or '')
+        parsed = urlsplit(destination)
+        if (parsed.scheme != 'https' or parsed.netloc != 'nedamma.tistory.com'
+                or parsed.path.rstrip('/') != '/manage/posts'):
+            return None
+        next_page.click(timeout=5000)
+        page.wait_for_url(destination, timeout=10000)
+    return None
 
 
 def read_manager_post(page: Page, post_id: PostId) -> ManagerPostSummary | None:
