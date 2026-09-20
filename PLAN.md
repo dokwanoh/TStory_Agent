@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## 2026-09-20 — metered topic-intake increment
+
+- Completed: failing-first RSS ingestion, bounded public KR feed collection, deterministic deduplication and compact highest-model review handoff. Feed time remains a trend signal, not verified event time; no automatic winner or publisher call.
+- Completed: typed usage/cost comparison with identical-input/equal-quality requirements, missing measurement UNKNOWN, cached-input separation and fixture/real distinction. No new paid API or installation.
+- Completed: full regression571passed/166.37s, actual live CLI and exact offline replay, 28 focused tests, source/scoped type checks, compilation/rules and evidence documentation. Scoped implementation commits89818fd/f812945. Existing publishing STOP and recurring/reservation pauses remain unchanged.
+- Deferred to subsequent increment: provider review invocation/usage collection, primary-source investigation, real equal-quality A/B experiment and full article generation. These are not claimed complete by the intake packet.
+
 ## Immediate-mode migration, 2026-09-20
 
 - Completed: separate current-time native-panel input from fixed-slot reservation;6browser cases prove no reservation selection and no final save.
