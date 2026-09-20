@@ -16,7 +16,17 @@ Owner requested one new immediate-public article and later independently confirm
 
 Local evidence: content/fasttrack/2026-09-20-nobel-immediate/{article.html,evidence.md,review.md,manifest.json,run.md,media/PROVENANCE.md}. Content/runtime/session files stay ignored and are not Git-delivered. No signed URLs, credentials or browser storage included.
 
-## Boundaries
+## September20: additional post95
+
+Owner requested one further article after confirming94. Published once21:22KST: 부산박물관 추석 체험, 무료인데 미리 신청해야 할까요? https://nedamma.tistory.com/95. Save started12:22:35.296777UTC. Complete inventory82→83, only95 added; original journal claim/receipt retained. No reservation or existing-post mutation.
+
+Highest-model topic and exact-prose semantic review passed. New September20 official announcement qualified at same-day publication; eventSeptember25–27 described as future. Official text directly supports dates/costume/on-site registration; free/hours/lunch conditions explicitly rely on three cross-checked reports, not a falsely claimed official PDF read. Official artwork KOGL4 commercial reuse prohibited, not copied. Four new built-in generated generic contextual images reviewed and bound; no actual venue/event photograph claim.
+
+Article SHA256 bb878e9f77f011700a6a473ae76839582a18b9040c809171c6487114d6045f60; article+manifest14b86d507c7a4b0ed25d7cbd677b948ddbeddbc75011bbff6e88b8e73120122f. Native normal picker upload4/keyboard HTML input verified. Same95 saved structural digest/four ordered filenames/alts/cover/category생활정보/home공연·전시·축제/four tags/public21:22/scheduledNone exact. Anonymous HTTP200, entire normalized text exact, U+FFFD0, four media metadata/three source links/title exact.390px article client350/scroll350. Typed immediate verification VERIFIED/no mismatches.
+
+Local evidence content/fasttrack/2026-09-20-busan-museum-immediate/{article.html,evidence.md,review.md,manifest.json,run.md,media/PROVENANCE.md} remains ignored. No application changes or fresh full regression claimed. Initial premature manager readNone and incorrect title selector corrected through read-only fresh observation; no repeat save. Exclusions, STOP and scheduler pause retained. Same assisted-route qualification as94, not independent runner certification.
+
+## Shared boundaries
 
 This is **assisted normal-editor delivery with tested primitives**, not an independent CLI run. Immediate authority/journal orchestration and autonomous anonymous observation integration remain to finish in the runner. Do not count manual success as their completion.
 
