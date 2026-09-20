@@ -1,5 +1,17 @@
 # New-article reservation integration
 
+## 2026-09-20 17:08 KST: native mode-return defect reproduced and fixed
+
+Owner scoped work to input failure(item1), not live reservation retry. Three hypotheses examined: early editor readiness, upload identity timing/order, and HTML-transfer behavior. Current live blank editor's package/input guards pass; independent code review identifies untested upload/CodeMirror differences but does not prove those caused the prior run.
+
+Confirmed defect: switching to HTML replaces the visible mode trigger. The original `#editor-mode-layer-btn` remains in the DOM hidden, while the active native button reads `HTML더보기`. The adapter kept clicking the hidden original, timed out and returnedFalse before returning to basic mode. This makes the writer returnNone and raiseNativePreparationError. Fix selects exactly one visible original or the observed HTML toolbar button, then a visible exact menu item; ambiguity, unexpected confirmation and existing-post guards remain closed.
+
+Evidence: regression first produced1failed/4passed; corrected mode+input+native-flow suites14passed. Actual same blank native editor toggle: `toggle_html=True; old_basic_again=False; fixed_basic_again=True; final_editor=True/emptytext/emptytitle/0images`. This is repeatable old/new contrast, not a guessed selector. Source40/test35pure lines, source and changed-test basedpyright0errors/0warnings. No article text/media input/upload/final save; native empty-editor auto-save label was observed, so no claim of measured zero background network writes. Manager stayed80; owned diagnostic browser closed normally.
+
+Limit: the earlier failed process did not preserve granular state, so this is a confirmed failure on its mandatory mode-return path, NOT proof that it was the sole historical failure. Full populated-article recovery/reservation remains held with the original journal claim intact. No production cutover or gate waiver.
+
+Final regression: `PYTHONPATH=.:src:.venv/lib/python3.11/site-packages pytest tests browser_tests -q` returned463passed/1failed in130.60s. The existing `tests/test_memory_documents.py::test_status_does_not_claim_unearned_completion` bans every `published` substring in STATUS, including historical records; HEAD already contains the same recorded failure and those strings. No test or historical evidence was weakened. Changed source/test typechecks and diff checks passed. Temporary diagnostic journal removed after promotion here; owned browser/process closed.
+
 ## Latest checkpoint: 2026-09-20 16:13 KST
 
 - COMPLETE locally: reviewed-package/review/one-slot-authority loader; independent CLI; native body/four-image/alt assembly; taxonomy/reservation controls; one-save/new-ID/readback adapter. Default dry-run has zero browser calls and external writes. This is implementation and fixture evidence, not live completion.

@@ -1,3 +1,4 @@
+import re
 from typing import Literal
 from urllib.parse import urlsplit
 
@@ -25,8 +26,13 @@ def select_editor_mode(
 
     page.on('dialog', confirm)
     try:
-        page.locator('#editor-mode-layer-btn').click(timeout=timeout_ms)
-        page.get_by_role('menuitem', name=mode, exact=True).click(timeout=timeout_ms)
+        trigger = page.locator('#editor-mode-layer-btn').filter(visible=True)
+        if trigger.count() == 0:
+            trigger = page.locator('button').filter(has_text=re.compile(r'^HTML\s*더보기$')).filter(visible=True)
+        if trigger.count() != 1:
+            return False
+        trigger.click(timeout=timeout_ms)
+        page.get_by_role('menuitem', name=mode, exact=True).filter(visible=True).click(timeout=timeout_ms)
         if rejected:
             return False
         surface = (page.locator('#html-editor-container .CodeMirror') if mode == 'HTML'
