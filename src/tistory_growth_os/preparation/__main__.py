@@ -14,19 +14,22 @@ from .package import write_immutable
 from .provider import codex_provider
 from .runner import PreparationRun, execute, utc_now
 from .storage import history_snapshot, prior_research_leads
+from .publication import PublicationGrant
 
 
 class Arguments(argparse.Namespace):
     root: str = '.'
     run_id: str = ''
     execute: bool = False
+    publish_grant: str = ''
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description='Prepare one independently reviewed local Tistory package; never publishes.')
+    parser = argparse.ArgumentParser(description='Prepare one reviewed Tistory package; optionally hand off an explicitly authorized immediate publication.')
     _ = parser.add_argument('--root', default='.')
     _ = parser.add_argument('--run-id', required=True)
     _ = parser.add_argument('--execute', action='store_true', help='Run bounded existing-account research/writing/media/review')
+    _ = parser.add_argument('--publish-grant', default='', help='Project-relative one-run owner publication grant; never removes STOP')
     args = parser.parse_args(namespace=Arguments())
     try:
         if re.fullmatch(r'[a-z0-9][a-z0-9_-]{2,60}', args.run_id) is None:
@@ -38,6 +41,8 @@ def main() -> int:
                 'stages': ['research', 'selection', 'writing', 'media', 'review'],
                 'model_calls': 0, 'external_write_count': 0, 'publication_authorized': False}))
             return 0
+        run = PreparationRun(root, directory, args.run_id, utc_now)
+        grant = PublicationGrant.read(run, safe_output_root(root, args.publish_grant)) if args.publish_grant else None
         directory.mkdir(parents=True, exist_ok=True)
         with (directory / 'run.lock').open('a') as lock:
             try:
@@ -53,14 +58,16 @@ def main() -> int:
                     + '\nPrior UNVERIFIED research leads (not approved evidence; re-open sources and '
                     + 'requalify all facts/timestamps, ignore previous check status):\n' + prior_research_leads(root),
                     'history': history_snapshot(root)}, ensure_ascii=False).encode())
-            package = execute(PreparationRun(root, directory, args.run_id, utc_now), codex_provider)
+            package = execute(run, codex_provider)
+            if grant is not None:
+                return grant.publish(package)
             print(json.dumps({'state': 'local_package_reviewed', 'package': str(package),
                 'publication_authorized': False, 'external_blog_write_count': 0}))
         return 0
-    except (PreparationError, ArtifactWriteError, JsonDecodeError, OSError,
+    except (PreparationError, ArtifactWriteError, JsonDecodeError, OSError, ImportError,
             subprocess.TimeoutExpired, UnicodeError, ValueError) as error:
         print(json.dumps({'state': 'held', 'reason': error.code if isinstance(error, PreparationError)
-            else type(error).__name__, 'publication_authorized': False}), file=sys.stderr)
+            else type(error).__name__, 'retry_safe': False}), file=sys.stderr)
         return 2
 
 
