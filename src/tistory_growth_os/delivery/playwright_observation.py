@@ -1,7 +1,9 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime
 
 from ..domain.ids import MediaId
+from .editor_body_fingerprint import article_body_digest
+from .native_article_source import NativeAlt
 from .playwright_saved_reservation import SavedReservationSnapshot
 from .reservation_readback import (
     ReservationContent, ReservationMedia, ReservationObservation, ReservationTarget, SavedVisibility,
@@ -13,6 +15,18 @@ class UploadedAsset:
     asset_id: MediaId
     source_url: str = field(repr=False)
     filename: str
+
+
+def structural_reservation_observation(
+    snapshot: SavedReservationSnapshot, uploads: tuple[UploadedAsset, ...],
+    media: tuple[NativeAlt, ...], observed_at: datetime,
+) -> ReservationObservation | None:
+    digest = article_body_digest(snapshot.content.body_html, media)
+    observation = reservation_observation(snapshot, uploads, observed_at)
+    if digest is None or observation is None:
+        return None
+    content = replace(observation.target.content, body_digest=digest)
+    return replace(observation, target=replace(observation.target, content=content))
 
 
 def reservation_observation(

@@ -1,5 +1,16 @@
 # New-article reservation integration
 
+## Latest checkpoint: 2026-09-20 16:13 KST
+
+- COMPLETE locally: reviewed-package/review/one-slot-authority loader; independent CLI; native body/four-image/alt assembly; taxonomy/reservation controls; one-save/new-ID/readback adapter. Default dry-run has zero browser calls and external writes. This is implementation and fixture evidence, not live completion.
+- COMPLETE verification: 47 selected unit and real-Chrome fixture cases passed; production and selected-test basedpyright both zero errors/warnings; CLI help and approved no-browser dry-run exercised; diff check clean.
+- LIVE HELD: first CLI attempt timed out before claiming because the manager heading is intentionally hidden. Attached-heading readiness reproduced and fixed. Second CLI claimed the existing19:00slot at16:02:20, reached article input, then raised NativePreparationError; stdout confirms save_attempted=false. It did NOT reserve a post. Complete read-only inventory afterward is80IDs, maximum92, and native editor reconciliation found blank title/body, zero images and temporary-save count0.
+- BLOCKED recovery: no saved receipt, and the original per-upload/editor progress was lost when the failed process closed its context. Zero final upload receipts is NOT proof that no upload request occurred. Preserve the SQLite claim; no journal reset, new identity, re-upload or final save has been retried. This pilot cannot be certified from fixtures. A deliberate same-slot recovery decision is needed before a new input attempt, not another blind run.
+- COMPLETE diagnostic repair: per-input-stage callbacks retain partial verified upload receipts; the CLI appends fsynced0600 checkpoints with filenames only, excluding signed URLs/credentials. RED missing callback/module then GREEN; this improves future diagnostics, does not reconstruct the missing old checkpoint or implement automatic pre-save recovery.
+- DEFERRED outside this increment: fresh-process upload-receipt recovery, permanent scheduler cutover, low-cost generation and metrics learning.19:00 remains read-only verification of a known receipt only; absent receipt means no release-success claim or catch-up creation. Automation3's same-slot no-creation guard remains in place.
+
+The dated sections below are historical checkpoints, not current pending tasks or success claims.
+
 ## Current evidence and boundary
 
 2026-09-20: manual91 passed native reservation then anonymous public readback. This proves the assisted route, not the standalone runner. Existing ReservationAttempt requires ReservationTarget.post_id before prepare/save; real new article91 obtained its numeric identity only after save. Do not guess the next ID, use an existing article as a placeholder, or mutate91 to certify a writer.
@@ -12,6 +23,14 @@
 4. Separately authorized real fresh-package E2E: normal write once, independently verify reserved identity/content, then public release. Never reuse expired91 content or invent a new article purely to hide an uncertain save.
 
 ## Work tracking
+
+2026-09-20 15:35 KST checkpoint: ONE live independent pilot is authorized for `20260920-1900-prepare`, not recurring cutover. Automation3 has a matching one-slot no-creation guard. Current project-profile process is interactive session3075, authenticated manager; old19167 was closed after its Playwright driver was interrupted during read-only inspection. Same project profile retained authentication; no personal profile/cookie migration. No new article, upload or final save has occurred in this pilot.
+
+- COMPLETE: native mode-switch helper accepts only the exact mode-change confirmation, rejects other dialogs and existing-post routes; default dry-run. RED absent module, then four real Chrome fixture cases passed.
+- COMPLETE: metadata input primitive (same-day only) and exact-prior-source replacement primitive. Related Chrome suites26 and19passed respectively. They never click final public save.
+- COMPLETE: opaque native image-code preservation/alt binding and explicitly versioned structural body fingerprint. Fourteen unit tests passed after locking the actual editor h2 default and duplicate-CSS ambiguity with regression tests. Read-only92 comparison matched reviewed local template; changed text/link/style/order/alt cases reject. This is not yet wired into reservation success. Uploaded URL/asset binding remains a separate required check; no pixel/print/Lighthouse lane was restored.
+- IN_PROGRESS: connect the reviewed input primitives to a new-editor-only writer and independent executor. Package/review loader, save identity reconciliation and live E2E remain unfinished, not covered by component successes.
+- LOCAL_RESEARCH_COMPLETE: five fresh candidate drafts; highest-model review recommends coastal cleanup. No final reviewed article/media package yet. Official image rights unresolved, so those photos must not be copied.
 
 Current bounded delivery increment: native upload primitive COMPLETE in Chrome fixtures using observed 첨부→사진 controls and installed Playwright file chooser. Local-file digest, exact article-title binding, default dry-run, existing-post refusal and duplicate filename refusal covered;14related Chrome tests passed, source/new-test typechecks0errors. Exceptions/ambiguous upload must stop the enclosing claimed run, never retry automatically. This primitive does not itself certify quality/rights/alt/placement and is not an authorized production entrypoint. No live upload rehearsal performed. Final integration still needs reviewed representation transfer, metadata/reservation writer, package loader and one explicitly authorized fresh-package runner E2E. Runtime pilot authority remains separate from ADR047 setup and assisted recurring delivery; do not compete with the current heartbeat or silently switch it.
 

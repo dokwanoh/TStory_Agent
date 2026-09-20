@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 import re
+from typing import Literal
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Page
@@ -8,6 +9,62 @@ from playwright.sync_api import Page
 from ..domain.ids import PostId
 from .playwright_manager import ManagerVisibility
 from .reservation_readback import KST
+from .new_reservation_identity import NewReservationIntent
+
+
+def configure_new_reservation(page: Page, request: NewReservationIntent, *, dry_run: bool = True) -> Literal['dry_run', 'blocked', 'input_verified']:
+    if dry_run:
+        return 'dry_run'
+    location = urlsplit(page.url)
+    title = page.locator('#post-title-inp')
+    if (location.scheme != 'https' or location.netloc != 'nedamma.tistory.com'
+            or location.path.rstrip('/') != '/manage/newpost'
+            or title.count() != 1 or title.input_value() != request.content.title):
+        return 'blocked'
+    tags = page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'))
+    if tags.count():
+        return 'blocked'
+    category = request.content.category or '카테고리 없음'
+    page.locator('#category-btn').click()
+    choice = page.locator('#category-list').get_by_text(category, exact=True)
+    if choice.count() != 1 or not choice.is_visible():
+        return 'blocked'
+    choice.click()
+    for tag in request.content.tags:
+        page.locator('#tagText').fill(tag)
+        page.locator('#tagText').press('Enter')
+    observed_tags = tuple(text.removeprefix('#').strip() for text in tags.all_inner_texts())
+    if set(observed_tags) != set(request.content.tags) or len(observed_tags) != len(request.content.tags):
+        return 'blocked'
+    page.locator('#publish-layer-btn').click()
+    panel = page.get_by_role('dialog').filter(has=page.locator('legend').filter(has_text='발행정보 입력폼'))
+    if panel.count() != 1 or panel.locator('.tit_publish').inner_text().strip() != request.content.title:
+        return 'blocked'
+    panel.locator('label[for=open20]').click()
+    panel.locator('#home_subject button').click()
+    home = page.get_by_role('menuitem', name='- ' + request.content.home_topic, exact=True)
+    if home.count() != 1 or not home.is_visible():
+        return 'blocked'
+    home.click()
+    panel.get_by_role('button', name='현재', exact=True).click()
+    panel.get_by_role('button', name='예약', exact=True).click()
+    day = request.scheduled_at.astimezone(KST)
+    if panel.locator('button.btn_reserve').inner_text().strip() != day.strftime('%Y-%m-%d'):
+        return 'blocked'
+    hour = panel.locator('#dateHour')
+    minute = panel.locator('#dateMinute')
+    hour.fill(day.strftime('%H'))
+    minute.fill(day.strftime('%M'))
+    minute.press('Tab')
+    selected_category = page.locator('#category-btn').inner_text().replace('더보기', '').strip()
+    if (hour.input_value() != day.strftime('%H') or minute.input_value() != day.strftime('%M')
+            or not panel.locator('#open20').is_checked()
+            or panel.locator('.btn_date.on').inner_text().strip() != '예약'
+            or panel.locator('#home_subject button .mce-txt').inner_text().strip() != request.content.home_topic
+            or selected_category != category or title.input_value() != request.content.title
+            or page.url != location.geturl()):
+        return 'blocked'
+    return 'input_verified'
 
 
 @dataclass(frozen=True, slots=True)

@@ -25,6 +25,37 @@ class InputResult(StrEnum):
 
 
 @dataclass(frozen=True, slots=True)
+class HtmlReplacement:
+    content: HtmlInput
+    previous_sha256: str
+
+
+def replace_uploaded_html(page: Page, request: HtmlReplacement, *, dry_run: bool = True) -> InputResult:
+    if dry_run:
+        return InputResult.DRY_RUN
+    location = urlsplit(page.url)
+    content = request.content
+    title = page.locator('#post-title-inp')
+    editor = page.locator('#html-editor-container .CodeMirror')
+    source = editor.locator('textarea')
+    if (location.scheme != 'https' or location.netloc != 'nedamma.tistory.com'
+            or location.path.rstrip('/') != '/manage/newpost'
+            or not content.title.strip() or title.count() != 1 or title.input_value() != content.title
+            or editor.count() != 1 or not editor.is_visible() or source.count() != 1
+            or not content.html.strip() or sha256(content.html.encode()).hexdigest() != content.body_sha256):
+        return InputResult.BLOCKED
+    source.press('ControlOrMeta+A')
+    if sha256(source.input_value().encode()).hexdigest() != request.previous_sha256:
+        return InputResult.BLOCKED
+    page.keyboard.insert_text(content.html)
+    source.press('ControlOrMeta+A')
+    if (source.input_value() != content.html or title.input_value() != content.title
+            or page.url != location.geturl()):
+        return InputResult.UNKNOWN
+    return InputResult.INPUT_VERIFIED
+
+
+@dataclass(frozen=True, slots=True)
 class LocalUpload:
     asset_id: MediaId
     path: Path
