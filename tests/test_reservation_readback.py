@@ -32,6 +32,14 @@ def test_missing_readback_is_unknown() -> None:
     assert result.status is VerificationStatus.UNKNOWN
 
 
+def test_reservation_readback_accepts_saved_ascii_tag_normalization() -> None:
+    expected = replace(target(), content=replace(target().content, tags=('AI', 'LG이노텍')))
+    saved = replace(expected, content=replace(expected.content, tags=('ai', 'lg이노텍')))
+    observation = replace(observed(), target=saved)
+    result = readback.verify_reservation(expected, observation, observation.observed_at)
+    assert result.status is VerificationStatus.VERIFIED
+
+
 @pytest.mark.parametrize("field", ["title", "body_digest", "media", "representative", "category", "home_topic", "tags"])
 def test_changed_content_field_blocks_success(field: str) -> None:
     content = target().content

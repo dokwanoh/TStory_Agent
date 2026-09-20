@@ -42,3 +42,43 @@ def test_immediate_readback_when_public_evidence_is_exact(case: str) -> None:
     # Then: a scheduled state or missing anonymous evidence is never public success.
     assert (result.status is VerificationStatus.VERIFIED) == (case == 'valid')
     assert bool(result.mismatches) == (case != 'valid')
+
+
+@pytest.mark.parametrize(('saved_tags', 'valid'), [
+    (('ai', 'lg이노텍', '부품'), True),
+    (('ai', 'lg이노텍', '다른태그'), False),
+    (('ai', 'lg이노텍'), False),
+    (('ai', 'lg이노텍', '부품', '추가'), False),
+    (('ai', 'lg 이노텍', '부품'), False),
+])
+def test_immediate_readback_when_platform_lowercases_ascii_tags(
+    saved_tags: tuple[str, ...], valid: bool,
+) -> None:
+    # Given: a reviewed uppercase tag identity and platform-normalized saved tags.
+    media = tuple(ReservationMedia(MediaId(str(index)), f'사진 {index}') for index in range(4))
+    content = ReservationContent('AI 제목', 'a' * 64, media, MediaId('0'), 'IT', 'IT 인터넷',
+                                 ('AI', 'LG이노텍', '부품'))
+    now = datetime.fromisoformat('2030-01-01T14:27:42+09:00')
+    target = reservation_readback.ImmediateTarget(
+        SavedIdentity(PostId('96'), 'https://nedamma.tistory.com/96'), content, now - timedelta(seconds=15))
+    observation = reservation_readback.ImmediateObservation(
+        target.identity, replace(content, tags=saved_tags), SavedVisibility.PUBLIC,
+        now.replace(second=0), now, True)
+    # When: readback compares saved tag identities.
+    result = reservation_readback.verify_immediate_publication(target, observation, now)
+    # Then: only observed ASCII case normalization is equivalent, not tag changes.
+    assert (result.status is VerificationStatus.VERIFIED) is valid
+
+
+@pytest.mark.parametrize(('wanted', 'saved'), [
+    (('Ä',), ('ä',)),
+    (('ß',), ('ss',)),
+    (('AI', 'ai'), ('AI', 'ai')),
+    (('AI', 'ai'), ('ai',)),
+])
+def test_saved_tag_equivalence_rejects_unobserved_case_changes_and_collisions(
+    wanted: tuple[str, ...], saved: tuple[str, ...],
+) -> None:
+    from tistory_growth_os.delivery.reservation_readback import saved_tags_match
+
+    assert not saved_tags_match(wanted, saved)

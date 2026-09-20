@@ -1,9 +1,9 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime, timedelta
 
 from ..domain.publishing_future import VerificationStatus
 from .new_reservation_identity import SavedIdentity
-from .reservation_readback import READBACK_TTL, ReservationCheck, ReservationContent, SavedVisibility
+from .reservation_readback import READBACK_TTL, ReservationCheck, ReservationContent, SavedVisibility, saved_tags_match
 
 
 @dataclass(frozen=True, slots=True)
@@ -35,7 +35,8 @@ def verify_immediate_publication(
         return ReservationCheck(VerificationStatus.UNKNOWN, ('readback_time',))
     comparisons = (
         ('identity', observed.identity == target.identity),
-        ('content', observed.content == target.content),
+        ('content', replace(observed.content, tags=target.content.tags) == target.content
+         and saved_tags_match(target.content.tags, observed.content.tags)),
         ('visibility', observed.visibility is SavedVisibility.PUBLIC),
         ('anonymous_public', observed.anonymous_public),
         ('publication_time', target.save_started_at.replace(second=0, microsecond=0)

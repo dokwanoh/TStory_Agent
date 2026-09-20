@@ -34,7 +34,8 @@ def test_cli_when_independent_immediate_attempt_and_recovery_use_real_chrome(
 
     folder = immediate_package_fixture(tmp_path)
     manifest = folder / 'manifest.json'
-    _ = manifest.write_text(manifest.read_text().replace('"home_topic":"생활정보"', '"home_topic":"국내여행"'))
+    _ = manifest.write_text(manifest.read_text().replace('"home_topic":"생활정보"', '"home_topic":"국내여행"')
+        .replace('"tags":["해안"]', '"tags":["AI","LG이노텍","해안"]'))
     package = load_immediate_package(tmp_path, folder, fixed)
     digest = package.article.intent.package_digest
     review_directory = tmp_path / 'contracts' / 'reviews'
@@ -55,6 +56,8 @@ def test_cli_when_independent_immediate_attempt_and_recovery_use_real_chrome(
     html = html.replace('sessionStorage', 'localStorage').replace(
         "setDate(document.querySelectorAll('.btn_date')[1]);",
         "document.querySelector('.btn_date').textContent='2030-01-01 15:00';setDate(document.querySelector('.btn_date'));")
+    html = html.replace('map(link => link.textContent),',
+        "map(link => link.textContent.replace(/[A-Z]/g, letter => letter.toLowerCase())),")
     saves: list[str] = []
     authenticated: list[BrowserContext] = []
     requests: list[str] = []

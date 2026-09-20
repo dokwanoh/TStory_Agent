@@ -95,6 +95,14 @@ class ReservationCheck:
     mismatches: tuple[str, ...]
 
 
+def saved_tags_match(wanted: tuple[str, ...], saved: tuple[str, ...]) -> bool:
+    mapping = str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')
+    expected = tuple(sorted(tag.translate(mapping) for tag in wanted))
+    actual = tuple(sorted(tag.translate(mapping) for tag in saved))
+    return (len(set(expected)) == len(expected) and len(set(actual)) == len(actual)
+            and expected == actual)
+
+
 def verify_reservation(
     expected: ReservationTarget,
     observation: ReservationObservation | None,
@@ -121,7 +129,7 @@ def verify_reservation(
         ("representative", wanted.representative == saved.representative),
         ("category", wanted.category == saved.category),
         ("home_topic", wanted.home_topic == saved.home_topic),
-        ("tags", wanted.tags == saved.tags),
+        ("tags", saved_tags_match(wanted.tags, saved.tags)),
     )
     mismatches = tuple(name for name, matched in comparisons if not matched)
     status = VerificationStatus.MISMATCH if mismatches else VerificationStatus.VERIFIED
