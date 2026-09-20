@@ -8,7 +8,7 @@ from tistory_growth_os.delivery import playwright_manager as manager
 from tistory_growth_os.domain.ids import PostId
 
 
-@pytest.mark.parametrize('case', ['complete', 'duplicate', 'missing_page', 'changed_count', 'filtered'])
+@pytest.mark.parametrize('case', ['complete', 'spa', 'loading', 'duplicate', 'missing_page', 'changed_count', 'filtered'])
 def test_inventory_requires_every_unfiltered_page(case: str) -> None:
     # Given: two native-shaped pages, with one optional incompleteness defect.
     requests: list[str] = []
@@ -27,6 +27,18 @@ def test_inventory_requires_every_unfiltered_page(case: str) -> None:
         <ul class="list_paging"><li><a class="link_num"
         href="?category=-3&amp;page=1&amp;visibility=all">1</a></li>
         <li>{next_link}</li></ul></div>'''
+        if case == 'spa':
+            html += '''<script>document.querySelectorAll('a')[1].onclick = function(e) {
+            e.preventDefault(); history.pushState({}, '', this.href);
+            setTimeout(() => document.querySelector('input').id = 'inpCheck91', 300);
+            };</script>'''
+        if case == 'loading' and number == '1':
+            html = html.replace('>2</span>', '>0</span>').replace(
+                '<input type="checkbox" id="inpCheck92">', '')
+            html += '''<script>setTimeout(() => {
+            document.querySelector('.txt_count').textContent = '2';
+            document.querySelector('#mArticle').insertAdjacentHTML('beforeend',
+            '<input type="checkbox" id="inpCheck92">'); }, 300);</script>'''
         route.fulfill(content_type='text/html; charset=utf-8', body=html)
 
     with sync_playwright() as p, closing(p.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
@@ -37,5 +49,5 @@ def test_inventory_requires_every_unfiltered_page(case: str) -> None:
         # When: collecting through ordinary visible pagination.
         result = manager.read_manager_inventory(page)
         # Then: partial or conflicting inventories never authorize creation.
-        assert result == (frozenset((PostId('91'), PostId('92'))) if case == 'complete' else None)
+        assert result == (frozenset((PostId('91'), PostId('92'))) if case in ('complete', 'spa', 'loading') else None)
         assert set(requests) == {'GET'}

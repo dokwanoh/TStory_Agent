@@ -4,7 +4,7 @@ from enum import StrEnum
 import re
 from urllib.parse import parse_qs, urljoin, urlsplit
 
-from playwright.sync_api import Page
+from playwright.sync_api import Page, TimeoutError as BrowserTimeout
 
 from ..domain.ids import PostId
 from .reservation_readback import KST
@@ -44,6 +44,10 @@ def read_manager_inventory(page: Page) -> frozenset[PostId] | None:
         count = page.locator('#mArticle h3 .txt_count')
         if heading.count() != 1 or count.count() != 1:
             return None
+        try:
+            page.locator('#mArticle input[id^="inpCheck"]').first.wait_for(state='attached', timeout=5000)
+        except BrowserTimeout:
+            return None
         total_text = count.inner_text().strip().replace(',', '')
         if re.fullmatch(r'[0-9]+', total_text) is None:
             return None
@@ -77,6 +81,10 @@ def read_manager_inventory(page: Page) -> frozenset[PostId] | None:
             return None
         next_page.click(timeout=5000)
         page.wait_for_url(destination, timeout=10000)
+        try:
+            page.locator(f'#inpCheck{min(current)}').wait_for(state='detached', timeout=5000)
+        except BrowserTimeout:
+            return None
     return None
 
 
