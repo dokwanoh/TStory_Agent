@@ -8,7 +8,7 @@ from playwright.sync_api import Page
 
 from ..domain.ids import PostId
 from .playwright_manager import ManagerVisibility
-from .reservation_readback import KST
+from .reservation_readback import KST, ReservationContent
 from .new_reservation_identity import NewReservationIntent
 
 
@@ -63,6 +63,42 @@ def configure_new_reservation(page: Page, request: NewReservationIntent, *, dry_
             or panel.locator('#home_subject button .mce-txt').inner_text().strip() != request.content.home_topic
             or selected_category != category or title.input_value() != request.content.title
             or page.url != location.geturl()):
+        return 'blocked'
+    return 'input_verified'
+
+
+def configure_immediate_publication(
+    page: Page, content: ReservationContent, *, dry_run: bool = True,
+) -> Literal['dry_run', 'blocked', 'input_verified']:
+    if dry_run:
+        return 'dry_run'
+    location = urlsplit(page.url)
+    if (location.scheme != 'https' or location.netloc != 'nedamma.tistory.com'
+            or location.path.rstrip('/') != '/manage/newpost'):
+        return 'blocked'
+    panel = page.get_by_role('dialog').filter(has=page.locator('legend').filter(has_text='발행정보 입력폼'))
+    title = page.locator('#post-title-inp')
+    category = page.locator('#category-btn')
+    if (panel.count() != 1 or not panel.is_visible() or title.count() != 1
+            or category.count() != 1 or title.input_value() != content.title):
+        return 'blocked'
+    panel_title = panel.locator('.tit_publish')
+    home = panel.locator('#home_subject button .mce-txt')
+    public = panel.locator('#open20')
+    current = panel.get_by_role('button', name='현재', exact=True)
+    tags = page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'), include_hidden=True)
+    observed_tags = tuple(sorted(text.removeprefix('#').strip() for text in tags.all_inner_texts()))
+    if (any(item.count() != 1 or not item.is_visible() for item in (panel_title, home, public, current))
+            or panel_title.inner_text().strip() != content.title
+            or home.inner_text().strip() != content.home_topic
+            or category.inner_text().replace('더보기', '').strip() != (content.category or '카테고리 없음')
+            or observed_tags != tuple(sorted(content.tags))):
+        return 'blocked'
+    public.check()
+    current.click()
+    selected = panel.locator('.btn_date.on')
+    if (selected.count() != 1 or selected.inner_text().strip() != '현재'
+            or not public.is_checked() or page.url != location.geturl()):
         return 'blocked'
     return 'input_verified'
 

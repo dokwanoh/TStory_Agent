@@ -1,5 +1,12 @@
 # TISTORY GROWTH OS — execution plan
 
+## Immediate-mode migration, 2026-09-20
+
+- Completed: separate current-time native-panel input from fixed-slot reservation;6browser cases prove no reservation selection and no final save.
+- Completed: typed immediate-public readback contract rejects scheduled/private/mismatched/stale or non-anonymous evidence;46related tests pass, types/compile/checker clean.
+- Completed: full regression502passed/1pre-existing memory-document failure; verified scope recorded in docs/50_immediate_mode_adapters.md for scoped commit/push. No live write or scheduler resumption in this local adapter increment.
+- Separate next increment: integrate package authority, journal identity, full input and anonymous readback into the independent immediate runner, then exercise one fresh approved article. Reservation93 is not reused.
+
 ## Approved one-editor input rehearsal
 
 - Completed: explicit owner approval recorded for html-input-rehearsal-20260913-1800; no final save/reservation/release.
