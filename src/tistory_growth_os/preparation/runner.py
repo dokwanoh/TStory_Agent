@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 
 from ..artifacts.layout import safe_output_root
@@ -17,6 +18,7 @@ from .editorial import CATEGORIES, TOPICS, parse_draft
 from .package import PackageInput, assemble, promote, write_immutable
 from .provider import Provider, StageRequest
 from .storage import StageStore
+from .media_evidence import native_generation_evidence
 
 
 @dataclass(frozen=True, slots=True)
@@ -82,11 +84,17 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     from .storage import media_files
     images = media_files(run.directory, media_source)
     media_fields = Fields.parse(parse_json(media_source), '', ('assets',))
-    generated = any(text(Fields.parse(asset, '',
+    generated = sum(text(Fields.parse(asset, '',
         ('file', 'origin', 'source_url', 'rights_basis', 'credit', 'scene')), 'origin') == 'generated'
         for asset in array(media_fields, 'assets', True))
     if generated and 'image_generation' not in store.receipt('media').tool_kinds:
-        raise PreparationError('generation_tool_evidence_required')
+        native = native_generation_evidence(Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))),
+            store.receipt('media').session_id, (run.directory / 'media.attempt').stat().st_mtime, generated)
+        proof = run.directory / 'media-native-evidence.json'
+        if proof.exists() and proof.read_text() != native:
+            raise PreparationError('native_generation_evidence_changed')
+        if not proof.exists():
+            write_immutable(proof, native.encode())
     for image in images:
         digest = sha256(image.read_bytes()).hexdigest()
         if digest in history:
@@ -98,7 +106,12 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     if not candidate.event_at <= cutoff <= checked < candidate.event_at + timedelta(hours=24):
         raise PreparationError('package_freshness_failed')
     package_digest = assemble(run.directory, PackageInput(run.run_id, candidate, draft, cutoff,
-        checked, research_source + '\nSelection:\n' + selection, media_source))
+        checked, research_source + '\nSelection:\n' + selection
+        + '\nRuntime media evidence:\n' + (run.directory / 'media.receipt.json').read_text()
+        + ('\n' + (run.directory / 'media-native-evidence.json').read_text()
+           if (run.directory / 'media-native-evidence.json').exists() else '')
+        + '\nTaxonomy contract (owner screenshots, docs/19_tistory_taxonomy.md; not saved selection):\n'
+        + repr(CATEGORIES) + '\n' + repr(TOPICS), media_source))
     inspection = run.directory / 'inspection'
     envelope = json.dumps({'subject_sha256': package_digest,
         'manifest': (inspection / 'manifest.json').read_text(),

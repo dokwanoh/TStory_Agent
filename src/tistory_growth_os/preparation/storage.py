@@ -8,8 +8,9 @@ import sys
 
 from ..artifacts.layout import safe_output_root
 from ..contracts.json_decode import parse_json
-from ..contracts.json_ast import JsonString
-from ..domain.common import Fields, array, text
+from ..contracts.json_ast import JsonArray, JsonObject, JsonString
+from ..contracts.json_encode import encode_json
+from ..domain.common import Fields, array, as_object, text
 from ..research.intake import public_source_url
 from .contracts import PreparationError
 from .provider import Provider, Stage, StageRequest, StageResponse
@@ -62,11 +63,26 @@ class StageStore:
         return result.response
 
 
+def prior_research_leads(root: Path) -> str:
+    paths = sorted((root / '.artifacts/preparation').glob('*/research.json'),
+                   key=lambda path: path.stat().st_mtime, reverse=True)[:2]
+    candidates: list[JsonObject] = []
+    for path in paths:
+        _ = safe_output_root(root, path.relative_to(root).as_posix())
+        if path.is_symlink() or path.stat().st_size > 200_000:
+            raise PreparationError('prior_research_input_unsafe')
+        fields = Fields(as_object(parse_json(path.read_text()), ''), '', ())
+        candidates.extend(as_object(value, '/candidates') for value in array(fields, 'candidates', False)[:5])
+    return encode_json(JsonArray(tuple(candidates)))
+
+
 def history_snapshot(root: Path) -> str:
-    manifests = sorted((root / 'content/fasttrack').glob('*/manifest.json'),
-                       key=lambda path: path.stat().st_mtime, reverse=True)[:5]
+    candidates = {path.parent: path for pattern in ('**/publish-manifest.json', '**/manifest.json')
+                  for path in (root / 'content').glob(pattern)}
+    manifests = sorted(candidates.values(), key=lambda path: path.stat().st_mtime, reverse=True)[:5]
     history: list[dict[str, str]] = []
     for path in manifests:
+        _ = safe_output_root(root, path.relative_to(root).as_posix())
         records = [path.read_text()]
         for relative in ('media/PROVENANCE.md', 'media/photo-v3-record.md'):
             source = safe_output_root(path.parent, relative)

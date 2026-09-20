@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from html import escape
 import re
 from typing import Final
+from urllib.parse import urlsplit
 
 from ..contracts.json_decode import parse_json
 from ..domain.common import Fields, array, strings, text
@@ -54,6 +55,10 @@ def parse_draft(source: str, candidate: Candidate) -> Draft:
     if not 4 <= len(sections) <= 6:
         raise PreparationError('article_sections_required')
     linked: set[str] = set()
+    evidence = Fields(candidate.evidence, '', ())
+    labels = {text(source, 'url'): text(source, 'support')[:100]
+              for raw in array(evidence, 'sources', True)
+              for source in (Fields.parse(raw, '', ('url', 'primary', 'checked_at', 'support')),)}
     for index, raw in enumerate(sections):
         section = Fields.parse(raw, '/sections', ('heading', 'paragraphs', 'source_urls'))
         html.append('<h2 style="font-size:24px;line-height:1.45;margin:40px 0 16px !important;">'
@@ -63,8 +68,9 @@ def parse_draft(source: str, candidate: Candidate) -> Draft:
             if url not in candidate.urls:
                 raise PreparationError('unresearched_article_link')
             linked.add(url)
-            html.append('<p><a style="color:#075f9c;text-decoration:underline;" href="'
-                        + escape(url, quote=True) + '">관련 근거 자세히 보기</a></p>')
+            html.append('<p><a style="color:#075f9c;text-decoration:underline;word-break:keep-all;overflow-wrap:anywhere;" href="'
+                        + escape(url, quote=True) + '">' + escape(labels[url])
+                        + ' (' + escape(urlsplit(url).netloc) + ')</a></p>')
         if index in (0, 1, 3):
             html.append('{{MEDIA' + str({0: 2, 1: 3, 3: 4}[index]) + '}}')
     html.extend((paragraph(text(fields, 'ending')), '</div>'))

@@ -46,6 +46,9 @@ paragraphs, contextual emojis without forcing slang, no invented personal experi
 traffic tactics. 1800–3000Korean characters, 4–6reader-question sections, concise lead answering title,
 2–4summary points and a practical ending. Clearly distinguish confirmed details from uncertainty.
 Avoid repeated boilerplate advice. Each section has paragraphs and relevant source_urls from evidence.
+Every section must add a different insight; do not repeat the same caution or viewing advice.
+Use precise statistical terms (for example scoring rank is not chronological goal order).
+Alt describes visible content only; do not infer before/after a match or an unseen event.
 Plain text fields only, no HTML/Markdown. Existing renderer provides the approved post89 summary box,
 17px/1.8body,24pxheadings, paragraph spacing. Select actual available category/home_topic from supplied lists.
 Create FOUR unique subject-specific photo scene briefs/accurate alt text: square-safe cover then three

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from html import escape
+from hashlib import sha256
 import json
 from pathlib import Path
 import shutil
@@ -68,6 +69,8 @@ def assemble(directory: Path, source: PackageInput) -> str:
     for index in range(1, 5):
         name = f'media/{index:02}.jpg'
         payloads[name] = safe_output_root(directory, name).read_bytes()
+    payloads['quality.md'] += '\n'.join(f'{name} SHA-256 {sha256(body).hexdigest()}'
+        for name, body in payloads.items() if name.startswith('media/')).encode()
     for name, body in payloads.items():
         write_immutable(safe_output_root(inspection, name), body)
     return payload_digest(payloads)

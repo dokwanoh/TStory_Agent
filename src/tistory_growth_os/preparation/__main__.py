@@ -13,7 +13,7 @@ from .contracts import PreparationError
 from .package import write_immutable
 from .provider import codex_provider
 from .runner import PreparationRun, execute, utc_now
-from .storage import history_snapshot
+from .storage import history_snapshot, prior_research_leads
 
 
 class Arguments(argparse.Namespace):
@@ -49,7 +49,9 @@ def main() -> int:
                 feed = collect_live()
                 write_immutable(directory / 'signals.rss', feed)
                 write_immutable(initial, json.dumps({'run_id': args.run_id,
-                    'cutoff': utc_now().isoformat(), 'signals': feed.decode('utf-8'),
+                    'cutoff': utc_now().isoformat(), 'signals': feed.decode('utf-8')
+                    + '\nPrior UNVERIFIED research leads (not approved evidence; re-open sources and '
+                    + 'requalify all facts/timestamps, ignore previous check status):\n' + prior_research_leads(root),
                     'history': history_snapshot(root)}, ensure_ascii=False).encode())
             package = execute(PreparationRun(root, directory, args.run_id, utc_now), codex_provider)
             print(json.dumps({'state': 'local_package_reviewed', 'package': str(package),

@@ -104,6 +104,10 @@ separate component playground.
 
 ### Source link and evidence callout
 
+- Preparation source anchors retain descriptive evidence text plus source domain.
+  Apply `word-break:keep-all;overflow-wrap:anywhere` to these anchors so Korean
+  words and endings stay together while an unusually long domain can still wrap.
+
 - Structure: each factual claim has an adjacent source link and the evidence
   callout identifies source title, checked date, claim identifier, and any
   uncertainty or conflict.

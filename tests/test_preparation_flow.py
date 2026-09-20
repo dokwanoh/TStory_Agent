@@ -29,6 +29,12 @@ def test_full_preparation_outputs_native_package(tmp_path: Path) -> None:
     assert provider.calls == ['research', 'selection', 'writing', 'media', 'review']
     assert (package / 'manifest.json').is_file()
     assert len(list((tmp_path / 'contracts/reviews').glob('*.json'))) == 1
+    assert 'example.org' in (package / 'article.html').read_text()
+    assert '관련 근거 자세히 보기' not in (package / 'article.html').read_text()
+    assert 'word-break:keep-all;overflow-wrap:anywhere' in (package / 'article.html').read_text()
+    assert 'Runtime media evidence' in (package / 'evidence.md').read_text()
+    assert 'Taxonomy contract' in (package / 'evidence.md').read_text()
+    assert 'media/01.jpg SHA-256' in (package / 'quality.md').read_text()
 
 
 def test_quality_rejection_never_promotes(tmp_path: Path) -> None:
@@ -182,3 +188,44 @@ def test_research_runtime_timestamp_is_frozen_on_replay(tmp_path: Path) -> None:
     assert first == replay
     assert fixture.calls == ['research']
     assert len(parse_research(replay, NOW).candidates) == 5
+
+
+def test_prior_research_leads_are_bounded_and_never_include_package_reviews(tmp_path: Path) -> None:
+    from tistory_growth_os.preparation.storage import prior_research_leads
+    import os
+    for index in range(4):
+        directory = tmp_path / '.artifacts/preparation' / f'prior-{index}'
+        directory.mkdir(parents=True)
+        path = directory / 'research.json'
+        _ = path.write_text(research_response().replace('candidate-', f'lead-{index}-'))
+        os.utime(path, (index + 1, index + 1))
+        _ = (directory / 'review.json').write_text('private-review-must-not-be-input')
+    source = prior_research_leads(tmp_path)
+    assert 'lead-3-0' in source and 'lead-2-0' in source
+    assert 'lead-1-0' not in source and 'lead-0-0' not in source
+    assert 'private-review-must-not-be-input' not in source
+
+
+def test_prior_research_rejects_symlinked_parent(tmp_path: Path) -> None:
+    from tistory_growth_os.preparation.storage import prior_research_leads
+    from tistory_growth_os.artifacts.layout import ArtifactWriteError
+    outside = tmp_path / 'outside'
+    outside.mkdir()
+    _ = (outside / 'research.json').write_text(research_response())
+    root = tmp_path / 'project'
+    directory = root / '.artifacts/preparation'
+    directory.mkdir(parents=True)
+    (directory / 'linked-run').symlink_to(outside, target_is_directory=True)
+    with pytest.raises(ArtifactWriteError, match='symlink'):
+        _ = prior_research_leads(root)
+
+
+def test_history_includes_scheduled_and_publish_manifest_packages(tmp_path: Path) -> None:
+    from tistory_growth_os.preparation.storage import history_snapshot
+    for relative in ('fasttrack/a/manifest.json', 'scheduled/2026-09-20/1900/manifest.json',
+                     'fasttrack/older/publish-manifest.json'):
+        path = tmp_path / 'content' / relative
+        path.parent.mkdir(parents=True)
+        _ = path.write_text(relative)
+    history = history_snapshot(tmp_path)
+    assert '1900/manifest.json' in history and 'publish-manifest.json' in history
