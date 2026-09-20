@@ -1,15 +1,18 @@
 from contextlib import closing
 from datetime import datetime
+from dataclasses import replace
 
 import pytest
 from playwright.sync_api import Route, sync_playwright
 
-from test_editor_readback import body_html, editor_html
-from test_publish_settings import panel_html
+from browser_tests.test_editor_readback import body_html, editor_html
+from browser_tests.test_publish_settings import panel_html
 from tistory_growth_os.delivery import playwright_saved_reservation as reader
 from tistory_growth_os.delivery.playwright_manager import ManagerPostSummary
 from tistory_growth_os.delivery.playwright_editor_readback import read_editor_tags
 from tistory_growth_os.domain.ids import PostId
+from tistory_growth_os.domain.ids import MediaId
+from tistory_growth_os.delivery.playwright_observation import UploadedAsset, reservation_observation
 
 
 @pytest.mark.parametrize('case', ['valid', 'wrong_id', 'wrong_time', 'wrong_title',
@@ -44,8 +47,8 @@ def test_integrated_readback_when_saved_surfaces_agree(case: str) -> None:
 
     with sync_playwright() as p, closing(p.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
         page = browser.new_page(service_workers='block')
-        page.route('**/*', serve)
-        page.goto('https://nedamma.tistory.com/manage/newpost/79')
+        _ = page.route('**/*', serve)
+        _ = page.goto('https://nedamma.tistory.com/manage/newpost/79')
         page.frame_locator('#editor-tistory_ifr').locator('#tinymce').wait_for()
         # When: composing observations without editing or saving.
         result = reader.read_saved_reservation(page, manager, read_editor_tags(page, PostId('79')))
@@ -57,6 +60,21 @@ def test_integrated_readback_when_saved_surfaces_agree(case: str) -> None:
             assert len(result.content.media) == 4
             assert result.tags.tags == frozenset(('테니스',))
             assert result.settings.scheduled_at == scheduled
+            bindings = tuple(UploadedAsset(MediaId(f'asset-{i}'), f'https://example.test/{i}.png',
+                                           f'image-{i}.png') for i in range(4))
+            observed = reservation_observation(result, bindings, scheduled)
+            assert observed is not None
+            assert observed.target.post_id == '79'
+            assert observed.target.content.body_digest == result.content.body_sha256
+            assert observed.target.content.representative == 'asset-0'
+            assert observed.target.content.media[2].alt == '설명 2'
+            assert observed.target.content.category == '스포츠'
+            assert reservation_observation(result, bindings[:3], scheduled) is None
+            wrong = (replace(bindings[0], filename='different.png'), *bindings[1:])
+            assert reservation_observation(result, wrong, scheduled) is None
+            swapped = replace(result, content=replace(result.content, media=tuple(reversed(result.content.media))))
+            changed = reservation_observation(swapped, bindings, scheduled)
+            assert changed is not None and changed.target.content.media[0].asset_id == 'asset-3'
         else:
             assert result is None
         assert set(requests) == {'GET'}
