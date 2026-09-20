@@ -1,0 +1,116 @@
+from contextlib import closing
+from datetime import datetime, timedelta
+from pathlib import Path
+from urllib.parse import urlsplit
+
+import pytest
+from playwright.sync_api import Route, sync_playwright
+from typing_extensions import override
+
+from tistory_growth_os.delivery.immediate_execution import ImmediateExecutor, ImmediateIntent, ImmediateJournal
+from tistory_growth_os.delivery.playwright_article_input import ImmediateArticleInput
+from tistory_growth_os.delivery.playwright_immediate_surface import ImmediateNativeSurface
+from tistory_growth_os.delivery.playwright_native_surface import NativePreparationError
+from tistory_growth_os.delivery.playwright_observation import UploadedAsset
+from tistory_growth_os.delivery.reservation_execution import ExecutionState
+from tistory_growth_os.delivery.reservation_readback import KST
+from browser_tests.test_native_surface_flow import article_fixture, manager_fixture
+
+
+@pytest.mark.parametrize(('case', 'expected'), [
+    ('valid', ExecutionState.VERIFIED),
+    ('saved_body', ExecutionState.MISMATCH),
+    ('anonymous_body', ExecutionState.MISMATCH),
+    ('anonymous_private', ExecutionState.MISMATCH),
+    ('saved_source', ExecutionState.UNKNOWN),
+    ('stop_input', ExecutionState.BLOCKED),
+])
+def test_immediate_flow_when_real_browser_reads_both_surfaces(case: str, expected: ExecutionState, tmp_path: Path) -> None:
+    # Given: native controls and isolated public responses, with every request intercepted.
+    original = article_fixture(tmp_path)
+    now = datetime.fromisoformat('2030-01-01T15:00:30+09:00')
+
+    class ClockSurface(ImmediateNativeSurface):
+        @override
+        def now(self) -> datetime:
+            return now
+
+    stamp = now.astimezone(KST).strftime('%Y-%m-%d %H:%M')
+    intent = ImmediateIntent('fixture-immediate', original.intent.content, 'c' * 64, now + timedelta(hours=1))
+    article = ImmediateArticleInput(intent, original.template, original.uploads)
+    directory = Path(__file__).parent
+    html = (directory / 'native_surface_fixture.html').read_text().replace(
+        '{{ARTICLE_INPUT}}', (directory / 'article_input_fixture.html').read_text())
+    html = html.replace("setDate(document.querySelectorAll('.btn_date')[1]);",
+        f"document.querySelector('.btn_date').textContent = '{stamp}'; setDate(document.querySelector('.btn_date'));")
+    if case == 'saved_body':
+        html = html.replace('/* SAVED_BODY_VARIANT */', "frame.contentDocument.querySelector('p').textContent='changed';")
+    if case == 'saved_source':
+        html = html.replace("function saveFixture() {", "function saveFixture() { frame.contentDocument.querySelector('img').src='https://example.com/replaced.jpg';")
+    saves: list[str] = []
+    with sync_playwright() as runtime, closing(runtime.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
+        with closing(browser.new_context(service_workers='block')) as authenticated, closing(browser.new_context(service_workers='block')) as anonymous:
+            page = authenticated.new_page()
+            page.set_default_timeout(3000)
+
+            def serve(route: Route) -> None:
+                location = urlsplit(route.request.url)
+                if location.netloc != 'nedamma.tistory.com':
+                    route.fulfill(status=204)
+                    return
+                if location.path.rstrip('/') == '/manage/posts':
+                    if location.query == 'fixtureSaved=1':
+                        saves.append(route.request.url)
+                    manager = manager_fixture(('92', '93') if saves else ('92',))
+                    manager = manager.replace('<span class="info_status">[예약]</span>', '').replace(
+                        '<span class="txt_ellip"></span>', '<span class="txt_ellip">공개</span>').replace('2030-01-01 19:00', stamp)
+                    route.fulfill(content_type='text/html; charset=utf-8', body=manager)
+                    return
+                if location.path == '/93':
+                    body = page.frame_locator('#editor-tistory_ifr').locator('#tinymce').inner_html()
+                    if case == 'anonymous_body':
+                        body = body.replace('검수 본문', 'different text')
+                    status = 403 if case == 'anonymous_private' else 200
+                    route.fulfill(status=status, content_type='text/html; charset=utf-8',
+                                  body='<h1>검수 제목</h1><div class="tt_article_useless_p_margin">' + body + '</div>')
+                    return
+                route.fulfill(content_type='text/html; charset=utf-8', body=html)
+
+            _ = authenticated.route('**/*', serve)
+            _ = anonymous.route('**/*', serve)
+            _ = page.goto('https://nedamma.tistory.com/manage/posts/')
+            database = tmp_path / 'journal.sqlite3'
+            journal = ImmediateJournal(database)
+
+            def checkpoint(phase: str, _uploads: tuple[UploadedAsset, ...]) -> None:
+                if case == 'stop_input' and phase == 'article_input/upload_verified' and len(_uploads) == 1:
+                    _ = (tmp_path / 'STOP').write_text('stop after first upload')
+                if phase == 'article_input/input_verified':
+                    journal.media.record(intent.key, intent.package_digest, surface.bindings)
+
+            surface = ClockSurface(page, anonymous, article, tmp_path / 'STOP', lambda _request, _now: (), checkpoint)
+            # When: one independent execution inputs, publishes and reads saved plus anonymous content.
+            if case == 'stop_input':
+                with pytest.raises(NativePreparationError, match='kill_switch'):
+                    _ = ImmediateExecutor(journal, surface).run(intent, dry_run=False)
+                assert len(surface.uploads) == 1 and len(saves) == 0
+                return
+            result = ImmediateExecutor(journal, surface).run(intent, dry_run=False)
+            # Then: mismatches never certify, and a second process-equivalent executor never saves again.
+            assert result.execution.state is expected, result.execution
+            assert len(saves) == 1
+            replay = ImmediateExecutor(ImmediateJournal(database), surface).run(intent, dry_run=False)
+            assert replay.execution.state is ExecutionState.HELD
+            assert len(saves) == 1
+            if case == 'valid':
+                assert page.url == 'https://nedamma.tistory.com/manage/posts/'
+                recovery_surface = ClockSurface(page, anonymous, article, tmp_path / 'STOP', lambda _request, _now: ())
+                recovered = ImmediateExecutor(ImmediateJournal(database), recovery_surface).recover(intent)
+                assert recovered.execution.state is ExecutionState.UNKNOWN
+                assert recovered.execution.reasons == ('missing_readback',)
+                recovery_surface.bindings = ImmediateJournal(database).media.read(intent.key, intent.package_digest)
+                bound_recovery = ImmediateExecutor(ImmediateJournal(database), recovery_surface).recover(intent)
+                assert bound_recovery.execution.state is ExecutionState.VERIFIED
+                same_attempt = ImmediateExecutor(ImmediateJournal(database), surface).recover(intent)
+                assert same_attempt.execution.state is ExecutionState.VERIFIED
+                assert len(saves) == 1

@@ -12,40 +12,50 @@ from .reservation_readback import KST, ReservationContent
 from .new_reservation_identity import NewReservationIntent
 
 
-def configure_new_reservation(page: Page, request: NewReservationIntent, *, dry_run: bool = True) -> Literal['dry_run', 'blocked', 'input_verified']:
-    if dry_run:
-        return 'dry_run'
+def configure_publish_panel(page: Page, content: ReservationContent) -> bool:
     location = urlsplit(page.url)
     title = page.locator('#post-title-inp')
     if (location.scheme != 'https' or location.netloc != 'nedamma.tistory.com'
             or location.path.rstrip('/') != '/manage/newpost'
-            or title.count() != 1 or title.input_value() != request.content.title):
-        return 'blocked'
+            or title.count() != 1 or title.input_value() != content.title):
+        return False
     tags = page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'))
     if tags.count():
-        return 'blocked'
-    category = request.content.category or '카테고리 없음'
+        return False
+    category = content.category or '카테고리 없음'
     page.locator('#category-btn').click()
     choice = page.locator('#category-list').get_by_text(category, exact=True)
     if choice.count() != 1 or not choice.is_visible():
-        return 'blocked'
+        return False
     choice.click()
-    for tag in request.content.tags:
+    for tag in content.tags:
         page.locator('#tagText').fill(tag)
         page.locator('#tagText').press('Enter')
     observed_tags = tuple(text.removeprefix('#').strip() for text in tags.all_inner_texts())
-    if set(observed_tags) != set(request.content.tags) or len(observed_tags) != len(request.content.tags):
-        return 'blocked'
+    if set(observed_tags) != set(content.tags) or len(observed_tags) != len(content.tags):
+        return False
     page.locator('#publish-layer-btn').click()
     panel = page.get_by_role('dialog').filter(has=page.locator('legend').filter(has_text='발행정보 입력폼'))
-    if panel.count() != 1 or panel.locator('.tit_publish').inner_text().strip() != request.content.title:
-        return 'blocked'
+    if panel.count() != 1 or panel.locator('.tit_publish').inner_text().strip() != content.title:
+        return False
     panel.locator('#open20').check()
     panel.locator('#home_subject button').click()
-    home = page.get_by_role('menuitem', name='- ' + request.content.home_topic, exact=True)
+    home = page.get_by_role('menuitem', name='- ' + content.home_topic, exact=True)
     if home.count() != 1 or not home.is_visible():
-        return 'blocked'
+        return False
     home.click()
+    return page.url == location.geturl()
+
+
+def configure_new_reservation(page: Page, request: NewReservationIntent, *, dry_run: bool = True) -> Literal['dry_run', 'blocked', 'input_verified']:
+    if dry_run:
+        return 'dry_run'
+    if not configure_publish_panel(page, request.content):
+        return 'blocked'
+    location = urlsplit(page.url)
+    title = page.locator('#post-title-inp')
+    category = request.content.category or '카테고리 없음'
+    panel = page.get_by_role('dialog').filter(has=page.locator('legend').filter(has_text='발행정보 입력폼'))
     panel.get_by_role('button', name='현재', exact=True).click()
     panel.get_by_role('button', name='예약', exact=True).click()
     day = request.scheduled_at.astimezone(KST)

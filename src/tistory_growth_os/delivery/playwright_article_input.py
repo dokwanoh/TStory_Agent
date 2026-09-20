@@ -8,7 +8,9 @@ from playwright.sync_api import Page, expect
 
 from .editor_body_fingerprint import article_body_digest
 from .native_article_source import NativeAlt, compose_native_article
+from .immediate_execution import ImmediateIntent
 from .new_reservation_identity import NewReservationIntent
+from .reservation_readback import ReservationContent
 from .playwright_editor_mode import select_editor_mode
 from .playwright_html_input import HtmlInput, HtmlReplacement, InputResult, LocalUpload, replace_uploaded_html, upload_local_media
 from .playwright_observation import UploadedAsset
@@ -21,22 +23,42 @@ class ArticleInput:
     uploads: tuple[LocalUpload, ...]
 
     def media(self) -> tuple[NativeAlt, ...]:
-        return tuple(NativeAlt(upload.path.name, image.alt)
-                     for upload, image in zip(self.uploads, self.intent.content.media, strict=True))
+        return _media(self.uploads, self.intent.content)
 
     def valid(self) -> bool:
-        if (len(self.uploads) != 4 or len({item.path.name for item in self.uploads}) != 4
-                or tuple(item.asset_id for item in self.uploads)
-                != tuple(item.asset_id for item in self.intent.content.media)):
-            return False
-        if any(item.article_title != self.intent.content.title or not item.path.is_file()
-               or item.path.is_symlink() or item.path.suffix.lower() not in ('.jpg', '.jpeg', '.png', '.webp')
-               or sha256(item.path.read_bytes()).hexdigest() != item.sha256_digest for item in self.uploads):
-            return False
-        return article_body_digest(self.template, self.media()) == self.intent.content.body_digest
+        return _valid(self.uploads, self.intent.content, self.template)
 
 
-def input_new_article(page: Page, request: ArticleInput, *, dry_run: bool = True,
+@dataclass(frozen=True, slots=True)
+class ImmediateArticleInput:
+    intent: ImmediateIntent
+    template: str = field(repr=False)
+    uploads: tuple[LocalUpload, ...]
+
+    def media(self) -> tuple[NativeAlt, ...]:
+        return _media(self.uploads, self.intent.content)
+
+    def valid(self) -> bool:
+        return _valid(self.uploads, self.intent.content, self.template)
+
+
+def _media(uploads: tuple[LocalUpload, ...], content: ReservationContent) -> tuple[NativeAlt, ...]:
+    return tuple(NativeAlt(upload.path.name, image.alt)
+                 for upload, image in zip(uploads, content.media, strict=True))
+
+
+def _valid(uploads: tuple[LocalUpload, ...], content: ReservationContent, template: str) -> bool:
+    if (len(uploads) != 4 or len({item.path.name for item in uploads}) != 4
+            or tuple(item.asset_id for item in uploads) != tuple(item.asset_id for item in content.media)):
+        return False
+    if any(item.article_title != content.title or not item.path.is_file()
+           or item.path.is_symlink() or item.path.suffix.lower() not in ('.jpg', '.jpeg', '.png', '.webp')
+           or sha256(item.path.read_bytes()).hexdigest() != item.sha256_digest for item in uploads):
+        return False
+    return article_body_digest(template, _media(uploads, content)) == content.body_digest
+
+
+def input_new_article(page: Page, request: ArticleInput | ImmediateArticleInput, *, dry_run: bool = True,
                       checkpoint: Callable[[str, tuple[UploadedAsset, ...]], None] | None = None) -> tuple[UploadedAsset, ...] | None:
     if dry_run or not request.valid():
         return None
