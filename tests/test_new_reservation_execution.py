@@ -27,6 +27,9 @@ class NewSurface:
     expire_after_prepare: bool = False
     denied: bool = False
 
+    def preparation_fingerprint(self) -> str | None:
+        return 'd' * 64
+
     def now(self) -> datetime:
         if self.expire_after_prepare and "prepare" in self.calls:
             return intent().scheduled_at

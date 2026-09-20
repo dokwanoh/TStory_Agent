@@ -7,11 +7,13 @@ import sqlite3
 from ..domain.ids import PostId
 from ..domain.publishing_errors import PublishingInvariantError
 from .new_reservation_identity import SavedIdentity
+from .resume_journal import ResumeJournal
 
 
 class SaveIntentJournal:
     def __init__(self, path: Path) -> None:
         self._path: Path = path
+        self.recovery: ResumeJournal = ResumeJournal(path)
         with closing(sqlite3.connect(path)) as connection, connection:
             _ = connection.execute(
                 """CREATE TABLE IF NOT EXISTS save_intents (
@@ -68,7 +70,7 @@ class SaveIntentJournal:
             raise PublishingInvariantError('RECEIPT_INVALID', '/receipt', 'one identity required')
         return SavedIdentity(PostId(fields[0]), fields[1])
 
-    def claim(self, slot_key: str, package_digest: str) -> bool:
+    def claim(self, slot_key: str, package_digest: str, *, recoverable: bool = False) -> bool:
         if not slot_key or slot_key != slot_key.strip():
             raise ValueError("slot_key must be nonempty without outer whitespace")
         if re.fullmatch(r"[0-9a-f]{64}", package_digest) is None:
@@ -82,4 +84,9 @@ class SaveIntentJournal:
                 (slot_key, package_digest, datetime.now(timezone.utc).isoformat()),
             )
             claimed = cursor.rowcount == 1
+            if claimed and recoverable:
+                _ = connection.execute('''INSERT INTO resume_points(slot_key,package_digest,stage)
+                    VALUES(?,?,'before_input')''', (slot_key, package_digest))
+                _ = connection.execute('''INSERT INTO resume_events(slot_key,package_digest,stage)
+                    VALUES(?,?,'before_input')''', (slot_key, package_digest))
         return claimed

@@ -1,6 +1,9 @@
 from collections.abc import Callable
+from contextlib import closing
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from hashlib import sha256
+import json
 import re
 from urllib.parse import parse_qs, urlsplit
 
@@ -34,6 +37,7 @@ class NativeSurface:
     save_attempted: bool = False
     phase: str = 'created'
     checkpoint: Callable[[str, tuple[UploadedAsset, ...]], None] | None = field(default=None, repr=False)
+    preserve_editor: bool = False
 
     def _input_checkpoint(self, stage: str, uploads: tuple[UploadedAsset, ...]) -> None:
         self.phase = 'article_input/' + stage
@@ -56,8 +60,41 @@ class NativeSurface:
 
     def inventory(self) -> frozenset[PostId] | None:
         self.phase = 'inventory'
-        self.prior = read_manager_inventory(self.page)
+        if self.preserve_editor:
+            with closing(self.page.context.new_page()) as reader:
+                _ = reader.goto('https://nedamma.tistory.com/manage/posts/', wait_until='domcontentloaded')
+                reader.locator('#mArticle input[id^="inpCheck"]').first.wait_for(state='attached', timeout=10000)
+                self.prior = read_manager_inventory(reader)
+        else:
+            self.prior = read_manager_inventory(self.page)
         return self.prior
+
+    def preparation_fingerprint(self) -> str | None:
+        request = self.article.intent
+        location = urlsplit(self.page.url)
+        if (location.scheme != 'https' or location.netloc != 'nedamma.tistory.com'
+                or location.path.rstrip('/') != '/manage/newpost' or not self.article.valid()):
+            return None
+        body = self.page.frame_locator('#editor-tistory_ifr').locator('body#tinymce[contenteditable=true]')
+        if body.count() != 1 or not body.is_visible() or body.locator('img').count() != 4:
+            return None
+        if not self.uploads:
+            restored: list[UploadedAsset] = []
+            for image, expected in zip(body.locator('img').all(), self.article.uploads, strict=True):
+                source = image.get_attribute('src') or ''
+                if image.get_attribute('data-filename') != expected.path.name or urlsplit(source).scheme != 'https':
+                    return None
+                restored.append(UploadedAsset(expected.asset_id, source, expected.path.name))
+            self.uploads = tuple(restored)
+        panel = self.page.get_by_role('dialog').filter(has=self.page.locator('legend').filter(has_text='발행정보 입력폼'))
+        if not panel.is_visible():
+            self.page.locator('#publish-layer-btn').click()
+        if not self._preflight(request):
+            return None
+        self.prepared = True
+        return sha256(json.dumps([request.package_digest,
+            [(item.asset_id, item.filename, item.source_url) for item in self.uploads]],
+            ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
 
     def prepare(self, request: NewReservationIntent) -> None:
         if self.stopped() or self.authorize(request, self.now()) or self.prior is None or self.prepared:
