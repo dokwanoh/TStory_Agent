@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## 2026-09-20 — approved CLI update and live comparison
+
+- Completed: owner-approved native `codex update`,0.145.0→0.155.1; same Astra/schema/read-only smoke now exits0 with completed-turn usage. No config/auth/permissions edits.
+- Completed: both real pre-reviews returned five candidates and measured usage. Raw38,299total tokens; compact32,669. The observed14.7% reduction is not quality-equivalent savings: compact lacks headlines and loses specificity. No article or publisher action.
+- Completed:38targeted tests, source typecheck and direct CLI comparison gate. Evidence docs/57_cli_update_live_comparison.md. Equal-quality optimization remains a separate increment; daily and reservation pauses remain unchanged.
+
 ## 2026-09-20 — measured Astra pre-review connection
 
 - Completed locally: bounded existing-auth Codex review adapter, structured response and completed-turn usage extraction, ten tests and clean scoped types/rules. Preliminary review cannot qualify unresearched events for publishing.
