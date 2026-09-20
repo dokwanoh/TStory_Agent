@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — execution plan
 
+## 2026-09-21 — independent preparation command
+
+- Owner scope: connect research → highest-model selection → original prose/four media → independent quality review into one local command. Token/cost optimization work is stopped. No publishing, reservation or recurring activation.
+- Completed locally: typed stage contracts, bounded existing-auth CLI adapter and durable one-identity orchestration; tests first. Reuse native-immediate package/readback contracts, preserve independent exact-byte review.
+- Acceptance: one command reaches a locally reviewed native package or an explicit held stage; invalid/stale/unsupported/duplicate media or failed review never yields a release-ready package. Dry-run makes zero model/network calls; replay does not repeat expensive stages or create duplicate identity; no publisher imports/calls in orchestration.
+- Validation: fixture full CLI happy/hold/replay plus focused/full regressions/types; actual research/media/provider run separately recorded, never inferred from fixture success. No new dependency or paid API without approval.
+- Live certification held: real initial and bounded expanded research returned zero qualified candidates. Same-ID replay makes no new model calls. Actual prose/media/review chain is not certified by fixture success. Evidence: docs/58_independent_preparation.md.
+
 ## 2026-09-20 — approved CLI update and live comparison
 
 - Completed: owner-approved native `codex update`,0.145.0→0.155.1; same Astra/schema/read-only smoke now exits0 with completed-turn usage. No config/auth/permissions edits.

@@ -1,5 +1,17 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-21 — independent preparation connected; live content completion held
+
+One explicit local command now connects research, final Astra selection, structured original prose/four media, separate-session exact-byte quality review and native-immediate package export. No publisher invocation, authority file, reservation, scheduler or new paid API. Owner's token-savings work is stopped; previous next-step suggestions about comparison are superseded.
+
+Failing-first boundary tests cover freshness, source links, bad/missing/reused images, self-review, rejected quality, checkpoint/package tampering, duplicate execution and one bounded broadened research pass. Separate-process CLI fixture happy/reject/replay succeeds; existing immediate loader accepts its package and local review. Local JPEG decode uses installed Mac sips, not any excluded remote-image/print/Lighthouse audit. Focused25passed/3.73s, full606passed/169.93s, fresh source/scoped types0errors/0warnings, no-excuse14files pass. Evidence docs/58.
+
+Real CLI transport defect reproduced: web_search events duplicate /item/id (started offset69/completed71), rejected by strict domain parser. Narrow transport compatibility fix passed the failing-first regression and an actual web-search smoke. Domain duplicate-key rejection remains. A second regression covers Unicode JSON line separators. Original first failure has no raw event record and is not assigned an invented exact cause.
+
+Actual run `.artifacts/preparation/preparation-20260921-001`: initial and expanded research each returned candidates=[] and six recorded web-search events. Command holds with five_qualified_candidates_required, no writing/media/review/package. Replay reused both checkpoints, no new provider calls. This is actual safe-stop evidence, NOT full content-generation completion. Post96 prior publishing proof remains separate. Existing STOP, recurring and reservation pauses retained. No blog writes. Old unrelated dirty documents/helpers preserved. Read-only parser reviewer supported keeping domain parsing strict; not a PR approval.
+
+Resident LSP still reports missing newly created sibling modules; fresh basedpyright and actual Python imports pass. Cache health is not claimed repaired. Detailed operation, limits and remaining actual-media/quality certification: docs/58_independent_preparation.md.
+
 ## 2026-09-20 spawn-budget recurrence repair
 
 Implemented tools/spawn_run.py and tools/test_spawn_run.py; operating contract docs/44_spawn_run_budget.md. Existing owner reset78→0 retained; successful first real gpt-6-astra child made count1, adopted without a second reset. Second gpt-6-astra child also created/completed; its independent review found bootstrap/path issues, fixed with failing-first regressions, then returned scoped PASS. Same-run retry never resets, active/closed/unknown/crash/drift/symlink states are held. Native hook/global config/cap60 unchanged. Root-only serialized children and fresh native idle inventory are required operator controls, not automatic process discovery.
