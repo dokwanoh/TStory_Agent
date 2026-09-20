@@ -1,9 +1,13 @@
 from dataclasses import dataclass, field
 from enum import StrEnum
 from hashlib import sha256
+from pathlib import Path
 from urllib.parse import urlsplit
 
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
+
+from ..domain.ids import MediaId
+from .playwright_observation import UploadedAsset
 
 
 @dataclass(frozen=True, slots=True)
@@ -18,6 +22,53 @@ class InputResult(StrEnum):
     BLOCKED = 'blocked'
     INPUT_VERIFIED = 'input_verified'
     UNKNOWN = 'unknown'
+
+
+@dataclass(frozen=True, slots=True)
+class LocalUpload:
+    asset_id: MediaId
+    path: Path
+    sha256_digest: str
+    article_title: str
+
+
+def upload_local_media(page: Page, request: LocalUpload, *, dry_run: bool = True) -> UploadedAsset | None:
+    if dry_run:
+        return None
+    location = urlsplit(page.url)
+    if (location.scheme != 'https' or location.netloc != 'nedamma.tistory.com'
+            or location.path.rstrip('/') != '/manage/newpost'
+            or not request.asset_id.strip() or not request.path.is_file()
+            or request.path.is_symlink()
+            or request.path.suffix.lower() not in ('.jpg', '.jpeg', '.png', '.webp')
+            or sha256(request.path.read_bytes()).hexdigest() != request.sha256_digest):
+        return None
+    title = page.locator('#post-title-inp')
+    if (not request.article_title.strip() or title.count() != 1
+            or title.input_value() != request.article_title):
+        return None
+    body = page.frame_locator('#editor-tistory_ifr').locator('body#tinymce[contenteditable=true]')
+    if body.count() != 1:
+        return None
+    images = body.locator('img')
+    before = images.count()
+    if before >= 4 or any(image.get_attribute('data-filename') == request.path.name for image in images.all()):
+        return None
+    body.click()
+    body.press('Meta+ArrowDown')
+    body.press('ArrowRight')
+    page.get_by_role('button', name='첨부', exact=True).click()
+    with page.expect_file_chooser(timeout=5000) as selection:
+        page.get_by_role('menuitem', name='사진', exact=True).click()
+    selection.value.set_files(request.path.resolve(), timeout=10000)
+    expect(images).to_have_count(before + 1, timeout=15000)
+    uploaded = images.nth(before)
+    source = uploaded.get_attribute('src')
+    if (uploaded.get_attribute('data-filename') != request.path.name or not source
+            or urlsplit(source).scheme != 'https'
+            or urlsplit(page.url).path.rstrip('/') != '/manage/newpost'):
+        return None
+    return UploadedAsset(request.asset_id, source, request.path.name)
 
 
 def fill_blank_html_editor(page: Page, request: HtmlInput, *, dry_run: bool = True) -> InputResult:
