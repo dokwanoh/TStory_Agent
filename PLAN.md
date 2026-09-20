@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## 2026-09-20 — measured Astra pre-review connection
+
+- Completed locally: bounded existing-auth Codex review adapter, structured response and completed-turn usage extraction, ten tests and clean scoped types/rules. Preliminary review cannot qualify unresearched events for publishing.
+- Blocked: live raw/compact calls both failed; no valid usage receipt or comparison. Root cause UNKNOWN, diagnostic flags are not quota/access proof. No further blind calls; safe structured error capture must precede another experiment. See docs/56_astra_prereview_connection.md.
+- Completed locally: full581passed/164.62s, source/scoped-test types, compilation/rules, CLIhelp/dry-run/replay refusal and fixture subprocess. Implementation commit e702d30; evidence docs/56. No publishing or scheduler resumption. Live success and economic comparison remain blocked as above.
+
 ## 2026-09-20 — metered topic-intake increment
 
 - Completed: failing-first RSS ingestion, bounded public KR feed collection, deterministic deduplication and compact highest-model review handoff. Feed time remains a trend signal, not verified event time; no automatic winner or publisher call.
