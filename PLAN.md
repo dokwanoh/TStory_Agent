@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — execution plan
 
+## 2026-09-21 — preparation-to-immediate handoff
+
+- Completed: explicit one-run publication grant, exact reviewed-package binding and automatic existing immediate-runner invocation. Local-only default, STOP, exact review and one-save journal remain authoritative.
+- Acceptance: preparation/review failures never invoke publication; expired/wrong-run grants and STOP hold; one command reaches the existing publisher and propagates its verified/held outcome without retries or invented success.
+- Completed: final-code full632tests, focused16tests, source/scoped types, no-excuse4files, compile/diff and CLI QA. Failing-first handoff tests, separate-process CLI, real publisher STOP dispatch and existing real-Chrome publisher regression passed. Documentation records implementation aa1186d and the remaining separate live-proof boundary. No live publication or STOP removal is inferred from this implementation request; recurring and reservation pauses stay unchanged. Evidence docs/59.
+
 ## 2026-09-21 — independent preparation command
 
 - Owner scope: connect research → highest-model selection → original prose/four media → independent quality review into one local command. Token/cost optimization work is stopped. No publishing, reservation or recurring activation.

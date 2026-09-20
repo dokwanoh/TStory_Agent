@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — status
 
+## 2026-09-21 — automatic preparation-to-publisher connection completed
+
+Implementation aa1186de0b3482ef7a19413ce24f93f85ca92728 adds `--publish-grant`: one run-scoped owner grant is checked before preparation, rechecked after independent review, bound immutably to the exact fresh package and handed automatically to the existing immediate publisher. Default preparation stays local; STOP is never removed. Existing publisher owns duplicate/save/public readback; failed/uncertain execution is not retried or reported as success. No production grant or blog post created; recurring and reservation pauses unchanged.
+
+Evidence: final full suite632passed/172.90s; new focused16passed/4.30s; source/scoped types0errors/0warnings; no-excuse4files, compile/diff/help/dry-run/invalid-ID pass. Separate-process full preparation fixture exercises publisher invocation and result propagation; actual publisher child honors a STOP created at dispatch with no browser or save. Existing real-Chrome intercepted publisher proves one save, duplicate hold and read-only recovery, not a new production post. Actual run005 replay reused5checkpoints with unchanged local package and zero blog writes; absent-grant invocation safely held. Failing-first optional-import regression fixed; Python3.14 local-only CLI again works without browser dependencies. No temporary debugger artifacts remain. Docs/59 records scope and commands. New combined-command live public proof remains separate and unperformed under the current STOP; implementation is not recurring activation or a claim of uninterrupted production success.
+
 ## 2026-09-21 — independent preparation actual success and replay verified
 
 Runtime clock ownership and explicit rejection diagnostics fixed the empty/UNKNOWN research failure. Bounded reuse of prior UNVERIFIED leads now preserves useful public research without adopting previous approvals. Actual run004 reached five candidates, selection, prose and four newly generated images. Codex0.155.1 JSONL omits image-generation items; same-session native generation outputs now provide immutable local hash evidence without falsifying the original CLI receipt. No source/candidate date or failed semantic grade was changed into PASS.
