@@ -4,7 +4,7 @@ Updated 2026-09-21. This is current state, not an execution diary. Canonical row
 
 ## Current outcome and boundary
 
-PREP-003 actual model verification is complete for both controlled cases: original contradictory wording is rejected; the diagnostic copy with corrected lead wording passes all six text checks plus deterministic quote/source/digest validation. Both receipts include real web_search. The earlier startup failure no longer reproduces with the current schema; its exact historical cause is not proven. No media, package, publisher, new public proof, STOP change or schedule resumption occurred. Original proof02 remains failed and unchanged. See docs/65_pre_media_text_gate.md.
+PREP-004 automatic correction is implemented, but the fresh integrated public proof is BLOCKED. Run manual-20260921-pre-media-proof-01 completed research, selection, official evidence, writing and model text review. The model approved all six checks but returned section claim URLs absent from those sections; deterministic validation held text_review_section_link_mismatch before media or publisher. No correction was eligible because the reviewer requested scope=none. No manual replacement or second invocation occurred. STOP was restored byte-for-byte; daily/reservation pauses remain. The next precise issue is reviewer output/link-contract alignment, not more article production or broader recovery. Evidence: docs/66_bounded_pre_media_repair.md.
 
 The authorized post-fix proof02 completed all six preparation stages, including four fresh native-original/JPEG derivations. Independent review passed8/11 checks but rejected contradictory introductory wording and two claim-to-link mismatches. The same source catalogue prevented URL typos but did not ensure each paragraph chose its supporting source. No fact-only repair was eligible, no approved package or publisher invocation occurred, and no save intent/receipt exists for this run. Bounded MVP gate3 remains BLOCKED at0/3 public proofs; proof03 was not invoked. STOP was restored byte-for-byte and daily/reservation pauses remain intact. Evidence: docs/63_bounded_mvp_acceptance.md. The two upstream fixes remain implemented (docs/64_evidence_handoff.md), but they do not establish full production acceptance. Prior post97 remains a separate resumed proof (docs/61_combined_live_proof.md).
 
@@ -25,7 +25,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | evidence-handoff | DONE | Official detail and URL-bound writing; four exact original-to-JPEG derivations verified locally | `docs/64_evidence_handoff.md` |
 | pre-media-text-gate | DONE | Independent text gate; actual model rejects contradictory prose and approves corrected diagnostic | `docs/65_pre_media_text_gate.md` |
-| pre-media-repair-proof | IN_PROGRESS | Bounded pre-media repair implemented; one approved fresh integrated public proof in progress | `docs/66_bounded_pre_media_repair.md` |
+| pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
 | quality-rework | DEFERRED | Broader quality rework beyond implemented fact-only text repair; unchanged thresholds | `docs/58_independent_preparation.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
@@ -46,6 +46,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:end -->
 
 ## Verification ledger
+
+PREP-004: final full722passed/177.83s, focused42passed/6.75s and memory/repair/diagnostic38passed/1.27s. Source/scoped-test types zero errors/warnings, no-excuse8files, compile, schema parse, CLI help/dry-run and memory consistency passed. Dedicated profile reopened at MANAGER_READY with zero existing editors after normal saved-account selection. Commit71c13c0 pushed. Actual integrated proof exited2/held/text_review_section_link_mismatch; exact subject and review receipt hashes match. Media, correction and publication-authority artifacts are absent; STOP comparison passed. No publication is claimed. No new packages installed; uv unavailable, existing Python ran the dependency-free checker. Biome/bash LSP unavailable; existing JSON/bash parsers used. Personal skill updated/read back; generic validator unavailable because PyYAML is absent.
 
 Latest actual-model retest: recheck returned text_review_held on temporal_consistency/claim_support/voice; corrected diagnostic returned approved=true, all six checks=true and passed the production text validator. Separate real web-search receipts and exact hashes are in docs/65_pre_media_text_gate.md. Full regression715passed/178.82s; focused40passed/5.74s. Runtime source and thresholds unchanged. STOP presence/byte comparison passed. This supersedes the prior live-semantic-unverified status below; no publication acceptance is implied.
 

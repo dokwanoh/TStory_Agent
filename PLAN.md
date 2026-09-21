@@ -23,7 +23,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
-| pre-media-repair-proof | IN_PROGRESS | Bounded pre-media repair implemented; one approved fresh integrated public proof in progress | `docs/66_bounded_pre_media_repair.md` |
+| pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
