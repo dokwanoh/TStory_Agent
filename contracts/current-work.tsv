@@ -4,8 +4,8 @@ independent-publisher	task	DONE	Prepared article independent immediate publisher
 independent-preparation	task	DONE	Research, selection, writing, media and review CLI; approved run005	docs/58_independent_preparation.md
 preparation-handoff	task	DONE	Preparation invokes immediate publisher with bound grant; deterministic integration proof	docs/59_preparation_publication_handoff.md
 memory-governance	task	DONE	Separate current instructions and history; enforce single task register	docs/60_memory_governance.md
-combined-live-proof	task	NEXT	One new authorized article through combined command to independently verified public state	docs/59_preparation_publication_handoff.md
-quality-rework	task	DEFERRED	Bounded failed-quality repair and independent re-review; unchanged thresholds	docs/58_independent_preparation.md
+combined-live-proof	task	DONE	Combined-command same-identity resume verified public post97 after bounded text repair	docs/61_combined_live_proof.md
+quality-rework	task	DEFERRED	Broader quality rework beyond implemented fact-only text repair; unchanged thresholds	docs/58_independent_preparation.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
 performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
 low-cost-model	task	DEFERRED	Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008	DECISIONS.md

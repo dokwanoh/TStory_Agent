@@ -4,7 +4,7 @@ Updated 2026-09-21. This is current state, not an execution diary. Canonical row
 
 ## Current outcome and boundary
 
-Preparation, independent immediate publishing and their automatic handoff have separate implementation/proof evidence. The NEW combined command has not yet produced a newly verified public article end to end; component successes are not that proof. Daily operation and new reservations remain paused. This documentation change performs no article action and does not release runtime STOP.
+Combined run manual-20260921-integrated-01 produced and independently published new post97: https://nedamma.tistory.com/97. The first invocation correctly held on a factual error; after adding bounded text repair, the same combined command resumed, obtained a fresh all11-check approval, invoked the publisher automatically, and returned verified/exit0 after native and anonymous public readback. This is resumed live proof, not first-attempt uninterrupted success. One save, four media bindings; STOP restored byte-for-byte. Daily operation and reservations remain paused. Evidence: docs/61_combined_live_proof.md.
 
 ## Current work and controls
 
@@ -16,8 +16,8 @@ Preparation, independent immediate publishing and their automatic handoff have s
 | independent-preparation | DONE | Research, selection, writing, media and review CLI; approved run005 | `docs/58_independent_preparation.md` |
 | preparation-handoff | DONE | Preparation invokes immediate publisher with bound grant; deterministic integration proof | `docs/59_preparation_publication_handoff.md` |
 | memory-governance | DONE | Separate current instructions and history; enforce single task register | `docs/60_memory_governance.md` |
-| combined-live-proof | NEXT | One new authorized article through combined command to independently verified public state | `docs/59_preparation_publication_handoff.md` |
-| quality-rework | DEFERRED | Bounded failed-quality repair and independent re-review; unchanged thresholds | `docs/58_independent_preparation.md` |
+| combined-live-proof | DONE | Combined-command same-identity resume verified public post97 after bounded text repair | `docs/61_combined_live_proof.md` |
+| quality-rework | DEFERRED | Broader quality rework beyond implemented fact-only text repair; unchanged thresholds | `docs/58_independent_preparation.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |
@@ -38,9 +38,7 @@ Preparation, independent immediate publishing and their automatic handoff have s
 
 ## Verification ledger
 
-Current change: docs/60_memory_governance.md. Original four working documents preserved byte-for-byte; archive SHA-256 values rechecked. Full regression: 648 passed in 179.68s. Final scoped memory/document/project checks: 41 passed in 11.65s, including six additional boundary cases added after the full run started. Source and scoped-test types: zero errors/warnings; compile/diff checks passed. Actual checker CLI: help and current-root PASS, missing-root diagnostic and exit1. Runtime STOP present; no article or scheduler writes. GitHub readback: private=true, allow_auto_merge=false; no merge claimed.
-
-Previous handoff evidence remains historical: full suite 632 passed, focused handoff 16 passed, type checking clean, recorded in docs/59_preparation_publication_handoff.md. Do not confuse these results with a new live publication.
+Current code: general526passed/30.74s plus browser146passed/145.21s, total672; focused repair18passed. Source and scoped-test types zero errors/warnings, no-excuse3files, compile/diff checks passed. CLI help/dry-run succeeded; STOP-enabled execution held/kill_switch before work. Same-run resumed live command produced post97, receipt09:47KST, final digest513b0edc40d0d957cacfce50922311bfce419cf27620dbd124012b4769ba2ac8. Original failed review remains immutable. Generic web-fetch could not access the article and is not used as proof; the actual independent browser readback passed. STOP and automation3 PAUSED readback confirmed. Earlier memory/handoff regression counts remain historical in their linked evidence documents, not another current completion claim.
 
 ## Reading rule
 

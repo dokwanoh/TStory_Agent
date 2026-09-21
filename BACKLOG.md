@@ -7,7 +7,7 @@ Derived from contracts/current-work.tsv. These items are not present blockers an
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| quality-rework | DEFERRED | Bounded failed-quality repair and independent re-review; unchanged thresholds | `docs/58_independent_preparation.md` |
+| quality-rework | DEFERRED | Broader quality rework beyond implemented fact-only text repair; unchanged thresholds | `docs/58_independent_preparation.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |

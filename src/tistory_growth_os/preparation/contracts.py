@@ -130,3 +130,12 @@ def check_quality(response: str, digest: str) -> None:
     checks = Fields.parse(fields.required('checks'), '/checks', CHECKS)
     if not all(boolean(checks, name) for name in CHECKS) or array(fields, 'issues', False):
         raise PreparationError('quality_check_failed')
+
+
+def text_repair_eligible(response: str, digest: str) -> bool:
+    fields = Fields.parse(parse_json(response), '', ('subject_sha256', 'approved', 'checks', 'issues'))
+    checks = Fields.parse(fields.required('checks'), '/checks', CHECKS)
+    failed = tuple(name for name in CHECKS if not boolean(checks, name))
+    issues = strings(fields, 'issues', False, r'[\s\S]+')
+    return (text(fields, 'subject_sha256') == digest and not boolean(fields, 'approved')
+            and failed == ('facts',) and bool(issues))

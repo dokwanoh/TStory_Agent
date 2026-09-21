@@ -3,7 +3,7 @@ from shutil import copy2
 
 import pytest
 
-from tistory_growth_os.audit.memory import audit_memory, read_work, render_view
+from tistory_growth_os.audit.memory import WorkItem, audit_memory, read_work, render_view
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,10 +70,15 @@ def test_missing_registry_returns_diagnostic(tmp_path: Path) -> None:
 
 
 def test_views_do_not_mix_history_with_next_work() -> None:
-    items = read_work(ROOT)
-    assert "combined-live-proof" in render_view(items, "PLAN.md")
-    assert "combined-live-proof" not in render_view(items, "BACKLOG.md")
-    assert "EXCLUDED_BY_OWNER" not in render_view(items, "PLAN.md")
+    items = tuple(WorkItem(identity, kind, state, identity, "evidence.md")
+        for identity, kind, state in (("queued", "task", "NEXT"), ("active", "task", "IN_PROGRESS"),
+            ("blocked", "task", "BLOCKED"), ("finished", "task", "DONE"),
+            ("later", "task", "DEFERRED"), ("excluded", "guard", "EXCLUDED_BY_OWNER")))
+    plan = render_view(items, "PLAN.md")
+    backlog = render_view(items, "BACKLOG.md")
+    assert {line.split(" | ")[0].removeprefix("| ") for line in plan.splitlines()[2:]} == {
+        "queued", "active", "blocked"}
+    assert {line.split(" | ")[0].removeprefix("| ") for line in backlog.splitlines()[2:]} == {"later"}
 
 
 @pytest.mark.parametrize("replacement", ["../outside.md", "/tmp/outside.md", "docs/missing-proof.md"])

@@ -22,7 +22,6 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| combined-live-proof | NEXT | One new authorized article through combined command to independently verified public state | `docs/59_preparation_publication_handoff.md` |
 <!-- work:end -->
 
 ## Acceptance and execution

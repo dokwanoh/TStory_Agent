@@ -1,5 +1,7 @@
 # Preparation → immediate publication handoff
 
+Later live evidence,2026-09-21: docs/61_combined_live_proof.md records same-run resumed combined-command publication of new post97, including bounded factual text repair and actual public readback. The no-live-proof statements below describe this earlier implementation increment, not the current task register. Daily/reservation pause remains unchanged.
+
 Owner2026-09-21 requests completing automatic publisher invocation after production. This implementation adds that connection, not recurring resumption, reservation authority, STOP removal or a new live-publication approval. All previous quality and safety gates remain unchanged.
 
 ## One command
