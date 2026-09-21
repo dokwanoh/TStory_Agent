@@ -26,6 +26,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 
 ## Acceptance and execution
 
+- run-diagnostics (DONE): read-only preparation checkpoint CLI distinguishes recorded responses from quality/publication success, flags uncertain attempts and corrupted receipts, and redacts payloads. Fixture and real-run CLI evidence: docs/62_preparation_diagnostics.md.
 - memory-governance: preserve four original worktree documents, consolidate current rules, add single status register and deterministic drift tests; manually run CLI success/failure/help, full tests and type checks. Record results, commit and push scoped files.
 - combined-live-proof: a freshly researched and independently reviewed article must traverse the combined command, automatic publisher invocation, one save and exact native/anonymous public readback with the same identity. A stubbed publisher, assisted repair or separate earlier success does not satisfy this criterion. Requires a current bounded owner grant; no new permission is inferred from this plan. STOP restored afterward; daily schedules and reservations remain paused.
 - Only after live proof, promote the relevant bounded rework/reliability task from BACKLOG through the canonical register. Do not reopen excluded audit lanes or spend effort on token-savings comparisons.

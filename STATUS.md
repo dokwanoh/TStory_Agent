@@ -17,6 +17,7 @@ Combined run manual-20260921-integrated-01 produced and independently published 
 | preparation-handoff | DONE | Preparation invokes immediate publisher with bound grant; deterministic integration proof | `docs/59_preparation_publication_handoff.md` |
 | memory-governance | DONE | Separate current instructions and history; enforce single task register | `docs/60_memory_governance.md` |
 | combined-live-proof | DONE | Combined-command same-identity resume verified public post97 after bounded text repair | `docs/61_combined_live_proof.md` |
+| run-diagnostics | DONE | Read-only preparation checkpoint diagnosis with redacted actionable states | `docs/62_preparation_diagnostics.md` |
 | quality-rework | DEFERRED | Broader quality rework beyond implemented fact-only text repair; unchanged thresholds | `docs/58_independent_preparation.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
@@ -38,7 +39,9 @@ Combined run manual-20260921-integrated-01 produced and independently published 
 
 ## Verification ledger
 
-Current code: general526passed/30.74s plus browser146passed/145.21s, total672; focused repair18passed. Source and scoped-test types zero errors/warnings, no-excuse3files, compile/diff checks passed. CLI help/dry-run succeeded; STOP-enabled execution held/kill_switch before work. Same-run resumed live command produced post97, receipt09:47KST, final digest513b0edc40d0d957cacfce50922311bfce419cf27620dbd124012b4769ba2ac8. Original failed review remains immutable. Generic web-fetch could not access the article and is not used as proof; the actual independent browser readback passed. STOP and automation3 PAUSED readback confirmed. Earlier memory/handoff regression counts remain historical in their linked evidence documents, not another current completion claim.
+Latest bounded reliability update: read-only preparation diagnostics implemented and manually exercised against run97, invalid input and help. General535passed/29.77s, source types zero errors/warnings, no-excuse2files passed. No publisher/browser code changed; browser146passed below is prior-run evidence, not rerun for this read-only command. Diagnostics neither checks current remote publication nor authorizes retry. Evidence: docs/62_preparation_diagnostics.md. Broader recovery and alerting remain deferred.
+
+Previous live-proof verification: general526passed/30.74s plus browser146passed/145.21s, total672; focused repair18passed. Source and scoped-test types zero errors/warnings, no-excuse3files, compile/diff checks passed. CLI help/dry-run succeeded; STOP-enabled execution held/kill_switch before work. Same-run resumed live command produced post97, receipt09:47KST, final digest513b0edc40d0d957cacfce50922311bfce419cf27620dbd124012b4769ba2ac8. Original failed review remains immutable. Generic web-fetch could not access the article and is not used as proof; the actual independent browser readback passed. STOP and automation3 PAUSED readback confirmed. Earlier memory/handoff regression counts remain historical in their linked evidence documents, not another current completion claim.
 
 ## Reading rule
 
