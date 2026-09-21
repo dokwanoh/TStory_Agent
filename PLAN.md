@@ -23,11 +23,12 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
+| pre-media-repair-proof | IN_PROGRESS | Bounded pre-media repair implemented; one approved fresh integrated public proof in progress | `docs/66_bounded_pre_media_repair.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
 
-- Bounded MVP finish: execute only the three gates and fixed stopping rules in docs/63_bounded_mvp_acceptance.md. Reuse existing verified behavior; no dashboard, service, generic recovery or additional quality-repair class. Current stage comes solely from contracts/current-work.tsv.
+- Bounded MVP finish: preserve the three gates and historical failures in docs/63_bounded_mvp_acceptance.md. Latest PREP-004 approval adds only the bounded pre-media repair and one fresh proof in docs/66_bounded_pre_media_repair.md; no dashboard, service or generic recovery. Current stage comes solely from contracts/current-work.tsv.
 - run-diagnostics (DONE): read-only preparation checkpoint CLI distinguishes recorded responses from quality/publication success, flags uncertain attempts and corrupted receipts, and redacts payloads. Fixture and real-run CLI evidence: docs/62_preparation_diagnostics.md.
 - memory-governance: preserve four original worktree documents, consolidate current rules, add single status register and deterministic drift tests; manually run CLI success/failure/help, full tests and type checks. Record results, commit and push scoped files.
 - combined-live-proof: a freshly researched and independently reviewed article must traverse the combined command, automatic publisher invocation, one save and exact native/anonymous public readback with the same identity. A stubbed publisher, assisted repair or separate earlier success does not satisfy this criterion. Requires a current bounded owner grant; no new permission is inferred from this plan. STOP restored afterward; daily schedules and reservations remain paused.

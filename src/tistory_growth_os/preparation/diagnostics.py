@@ -76,6 +76,7 @@ def inspect_run(root: Path, run_id: str) -> RunStatus:
             return RunStatus('missing')
         stages = [inspect_stage(directory, stage, stage) for stage in STAGES]
         for subdir, names in (('research-expansion', ('research',)),
+                              ('pre-media-repair', ('writing', 'text_review')),
                               ('text-repair', ('writing', 'text_review', 'review'))):
             branch = safe_output_root(directory, subdir)
             if branch.is_dir():

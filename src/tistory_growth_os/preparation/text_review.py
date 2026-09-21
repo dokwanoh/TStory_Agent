@@ -78,10 +78,13 @@ def text_subject(writing: str, candidate: Candidate, checked_at: datetime) -> Te
 
 
 def check_text_review(source: str, subject: TextSubject) -> None:
-    fields = Fields.parse(parse_json(source), '', ('subject_sha256', 'approved', 'checks', 'issues', 'blocks'))
+    fields = Fields.parse(parse_json(source), '', ('subject_sha256', 'approved', 'checks', 'issues', 'blocks', 'repair'))
     if text(fields, 'subject_sha256') != subject.digest:
         raise PreparationError('text_review_subject_mismatch')
     if not boolean(fields, 'approved'):
+        raise PreparationError('text_review_held')
+    repair = Fields.parse(fields.required('repair'), '/repair', ('scope', 'block_ids'))
+    if text(repair, 'scope') != 'none' or array(repair, 'block_ids', False):
         raise PreparationError('text_review_held')
     checks = Fields.parse(fields.required('checks'), '/checks', TEXT_CHECKS)
     if not all(boolean(checks, name) for name in TEXT_CHECKS) or array(fields, 'issues', False):

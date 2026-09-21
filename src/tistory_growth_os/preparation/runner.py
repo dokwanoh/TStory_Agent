@@ -21,6 +21,7 @@ from .storage import StageStore
 from .media_evidence import bind_generated_media, GenerationContext
 from .evidence import enrich_candidate
 from .text_review import review_text, text_subject
+from .pre_media_repair import repair_pre_media
 
 
 @dataclass(frozen=True, slots=True)
@@ -105,7 +106,23 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         write_immutable(text_clock, run.clock().isoformat().encode())
     subject = text_subject(writing, candidate, datetime.fromisoformat(text_clock.read_text()))
     prior_sessions = research_sessions | {store.receipt(stage).session_id for stage in ('selection', 'writing')}
-    text_review = review_text(store, subject, prior_sessions)
+    pre_media_repaired = False
+    try:
+        text_review = review_text(store, subject, prior_sessions)
+    except PreparationError as error:
+        if error.code != 'text_review_held':
+            raise
+        writing = repair_pre_media(store, subject, candidate)
+        draft = parse_draft(writing, candidate)
+        repaired_store = StageStore(run.directory / 'pre-media-repair', provider)
+        repair_clock = repaired_store.directory / 'text-checked-at.txt'
+        if not repair_clock.exists():
+            write_immutable(repair_clock, run.clock().isoformat().encode())
+        subject = text_subject(writing, candidate, datetime.fromisoformat(repair_clock.read_text()))
+        prior_sessions |= {store.receipt('text_review').session_id, repaired_store.receipt('writing').session_id}
+        text_review = review_text(repaired_store, subject, prior_sessions)
+        prior_sessions.add(repaired_store.receipt('text_review').session_id)
+        pre_media_repaired = True
     if run.clock() >= candidate.event_at + timedelta(hours=24):
         raise PreparationError('text_review_expired')
     media_source = store.run(StageRequest('media', base + '\n' + prompts.MEDIA + '\nArticle:\n'
@@ -135,11 +152,11 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         + repr(CATEGORIES) + '\n' + repr(TOPICS), media_source)
     package_digest = assemble(run.directory, package_input)
     review = store.run(review_request(run.directory, base, package_digest))
-    if store.receipt('review').session_id in research_sessions | {store.receipt(stage).session_id
+    if store.receipt('review').session_id in prior_sessions | {store.receipt(stage).session_id
                                               for stage in ('selection', 'writing', 'text_review', 'media')}:
         raise PreparationError('independent_review_session_required')
     output_directory = run.directory
-    if text_repair_eligible(review, package_digest):
+    if not pre_media_repaired and text_repair_eligible(review, package_digest):
         output_directory = safe_output_root(run.directory, 'text-repair')
         output_directory.mkdir(exist_ok=True)
         repair = StageStore(output_directory, provider)

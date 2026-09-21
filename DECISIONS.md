@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-004 — bounded pre-media correction, 2026-09-21
+
+Owner approves the proposed pre-media temporal/source-binding repair and one fresh integrated immediate-public proof. The independent reviewer must identify exact blocks and certify that every defect is limited to tense or existing-evidence binding; general rewriting, new facts/research and coverage expansion remain ineligible. Deterministic scope checks preserve unlisted prose, structure, title, taxonomy and media plan. A separate session re-reviews exact revised text; the pre-media correction consumes the same single repair budget as final facts-only repair. Reject unlimited retries, manual article replacement and lowered thresholds. One-off identity manual-20260921-pre-media-proof-01 may temporarily suspend STOP with restoration; recurring/reservations remain paused. Earlier failed proofs stay failed. Evidence and acceptance: docs/66_bounded_pre_media_repair.md.
+
 ## Owner-approved per-operation spawn lifecycle — 2026-09-20
 
 Owner requested recurrence prevention plus real generation retry. Retain OMO cap60 and installed hook; use project-local begin/adopt/close against the actual stock counter with archives, stable run identity, exclusive lifecycle lock and fail-closed interrupted transitions. Reject global cap increase, plugin-cache patching, false session namespace and resets on retry. Native child-state inventory remains an operator check, with root-only serialized children; not a claim of an independent unattended worker. Details and recovery limits: docs/44_spawn_run_budget.md. Existing dirty changes and prior goal state are preserved.

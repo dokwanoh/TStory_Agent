@@ -39,7 +39,7 @@ def test_text_rejection_stops_before_media_or_package(tmp_path: Path) -> None:
             subject = text_subject(writing_response(), candidate, NOW)
             return StageResponse(json.dumps({'subject_sha256': subject.digest, 'approved': False,
                 'checks': {}, 'issues': ['Contradictory event wording and unsupported section links'],
-                'blocks': []}), 'independent-text', ())
+                'blocks': [], 'repair': {'scope': 'none', 'block_ids': []}}), 'independent-text', ())
         return fixture(request)
 
     with pytest.raises(PreparationError, match='text_review_held'):

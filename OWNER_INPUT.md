@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — owner input register
 
+2026-09-21 PREP-004: “네 승인” accepts one bounded automatic temporal/source-binding correction plus independent re-review, then ONE fresh combined-command immediate-public article proof. Identity manual-20260921-pre-media-proof-01; temporarily release STOP for this invocation and restore afterward. No manual prose/publish substitution, second correction, old-failure reset, scheduled resumption or reservation. Existing quality/rights/freshness/native-public-readback gates remain.
+
 2026-09-13: owner explicitly approves one new-editor test-text input rehearsal, acknowledging possible automatic temporary storage. No final save, public release, reservation, upload, existing-post mutation or scheduler cutover. Identity: html-input-rehearsal-20260913-1800; do not duplicate after uncertain input.
 
 2026-09-13: owner requests continued implementation and overall progress in every report. Show the broad readiness range, current verified increment and remaining major gates; distinguish readiness from traffic attainment and measured work percentage. No new publishing/cost/permission authority follows.

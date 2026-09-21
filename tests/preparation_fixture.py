@@ -102,6 +102,7 @@ def text_review_response(request: StageRequest) -> str:
     envelope = Fields(as_object(parse_json(request.prompt.split('\nText subject:\n', 1)[1]), ''), '', ())
     subject = Fields(as_object(parse_json(text(envelope, 'payload')), ''), '', ())
     return json.dumps({'subject_sha256': text(envelope, 'subject_sha256'), 'approved': True,
+        'repair': {'scope': 'none', 'block_ids': []},
         'checks': {name: True for name in TEXT_CHECKS}, 'issues': [], 'blocks': [
             {'identity': text(Fields(as_object(raw, ''), '', ()), 'identity'),
              'no_factual_claims': False, 'claims': [
