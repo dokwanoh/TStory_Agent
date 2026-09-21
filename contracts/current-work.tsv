@@ -10,7 +10,7 @@ bounded-replay	task	DONE	Three duplicate-safe same-ID replay scenarios	docs/63_b
 bounded-repair	task	DONE	Existing fact-only repair once and fail-closed scenarios	docs/63_bounded_mvp_acceptance.md
 three-live-proofs	task	BLOCKED	Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs	docs/63_bounded_mvp_acceptance.md
 evidence-handoff	task	DONE	Official detail and URL-bound writing; four exact original-to-JPEG derivations verified locally	docs/64_evidence_handoff.md
-pre-media-text-gate	task	DONE	Independent exact-text gate before media; local regression verified, live semantic evaluation unverified	docs/65_pre_media_text_gate.md
+pre-media-text-gate	task	DONE	Independent text gate; actual model rejects contradictory prose and approves corrected diagnostic	docs/65_pre_media_text_gate.md
 quality-rework	task	DEFERRED	Broader quality rework beyond implemented fact-only text repair; unchanged thresholds	docs/58_independent_preparation.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
 performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
