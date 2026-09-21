@@ -20,6 +20,7 @@ from .provider import Provider, StageRequest
 from .storage import StageStore
 from .media_evidence import bind_generated_media, GenerationContext
 from .evidence import enrich_candidate
+from .text_review import review_text, text_subject
 
 
 @dataclass(frozen=True, slots=True)
@@ -99,6 +100,14 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         + selected_source + '\nCategories: ' + repr(CATEGORIES) + '\nHome topics: ' + repr(TOPICS),
         run.directory, source_urls=candidate.urls))
     draft = parse_draft(writing, candidate)
+    text_clock = run.directory / 'text-checked-at.txt'
+    if not text_clock.exists():
+        write_immutable(text_clock, run.clock().isoformat().encode())
+    subject = text_subject(writing, candidate, datetime.fromisoformat(text_clock.read_text()))
+    prior_sessions = research_sessions | {store.receipt(stage).session_id for stage in ('selection', 'writing')}
+    text_review = review_text(store, subject, prior_sessions)
+    if run.clock() >= candidate.event_at + timedelta(hours=24):
+        raise PreparationError('text_review_expired')
     media_source = store.run(StageRequest('media', base + '\n' + prompts.MEDIA + '\nArticle:\n'
                              + writing + '\nEvidence:\n' + selected_source, run.directory))
     from .storage import media_files
@@ -119,6 +128,7 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         raise PreparationError('package_freshness_failed')
     package_input = PackageInput(run.run_id, candidate, draft, cutoff,
         checked, research_source + '\nSelection:\n' + selection + '\nSelected official detail:\n' + selected_source
+        + '\nPre-media exact text review (not final approval):\n' + text_review
         + '\nRuntime media evidence:\n' + (run.directory / 'media.receipt.json').read_text()
         + '\nHost-verified media derivations:\n' + derivations
         + '\nTaxonomy contract (owner screenshots, docs/19_tistory_taxonomy.md; not saved selection):\n'
@@ -126,7 +136,7 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     package_digest = assemble(run.directory, package_input)
     review = store.run(review_request(run.directory, base, package_digest))
     if store.receipt('review').session_id in research_sessions | {store.receipt(stage).session_id
-                                              for stage in ('selection', 'writing', 'media')}:
+                                              for stage in ('selection', 'writing', 'text_review', 'media')}:
         raise PreparationError('independent_review_session_required')
     output_directory = run.directory
     if text_repair_eligible(review, package_digest):
@@ -143,15 +153,24 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         repaired_draft = parse_draft(revised, candidate)
         if replace(repaired_draft, html=draft.html) != draft:
             raise PreparationError('text_repair_scope_changed')
+        repair_clock = output_directory / 'text-checked-at.txt'
+        if not repair_clock.exists():
+            write_immutable(repair_clock, run.clock().isoformat().encode())
+        repaired_subject = text_subject(revised, candidate, datetime.fromisoformat(repair_clock.read_text()))
+        prior_sessions = research_sessions | {store.receipt(stage).session_id
+            for stage in ('selection', 'writing', 'text_review', 'media', 'review')} | {repair.receipt('writing').session_id}
+        repaired_text_review = review_text(repair, repaired_subject, prior_sessions)
         for image in images:
             write_immutable(output_directory / 'media' / image.name, image.read_bytes())
         revised_input = replace(package_input, draft=repaired_draft,
             evidence=package_input.evidence + '\nOriginal rejected package SHA-256: ' + package_digest
-            + '\nOriginal independent review:\n' + review)
+            + '\nOriginal independent review:\n' + review
+            + '\nRepaired exact text review (supersedes original text binding):\n' + repaired_text_review)
         package_digest = assemble(output_directory, revised_input)
         revised_review = repair.run(review_request(output_directory, base, package_digest))
         prior_sessions = research_sessions | {store.receipt(stage).session_id
-            for stage in ('selection', 'writing', 'media', 'review')} | {repair.receipt('writing').session_id}
+            for stage in ('selection', 'writing', 'text_review', 'media', 'review')} | {
+                repair.receipt('writing').session_id, repair.receipt('text_review').session_id}
         if repair.receipt('review').session_id in prior_sessions:
             raise PreparationError('independent_review_session_required')
         review = revised_review

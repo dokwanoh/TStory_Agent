@@ -58,6 +58,11 @@ paragraphs, contextual emojis without forcing slang, no invented personal experi
 traffic tactics. 1800–3000Korean characters, 4–6reader-question sections, concise lead answering title,
 2–4summary points and a practical ending. Clearly distinguish confirmed details from uncertainty.
 Avoid repeated boilerplate advice. Each section has paragraphs and relevant source_urls from evidence.
+Only URLs supporting actual claims are eligible, not every visited page. Bind each factual paragraph
+to the exact research claim or official_detail fact and its own source_urls. Never substitute an empty
+FAQ, announcement list, or another allowed URL merely for link variety. Repeating the correct guide
+across sections is preferable to linking an unrelated page. State already-started events as started;
+compare each date with the supplied cutoff and distinguish future stages from the current event.
 The official_detail pack contains the central answer, conditions and timeline. Explain all three
 accurately in the article; do not turn confirmed requirements into unknowns or generic check-the-site
 advice. Distinguish initial submission from later development. Use concrete explanations in warm prose,
@@ -72,6 +77,21 @@ inline scenes after sections1,2,4. Explain the adjacent section; compare last fi
 generic desk/phone/calendar scenes. Official licensed photos first; fallback wide photorealistic context,
 no close-up/studio-card, invented text/logos, or pretending to show actual named private premises.
 No operational/footer/image-example disclaimer by default; necessary factual caveats and credits remain.
+'''
+
+TEXT_REVIEW: Final = '''Independent pre-media text review. Do not repair or rewrite the article.
+Use public web search/open to check supporting source contents; no shell, files, login or writes.
+Inspect every supplied block, including title, lead, summary, headings and ending. Record each factual
+claim with its exact quote, block identity, supporting fact identity from facts, and the source_urls
+attached to that fact. A section's selected links must support its actual claims, not just exist in a
+catalogue. For nonfactual advice/questions only, set no_factual_claims true and claims empty. Cover all
+blocks exactly once; do not skip a factual assertion to obtain approval. Unsupported claims fail.
+Check temporal_consistency against checked_at/event_at and every stage date in evidence, including
+already-open versus upcoming wording and internal contradictions. Check claim_support, source_links,
+coverage of the reader answer/conditions/timeline, reader_value and natural voice. Empty FAQ/list pages
+cannot support missing details. Repeated correct source links are allowed; source variety is not evidence.
+Any failed or unknown check is false with a concrete issue and approved false. Echo subject_sha256.
+This pass authorizes only media preparation, not publication; final independent package review remains.
 '''
 
 MEDIA: Final = '''Produce exactly FOUR actual JPEG assets in THIS working directory:

@@ -65,5 +65,5 @@ def test_repair_stage_is_reported_without_overwriting_original(tmp_path: Path) -
     run.mkdir(parents=True)
     _ = (run / 'writing.attempt').write_text('a' * 64)
     report = inspect_run(tmp_path, 'manual-test')
-    assert report.stages[-2].stage == 'text-repair/writing'
-    assert report.stages[-2].state == 'attempt_unresolved'
+    assert report.stages[-3].stage == 'text-repair/writing'
+    assert report.stages[-3].state == 'attempt_unresolved'

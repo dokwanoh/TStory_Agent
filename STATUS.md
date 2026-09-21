@@ -4,6 +4,8 @@ Updated 2026-09-21. This is current state, not an execution diary. Canonical row
 
 ## Current outcome and boundary
 
+PREP-003 now inserts independent exact-text/claim-source review before media, narrows writing URLs to fact-linked evidence, preserves section-local sources and rechecks repaired text. Code and permanent project/editorial-skill rules are updated. Local regression is separate from live semantic verification: the latter diagnostic stopped at provider startup, before a model verdict, media or publication. See docs/65_pre_media_text_gate.md. No new public proof, STOP change or schedule resumption is claimed.
+
 The authorized post-fix proof02 completed all six preparation stages, including four fresh native-original/JPEG derivations. Independent review passed8/11 checks but rejected contradictory introductory wording and two claim-to-link mismatches. The same source catalogue prevented URL typos but did not ensure each paragraph chose its supporting source. No fact-only repair was eligible, no approved package or publisher invocation occurred, and no save intent/receipt exists for this run. Bounded MVP gate3 remains BLOCKED at0/3 public proofs; proof03 was not invoked. STOP was restored byte-for-byte and daily/reservation pauses remain intact. Evidence: docs/63_bounded_mvp_acceptance.md. The two upstream fixes remain implemented (docs/64_evidence_handoff.md), but they do not establish full production acceptance. Prior post97 remains a separate resumed proof (docs/61_combined_live_proof.md).
 
 ## Current work and controls
@@ -22,6 +24,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | bounded-repair | DONE | Existing fact-only repair once and fail-closed scenarios | `docs/63_bounded_mvp_acceptance.md` |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | evidence-handoff | DONE | Official detail and URL-bound writing; four exact original-to-JPEG derivations verified locally | `docs/64_evidence_handoff.md` |
+| pre-media-text-gate | DONE | Independent exact-text gate before media; local regression verified, live semantic evaluation unverified | `docs/65_pre_media_text_gate.md` |
 | quality-rework | DEFERRED | Broader quality rework beyond implemented fact-only text repair; unchanged thresholds | `docs/58_independent_preparation.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
@@ -42,6 +45,10 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:end -->
 
 ## Verification ledger
+
+Final PREP-003 full regression: **715 passed / 182.67s**, including the new provider-schema parse regression. The earlier714-pass run preceded the schema correction and is not the final result. Scoped changes only are prepared for the existing feature branch; unrelated owner files remain untouched.
+
+PREP-003 verification: focused text-gate17passed, source and scoped-test types zero errors/warnings, no-excuse13files plus the final schema-test recheck passed. Compilation, JSON schema parsing, memory consistency and diff checks passed. Manual CLI help/dry-run reports seven stages and zero writes; invalid identity is held. A standalone fixture driver generated a package through the new stage, replayed the same canonical package with zero provider calls, and blocked a temporal-check rejection with zero media calls/no package. The first /var versus /private/var path comparison differed textually; canonical-root replay passed without runtime changes. Actual model startup failed before a verdict; later schema syntax correction is tested locally, not a claimed successful live retest. Personal skill content was read back; its generic quick_validate tool could not run because PyYAML is not installed (no installation attempted). Outside-workspace skill LSP and declined Biome are unavailable, not passes. No external blog write or excluded audit lane ran.
 
 Latest live retest: proof02 exited2 with held/independent_review_held. Digest9c6bb3a5bc22982fe7476d08fdc0cf6b72ee103b0559f7d0d69411ed2040d9b3. Passed freshness, rights, originality, reader_value, images, diversity, classification and policy; failed facts, voice and web_text_accessibility. No manual correction, expanded retry or proof03 invocation. Runtime STOP comparison passed and automation3 readback was PAUSED. This is a safely blocked live attempt, not a public success. Post-recording regression698passed/174.40s; memory consistency and diff checks passed. Runtime source and tests were unchanged this turn.
 

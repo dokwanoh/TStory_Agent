@@ -32,7 +32,7 @@ def writing_response() -> str:
     return json.dumps({'title': '과학 행사, 참여 조건부터 알아볼까요?', 'lead': sentence,
         'summary': ['신청과 참여의 차이를 알아봐요.', '운영 시간을 살펴봐요.'],
         'sections': [{'heading': f'🔎 질문 {n}', 'paragraphs': [sentence * 5, sentence * 4],
-                     'source_urls': ['https://example.org/official', 'https://example.net/report']}
+                     'source_urls': ['https://example.org/official', 'https://example.org/guide']}
                     for n in range(4)], 'ending': sentence, 'category': '과학', 'home_topic': '과학',
         'tags': ['과학', '행사'], 'scenes': [{'brief': f'넓은 실험 공간에서 서로 다른 활동 {n}',
         'alt': f'테스트 장면 {n}'} for n in range(4)]}, ensure_ascii=False)
@@ -81,6 +81,8 @@ class FixtureProvider:
                 result = evidence_response()
             case 'writing':
                 result = writing_response()
+            case 'text_review':
+                result = text_review_response(request)
             case 'media':
                 result = media_response(request.directory, generated=False)
             case 'review':
@@ -92,3 +94,17 @@ class FixtureProvider:
             case _:
                 assert_never(request.stage)
         return StageResponse(result, 'fixture-' + request.stage, ('image_generation',) if request.stage == 'media' else ())
+
+
+def text_review_response(request: StageRequest) -> str:
+    from tistory_growth_os.domain.common import array, as_object
+    from tistory_growth_os.preparation.text_review import TEXT_CHECKS
+    envelope = Fields(as_object(parse_json(request.prompt.split('\nText subject:\n', 1)[1]), ''), '', ())
+    subject = Fields(as_object(parse_json(text(envelope, 'payload')), ''), '', ())
+    return json.dumps({'subject_sha256': text(envelope, 'subject_sha256'), 'approved': True,
+        'checks': {name: True for name in TEXT_CHECKS}, 'issues': [], 'blocks': [
+            {'identity': text(Fields(as_object(raw, ''), '', ()), 'identity'),
+             'no_factual_claims': False, 'claims': [
+                 {'quote': text(Fields(as_object(raw, ''), '', ()), 'prose'),
+                  'evidence_refs': ['research/0'], 'source_urls': ['https://example.org/official']}]}
+            for raw in array(subject, 'blocks', True)]})

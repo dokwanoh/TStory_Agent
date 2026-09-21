@@ -63,8 +63,6 @@ def parse_draft(source: str, candidate: Candidate) -> Draft:
         for url in strings(section, 'source_urls', False, r'https://\S+'):
             if url not in candidate.urls:
                 raise PreparationError('unresearched_article_link')
-            if url in linked:
-                continue
             linked.add(url)
             html.append('<p><a style="color:#075f9c;text-decoration:underline;word-break:keep-all;overflow-wrap:anywhere;" href="'
                         + escape(url, quote=True) + '">' + escape(text(section, 'heading'))

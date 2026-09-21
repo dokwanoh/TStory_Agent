@@ -13,7 +13,7 @@ from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..domain.common import Fields, text
 
 
-STAGES: Final = ('research', 'selection', 'evidence', 'writing', 'media', 'review')
+STAGES: Final = ('research', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review')
 LIMIT: Final = 2_000_000
 
 
@@ -76,7 +76,7 @@ def inspect_run(root: Path, run_id: str) -> RunStatus:
             return RunStatus('missing')
         stages = [inspect_stage(directory, stage, stage) for stage in STAGES]
         for subdir, names in (('research-expansion', ('research',)),
-                              ('text-repair', ('writing', 'review'))):
+                              ('text-repair', ('writing', 'text_review', 'review'))):
             branch = safe_output_root(directory, subdir)
             if branch.is_dir():
                 stages.extend(inspect_stage(branch, stage, f'{subdir}/{stage}') for stage in names)

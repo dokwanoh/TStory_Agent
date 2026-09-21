@@ -46,4 +46,8 @@ def enrich_candidate(source: str, candidate: Candidate, checked_at: datetime) ->
     pack = JsonObject((JsonMember('sources', JsonArray(tuple(sources))),
                        JsonMember('essential_facts', fields.required('essential_facts'))))
     evidence = JsonObject(candidate.evidence.members + (JsonMember('official_detail', pack),))
-    return replace(candidate, urls=tuple(sorted(urls)), evidence=evidence)
+    supported = {text(Fields(as_object(raw, ''), '', ()), 'source_url')
+                 for raw in array(Fields(candidate.evidence, '', ()), 'claims', True)}
+    for raw in array(fields, 'essential_facts', True):
+        supported.update(strings(Fields(as_object(raw, ''), '', ()), 'source_urls', True, r'https://\S+'))
+    return replace(candidate, urls=tuple(sorted(supported)), evidence=evidence)

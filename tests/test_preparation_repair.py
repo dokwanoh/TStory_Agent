@@ -126,7 +126,7 @@ def test_repaired_writer_cannot_review_own_work(tmp_path: Path) -> None:
 
     def same_session(request: StageRequest) -> StageResponse:
         response = repair_provider(request)
-        if request.directory.name == 'text-repair':
+        if request.directory.name == 'text-repair' and request.stage in ('writing', 'review'):
             return replace(response, session_id='repair-shared-session')
         return response
 

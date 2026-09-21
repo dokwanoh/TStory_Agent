@@ -38,7 +38,7 @@ def main() -> int:
         directory = safe_output_root(root, '.artifacts/preparation/' + args.run_id)
         if not args.execute:
             print(json.dumps({'state': 'dry_run', 'run_id': args.run_id,
-                'stages': ['research', 'selection', 'evidence', 'writing', 'media', 'review'],
+                'stages': ['research', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review'],
                 'model_calls': 0, 'external_write_count': 0, 'publication_authorized': False}))
             return 0
         run = PreparationRun(root, directory, args.run_id, utc_now)
