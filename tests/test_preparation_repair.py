@@ -98,6 +98,7 @@ def test_non_fact_failure_is_not_a_text_repair(tmp_path: Path, failed: str) -> N
 
     def reject(request: StageRequest) -> StageResponse:
         response = FixtureProvider()(request)
+        response = replace(response, session_id=str(request.directory) + '-' + request.stage)
         if request.stage == 'review':
             source = response.response.replace('"approved": true', '"approved": false')
             source = source.replace(json.dumps(failed) + ': true', json.dumps(failed) + ': false')
@@ -105,7 +106,8 @@ def test_non_fact_failure_is_not_a_text_repair(tmp_path: Path, failed: str) -> N
         return response
 
     # When another gate fails.
-    with pytest.raises(PreparationError, match='independent_review_held'):
+    reason = 'media_enrichment_exhausted' if failed in ('rights', 'images', 'diversity') else 'independent_review_held'
+    with pytest.raises(PreparationError, match=reason):
         _ = execute(run, reject)
     # Then this limited repair path is not used.
     assert not (run.directory / 'text-repair').exists()

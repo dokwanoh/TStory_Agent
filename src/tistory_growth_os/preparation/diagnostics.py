@@ -76,6 +76,8 @@ def inspect_run(root: Path, run_id: str) -> RunStatus:
             return RunStatus('missing')
         stages = [inspect_stage(directory, stage, stage) for stage in STAGES]
         for subdir, names in (('research-expansion', ('research',)),
+                              ('media-repair', ('media', 'review')),
+                              ('media-repair/text-repair', ('writing', 'text_review', 'review')),
                               ('evidence-enrichment', ('evidence',)),
                               ('pre-media-repair', ('writing', 'text_review')),
                               ('pre-media-repair/pre-media-repair', ('writing', 'text_review')),
