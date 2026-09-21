@@ -22,7 +22,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| three-live-proofs | BLOCKED | First live attempt held at non-fact-only quality failure; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
+| three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 <!-- work:end -->
 
 ## Acceptance and execution

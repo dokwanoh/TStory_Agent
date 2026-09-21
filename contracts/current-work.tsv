@@ -8,7 +8,7 @@ combined-live-proof	task	DONE	Combined-command same-identity resume verified pub
 run-diagnostics	task	DONE	Read-only preparation checkpoint diagnosis with redacted actionable states	docs/62_preparation_diagnostics.md
 bounded-replay	task	DONE	Three duplicate-safe same-ID replay scenarios	docs/63_bounded_mvp_acceptance.md
 bounded-repair	task	DONE	Existing fact-only repair once and fail-closed scenarios	docs/63_bounded_mvp_acceptance.md
-three-live-proofs	task	BLOCKED	First live attempt held at non-fact-only quality failure; zero of three public proofs	docs/63_bounded_mvp_acceptance.md
+three-live-proofs	task	BLOCKED	Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs	docs/63_bounded_mvp_acceptance.md
 evidence-handoff	task	DONE	Official detail and URL-bound writing; four exact original-to-JPEG derivations verified locally	docs/64_evidence_handoff.md
 quality-rework	task	DEFERRED	Broader quality rework beyond implemented fact-only text repair; unchanged thresholds	docs/58_independent_preparation.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md

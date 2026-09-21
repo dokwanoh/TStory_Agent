@@ -4,7 +4,7 @@ Updated 2026-09-21. This is current state, not an execution diary. Canonical row
 
 ## Current outcome and boundary
 
-The two scoped upstream fixes are complete locally: selected official-detail pack now reaches writing/review, exact researched URL enums prevent copying errors, and generated images require independently reproduced original-to-JPEG bindings. Real diagnostic writing includes previously omitted submission/development conditions and passes source-link parsing; four historical native-original derivations pass. No approved new package or publication is claimed. Bounded MVP gates1/2 remain passed; gate3 remains BLOCKED at0/3 public proofs pending a separately scoped live retest. Original proof01 is unchanged;02/03 were not invoked. Runtime STOP and daily/reservation pauses remain intact. Evidence: docs/64_evidence_handoff.md and docs/63_bounded_mvp_acceptance.md. Prior post97 remains a separate resumed proof (docs/61_combined_live_proof.md).
+The authorized post-fix proof02 completed all six preparation stages, including four fresh native-original/JPEG derivations. Independent review passed8/11 checks but rejected contradictory introductory wording and two claim-to-link mismatches. The same source catalogue prevented URL typos but did not ensure each paragraph chose its supporting source. No fact-only repair was eligible, no approved package or publisher invocation occurred, and no save intent/receipt exists for this run. Bounded MVP gate3 remains BLOCKED at0/3 public proofs; proof03 was not invoked. STOP was restored byte-for-byte and daily/reservation pauses remain intact. Evidence: docs/63_bounded_mvp_acceptance.md. The two upstream fixes remain implemented (docs/64_evidence_handoff.md), but they do not establish full production acceptance. Prior post97 remains a separate resumed proof (docs/61_combined_live_proof.md).
 
 ## Current work and controls
 
@@ -20,7 +20,7 @@ The two scoped upstream fixes are complete locally: selected official-detail pac
 | run-diagnostics | DONE | Read-only preparation checkpoint diagnosis with redacted actionable states | `docs/62_preparation_diagnostics.md` |
 | bounded-replay | DONE | Three duplicate-safe same-ID replay scenarios | `docs/63_bounded_mvp_acceptance.md` |
 | bounded-repair | DONE | Existing fact-only repair once and fail-closed scenarios | `docs/63_bounded_mvp_acceptance.md` |
-| three-live-proofs | BLOCKED | First live attempt held at non-fact-only quality failure; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
+| three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | evidence-handoff | DONE | Official detail and URL-bound writing; four exact original-to-JPEG derivations verified locally | `docs/64_evidence_handoff.md` |
 | quality-rework | DEFERRED | Broader quality rework beyond implemented fact-only text repair; unchanged thresholds | `docs/58_independent_preparation.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
@@ -42,6 +42,8 @@ The two scoped upstream fixes are complete locally: selected official-detail pac
 <!-- work:end -->
 
 ## Verification ledger
+
+Latest live retest: proof02 exited2 with held/independent_review_held. Digest9c6bb3a5bc22982fe7476d08fdc0cf6b72ee103b0559f7d0d69411ed2040d9b3. Passed freshness, rights, originality, reader_value, images, diversity, classification and policy; failed facts, voice and web_text_accessibility. No manual correction, expanded retry or proof03 invocation. Runtime STOP comparison passed and automation3 readback was PAUSED. This is a safely blocked live attempt, not a public success. Post-recording regression698passed/174.40s; memory consistency and diff checks passed. Runtime source and tests were unchanged this turn.
 
 Latest handoff fix: full regression698passed/187.78s. Source/scoped-test types zero errors/warnings; no-excuse11files, compilation and diff checks passed. Failure-first coverage includes missing official detail, unresolved central facts, source-catalog cache binding, native derivations and CLI stage reporting. Actual Codex evidence→writing diagnostic includes PDF/data-specification/development dates; URL-bound writing exit0, four real native-original conversions verified, no publisher invocation. First diagnostic URL typo was preserved and rejected, not patched into approval. No print/VoiceOver/Lighthouse/ad/remote-pixel lanes were restored. Memory views regenerated from current-work.tsv; see docs/64_evidence_handoff.md for exact evidence and limits.
 
