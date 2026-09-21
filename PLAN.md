@@ -24,10 +24,12 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 | --- | --- | --- | --- |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
-| quality-rework | NEXT | Media replacement, stale-topic reselection and native pre-save correction remain | `STATUS.md` |
+| quality-rework | NEXT | Stale-topic reselection and native pre-save correction remain | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
+
+- Media slice implemented: failure-first replacement scenarios, one immutable replacement before fresh package review, replay and exhausted-budget protection, reviewer independence. Local verification only; no live image generation/publication or STOP release. Stale-topic reselection and native input correction remain separate next work.
 
 - Owner-approved validation rework (2026-09-21): audit preparation and delivery failure routes; replace recoverable text/review rejection with correction and independent re-review without weakening gates. Test source-link supplementation, broad editorial repair, replay and safety stops; record only results in existing memory. No live publication, STOP release or schedule resumption in this task.
 

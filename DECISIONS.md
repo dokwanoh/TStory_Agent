@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-006 — bounded media replacement, 2026-09-21
+
+Continue validation-as-enrichment for media: retain failed media and reviews; dispatch one replacement set through the existing provider; recheck local files, attribution, history hashes and native-generation derivations, then independently review the exact new package. Preserve reviewed text/alt/scene purposes and operation identity. Allow subsequent already-approved text correction without losing media-review session exclusions. Rights rejection can motivate replacement but never waives rights or policy checks; unresolved rights still prevents approval. Unknown generation provenance, unsafe paths, uncertain attempts and remote state are not ordinary editorial defects.
+
+Rejected blind retry in the original directory, deleting failed checkpoints, carrying old approval over changed assets, unlimited regeneration and live publishing as a substitute for runtime tests. No separate report. Local fixture verification is not real-model media-quality or publication certification. Stale-topic reselection and native input correction remain separate work; schedules/reservations stay paused.
+
 ## PREP-005 — validation feeds enrichment, 2026-09-21
 
 Owner rejects immediate termination for repairable review defects and declines a separate audit report. Supersede PREP-004's editorial restrictions, not quality/authority controls. Code inspection found six unnecessary termination couplings: invalid research candidate → batch stop; unresolved essential detail → no further research; recoverable writing shape → stop before review; approved review/body citation mismatch → no repair; non-temporal editorial critique → ineligible; final non-facts text critique → ineligible. Add bounded research/evidence/text enrichment with fresh independent exact-byte review and preserved failed checkpoints. Remove minimum-two-distinct-body-URLs padding: support matters, not URL variety. Research corroboration and semantic claim/source checks remain.

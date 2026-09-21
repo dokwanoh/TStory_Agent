@@ -4,7 +4,7 @@ Updated 2026-09-21. This is current state, not an execution diary. Canonical row
 
 ## Current outcome and boundary
 
-PREP-005 implements bounded enrichment instead of immediate abandonment for recoverable research, evidence, text and reviewer-record failures. Relevant missing citations, additional evidence after review, voice and malformed review records now enter correction and fresh independent review. Four manual fixture runs produced packages and replayed with zero provider calls; persistent rejection exhausted three text versions before media. This is local automation evidence, not a new model/public proof. Media replacement, stale-topic reselection and native pre-save correction remain next work. STOP and daily/reservation pauses remain.
+PREP-005/006 implement bounded enrichment instead of immediate abandonment for recoverable research, evidence, text, reviewer-record and media failures. Media defects now receive one replacement set and a fresh exact-byte package review; eligible text repair can follow. Manual fixture drivers for credit, JPEG, image and rights failures produced replacement packages and replayed with zero provider calls. Persistent rejection remains ineligible; policy/integrity holds remain intact. This is local automation evidence, not a new model/public proof. Stale-topic reselection and native pre-save correction remain next work. STOP and daily/reservation pauses remain.
 
 Historical PREP-004 live proof manual-20260921-pre-media-proof-01 held on text_review_section_link_mismatch before media or publisher. PREP-005 changes its future recovery path but does not turn that historical attempt into success or authorize replay. Evidence: docs/66_bounded_pre_media_repair.md.
 
@@ -29,7 +29,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | pre-media-text-gate | DONE | Independent text gate; actual model rejects contradictory prose and approves corrected diagnostic | `docs/65_pre_media_text_gate.md` |
 | pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
 | validation-enrichment | DONE | Bounded research, evidence, text and review-record enrichment with independent re-review; local proof | `STATUS.md` |
-| quality-rework | NEXT | Media replacement, stale-topic reselection and native pre-save correction remain | `STATUS.md` |
+| media-enrichment | DONE | One immutable media replacement and fresh package review; local fixture proof | `STATUS.md` |
+| quality-rework | NEXT | Stale-topic reselection and native pre-save correction remain | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |
@@ -49,6 +50,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:end -->
 
 ## Verification ledger
+
+PREP-006 latest verification: tests/browser_tests 743 passed / 189.48s; focused preparation139passed. New defect tests failed first on credit/JPEG/image/rights rejection and passed after bounded replacement. Manual executor drivers created replacement packages for credit/JPEG/images/rights; replay used zero provider calls. Persistent rejection replay also used zero new calls and produced no approval; policy rejection did not start replacement. Fresh source/scoped-test types, LSP diagnostics for changed runtime modules, compilation, six-file no-excuse check, memory and diff checks passed. Prior cached missing-module LSP warning is not reproduced. CLI help/default dry-run passed with zero model calls and external writes. STOP hash unchanged at46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d; automation3 remains PAUSED. No live model/image generation, publisher, reservation, excluded audit lane or standalone report ran. Runtime/tests and current rules are the deliverable; real-model media-quality and public proof remain unverified.
 
 PREP-005: full tests/browser_tests 730 passed / 189.65s; focused preparation 126 passed. Fresh basedpyright source and scoped tests: zero errors/warnings; compilation, no-excuse checker, memory consistency and diff checks passed. Manual fixture drivers for missing citation, additional evidence, voice and wrong review record produced packages; same-ID replay used zero provider calls. Persistent rejection stopped after three text versions, zero media calls, no approval. CLI help and default dry-run succeeded with zero model calls/external writes (there is no --dry-run flag). Persistent LSP plugin still reports a stale missing-new-module import while fresh basedpyright and runtime imports pass; no tool-cache repair or global setting change attempted. STOP SHA256 46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d; automation3 read back PAUSED. No real-model semantic retest, publication or standalone report in this change.
 

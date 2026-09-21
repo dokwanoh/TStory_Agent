@@ -13,7 +13,8 @@ evidence-handoff	task	DONE	Official detail and URL-bound writing; four exact ori
 pre-media-text-gate	task	DONE	Independent text gate; actual model rejects contradictory prose and approves corrected diagnostic	docs/65_pre_media_text_gate.md
 pre-media-repair-proof	task	BLOCKED	Repair implemented; fresh proof held on reviewer section-link contract mismatch before media	docs/66_bounded_pre_media_repair.md
 validation-enrichment	task	DONE	Bounded research, evidence, text and review-record enrichment with independent re-review; local proof	STATUS.md
-quality-rework	task	NEXT	Media replacement, stale-topic reselection and native pre-save correction remain	STATUS.md
+media-enrichment	task	DONE	One immutable media replacement and fresh package review; local fixture proof	STATUS.md
+quality-rework	task	NEXT	Stale-topic reselection and native pre-save correction remain	STATUS.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
 performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
 low-cost-model	task	DEFERRED	Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008	DECISIONS.md
