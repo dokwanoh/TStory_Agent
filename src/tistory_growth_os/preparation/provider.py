@@ -9,9 +9,11 @@ from typing import Final, Literal, Protocol
 from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..domain.common import Fields, as_object, text
 from .contracts import PreparationError
+from .source_schema import writing_schema
+from .package import write_immutable
 
 
-Stage = Literal['research', 'selection', 'writing', 'media', 'review']
+Stage = Literal['research', 'selection', 'evidence', 'writing', 'media', 'review']
 MODEL: Final = 'gpt-6-astra'
 SCHEMAS: Final = Path(__file__).resolve().parents[3] / 'contracts/preparation'
 
@@ -22,6 +24,7 @@ class StageRequest:
     prompt: str
     directory: Path
     images: tuple[Path, ...] = ()
+    source_urls: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -72,6 +75,11 @@ def completion(events: str) -> StageResponse:
 
 def codex_provider(request: StageRequest) -> StageResponse:
     schema = SCHEMAS / f'{request.stage}.json'
+    if request.stage == 'writing':
+        if not request.source_urls:
+            raise PreparationError('writing_source_catalog_required')
+        schema = request.directory / 'writing.schema.json'
+        write_immutable(schema, writing_schema(request.source_urls).encode())
     argv = ['codex', '--search', 'exec', '--json', '--ephemeral', '--sandbox',
             'workspace-write' if request.stage == 'media' else 'read-only',
             '--model', MODEL, '--output-schema', str(schema),
@@ -94,6 +102,6 @@ def codex_provider(request: StageRequest) -> StageResponse:
         raise PreparationError('unexpected_provider_tool')
     if request.stage in ('selection', 'writing') and parsed.tool_kinds:
         raise PreparationError('text_only_stage_used_tools')
-    if request.stage == 'research' and 'web_search' not in parsed.tool_kinds:
+    if request.stage in ('research', 'evidence') and 'web_search' not in parsed.tool_kinds:
         raise PreparationError('live_research_evidence_required')
     return parsed

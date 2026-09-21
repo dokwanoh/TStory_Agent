@@ -38,16 +38,28 @@ def writing_response() -> str:
         'alt': f'테스트 장면 {n}'} for n in range(4)]}, ensure_ascii=False)
 
 
-def media_response(directory: Path) -> str:
+def evidence_response() -> str:
+    return json.dumps({'candidate_id': 'candidate-0', 'sources': [
+        {'url': 'https://example.org/guide', 'primary': True, 'checked_at': 'RUNTIME',
+         'support': 'Initial submission requires an idea PDF; development follows selection.'}],
+        'essential_facts': [{'topic': topic, 'status': 'confirmed',
+            'detail': detail, 'source_urls': ['https://example.org/guide']}
+            for topic, detail in (('answer', 'Submit an idea PDF initially, not a completed app.'),
+                ('conditions', 'A data usage specification is also required.'),
+                ('timeline', 'Development starts after document selection.'))]})
+
+
+def media_response(directory: Path, generated: bool = True) -> str:
     (directory / 'media').mkdir(exist_ok=True)
     for n in range(1, 5):
         ppm = directory / f'media/fixture-{n}.ppm'
         _ = ppm.write_bytes(b'P6\n400 400\n255\n' + bytes((i * n) % 256 for i in range(400 * 400 * 3)))
         _ = subprocess.run(['/usr/bin/sips', '-s', 'format', 'jpeg', str(ppm), '--out',
                             str(directory / f'media/{n:02}.jpg')], capture_output=True, check=True)
-    return json.dumps({'assets': [{'file': f'media/{n:02}.jpg', 'origin': 'generated',
-        'source_url': 'generated', 'rights_basis': 'Fixture-only media; never a real publication asset.',
-        'credit': '', 'scene': f'Fixture scene {n}'} for n in range(1, 5)]})
+    return json.dumps({'assets': [{'file': f'media/{n:02}.jpg', 'origin': 'generated' if generated else 'official',
+        'source_url': 'generated' if generated else 'https://example.org/photo',
+        'rights_basis': 'Fixture-only https://example.org/license; never a real publication asset.',
+        'credit': 'Fixture organization', 'scene': f'Fixture scene {n}'} for n in range(1, 5)]})
 
 
 class FixtureProvider:
@@ -65,10 +77,12 @@ class FixtureProvider:
                 result = research_response()
             case 'selection':
                 result = json.dumps({'candidate_id': 'candidate-0', 'rationale': 'fixture choice'})
+            case 'evidence':
+                result = evidence_response()
             case 'writing':
                 result = writing_response()
             case 'media':
-                result = media_response(request.directory)
+                result = media_response(request.directory, generated=False)
             case 'review':
                 payload = request.prompt.split('\nPackage:\n', 1)[1]
                 fields = Fields.parse(parse_json(payload), '',

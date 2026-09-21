@@ -12,7 +12,7 @@ from ..contracts.json_ast import JsonArray, JsonObject, JsonString
 from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, as_object, text
 from ..research.intake import public_source_url
-from .contracts import PreparationError
+from .contracts import PreparationError, media_asset
 from .provider import Provider, Stage, StageRequest, StageResponse
 
 
@@ -34,7 +34,8 @@ class StageStore:
     def run(self, request: StageRequest) -> str:
         response_path = self.directory / f'{request.stage}.json'
         receipt_path = self.directory / f'{request.stage}.receipt.json'
-        request_digest = sha256(request.prompt.encode()).hexdigest()
+        request_digest = sha256((request.prompt + (
+            '\nSource catalog:\n' + json.dumps(request.source_urls) if request.source_urls else '')).encode()).hexdigest()
         if receipt_path.exists():
             fields = Fields.parse(parse_json(receipt_path.read_text()), '',
                                   ('request_sha256', 'response_sha256', 'session_id', 'tool_kinds'))
@@ -102,7 +103,7 @@ def media_files(directory: Path, response: str) -> tuple[Path, ...]:
     paths: list[Path] = []
     hashes: set[str] = set()
     for index, raw in enumerate(array(fields, 'assets', True), 1):
-        asset = Fields.parse(raw, '/assets', ('file', 'origin', 'source_url', 'rights_basis', 'credit', 'scene'))
+        asset = media_asset(encode_json(raw))
         origin = text(asset, 'origin')
         if origin not in ('official', 'generated'):
             raise PreparationError('media_origin_invalid')

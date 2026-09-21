@@ -60,6 +60,7 @@ def test_dry_run_does_not_create_run_or_call_provider(tmp_path: Path) -> None:
         '--root', str(tmp_path), '--run-id', 'dry-one'], text=True, capture_output=True)
     assert result.returncode == 0, result.stderr
     assert 'dry_run' in result.stdout
+    assert '"evidence"' in result.stdout
     assert list(tmp_path.iterdir()) == []
 
 

@@ -1,4 +1,7 @@
 from pathlib import Path
+import json
+import subprocess
+from hashlib import sha256
 
 import pytest
 
@@ -32,3 +35,43 @@ def test_native_generation_rejects_symlink_and_untrusted_identity(tmp_path: Path
     (folder / 'exec-9425f8a4-4ed8-4f5b-aeae-4f96e96cbaf1.png').symlink_to(image)
     with pytest.raises(PreparationError, match='generation_tool_evidence_required'):
         _ = native_generation_evidence(tmp_path, SESSION, 0, 1)
+
+
+@pytest.mark.parametrize(('source_name', 'replace_final', 'reason'), [
+    ('', False, ''),
+    ('../outside.png', False, 'generated_source_binding_invalid'),
+    ('exec-00000000-0000-0000-0000-000000000000.png', False, 'generated_source_binding_invalid'),
+    ('', True, 'generated_media_derivation_mismatch'),
+    ('MISSING', False, 'generated_source_binding_required'),
+])
+def test_original_binding_verifies_conversion_and_rejects_substitution(
+    tmp_path: Path, source_name: str, replace_final: bool, reason: str,
+) -> None:
+    from tistory_growth_os.preparation.media_evidence import bind_generated_media, GenerationContext
+    folder = tmp_path / 'generated_images' / SESSION
+    folder.mkdir(parents=True)
+    ppm = tmp_path / 'fixture.ppm'
+    _ = ppm.write_bytes(b'P6\n400 400\n255\n' + bytes(i % 256 for i in range(480000)))
+    original = folder / 'exec-9425f8a4-4ed8-4f5b-aeae-4f96e96cbaf1.png'
+    _ = subprocess.run(['/usr/bin/sips', '-s', 'format', 'png', str(ppm), '--out', str(original)],
+                       capture_output=True, check=True)
+    directory = tmp_path / 'run'
+    (directory / 'media').mkdir(parents=True)
+    final = directory / 'media/01.jpg'
+    _ = subprocess.run(['/usr/bin/sips', '-s', 'format', 'jpeg', '-s', 'formatOptions', '80',
+                        '-Z', '900', str(original), '--out', str(final)], capture_output=True, check=True)
+    response = json.dumps({'assets': [{'file': 'media/01.jpg', 'origin': 'generated',
+        'source_file': source_name or original.name, 'source_url': 'generated', 'rights_basis': 'fixture',
+        'credit': '', 'scene': 'fixture'}]})
+    response = response.replace(', "source_file": "MISSING"', '')
+    context = GenerationContext(tmp_path, SESSION, 0)
+    if replace_final:
+        _ = final.write_bytes(b'substituted image')
+    if reason:
+        with pytest.raises(PreparationError, match=reason):
+            _ = bind_generated_media(directory, response, context)
+    else:
+        proof = bind_generated_media(directory, response, context)
+        assert sha256(original.read_bytes()).hexdigest() in proof
+        assert sha256(final.read_bytes()).hexdigest() in proof
+        assert 'media/01.jpg' in proof

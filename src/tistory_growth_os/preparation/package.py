@@ -10,10 +10,11 @@ from ..artifacts.layout import safe_output_root
 from ..artifacts.package_review import payload_digest
 from ..contracts.json_decode import parse_json
 from ..contracts.json_ast import JsonString
+from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, text
 from ..delivery.editor_body_fingerprint import BODY_ALGORITHM, article_body_digest
 from ..delivery.native_article_source import NativeAlt
-from .contracts import Candidate, PreparationError
+from .contracts import Candidate, PreparationError, media_asset
 from .editorial import Draft
 
 
@@ -43,7 +44,7 @@ def assemble(directory: Path, source: PackageInput) -> str:
     html = source.draft.html
     fields = Fields.parse(parse_json(source.media_response), '', ('assets',))
     for index, value in enumerate(array(fields, 'assets', True), 1):
-        asset = Fields.parse(value, '', ('file', 'origin', 'source_url', 'rights_basis', 'credit', 'scene'))
+        asset = media_asset(encode_json(value))
         credit_value = asset.required('credit')
         if not isinstance(credit_value, JsonString):
             raise PreparationError('credit_string_required')

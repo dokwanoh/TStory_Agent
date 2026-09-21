@@ -13,7 +13,7 @@ from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..domain.common import Fields, text
 
 
-STAGES: Final = ('research', 'selection', 'writing', 'media', 'review')
+STAGES: Final = ('research', 'selection', 'evidence', 'writing', 'media', 'review')
 LIMIT: Final = 2_000_000
 
 

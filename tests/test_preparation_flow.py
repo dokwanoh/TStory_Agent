@@ -26,7 +26,7 @@ def test_full_preparation_outputs_native_package(tmp_path: Path) -> None:
     run, provider = prepared_run(tmp_path), FixtureProvider()
     package = execute(run, provider)
     assert package.name == 'package'
-    assert provider.calls == ['research', 'selection', 'writing', 'media', 'review']
+    assert provider.calls == ['research', 'selection', 'evidence', 'writing', 'media', 'review']
     assert (package / 'manifest.json').is_file()
     assert len(list((tmp_path / 'contracts/reviews').glob('*.json'))) == 1
     assert 'example.org' in (package / 'article.html').read_text()
@@ -143,11 +143,14 @@ def test_writer_session_cannot_approve_own_package(tmp_path: Path) -> None:
     assert not (run.directory / 'package').exists()
 
 
-def test_generated_assets_require_generation_tool_evidence(tmp_path: Path) -> None:
+@pytest.mark.parametrize('tool_kinds', [(), ('image_generation',)])
+def test_generated_assets_require_generation_tool_evidence(tmp_path: Path, tool_kinds: tuple[str, ...]) -> None:
     run, fixture = prepared_run(tmp_path), FixtureProvider()
 
     def no_generation(request: StageRequest) -> StageResponse:
         response = fixture(request)
+        if request.stage == 'media':
+            return StageResponse(media_response(request.directory), response.session_id, tool_kinds)
         return StageResponse(response.response, response.session_id, ())
 
     with pytest.raises(PreparationError, match='generation_tool_evidence_required'):

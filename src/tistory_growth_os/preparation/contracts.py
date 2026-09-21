@@ -37,6 +37,14 @@ CHECKS: Final = ('facts', 'freshness', 'rights', 'originality', 'reader_value', 
                 'images', 'diversity', 'classification', 'web_text_accessibility', 'policy')
 
 
+def media_asset(raw: str) -> Fields:
+    value = as_object(parse_json(raw), '')
+    keys = ('file', 'origin', 'source_url', 'rights_basis', 'credit', 'scene')
+    if value.get('source_file') is not None:
+        keys += ('source_file',)
+    return Fields.parse(value, '/assets', keys)
+
+
 def stamp_research(source: str, recorded_at: datetime) -> str:
     fields = Fields(as_object(parse_json(source), ''), '', ())
     candidates: list[JsonObject] = []

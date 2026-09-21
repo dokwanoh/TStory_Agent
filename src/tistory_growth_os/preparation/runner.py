@@ -11,14 +11,15 @@ from ..artifacts.package_review import check_review, payload_digest
 from ..artifacts.review_contract import ReviewCode, ReviewDigest, ReviewSubject
 from ..contracts.json_decode import parse_json
 from ..contracts.json_encode import encode_json
-from ..domain.common import Fields, array, datetime_value, text
+from ..domain.common import Fields, datetime_value, text
 from . import prompts
 from .contracts import PreparationError, check_quality, parse_research, select_candidate, stamp_research, text_repair_eligible
 from .editorial import CATEGORIES, TOPICS, parse_draft
 from .package import PackageInput, assemble, promote, write_immutable
 from .provider import Provider, StageRequest
 from .storage import StageStore
-from .media_evidence import native_generation_evidence
+from .media_evidence import bind_generated_media, GenerationContext
+from .evidence import enrich_candidate
 
 
 @dataclass(frozen=True, slots=True)
@@ -86,26 +87,26 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     selection = store.run(StageRequest('selection', base + '\n' + prompts.SELECTION
                            + '\nResearch:\n' + research_source, run.directory))
     candidate = select_candidate(selection, research)
+    detail = store.run(StageRequest('evidence', base + '\n' + prompts.EVIDENCE
+        + '\nSelected candidate:\n' + encode_json(candidate.evidence), run.directory))
+    detail_clock = run.directory / 'evidence-checked-at.txt'
+    if not detail_clock.exists():
+        write_immutable(detail_clock, run.clock().isoformat().encode())
+    candidate = enrich_candidate(detail, candidate, datetime.fromisoformat(detail_clock.read_text()))
+    research_sessions.add(store.receipt('evidence').session_id)
     selected_source = encode_json(candidate.evidence)
     writing = store.run(StageRequest('writing', base + '\n' + prompts.WRITING + '\nEvidence:\n'
-        + selected_source + '\nCategories: ' + repr(CATEGORIES) + '\nHome topics: ' + repr(TOPICS), run.directory))
+        + selected_source + '\nCategories: ' + repr(CATEGORIES) + '\nHome topics: ' + repr(TOPICS),
+        run.directory, source_urls=candidate.urls))
     draft = parse_draft(writing, candidate)
     media_source = store.run(StageRequest('media', base + '\n' + prompts.MEDIA + '\nArticle:\n'
                              + writing + '\nEvidence:\n' + selected_source, run.directory))
     from .storage import media_files
     images = media_files(run.directory, media_source)
-    media_fields = Fields.parse(parse_json(media_source), '', ('assets',))
-    generated = sum(text(Fields.parse(asset, '',
-        ('file', 'origin', 'source_url', 'rights_basis', 'credit', 'scene')), 'origin') == 'generated'
-        for asset in array(media_fields, 'assets', True))
-    if generated and 'image_generation' not in store.receipt('media').tool_kinds:
-        native = native_generation_evidence(Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))),
-            store.receipt('media').session_id, (run.directory / 'media.attempt').stat().st_mtime, generated)
-        proof = run.directory / 'media-native-evidence.json'
-        if proof.exists() and proof.read_text() != native:
-            raise PreparationError('native_generation_evidence_changed')
-        if not proof.exists():
-            write_immutable(proof, native.encode())
+    context = GenerationContext(Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))),
+        store.receipt('media').session_id, (run.directory / 'media.attempt').stat().st_mtime)
+    derivations = bind_generated_media(run.directory, media_source, context)
+    write_immutable(run.directory / 'media-derivations.json', derivations.encode())
     for image in images:
         digest = sha256(image.read_bytes()).hexdigest()
         if digest in history:
@@ -117,10 +118,9 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     if not candidate.event_at <= cutoff <= checked < candidate.event_at + timedelta(hours=24):
         raise PreparationError('package_freshness_failed')
     package_input = PackageInput(run.run_id, candidate, draft, cutoff,
-        checked, research_source + '\nSelection:\n' + selection
+        checked, research_source + '\nSelection:\n' + selection + '\nSelected official detail:\n' + selected_source
         + '\nRuntime media evidence:\n' + (run.directory / 'media.receipt.json').read_text()
-        + ('\n' + (run.directory / 'media-native-evidence.json').read_text()
-           if (run.directory / 'media-native-evidence.json').exists() else '')
+        + '\nHost-verified media derivations:\n' + derivations
         + '\nTaxonomy contract (owner screenshots, docs/19_tistory_taxonomy.md; not saved selection):\n'
         + repr(CATEGORIES) + '\n' + repr(TOPICS), media_source)
     package_digest = assemble(run.directory, package_input)
@@ -139,7 +139,7 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             + 'from the critique. Keep title, category, home_topic, tags and all scenes/alt EXACTLY unchanged. '
             + 'Preserve useful prose and all quality requirements. Return the complete revised writing JSON.'
             + '\nEvidence:\n' + selected_source + '\nOriginal writing:\n' + writing
-            + '\nRejected exact-byte review:\n' + review, output_directory))
+            + '\nRejected exact-byte review:\n' + review, output_directory, source_urls=candidate.urls))
         repaired_draft = parse_draft(revised, candidate)
         if replace(repaired_draft, html=draft.html) != draft:
             raise PreparationError('text_repair_scope_changed')
