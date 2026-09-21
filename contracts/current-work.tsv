@@ -1,0 +1,24 @@
+id	kind	state	title	evidence
+offline-mvp	task	DONE	Offline contracts, review binding and dry-run; no external writes	PROJECT_SPEC.md
+independent-publisher	task	DONE	Prepared article independent immediate publisher, post96 proof	docs/54_immediate_live_proof.md
+independent-preparation	task	DONE	Research, selection, writing, media and review CLI; approved run005	docs/58_independent_preparation.md
+preparation-handoff	task	DONE	Preparation invokes immediate publisher with bound grant; deterministic integration proof	docs/59_preparation_publication_handoff.md
+memory-governance	task	DONE	Separate current instructions and history; enforce single task register	docs/60_memory_governance.md
+combined-live-proof	task	NEXT	One new authorized article through combined command to independently verified public state	docs/59_preparation_publication_handoff.md
+quality-rework	task	DEFERRED	Bounded failed-quality repair and independent re-review; unchanged thresholds	docs/58_independent_preparation.md
+operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
+performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
+low-cost-model	task	DEFERRED	Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008	DECISIONS.md
+legacy-assets	task	DEFERRED	Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001	RISKS.md
+monetization	task	DEFERRED	Owner-only monetization/disclosure decisions; no external-ad audit; BL-003	OWNER_INPUT.md
+recurring-pilot	task	DEFERRED	BL-006 requires explicit resumption, live proof and agreed canary limits	docs/49_immediate_publication_mode.md
+parallel-packages	task	DEFERRED	BL-007 only after measured need; keep sequential execution now	DECISIONS.md
+high-risk-workflow	task	DEFERRED	BL-009 requires expert review policy and explicit scope	OWNER_INPUT.md
+neighbor-comments	task	DEFERRED	BL-012 planning only; detailed instructions and reconciliation of automatic-comment prohibition required	OWNER_INPUT.md
+screen-reader	guard	EXCLUDED_BY_OWNER	ADR-037; no VoiceOver/narration testing or restoration	DECISIONS.md
+lighthouse	guard	EXCLUDED_BY_OWNER	ADR-039; no Lighthouse or substitute whole-site scoring	DECISIONS.md
+external-ads	guard	EXCLUDED_BY_OWNER	ADR-039; no external-ad investigation, audit or remediation	DECISIONS.md
+print	guard	EXCLUDED_BY_OWNER	ADR-041; ALL print text/image/layout/PDF certification excluded	DECISIONS.md
+remote-image-pixels	guard	EXCLUDED_BY_OWNER	ADR-042; no remote pixel/display/lightbox comparisons	DECISIONS.md
+daily-schedule	guard	PAUSED	Owner2026-09-20; three-daily worker remains paused, STOP retained	docs/49_immediate_publication_mode.md
+reservations	guard	PAUSED	Owner2026-09-20; no new reservations until explicitly resumed	docs/49_immediate_publication_mode.md

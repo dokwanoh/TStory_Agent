@@ -300,3 +300,10 @@ The owner explicitly authorizes uploading the two remaining reviewed bus media f
 # ADR-060 — direct per-image description route (accepted, 2026-09-17)
 
 The owner observed that entering text directly in the description field beneath each image succeeds more reliably than activating the inline alt-text toolbar. Prefer this visible, per-image route for future native-editor rehearsals, while requiring fresh readback to bind each value to the intended image. This changes input method only; it adds no save, reservation or publication authority.
+
+
+## MEM-001 — current memory separated from history (accepted, 2026-09-21)
+
+Owner approved the proposed split of current operating rules/status from historical records. Keep AGENTS current, use contracts/current-work.tsv as the sole task/control status source, and derive STATUS/PLAN/BACKLOG managed views. Add a read-only consistency check and regression tests to the local completion gate. Preserve all four pre-cleanup working files byte-for-byte, including unique uncommitted history; retain original publication IDs, evidence, rights records, duplicate journals and recovery material. Future already-committed detail belongs in Git, not another growing current-status diary.
+
+Rejected: deleting old material without preservation; keeping contradictory live todo lists; treating excluded checks as passed; automatically resuming paused schedules; claiming test mocks establish combined live-publication success. Archived instructions and consumed one-off grants cannot authorize new actions. No publisher behavior, current authority, quality threshold or owner exclusion changes. Procedure, limitations and verification: docs/60_memory_governance.md.
