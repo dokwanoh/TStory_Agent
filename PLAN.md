@@ -24,9 +24,12 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 | --- | --- | --- | --- |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
+| quality-rework | NEXT | Media replacement, stale-topic reselection and native pre-save correction remain | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
+
+- Owner-approved validation rework (2026-09-21): audit preparation and delivery failure routes; replace recoverable text/review rejection with correction and independent re-review without weakening gates. Test source-link supplementation, broad editorial repair, replay and safety stops; record only results in existing memory. No live publication, STOP release or schedule resumption in this task.
 
 - Bounded MVP finish: preserve the three gates and historical failures in docs/63_bounded_mvp_acceptance.md. Latest PREP-004 approval adds only the bounded pre-media repair and one fresh proof in docs/66_bounded_pre_media_repair.md; no dashboard, service or generic recovery. Current stage comes solely from contracts/current-work.tsv.
 - run-diagnostics (DONE): read-only preparation checkpoint CLI distinguishes recorded responses from quality/publication success, flags uncertain attempts and corrupted receipts, and redacts payloads. Fixture and real-run CLI evidence: docs/62_preparation_diagnostics.md.
