@@ -6,6 +6,7 @@ Effective consolidated instructions, 2026-09-21. Historical snapshots and dated 
 
 ### Current authority and operation
 
+- Owner2026-09-21 approves bounded MVP acceptance in docs/63_bounded_mvp_acceptance.md: three named new immediate-public proofs, one fact-only repair maximum per article, no manual content/publish substitution. Scoped STOP suspension/restoration is allowed only for those invocations; schedules/reservations remain paused. Broader quality/recovery work is not part of this finish gate.
 - Three-daily creation/operation and NEW reservations are PAUSED until explicit owner resumption (owner2026-09-20). Keep automation3 paused and runtime STOP present; no catch-up, automatic resumption after a fix, or old-slot retry. Pausing locally does not cancel server-side reservations.
 - For a newly owner-requested article, the current delivery mode is immediate publication, not reservation. Execute only the currently approved identity/scope through a verified normal-editor route with unchanged gates and actual saved/public readback. Historical approvals do not authorize another article or existing-post mutation. See docs/49_immediate_publication_mode.md.
 - A bounded STOP release requires explicit scoped authority and restoration afterward. The post93 reconciliation and post96 independent proof are consumed historical operations, not standing STOP-release permission. Never fabricate old checkpoints, erase a failed claim, or re-enter after uncertain save.
