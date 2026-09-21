@@ -146,4 +146,5 @@ def text_repair_eligible(response: str, digest: str) -> bool:
     failed = tuple(name for name in CHECKS if not boolean(checks, name))
     issues = strings(fields, 'issues', False, r'[\s\S]+')
     return (text(fields, 'subject_sha256') == digest and not boolean(fields, 'approved')
-            and failed == ('facts',) and bool(issues))
+            and bool(failed) and set(failed) <= {'facts', 'reader_value', 'voice',
+                                                'originality', 'web_text_accessibility'} and bool(issues))

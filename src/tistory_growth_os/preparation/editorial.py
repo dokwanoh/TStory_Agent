@@ -74,7 +74,7 @@ def parse_draft(source: str, candidate: Candidate) -> Draft:
     for raw in array(fields, 'scenes', True):
         scene = Fields.parse(raw, '/scenes', ('brief', 'alt'))
         scenes.append(Scene(text(scene, 'brief'), text(scene, 'alt')))
-    if len(scenes) != 4 or len({scene.brief for scene in scenes}) != 4 or len(linked) < 2:
+    if len(scenes) != 4 or len({scene.brief for scene in scenes}) != 4 or not linked:
         raise PreparationError('four_scenes_and_sources_required')
     result = '\n'.join(html)
     prose = re.sub(r'<[^>]+>', '', result)

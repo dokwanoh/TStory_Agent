@@ -15,6 +15,7 @@ from .provider import codex_provider
 from .runner import PreparationRun, execute, utc_now
 from .storage import history_snapshot, prior_research_leads
 from .publication import PublicationGrant
+from .enrichment import REWORK_NEEDED
 
 
 class Arguments(argparse.Namespace):
@@ -66,8 +67,12 @@ def main() -> int:
         return 0
     except (PreparationError, ArtifactWriteError, JsonDecodeError, OSError, ImportError,
             subprocess.TimeoutExpired, UnicodeError, ValueError) as error:
-        print(json.dumps({'state': 'held', 'reason': error.code if isinstance(error, PreparationError)
-            else type(error).__name__, 'retry_safe': False}), file=sys.stderr)
+        reason = error.code if isinstance(error, PreparationError) else type(error).__name__
+        state = 'needs_enrichment' if reason in REWORK_NEEDED else 'held'
+        print(json.dumps({'state': state, 'reason': reason, 'retry_safe': False,
+            'next_action': 'preserve checkpoints; remedy the recorded defect before fresh review'
+            if state == 'needs_enrichment' else 'reconcile authority, runtime or checkpoint integrity',
+            'publication_eligible': False}), file=sys.stderr)
         return 2
 
 

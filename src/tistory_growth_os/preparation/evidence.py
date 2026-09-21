@@ -45,7 +45,8 @@ def enrich_candidate(source: str, candidate: Candidate, checked_at: datetime) ->
         raise PreparationError('essential_fact_coverage_required')
     pack = JsonObject((JsonMember('sources', JsonArray(tuple(sources))),
                        JsonMember('essential_facts', fields.required('essential_facts'))))
-    evidence = JsonObject(candidate.evidence.members + (JsonMember('official_detail', pack),))
+    evidence = JsonObject(tuple(member for member in candidate.evidence.members
+                                if member.key != 'official_detail') + (JsonMember('official_detail', pack),))
     supported = {text(Fields(as_object(raw, ''), '', ()), 'source_url')
                  for raw in array(Fields(candidate.evidence, '', ()), 'claims', True)}
     for raw in array(fields, 'essential_facts', True):

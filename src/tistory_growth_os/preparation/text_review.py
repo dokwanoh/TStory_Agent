@@ -4,7 +4,7 @@ from hashlib import sha256
 import json
 from typing import Final
 
-from ..contracts.json_decode import parse_json
+from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, as_object, boolean, strings, text
 from .contracts import Candidate, PreparationError
@@ -44,7 +44,10 @@ def review_text(store: StageStore, subject: TextSubject, excluded_sessions: set[
         + '\nText subject:\n' + json.dumps({'subject_sha256': subject.digest, 'payload': subject.payload}), store.directory))
     if store.receipt('text_review').session_id in excluded_sessions:
         raise PreparationError('independent_text_review_session_required')
-    check_text_review(response, subject)
+    try:
+        check_text_review(response, subject)
+    except JsonDecodeError as error:
+        raise PreparationError('text_review_record_invalid') from error
     return response
 
 
@@ -81,12 +84,12 @@ def check_text_review(source: str, subject: TextSubject) -> None:
     fields = Fields.parse(parse_json(source), '', ('subject_sha256', 'approved', 'checks', 'issues', 'blocks', 'repair'))
     if text(fields, 'subject_sha256') != subject.digest:
         raise PreparationError('text_review_subject_mismatch')
+    repair = Fields.parse(fields.required('repair'), '/repair', ('scope', 'block_ids'))
+    checks = Fields.parse(fields.required('checks'), '/checks', TEXT_CHECKS)
     if not boolean(fields, 'approved'):
         raise PreparationError('text_review_held')
-    repair = Fields.parse(fields.required('repair'), '/repair', ('scope', 'block_ids'))
     if text(repair, 'scope') != 'none' or array(repair, 'block_ids', False):
         raise PreparationError('text_review_held')
-    checks = Fields.parse(fields.required('checks'), '/checks', TEXT_CHECKS)
     if not all(boolean(checks, name) for name in TEXT_CHECKS) or array(fields, 'issues', False):
         raise PreparationError('text_review_held')
     expected = {block.identity: block for block in subject.blocks}

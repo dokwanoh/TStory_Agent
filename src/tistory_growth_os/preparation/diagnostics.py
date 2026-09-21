@@ -76,11 +76,19 @@ def inspect_run(root: Path, run_id: str) -> RunStatus:
             return RunStatus('missing')
         stages = [inspect_stage(directory, stage, stage) for stage in STAGES]
         for subdir, names in (('research-expansion', ('research',)),
+                              ('evidence-enrichment', ('evidence',)),
                               ('pre-media-repair', ('writing', 'text_review')),
+                              ('pre-media-repair/pre-media-repair', ('writing', 'text_review')),
                               ('text-repair', ('writing', 'text_review', 'review'))):
             branch = safe_output_root(directory, subdir)
             if branch.is_dir():
                 stages.extend(inspect_stage(branch, stage, f'{subdir}/{stage}') for stage in names)
+                if subdir.startswith('pre-media-repair'):
+                    if (branch / 'evidence.attempt').exists():
+                        stages.append(inspect_stage(branch, 'evidence', f'{subdir}/evidence'))
+                    extra = safe_output_root(branch, 'evidence-enrichment')
+                    if extra.is_dir():
+                        stages.append(inspect_stage(extra, 'evidence', f'{subdir}/evidence-enrichment/evidence'))
         return RunStatus('inspected', tuple(stages))
     except (OSError, ArtifactWriteError):
         return RunStatus('invalid')

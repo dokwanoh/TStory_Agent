@@ -17,8 +17,10 @@ class RepairFixture(FixtureProvider):
     @override
     def __call__(self, request: StageRequest) -> StageResponse:
         response = super().__call__(request)
-        repaired = request.directory.name == 'pre-media-repair'
+        repaired = request.directory.name in ('pre-media-repair', 'text-repair')
         response = replace(response, session_id=response.session_id + ('-repair' if repaired else ''))
+        if self.failure in ('second_rejection', 'final_facts'):
+            response = replace(response, session_id=str(request.directory) + '-' + request.stage)
         if self.failure == 'self_review' and repaired and request.stage == 'text_review':
             response = replace(response, session_id='fixture-writing-repair')
         if self.failure == 'reused_final_reviewer' and request.stage == 'review':
@@ -56,8 +58,8 @@ def test_pre_media_repair_rechecks_then_produces_package(tmp_path: Path) -> None
     assert provider.calls == before
 
 
-@pytest.mark.parametrize(('failure', 'reason'), [('second_rejection', 'text_review_held'),
-    ('scope_change', 'pre_media_repair_scope_changed'), ('broader_failure', 'text_review_held'),
+@pytest.mark.parametrize(('failure', 'reason'), [('second_rejection', 'enrichment_budget_exhausted'),
+    ('scope_change', 'pre_media_repair_scope_changed'),
     ('self_review', 'independent_text_review_session_required')])
 def test_ineligible_or_failed_repair_never_produces_media(failure: str, reason: str, tmp_path: Path) -> None:
     run, provider = prepared_run(tmp_path), RepairFixture()
@@ -65,17 +67,23 @@ def test_ineligible_or_failed_repair_never_produces_media(failure: str, reason: 
     with pytest.raises(PreparationError, match=reason):
         _ = execute(run, provider)
     assert 'media' not in provider.calls
-    assert provider.calls.count('writing') <= 2
+    assert provider.calls.count('writing') <= 3
     assert not (run.directory / 'package').exists()
 
 
 @pytest.mark.parametrize(('failure', 'reason'), [('final_facts', 'independent_review_held'),
     ('reused_final_reviewer', 'independent_review_session_required')])
-def test_final_failure_cannot_trigger_a_second_repair(failure: str, reason: str, tmp_path: Path) -> None:
+def test_final_failure_never_promotes_without_independent_pass(failure: str, reason: str, tmp_path: Path) -> None:
     run, provider = prepared_run(tmp_path), RepairFixture()
     provider.failure = failure
     with pytest.raises(PreparationError, match=reason):
         _ = execute(run, provider)
-    assert provider.calls.count('writing') == 2
-    assert not (run.directory / 'text-repair').exists()
+    assert provider.calls.count('writing') == (3 if failure == 'final_facts' else 2)
     assert not (run.directory / 'package').exists()
+
+
+def test_coverage_failure_receives_editorial_enrichment(tmp_path: Path) -> None:
+    run, provider = prepared_run(tmp_path), RepairFixture()
+    provider.failure = 'broader_failure'
+    assert execute(run, provider).is_dir()
+    assert provider.calls.count('writing') == 2

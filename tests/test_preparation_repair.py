@@ -90,7 +90,8 @@ def test_repaired_replay_reuses_all_checkpoints(tmp_path: Path) -> None:
     assert unused.calls == []
 
 
-@pytest.mark.parametrize('failed', [name for name in CHECKS if name != 'facts'])
+@pytest.mark.parametrize('failed', [name for name in CHECKS if name not in
+    ('facts', 'reader_value', 'voice', 'originality', 'web_text_accessibility')])
 def test_non_fact_failure_is_not_a_text_repair(tmp_path: Path, failed: str) -> None:
     # Given an otherwise successful review with a different failed gate.
     run = prepared_run(tmp_path)
@@ -133,3 +134,18 @@ def test_repaired_writer_cannot_review_own_work(tmp_path: Path) -> None:
     with pytest.raises(PreparationError, match='independent_review_session_required'):
         _ = execute(run, same_session)
     assert not list(run.directory.rglob('package'))
+
+
+@pytest.mark.parametrize('failed', ['reader_value', 'voice', 'originality', 'web_text_accessibility'])
+def test_final_editorial_defect_is_repaired_before_new_package_review(tmp_path: Path, failed: str) -> None:
+    run = prepared_run(tmp_path)
+
+    def repair_editorial(request: StageRequest) -> StageResponse:
+        response = repair_provider(request)
+        if request.stage == 'review' and request.directory.name != 'text-repair':
+            return replace(response, response=response.response.replace('"facts": false', '"facts": true')
+                .replace('"' + failed + '": true', '"' + failed + '": false'))
+        return response
+
+    assert execute(run, repair_editorial).is_dir()
+    assert (run.directory / 'text-repair/review.receipt.json').is_file()

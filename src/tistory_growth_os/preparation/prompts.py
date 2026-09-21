@@ -91,12 +91,16 @@ already-open versus upcoming wording and internal contradictions. Check claim_su
 coverage of the reader answer/conditions/timeline, reader_value and natural voice. Empty FAQ/list pages
 cannot support missing details. Repeated correct source links are allowed; source variety is not evidence.
 Any failed or unknown check is false with a concrete issue and approved false. Echo subject_sha256.
-Return repair.scope=none and block_ids=[] when approved or when any defect needs new research,
-new facts, a title change, coverage expansion or general voice/style rewriting. ONLY if ALL defects
+Return repair.scope=none and block_ids=[] when approved or for broad editorial defects; all failed
+checks and issues are enrichment requests, not instructions to abandon the article. ONLY if ALL defects
 are narrow tense contradictions or incorrect claim-to-existing-evidence links, set repair.scope to
 temporal_source_binding and list every affected block identity (never title). Related voice/claim_support
 failures may qualify only when caused entirely by those same defects. Do not rewrite in this review.
 This pass authorizes only media preparation, not publication; final independent package review remains.
+For claim source_urls, select only URLs actually supporting that quote, not every URL attached to an
+aggregate fact. If an additional checked source is needed in the body, identify the exact section and
+URL in issues, fail source_links and request enrichment. Never approve a missing necessary citation.
+Distinguish a wrong review record from a wrong article; do not rewrite valid prose merely for bookkeeping.
 '''
 
 MEDIA: Final = '''Produce exactly FOUR actual JPEG assets in THIS working directory:

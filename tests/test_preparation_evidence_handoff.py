@@ -37,9 +37,10 @@ def test_unknown_central_conditions_stop_before_writing(tmp_path: Path) -> None:
                                  'fixture-evidence', ('web_search',))
         return fixture(request)
 
-    with pytest.raises(PreparationError, match='essential_fact_unresolved'):
+    with pytest.raises(PreparationError, match='evidence_enrichment_exhausted'):
         _ = execute(run, provider)
     assert 'writing' not in fixture.calls
+    assert (run.directory / 'evidence-enrichment/evidence.receipt.json').exists()
 
 
 @pytest.mark.parametrize(('before', 'after', 'reason'), [

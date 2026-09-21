@@ -39,10 +39,10 @@ def test_text_rejection_stops_before_media_or_package(tmp_path: Path) -> None:
             subject = text_subject(writing_response(), candidate, NOW)
             return StageResponse(json.dumps({'subject_sha256': subject.digest, 'approved': False,
                 'checks': {}, 'issues': ['Contradictory event wording and unsupported section links'],
-                'blocks': [], 'repair': {'scope': 'none', 'block_ids': []}}), 'independent-text', ())
+                'blocks': [], 'repair': {'scope': 'none', 'block_ids': []}}), str(request.directory), ())
         return fixture(request)
 
-    with pytest.raises(PreparationError, match='text_review_held'):
+    with pytest.raises(PreparationError, match='enrichment_budget_exhausted'):
         _ = execute(run, reject)
     assert 'media' not in fixture.calls
     assert not (run.directory / 'package').exists()
