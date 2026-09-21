@@ -79,6 +79,8 @@ def prior_research_leads(root: Path) -> str:
 def history_snapshot(root: Path) -> str:
     candidates = {path.parent: path for pattern in ('**/publish-manifest.json', '**/manifest.json')
                   for path in (root / 'content').glob(pattern)}
+    for path in (root / '.artifacts/preparation').glob('**/package/manifest.json'):
+        candidates[path.parent] = path
     manifests = sorted(candidates.values(), key=lambda path: path.stat().st_mtime, reverse=True)[:5]
     history: list[dict[str, str]] = []
     for path in manifests:
@@ -90,7 +92,7 @@ def history_snapshot(root: Path) -> str:
                 records.append(source.read_text()[:12000])
         hashes = [sha256(media.read_bytes()).hexdigest() for media in (path.parent / 'media').glob('*.jpg')
                   if media.is_file() and not media.is_symlink() and media.stat().st_size <= 5_000_000]
-        history.append({'identity': path.parent.name, 'record': '\n'.join(records),
+        history.append({'identity': path.parent.relative_to(root).as_posix(), 'record': '\n'.join(records),
                         'asset_hashes': ','.join(hashes)})
     return json.dumps({'inspected': history, 'history_complete': len(history) == 5}, ensure_ascii=False)
 
