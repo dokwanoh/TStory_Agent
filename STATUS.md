@@ -1,10 +1,10 @@
 # TISTORY GROWTH OS — current status
 
-Updated 2026-09-21. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
+Updated 2026-09-23. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
 
 ## Current outcome and boundary
 
-PREP-005/006 implement bounded enrichment instead of immediate abandonment for recoverable research, evidence, text, reviewer-record and media failures. Media defects now receive one replacement set and a fresh exact-byte package review; eligible text repair can follow. Manual fixture drivers for credit, JPEG, image and rights failures produced replacement packages and replayed with zero provider calls. Persistent rejection remains ineligible; policy/integrity holds remain intact. This is local automation evidence, not a new model/public proof. Stale-topic reselection and native pre-save correction remain next work. STOP and daily/reservation pauses remain.
+PREP-007 applies issue freshness only at actual recorded selection, not later issue age during writing/review/publication. The new immediate-v2 package retains a separate evidence/assembly-based validity window and unchanged explicit authority deadlines. Native title/body/media mismatches now receive bounded correction in the same owned editor, then the existing single-save/readback route. A bound, never-saved operation may resume its recognized editor without reupload; across-process resume needs all original media identities still present, because signed image URLs/native codes are not persisted. Unknown saves and unowned editors remain protected. Local Chrome tests cover title/body/alt/source/missing-image correction, preflight drift and pre-save interruption/resume. Real Tistory revalidation of these new paths remains unperformed; no new public proof is claimed. STOP and daily/reservation pauses remain. PREP-005/006 research/text/media enrichment remains in place.
 
 Historical PREP-004 live proof manual-20260921-pre-media-proof-01 held on text_review_section_link_mismatch before media or publisher. PREP-005 changes its future recovery path but does not turn that historical attempt into success or authorize replay. Evidence: docs/66_bounded_pre_media_repair.md.
 
@@ -30,7 +30,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
 | validation-enrichment | DONE | Bounded research, evidence, text and review-record enrichment with independent re-review; local proof | `STATUS.md` |
 | media-enrichment | DONE | One immutable media replacement and fresh package review; local fixture proof | `STATUS.md` |
-| quality-rework | NEXT | Stale-topic reselection and native pre-save correction remain | `STATUS.md` |
+| quality-rework | DONE | Selection-time freshness and bounded same-editor correction/resume; local browser proof | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |
@@ -50,6 +50,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:end -->
 
 ## Verification ledger
+
+PREP-007 verification (2026-09-23): full tests/browser_tests 762 passed / 217.12s. Delayed writing/review/media and next-day replay, including expanded research, pass selection-time freshness tests; stale initial selection still rejects. Seven intercepted real-Chrome scenarios cover title/body/alt/source/missing-image correction, final-preflight drift and same-editor interruption/resume. Manual driver separately exercised body/alt/missing-image/resume through one save and saved/public fixture readback; no live Tistory writes. Five resume-boundary/checkpoint tests preserve unknown-save and unowned-editor protections and verify no signed URLs in durable checkpoints. Fresh source and scoped-test type checks, compilation, memory and diff checks pass. Cached MCP LSP import warnings for newly created modules are superseded by fresh CLI diagnostics, not claimed as a clean MCP run. Personal editorial skill and delivery reference updated; optional skill validator unavailable because PyYAML is absent (no installation). STOP and daily/reservation pauses unchanged. Native body-field restoration preserves the approved representation; arbitrary per-node patching and real Tistory certification are not claimed.
 
 PREP-006 latest verification: tests/browser_tests 743 passed / 189.48s; focused preparation139passed. New defect tests failed first on credit/JPEG/image/rights rejection and passed after bounded replacement. Manual executor drivers created replacement packages for credit/JPEG/images/rights; replay used zero provider calls. Persistent rejection replay also used zero new calls and produced no approval; policy rejection did not start replacement. Fresh source/scoped-test types, LSP diagnostics for changed runtime modules, compilation, six-file no-excuse check, memory and diff checks passed. Prior cached missing-module LSP warning is not reproduced. CLI help/default dry-run passed with zero model calls and external writes. STOP hash unchanged at46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d; automation3 remains PAUSED. No live model/image generation, publisher, reservation, excluded audit lane or standalone report ran. Runtime/tests and current rules are the deliverable; real-model media-quality and public proof remain unverified.
 

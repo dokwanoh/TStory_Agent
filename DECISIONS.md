@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-007 — selection-time freshness and owned-editor correction, 2026-09-23
+
+Owner removes abandonment when an already-selected issue crosses24h and requests correction in the current editor through save. Apply freshness at actual persisted selection time, including same-run replay. Reject stale initial selection and future clocks, not production elapsed issue age. New native-immediate-v2 separates issue eligibility from the existing24h evidence/package validity window beginning at assembly. Explicit owner grants and old exact-byte reviews retain their own deadlines; never silently renew them.
+
+Native input detects title, body and four-media identity/order/alt mismatches, corrects the defective fields using native controls and the approved uploaded representation, then continues the one-save/readback path. Title-only defects do not rewrite the body. Body/media repair restores the reviewed body field without reuploading or recreating an article. Same-editor continuation uses a digest-bound local checkpoint and a pre-save journal check. Only source hashes are durable; native image codes and signed URLs remain in memory or are reread from the recognized editor. Across process loss, all original media identities must still be observable; absent identity or uncertain save state requires reconciliation, never a duplicate write. Retain bounded retries, STOP, login, rights/policy and actual saved/public readback.
+
+Rejected unconditional nonblank-editor refusal, topic-age abandonment during production, infinite retries, blind overwrite of another draft, raw signed-URL persistence and resetting failed save claims. No separate report or live publication; scheduled creation and reservations stay paused. Tests and evidence are recorded in STATUS.md.
+
 ## PREP-006 — bounded media replacement, 2026-09-21
 
 Continue validation-as-enrichment for media: retain failed media and reviews; dispatch one replacement set through the existing provider; recheck local files, attribution, history hashes and native-generation derivations, then independently review the exact new package. Preserve reviewed text/alt/scene purposes and operation identity. Allow subsequent already-approved text correction without losing media-review session exclusions. Rights rejection can motivate replacement but never waives rights or policy checks; unresolved rights still prevents approval. Unknown generation provenance, unsafe paths, uncertain attempts and remote state are not ordinary editorial defects.

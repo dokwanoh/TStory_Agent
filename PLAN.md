@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-007 execution (owner 2026-09-23)
+
+1. Completed: selection-time-only issue freshness; delayed-production/replay, expanded research and legacy package checks pass.
+2. Completed: bounded correction of owned current-editor title/body/media, including recognized never-saved resume; seven Chrome correction/resume cases pass.
+3. Completed: full regression (762 passed) and current-rule synchronization. Scoped delivery uses the existing feature branch; retain STOP and schedule pauses. Actual remote merge is not an acceptance claim.
+
 Current queue is derived from contracts/current-work.tsv. Phase definitions below are acceptance criteria, not an independent completion list.
 
 ## Phase and milestone matrix
@@ -24,12 +30,11 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 | --- | --- | --- | --- |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
-| quality-rework | NEXT | Stale-topic reselection and native pre-save correction remain | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
 
-- Media slice implemented: failure-first replacement scenarios, one immutable replacement before fresh package review, replay and exhausted-budget protection, reviewer independence. Local verification only; no live image generation/publication or STOP release. Stale-topic reselection and native input correction remain separate next work.
+- Media slice implemented: failure-first replacement scenarios, one immutable replacement before fresh package review, replay and exhausted-budget protection, reviewer independence. PREP-007 removes age-only reselection after selection and implements bounded same-editor correction. Local verification only; real Tistory verification of the new correction paths still needs a current scoped proof, not a STOP release inferred from these code changes.
 
 - Owner-approved validation rework (2026-09-21): audit preparation and delivery failure routes; replace recoverable text/review rejection with correction and independent re-review without weakening gates. Test source-link supplementation, broad editorial repair, replay and safety stops; record only results in existing memory. No live publication, STOP release or schedule resumption in this task.
 
