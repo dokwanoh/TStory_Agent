@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-010 — source failure replaces candidate, 2026-09-23
+
+Owner accepts completing source fallback followed by one real combined-command immediate-public article. Within the same operation, retain the exhausted detail/enrichment results, try ranked alternatives, and when none remain perform one fresh research round excluding rejected identities/issues. Limit detail attempts to three total (each with the existing one enrichment); do not draft three articles. Rank replacement evidence with the same observed quantitative context and independently select only after full-text qualification. Unknown calls, changed checkpoints and authority/policy violations propagate instead of triggering replacement. Replays reuse immutable receipts and preserve budgets. Rejected alternatives: silent budget reset, manually substituted research, snippet-as-full-text, new publication identity on source failure. One live identity manual-20260923-prep010-live-01 uses existing native publisher, bounded STOP suspension/restoration; daily/reservations remain paused.
+
 ## PREP-009 — evidence-first quantitative topic selection, 2026-09-23
 
 Owner requests official full-text qualification before final editorial selection and quantitative demand/growth/competition inputs. New runs use research → opportunity measurement/ranking → official-detail qualification/enrichment → independent selection → writing. Ranking proposes the highest conservative score candidate; final selection can reject it but cannot select an unqualified alternative. Preserve one article, not a five-draft requirement. No new paid API/account/install or public action. Old selected runs and receipts are historical, not silently migrated or reset.

@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-010 source fallback and one live proof (owner 2026-09-23)
+
+1. Completed: bounded next-candidate/source-research fallback; source failure tests went red then green, same-ID replay preserves all receipts and performs zero provider calls.
+2. Completed: full781 tests/224.22s and focused15/4.73s; source/scoped-test types zero errors, compile/source/memory/diff checks pass. Actual CLI fixture preparation/help/dry-run/invalid-input exercised; normal dedicated-profile manager authenticated, zero existing editors.
+3. Blocked: manual-20260923-prep010-live-01 exited2/qualified_candidate_required after initial and expanded research both returned zero qualified candidates. Official-body access failed or announcements were outside the selection window. No candidate-detail fallback, writing, media, package or publisher invocation occurred. STOP restored byte-for-byte; daily/reservations remain paused. Preserve checkpoints; next work is reliable readable-current-source intake, not editor repair or blind replay.
+
 ## PREP-009 evidence-first quantitative selection (owner 2026-09-23)
 
 1. Completed: tests prove official-detail qualification precedes final selection; snippets and unresolved details cannot qualify.
@@ -48,6 +54,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 | --- | --- | --- | --- |
 | three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
 | pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
+| current-source-intake | BLOCKED | PREP-010 live research and expansion returned zero qualified candidates before production or publisher | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
