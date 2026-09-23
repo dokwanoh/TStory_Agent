@@ -20,7 +20,8 @@ def configure_publish_panel(page: Page, content: ReservationContent) -> bool:
             or title.count() != 1 or title.input_value() != content.title):
         return False
     tags = page.get_by_role('link', name=re.compile(r'(?:^| )태그 수정$'))
-    if tags.count():
+    existing_tags = tuple(value.removeprefix('#').strip() for value in tags.all_inner_texts())
+    if any(value not in content.tags for value in existing_tags) or len(set(existing_tags)) != len(existing_tags):
         return False
     category = content.category or '카테고리 없음'
     page.locator('#category-btn').click()
@@ -29,8 +30,9 @@ def configure_publish_panel(page: Page, content: ReservationContent) -> bool:
         return False
     choice.click()
     for tag in content.tags:
-        page.locator('#tagText').fill(tag)
-        page.locator('#tagText').press('Enter')
+        if tag not in existing_tags:
+            page.locator('#tagText').fill(tag)
+            page.locator('#tagText').press('Enter')
     observed_tags = tuple(text.removeprefix('#').strip() for text in tags.all_inner_texts())
     if set(observed_tags) != set(content.tags) or len(observed_tags) != len(content.tags):
         return False

@@ -24,6 +24,13 @@ from browser_tests.test_native_surface_flow import article_fixture, manager_fixt
     ('anonymous_private', ExecutionState.MISMATCH),
     ('saved_source', ExecutionState.UNKNOWN),
     ('stop_input', ExecutionState.BLOCKED),
+    ('repair_body', ExecutionState.VERIFIED),
+    ('repair_alt', ExecutionState.VERIFIED),
+    ('repair_source', ExecutionState.VERIFIED),
+    ('repair_title', ExecutionState.VERIFIED),
+    ('repair_missing', ExecutionState.VERIFIED),
+    ('resume_editor', ExecutionState.VERIFIED),
+    ('repair_preflight', ExecutionState.VERIFIED),
 ])
 def test_immediate_flow_when_real_browser_reads_both_surfaces(case: str, expected: ExecutionState, tmp_path: Path) -> None:
     # Given: native controls and isolated public responses, with every request intercepted.
@@ -47,6 +54,21 @@ def test_immediate_flow_when_real_browser_reads_both_surfaces(case: str, expecte
         html = html.replace('/* SAVED_BODY_VARIANT */', "frame.contentDocument.querySelector('p').textContent='changed';")
     if case == 'saved_source':
         html = html.replace("function saveFixture() {", "function saveFixture() { frame.contentDocument.querySelector('img').src='https://example.com/replaced.jpg';")
+    defects = {
+        'repair_body': "frame.contentDocument.querySelector('p').textContent = '입력 누락';",
+        'repair_alt': "frame.contentDocument.querySelector('img').alt = '';",
+        'repair_source': "frame.contentDocument.querySelector('img').src = 'https://cdn.test/wrong.jpg';",
+        'repair_title': "document.querySelector('#post-title-inp').value = '잘못된 제목';",
+        'repair_missing': "frame.contentDocument.querySelector('img').closest('figure').remove();",
+        'resume_editor': "frame.contentDocument.querySelector('img').alt = '';",
+    }
+    if case in defects:
+        html = html.replace('frame.contentDocument.body.innerHTML = result;',
+            'frame.contentDocument.body.innerHTML = result; if (!window.correctedOnce) {'
+            + defects[case] + 'window.correctedOnce = true;}')
+    if case == 'repair_preflight':
+        html = html.replace('function openPanel() {', "function openPanel() { if (!window.drifted && location.pathname === '/manage/newpost') {"
+            + "frame.contentDocument.querySelector('img').alt=''; window.drifted=true;}")
     saves: list[str] = []
     with sync_playwright() as runtime, closing(runtime.chromium.launch(channel='chrome', chromium_sandbox=True)) as browser:
         with closing(browser.new_context(service_workers='block')) as authenticated, closing(browser.new_context(service_workers='block')) as anonymous:
@@ -87,8 +109,21 @@ def test_immediate_flow_when_real_browser_reads_both_surfaces(case: str, expecte
                     _ = (tmp_path / 'STOP').write_text('stop after first upload')
                 if phase == 'article_input/input_verified':
                     journal.media.record(intent.key, intent.package_digest, surface.bindings)
+                if case == 'resume_editor' and phase == 'article_input/body_verification':
+                    raise NativePreparationError('fixture_interruption_before_save')
 
             surface = ClockSurface(page, anonymous, article, tmp_path / 'STOP', lambda _request, _now: (), checkpoint)
+            surface.recovery_path = tmp_path / 'editor.json'
+            if case == 'resume_editor':
+                surface.recovery_path = tmp_path / 'editor.json'
+                with pytest.raises(NativePreparationError, match='fixture_interruption_before_save'):
+                    _ = ImmediateExecutor(journal, surface).run(intent, dry_run=False)
+                surface = ClockSurface(page, anonymous, article, tmp_path / 'STOP', lambda _request, _now: ())
+                surface.recovery_path = tmp_path / 'editor.json'
+                result = ImmediateExecutor(journal, surface).run(intent, dry_run=False, resume_editor=True)
+                assert result.execution.state is ExecutionState.VERIFIED
+                assert len(saves) == 1
+                return
             # When: one independent execution inputs, publishes and reads saved plus anonymous content.
             if case == 'stop_input':
                 with pytest.raises(NativePreparationError, match='kill_switch'):

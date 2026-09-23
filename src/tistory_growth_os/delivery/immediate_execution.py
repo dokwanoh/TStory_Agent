@@ -65,6 +65,22 @@ class ImmediateJournal:
                 (request.key, request.package_digest)).fetchall()
         return datetime.fromisoformat(values[0]) if len(values) == 1 else None
 
+    def can_resume_editor(self, request: ImmediateIntent) -> bool:
+        values: list[str] = []
+
+        def decode(value: bytes) -> str:
+            result = value.decode('utf-8')
+            values.append(result)
+            return result
+
+        with closing(sqlite3.connect(self.path)) as connection:
+            connection.text_factory = decode
+            _ = connection.execute('''SELECT slot_key FROM save_intents WHERE slot_key=? AND package_digest=?
+                AND NOT EXISTS(SELECT 1 FROM immediate_attempts WHERE operation_key=?)
+                AND NOT EXISTS(SELECT 1 FROM save_receipts WHERE slot_key=?)''',
+                (request.key, request.package_digest, request.key, request.key)).fetchall()
+        return values == [request.key]
+
 
 class ImmediateSurface(Protocol):
     def now(self) -> datetime: ...
@@ -97,13 +113,15 @@ class ImmediateExecutor:
             return ()
         return boundaries() or self.surface.authorize(request, self.surface.now()) or boundaries()
 
-    def run(self, request: ImmediateIntent, *, dry_run: bool = True) -> ImmediateResult:
+    def run(self, request: ImmediateIntent, *, dry_run: bool = True, resume_editor: bool = False) -> ImmediateResult:
         if dry_run:
             return ImmediateResult(ExecutionResult(ExecutionState.DRY_RUN))
         reasons = self._gate(request)
         if reasons:
             return ImmediateResult(ExecutionResult(ExecutionState.BLOCKED, reasons))
-        if not self.journal.saves.claim(request.key, request.package_digest):
+        permitted = (self.journal.can_resume_editor(request) if resume_editor
+                     else self.journal.saves.claim(request.key, request.package_digest))
+        if not permitted:
             return ImmediateResult(ExecutionResult(ExecutionState.HELD, ('existing_intent',)))
         before = self.surface.inventory()
         if before is None:

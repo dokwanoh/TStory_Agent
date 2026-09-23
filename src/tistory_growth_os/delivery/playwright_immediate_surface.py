@@ -9,6 +9,7 @@ from playwright.sync_api import BrowserContext, Page
 
 from ..domain.ids import PostId
 from .editor_body_fingerprint import article_body_digest
+from .editor_correction import OwnedEditor
 from .immediate_execution import ImmediateIntent
 from .immediate_media import MediaBinding, media_bindings
 from .immediate_readback import ImmediateObservation, ImmediateTarget
@@ -37,6 +38,8 @@ class ImmediateNativeSurface:
     prepared: bool = False
     save_attempted: bool = False
     phase: str = 'created'
+    recovery_path: Path | None = field(default=None, repr=False)
+    editor: OwnedEditor | None = field(default=None, repr=False)
 
     def now(self) -> datetime:
         return datetime.now(timezone.utc)
@@ -51,6 +54,14 @@ class ImmediateNativeSurface:
 
     def inventory(self) -> frozenset[PostId] | None:
         self.phase = 'inventory'
+        if self.recovery_path is not None and self.recovery_path.exists():
+            manager = self.page.context.new_page()
+            try:
+                _ = manager.goto('https://nedamma.tistory.com/manage/posts/', wait_until='domcontentloaded')
+                self.prior = read_manager_inventory(manager)
+                return self.prior
+            finally:
+                manager.close()
         self.prior = read_manager_inventory(self.page)
         return self.prior
 
@@ -58,6 +69,11 @@ class ImmediateNativeSurface:
         self.phase = 'article_input/' + stage
         self.uploads = uploads
         self.bindings = media_bindings(uploads)
+        if stage == 'basic_mode':
+            source = self.page.locator('#html-editor-container .CodeMirror textarea')
+            source.press('ControlOrMeta+A')
+            self.editor = OwnedEditor(self.article.intent.content.title, source.input_value(),
+                self.article.intent.content.body_digest, self.article.media(), uploads, self.article.template)
         if self.checkpoint is not None:
             self.checkpoint(self.phase, uploads)
         if self.stopped():
@@ -67,10 +83,14 @@ class ImmediateNativeSurface:
         if self.stopped() or self.authorize(request, self.now()) or self.prior is None or self.prepared:
             raise NativePreparationError('prepare_boundary')
         self.phase = 'article_input'
-        _ = self.page.goto('https://nedamma.tistory.com/manage/newpost', wait_until='domcontentloaded')
+        if self.recovery_path is None or not self.recovery_path.exists():
+            _ = self.page.goto('https://nedamma.tistory.com/manage/newpost', wait_until='domcontentloaded')
+        else:
+            self._close_panel()
         self.page.locator('#post-title-inp').wait_for(state='visible', timeout=10000)
         self.page.frame_locator('#editor-tistory_ifr').locator('#tinymce').wait_for(timeout=10000)
-        uploads = input_new_article(self.page, self.article, dry_run=False, checkpoint=self._checkpoint)
+        uploads = input_new_article(self.page, self.article, dry_run=False, checkpoint=self._checkpoint,
+                                    recovery_path=self.recovery_path)
         if uploads is None:
             raise NativePreparationError('article_input_unverified')
         self.uploads = uploads
@@ -79,9 +99,25 @@ class ImmediateNativeSurface:
                 or configure_immediate_publication(self.page, request.content, dry_run=False) != 'input_verified'):
             raise NativePreparationError('settings_unverified')
         self.phase = 'final_preflight'
-        self.prepared = self._preflight(request)
+        self.prepared = self._preflight(request) or self._correct_preflight(request)
         if not self.prepared:
             raise NativePreparationError('final_preflight_failed')
+
+    def _close_panel(self) -> None:
+        panel = self.page.get_by_role('dialog').filter(has=self.page.locator('legend').filter(has_text='발행정보 입력폼'))
+        if panel.count() == 1 and panel.is_visible():
+            panel.get_by_role('button', name='취소', exact=True).click()
+
+    def _correct_preflight(self, request: ImmediateIntent) -> bool:
+        if (self.save_attempted or self.stopped() or self.authorize(request, self.now())
+                or self.recovery_path is None or not self.recovery_path.exists()):
+            return False
+        self._close_panel()
+        if self.editor is None or not self.editor.correct(self.page):
+            return False
+        return (configure_publish_panel(self.page, request.content)
+                and configure_immediate_publication(self.page, request.content, dry_run=False) == 'input_verified'
+                and self._preflight(request))
 
     def _preflight(self, request: ImmediateIntent) -> bool:
         location = urlsplit(self.page.url)
@@ -126,7 +162,7 @@ class ImmediateNativeSurface:
         self.phase = 'save_preflight'
         if (not self.prepared or self.save_attempted or self.prior is None or self.stopped()
                 or self.now() >= request.valid_until or self.authorize(request, self.now())
-                or not self._preflight(request)):
+                or not (self._preflight(request) or self._correct_preflight(request))):
             return None
         panel = self.page.get_by_role('dialog').filter(has=self.page.locator('legend').filter(has_text='발행정보 입력폼'))
         button = panel.get_by_role('button', name=re.compile(r'^공개\s*발행$'))

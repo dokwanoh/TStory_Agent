@@ -40,6 +40,7 @@ def _execute(package: ImmediatePackage, authority: ImmediateAuthority, *, recove
             return 2
         journal = ImmediateJournal(safe_output_root(root, '.artifacts/native-runtime/save-intents.sqlite3'))
         intent = package.article.intent
+        editor_path = safe_output_root(root, '.artifacts/native-runtime/editor-' + intent.package_digest + '.json')
         bindings = journal.media.read(intent.key, intent.package_digest) if recover else ()
         if recover and (len(bindings) != 4 or journal.saves.receipt(intent.key, intent.package_digest) is None):
             print(json.dumps({'state': 'held', 'reason': 'original_receipts_required',
@@ -50,20 +51,27 @@ def _execute(package: ImmediatePackage, authority: ImmediateAuthority, *, recove
                 str(safe_output_root(root, 'browser-profile')), channel='chrome', headless=False,
                 chromium_sandbox=True, accept_downloads=False, service_workers='block')
             try:
-                if any('/manage/newpost' in page.url for page in context.pages):
+                editors = tuple(page for page in context.pages if '/manage/newpost' in page.url)
+                resume_editor = bool(not recover and editor_path.exists() and journal.can_resume_editor(intent))
+                if editors and (not resume_editor or len(editors) != 1):
                     raise NativePreparationError('existing_editor_requires_reconciliation')
-                page = context.pages[0] if context.pages else context.new_page()
+                if resume_editor and not editors:
+                    raise NativePreparationError('original_editor_required')
+                page = editors[0] if resume_editor else (context.pages[0] if context.pages else context.new_page())
                 page.set_default_timeout(5000)
-                _ = page.goto('https://nedamma.tistory.com/manage/posts/', wait_until='domcontentloaded')
-                wait_manager_ready(page)
+                if not resume_editor:
+                    _ = page.goto('https://nedamma.tistory.com/manage/posts/', wait_until='domcontentloaded')
+                    wait_manager_ready(page)
                 anonymous_browser = runtime.chromium.launch(channel='chrome', headless=True, chromium_sandbox=True)
                 try:
                     anonymous = anonymous_browser.new_context(accept_downloads=False, service_workers='block')
                     surface = ImmediateNativeSurface(page, anonymous, package.article, stop, authority)
+                    surface.recovery_path = None if recover else editor_path
                     surface.bindings = bindings
 
                     def checkpoint(phase: str, uploads: tuple[UploadedAsset, ...]) -> None:
-                        if phase == 'article_input/input_verified':
+                        if (phase == 'article_input/input_verified'
+                                and journal.media.read(intent.key, intent.package_digest) != surface.bindings):
                             journal.media.record(intent.key, intent.package_digest, surface.bindings)
                         append_checkpoint(safe_output_root(root, '.artifacts/native-runtime/checkpoints.jsonl'),
                             package.article.intent.package_digest, 'immediate/' + phase, uploads, surface.save_attempted)
@@ -72,7 +80,8 @@ def _execute(package: ImmediatePackage, authority: ImmediateAuthority, *, recove
                     checkpoint('manager_ready', ())
                     try:
                         executor = ImmediateExecutor(journal, surface)
-                        result = executor.recover(intent) if recover else executor.run(intent, dry_run=False)
+                        result = (executor.recover(intent) if recover
+                                  else executor.run(intent, dry_run=False, resume_editor=resume_editor))
                     except (BrowserError, NativePreparationError, AssertionError):
                         checkpoint(surface.phase + '/held', surface.uploads)
                         raise
@@ -114,7 +123,7 @@ def run(args: Arguments) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description='One reviewed immediate-public article; default is no-browser dry-run.')
-    _ = parser.add_argument('--package', required=True, help='Project-relative native-immediate-v1 package directory')
+    _ = parser.add_argument('--package', required=True, help='Project-relative reviewed immediate package directory (v1/v2)')
     _ = parser.add_argument('--execute', action='store_true', help='Execute one separately authorized immediate article')
     _ = parser.add_argument('--authority', default='', help='Project-relative one-article immediate authority record')
     _ = parser.add_argument('--recover', action='store_true', help='Read-only receipt recovery; never retries an uncertain save')

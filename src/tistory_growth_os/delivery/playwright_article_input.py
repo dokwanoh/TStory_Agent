@@ -1,12 +1,15 @@
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from hashlib import sha256
+from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Page, expect
 
 from .editor_body_fingerprint import article_body_digest
+from .editor_correction import OwnedEditor
+from .editor_checkpoint import read_editor, record_editor
 from .native_article_source import NativeAlt, compose_native_article
 from .immediate_execution import ImmediateIntent
 from .new_reservation_identity import NewReservationIntent
@@ -59,7 +62,8 @@ def _valid(uploads: tuple[LocalUpload, ...], content: ReservationContent, templa
 
 
 def input_new_article(page: Page, request: ArticleInput | ImmediateArticleInput, *, dry_run: bool = True,
-                      checkpoint: Callable[[str, tuple[UploadedAsset, ...]], None] | None = None) -> tuple[UploadedAsset, ...] | None:
+                      checkpoint: Callable[[str, tuple[UploadedAsset, ...]], None] | None = None,
+                      recovery_path: Path | None = None) -> tuple[UploadedAsset, ...] | None:
     if dry_run or not request.valid():
         return None
     location = urlsplit(page.url)
@@ -68,6 +72,20 @@ def input_new_article(page: Page, request: ArticleInput | ImmediateArticleInput,
         return None
     title = page.locator('#post-title-inp')
     body = page.frame_locator('#editor-tistory_ifr').locator('body#tinymce[contenteditable=true]')
+    if recovery_path is not None and recovery_path.exists():
+        owned = read_editor(recovery_path, request.intent.package_digest, page)
+        if (owned.title != request.intent.content.title or owned.body_digest != request.intent.content.body_digest
+                or owned.media != request.media()
+                or tuple(item.asset_id for item in owned.uploads) != tuple(item.asset_id for item in request.uploads)
+                or compose_native_article(request.template, owned.html, request.media()) != owned.html):
+            return None
+        if checkpoint is not None:
+            checkpoint('correction_attempt', owned.uploads)
+        if not owned.correct(page):
+            return None
+        if checkpoint is not None:
+            checkpoint('input_verified', owned.uploads)
+        return owned.uploads
     if (title.count() != 1 or title.input_value().strip() or body.count() != 1
             or body.inner_text().strip() or body.locator('img').count()):
         return None
@@ -96,6 +114,10 @@ def input_new_article(page: Page, request: ArticleInput | ImmediateArticleInput,
     compiled = compose_native_article(request.template, previous, request.media())
     if compiled is None:
         return None
+    owned = OwnedEditor(request.intent.content.title, compiled, request.intent.content.body_digest,
+                        request.media(), tuple(uploaded), request.template)
+    if recovery_path is not None:
+        record_editor(recovery_path, request.intent.package_digest, owned)
     replacement = HtmlReplacement(HtmlInput(request.intent.content.title, compiled, sha256(compiled.encode()).hexdigest()),
                                   sha256(previous.encode()).hexdigest())
     record('source_replacement')
@@ -105,6 +127,12 @@ def input_new_article(page: Page, request: ArticleInput | ImmediateArticleInput,
     if not select_editor_mode(page, '기본모드', dry_run=False):
         return None
     record('body_verification')
+    if owned.mismatches(page):
+        record('correction_attempt')
+        if not owned.correct(page):
+            record('body_verification')
+            return None
+        record('correction_verified')
     images = body.locator('img')
     if (title.input_value() != request.intent.content.title or images.count() != 4
             or article_body_digest(body.inner_html(), request.media()) != request.intent.content.body_digest):
