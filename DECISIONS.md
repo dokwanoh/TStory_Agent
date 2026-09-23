@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-007 live proof authority — 2026-09-23
+
+Owner requests the first real public success of the updated integrated loop. Authorize one new immediate-public article, manual-20260923-prep007-live-01, including scoped STOP suspension for the combined command and restoration on exit. Current PREP-005/006/007 enrichment, selection-only freshness and owned-editor correction apply. Preserve earlier failed proofs; no reused failure identity, manual article/publish substitute, scheduled resumption, reservation, new service/install or gate waiver. Local grant expires2026-09-23T17:15Z as a bounded operator deadline, not an owner-promised publish time. Official Tistory terms and Google Search spam policies reopened2026-09-23; preserve original synthesis, rights and native platform controls. Private runtime evidence: .artifacts/prep007-live-20260923/.
+
 ## PREP-007 — selection-time freshness and owned-editor correction, 2026-09-23
 
 Owner removes abandonment when an already-selected issue crosses24h and requests correction in the current editor through save. Apply freshness at actual persisted selection time, including same-run replay. Reject stale initial selection and future clocks, not production elapsed issue age. New native-immediate-v2 separates issue eligibility from the existing24h evidence/package validity window beginning at assembly. Explicit owner grants and old exact-byte reviews retain their own deadlines; never silently renew them.
