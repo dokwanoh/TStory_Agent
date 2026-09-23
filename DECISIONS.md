@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-009 — evidence-first quantitative topic selection, 2026-09-23
+
+Owner requests official full-text qualification before final editorial selection and quantitative demand/growth/competition inputs. New runs use research → opportunity measurement/ranking → official-detail qualification/enrichment → independent selection → writing. Ranking proposes the highest conservative score candidate; final selection can reject it but cannot select an unqualified alternative. Preserve one article, not a five-draft requirement. No new paid API/account/install or public action. Old selected runs and receipts are historical, not silently migrated or reset.
+
+Use captured Google Trends KR RSS thresholds and their within-feed percentile; compare same-query/same-episode captures up to24h apart for threshold-change/hour, never exact search velocity. Competition is the percentage of3–10 inspected distinct retrieved pages answering the question, not ad competition, global result count or certified Google top10. Keep source URLs, query, timestamps, hashes, sample size and limitations. Missing dimensions remain null; provisional weights volume50/growth20/opportunity30 produce a lower/upper score interval, not a performance prediction. Reject invented monthly volume, snippet-as-read proof, zero-filled unknowns and new subscription dependencies. Real demand validation/traffic calibration remains future evidence, not a claim of this implementation.
+
 ## PREP-008 — one qualified topic, one article by default, 2026-09-23
 
 Owner permanently rejects the five-topic requirement: “5건일필요가 전혀없어. 1편이면 충분해. 앞으로 쭈욱”. Accept one-or-more unique qualified research candidates; one is enough for independent editorial selection and exactly one article. Empty or unqualified research still receives bounded enrichment, never fabricated candidates. Update new research/selection prompts; exact old recorded request hashes remain replayable without rewriting receipts, and response integrity is still enforced. Preserve all other evidence/rights/freshness/media/review/save protections. Rejected filling a quota, forcing five drafts, or automatically approving the only candidate. Resume the same scoped live identity and grant; no second post or schedule/reservation restart.

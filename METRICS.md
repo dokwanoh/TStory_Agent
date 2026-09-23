@@ -1,5 +1,20 @@
 # TISTORY GROWTH OS — measurement contract
 
+## PREP-009 topic comparison inputs
+
+Per preparation run, retain opportunity-context.json (captured RSS hashes/times), opportunity.json (observed search sample) and opportunity-comparison.json (deterministic derived metrics). These are machine checkpoints, not extra narrative reports. Selection receives the exact comparison plus the full-text-qualified candidate. Never include growth tactics in public prose.
+
+| Input | Calculation | Limitation |
+| --- | --- | --- |
+| Demand | Observed KR RSS traffic bucket lower threshold; percentile among numeric values in the same capture | Approximate trend-cluster volume, not exact/monthly/all-engine searches; unrelated keyword mapping prohibited |
+| Growth proxy | (Current threshold − previous threshold) / elapsed hours; same query and trend start, 0<elapsed≤24h | Bucket movement, not actual search velocity; previous capture missing/different episode means null. Flat bucket does not prove flat demand |
+| Competition proxy | Direct-answer pages / inspected distinct result URLs ×100; sample3–10 | Model-assessed search-tool sample, not certified Google top10, authority, ad competition or calibrated SEO difficulty; fewer than3 means null |
+| Opportunity range | 0.5×volume percentile +0.2×growth score +0.3×(100−competition); growth score=clamp(50+sign(rate)×10×log10(1+abs(rate)),0,100) | Provisional heuristic. Missing dimensions contribute a 0–100 interval, not observed zero. Rank by lower bound with stable ties; report measured-weight coverage and both bounds. Final editorial judgment may reject |
+
+No extra scheduled capture job is activated. Reuse existing preparation captures; initial runs can legitimately lack growth history. Store collection cutoff and keep same-run context immutable. Access/readability of official detail is recorded as full_text/snippet/unavailable by the research provider, with supporting paraphrase and public URL; this is not independent cryptographic proof of truth. Existing separate review remains required.
+
+Official definitions checked2026-09-23: [Google Trends Trending now](https://support.google.com/trends/answer/3076011?hl=en) describes bucketed traffic, baseline growth and RSS export; [Google Ads competition index](https://developers.google.com/google-ads/api/reference/rpc/v22/KeywordPlanHistoricalMetrics) measures ad placement competition, so it is not used as organic competition. Recheck when feed semantics/export or providers change. No paid API was connected.
+
 ## Event and metric contract
 
 No current performance baseline exists yet. The 2026-09-07 public audit establishes only an asset/availability baseline: 63 sitemap entry URLs, all returning HTTP 200 at check time. `UNKNOWN` means no authorized, quality-checked performance observation has been collected; it never means `0`.

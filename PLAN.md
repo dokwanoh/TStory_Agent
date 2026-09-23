@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-009 evidence-first quantitative selection (owner 2026-09-23)
+
+1. Completed: tests prove official-detail qualification precedes final selection; snippets and unresolved details cannot qualify.
+2. Completed: observed RSS volume, comparable snapshot bucket-change rate and sampled competition feed deterministic interval ranking and final selection; fixture proves numerical data changes the qualified candidate.
+3. Completed: real CLI local fixture preparation, help/dry-run/invalid-input pass; actual read-only RSS10/10 signals have numeric thresholds and no fabricated first-observation growth. Full778/focused11 tests, fresh type/compile/source checks and memory audit pass; operating rules and personal skill synchronized. Scoped feature-branch delivery only; no live publication or schedule restart.
+
 ## PREP-008 single-article default (owner 2026-09-23)
 
 1. Completed: one-or-more qualified candidates accepted; one-topic production/replay and duplicate/integrity tests pass; actual old research request hashes verified without rewriting receipts.
