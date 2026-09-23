@@ -20,6 +20,7 @@ from tistory_growth_os.preparation.source_access import bind_detail_sources, ope
 from tistory_growth_os.preparation.storage import StageStore
 from tistory_growth_os.preparation.package import evidence_checked_at
 from tistory_growth_os.preparation.runner import execute
+from tistory_growth_os.preparation.evidence import enrich_candidate
 
 
 def captured(url: str) -> str:
@@ -67,6 +68,11 @@ def test_unfetched_full_text_assertion_cannot_become_verified_evidence(tmp_path:
     fields = Fields(as_object(parse_json(bound), ''), '', ())
     assert all(text(Fields(as_object(item, ''), '', ()), 'access') == 'unavailable'
                for item in array(fields, 'sources', True))
+    assert all(text(Fields(as_object(item, ''), '', ()), 'checked_at') == 'UNCOLLECTED'
+               for item in array(fields, 'sources', True))
+    candidate = parse_research(research_response(), NOW).candidates[0]
+    with pytest.raises(PreparationError, match='essential_fact_primary_source_required'):
+        _ = enrich_candidate(bound, candidate, NOW)
 
 
 def test_snapshot_is_bound_to_receipt_and_carried_to_writing(tmp_path: Path) -> None:

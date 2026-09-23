@@ -1,5 +1,4 @@
 from dataclasses import asdict
-from datetime import datetime, timezone
 from hashlib import sha256
 from html import unescape
 import json
@@ -78,7 +77,7 @@ def bind_detail_sources(raw: str, snapshots: str) -> str:
         url = text(record, 'url')
         doc = documents.get(url)
         access = doc.access if doc is not None else 'unavailable'
-        checked = doc.checked_at if doc is not None else datetime.now(timezone.utc).isoformat()
+        checked = doc.checked_at if doc is not None else 'UNCOLLECTED'
         updated.append(JsonObject(tuple(JsonMember(member.key,
             JsonString(access) if member.key == 'access' else JsonString(checked)
             if member.key == 'checked_at' else member.value) for member in record.value.members)))

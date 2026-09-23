@@ -22,6 +22,8 @@ def enrich_candidate(source: str, candidate: Candidate, checked_at: datetime) ->
             keys += ('access',)
         entry = Fields.parse(source_object, '/sources', keys)
         url = text(entry, 'url')
+        if source_object.get('access') == JsonString('unavailable') and text(entry, 'checked_at') == 'UNCOLLECTED':
+            continue
         recorded = as_object(raw, '/sources')
         if text(entry, 'checked_at') == 'RUNTIME':
             recorded = JsonObject(tuple(JsonMember(member.key,
