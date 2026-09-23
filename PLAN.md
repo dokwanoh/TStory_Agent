@@ -4,7 +4,7 @@
 
 1. Completed: one-or-more qualified candidates accepted; one-topic production/replay and duplicate/integrity tests pass; actual old research request hashes verified without rewriting receipts.
 2. Completed: permanent rules/skill updated; focused42 and full767 tests pass; fresh types and six-file source check pass.
-3. In progress: resume the authorized same-ID live proof, then record actual public outcome and restore STOP.
+3. Blocked: same-ID live continuation reused both research receipts and completed selection; evidence plus bounded enrichment could not open the official detailed source (evidence_enrichment_exhausted). No writing/package/publisher or public post. STOP restored byte-for-byte; preserve receipts. Evidence: .artifacts/prep007-live-20260923/resume.log.
 
 ## PREP-007 live proof (owner 2026-09-23)
 
