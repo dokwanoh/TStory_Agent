@@ -56,11 +56,11 @@ def assemble(directory: Path, source: PackageInput) -> str:
     alts = tuple(NativeAlt(f'{index:02}.jpg', scene.alt) for index, scene in enumerate(source.draft.scenes, 1))
     if article_body_digest(html, alts) is None:
         raise PreparationError('native_body_contract_failed')
-    manifest = {'schema_version': 'native-immediate-v1', 'body_algorithm': BODY_ALGORITHM,
+    manifest = {'schema_version': 'native-immediate-v2', 'body_algorithm': BODY_ALGORITHM,
         'title': source.draft.title, 'operation_id': source.run_id,
         'event_at': source.candidate.event_at.isoformat(), 'selected_at': source.selected_at.isoformat(),
         'evidence_checked_at': source.checked_at.isoformat(),
-        'valid_until': (source.candidate.event_at + timedelta(hours=24)).isoformat(),
+        'valid_until': (source.checked_at + timedelta(hours=24)).isoformat(),
         'category': source.draft.category, 'home_topic': source.draft.home_topic, 'tags': source.draft.tags,
         'representative': 'image-1', 'media': [{'asset_id': f'image-{index}', 'file': f'media/{index:02}.jpg',
             'alt': scene.alt} for index, scene in enumerate(source.draft.scenes, 1)]}

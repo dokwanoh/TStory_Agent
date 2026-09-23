@@ -105,7 +105,7 @@ def test_fact_repair_gets_new_text_binding(tmp_path: Path) -> None:
     assert (run.directory / 'text-repair/text_review.receipt.json').is_file()
 
 
-def test_expiry_during_text_review_prevents_media(tmp_path: Path) -> None:
+def test_issue_aging_during_text_review_continues_media(tmp_path: Path) -> None:
     fixture, clock = FixtureProvider(), [NOW]
     run = replace(prepared_run(tmp_path), clock=lambda: clock[0])
 
@@ -115,6 +115,6 @@ def test_expiry_during_text_review_prevents_media(tmp_path: Path) -> None:
             clock[0] = NOW + timedelta(hours=24)
         return response
 
-    with pytest.raises(PreparationError):
-        _ = execute(run, elapsed)
-    assert 'media' not in fixture.calls
+    package = execute(run, elapsed)
+    assert package.is_dir()
+    assert 'media' in fixture.calls

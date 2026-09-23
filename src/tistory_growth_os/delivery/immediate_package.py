@@ -40,7 +40,9 @@ def load_immediate_package(root: Path, folder: Path, now: datetime) -> Immediate
     fields = Fields.parse(parse_json(payloads['manifest.json'].decode('utf-8')), '',
         ('schema_version', 'body_algorithm', 'title', 'operation_id', 'valid_until', 'event_at', 'selected_at',
          'evidence_checked_at', 'category', 'home_topic', 'tags', 'representative', 'media'))
-    _ = literal(fields, 'schema_version', 'native-immediate-v1')
+    version = text(fields, 'schema_version')
+    if version not in ('native-immediate-v1', 'native-immediate-v2'):
+        raise PublishingInvariantError('PACKAGE_VERSION', '/schema_version', 'supported immediate package required')
     _ = literal(fields, 'body_algorithm', BODY_ALGORITHM)
     title = text(fields, 'title')
     expires = datetime_value(fields, 'valid_until')
@@ -48,8 +50,9 @@ def load_immediate_package(root: Path, folder: Path, now: datetime) -> Immediate
     selected = datetime_value(fields, 'selected_at')
     evidence = datetime_value(fields, 'evidence_checked_at')
     if (now.utcoffset() is None or not event <= selected <= evidence <= now < expires
-            or expires > event + timedelta(hours=24)):
-        raise PublishingInvariantError('PACKAGE_EXPIRED', '/time', 'ordered evidence timestamps and exclusive 24h expiry required')
+            or selected >= event + timedelta(hours=24) or expires > evidence + timedelta(hours=24)
+            or (version == 'native-immediate-v1' and expires > event + timedelta(hours=24))):
+        raise PublishingInvariantError('PACKAGE_EXPIRED', '/time', 'fresh selection, ordered timestamps and unexpired evidence required')
     uploads: list[LocalUpload] = []
     images: list[ReservationMedia] = []
     for index, value in enumerate(array(fields, 'media', True)):

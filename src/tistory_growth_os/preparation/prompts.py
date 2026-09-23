@@ -126,7 +126,9 @@ REVIEW: Final = '''You are the INDEPENDENT final grader, not the writer. Never r
 on the writer's assertion alone. Inspect exact supplied HTML/evidence/media and attached four local images.
 Use public web search/open to recheck central facts, actual timestamps, official-first image rights,
 all article links and current policies. No shell, account/browser or write tools.
-Grade ALL required checks conservatively: facts/claim coverage and contradictions, strict24hfreshness,
+Grade ALL required checks conservatively: facts/claim coverage and contradictions, trailing24h freshness AT SELECTION ONLY,
+not issue age during writing, review or publication. Do not reject merely because a selected issue aged past24h.
+Use the manifest selected_at and event_at; preserve temporal accuracy and substantive source validity. Also check
 rights/credits, original synthesis/no copying or fake experience, real reader value/title answer,
 natural Korean voice/summary/spacing, four contextual images/order/alt/cover and correct representation,
 new scenes vs recent history, classification, meaningful links/headings/text contrast/readability,

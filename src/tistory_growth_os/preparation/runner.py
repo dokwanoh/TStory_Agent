@@ -61,14 +61,16 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         raise PreparationError('run_identity_changed')
     history = text(initial, 'history')
     cutoff = datetime_value(initial, 'cutoff')
-    if not timedelta(0) <= run.clock() - cutoff < timedelta(hours=24):
-        raise PreparationError('run_expired')
+    selection_clock = run.directory / 'selected-at.txt'
+    selected = datetime.fromisoformat(selection_clock.read_text()) if selection_clock.exists() else run.clock()
+    if selected.utcoffset() is None or not cutoff <= selected <= run.clock():
+        raise PreparationError('selection_clock_invalid')
     base = prompts.BOUNDARY + '\nCutoff: ' + cutoff.isoformat() + '\nHistory: ' + history
     research_source = recorded_research(store, StageRequest('research', base + '\n' + prompts.RESEARCH
                                + '\nSignals:\n' + text(initial, 'signals'), run.directory), run.clock)
     research_sessions = {store.receipt('research').session_id}
     try:
-        research = parse_research(research_source, run.clock())
+        research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
     except PreparationError as error:
         if error.code not in ('five_qualified_candidates_required', 'research_shortfall_undocumented',
                 'event_outside_24h', 'independent_primary_sources_required', 'research_detail_required',
@@ -86,10 +88,15 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             + 'and all gates; do not treat a fresh crawl as a new event. Return five only if qualified. '
             + '\nPrevious rejected results:\n' + research_source, expansion), run.clock)
         research_sessions.add(expanded_store.receipt('research').session_id)
-        research = parse_research(research_source, run.clock())
+        research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
     selection = store.run(StageRequest('selection', base + '\n' + prompts.SELECTION
                            + '\nResearch:\n' + research_source, run.directory))
     candidate = select_candidate(selection, research)
+    if not selection_clock.exists():
+        selected = run.clock()
+        if not timedelta(0) <= selected - candidate.event_at < timedelta(hours=24):
+            raise PreparationError('event_outside_24h')
+        write_immutable(selection_clock, selected.isoformat().encode())
     _ = store.run(StageRequest('evidence', base + '\n' + prompts.EVIDENCE
         + '\nSelected candidate:\n' + encode_json(candidate.evidence), run.directory))
     candidate = verified_detail(store, TextContext(candidate, run.clock, frozenset()))
@@ -107,14 +114,10 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     candidate = prepared.candidate
     selected_source = encode_json(candidate.evidence)
     prior_sessions = set(prepared.sessions)
-    if run.clock() >= candidate.event_at + timedelta(hours=24):
-        raise PreparationError('text_review_expired')
     output_directory = run.directory
     media_prompt = base + '\n' + prompts.MEDIA + '\nArticle:\n' + writing + '\nEvidence:\n' + selected_source
     media_store = store
     for attempt in range(2):
-        if run.clock() >= candidate.event_at + timedelta(hours=24):
-            raise PreparationError('package_freshness_failed')
         try:
             media = prepare_media(media_store, StageRequest('media', media_prompt, output_directory), history)
             images = media.images
@@ -123,9 +126,9 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             if not timing.exists():
                 write_immutable(timing, run.clock().isoformat().encode())
             checked = datetime.fromisoformat(timing.read_text())
-            if not candidate.event_at <= cutoff <= checked < candidate.event_at + timedelta(hours=24):
-                raise PreparationError('package_freshness_failed')
-            package_input = PackageInput(run.run_id, candidate, draft, cutoff,
+            if not candidate.event_at <= selected <= checked <= run.clock():
+                raise PreparationError('package_clock_invalid')
+            package_input = PackageInput(run.run_id, candidate, draft, selected,
                 checked, research_source + '\nSelection:\n' + selection + '\nSelected official detail:\n' + selected_source
                 + '\nPre-media exact text review (not final approval):\n' + text_review
                 + '\nRuntime media evidence:\n' + (output_directory / 'media.receipt.json').read_text()
@@ -194,7 +197,7 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
         review = revised_review
     check_quality(review, package_digest)
     now = run.clock()
-    expiry = candidate.event_at + timedelta(hours=24)
+    expiry = checked + timedelta(hours=24)
     if now >= expiry:
         raise PreparationError('review_expired')
     receipt_path = safe_output_root(run.root, f'contracts/reviews/{package_digest}.json')

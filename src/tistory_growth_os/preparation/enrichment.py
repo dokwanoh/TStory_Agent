@@ -1,6 +1,6 @@
 from collections.abc import Callable
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
 import sys
 from typing import Final
@@ -81,8 +81,6 @@ def reviewed_text(store: StageStore, writing: str, context: TextContext) -> Revi
     candidate = context.candidate
     current = store
     for attempt in range(3):
-        if context.clock() >= candidate.event_at + timedelta(hours=24):
-            raise PreparationError('text_review_expired')
         clock_path = current.directory / 'text-checked-at.txt'
         if not clock_path.exists():
             write_immutable(clock_path, context.clock().isoformat().encode())
