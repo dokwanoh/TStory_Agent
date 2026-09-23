@@ -10,7 +10,7 @@ from ..artifacts.package_review import check_review, payload_digest
 from ..artifacts.review_contract import ReviewCode, ReviewDigest, ReviewSubject
 from ..contracts.json_decode import parse_json
 from ..contracts.json_encode import encode_json
-from ..domain.common import Fields, datetime_value, text
+from ..domain.common import Fields, as_object, datetime_value, text
 from . import prompts
 from .contracts import Research, PreparationError, check_quality, parse_research, select_candidate, stamp_research, text_repair_eligible
 from .editorial import CATEGORIES, TOPICS, parse_draft
@@ -22,6 +22,7 @@ from .enrichment import TextContext, reviewed_text
 from .text_review import review_text, text_subject
 from .prompt_history import recorded_prompt
 from .source_selection import SelectionContext, qualify_sources
+from .source_pool import bind_sources, read_pool
 
 
 @dataclass(frozen=True, slots=True)
@@ -60,8 +61,11 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     if (any((run.directory / name).exists() for name in ('selection.attempt', 'selection.receipt.json', 'selected-at.txt'))
             and not (run.directory / 'opportunity.receipt.json').exists()):
         raise PreparationError('selection_workflow_changed')
-    initial = Fields.parse(parse_json((run.directory / 'input.json').read_text()), '',
-                           ('run_id', 'cutoff', 'signals', 'history'))
+    initial_value = as_object(parse_json((run.directory / 'input.json').read_text()), '')
+    keys = ('run_id', 'cutoff', 'signals', 'history')
+    if initial_value.get('source_pool_sha256') is not None:
+        keys += ('source_pool_sha256',)
+    initial = Fields.parse(initial_value, '', keys)
     if text(initial, 'run_id') != run.run_id:
         raise PreparationError('run_identity_changed')
     history = text(initial, 'history')
@@ -71,6 +75,9 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     if selected.utcoffset() is None or not cutoff <= selected <= run.clock():
         raise PreparationError('selection_clock_invalid')
     base = prompts.BOUNDARY + '\nCutoff: ' + cutoff.isoformat() + '\nHistory: ' + history
+    pool = read_pool(run.directory, text(initial, 'source_pool_sha256')) if initial.value.get('source_pool_sha256') is not None else ''
+    if pool:
+        base += '\n' + prompts.COLLECTED_SOURCES + '\nHost-captured source pool:\n' + pool
     signals = '\nSignals:\n' + text(initial, 'signals')
     research_source = recorded_research(store, recorded_prompt(StageRequest('research',
         base + '\n' + prompts.RESEARCH + signals, run.directory),
@@ -78,10 +85,12 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     research_sessions = {store.receipt('research').session_id}
     try:
         research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
+        if pool:
+            research = bind_sources(research, pool)
     except PreparationError as error:
         if error.code not in ('qualified_candidate_required', 'research_shortfall_undocumented',
                 'event_outside_24h', 'independent_primary_sources_required', 'research_detail_required',
-                'claim_source_missing', 'current_policy_sources_required', 'source_url_or_time_invalid'):
+                'claim_source_missing', 'current_policy_sources_required', 'source_url_or_time_invalid', 'candidate_outside_source_pool'):
             raise
         expansion = run.directory / 'research-expansion'
         expansion.mkdir(exist_ok=True)
@@ -92,6 +101,8 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             base + '\n' + prompts.LEGACY_RESEARCH + prompts.LEGACY_EXPANSION + previous), run.clock)
         research_sessions.add(expanded_store.receipt('research').session_id)
         research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
+        if pool:
+            research = bind_sources(research, pool)
     topic = qualify_sources(store, research,
         SelectionContext(base, run.clock, selected if selection_clock.exists() else None))
     candidate, research_source = topic.candidate, topic.research

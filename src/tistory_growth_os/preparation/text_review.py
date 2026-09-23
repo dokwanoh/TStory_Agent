@@ -40,8 +40,11 @@ class TextSubject:
 
 
 def review_text(store: StageStore, subject: TextSubject, excluded_sessions: set[str]) -> str:
+    payload = Fields(as_object(parse_json(subject.payload), ''), '', ())
+    evidence = as_object(parse_json(text(payload, 'candidate_evidence')), '')
+    captured = '\n' + prompts.COLLECTED_SOURCES if evidence.get('source_snapshots') is not None else ''
     response = store.run(StageRequest('text_review', prompts.BOUNDARY + '\n' + prompts.TEXT_REVIEW
-        + '\nText subject:\n' + json.dumps({'subject_sha256': subject.digest, 'payload': subject.payload}), store.directory))
+        + captured + '\nText subject:\n' + json.dumps({'subject_sha256': subject.digest, 'payload': subject.payload}), store.directory))
     if store.receipt('text_review').session_id in excluded_sessions:
         raise PreparationError('independent_text_review_session_required')
     try:

@@ -13,6 +13,7 @@ from .opportunity_selection import ranked_choices
 from .package import write_immutable
 from .provider import StageRequest
 from .storage import StageStore
+from .source_pool import bind_sources
 
 
 @dataclass(frozen=True, slots=True)
@@ -76,7 +77,7 @@ def qualify_sources(store: StageStore, research: Research, context: SelectionCon
         directory = safe_output_root(root, 'source-reselection')
         directory.mkdir(exist_ok=True)
         active = StageStore(directory, store.provider)
-        for name in ('input.json', 'signals.rss', 'opportunity-context.json'):
+        for name in ('input.json', 'signals.rss', 'opportunity-context.json', 'source-pool.json'):
             original = root / name
             if original.is_file():
                 write_immutable(directory / name, original.read_bytes())
@@ -92,4 +93,7 @@ def qualify_sources(store: StageStore, research: Research, context: SelectionCon
             write_immutable(timing, context.clock().isoformat().encode())
         stamped = stamp_research(source, datetime.fromisoformat(timing.read_text()))
         current = parse_research(stamped, context.selected_at or context.clock())
+        pool = root / 'source-pool.json'
+        if pool.is_file():
+            current = bind_sources(current, pool.read_text())
     raise PreparationError('source_candidates_exhausted')
