@@ -29,7 +29,7 @@ TEXT_DEFECTS: Final = frozenset(('text_review_held', 'text_review_section_link_m
 DETAIL_DEFECTS: Final = frozenset(('essential_fact_unresolved', 'essential_fact_primary_source_required',
                                   'essential_fact_coverage_required'))
 REWORK_NEEDED: Final = TEXT_DEFECTS | DETAIL_DEFECTS | frozenset((
-    'enrichment_budget_exhausted', 'evidence_enrichment_exhausted', 'media_enrichment_exhausted', 'independent_review_held',
+    'enrichment_budget_exhausted', 'evidence_enrichment_exhausted', 'source_candidates_exhausted', 'media_enrichment_exhausted', 'independent_review_held',
     'quality_check_failed', 'qualified_candidate_required', 'research_shortfall_undocumented',
     'event_outside_24h', 'independent_primary_sources_required', 'research_detail_required',
     'claim_source_missing', 'current_policy_sources_required', 'media_missing_or_oversized',

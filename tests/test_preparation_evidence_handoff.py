@@ -33,11 +33,13 @@ def test_unknown_central_conditions_stop_before_writing(tmp_path: Path) -> None:
 
     def provider(request: StageRequest) -> StageResponse:
         if request.stage == 'evidence':
-            return StageResponse(evidence_response().replace('confirmed', 'unknown'),
+            directory = request.directory.parent if request.directory.name == 'evidence-enrichment' else request.directory
+            identity = 'candidate-' + str(int(directory.name) - 1) if directory.name in ('02', '03') else 'candidate-0'
+            return StageResponse(evidence_response().replace('confirmed', 'unknown').replace('candidate-0', identity),
                                  'fixture-evidence', ('web_search',))
         return fixture(request)
 
-    with pytest.raises(PreparationError, match='evidence_enrichment_exhausted'):
+    with pytest.raises(PreparationError, match='source_candidates_exhausted'):
         _ = execute(run, provider)
     assert 'writing' not in fixture.calls
     assert (run.directory / 'evidence-enrichment/evidence.receipt.json').exists()

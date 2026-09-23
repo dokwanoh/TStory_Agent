@@ -32,16 +32,20 @@ def test_unreadable_detail_never_reaches_selection(tmp_path: Path) -> None:
 
     def unavailable(request: StageRequest) -> StageResponse:
         if request.stage == 'evidence':
-            return StageResponse(evidence_response().replace('confirmed', 'unknown'),
+            directory = request.directory.parent if request.directory.name == 'evidence-enrichment' else request.directory
+            identity = 'candidate-' + str(int(directory.name) - 1) if directory.name in ('02', '03') else 'candidate-0'
+            return StageResponse(evidence_response().replace('confirmed', 'unknown').replace('candidate-0', identity),
                                  'unavailable-evidence', ('web_search',))
         return fixture(request)
 
     # When preparation attempts to qualify the source.
-    with pytest.raises(PreparationError, match='evidence_enrichment_exhausted'):
+    with pytest.raises(PreparationError, match='source_candidates_exhausted'):
         _ = execute(run, unavailable)
     # Then neither final selection nor downstream production consumes calls.
     assert 'selection' not in fixture.calls
     assert 'writing' not in fixture.calls
+    assert len(list(run.directory.rglob('source-rejected.json'))) == 3
+    assert not (run.directory / 'source-candidates/04').exists()
 
 
 def test_snippet_only_cannot_qualify_official_detail() -> None:

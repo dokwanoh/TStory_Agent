@@ -18,10 +18,10 @@ from .package import PackageInput, assemble, promote, write_immutable
 from .provider import Provider, StageRequest
 from .storage import StageStore
 from .media_repair import MEDIA_DEFECTS, media_repair_eligible, prepare_media
-from .enrichment import TextContext, reviewed_text, verified_detail
+from .enrichment import TextContext, reviewed_text
 from .text_review import review_text, text_subject
 from .prompt_history import recorded_prompt
-from .opportunity_selection import ranked_choices
+from .source_selection import SelectionContext, qualify_sources
 
 
 @dataclass(frozen=True, slots=True)
@@ -92,18 +92,12 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             base + '\n' + prompts.LEGACY_RESEARCH + prompts.LEGACY_EXPANSION + previous), run.clock)
         research_sessions.add(expanded_store.receipt('research').session_id)
         research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
-    opportunities = ranked_choices(store, research)
-    research_sessions.add(store.receipt('opportunity').session_id)
-    candidate = opportunities.candidates[0]
-    _ = store.run(StageRequest('evidence', base + '\n' + prompts.EVIDENCE
-        + '\nSelected candidate:\n' + encode_json(candidate.evidence), run.directory))
-    candidate = verified_detail(store, TextContext(candidate, run.clock, frozenset()))
-    research_sessions.add(store.receipt('evidence').session_id)
-    detail_branch = run.directory / 'evidence-enrichment'
-    if detail_branch.is_dir():
-        research_sessions.add(StageStore(detail_branch, provider).receipt('evidence').session_id)
+    topic = qualify_sources(store, research,
+        SelectionContext(base, run.clock, selected if selection_clock.exists() else None))
+    candidate, research_source = topic.candidate, topic.research
+    research_sessions.update(topic.sessions)
     selection = store.run(StageRequest('selection', base + '\n' + prompts.SELECTION
-        + '\nQuantitative comparison:\n' + opportunities.comparison
+        + '\nQuantitative comparison:\n' + topic.comparison
         + '\nVerified candidate:\n' + encode_json(candidate.evidence), run.directory))
     candidate = select_candidate(selection, Research((candidate,), research_source))
     if store.receipt('selection').session_id in research_sessions:
