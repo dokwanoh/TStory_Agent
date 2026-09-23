@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-011 collected-source-first completion (owner 2026-09-24)
+
+1. Completed: bounded official-body collection before research, immutable snapshots, destination restriction and candidate binding; failure-first tests passed. Actual read-only collection obtained eight official bodies.
+2. Completed: snapshot propagation through research/evidence/review and replay tested; focused25 and initial full789 tests/214.48s passed. Subsequent evidence-record/snapshot recovery fixes have three failure-first regressions, final full792 tests/224.45s and clean source/scoped-test types. Live collection obtained eight bodies; CLI help/dry-run/invalid input, compilation and memory audit passed.
+3. Blocked: manual-20260924-prep011-live-01 completed source intake/research/opportunity but stopped before writing. Invalid diagnostic source received bounded record repair; missing snapshot-use guidance then caused the repair model to reject already-captured official detail. Replacement research found no qualified alternative. Guidance is corrected and regression-protected locally; no attempt reset or extra model review was authorized. STOP restored byte-for-byte. One complete new article remains the finish proof, not the historical three-proof quota.
+
 ## PREP-010 source fallback and one live proof (owner 2026-09-23)
 
 1. Completed: bounded next-candidate/source-research fallback; source failure tests went red then green, same-ID replay preserves all receipts and performs zero provider calls.
@@ -52,9 +58,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
-| pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
-| current-source-intake | BLOCKED | PREP-010 live research and expansion returned zero qualified candidates before production or publisher | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-011 evidence repair exhausted before writing; corrected snapshot guidance awaits authorized additional review | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
@@ -63,7 +67,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 
 - Owner-approved validation rework (2026-09-21): audit preparation and delivery failure routes; replace recoverable text/review rejection with correction and independent re-review without weakening gates. Test source-link supplementation, broad editorial repair, replay and safety stops; record only results in existing memory. No live publication, STOP release or schedule resumption in this task.
 
-- Bounded MVP finish: preserve the three gates and historical failures in docs/63_bounded_mvp_acceptance.md. Latest PREP-004 approval adds only the bounded pre-media repair and one fresh proof in docs/66_bounded_pre_media_repair.md; no dashboard, service or generic recovery. Current stage comes solely from contracts/current-work.tsv.
+- Bounded MVP finish: PREP-011 requires one complete fresh integrated article. Preserve earlier quotas and failures as history, not additional current obligations. No dashboard, service or generic recovery expansion. Current stage comes solely from contracts/current-work.tsv.
 - run-diagnostics (DONE): read-only preparation checkpoint CLI distinguishes recorded responses from quality/publication success, flags uncertain attempts and corrupted receipts, and redacts payloads. Fixture and real-run CLI evidence: docs/62_preparation_diagnostics.md.
 - memory-governance: preserve four original worktree documents, consolidate current rules, add single status register and deterministic drift tests; manually run CLI success/failure/help, full tests and type checks. Record results, commit and push scoped files.
 - combined-live-proof: a freshly researched and independently reviewed article must traverse the combined command, automatic publisher invocation, one save and exact native/anonymous public readback with the same identity. A stubbed publisher, assisted repair or separate earlier success does not satisfy this criterion. Requires a current bounded owner grant; no new permission is inferred from this plan. STOP restored afterward; daily schedules and reservations remain paused.

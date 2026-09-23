@@ -16,6 +16,7 @@ from .evidence import enrich_candidate
 from .package import write_immutable
 from .pre_media_repair import repair_pre_media
 from .provider import StageRequest
+from .prompt_history import recorded_prompt
 from .storage import StageStore
 from .text_review import review_text, text_subject
 
@@ -27,7 +28,7 @@ TEXT_DEFECTS: Final = frozenset(('text_review_held', 'text_review_section_link_m
     'summary_required', 'article_sections_required', 'unresearched_article_link',
     'four_scenes_and_sources_required', 'article_text_gate'))
 DETAIL_DEFECTS: Final = frozenset(('essential_fact_unresolved', 'essential_fact_primary_source_required',
-                                  'essential_fact_coverage_required'))
+                                  'essential_fact_coverage_required', 'source_url_or_time_invalid'))
 REWORK_NEEDED: Final = TEXT_DEFECTS | DETAIL_DEFECTS | frozenset((
     'enrichment_budget_exhausted', 'evidence_enrichment_exhausted', 'source_candidates_exhausted', 'media_enrichment_exhausted', 'independent_review_held',
     'quality_check_failed', 'qualified_candidate_required', 'research_shortfall_undocumented',
@@ -68,11 +69,19 @@ def verified_detail(store: StageStore, context: TextContext) -> Candidate:
             directory = safe_output_root(store.directory, 'evidence-enrichment')
             directory.mkdir(exist_ok=True)
             store = StageStore(directory, store.provider)
-            _ = store.run(StageRequest('evidence', prompts.BOUNDARY + '\n' + prompts.EVIDENCE
+            record_repair = ('\nCorrect the source records, not the access controls. Exclude failed diagnostic URLs '
+                + 'from supporting sources; never fetch private/credentialed or nonstandard-port destinations '
+                + 'to repair this record. Keep only verified public HTTPS evidence; checked_at must be RUNTIME '
+                + 'or the actual valid check time, not invented. Preserve captured source_snapshots. '
+                + 'Unresolved claims remain unknown.' if error.code == 'source_url_or_time_invalid' else '')
+            legacy = (prompts.BOUNDARY + '\n' + prompts.EVIDENCE
                 + '\nResolve the missing essentials through additional primary-source research. '
                 + 'Do not invent a requirement or merely repeat the failed response. '
                 + '\nCandidate:\n' + encode_json(context.candidate.evidence)
-                + '\nPrevious untrusted evidence:\n' + raw + '\nDefect: ' + error.code, directory))
+                + '\nPrevious untrusted evidence:\n' + raw + '\nDefect: ' + error.code + record_repair)
+            captured = ('\n' + prompts.COLLECTED_SOURCES
+                if context.candidate.evidence.get('source_snapshots') is not None else '')
+            _ = store.run(recorded_prompt(StageRequest('evidence', legacy + captured, directory), legacy))
     raise PreparationError('evidence_enrichment_exhausted')
 
 

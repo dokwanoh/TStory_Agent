@@ -1,8 +1,14 @@
 # TISTORY GROWTH OS — current status
 
-Updated 2026-09-23. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
+Updated 2026-09-24. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
 
 ## Current outcome and boundary
+
+PREP-011 implementation e1bdcff is committed and pushed to the feature branch. New runs collect full official bodies before research and bind candidate evidence to immutable source snapshots through review. Live intake obtained eight readable bodies; this is a working Seoul source adapter, not universal coverage. Failure-first collection/binding tests went red then green. Full789 tests passed/214.48s; focused25/1.12s; source/scoped-test types zero errors/warnings. Compilation, CLI help/dry-run/invalid-input, shell syntax, memory audit and diff checks passed. Evidence: .artifacts/prep011-live-20260924/regression.log. Personal editorial skill updated; its optional validator lacks PyYAML, so frontmatter and the narrow instruction addition were manually checked without installation.
+
+Latest live outcome: manual-20260924-prep011-live-01 exited2 before selection/writing/media/package/publisher. Source intake, research and opportunity succeeded. The first evidence record included an unavailable diagnostic URL with a nonstandard port; all five ordinary URLs and the stamped clock were valid. Removing only that diagnostic in memory made the parser pass, without changing stored evidence. Two failing-first tests now route invalid source records through the existing bounded enrichment while preserving the URL restrictions and exhaustion gate. Actual same-ID replay reused research/opportunity/evidence and invoked that enrichment, which removed the malformed record but rejected the available captured announcement because snapshot-reading guidance was missing in this recovery branch. Replacement research returned zero qualified alternatives. Evidence: .artifacts/prep011-live-20260924/run.log, resume.log and the run's evidence-enrichment/evidence.json. No public post was created; STOP restored byte-for-byte; daily/reservations remain paused.
+
+Snapshot guidance now reaches evidence enrichment as well as initial research/review; a third failure-first regression passed. Existing request/response receipts remain exact-hash replayable via the existing prompt-history adapter. Actual terminal replay invoked zero providers and retained qualified_candidate_required rather than resetting spent budgets. Before the final snapshot fix, affected149 tests passed/23.16s; final focused3 tests passed/0.11s and source/test types are clean. Final full regression: 792 passed/224.45s, recorded in .artifacts/prep011-live-20260924/final-tests.log. Memory audit, compile and diff checks passed; temporary debug journal removed after its findings were preserved here. Additional live review after exhausted budgets requires scoped owner approval; implementation/test success is not live proof. Feature-branch delivery only; no PR merge or automatic publishing resumption claimed.
 
 PREP-010: source qualification now replaces a rejected candidate within the same operation, using ranked alternatives or one different-issue research round, maximum three detail attempts. Immutable receipts, independent review and unknown-attempt protections are retained. Code commit d23790f. Full tests/browser_tests781 passed/224.22s; focused15 passed/4.73s; source/scoped-test types zero errors/warnings, compile/source audit/memory/diff checks passed. Actual CLI fixture/happy path, help, default dry-run and invalid input were exercised. Dedicated-profile manager authenticated with zero existing editors before the live run.
 
@@ -36,15 +42,16 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | run-diagnostics | DONE | Read-only preparation checkpoint diagnosis with redacted actionable states | `docs/62_preparation_diagnostics.md` |
 | bounded-replay | DONE | Three duplicate-safe same-ID replay scenarios | `docs/63_bounded_mvp_acceptance.md` |
 | bounded-repair | DONE | Existing fact-only repair once and fail-closed scenarios | `docs/63_bounded_mvp_acceptance.md` |
-| three-live-proofs | BLOCKED | Proof02 held on prose contradiction and claim-link mismatch; zero of three public proofs | `docs/63_bounded_mvp_acceptance.md` |
+| three-live-proofs | DEFERRED | Historical failed quota superseded by PREP-011 single-proof scope; not a current finish gate | `docs/63_bounded_mvp_acceptance.md` |
 | evidence-handoff | DONE | Official detail and URL-bound writing; four exact original-to-JPEG derivations verified locally | `docs/64_evidence_handoff.md` |
 | pre-media-text-gate | DONE | Independent text gate; actual model rejects contradictory prose and approves corrected diagnostic | `docs/65_pre_media_text_gate.md` |
-| pre-media-repair-proof | BLOCKED | Repair implemented; fresh proof held on reviewer section-link contract mismatch before media | `docs/66_bounded_pre_media_repair.md` |
+| pre-media-repair-proof | DEFERRED | Historical pre-media failure retained; current end-to-end proof owns completion | `docs/66_bounded_pre_media_repair.md` |
 | validation-enrichment | DONE | Bounded research, evidence, text and review-record enrichment with independent re-review; local proof | `STATUS.md` |
 | media-enrichment | DONE | One immutable media replacement and fresh package review; local fixture proof | `STATUS.md` |
 | quality-rework | DONE | Selection-time freshness and bounded same-editor correction/resume; local browser proof | `STATUS.md` |
 | source-fallback | DONE | Bounded alternate-candidate qualification and different-issue research; immutable replay tests pass | `STATUS.md` |
-| current-source-intake | BLOCKED | PREP-010 live research and expansion returned zero qualified candidates before production or publisher | `STATUS.md` |
+| current-source-intake | DONE | Eight official bodies captured and bound; actual research and quantitative opportunity stages completed | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-011 evidence repair exhausted before writing; corrected snapshot guidance awaits authorized additional review | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |

@@ -7,6 +7,8 @@ Derived from contracts/current-work.tsv. These items are not present blockers an
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| three-live-proofs | DEFERRED | Historical failed quota superseded by PREP-011 single-proof scope; not a current finish gate | `docs/63_bounded_mvp_acceptance.md` |
+| pre-media-repair-proof | DEFERRED | Historical pre-media failure retained; current end-to-end proof owns completion | `docs/66_bounded_pre_media_repair.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |
