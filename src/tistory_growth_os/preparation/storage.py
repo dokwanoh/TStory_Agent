@@ -55,6 +55,9 @@ class StageStore:
                 _ = checked_snapshot(self.directory, request.stage)
             print(json.dumps({'stage': request.stage, 'state': 'checkpoint_reused'}), file=sys.stderr)
             return raw
+        if (request.stage == 'evidence'
+                and any((self.directory / name).exists() for name in ('writing.attempt', 'writing.receipt.json'))):
+            raise PreparationError('source_workflow_changed')
         attempt = self.directory / f'{request.stage}.attempt'
         try:
             with attempt.open('x') as stream:

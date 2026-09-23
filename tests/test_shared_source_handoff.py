@@ -13,7 +13,7 @@ from tistory_growth_os.contracts.json_decode import parse_json
 from tistory_growth_os.domain.common import Fields, array, as_object, text
 from tistory_growth_os.preparation import provider as adapter
 from tistory_growth_os.preparation.contracts import PreparationError, parse_research
-from tistory_growth_os.preparation.enrichment import TextContext, verified_detail
+from tistory_growth_os.preparation.enrichment import TextContext, final_evidence_enrichment, verified_detail
 from tistory_growth_os.preparation.provider import StageRequest, StageResponse, codex_provider
 from tistory_growth_os.preparation.shared_sources import extract_document
 from tistory_growth_os.preparation.source_access import bind_detail_sources, operation_root
@@ -129,3 +129,16 @@ def test_final_supplement_preserves_old_source_time_but_accepts_new_collection(t
     unused = FixtureProvider()
     assert execute(run, unused) == package
     assert not unused.calls
+
+
+@pytest.mark.parametrize('legacy_checkpoint', ['writing.attempt', 'writing.receipt.json'])
+def test_legacy_final_repair_cannot_dispatch_a_new_evidence_stage(tmp_path: Path, legacy_checkpoint: str) -> None:
+    candidate = parse_research(research_response(), NOW).candidates[0]
+    fixture = FixtureProvider()
+    _ = (tmp_path / legacy_checkpoint).write_text('{}')
+    store = StageStore(tmp_path, fixture)
+    with pytest.raises(PreparationError, match='source_workflow_changed'):
+        _ = final_evidence_enrichment(store, TextContext(candidate, lambda: NOW, frozenset()),
+                                     json.dumps({'checks': {'facts': False}}))
+    assert not fixture.calls
+    assert not (tmp_path / 'evidence.attempt').exists()
