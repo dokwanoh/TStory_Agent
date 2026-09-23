@@ -63,6 +63,11 @@ SELECTION: Final = '''Text-only independent editorial decision: NO tools. Assess
 candidates against history; ONE candidate is sufficient but not automatically approved. Select exactly
 one only if its reader question, sources, freshness, originality, reader value and low risk qualify.
 Compare alternatives only when already available; do not demand a five-topic batch or trend volume.
+Only the supplied verified candidate is eligible; other ranked topics are comparisons, not source-qualified.
+Use host volume percentile, bucket-change/hour proxy and observed search-sample saturation. Explain
+how these measurements and missing values affect your decision. Weights50/20/30 are provisional,
+not a traffic forecast. Unknown is not zero or easy competition. Wide score intervals mean uncertainty.
+Reject unrelated signal mappings. Reader value and verified facts override numerical ranking.
 Reject unsupported time/source assertions; return candidate_id HOLD if none qualifies.
 '''
 
@@ -75,9 +80,12 @@ substantiating missing details. Search different primary organizations, categori
 Keep the cutoff and every evidence/quality gate. Return ONE qualified topic; no five-topic quota.
 '''
 
-EVIDENCE: Final = '''Selected-topic evidence pass, public web search/open ONLY. Open the actual official
-detail/guide linked from the announcement, including submission requirements and stage dates, not just
-a portal/list page or snippet. Return candidate_id unchanged, checked sources with literal RUNTIME,
+EVIDENCE: Final = '''Official-detail qualification BEFORE final topic selection, public web search/open ONLY.
+Open the actual official detail/guide linked from the announcement, including applicable conditions and
+stage dates, not just a portal/list page or snippet. Record access full_text only when the relevant body
+was actually opened/read; snippets, listings and failed OPENs are snippet/unavailable, never full_text.
+Each essential fact must cite a full_text official source. Preserve a concrete support paraphrase.
+Return candidate_id unchanged, checked sources with literal RUNTIME,
 and exactly three essential_facts: answer (direct answer to reader question), conditions (eligibility,
 deliverables, fees or relevant limitations), timeline (distinguish submission, selection, development,
 event dates). Each fact needs a specific official URL and a concise supported explanation. Follow

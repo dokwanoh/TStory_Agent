@@ -56,7 +56,7 @@ def test_missing_body_source_is_supplemented_and_independently_reviewed(tmp_path
     package = execute(run, provider)
     # Then the link is added before a new review and before media, with replay preserved.
     assert 'href="https://example.org/official"' in (package / 'article.html').read_text()
-    assert provider.calls == ['research', 'selection', 'evidence', 'writing', 'text_review',
+    assert provider.calls == ['research', 'opportunity', 'evidence', 'selection', 'writing', 'text_review',
                               'writing', 'text_review', 'media', 'review']
     previous = list(provider.calls)
     assert execute(run, provider) == package

@@ -155,6 +155,6 @@ def review_packet(batch: SignalBatch) -> ReviewPacket:
             'Verify actual event/new announcement time under 24h; signal time is not event time.',
             'Research independent sources including a primary source; preserve source/use provenance.',
             'Compare demand, usefulness, durability, differentiation, overlap and high-risk exclusions.',
-            'Select five distinct qualified candidates or broaden research; never fabricate missing candidates.',
+            'One qualified topic and one article suffice; broaden only when needed, never fabricate evidence.',
             'Retain highest-model review and unchanged downstream article/package gates.'),
         llm_calls=0, llm_tokens=0)

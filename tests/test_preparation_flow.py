@@ -26,7 +26,7 @@ def test_full_preparation_outputs_native_package(tmp_path: Path) -> None:
     run, provider = prepared_run(tmp_path), FixtureProvider()
     package = execute(run, provider)
     assert package.name == 'package'
-    assert provider.calls == ['research', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review']
+    assert provider.calls == ['research', 'opportunity', 'evidence', 'selection', 'writing', 'text_review', 'media', 'review']
     assert (package / 'manifest.json').is_file()
     assert len(list((tmp_path / 'contracts/reviews').glob('*.json'))) == 1
     assert 'example.org' in (package / 'article.html').read_text()

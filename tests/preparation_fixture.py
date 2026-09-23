@@ -40,7 +40,7 @@ def writing_response() -> str:
 
 def evidence_response() -> str:
     return json.dumps({'candidate_id': 'candidate-0', 'sources': [
-        {'url': 'https://example.org/guide', 'primary': True, 'checked_at': 'RUNTIME',
+        {'url': 'https://example.org/guide', 'primary': True, 'checked_at': 'RUNTIME', 'access': 'full_text',
          'support': 'Initial submission requires an idea PDF; development follows selection.'}],
         'essential_facts': [{'topic': topic, 'status': 'confirmed',
             'detail': detail, 'source_urls': ['https://example.org/guide']}
@@ -75,6 +75,13 @@ class FixtureProvider:
         match request.stage:
             case 'research':
                 result = research_response()
+            case 'opportunity':
+                from tistory_growth_os.domain.common import array, as_object
+                inputs = Fields(as_object(parse_json(request.prompt.split('\nCandidates:\n', 1)[1]), ''), '', ())
+                result = json.dumps({'candidates': [{'candidate_id': text(Fields(as_object(raw, ''), '', ()), 'id'),
+                    'signal_query': 'NONE', 'mapping_basis': 'Fixture has no RSS match',
+                    'search_query': 'fixture query', 'results': [], 'limitations': 'Fixture only'}
+                    for raw in array(inputs, 'candidates', True)]})
             case 'selection':
                 result = json.dumps({'candidate_id': 'candidate-0', 'rationale': 'fixture choice'})
             case 'evidence':

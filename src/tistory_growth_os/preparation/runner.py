@@ -12,7 +12,7 @@ from ..contracts.json_decode import parse_json
 from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, datetime_value, text
 from . import prompts
-from .contracts import PreparationError, check_quality, parse_research, select_candidate, stamp_research, text_repair_eligible
+from .contracts import Research, PreparationError, check_quality, parse_research, select_candidate, stamp_research, text_repair_eligible
 from .editorial import CATEGORIES, TOPICS, parse_draft
 from .package import PackageInput, assemble, promote, write_immutable
 from .provider import Provider, StageRequest
@@ -21,6 +21,7 @@ from .media_repair import MEDIA_DEFECTS, media_repair_eligible, prepare_media
 from .enrichment import TextContext, reviewed_text, verified_detail
 from .text_review import review_text, text_subject
 from .prompt_history import recorded_prompt
+from .opportunity_selection import ranked_choices
 
 
 @dataclass(frozen=True, slots=True)
@@ -56,6 +57,9 @@ def review_request(directory: Path, base: str, digest: str) -> StageRequest:
 
 def execute(run: PreparationRun, provider: Provider) -> Path:
     store = StageStore(run.directory, provider)
+    if (any((run.directory / name).exists() for name in ('selection.attempt', 'selection.receipt.json', 'selected-at.txt'))
+            and not (run.directory / 'opportunity.receipt.json').exists()):
+        raise PreparationError('selection_workflow_changed')
     initial = Fields.parse(parse_json((run.directory / 'input.json').read_text()), '',
                            ('run_id', 'cutoff', 'signals', 'history'))
     if text(initial, 'run_id') != run.run_id:
@@ -88,15 +92,9 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             base + '\n' + prompts.LEGACY_RESEARCH + prompts.LEGACY_EXPANSION + previous), run.clock)
         research_sessions.add(expanded_store.receipt('research').session_id)
         research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
-    selection = store.run(recorded_prompt(StageRequest('selection', base + '\n' + prompts.SELECTION
-        + '\nResearch:\n' + research_source, run.directory),
-        base + '\n' + prompts.LEGACY_SELECTION + '\nResearch:\n' + research_source))
-    candidate = select_candidate(selection, research)
-    if not selection_clock.exists():
-        selected = run.clock()
-        if not timedelta(0) <= selected - candidate.event_at < timedelta(hours=24):
-            raise PreparationError('event_outside_24h')
-        write_immutable(selection_clock, selected.isoformat().encode())
+    opportunities = ranked_choices(store, research)
+    research_sessions.add(store.receipt('opportunity').session_id)
+    candidate = opportunities.candidates[0]
     _ = store.run(StageRequest('evidence', base + '\n' + prompts.EVIDENCE
         + '\nSelected candidate:\n' + encode_json(candidate.evidence), run.directory))
     candidate = verified_detail(store, TextContext(candidate, run.clock, frozenset()))
@@ -104,6 +102,17 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     detail_branch = run.directory / 'evidence-enrichment'
     if detail_branch.is_dir():
         research_sessions.add(StageStore(detail_branch, provider).receipt('evidence').session_id)
+    selection = store.run(StageRequest('selection', base + '\n' + prompts.SELECTION
+        + '\nQuantitative comparison:\n' + opportunities.comparison
+        + '\nVerified candidate:\n' + encode_json(candidate.evidence), run.directory))
+    candidate = select_candidate(selection, Research((candidate,), research_source))
+    if store.receipt('selection').session_id in research_sessions:
+        raise PreparationError('independent_selection_session_required')
+    if not selection_clock.exists():
+        selected = run.clock()
+        if not timedelta(0) <= selected - candidate.event_at < timedelta(hours=24):
+            raise PreparationError('event_outside_24h')
+        write_immutable(selection_clock, selected.isoformat().encode())
     selected_source = encode_json(candidate.evidence)
     writing = store.run(StageRequest('writing', base + '\n' + prompts.WRITING + '\nEvidence:\n'
         + selected_source + '\nCategories: ' + repr(CATEGORIES) + '\nHome topics: ' + repr(TOPICS),

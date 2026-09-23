@@ -16,7 +16,11 @@ def enrich_candidate(source: str, candidate: Candidate, checked_at: datetime) ->
     primary_urls: set[str] = set()
     urls = set(candidate.urls)
     for raw in array(fields, 'sources', True):
-        entry = Fields.parse(raw, '/sources', ('url', 'primary', 'checked_at', 'support'))
+        source_object = as_object(raw, '/sources')
+        keys = ('url', 'primary', 'checked_at', 'support')
+        if source_object.get('access') is not None:
+            keys += ('access',)
+        entry = Fields.parse(source_object, '/sources', keys)
         url = text(entry, 'url')
         recorded = as_object(raw, '/sources')
         if text(entry, 'checked_at') == 'RUNTIME':
@@ -27,7 +31,7 @@ def enrich_candidate(source: str, candidate: Candidate, checked_at: datetime) ->
         if not public_source_url(url) or not candidate.event_at <= timestamp <= checked_at:
             raise PreparationError('source_url_or_time_invalid')
         _ = text(entry, 'support')
-        if boolean(entry, 'primary'):
+        if boolean(entry, 'primary') and source_object.get('access') == JsonString('full_text'):
             primary_urls.add(url)
         urls.add(url)
         sources.append(recorded)

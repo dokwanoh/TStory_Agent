@@ -49,7 +49,7 @@ def test_pre_media_repair_rechecks_then_produces_package(tmp_path: Path) -> None
     run, provider = prepared_run(tmp_path), RepairFixture()
     package = execute(run, provider)
     assert package.is_dir()
-    assert provider.calls == ['research', 'selection', 'evidence', 'writing', 'text_review',
+    assert provider.calls == ['research', 'opportunity', 'evidence', 'selection', 'writing', 'text_review',
         'writing', 'text_review', 'media', 'review']
     assert (run.directory / 'pre-media-repair/text_review.receipt.json').exists()
     assert '지금은' in (package / 'article.html').read_text()

@@ -13,7 +13,7 @@ from .source_schema import writing_schema
 from .package import write_immutable
 
 
-Stage = Literal['research', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review']
+Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review']
 MODEL: Final = 'gpt-6-astra'
 SCHEMAS: Final = Path(__file__).resolve().parents[3] / 'contracts/preparation'
 
@@ -102,6 +102,6 @@ def codex_provider(request: StageRequest) -> StageResponse:
         raise PreparationError('unexpected_provider_tool')
     if request.stage in ('selection', 'writing') and parsed.tool_kinds:
         raise PreparationError('text_only_stage_used_tools')
-    if request.stage in ('research', 'evidence', 'text_review') and 'web_search' not in parsed.tool_kinds:
+    if request.stage in ('research', 'opportunity', 'evidence', 'text_review') and 'web_search' not in parsed.tool_kinds:
         raise PreparationError('live_research_evidence_required')
     return parsed
