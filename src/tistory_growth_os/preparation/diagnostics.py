@@ -10,7 +10,7 @@ from typing import Final
 
 from ..artifacts.layout import ArtifactWriteError, safe_output_root
 from ..contracts.json_decode import JsonDecodeError, parse_json
-from ..domain.common import Fields, text
+from ..domain.common import Fields, as_object, text
 
 
 STAGES: Final = ('research', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review')
@@ -45,8 +45,11 @@ def inspect_stage(directory: Path, stage: str, label: str) -> StageStatus:
         response = safe_output_root(directory, f'{stage}.json')
         attempt = safe_output_root(directory, f'{stage}.attempt')
         if receipt.exists():
-            fields = Fields.parse(parse_json(read_checkpoint(directory, receipt.name)), '',
-                                  ('request_sha256', 'response_sha256', 'session_id', 'tool_kinds'))
+            value = as_object(parse_json(read_checkpoint(directory, receipt.name)), '')
+            keys = ('request_sha256', 'response_sha256', 'session_id', 'tool_kinds')
+            if value.get('sources_sha256') is not None:
+                keys += ('sources_sha256',)
+            fields = Fields.parse(value, '', keys)
             raw = read_checkpoint(directory, response.name)
             _ = parse_json(raw)
             request_digest = text(fields, 'request_sha256')
@@ -55,6 +58,9 @@ def inspect_stage(directory: Path, stage: str, label: str) -> StageStatus:
                      and response_digest == sha256(raw.encode()).hexdigest())
             if attempt.exists():
                 valid = valid and read_checkpoint(directory, attempt.name) == request_digest
+            if value.get('sources_sha256') is not None:
+                valid = valid and text(fields, 'sources_sha256') == sha256(
+                    read_checkpoint(directory, f'{stage}.sources.json').encode()).hexdigest()
             if valid:
                 return StageStatus(label, 'response_recorded',
                                    'response integrity only; executor must revalidate quality and freshness')

@@ -15,6 +15,7 @@ _FORBIDDEN_IMPORTS: Final = frozenset(
     {"aiohttp", "ftplib", "http.client", "httpx", "httpx2", "requests", "socket", "urllib.request", "urllib3", "websockets"}
 )
 _SKIP_DIRS: Final = frozenset({".artifacts", ".git", ".mypy_cache", ".omo", ".pytest_cache", ".ruff_cache", "__pycache__"})
+_READ_ONLY_DNS_ADAPTER: Final = 'src/tistory_growth_os/preparation/source_transport.py'
 
 
 @dataclass(frozen=True, slots=True)
@@ -72,7 +73,7 @@ def _inspect_tree(tree: ast.AST, relative: str, source: str) -> tuple[tuple[str,
     network = False
     for node in ast.walk(tree):
         for imported in _import_specs(node):
-            if _forbidden_import(imported.name):
+            if _forbidden_import(imported.name) and not (relative == _READ_ONLY_DNS_ADAPTER and imported.name == 'socket'):
                 violations.append(f"{relative}:{imported.line}:forbidden_import:{imported.name}")
                 network = True
         if isinstance(node, ast.arg) and _annotation_has_banned_name(node.annotation):

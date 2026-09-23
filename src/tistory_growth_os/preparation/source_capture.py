@@ -6,7 +6,6 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-import subprocess
 from typing import Final
 from xml.etree import ElementTree
 
@@ -14,6 +13,7 @@ from ..contracts.json_decode import parse_json
 from ..domain.common import Fields, array, as_object, text
 from .contracts import PreparationError
 from .package import write_immutable
+from .source_transport import fetch_public
 
 
 FEED_URL: Final = 'https://mediahub.seoul.go.kr/news/rss/'
@@ -70,14 +70,12 @@ class ArticleBody:
 def fetch_official(url: str) -> bytes:
     if url != FEED_URL and re.fullmatch(r'https://mediahub\.seoul\.go\.kr/archives/[0-9]+', url) is None:
         raise PreparationError('source_destination_denied')
-    result = subprocess.run(['/usr/bin/curl', '--disable', '--fail', '--silent', '--show-error',
-        '--proto', '=https', '--connect-timeout', '5', '--max-time', '20',
-        '--max-filesize', str(MAX_BYTES), '--write-out', '\n%{http_code}', url],
-        capture_output=True, check=False, timeout=25)
-    body, _, status = result.stdout.rpartition(b'\n')
-    if result.returncode != 0 or status != b'200' or len(body) > MAX_BYTES:
-        raise PreparationError('official_body_fetch_failed')
-    return body
+    try:
+        return fetch_public(url)
+    except PreparationError as error:
+        if error.code != 'source_fetch_unavailable':
+            raise
+        raise PreparationError('official_body_fetch_failed') from error
 
 
 def capture_sources(directory: Path, now: datetime,

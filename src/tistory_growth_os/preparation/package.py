@@ -11,7 +11,7 @@ from ..artifacts.package_review import payload_digest
 from ..contracts.json_decode import parse_json
 from ..contracts.json_ast import JsonString
 from ..contracts.json_encode import encode_json
-from ..domain.common import Fields, array, text
+from ..domain.common import Fields, array, as_object, datetime_value, text
 from ..delivery.editor_body_fingerprint import BODY_ALGORITHM, article_body_digest
 from ..delivery.native_article_source import NativeAlt
 from .contracts import Candidate, PreparationError, media_asset
@@ -39,6 +39,18 @@ def write_immutable(path: Path, body: bytes) -> None:
         _ = stream.write(body)
 
 
+def evidence_checked_at(candidate: Candidate, assembled_at: datetime) -> datetime:
+    snapshots = candidate.evidence.get('source_snapshots')
+    if snapshots is None:
+        return assembled_at
+    fields = Fields(candidate.evidence, '', ())
+    times = [datetime_value(Fields(as_object(item, ''), '', ()), 'checked_at')
+             for item in array(fields, 'source_snapshots', True)]
+    if any(stamp > assembled_at for stamp in times):
+        raise PreparationError('source_clock_invalid')
+    return min(times)
+
+
 def assemble(directory: Path, source: PackageInput) -> str:
     inspection = safe_output_root(directory, 'inspection')
     html = source.draft.html
@@ -56,11 +68,12 @@ def assemble(directory: Path, source: PackageInput) -> str:
     alts = tuple(NativeAlt(f'{index:02}.jpg', scene.alt) for index, scene in enumerate(source.draft.scenes, 1))
     if article_body_digest(html, alts) is None:
         raise PreparationError('native_body_contract_failed')
+    checked = evidence_checked_at(source.candidate, source.checked_at)
     manifest = {'schema_version': 'native-immediate-v2', 'body_algorithm': BODY_ALGORITHM,
         'title': source.draft.title, 'operation_id': source.run_id,
         'event_at': source.candidate.event_at.isoformat(), 'selected_at': source.selected_at.isoformat(),
-        'evidence_checked_at': source.checked_at.isoformat(),
-        'valid_until': (source.checked_at + timedelta(hours=24)).isoformat(),
+        'evidence_checked_at': checked.isoformat(),
+        'valid_until': (checked + timedelta(hours=24)).isoformat(),
         'category': source.draft.category, 'home_topic': source.draft.home_topic, 'tags': source.draft.tags,
         'representative': 'image-1', 'media': [{'asset_id': f'image-{index}', 'file': f'media/{index:02}.jpg',
             'alt': scene.alt} for index, scene in enumerate(source.draft.scenes, 1)]}

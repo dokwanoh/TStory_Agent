@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-012 common source access and handoff audit (owner 2026-09-24)
+
+1. Completed: audited discovery, collection, qualification, writing, both reviews, enrichment, schemas and replay. One bounded host reader now supplies immutable source bodies; model reviewers have web search disabled.
+2. Completed local verification: shared body/time identity, source supplementation, unsafe/failed reads and replay tests pass; actual official page read/reuse passed. Full806 tests followed by focused25 tests for the late-source clock fix. Final exact-SHA checks and independent verdicts live in .artifacts/prep012-source-audit/review-ledger.md, not inferred from this implementation status.
+3. Completed: reconcile current rules and audit findings in existing memory. Delivery is scoped feature-branch only; no direct-main substitute, publication, STOP release, new installation or schedule resumption. Native auto-merge remains unavailable unless repository support is explicitly confirmed.
+
 ## PREP-011 collected-source-first completion (owner 2026-09-24)
 
 1. Completed: bounded official-body collection before research, immutable snapshots, destination restriction and candidate binding; failure-first tests passed. Actual read-only collection obtained eight official bodies.

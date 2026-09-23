@@ -11,6 +11,8 @@ from ..domain.common import Fields, as_object, text
 from .contracts import PreparationError
 from .source_schema import writing_schema
 from .package import write_immutable
+from .source_access import bind_detail_sources, collect_context
+from . import prompts
 
 
 Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review']
@@ -32,6 +34,7 @@ class StageResponse:
     response: str
     session_id: str
     tool_kinds: tuple[str, ...]
+    sources: str = ''
 
 
 class Provider(Protocol):
@@ -74,13 +77,16 @@ def completion(events: str) -> StageResponse:
 
 
 def codex_provider(request: StageRequest) -> StageResponse:
+    grounded = request.stage in ('evidence', 'text_review', 'review')
+    sources = collect_context(request.directory, request.prompt, request.source_urls) if grounded else ''
     schema = SCHEMAS / f'{request.stage}.json'
     if request.stage == 'writing':
         if not request.source_urls:
             raise PreparationError('writing_source_catalog_required')
         schema = request.directory / 'writing.schema.json'
         write_immutable(schema, writing_schema(request.source_urls).encode())
-    argv = ['codex', '--search', 'exec', '--json', '--ephemeral', '--sandbox',
+    online = request.stage in ('research', 'opportunity', 'media')
+    argv = ['codex', *(['--search'] if online else ['-c', 'web_search="disabled"']), 'exec', '--json', '--ephemeral', '--sandbox',
             'workspace-write' if request.stage == 'media' else 'read-only',
             '--model', MODEL, '--output-schema', str(schema),
             '--output-last-message', str(request.directory / f'{request.stage}.completion.json'),
@@ -88,7 +94,20 @@ def codex_provider(request: StageRequest) -> StageResponse:
     for image in request.images:
         argv.extend(('--image', str(image)))
     argv.append('-')
-    result = subprocess.run(argv, input=request.prompt, text=True, capture_output=True,
+    prompt = request.prompt
+    if grounded:
+        prompt = prompt.replace(prompts.EVIDENCE, prompts.CAPTURED_EVIDENCE)
+        prompt = prompt.replace(prompts.TEXT_REVIEW, prompts.CAPTURED_TEXT_REVIEW)
+        prompt = prompt.replace(prompts.REVIEW, prompts.CAPTURED_REVIEW)
+        prompt = prompt.replace(prompts.COLLECTED_SOURCES, '')
+        prompt += ('\nSOURCE ACCESS CONTRACT: No tools. Read ONLY the host-collected bodies below and '
+            + 'supplied immutable source_snapshots. '
+            + 'Collection is not approval. Judge claim support independently against actual text. '
+            + 'Do not treat search snippets or paraphrases as original bodies. Preserve actual source '
+            + 'checked_at, never claim a new visit. If more evidence is needed, put exact public URLs '
+            + 'and missing questions into issues/support for the existing bounded enrichment path. '
+            + 'Do not invent inaccessible content.\nHost source documents:\n' + sources)
+    result = subprocess.run(argv, input=prompt, text=True, capture_output=True,
                             check=False, timeout=900)
     if result.returncode != 0:
         diagnostic = {'stage': request.stage, 'exit_code': result.returncode,
@@ -100,8 +119,9 @@ def codex_provider(request: StageRequest) -> StageResponse:
     allowed = {'web_search', 'image_generation', 'command_execution', 'file_change'}
     if any(kind not in allowed for kind in parsed.tool_kinds):
         raise PreparationError('unexpected_provider_tool')
-    if request.stage in ('selection', 'writing') and parsed.tool_kinds:
+    if (request.stage in ('selection', 'writing') or grounded) and parsed.tool_kinds:
         raise PreparationError('text_only_stage_used_tools')
-    if request.stage in ('research', 'opportunity', 'evidence', 'text_review') and 'web_search' not in parsed.tool_kinds:
+    if request.stage in ('research', 'opportunity') and 'web_search' not in parsed.tool_kinds:
         raise PreparationError('live_research_evidence_required')
-    return parsed
+    response = bind_detail_sources(parsed.response, sources) if request.stage == 'evidence' else parsed.response
+    return StageResponse(response, parsed.session_id, parsed.tool_kinds, sources)

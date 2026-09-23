@@ -16,14 +16,21 @@ from .contracts import PreparationError, media_asset
 from .provider import Provider, Stage, StageRequest, StageResponse
 
 
+def receipt_fields(raw: str) -> Fields:
+    value = as_object(parse_json(raw), '')
+    keys = ('request_sha256', 'response_sha256', 'session_id', 'tool_kinds')
+    if value.get('sources_sha256') is not None:
+        keys += ('sources_sha256',)
+    return Fields.parse(value, '', keys)
+
+
 @dataclass(frozen=True, slots=True)
 class StageStore:
     directory: Path
     provider: Provider
 
     def receipt(self, stage: Stage) -> StageResponse:
-        fields = Fields.parse(parse_json((self.directory / f'{stage}.receipt.json').read_text()), '',
-                              ('request_sha256', 'response_sha256', 'session_id', 'tool_kinds'))
+        fields = receipt_fields((self.directory / f'{stage}.receipt.json').read_text())
         kinds: list[str] = []
         for value in array(fields, 'tool_kinds', False):
             if not isinstance(value, JsonString) or not value.value:
@@ -35,14 +42,17 @@ class StageStore:
         response_path = self.directory / f'{request.stage}.json'
         receipt_path = self.directory / f'{request.stage}.receipt.json'
         request_digest = sha256((request.prompt + (
-            '\nSource catalog:\n' + json.dumps(request.source_urls) if request.source_urls else '')).encode()).hexdigest()
+            '\nSource catalog:\n' + json.dumps(request.source_urls)
+            if request.stage == 'writing' and request.source_urls else '')).encode()).hexdigest()
         if receipt_path.exists():
-            fields = Fields.parse(parse_json(receipt_path.read_text()), '',
-                                  ('request_sha256', 'response_sha256', 'session_id', 'tool_kinds'))
+            fields = receipt_fields(receipt_path.read_text())
             raw = response_path.read_text()
             if (text(fields, 'request_sha256') != request_digest
                     or text(fields, 'response_sha256') != sha256(raw.encode()).hexdigest()):
                 raise PreparationError('checkpoint_changed')
+            if fields.value.get('sources_sha256') is not None:
+                from .source_access import checked_snapshot
+                _ = checked_snapshot(self.directory, request.stage)
             print(json.dumps({'stage': request.stage, 'state': 'checkpoint_reused'}), file=sys.stderr)
             return raw
         attempt = self.directory / f'{request.stage}.attempt'
@@ -54,12 +64,17 @@ class StageStore:
         print(json.dumps({'stage': request.stage, 'state': 'started'}), file=sys.stderr)
         result = self.provider(request)
         _ = parse_json(result.response)
+        source_binding: dict[str, str] = {}
+        if result.sources:
+            with (self.directory / f'{request.stage}.sources.json').open('x') as stream:
+                _ = stream.write(result.sources)
+            source_binding['sources_sha256'] = sha256(result.sources.encode()).hexdigest()
         with response_path.open('x') as stream:
             _ = stream.write(result.response)
         with receipt_path.open('x') as stream:
             _ = stream.write(json.dumps({'request_sha256': request_digest,
                 'response_sha256': sha256(result.response.encode()).hexdigest(),
-                'session_id': result.session_id, 'tool_kinds': result.tool_kinds}))
+                'session_id': result.session_id, 'tool_kinds': result.tool_kinds, **source_binding}))
         print(json.dumps({'stage': request.stage, 'state': 'response_recorded'}), file=sys.stderr)
         return result.response
 

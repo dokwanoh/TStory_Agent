@@ -79,6 +79,7 @@ def test_tooling_configuration_is_strict_and_runtime_is_offline() -> None:
         found
         for path in SOURCE.rglob("*.py")
         for found in _forbidden_imports_in_source(path.read_text(encoding="utf-8"))
+        if not (path == PACKAGE / 'preparation/source_transport.py' and found == 'socket')
     )
     assert imported == ()
 

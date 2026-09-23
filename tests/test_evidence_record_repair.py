@@ -8,7 +8,6 @@ from tistory_growth_os.preparation.contracts import PreparationError, parse_rese
 from tistory_growth_os.preparation.enrichment import TextContext, verified_detail
 from tistory_growth_os.preparation.provider import StageRequest, StageResponse
 from tistory_growth_os.preparation.storage import StageStore
-from tistory_growth_os.preparation import prompts
 from tistory_growth_os.contracts.json_ast import JsonArray, JsonMember, JsonObject, JsonString
 
 
@@ -51,8 +50,7 @@ def test_captured_body_reading_authority_reaches_evidence_enrichment(tmp_path: P
         response = fixture(request)
         if request.directory == tmp_path:
             return replace(response, response=response.response.replace('"confirmed"', '"unknown"'))
-        assert prompts.COLLECTED_SOURCES in request.prompt
-        assert '호스트가 실제 수집한 공식 본문' in request.prompt
+        assert set(request.source_urls) == {*candidate.urls, 'https://example.org/guide'}
         return response
 
     store = StageStore(tmp_path, provider)
@@ -60,5 +58,6 @@ def test_captured_body_reading_authority_reaches_evidence_enrichment(tmp_path: P
     context = TextContext(candidate, lambda: NOW, frozenset())
     result = verified_detail(store, context)
     assert result.evidence.get('official_detail') is not None
+    assert result.evidence.get('source_snapshots') == candidate.evidence.get('source_snapshots')
     assert verified_detail(store, context) == result
     assert fixture.calls == ['evidence', 'evidence']

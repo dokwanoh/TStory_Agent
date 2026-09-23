@@ -53,7 +53,7 @@ def qualify_sources(store: StageStore, research: Research, context: SelectionCon
             directory.mkdir(parents=True, exist_ok=True)
             detail = StageStore(directory, store.provider)
             _ = detail.run(StageRequest('evidence', context.base + '\n' + prompts.EVIDENCE
-                + '\nSelected candidate:\n' + encode_json(candidate.evidence), directory))
+                + '\nSelected candidate:\n' + encode_json(candidate.evidence), directory, source_urls=candidate.urls))
             sessions.add(detail.receipt('evidence').session_id)
             try:
                 qualified = verified_detail(detail, TextContext(candidate, context.clock, frozenset()))
