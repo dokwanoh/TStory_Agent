@@ -84,6 +84,8 @@ def test_snapshot_is_bound_to_receipt_and_carried_to_writing(tmp_path: Path) -> 
     result = verified_detail(store, TextContext(candidate, lambda: NOW, frozenset()))
     assert result.evidence.get('source_snapshots') is not None
     assert evidence_checked_at(result, NOW + timedelta(hours=23)) == NOW
+    with pytest.raises(PreparationError, match='source_clock_invalid'):
+        _ = evidence_checked_at(result, NOW - timedelta(seconds=1))
     _ = store.run(request)
     assert fixture.calls == ['evidence']
     (tmp_path / 'evidence.sources.json').unlink()

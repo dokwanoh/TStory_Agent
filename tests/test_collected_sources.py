@@ -93,7 +93,9 @@ def test_collected_body_reaches_candidate_evidence(tmp_path: Path) -> None:
 
 def test_collected_pool_reaches_reviewed_package_and_replays(tmp_path: Path) -> None:
     run, fixture = prepared_run(tmp_path), FixtureProvider()
-    pool = cli.capture_sources(run.directory, NOW, lambda url: HTML if url == URL else FEED)
+    html = HTML.replace(b'2026.09.23.', b'2026.09.20.')
+    feed = FEED.replace(b'Wed, 23 Sep', b'Sun, 20 Sep')
+    pool = cli.capture_sources(run.directory, FIXTURE_NOW, lambda url: html if url == URL else feed)
     _ = (run.directory / 'input.json').write_text(json.dumps({'run_id': run.run_id,
         'cutoff': FIXTURE_NOW.isoformat(), 'signals': 'fixture', 'history': 'fixture history',
         'source_pool_sha256': sha256(pool.encode()).hexdigest()}))
