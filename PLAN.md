@@ -1,9 +1,15 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-008 single-article default (owner 2026-09-23)
+
+1. Completed: one-or-more qualified candidates accepted; one-topic production/replay and duplicate/integrity tests pass; actual old research request hashes verified without rewriting receipts.
+2. Completed: permanent rules/skill updated; focused42 and full767 tests pass; fresh types and six-file source check pass.
+3. In progress: resume the authorized same-ID live proof, then record actual public outcome and restore STOP.
+
 ## PREP-007 live proof (owner 2026-09-23)
 
 1. Completed: manager authenticated after normal saved-account choice; zero preexisting editors, grant JSON/bash syntax and default dry-run pass; official policy sources reopened for manual-20260923-prep007-live-01.
-2. Blocked: combined command exited2/needs_enrichment/five_qualified_candidates_required. Initial research0, bounded expansion1 eligible candidate; no selection, writing, media or publisher. A one-candidate selection policy needs an explicit decision; no budget reset or manual substitute.
+2. Historical first attempt blocked: combined command exited2/needs_enrichment/five_qualified_candidates_required. Initial research0, expansion1. PREP-008 now explicitly removes the count requirement; same-ID continuation is tracked above without resetting research/provider attempts.
 3. Completed: no publication-authority or package created; STOP restored byte-for-byte and automation3 remains PAUSED. Private evidence .artifacts/prep007-live-20260923/run.log; public proof remains unachieved.
 
 ## PREP-007 execution (owner 2026-09-23)

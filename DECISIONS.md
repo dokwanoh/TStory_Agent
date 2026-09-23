@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-008 — one qualified topic, one article by default, 2026-09-23
+
+Owner permanently rejects the five-topic requirement: “5건일필요가 전혀없어. 1편이면 충분해. 앞으로 쭈욱”. Accept one-or-more unique qualified research candidates; one is enough for independent editorial selection and exactly one article. Empty or unqualified research still receives bounded enrichment, never fabricated candidates. Update new research/selection prompts; exact old recorded request hashes remain replayable without rewriting receipts, and response integrity is still enforced. Preserve all other evidence/rights/freshness/media/review/save protections. Rejected filling a quota, forcing five drafts, or automatically approving the only candidate. Resume the same scoped live identity and grant; no second post or schedule/reservation restart.
+
 ## PREP-007 live proof authority — 2026-09-23
 
 Owner requests the first real public success of the updated integrated loop. Authorize one new immediate-public article, manual-20260923-prep007-live-01, including scoped STOP suspension for the combined command and restoration on exit. Current PREP-005/006/007 enrichment, selection-only freshness and owned-editor correction apply. Preserve earlier failed proofs; no reused failure identity, manual article/publish substitute, scheduled resumption, reservation, new service/install or gate waiver. Local grant expires2026-09-23T17:15Z as a bounded operator deadline, not an owner-promised publish time. Official Tistory terms and Google Search spam policies reopened2026-09-23; preserve original synthesis, rights and native platform controls. Private runtime evidence: .artifacts/prep007-live-20260923/.
