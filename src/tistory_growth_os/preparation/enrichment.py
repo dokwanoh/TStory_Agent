@@ -30,7 +30,7 @@ DETAIL_DEFECTS: Final = frozenset(('essential_fact_unresolved', 'essential_fact_
                                   'essential_fact_coverage_required'))
 REWORK_NEEDED: Final = TEXT_DEFECTS | DETAIL_DEFECTS | frozenset((
     'enrichment_budget_exhausted', 'evidence_enrichment_exhausted', 'media_enrichment_exhausted', 'independent_review_held',
-    'quality_check_failed', 'five_qualified_candidates_required', 'research_shortfall_undocumented',
+    'quality_check_failed', 'qualified_candidate_required', 'research_shortfall_undocumented',
     'event_outside_24h', 'independent_primary_sources_required', 'research_detail_required',
     'claim_source_missing', 'current_policy_sources_required', 'media_missing_or_oversized',
     'four_distinct_images_required', 'historical_media_reuse', 'official_credit_required'))

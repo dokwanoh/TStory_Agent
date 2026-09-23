@@ -82,7 +82,7 @@ def parse_research(source: str, now: datetime) -> Research:
             rejected_urls = strings(entry, 'source_urls', False, r'https://\S+')
             if any(not public_source_url(url) for url in rejected_urls):
                 raise PreparationError('rejection_source_url_invalid')
-        if len(array(fields, 'candidates', False)) < 5 and not rejected:
+        if not array(fields, 'candidates', False) and not rejected:
             raise PreparationError('research_shortfall_undocumented')
     candidates: list[Candidate] = []
     for raw in array(fields, 'candidates', False):
@@ -114,8 +114,10 @@ def parse_research(source: str, now: datetime) -> Research:
                 raise PreparationError('claim_source_missing')
         candidates.append(Candidate(identifier(item, 'id', r'[a-z0-9_-]{3,60}'), text(item, 'title'),
                                     event, tuple(urls), as_object(raw, '/candidates')))
-    if len(candidates) != 5 or len({c.candidate_id for c in candidates}) != 5:
-        raise PreparationError('five_qualified_candidates_required')
+    if not candidates:
+        raise PreparationError('qualified_candidate_required')
+    if len({c.candidate_id for c in candidates}) != len(candidates):
+        raise PreparationError('duplicate_candidate_identity')
     policies = strings(fields, 'policy_sources', True, r'https://\S+')
     if len(policies) < 2 or any(not public_source_url(url) for url in policies):
         raise PreparationError('current_policy_sources_required')

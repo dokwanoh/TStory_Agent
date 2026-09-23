@@ -20,6 +20,7 @@ from .storage import StageStore
 from .media_repair import MEDIA_DEFECTS, media_repair_eligible, prepare_media
 from .enrichment import TextContext, reviewed_text, verified_detail
 from .text_review import review_text, text_subject
+from .prompt_history import recorded_prompt
 
 
 @dataclass(frozen=True, slots=True)
@@ -66,31 +67,30 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
     if selected.utcoffset() is None or not cutoff <= selected <= run.clock():
         raise PreparationError('selection_clock_invalid')
     base = prompts.BOUNDARY + '\nCutoff: ' + cutoff.isoformat() + '\nHistory: ' + history
-    research_source = recorded_research(store, StageRequest('research', base + '\n' + prompts.RESEARCH
-                               + '\nSignals:\n' + text(initial, 'signals'), run.directory), run.clock)
+    signals = '\nSignals:\n' + text(initial, 'signals')
+    research_source = recorded_research(store, recorded_prompt(StageRequest('research',
+        base + '\n' + prompts.RESEARCH + signals, run.directory),
+        base + '\n' + prompts.LEGACY_RESEARCH + signals), run.clock)
     research_sessions = {store.receipt('research').session_id}
     try:
         research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
     except PreparationError as error:
-        if error.code not in ('five_qualified_candidates_required', 'research_shortfall_undocumented',
+        if error.code not in ('qualified_candidate_required', 'research_shortfall_undocumented',
                 'event_outside_24h', 'independent_primary_sources_required', 'research_detail_required',
                 'claim_source_missing', 'current_policy_sources_required', 'source_url_or_time_invalid'):
             raise
         expansion = run.directory / 'research-expansion'
         expansion.mkdir(exist_ok=True)
         expanded_store = StageStore(expansion, provider)
-        research_source = recorded_research(expanded_store, StageRequest('research', base + '\n' + prompts.RESEARCH
-            + '\nThe first source search returned insufficient candidates. Make ONE broader search pass: '
-            + 'Retain valid candidates; replace invalid candidates or substantiate missing details. '
-            + 'Use different categories and primary organizations, Korean AND international science, space, '
-            + 'consumer technology, public services, culture and sports announcements. Search date-specific '
-            + 'primary newsrooms and open evidence. Do not repeat only policy searches. Keep the same cutoff '
-            + 'and all gates; do not treat a fresh crawl as a new event. Return five only if qualified. '
-            + '\nPrevious rejected results:\n' + research_source, expansion), run.clock)
+        previous = '\nPrevious rejected results:\n' + research_source
+        research_source = recorded_research(expanded_store, recorded_prompt(StageRequest('research',
+            base + '\n' + prompts.RESEARCH + prompts.EXPANSION + previous, expansion),
+            base + '\n' + prompts.LEGACY_RESEARCH + prompts.LEGACY_EXPANSION + previous), run.clock)
         research_sessions.add(expanded_store.receipt('research').session_id)
         research = parse_research(research_source, selected if selection_clock.exists() else run.clock())
-    selection = store.run(StageRequest('selection', base + '\n' + prompts.SELECTION
-                           + '\nResearch:\n' + research_source, run.directory))
+    selection = store.run(recorded_prompt(StageRequest('selection', base + '\n' + prompts.SELECTION
+        + '\nResearch:\n' + research_source, run.directory),
+        base + '\n' + prompts.LEGACY_SELECTION + '\nResearch:\n' + research_source))
     candidate = select_candidate(selection, research)
     if not selection_clock.exists():
         selected = run.clock()

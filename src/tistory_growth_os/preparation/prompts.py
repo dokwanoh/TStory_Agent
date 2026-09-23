@@ -11,7 +11,7 @@ or remote-image pixel/lightbox checks. Local media identity, alt, rights and con
 If blocked, return an empty collection or failed checks; never invent data to satisfy a schema.
 '''
 
-RESEARCH: Final = '''First investigate dated ISSUE candidates; policy collection comes LAST.
+LEGACY_RESEARCH: Final = '''First investigate dated ISSUE candidates; policy collection comes LAST.
 Use live public web search and OPEN the primary sources, not snippets alone.
 Find FIVE distinct low-risk news/announcement candidates actually occurring within the trailing24h
 at the provided cutoff. RSS is just a starting signal. Broaden keywords/categories if a lead fails.
@@ -34,10 +34,45 @@ Policy URLs alone are not completion of candidate research. Never fabricate cand
 Do not write local files or use shell/browser/account tools: web search/open only.
 '''
 
-SELECTION: Final = '''Text-only final editorial selection: NO tools. Independently compare ALL five
+LEGACY_SELECTION: Final = '''Text-only final editorial selection: NO tools. Independently compare ALL five
 researched candidates and history. Choose exactly one with a concrete valuable reader question,
 strong sources, real freshness, originality and low risk. Do not choose on trend volume alone.
 Reject unsupported time/source assertions; return candidate_id HOLD if none qualifies.
+'''
+
+RESEARCH: Final = '''Investigate ONE strong, low-risk news/announcement topic for ONE Korean article.
+One qualified candidate is sufficient; do not fill a five-topic quota or create five drafts.
+Use live public web search and OPEN primary sources, not snippets alone. Start with audience demand
+and RSS signals; broaden queries/categories if a lead fails. Events or genuinely new announcements
+must be within trailing24h at selection; a fresh crawl/reminder is not a new event. Exclude stale,
+duplicate, gossip, financial/medical/legal advice and unsupported topics; compare recent history.
+Each returned candidate needs two independent source domains including an official primary source,
+claim-source links, support paraphrases, exact event timestamp and precision/basis. Date-only events
+use earliest possible source-timezone instant and must prove freshness. Actually checked sources use
+checked_at RUNTIME; host records receipt time. Never replace event_at or search for current time.
+Write one original Korean research draft of at least300characters, with a practical reader question.
+Explain demand/evidence/usefulness/durability/risk/differentiation. Rejected leads need concrete
+reasons and public URLs; search_notes identifies coverage and gaps. If none qualifies, return []
+with rejection evidence, never fabricate a topic. More existing qualified candidates may be retained,
+but do not spend extra research merely to increase count. After candidate work open current official
+Tistory content/copyright and Google people-first/spam policies. Web search/open only: no files,
+shell/browser/account actions. Policy checking is not a substitute for article research.
+'''
+
+SELECTION: Final = '''Text-only independent editorial decision: NO tools. Assess available researched
+candidates against history; ONE candidate is sufficient but not automatically approved. Select exactly
+one only if its reader question, sources, freshness, originality, reader value and low risk qualify.
+Compare alternatives only when already available; do not demand a five-topic batch or trend volume.
+Reject unsupported time/source assertions; return candidate_id HOLD if none qualifies.
+'''
+
+LEGACY_EXPANSION: Final = '''
+The first source search returned insufficient candidates. Make ONE broader search pass: Retain valid candidates; replace invalid candidates or substantiate missing details. Use different categories and primary organizations, Korean AND international science, space, consumer technology, public services, culture and sports announcements. Search date-specific primary newsrooms and open evidence. Do not repeat only policy searches. Keep the same cutoff and all gates; do not treat a fresh crawl as a new event. Return five only if qualified. '''
+
+EXPANSION: Final = '''
+The initial search lacks a qualified topic. Make ONE broader pass, retaining valid evidence and
+substantiating missing details. Search different primary organizations, categories and languages.
+Keep the cutoff and every evidence/quality gate. Return ONE qualified topic; no five-topic quota.
 '''
 
 EVIDENCE: Final = '''Selected-topic evidence pass, public web search/open ONLY. Open the actual official
