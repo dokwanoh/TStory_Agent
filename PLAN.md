@@ -4,6 +4,7 @@
 
 1. Completed: media routing is switched from GPT-6 Luna to GPT-Reserved only; discovery, writing and review remain Astra.
 2. Completed: the correcting edit stage is now also routed to GPT-Reserved; post106 provides the fresh article proof.
+3. Completed: text review is now also routed to GPT-Reserved; post107 provides the fresh article proof. Discovery, evidence, decision, writing and final review remain Astra.
 3. Completed: reserved-model completion compatibility tests and provider routing tests pass locally for media and edit.
 4. Completed: post110 reached GPT-Reserved media, produced four assets, passed edit/package handoff, and created a publication authority.
 5. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.

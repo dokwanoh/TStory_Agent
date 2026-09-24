@@ -4,6 +4,10 @@
 
 After the successful GPT-Reserved media/public proof (post105), owner requested the next staged expansion. Route only the correcting `edit` stage to `gpt-reserve`; keep discovery, evidence, decision, writing, text review and final review on Astra. Operation `manual-20260925-post111-reserve-edit-live-01` completed this proof as verified public post106 with one save and exact readback. This does not authorize recurring publication, reservation restart, or quality-gate relaxation. The existing media/public proof and all earlier failures remain immutable.
 
+## Stage model reduction: GPT-Reserved text-review expansion (2026-09-25)
+
+Following the verified edit expansion, owner requested the next stage and a new article. Route `text_review` to `gpt-reserve`; retain Astra for discovery, evidence, decision, writing and final review. Operation `manual-20260925-post112-reserve-text-review-live-01` completed as verified public post107 with one save and exact readback. Daily/reservation operation remains paused and all earlier attempts remain immutable.
+
 ## GPT-Reserved completion diagnosis (2026-09-24)
 
 An isolated, nonpublication diagnostic reproduced the failure pattern without modifying Tistory. GPT-Reserved emitted an initial structured message, inspected the image-generation skill through command execution, emitted a second structured message with an empty asset list, and never emitted `turn.completed`; the diagnostic was stopped after the incomplete stream was captured. This confirms a completion-protocol/tool-orchestration defect in the current route, not a confirmed JPEG or article-content defect. The runner correctly fails closed. The exact provider-side error payload is not retained by the current parser, so no narrower root cause is claimed.
