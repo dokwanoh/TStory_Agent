@@ -4,6 +4,8 @@
 
 Derived from contracts/current-work.tsv. These items are not present blockers and do not revive paused operation or excluded checks.
 
+2026-09-25: GPT-Reserved media has one successful public proof (post105); unattended authentication and broader operational reliability remain deferred, not proven by assisted login. No additional model downgrade or recurring restart is implied.
+
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |

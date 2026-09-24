@@ -5,7 +5,7 @@
 1. Completed: media routing is switched from GPT-6 Luna to GPT-Reserved only; discovery, writing, review and edit remain Astra.
 2. Completed: reserved-model completion compatibility tests and provider routing tests pass locally.
 3. Completed: post110 reached GPT-Reserved media, produced four assets, passed edit/package handoff, and created a publication authority.
-4. Held: native manager authentication timed out before the one final save; no Tistory write or public post occurred. Do not retry the consumed identity automatically.
+4. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
 
 ## GPT-Reserved completion-rule repair (2026-09-24)
 
