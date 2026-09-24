@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## GPT-Reserved completion-rule repair (2026-09-24)
+
+1. Completed: the provider parser now keeps the strict `turn.completed` requirement for every normal model.
+2. Completed: GPT-Reserved may complete without `turn.completed` only when one non-empty final agent message is present in a session and no explicit error or `turn.failed` event occurred.
+3. Completed: multiple agent messages, missing output/session, explicit failure events, downstream schema/media checks and publication gates remain blocking. The failed post105 run is immutable and was not retried.
+
 ## Post105 GPT-Reserved media experiment (2026-09-24)
 
 1. Completed: discovery, decision and writing ran under the unchanged Astra route.

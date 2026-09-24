@@ -482,6 +482,10 @@ The owner requested one newly produced article through the combined command to a
 Rejected manual article replacement, editing a failed review to approved, deleting attempts, repeated repair-until-pass, new operation IDs and manual publisher substitution. Broader repair/reliability remains deferred. Live same-identity resumption produced post97 with one save and verified readback; it does not establish clean first-attempt reliability. Bounded STOP release was restored; recurring operation/reservations remain paused. Evidence and tests: docs/61_combined_live_proof.md.
 # MVP-001 — bounded completion contract (owner2026-09-21)
 
+## PREP-020 — GPT-Reserved completion compatibility (2026-09-24)
+
+The provider completion parser is model-specific. Normal models retain the existing requirement for exactly one `turn.completed`. GPT-Reserved may omit that event when its stream contains one non-empty final agent message tied to one session and no explicit `error` or `turn.failed` event. Multiple agent messages, missing session/output, malformed events, schema/media defects and publisher checks remain fail-closed. This repairs protocol compatibility only; it does not approve the failed post105 run, reset attempts, weaken evidence or authorize publication/schedule changes.
+
 ## LOGIN-001 — native Chrome target reconciliation (owner2026-09-24)
 
 Owner requests retaining the successful multi-process Chrome recovery. Before requesting credentials or repeated foreground actions, reconcile native CUA target with the dedicated runner. Normal quit of a verified unrelated manager-only instance and reacquisition resolved the observed mismatch, then native saved origell autofill and Login succeeded. Preserve unsaved work; do not force-terminate browsers, copy profiles/cookies, inspect passwords or bypass protected authentication. Reject blind photo-coordinate clicks and treating empty DOM fields as absent saved credentials. Persist the procedure in docs/68_chrome_login_recovery.md and the entry-point instruction in AGENTS.md. This is an assisted operational recovery, not unattended login implementation or permanent-session certification.

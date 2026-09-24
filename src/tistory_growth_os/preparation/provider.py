@@ -20,6 +20,7 @@ from . import prompts
 Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review',
                 'discovery', 'decision', 'edit']
 MODEL: Final = 'gpt-6-astra'
+RESERVED_MODEL: Final = 'gpt-reserve'
 STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'discovery': MODEL,
     'research': MODEL,
@@ -62,10 +63,12 @@ class Provider(Protocol):
     def __call__(self, request: StageRequest) -> StageResponse: ...
 
 
-def completion(events: str) -> StageResponse:
+def completion(events: str, model: str = MODEL) -> StageResponse:
     session = ''
     response = ''
     completed = 0
+    agent_messages = 0
+    last_item_type = ''
     kinds: list[str] = []
     for index, line in enumerate(events.split('\n')):
         if not line.strip():
@@ -88,11 +91,18 @@ def completion(events: str) -> StageResponse:
         if kind == 'item.completed':
             item = Fields(as_object(fields.required('item'), '/item'), '/item', ())
             name = text(item, 'type')
+            last_item_type = name
             if name == 'agent_message':
+                agent_messages += 1
                 response = text(item, 'text')
             elif name != 'reasoning':
                 kinds.append(name)
-    if not session or not response or completed != 1:
+    if not session or not response:
+        raise PreparationError('provider_completion_required')
+    if model == RESERVED_MODEL:
+        if agent_messages != 1 or last_item_type != 'agent_message':
+            raise PreparationError('provider_completion_required')
+    elif completed != 1:
         raise PreparationError('provider_completion_required')
     return StageResponse(response, session, tuple(kinds))
 
@@ -137,7 +147,7 @@ def codex_provider(request: StageRequest) -> StageResponse:
         with (request.directory / f'{request.stage}.error.json').open('x') as stream:
             _ = stream.write(json.dumps(diagnostic))
         raise PreparationError('provider_execution_failed')
-    parsed = completion(result.stdout)
+    parsed = completion(result.stdout, model=model_for_stage(request.stage))
     allowed = {'web_search', 'image_generation', 'command_execution', 'file_change'}
     if any(kind not in allowed for kind in parsed.tool_kinds):
         raise PreparationError('unexpected_provider_tool')
