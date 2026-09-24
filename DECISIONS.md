@@ -488,6 +488,10 @@ The owner observed that entering text directly in the description field beneath 
 
 Owner answered 허용 to preserving the failed19:00claim and re-entering the same reviewed coastal-cleanup article after fresh duplicate/temporary-draft reconciliation. Use a current audited reconciliation event bound to the original claim/package and observed inventory; do not reconstruct historical input stages. Preserve the DB backup and old claim. Permit one bounded independent runner invocation with temporary runtime STOP release/restoration, while automation3 remains PAUSED. Unchanged freshness/deadline/one-save/readback gates. No new slot or general legacy auto-recovery authority. Alternatives rejected: deleting claim, using another journal, manual publishing substitute, or silently reactivating daily operation.
 
+## 2026-09-25 — Reserved decision-stage trial and safe delivery attempts
+
+The one `decision`-stage GPT-Reserved trial (`manual-20260925-post117-reserve-decision-live-01`) returned `editorial_candidates_exhausted` before writing, media, save or publication. The failed identity and receipts remain immutable; decision routing was restored to Astra. A subsequent new post118 delivery run reached the publisher but held during the bounded native manager wait, and fresh post119 preparation exhausted candidates because the captured originals did not support a current timestamp at selection. No save or public write occurred in either run. GPT-Reserved remains approved only for the previously verified opportunity, writing, text review, final review, media and edit stages; discovery and decision stay on Astra. Daily and reservation operation remain paused.
+
 
 ## MEM-001 — current memory separated from history (accepted, 2026-09-21)
 

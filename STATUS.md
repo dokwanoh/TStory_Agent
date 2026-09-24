@@ -2,6 +2,10 @@
 
 Updated 2026-09-24. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
 
+2026-09-25 post118 delivery continuation HELD safely: `manual-20260925-post118-reserve-delivery-live-01` completed discovery/decision/writing/media/edit, then timed out during the bounded native manager wait before any save or publication. Read-only reconciliation found the CUA-selected Chrome window was an unrelated Google page; no retry, duplicate or existing-post mutation occurred. STOP was restored byte-for-byte. The operation and grant remain immutable; daily/reservations stay paused.
+
+2026-09-25 post119 fresh Reserved delivery attempt FAILED safely before writing: `manual-20260925-post119-reserve-delivery-live-01` exhausted its bounded candidates with `editorial_candidates_exhausted`. Candidate 1 had readable FIU evidence but no occurrence/announcement date in the captured original; candidate 2 used `2026-09-25 새벽` and was conservatively outside the fully-inside-00:00–12:00 window at selection time; candidate 3 used unsupported `2026-09-24 주간` precision. No media, editor, save or public publication occurred. Preserve all receipts; do not retry or reset the operation. The previously tested Reserved range remains opportunity/writing/text_review/review/media/edit; discovery and decision remain Astra.
+
 ## Current outcome and boundary
 
 2026-09-25 staged replacement: the media stage routes to GPT-Reserved instead of GPT-6 Luna; other preparation/review stages remain on Astra. Local compatibility tests and the public post105 proof below succeeded. Earlier failed operation IDs remain immutable (the failed post105-named operation is distinct from actual public post105). Daily/reservation operation has not resumed.

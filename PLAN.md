@@ -11,6 +11,7 @@
 7. Completed: reserved-model completion compatibility tests and provider routing tests pass locally for opportunity, writing, media, edit, text review and final review.
 8. Completed: post110 reached GPT-Reserved opportunity through media/edit, passed package handoff, and verified a new public post.
 9. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
+10. Held safely: the decision-stage Reserve trial (post117) and delivery continuation (post118) did not reach a save; post119 also exhausted its bounded candidates before writing because no candidate had a currently qualifying captured event timestamp. Preserve these identities and keep discovery/decision on Astra; do not reset or retry them.
 
 ## GPT-Reserved completion-rule repair (2026-09-24)
 
