@@ -30,7 +30,7 @@ STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'writing': MODEL,
     'text_review': RESERVED_MODEL,
     'media': RESERVED_MODEL,
-    'review': MODEL,
+    'review': RESERVED_MODEL,
     'decision': MODEL,
     'edit': RESERVED_MODEL,
 })

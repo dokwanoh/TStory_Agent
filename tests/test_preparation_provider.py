@@ -14,6 +14,7 @@ def test_stage_model_routing_uses_reserved_for_media_and_edit() -> None:
     assert model_for_stage('decision') == 'gpt-6-astra'
     assert model_for_stage('writing') == 'gpt-6-astra'
     assert model_for_stage('text_review') == 'gpt-reserve'
+    assert model_for_stage('review') == 'gpt-reserve'
     assert model_for_stage('media') == 'gpt-reserve'
     assert model_for_stage('edit') == 'gpt-reserve'
 
