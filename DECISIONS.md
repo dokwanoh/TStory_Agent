@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Second lowered conversation model proof and post103 (2026-09-24)
+
+Owner requested another fresh immediate-public article after post102 succeeded under the lowered conversation model. Keep internal preparation, writing, media and independent review on Astra; do not lower the quality route based on orchestration-model success alone. Operation manual-20260924-post102-followup-01 ran once, selected a fresh weather reader question, produced four fresh media, passed the existing correcting editor and saved/publicly rechecked post103 exactly once. Native saved-origell authentication was assisted; unattended login remains uncertified. STOP was restored and daily/reservations remain paused. Remote image display remains EXCLUDED_BY_OWNER. This second proof supports repeatability of the route, not internal-model replacement or schedule resumption.
+
 ## Lowered conversation model proof and post102 (2026-09-24)
 
 Owner requested one fresh immediate-public article after lowering the conversation model. Keep the internal preparation, writing, media and independent review provider on the existing Astra configuration; this is a bounded orchestration/browser-assistance experiment, not a quality-gate downgrade or a cheapest-model promotion. Operation manual-20260924-post101-followup-01 ran once, selected a readable-source topic, produced four fresh media, passed the existing correcting editor and saved/publicly rechecked post102 exactly once. Native saved-origell authentication was assisted; unattended login is not certified. STOP was restored and daily/reservations remain paused. Remote image display remains EXCLUDED_BY_OWNER. The result supports continuing the unchanged production route under a lower conversation model; it does not authorize changing the internal model, relaxing checks, or resuming recurring publication.
