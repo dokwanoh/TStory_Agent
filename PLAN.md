@@ -12,7 +12,7 @@
 8. Completed: post110 reached GPT-Reserved opportunity through media/edit, passed package handoff, and verified a new public post.
 9. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
 10. Held safely: the decision-stage Reserve trial (post117) and delivery continuation (post118) did not reach a save; post119 also exhausted its bounded candidates before writing because no candidate had a currently qualifying captured event timestamp. Preserve these identities and keep discovery/decision on Astra; do not reset or retry them.
-11. Post120 preparation passed with the IonQ/FIU topic and reached the publisher, but native authentication was unavailable because the independent Chrome window was not exposed to CUA. No save/publication occurred; preserve the package and require owner-side foreground authentication before any separate new grant.
+11. Post120 preparation passed with the IonQ/FIU topic; publication held at manager wait. Subsequent login-only recovery verified normal Chrome-menu termination of the unrelated process and agent-operated origell autofill in the dedicated profile through the visible manager page. Owner-side authentication is not required for this recovered route. Preserve the package/failed invocation and reconcile original save records before any publication continuation. See docs/68_chrome_login_recovery.md.
 
 ## GPT-Reserved completion-rule repair (2026-09-24)
 

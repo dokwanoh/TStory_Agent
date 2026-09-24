@@ -21,6 +21,8 @@ Empty webpage fields do not prove that browser-native saved credentials are abse
 
 ## Evidence and limits
 
+2026-09-25 recovery verified: prior Command-Q calls did not terminate the unrelated main Chrome process (PID50120 persisted). Do not infer exit from a successful keystroke call. With its sole Google tab inspected, choosing Chrome menu → Google Chrome 종료 returned `App quit`; a fresh process inventory then showed no Chrome main process. Launching the existing dedicated `browser-profile` alone allowed native CUA to target it. Account-field click → saved origell selection → masked password autofill → Login reached `nedamma.tistory.com/manage/posts/`, with `티스토리 관리센터 본문` and the article list visible. No owner interaction or credential extraction was needed. This corrects the earlier claim that owner-side foreground authentication was required. This login-only diagnostic performed no article save or publication, and STOP remained present. It does not prove that login persists after closing this process.
+
 The actual sequence was account-field click → native origell selection → masked password populated → Login → manager screenshot showing85 posts → independent runner manager URL and heading count1. No password entry by the owner was needed for this recovery. Local detailed evidence: `.artifacts/prep012-live-20260924/preflight.md`.
 
 This is a verified assisted login recovery, not proof of permanent sessions, an implemented unattended process selector, new publication, or scheduler readiness. Daily scheduling and reservations remain paused. Historical process IDs are not reusable targets. No code or browser-security configuration was changed.
