@@ -8,6 +8,8 @@ The owner saw Kakao login and Chrome's saved-account autofill popup. CUA repeate
 
 ## First-response procedure
 
+2026-09-24 post98 correction: a successfully authenticated diagnostic browser returned to login after closing and relaunching the same dedicated profile. Session persistence is not guaranteed. Prefer the actual immediate publisher's bounded120-second manager wait and complete normal saved-account login in THAT window, then let that same process continue. This was verified through post98 input/save/readback. It is assisted recovery, not an unattended authentication implementation. Do not copy cookies, alter browser settings, or claim an authenticated preflight proves a later process is logged in.
+
 1. Compare fresh native window title and page destination with the independent runner's destination. A photo establishes what the owner sees, not clickable native coordinates.
 2. If they differ, inspect Chrome main-process inventory and available native windows. Do not call this a credential failure or repeatedly ask the owner to bring the window forward.
 3. Reacquire the native target once. If multiple processes still cause the mismatch, first inspect the unrelated instance's tabs. Only normally quit that instance when it contains no unsaved editor, upload, download or other ongoing user work. Otherwise preserve it and request a narrow choice. Never force-kill all Chrome processes.

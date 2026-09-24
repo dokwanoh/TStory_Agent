@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-018 same-operation recovery (2026-09-24)
+
+1. Completed: scope owner continuation to original identity/grant, preserve completed discovery and prior failures.
+2. Completed: original decision/writing/media/edit receipts reused; native publisher saved post98 once after same-browser assisted login. Unicode handoff repaired and tested.
+3. Completed: read-only recovery verified98; original STOP restored; excluded platform image display reported separately. Unattended authentication remains outside this completed single-post proof.
+
 ## PREP-018 representation tolerance (2026-09-24)
 
 1. Completed: reproduce exact-time parser rejection using the two observed Korean forms, distinguish source access and freshness from format failure.
@@ -94,7 +100,6 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | PREP-017 live proof exhausted before writing: two timestamp-format failures and one unavailable source; preserve attempts | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution

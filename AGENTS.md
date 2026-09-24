@@ -1,10 +1,15 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- PREP-019 source handoff: validate captured source AST values directly; never NFC-reserialize a source body before comparing its original digest. Preserve exact source bytes/digests and reject genuine changes. This fixes a false integrity failure, not permission to waive evidence checks or reset run attempts.
+- PREP-019 live outcome: same operation published98 exactly once; only read-only recovery is valid afterward. Immediate manager wait allows120seconds for normal same-window authentication; never close a successfully authenticated preflight browser and assume login survives relaunch. Native original image hashes remain mandatory; known Tistory pc-image-censoring-v1.gif display replacement with matching filenames/alts is owner-excluded remote display, not a pixel PASS or permission to bypass platform review. No recurring/reservation resumption.
+
 Effective consolidated instructions, 2026-09-23. Historical snapshots and dated one-off approvals are evidence only, never reusable authority. Start here, then STATUS.md; open only the evidence relevant to the current task.
 
 ## Project operating rules
 
 ### Current authority and operation
+
+- PREP-018 recovery (owner2026-09-24 continuation): resume SAME manual-20260924-prep017-live-01 after the timestamp parser repair, reusing completed discovery receipts without new candidate identities or budget resets. Permit invocation-only STOP suspension/restoration and the remaining original one-article immediate publication grant. Preserve prior failures, existing deadline and all source/editor/publisher checks; daily/reservations remain paused.
 
 - PREP-018 (owner2026-09-24): distinguish formatting from editorial rejection. Explicit Korean dated 오전/새벽(한국시간) discovery values may qualify using a conservative00:00–12:00KST window entirely inside the past24hours; retain the original wording, never assert midnight as the actual event time. Exact timestamps retain their meaning. Source reading and independent factual judgment still decide suitability. No new reviewer quotas or invented precision; no replay/reset of exhausted operations is authorized by this parser repair.
 
