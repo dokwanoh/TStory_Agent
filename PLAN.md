@@ -64,7 +64,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | PREP-011 evidence repair exhausted before writing; corrected snapshot guidance awaits authorized additional review | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-012 live research and expansion found no qualified candidate; primary evidence restricted to eight Seoul bodies | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
