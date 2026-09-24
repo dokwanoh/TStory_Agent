@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## Post98 follow-up single article (2026-09-24)
+
+1. Completed: owner accepts98-level checks and authorizes one new immediate article; preserve paused schedules/reservations.
+2. Blocked: discovery/decision completed; writing produced completion JSON but provider rejected tool usage (text_only_stage_used_tools). No writing receipt or publisher call. Actual tool details were not retained; do not fabricate a receipt or reset the attempt.
+3. Completed: STOP restored, failure and draft retained. No new public identity exists; publication verification is blocked behind scoped writing recovery.
+
 ## PREP-018 same-operation recovery (2026-09-24)
 
 1. Completed: scope owner continuation to original identity/grant, preserve completed discovery and prior failures.

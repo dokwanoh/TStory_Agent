@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-24 after98: existing editorial/review level is sufficient; do not add new certification or repeat excluded display checks. Approve ONE new simple-route integrated immediate-public article, manual-20260924-post98-followup-01, with invocation-only STOP suspension/restoration and a six-hour grant. Preserve facts/rights, bounded correcting editor, four fresh images, duplicate and exact saved/public checks. No old-post changes or recurring/reservation resumption.
+
 - PREP-019 source handoff: validate captured source AST values directly; never NFC-reserialize a source body before comparing its original digest. Preserve exact source bytes/digests and reject genuine changes. This fixes a false integrity failure, not permission to waive evidence checks or reset run attempts.
 - PREP-019 live outcome: same operation published98 exactly once; only read-only recovery is valid afterward. Immediate manager wait allows120seconds for normal same-window authentication; never close a successfully authenticated preflight browser and assume login survives relaunch. Native original image hashes remain mandatory; known Tistory pc-image-censoring-v1.gif display replacement with matching filenames/alts is owner-excluded remote display, not a pixel PASS or permission to bypass platform review. No recurring/reservation resumption.
 

@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Post98 accepted baseline and one new article (2026-09-24)
+
+Owner sees98 normally and explicitly accepts this review level, requesting another new article through public delivery in one turn. Reuse editorial-simple-v1 and the same correcting-editor/native publisher, without new audit gates or excluded display rechecks. Scope manual-20260924-post98-followup-01, six-hour grant, invocation-only STOP suspension/restoration. Preserve facts, source rights, fresh four-image production and exact single-save readback. No recurring/reservation restart, old-post mutation or reset of old failed attempts.
+
 ## PREP-019 — preserve original Unicode through source handoff (2026-09-24)
 
 Live completion: post98 saved once and read-only recovery verified it. Two manager timeouts occurred before any attempt/save intent; successful native saved-account login in a separate preflight context did not survive browser relaunch. Permit120seconds of bounded same-run manager wait for normal authentication, no credentials/cookies copied. This retains assisted-login limitations instead of claiming unattended operation. Saved source hashes, four-image order/alt/representative and exact content passed. Anonymous public returned200, but src URLs were the known platform review replacement. Apply existing ADR-042 exclusion narrowly to this exact replacement plus matching filename/alt, retaining unknown substitutions as mismatch; emit remote_image_display=EXCLUDED_BY_OWNER rather than certify pixels. No post/media mutation or review evasion. Rejected alternatives: recreate98, blindly retry save, copy session cookies, reupload/rewrite image URLs or remove saved-source validation.
