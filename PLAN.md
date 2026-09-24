@@ -64,7 +64,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | PREP-013 removes fixed-source restriction; fresh real-model public proof still unverified, prior run remains exhausted | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-013 live research exhausted; discovery OPEN prerequisite prevents common-reader qualification | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
