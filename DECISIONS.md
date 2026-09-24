@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-016 live proof authorization (2026-09-24)
+
+Owner "실증ㄱㄱ" accepts the proposed new actual-model-to-publication proof after editorial-v2 implementation. One operation manual-20260924-prep016-live-01, bounded six-hour grant, normal native publisher and exact saved/public readback. Suspend STOP only around this command and restore on all ordinary exit paths; daily/reservations remain paused. Reject manual prose/publisher substitution, another article, retry-budget reset, new paid services or weakening checks to claim success. Actual outcome: exit2/TimeoutExpired in third-candidate opportunity before production/publication; uncertain attempt retained, STOP restored byte-for-byte. Grant is not proof of publication or permission to erase failed attempts.
+
 ## PREP-016 — replace preparation with evidence-led editing (2026-09-24)
 
 Owner explicitly approves rebuilding the preparation pipeline. Fresh editorial-v2 runs replace the research/evidence/text-gate/final-boolean stack with readable-source acquisition, quantitative opportunity comparison, an independent topic decision, production and an action-based editor. The editor returns ready/revise/sources/media/replace_topic; a defect leads to bounded correction, not immediate whole-article abandonment. Remove arbitrary three-essential-field and six/eleven-checkbox contracts from this route. A material claim still needs genuine supporting original text and a relevant reader-facing citation; quotes are checked against both bodies and the exact article. Preserve source/rights/policy, highest-model topic judgment, four contextual assets, approved reader style and all publisher protections.

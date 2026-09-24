@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-016 live proof (2026-09-24)
+
+1. Completed: dedicated profile normal saved-account login reached manager (85 posts); official policy preflight, one-run grant and bounded STOP restoration wrapper checked.
+2. Blocked: actual combined command exited2/TimeoutExpired during candidate3 opportunity (900seconds), before writing/media/package/publisher. Preserve attempt; no blind retry or manual substitution.
+3. Completed: reconciled absent production/publication and byte-identical STOP restoration; canonical status records concrete timeout and uncertainty. Scoped evidence is the only delivery; no live success or schedule resumption claimed.
+
 ## PREP-015 targeted repair and evidence reuse (owner 2026-09-24)
 
 1. Completed: inspected source cache, evidence enrichment, pre-media repair and both review callers. Kept immutable source collection and narrowed unnecessary requalification.
@@ -70,7 +76,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | Fresh editorial-v2 real-model public proof not run; requires a current scoped publication grant and STOP release | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-016 actual run timed out in candidate3 opportunity before writing; preserve uncertain receipt and repair bounded execution | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
