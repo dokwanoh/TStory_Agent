@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-018 representation tolerance (2026-09-24)
+
+1. Completed: reproduce exact-time parser rejection using the two observed Korean forms, distinguish source access and freshness from format failure.
+2. Completed: conservative morning-range handling with raw evidence preservation; new edge tests fail before and pass after repair.
+3. Completed:174 preparation regression tests passed; both captured responses now reach source acquisition eligibility; types/source checks clean. Scoped evidence ready for feature-branch delivery. No external publication or exhausted-run reset.
+
 ## PREP-017 live proof (2026-09-24)
 
 1. Completed: inspect current authority, proven delivery skill and runner; allocate one fresh identity without touching old attempts.

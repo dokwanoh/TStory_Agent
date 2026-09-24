@@ -3,6 +3,7 @@ from dataclasses import asdict, dataclass, replace
 from datetime import datetime, timedelta
 import json
 from pathlib import Path
+import re
 
 from ..artifacts.layout import safe_output_root
 from ..contracts.json_decode import JsonDecodeError, parse_json
@@ -52,7 +53,17 @@ def discover(source: str, now: datetime) -> tuple[Candidate, ...]:
     result: list[Candidate] = []
     for raw in leads:
         item = Fields.parse(raw, '', ('id', 'title', 'event_at', 'event_time_basis', 'reader_question', 'source_urls'))
-        event = datetime_value(item, 'event_at')
+        morning = re.fullmatch(r'(\d{4}-\d{2}-\d{2})\s+(?:오전|새벽)\s*\(한국시간\)', text(item, 'event_at'))
+        if morning is None:
+            event = datetime_value(item, 'event_at')
+        else:
+            try:
+                event = datetime.fromisoformat(morning.group(1) + 'T00:00:00+09:00')
+            except ValueError:
+                raise PreparationError('discovery_date_invalid') from None
+            # Conservative lower bound, not an asserted midnight event; preserve raw evidence.
+            if event + timedelta(hours=12) > now:
+                continue
         urls = strings(item, 'source_urls', True, r'https://\S+')
         if len(urls) > 8 or any(not public_source_url(url) for url in urls):
             raise PreparationError('source_destination_denied')

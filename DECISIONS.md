@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-018 — formatting is not topic rejection (2026-09-24)
+
+Owner rejects needless strictness after the live failure. The observed failure preceded semantic review: discovery schema accepted a string while the parser demanded exact RFC3339. Accept the two observed explicitly dated Korean morning/dawn forms as a conservative00:00–12:00KST window, only when the entire window is past and within24hours. Keep raw wording as evidence; internal lower bound is never a claimed exact event time. This is representation tolerance, not a weaker fact/rights gate. No arbitrary guessed hour, new model repair round, increased candidate quota or old failed-run reset. Existing correcting editor already handles prose/link defects; do not portray that path as newly implemented here.
+
 ## PREP-017 live proof authorization and result (2026-09-24)
 
 Owner requests one actual public proof of the simple route. Bind manual-20260924-prep017-live-01 to a six-hour one-invocation grant with temporary STOP suspension and byte-preserving restoration; schedules/reservations remain paused. Actual run exhausted three candidate attempts before decision/writing: two approximate Korean timestamps failed machine parsing and one official source was unavailable. No public write occurred. Preserve responses and failed attempt budget; no fabricated time, manual article substitute or fresh identity to evade exhaustion. Current status records the format-contract defect separately from source access and reader-value judgment.
