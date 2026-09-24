@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## GPT-Reserved completion diagnosis (2026-09-24)
+
+An isolated, nonpublication diagnostic reproduced the failure pattern without modifying Tistory. GPT-Reserved emitted an initial structured message, inspected the image-generation skill through command execution, emitted a second structured message with an empty asset list, and never emitted `turn.completed`; the diagnostic was stopped after the incomplete stream was captured. This confirms a completion-protocol/tool-orchestration defect in the current route, not a confirmed JPEG or article-content defect. The runner correctly fails closed. The exact provider-side error payload is not retained by the current parser, so no narrower root cause is claimed.
+
 ## Stage model reduction: GPT-Reserved media failure (2026-09-24)
 
 Owner requested restarting one-stage-at-a-time reduction with `gpt-reserve` replacing Luna. A bounded post105 run completed discovery, decision and writing, and generated four local media files, but the media provider turn ended with `provider_turn_failed`; no editor, save or public publication occurred. Preserve the operation and artifacts as an immutable failed experiment, restore media to verified `gpt-6-luna`, and do not retry the consumed identity. The local Codex catalog describes GPT-Reserve as a fast, affordable agentic coding model, but it does not publish a stable underlying model or price; therefore it cannot be promoted on label or probe success alone.
