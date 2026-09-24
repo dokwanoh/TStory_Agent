@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Stage model reduction: GPT-Reserved media failure (2026-09-24)
+
+Owner requested restarting one-stage-at-a-time reduction with `gpt-reserve` replacing Luna. A bounded post105 run completed discovery, decision and writing, and generated four local media files, but the media provider turn ended with `provider_turn_failed`; no editor, save or public publication occurred. Preserve the operation and artifacts as an immutable failed experiment, restore media to verified `gpt-6-luna`, and do not retry the consumed identity. The local Codex catalog describes GPT-Reserve as a fast, affordable agentic coding model, but it does not publish a stable underlying model or price; therefore it cannot be promoted on label or probe success alone.
+
 ## Stage model reduction: discovery failure, media success (2026-09-24)
 
 Owner requested one-stage-at-a-time model reduction with a new article proof for each step. Implement immutable stage routing while retaining Astra as the default. Discovery-only `gpt-6-luna` was rejected operationally: three bounded discovery calls exhausted without a qualified candidate, so no publication was attempted. Restore discovery to Astra and route only media to `gpt-6-luna`; post104 then completed with one save and exact public readback. Keep decision, writing and edit on Astra. Do not treat the Discovery failure as a permission to reset its operation or as evidence that all lower models fail; it is a bounded stage result. Official OpenAI guidance describes Luna as cost-sensitive/high-volume and Astra as the most capable model, so promotion requires unchanged publication-quality evidence. [Official OpenAI model guidance](https://developers.openai.com/api/docs/models).
@@ -128,9 +132,33 @@ Rejected alternatives: dropping the citation checker; copying all review URLs in
 
 Owner approves the proposed pre-media temporal/source-binding repair and one fresh integrated immediate-public proof. The independent reviewer must identify exact blocks and certify that every defect is limited to tense or existing-evidence binding; general rewriting, new facts/research and coverage expansion remain ineligible. Deterministic scope checks preserve unlisted prose, structure, title, taxonomy and media plan. A separate session re-reviews exact revised text; the pre-media correction consumes the same single repair budget as final facts-only repair. Reject unlimited retries, manual article replacement and lowered thresholds. One-off identity manual-20260921-pre-media-proof-01 may temporarily suspend STOP with restoration; recurring/reservations remain paused. Earlier failed proofs stay failed. Evidence and acceptance: docs/66_bounded_pre_media_repair.md.
 
+## One new immediate CLI proof — 2026-09-20
+
+Owner explicitly requests one new article through independent executable. Choose reviewed LG이노텍 AI-parts announcement with conservative same-day expiry and four new contextual images; no old94/95package reuse. Permit scoped temporary runtime STOP release only during operationmanual-20260920-independent-immediate and restore in shell EXITtrap. Daily/reservation automation staysPAUSED. Alternative assistedmanualsave is rejected for this certification because it would not prove independentexecution. Existing identityjournal and one-save/readbackgates unchanged; unknownoutcomeholds, no automaticnewidentity. See content/fasttrack/2026-09-20-independent-immediate/run.md for live evidence, not a successclaim.
+
+Owner2026-09-20 latest delivery-mode decision: until the owner explicitly restores reservations, do NOT create new scheduled reservations. For future owner-requested articles, publish immediately through the normal editor after unchanged quality/rights/freshness/duplicate checks, then verify the actual public state and exact saved content. This supersedes advance-reservation timing only, not the three-daily PAUSE: automation3 remains PAUSED and runtime STOP remains present. No scheduled worker restart, catch-up burst, or use of an old reservation authority for immediate publication. Existing server-side reservations (including93) are not cancelled, edited or accelerated by this prospective decision. Reservation-only runtime is not certified for immediate publishing; use a verified authorized route or hold on a real route/gate failure. See docs/49_immediate_publication_mode.md.
+
+## Owner temporary scheduled-operation pause — 2026-09-20
+
+Owner orders all three-daily scheduled article creation/reservation suspended until expressly resumed. Pause existing automation3 rather than delete/recreate it; preserve schedule and prompt. Add native-runtime STOP so independent pilot cannot continue from old authority. No19:00retry, catch-up or automatic resumption. Preserve failed-run claim and content. This does not cancel server-side reservations or authorize existing-post mutation. Latest observed19:00state is unreserved; no new remote inventory scan or cancellation performed for this pause.
+
+## Owner image-diversity decision — 2026-09-20
+
+Each future article needs a fresh four-image set with genuinely different subject-specific scenes, not just newly generated files. Before production compare the latest five available article scene/media records including reservations, retaining explicit history gaps. No prior asset reuse, cosmetic crop/recolor substitute, or repetitive generic preparation imagery. Official-first rights/credit and truthful contextual photorealistic fallback remain. Details: docs/46_article_image_diversity.md. Rejected fresh-bytes-only checks because hashes cannot detect scene repetition; no paid similarity tooling or historical-post edits authorized. Owner-excluded remote pixel/lightbox audits stay excluded. The personal editorial skill and AGENTS entrypoint carry this rule.
+
 ## Owner-approved per-operation spawn lifecycle — 2026-09-20
 
 Owner requested recurrence prevention plus real generation retry. Retain OMO cap60 and installed hook; use project-local begin/adopt/close against the actual stock counter with archives, stable run identity, exclusive lifecycle lock and fail-closed interrupted transitions. Reject global cap increase, plugin-cache patching, false session namespace and resets on retry. Native child-state inventory remains an operator check, with root-only serialized children; not a claim of an independent unattended worker. Details and recovery limits: docs/44_spawn_run_budget.md. Existing dirty changes and prior goal state are preserved.
+
+## Owner-approved production baseline — 2026-09-19
+
+Owner explicitly rated final post89 “백점” after contextual photo-v3 revision. Promote reader-v5 prose/design + photo-v3 inline media with unchanged cover-v2 as the primary editorial example. Record reusable method in personal editorial skill references/post89-approved-pattern.md; retain local artifact pointers and evidence. Prefer question-to-visible-action media planning over attractive but generic pictures, warm concrete prose over repetitive report language, and the verified summary/spacing treatment over obsolete templates. Older reader-v4 examples remain secondary. No facts, freshness exceptions, publishing authority, removed audits or traffic claims transfer from this example.
+
+## Owner editorial refinement — 2026-09-19, post89
+
+Remove the stock visible example-image disclaimer, naturalize the Korean prose, and improve article-body hierarchy/spacing. Rejected alternatives: repeating an AI/non-documentary footer on every article; removing material factual caveats or required attribution; changing the global skin. Accurate image alt/provenance remains internal or in image metadata; generated media must never be asserted to be actual/official project evidence. Same title, URL, public state, original date and four photo-v2 assets retained. AGENTS.md and the personal tistory-editorial-cycle skill carry the future rule. Reader-v5 uses question-led headings, a warm summary panel, specific practical examples and selective emphasis without invented experience.
+
+Live skin overrides ordinary paragraph margins; preserve intended article-only spacing with inline margin !important and verify computed margins after save. Excluded audit lanes remain excluded. No new model/service/install authority follows.
 
 ## ADR-053 — keep growth tactics out of reader-facing copy (2026-09-13)
 
@@ -425,9 +453,16 @@ A linked article is a research lead, never copy to reproduce. Search related key
 
 The owner explicitly authorizes uploading the two remaining reviewed bus media files to the current unsaved editor through the normal native file picker, followed by native alt-text entry. This narrowly supersedes ADR-050's upload prohibition for the current editor identity only. Final save, reservation, release, publication, existing-post mutation and scheduler cutover remain prohibited. DOM/hidden-field injection and unrelated files or destinations remain disallowed. The purpose is to complete the nonpublication input rehearsal without expanding delivery authority.
 
+# 2026-09-20 — bounded independent-runtime pilot
+
+Owner answered yes to one next regular-slot independent-runner upload/reservation pilot. Approval clock15:01KST resolves the target to19:00 today, run20260920-1900-prepare. Existing91/92 consume the first two daily deliveries; this remains the third, not an extra test post. Automation3 was updated in place to prevent a competing16:00 creation and allow only known-receipt read-only19:00 verification. Other schedule fields retained. Complete native input/save/readback and fresh reviewed package are prerequisites; the approval does not assert these implemented or waive any gate. Reject permanent cutover, stale92 reuse, manual substitute after failed pilot, and duplicate schedule creation.
+
 # ADR-060 — direct per-image description route (accepted, 2026-09-17)
 
 The owner observed that entering text directly in the description field beneath each image succeeds more reliably than activating the inline alt-text toolbar. Prefer this visible, per-image route for future native-editor rehearsals, while requiring fresh readback to bind each value to the intended image. This changes input method only; it adds no save, reservation or publication authority.
+# 2026-09-20 18:25 KST: one-off legacy reconciliation
+
+Owner answered 허용 to preserving the failed19:00claim and re-entering the same reviewed coastal-cleanup article after fresh duplicate/temporary-draft reconciliation. Use a current audited reconciliation event bound to the original claim/package and observed inventory; do not reconstruct historical input stages. Preserve the DB backup and old claim. Permit one bounded independent runner invocation with temporary runtime STOP release/restoration, while automation3 remains PAUSED. Unchanged freshness/deadline/one-save/readback gates. No new slot or general legacy auto-recovery authority. Alternatives rejected: deleting claim, using another journal, manual publishing substitute, or silently reactivating daily operation.
 
 
 ## MEM-001 — current memory separated from history (accepted, 2026-09-21)

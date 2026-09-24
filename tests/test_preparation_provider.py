@@ -3,10 +3,10 @@ import json
 from tistory_growth_os.preparation.provider import completion, model_for_stage
 
 
-def test_stage_model_routing_lowers_only_discovery() -> None:
-    # Given the first staged cost experiment.
+def test_stage_model_routing_keeps_media_on_verified_luna() -> None:
+    # Given the failed GPT-Reserved media experiment.
     # When model routing is resolved for each current v2 stage.
-    # Then media uses Luna while discovery and quality-critical stages retain Astra.
+    # Then media returns to verified Luna while discovery and quality-critical stages retain Astra.
     assert model_for_stage('discovery') == 'gpt-6-astra'
     assert model_for_stage('decision') == 'gpt-6-astra'
     assert model_for_stage('writing') == 'gpt-6-astra'

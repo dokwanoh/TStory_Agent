@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## Post105 GPT-Reserved media experiment (2026-09-24)
+
+1. Completed: discovery, decision and writing ran under the unchanged Astra route.
+2. Failed: GPT-Reserved media produced four local files but the provider turn ended with `provider_turn_failed` before editor/review/publication.
+3. Completed: preserve the failed run and restore media to verified GPT-6 Luna; no save, public post, retry reset or schedule change.
+
 ## Post104 media-Luna experiment (2026-09-24)
 
 1. Completed: discovery restored to Astra and only media routed to Luna; schedules/reservations remain paused.
