@@ -10,7 +10,7 @@ import re
 from urllib.parse import urljoin
 
 from ..contracts.json_decode import parse_json
-from ..contracts.json_ast import JsonString
+from ..contracts.json_ast import JsonString, JsonValue
 from ..domain.common import Fields, as_object, strings, text
 from ..research.intake import public_source_url
 from .contracts import PreparationError
@@ -92,7 +92,11 @@ def unavailable(url: str, checked_at: datetime) -> SourceDocument:
 
 
 def parse_document(raw: str) -> SourceDocument:
-    value = as_object(parse_json(raw), '')
+    return document_from_value(parse_json(raw))
+
+
+def document_from_value(raw: JsonValue) -> SourceDocument:
+    value = as_object(raw, '')
     keys = ('url', 'checked_at', 'access', 'body', 'body_sha256', 'response_sha256', 'links')
     keys += tuple(key for key in ('published_at', 'title') if value.get(key) is not None)
     fields = Fields.parse(value, '', keys)

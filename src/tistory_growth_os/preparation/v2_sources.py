@@ -15,7 +15,7 @@ from .opportunity_selection import ranked_choices
 from .opportunity import snapshot_context
 from .package import write_immutable
 from .provider import StageRequest
-from .shared_sources import SourceDocument, parse_document
+from .shared_sources import SourceDocument, document_from_value
 from .source_access import collect_context, operation_root
 from .storage import StageStore
 from . import prompts, v2_prompts
@@ -31,7 +31,7 @@ class SourceSelection:
 
 def documents_from(raw: str) -> tuple[SourceDocument, ...]:
     fields = Fields(as_object(parse_json(raw), ''), '', ())
-    return tuple(parse_document(encode_json(item)) for item in array(fields, 'documents', False))
+    return tuple(document_from_value(item) for item in array(fields, 'documents', False))
 
 
 def captured(directory: Path, urls: tuple[str, ...]) -> tuple[SourceDocument, ...]:

@@ -11,7 +11,7 @@ from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, as_object, text
 from ..research.intake import public_source_url
 from .contracts import PreparationError
-from .shared_sources import SourceDocument, SourceReader, parse_document
+from .shared_sources import SourceDocument, SourceReader, document_from_value
 from .source_pool import read_pool
 
 
@@ -68,7 +68,7 @@ def collect_context(directory: Path, prompt: str, urls: tuple[str, ...]) -> str:
 
 def bind_detail_sources(raw: str, snapshots: str) -> str:
     source = Fields(as_object(parse_json(snapshots), ''), '', ())
-    documents = {text(Fields(as_object(item, ''), '', ()), 'url'): parse_document(encode_json(item))
+    documents = {text(Fields(as_object(item, ''), '', ()), 'url'): document_from_value(item)
                  for item in array(source, 'documents', False)}
     fields = Fields(as_object(parse_json(raw), ''), '', ())
     updated: list[JsonObject] = []
