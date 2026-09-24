@@ -2,7 +2,7 @@
 
 ## Stage model reduction: GPT-Reserved edit expansion (2026-09-25)
 
-After the successful GPT-Reserved media/public proof (post105), owner requested the next staged expansion. Route only the correcting `edit` stage to `gpt-reserve`; keep discovery, evidence, decision, writing, text review and final review on Astra. This is a local routing change requiring a separate fresh article proof before promotion; it does not authorize a new live post, recurring publication, reservation restart, or quality-gate relaxation. The existing media/public proof and all earlier failures remain immutable.
+After the successful GPT-Reserved media/public proof (post105), owner requested the next staged expansion. Route only the correcting `edit` stage to `gpt-reserve`; keep discovery, evidence, decision, writing, text review and final review on Astra. Operation `manual-20260925-post111-reserve-edit-live-01` completed this proof as verified public post106 with one save and exact readback. This does not authorize recurring publication, reservation restart, or quality-gate relaxation. The existing media/public proof and all earlier failures remain immutable.
 
 ## GPT-Reserved completion diagnosis (2026-09-24)
 
