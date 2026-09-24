@@ -32,7 +32,7 @@ STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'media': RESERVED_MODEL,
     'review': MODEL,
     'decision': MODEL,
-    'edit': MODEL,
+    'edit': RESERVED_MODEL,
 })
 SCHEMAS: Final = Path(__file__).resolve().parents[3] / 'contracts/preparation'
 

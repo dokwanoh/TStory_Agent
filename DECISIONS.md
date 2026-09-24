@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Stage model reduction: GPT-Reserved edit expansion (2026-09-25)
+
+After the successful GPT-Reserved media/public proof (post105), owner requested the next staged expansion. Route only the correcting `edit` stage to `gpt-reserve`; keep discovery, evidence, decision, writing, text review and final review on Astra. This is a local routing change requiring a separate fresh article proof before promotion; it does not authorize a new live post, recurring publication, reservation restart, or quality-gate relaxation. The existing media/public proof and all earlier failures remain immutable.
+
 ## GPT-Reserved completion diagnosis (2026-09-24)
 
 An isolated, nonpublication diagnostic reproduced the failure pattern without modifying Tistory. GPT-Reserved emitted an initial structured message, inspected the image-generation skill through command execution, emitted a second structured message with an empty asset list, and never emitted `turn.completed`; the diagnostic was stopped after the incomplete stream was captured. This confirms a completion-protocol/tool-orchestration defect in the current route, not a confirmed JPEG or article-content defect. The runner correctly fails closed. The exact provider-side error payload is not retained by the current parser, so no narrower root cause is claimed.
