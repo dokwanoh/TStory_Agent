@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-017 live proof (2026-09-24)
+
+1. Completed: inspect current authority, proven delivery skill and runner; allocate one fresh identity without touching old attempts.
+2. BLOCKED: actual simple-route run exhausted three candidates before writing. Two discovery event_at values used Korean approximate times; the parser rejected them before source capture. One official source was unavailable. No publication occurred; do not reset this exhausted run.
+3. Completed: STOP restored byte-for-byte; evidence preserved and current status synchronized for scoped delivery. No recurring/reservation restart.
+
 ## PREP-017 simple topic selection (2026-09-24)
 
 1. Completed: failure-first tests protect the simple package path, old uncertain holds, immutable versions and zero-call replay.
@@ -82,7 +88,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | PREP-017 simple selection implemented locally; fresh real-model public proof remains unverified, old uncertain attempt preserved | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-017 live proof exhausted before writing: two timestamp-format failures and one unavailable source; preserve attempts | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution

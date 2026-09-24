@@ -20,7 +20,7 @@ quality-rework	task	DONE	Selection-time freshness and bounded same-editor correc
 source-fallback	task	DONE	Bounded alternate-candidate qualification and different-issue research; immutable replay tests pass	STATUS.md
 current-source-intake	task	DONE	Eight official bodies captured and bound; actual research and quantitative opportunity stages completed	STATUS.md
 common-source-access	task	DONE	Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression	STATUS.md
-fresh-integrated-proof	task	BLOCKED	PREP-017 simple selection implemented locally; fresh real-model public proof remains unverified, old uncertain attempt preserved	STATUS.md
+fresh-integrated-proof	task	BLOCKED	PREP-017 live proof exhausted before writing: two timestamp-format failures and one unavailable source; preserve attempts	STATUS.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
 performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
 low-cost-model	task	DEFERRED	Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008	DECISIONS.md

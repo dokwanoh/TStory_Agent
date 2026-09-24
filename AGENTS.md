@@ -6,6 +6,8 @@ Effective consolidated instructions, 2026-09-23. Historical snapshots and dated 
 
 ### Current authority and operation
 
+- PREP-017 live proof (owner2026-09-24): approve ONE fresh simple-route integrated immediate-public article, manual-20260924-prep017-live-01. Temporarily suspend STOP only for this invocation, restore original bytes on exit, retain exact review/native save/public readback. No failed-attempt reset, second article or daily/reservation restart. Six-hour grant bounds this proof.
+
 - PREP-017 (owner2026-09-24): fresh inputs use editorial-simple-v1. Select one topic using recent occurrence/new announcement, readable originals and a concrete useful reader question. Supplied demand/growth/competition signals are advisory; missing metrics or unavailable trend RSS do not block selection. No mandatory opportunity-model or competitor-page search before writing. Preserve independent topic judgment/editor, source/freshness/rights/policy and publisher protections. Existing editorial-v2 and uncertain attempts remain immutable on their original route; never relabel them. This supersedes PREP-016's mandatory quantitative comparison only; no live-publication or STOP/schedule authority is added.
 
 - PREP-016 live proof (owner2026-09-24 "실증ㄱㄱ"): approve ONE new editorial-v2 combined-command immediate-public article, identity manual-20260924-prep016-live-01. Permit invocation-only STOP suspension with byte-preserving restoration on exit, reviewed four-media native input and one save/exact public readback. Six-hour local grant bounds this invocation; no old attempt reset, second article, manual content/publisher substitution, schedule/reservation resumption or gate waiver. Prior failures remain immutable.

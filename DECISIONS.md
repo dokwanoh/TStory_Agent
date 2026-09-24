@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-017 live proof authorization and result (2026-09-24)
+
+Owner requests one actual public proof of the simple route. Bind manual-20260924-prep017-live-01 to a six-hour one-invocation grant with temporary STOP suspension and byte-preserving restoration; schedules/reservations remain paused. Actual run exhausted three candidate attempts before decision/writing: two approximate Korean timestamps failed machine parsing and one official source was unavailable. No public write occurred. Preserve responses and failed attempt budget; no fabricated time, manual article substitute or fresh identity to evade exhaustion. Current status records the format-contract defect separately from source access and reader-value judgment.
+
 ## PREP-017 — simple evidence-led selection (2026-09-24)
 
 Owner approves simplifying selection after a mandatory opportunity call consumed900seconds before writing. Fresh editorial-simple-v1 inputs bypass that call: recent occurrence/new announcement, readable original and concrete reader question suffice. Available demand/growth/competition signals guide priority; absence remains UNKNOWN and does not require competitor searching. An unavailable trend feed is optional-context loss, not loss of article evidence. Retain all substantive source/rights/freshness/independent review and publisher safeguards. Reject increasing the timeout, fabricated metrics, or clearing/relabeling old uncertain runs. Immutable input hashes and old prompts preserve existing editorial-v2 replay. This implements the selected simplification, not proof that all prior latency came from web searches. Local verification only; no new external publication or schedule activation.
