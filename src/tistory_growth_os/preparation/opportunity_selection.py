@@ -49,8 +49,8 @@ def metric_value(fields: Fields, key: str) -> float | None:
             assert_never(value)
 
 
-def ranked_choices(store: StageStore, research: Research) -> OpportunityChoice:
-    context = snapshot_context(store.directory)
+def ranked_choices(store: StageStore, research: Research, context: str | None = None) -> OpportunityChoice:
+    context = context if context is not None else snapshot_context(store.directory)
     observed = store.run(StageRequest('opportunity', BOUNDARY + '\n' + OPPORTUNITY
         + '\nSignals:\n' + context + '\nCandidates:\n' + research.source, store.directory))
     signals = Fields(as_object(parse_json(context), ''), '', ())

@@ -1,5 +1,5 @@
 from collections.abc import Callable
-from dataclasses import dataclass, replace
+from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 from hashlib import sha256
 import json
@@ -24,14 +24,7 @@ from .prompt_history import recorded_prompt
 from .source_selection import SelectionContext, qualify_sources
 from .source_pool import bind_sources, read_pool
 from .source_access import urls_in
-
-
-@dataclass(frozen=True, slots=True)
-class PreparationRun:
-    root: Path
-    directory: Path
-    run_id: str
-    clock: Callable[[], datetime]
+from .run_contract import PreparationRun as PreparationRun
 
 
 def utc_now() -> datetime:
@@ -59,6 +52,12 @@ def review_request(directory: Path, base: str, digest: str) -> StageRequest:
 
 
 def execute(run: PreparationRun, provider: Provider) -> Path:
+    version = as_object(parse_json((run.directory / 'input.json').read_text()), '').get('workflow_version')
+    if version is not None:
+        from .v2_runner import execute_v2
+        return execute_v2(run, provider)
+    if (run.directory / 'v2-input.sha256').exists():
+        raise PreparationError('workflow_version_changed')
     store = StageStore(run.directory, provider)
     if (any((run.directory / name).exists() for name in ('selection.attempt', 'selection.receipt.json', 'selected-at.txt'))
             and not (run.directory / 'opportunity.receipt.json').exists()):

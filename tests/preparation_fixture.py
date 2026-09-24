@@ -98,6 +98,8 @@ class FixtureProvider:
                     ('subject_sha256', 'manifest', 'article', 'evidence', 'deterministic_checks'))
                 result = json.dumps({'subject_sha256': text(fields, 'subject_sha256'), 'approved': self.approve,
                     'checks': {name: self.approve for name in CHECKS}, 'issues': [] if self.approve else ['fixture rejection']})
+            case 'discovery' | 'decision' | 'edit':
+                raise AssertionError('Legacy fixture does not implement editorial-v2')
             case _:
                 assert_never(request.stage)
         return StageResponse(result, 'fixture-' + request.stage, ('image_generation',) if request.stage == 'media' else ())

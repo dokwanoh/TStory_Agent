@@ -43,7 +43,7 @@ class StageStore:
         receipt_path = self.directory / f'{request.stage}.receipt.json'
         request_digest = sha256((request.prompt + (
             '\nSource catalog:\n' + json.dumps(request.source_urls)
-            if request.stage == 'writing' and request.source_urls else '')).encode()).hexdigest()
+            if request.stage in ('writing', 'decision', 'edit') and request.source_urls else '')).encode()).hexdigest()
         if receipt_path.exists():
             fields = receipt_fields(receipt_path.read_text())
             raw = response_path.read_text()
@@ -66,7 +66,8 @@ class StageStore:
             raise PreparationError('stage_attempt_uncertain') from None
         print(json.dumps({'stage': request.stage, 'state': 'started'}), file=sys.stderr)
         result = self.provider(request)
-        _ = parse_json(result.response)
+        if request.stage not in ('discovery', 'decision', 'edit'):
+            _ = parse_json(result.response)
         source_binding: dict[str, str] = {}
         if result.sources:
             with (self.directory / f'{request.stage}.sources.json').open('x') as stream:

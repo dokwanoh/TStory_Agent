@@ -1,4 +1,5 @@
 id	kind	state	title	evidence
+editorial-v2	task	DONE	PREP-016 replacement preparation and action-based editing; fixture handoff and replay verified, real-model public proof remains separate	STATUS.md
 targeted-review-reuse	task	DONE	PREP-015 local delta review and scoped repair; exact evidence/claim reuse; real-model semantics not certified	STATUS.md
 offline-mvp	task	DONE	Offline contracts, review binding and dry-run; no external writes	PROJECT_SPEC.md
 independent-publisher	task	DONE	Prepared article independent immediate publisher, post96 proof	docs/54_immediate_live_proof.md
@@ -19,7 +20,7 @@ quality-rework	task	DONE	Selection-time freshness and bounded same-editor correc
 source-fallback	task	DONE	Bounded alternate-candidate qualification and different-issue research; immutable replay tests pass	STATUS.md
 current-source-intake	task	DONE	Eight official bodies captured and bound; actual research and quantitative opportunity stages completed	STATUS.md
 common-source-access	task	DONE	Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression	STATUS.md
-fresh-integrated-proof	task	BLOCKED	PREP-014 discovery-to-reader verified live; evidence freshness needs enrichment, fresh integrated public proof remains unverified	STATUS.md
+fresh-integrated-proof	task	BLOCKED	Fresh editorial-v2 real-model public proof not run; requires a current scoped publication grant and STOP release	STATUS.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
 performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
 low-cost-model	task	DEFERRED	Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008	DECISIONS.md

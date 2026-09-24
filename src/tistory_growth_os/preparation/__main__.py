@@ -39,7 +39,8 @@ def main() -> int:
         directory = safe_output_root(root, '.artifacts/preparation/' + args.run_id)
         if not args.execute:
             print(json.dumps({'state': 'dry_run', 'run_id': args.run_id,
-                'stages': ['research', 'opportunity', 'evidence', 'selection', 'writing', 'text_review', 'media', 'review'],
+                'workflow_version': 'editorial-v2',
+                'stages': ['discovery', 'originals', 'opportunity', 'decision', 'writing', 'media', 'edit', 'technical'],
                 'model_calls': 0, 'external_write_count': 0, 'publication_authorized': False}))
             return 0
         run = PreparationRun(root, directory, args.run_id, utc_now)
@@ -54,7 +55,7 @@ def main() -> int:
             if not initial.exists():
                 feed = collect_live()
                 write_immutable(directory / 'signals.rss', feed)
-                write_immutable(initial, json.dumps({'run_id': args.run_id,
+                write_immutable(initial, json.dumps({'workflow_version': 'editorial-v2', 'run_id': args.run_id,
                     'cutoff': utc_now().isoformat(), 'signals': feed.decode('utf-8')
                     + '\nPrior UNVERIFIED research leads (not approved evidence; re-open sources and '
                     + 'requalify all facts/timestamps, ignore previous check status):\n' + prior_research_leads(root),
@@ -68,7 +69,9 @@ def main() -> int:
     except (PreparationError, ArtifactWriteError, JsonDecodeError, OSError, ImportError,
             subprocess.TimeoutExpired, UnicodeError, ValueError) as error:
         reason = error.code if isinstance(error, PreparationError) else type(error).__name__
-        state = 'needs_enrichment' if reason in REWORK_NEEDED else 'held'
+        state = 'needs_enrichment' if reason in REWORK_NEEDED or reason in (
+            'editorial_budget_exhausted', 'editorial_source_budget_exhausted',
+            'editorial_media_budget_exhausted', 'editorial_candidates_exhausted') else 'held'
         print(json.dumps({'state': state, 'reason': reason, 'retry_safe': False,
             'next_action': 'preserve checkpoints; remedy the recorded defect before fresh review'
             if state == 'needs_enrichment' else 'reconcile authority, runtime or checkpoint integrity',

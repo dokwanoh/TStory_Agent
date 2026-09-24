@@ -15,7 +15,8 @@ from .source_access import bind_detail_sources, collect_context
 from . import prompts
 
 
-Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review']
+Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review',
+                'discovery', 'decision', 'edit']
 MODEL: Final = 'gpt-6-astra'
 SCHEMAS: Final = Path(__file__).resolve().parents[3] / 'contracts/preparation'
 
@@ -77,7 +78,7 @@ def completion(events: str) -> StageResponse:
 
 
 def codex_provider(request: StageRequest) -> StageResponse:
-    grounded = request.stage in ('evidence', 'text_review', 'review')
+    grounded = request.stage in ('evidence', 'text_review', 'review', 'decision', 'edit')
     sources = collect_context(request.directory, request.prompt, request.source_urls) if grounded else ''
     schema = SCHEMAS / f'{request.stage}.json'
     if request.stage == 'writing':
@@ -85,7 +86,7 @@ def codex_provider(request: StageRequest) -> StageResponse:
             raise PreparationError('writing_source_catalog_required')
         schema = request.directory / 'writing.schema.json'
         write_immutable(schema, writing_schema(request.source_urls).encode())
-    online = request.stage in ('research', 'opportunity', 'media')
+    online = request.stage in ('research', 'opportunity', 'media', 'discovery')
     argv = ['codex', *(['--search'] if online else ['-c', 'web_search="disabled"']), 'exec', '--json', '--ephemeral', '--sandbox',
             'workspace-write' if request.stage == 'media' else 'read-only',
             '--model', MODEL, '--output-schema', str(schema),
@@ -104,8 +105,9 @@ def codex_provider(request: StageRequest) -> StageResponse:
             + 'supplied immutable source_snapshots. '
             + 'Collection is not approval. Judge claim support independently against actual text. '
             + 'Do not treat search snippets or paraphrases as original bodies. Preserve actual source '
-            + 'checked_at, never claim a new visit. If more evidence is needed, put exact public URLs '
-            + 'and missing questions into issues/support for the existing bounded enrichment path. '
+            + 'checked_at, never claim a new visit. If more evidence is needed, use the current output '
+            + 'schema: edit action sources with source_urls/notes, decision NONE for unsuitable evidence, '
+            + 'or legacy issues/support where that schema requires it. '
             + 'Do not invent inaccessible content.\nHost source documents:\n' + sources)
     result = subprocess.run(argv, input=prompt, text=True, capture_output=True,
                             check=False, timeout=900)
@@ -121,7 +123,7 @@ def codex_provider(request: StageRequest) -> StageResponse:
         raise PreparationError('unexpected_provider_tool')
     if (request.stage in ('selection', 'writing') or grounded) and parsed.tool_kinds:
         raise PreparationError('text_only_stage_used_tools')
-    if request.stage in ('research', 'opportunity') and 'web_search' not in parsed.tool_kinds:
+    if request.stage in ('research', 'opportunity', 'discovery') and 'web_search' not in parsed.tool_kinds:
         raise PreparationError('live_research_evidence_required')
     response = bind_detail_sources(parsed.response, sources) if request.stage == 'evidence' else parsed.response
     return StageResponse(response, parsed.session_id, parsed.tool_kinds, sources)

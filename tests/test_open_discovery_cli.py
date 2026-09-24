@@ -17,8 +17,17 @@ def unavailable(*args):
     raise PreparationError('fixed_feed_must_not_gate_discovery')
 capture.capture_sources = unavailable
 import tistory_growth_os.preparation.__main__ as entry
-from tests.preparation_fixture import FixtureProvider, NOW
-entry.codex_provider = FixtureProvider()
+from tests.preparation_fixture import NOW
+from tests.test_preparation_v2 import EditorialFixture, BODY, URL, GUIDE
+from tistory_growth_os.preparation.shared_sources import SourceDocument, SourceReader
+from tistory_growth_os.preparation.v2_prompts import POLICY_URLS
+from hashlib import sha256
+root = Path(sys.argv[sys.argv.index('--root') + 1])
+reader = SourceReader(root / '.artifacts/preparation/fixture-run/shared-sources')
+for url in (URL, GUIDE, *POLICY_URLS):
+    reader.remember(SourceDocument(url, NOW.isoformat(), 'full_text', BODY,
+        sha256(BODY.encode()).hexdigest(), sha256(b'fixture').hexdigest(), ()))
+entry.codex_provider = EditorialFixture()
 entry.utc_now = lambda: NOW
 entry.collect_live = lambda: b'<rss><channel/></rss>'
 sys.exit(entry.main())
@@ -33,5 +42,5 @@ sys.exit(entry.main())
     initial = as_object(parse_json((directory / 'input.json').read_text()), '')
     assert initial.get('source_pool_sha256') is None
     assert 'local_package_reviewed' in result.stdout
-    assert 'https://example.org/official' in (directory / 'package/article.html').read_text()
+    assert 'https://example.org/official' in next(directory.glob('edit-turn-*/package/article.html')).read_text()
     assert not (directory / 'publication-authority.json').exists()

@@ -70,7 +70,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | PREP-014 discovery-to-reader verified live; evidence freshness needs enrichment, fresh integrated public proof remains unverified | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | Fresh editorial-v2 real-model public proof not run; requires a current scoped publication grant and STOP release | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution
@@ -94,3 +94,9 @@ Follow docs/60_memory_governance.md for managed-view regeneration. No package in
 ## Decision history
 
 DECISIONS.md and the archive retain reasons and prior plans. Current owner exclusions and permission boundaries are in AGENTS.md; historical roadmap text never overrides them.
+## PREP-016 replacement execution plan (2026-09-24)
+
+1. COMPLETED: map package/publisher compatibility and capture failing editorial-v2 behavior tests.
+2. COMPLETED: fresh-run preparation uses readable-source discovery, measured selection, production and an action-based correcting editor. Legacy checkpoints remain separate.
+3. COMPLETED: repaired text, source enrichment, media recovery, bounded exhaustion, replay, exact-byte independent approval and unchanged publication authority verified through executable fixtures and CLI. Manual driver produced a four-image package and replay used zero new provider calls.
+4. COMPLETED local delivery verification:846 full tests,48 focused tests, clean source/scoped types and memory/integrity checks; current rules and personal skill synchronized. Scoped feature-branch commit/push is the delivery route, with no main/auto-merge claim. No live publication or STOP/schedule change is authorized by this redesign; real-model public proof remains the separately scoped current-register item.

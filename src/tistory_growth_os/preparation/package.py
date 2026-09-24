@@ -27,6 +27,7 @@ class PackageInput:
     checked_at: datetime
     evidence: str
     media_response: str
+    evidence_qualified_at: datetime | None = None
 
 
 def write_immutable(path: Path, body: bytes) -> None:
@@ -72,7 +73,7 @@ def assemble(directory: Path, source: PackageInput) -> str:
     manifest = {'schema_version': 'native-immediate-v2', 'body_algorithm': BODY_ALGORITHM,
         'title': source.draft.title, 'operation_id': source.run_id,
         'event_at': source.candidate.event_at.isoformat(), 'selected_at': source.selected_at.isoformat(),
-        'evidence_checked_at': checked.isoformat(),
+        'evidence_checked_at': (source.evidence_qualified_at or checked).isoformat(),
         'valid_until': (checked + timedelta(hours=24)).isoformat(),
         'category': source.draft.category, 'home_topic': source.draft.home_topic, 'tags': source.draft.tags,
         'representative': 'image-1', 'media': [{'asset_id': f'image-{index}', 'file': f'media/{index:02}.jpg',
