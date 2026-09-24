@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-017 simple topic selection (2026-09-24)
+
+1. Completed: failure-first tests protect the simple package path, old uncertain holds, immutable versions and zero-call replay.
+2. Completed: new CLI inputs use simple selection and optional metrics; original evidence/freshness/rights and independent decision remain intact.
+3. Completed verification: tests/browser_tests851 passed, types/LSP/compile/no-excuse/memory checks passed; CLI fixture produced a4436-character package without opportunity. Current rules synchronized for scoped feature-branch delivery. No live publication or STOP release; real-model public proof remains unverified.
+
 ## PREP-016 live proof (2026-09-24)
 
 1. Completed: dedicated profile normal saved-account login reached manager (85 posts); official policy preflight, one-run grant and bounded STOP restoration wrapper checked.
@@ -76,7 +82,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| fresh-integrated-proof | BLOCKED | PREP-016 actual run timed out in candidate3 opportunity before writing; preserve uncertain receipt and repair bounded execution | `STATUS.md` |
+| fresh-integrated-proof | BLOCKED | PREP-017 simple selection implemented locally; fresh real-model public proof remains unverified, old uncertain attempt preserved | `STATUS.md` |
 <!-- work:end -->
 
 ## Acceptance and execution

@@ -9,6 +9,7 @@ import sys
 from ..artifacts.layout import ArtifactWriteError, safe_output_root
 from ..contracts.json_decode import JsonDecodeError
 from ..research.__main__ import collect_live
+from ..research.intake import IntakeError
 from .contracts import PreparationError
 from .package import write_immutable
 from .provider import codex_provider
@@ -39,8 +40,8 @@ def main() -> int:
         directory = safe_output_root(root, '.artifacts/preparation/' + args.run_id)
         if not args.execute:
             print(json.dumps({'state': 'dry_run', 'run_id': args.run_id,
-                'workflow_version': 'editorial-v2',
-                'stages': ['discovery', 'originals', 'opportunity', 'decision', 'writing', 'media', 'edit', 'technical'],
+                'workflow_version': 'editorial-simple-v1',
+                'stages': ['discovery', 'originals', 'decision', 'writing', 'media', 'edit', 'technical'],
                 'model_calls': 0, 'external_write_count': 0, 'publication_authorized': False}))
             return 0
         run = PreparationRun(root, directory, args.run_id, utc_now)
@@ -53,10 +54,15 @@ def main() -> int:
                 raise PreparationError('run_locked') from None
             initial = directory / 'input.json'
             if not initial.exists():
-                feed = collect_live()
+                try:
+                    feed = collect_live()
+                    signals = feed.decode('utf-8')
+                except (IntakeError, OSError, subprocess.TimeoutExpired, UnicodeError):
+                    feed = b''
+                    signals = 'Trend metrics unavailable (UNKNOWN); use readable original sources, not invented metrics.'
                 write_immutable(directory / 'signals.rss', feed)
-                write_immutable(initial, json.dumps({'workflow_version': 'editorial-v2', 'run_id': args.run_id,
-                    'cutoff': utc_now().isoformat(), 'signals': feed.decode('utf-8')
+                write_immutable(initial, json.dumps({'workflow_version': 'editorial-simple-v1', 'run_id': args.run_id,
+                    'cutoff': utc_now().isoformat(), 'signals': signals
                     + '\nPrior UNVERIFIED research leads (not approved evidence; re-open sources and '
                     + 'requalify all facts/timestamps, ignore previous check status):\n' + prior_research_leads(root),
                     'history': history_snapshot(root)}, ensure_ascii=False).encode())

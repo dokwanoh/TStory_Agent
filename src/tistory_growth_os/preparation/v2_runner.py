@@ -21,7 +21,7 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
     fields = Fields.parse(parse_json(source), '', ('workflow_version', 'run_id', 'cutoff', 'signals', 'history'))
     if text(fields, 'run_id') != run.run_id:
         raise PreparationError('run_identity_changed')
-    if text(fields, 'workflow_version') != 'editorial-v2':
+    if text(fields, 'workflow_version') not in ('editorial-v2', 'editorial-simple-v1'):
         raise PreparationError('workflow_version_unknown')
     if any((run.directory / name).exists() for name in ('research.attempt', 'selection.attempt', 'writing.attempt')):
         raise PreparationError('workflow_version_changed')
@@ -52,7 +52,9 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
             + '\nComposition time: ' + selection.selected_at.isoformat()
             + '\nEvidence:\n' + encode_json(selection.candidate.evidence) + '\nCategories: ' + repr(CATEGORIES)
             + '\nHome topics: ' + repr(TOPICS), directory, source_urls=selection.candidate.urls))
-        sessions = frozenset(store.receipt(stage).session_id for stage in ('discovery', 'opportunity', 'decision', 'writing'))
+        sessions = frozenset(store.receipt(stage).session_id for stage in ('discovery', 'decision', 'writing'))
+        if text(fields, 'workflow_version') == 'editorial-v2':
+            sessions |= {store.receipt('opportunity').session_id}
         if (directory / 'decision-repair/decision.receipt.json').is_file():
             sessions |= {StageStore(directory / 'decision-repair', provider).receipt('decision').session_id}
         outcome = edit_package(EditorialWork(run, directory, selection, writing, text(fields, 'history'), sessions, budget), provider)

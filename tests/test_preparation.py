@@ -61,7 +61,8 @@ def test_dry_run_does_not_create_run_or_call_provider(tmp_path: Path) -> None:
     assert result.returncode == 0, result.stderr
     assert 'dry_run' in result.stdout
     assert '"originals"' in result.stdout
-    assert '"workflow_version": "editorial-v2"' in result.stdout
+    assert '"workflow_version": "editorial-simple-v1"' in result.stdout
+    assert '"opportunity"' not in result.stdout
     assert list(tmp_path.iterdir()) == []
 
 

@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-017 — simple evidence-led selection (2026-09-24)
+
+Owner approves simplifying selection after a mandatory opportunity call consumed900seconds before writing. Fresh editorial-simple-v1 inputs bypass that call: recent occurrence/new announcement, readable original and concrete reader question suffice. Available demand/growth/competition signals guide priority; absence remains UNKNOWN and does not require competitor searching. An unavailable trend feed is optional-context loss, not loss of article evidence. Retain all substantive source/rights/freshness/independent review and publisher safeguards. Reject increasing the timeout, fabricated metrics, or clearing/relabeling old uncertain runs. Immutable input hashes and old prompts preserve existing editorial-v2 replay. This implements the selected simplification, not proof that all prior latency came from web searches. Local verification only; no new external publication or schedule activation.
+
 ## PREP-016 live proof authorization (2026-09-24)
 
 Owner "실증ㄱㄱ" accepts the proposed new actual-model-to-publication proof after editorial-v2 implementation. One operation manual-20260924-prep016-live-01, bounded six-hour grant, normal native publisher and exact saved/public readback. Suspend STOP only around this command and restore on all ordinary exit paths; daily/reservations remain paused. Reject manual prose/publisher substitution, another article, retry-budget reset, new paid services or weakening checks to claim success. Actual outcome: exit2/TimeoutExpired in third-candidate opportunity before production/publication; uncertain attempt retained, STOP restored byte-for-byte. Grant is not proof of publication or permission to erase failed attempts.

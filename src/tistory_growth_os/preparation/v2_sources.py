@@ -107,9 +107,18 @@ def select_sources(store: StageStore, context: str, clock: Callable[[], datetime
     if not choices:
         return None
     research_source = '{"candidates":[' + ','.join(encode_json(item.evidence) for item in choices) + ']}'
-    ranking = ranked_choices(store, Research(choices, research_source), snapshot_context(operation_root(store.directory)))
-    prompt = (prompts.BOUNDARY + '\n' + v2_prompts.DECISION
-        + '\nCandidates:\n' + research_source + '\nOpportunity:\n' + ranking.comparison
+    initial = Fields(as_object(parse_json((store.directory / 'input.json').read_text()), ''), '', ())
+    simple = text(initial, 'workflow_version') == 'editorial-simple-v1'
+    comparison = text(initial, 'signals')
+    decision_prompt = v2_prompts.SIMPLE_DECISION
+    prior_sessions = {store.receipt('discovery').session_id}
+    if not simple:
+        comparison = ranked_choices(store, Research(choices, research_source),
+                                    snapshot_context(operation_root(store.directory))).comparison
+        decision_prompt = v2_prompts.DECISION
+        prior_sessions.add(store.receipt('opportunity').session_id)
+    prompt = (prompts.BOUNDARY + '\n' + decision_prompt
+        + '\nCandidates:\n' + research_source + '\nOpportunity:\n' + comparison
         + '\nOriginal documents:\n' + json.dumps([asdict(doc) for doc in documents], ensure_ascii=False))
     candidate: Candidate | None = None
     selected = ''
@@ -117,7 +126,7 @@ def select_sources(store: StageStore, context: str, clock: Callable[[], datetime
     for attempt in range(2):
         selected = decision_store.run(StageRequest('decision', prompt, decision_store.directory,
             source_urls=tuple(doc.url for doc in documents)))
-        if decision_store.receipt('decision').session_id in {store.receipt(stage).session_id for stage in ('discovery', 'opportunity')}:
+        if decision_store.receipt('decision').session_id in prior_sessions:
             raise PreparationError('independent_selection_session_required')
         try:
             candidate = selection_record(selected, choices, documents)
@@ -141,4 +150,4 @@ def select_sources(store: StageStore, context: str, clock: Callable[[], datetime
     if stamp.utcoffset() is None or stamp > clock() or not timedelta(0) <= stamp - candidate.event_at < timedelta(hours=24):
         raise PreparationError('selection_clock_invalid')
     return SourceSelection(candidate, tuple(doc for doc in documents if doc.url in candidate.urls), stamp,
-                           source + '\n' + ranking.comparison + '\n' + selected)
+                           source + '\n' + comparison + '\n' + selected)
