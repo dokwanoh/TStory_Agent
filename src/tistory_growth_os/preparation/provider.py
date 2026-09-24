@@ -27,7 +27,7 @@ STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'opportunity': MODEL,
     'selection': MODEL,
     'evidence': MODEL,
-    'writing': MODEL,
+    'writing': RESERVED_MODEL,
     'text_review': RESERVED_MODEL,
     'media': RESERVED_MODEL,
     'review': RESERVED_MODEL,

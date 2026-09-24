@@ -12,6 +12,10 @@ Following the verified edit expansion, owner requested the next stage and a new 
 
 Following the verified text-review expansion, owner requested the next stage and a new article. Route final `review` to `gpt-reserve`; retain Astra for discovery, evidence, decision and writing. Operation `manual-20260925-post113-reserve-review-live-01` completed as verified public post108 with one save and exact native/public readback. Assisted saved-account login was required; STOP was restored byte-for-byte. This does not authorize recurring publication, reservation restart, unattended authentication or quality-gate relaxation; earlier attempts remain immutable.
 
+## Stage model reduction: GPT-Reserved writing expansion (2026-09-25)
+
+The next staged expansion routes only `writing` to `gpt-reserve`; discovery and highest-model topic decision remain Astra, as do the existing source and policy gates. Operation `manual-20260925-post115-reserve-writing-live-01` completed as verified public post109. The first package required the existing bounded media replacement, then fresh edit/package review passed and one native save/public readback verified the result. The separate discovery-only operation `manual-20260925-post114-reserve-discovery-live-01` exhausted candidates before writing and is preserved as an immutable failure; it was not retried or reset.
+
 ## GPT-Reserved completion diagnosis (2026-09-24)
 
 An isolated, nonpublication diagnostic reproduced the failure pattern without modifying Tistory. GPT-Reserved emitted an initial structured message, inspected the image-generation skill through command execution, emitted a second structured message with an empty asset list, and never emitted `turn.completed`; the diagnostic was stopped after the incomplete stream was captured. This confirms a completion-protocol/tool-orchestration defect in the current route, not a confirmed JPEG or article-content defect. The runner correctly fails closed. The exact provider-side error payload is not retained by the current parser, so no narrower root cause is claimed.

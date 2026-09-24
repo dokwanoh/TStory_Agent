@@ -12,7 +12,7 @@ def test_stage_model_routing_uses_reserved_for_media_and_edit() -> None:
     # Then media and the low-risk correcting editor use GPT-Reserved while discovery and quality-critical stages retain Astra.
     assert model_for_stage('discovery') == 'gpt-6-astra'
     assert model_for_stage('decision') == 'gpt-6-astra'
-    assert model_for_stage('writing') == 'gpt-6-astra'
+    assert model_for_stage('writing') == 'gpt-reserve'
     assert model_for_stage('text_review') == 'gpt-reserve'
     assert model_for_stage('review') == 'gpt-reserve'
     assert model_for_stage('media') == 'gpt-reserve'

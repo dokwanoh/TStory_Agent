@@ -6,9 +6,10 @@
 2. Completed: the correcting edit stage is now also routed to GPT-Reserved; post106 provides the fresh article proof.
 3. Completed: text review is now also routed to GPT-Reserved; post107 provides the fresh article proof. Discovery, evidence, decision, writing and final review remain Astra.
 4. Completed: final `review` is now also routed to GPT-Reserved; post108 provides the fresh article proof. Discovery, evidence, decision and writing remain Astra.
-5. Completed: reserved-model completion compatibility tests and provider routing tests pass locally for media, edit, text review and final review.
-6. Completed: post110 reached GPT-Reserved media, produced four assets, passed edit/package handoff, and created a publication authority.
-7. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
+5. Completed: writing is now also routed to GPT-Reserved while discovery and topic decision remain Astra; post109 provides the fresh article proof. One bounded media replacement was completed before publication.
+6. Completed: reserved-model completion compatibility tests and provider routing tests pass locally for writing, media, edit, text review and final review.
+7. Completed: post110 reached GPT-Reserved media, produced four assets, passed edit/package handoff, and created a publication authority.
+8. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
 
 ## GPT-Reserved completion-rule repair (2026-09-24)
 
