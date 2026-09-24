@@ -375,6 +375,12 @@ The owner requested one newly produced article through the combined command to a
 Rejected manual article replacement, editing a failed review to approved, deleting attempts, repeated repair-until-pass, new operation IDs and manual publisher substitution. Broader repair/reliability remains deferred. Live same-identity resumption produced post97 with one save and verified readback; it does not establish clean first-attempt reliability. Bounded STOP release was restored; recurring operation/reservations remain paused. Evidence and tests: docs/61_combined_live_proof.md.
 # MVP-001 — bounded completion contract (owner2026-09-21)
 
+## LOGIN-001 — native Chrome target reconciliation (owner2026-09-24)
+
+Owner requests retaining the successful multi-process Chrome recovery. Before requesting credentials or repeated foreground actions, reconcile native CUA target with the dedicated runner. Normal quit of a verified unrelated manager-only instance and reacquisition resolved the observed mismatch, then native saved origell autofill and Login succeeded. Preserve unsaved work; do not force-terminate browsers, copy profiles/cookies, inspect passwords or bypass protected authentication. Reject blind photo-coordinate clicks and treating empty DOM fields as absent saved credentials. Persist the procedure in docs/68_chrome_login_recovery.md and the entry-point instruction in AGENTS.md. This is an assisted operational recovery, not unattended login implementation or permanent-session certification.
+
+## MVP-001 continuation
+
 Owner accepted the proposed finite scope: three replay scenarios, three one-repair/fail-closed scenarios, then three fresh sequential combined-command immediate-public proofs. Reuse existing tests/code; no general recovery framework or expanded auto-rework. Specific scope, identities, stop/deadline/STOP restoration and unchanged exclusions: docs/63_bounded_mvp_acceptance.md. Broader reliability/quality backlog stays deferred outside this MVP gate. This avoids an open-ended readiness project without declaring unobserved live success.
 
 ## PREP-002 — selected evidence and generated-image lineage (2026-09-21)
