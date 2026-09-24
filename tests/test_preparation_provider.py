@@ -1,6 +1,17 @@
 import json
 
-from tistory_growth_os.preparation.provider import completion
+from tistory_growth_os.preparation.provider import completion, model_for_stage
+
+
+def test_stage_model_routing_lowers_only_discovery() -> None:
+    # Given the first staged cost experiment.
+    # When model routing is resolved for each current v2 stage.
+    # Then media uses Luna while discovery and quality-critical stages retain Astra.
+    assert model_for_stage('discovery') == 'gpt-6-astra'
+    assert model_for_stage('decision') == 'gpt-6-astra'
+    assert model_for_stage('writing') == 'gpt-6-astra'
+    assert model_for_stage('media') == 'gpt-6-luna'
+    assert model_for_stage('edit') == 'gpt-6-astra'
 
 
 def test_jsonl_preserves_unicode_line_separator_in_message() -> None:

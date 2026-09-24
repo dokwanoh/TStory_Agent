@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import re
 import subprocess
+from collections.abc import Mapping
+from types import MappingProxyType
 from typing import Final, Literal, Protocol
 
 from ..contracts.json_decode import JsonDecodeError, parse_json
@@ -18,7 +20,25 @@ from . import prompts
 Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', 'text_review', 'media', 'review',
                 'discovery', 'decision', 'edit']
 MODEL: Final = 'gpt-6-astra'
+STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
+    'discovery': MODEL,
+    'research': MODEL,
+    'opportunity': MODEL,
+    'selection': MODEL,
+    'evidence': MODEL,
+    'writing': MODEL,
+    'text_review': MODEL,
+    'media': 'gpt-6-luna',
+    'review': MODEL,
+    'decision': MODEL,
+    'edit': MODEL,
+})
 SCHEMAS: Final = Path(__file__).resolve().parents[3] / 'contracts/preparation'
+
+
+def model_for_stage(stage: Stage) -> str:
+    """Return the currently approved model for one preparation stage."""
+    return STAGE_MODELS[stage]
 
 
 @dataclass(frozen=True, slots=True)
@@ -89,7 +109,7 @@ def codex_provider(request: StageRequest) -> StageResponse:
     online = request.stage in ('research', 'opportunity', 'media', 'discovery')
     argv = ['codex', *(['--search'] if online else ['-c', 'web_search="disabled"']), 'exec', '--json', '--ephemeral', '--sandbox',
             'workspace-write' if request.stage == 'media' else 'read-only',
-            '--model', MODEL, '--output-schema', str(schema),
+            '--model', model_for_stage(request.stage), '--output-schema', str(schema),
             '--output-last-message', str(request.directory / f'{request.stage}.completion.json'),
             '--cd', str(request.directory)]
     for image in request.images:

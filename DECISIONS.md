@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Stage model reduction: discovery failure, media success (2026-09-24)
+
+Owner requested one-stage-at-a-time model reduction with a new article proof for each step. Implement immutable stage routing while retaining Astra as the default. Discovery-only `gpt-6-luna` was rejected operationally: three bounded discovery calls exhausted without a qualified candidate, so no publication was attempted. Restore discovery to Astra and route only media to `gpt-6-luna`; post104 then completed with one save and exact public readback. Keep decision, writing and edit on Astra. Do not treat the Discovery failure as a permission to reset its operation or as evidence that all lower models fail; it is a bounded stage result. Official OpenAI guidance describes Luna as cost-sensitive/high-volume and Astra as the most capable model, so promotion requires unchanged publication-quality evidence. [Official OpenAI model guidance](https://developers.openai.com/api/docs/models).
+
 ## Second lowered conversation model proof and post103 (2026-09-24)
 
 Owner requested another fresh immediate-public article after post102 succeeded under the lowered conversation model. Keep internal preparation, writing, media and independent review on Astra; do not lower the quality route based on orchestration-model success alone. Operation manual-20260924-post102-followup-01 ran once, selected a fresh weather reader question, produced four fresh media, passed the existing correcting editor and saved/publicly rechecked post103 exactly once. Native saved-origell authentication was assisted; unattended login remains uncertified. STOP was restored and daily/reservations remain paused. Remote image display remains EXCLUDED_BY_OWNER. This second proof supports repeatability of the route, not internal-model replacement or schedule resumption.

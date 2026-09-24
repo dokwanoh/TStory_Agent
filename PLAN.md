@@ -1,5 +1,16 @@
 # TISTORY GROWTH OS — current plan
 
+## Post104 media-Luna experiment (2026-09-24)
+
+1. Completed: discovery restored to Astra and only media routed to Luna; schedules/reservations remain paused.
+2. Completed: fresh travel topic selected, readable evidence bound, prose/four fresh images and first correcting editor approved.
+3. Completed: native 생활정보/해외여행 input saved once and returned verified/reasons=[]/post_id=104 with exact public readback. STOP restored; assisted saved-account authentication recorded; remote image display remains EXCLUDED_BY_OWNER.
+
+## Post103 discovery-Luna experiment (2026-09-24)
+
+1. Completed: Discovery-only Luna routing executed with three bounded candidate calls.
+2. Held: candidate discovery exhausted before decision; no article, editor, save or publication occurred. Preserve receipts; no retry reset.
+
 ## Post102 follow-up single article (2026-09-24)
 
 1. Completed: one new immediate article ran under the lowered conversation model; schedules/reservations remain paused.
