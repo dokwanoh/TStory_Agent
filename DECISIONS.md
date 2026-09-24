@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-014 — provisional discovery handed to the common reader, 2026-09-24
+
+PREP-013 real research twice rejected leads on model OPEN failure before the shared reader was invoked. New research JSON marks each source access=search_lead; the parser accepts this transport-only value, rejects research full_text assertions, and retains legacy fieldless records. Discovery may return actual search-discovered URLs with honest support/timestamp observations despite failed OPEN. Final facts and announcement time still require original host-collected bodies before final selection. The existing evidence gate and bounded alternatives remain unchanged. Reject accepting snippets as final evidence, inventing dates/URLs, blanket extra retries, and resetting exhausted attempts. Changed prompt receipts remain protected by checkpoint hashes rather than being silently reinterpreted.
+
 ## PREP-013 — discovery before primary-body qualification, 2026-09-24
 
 The PREP-012 live attempt captured eight Seoul bodies but found no qualified candidate in either permitted research attempt. The CLI unnecessarily made that feed a prerequisite and bound all primary candidates to its pool. Remove only that fresh-input capture/hash requirement: existing research → opportunity → common-reader evidence → final selection already supplies the requested sequence. Keep the source adapter for legacy inputs and its tests. Reject adding a second discovery framework, resetting the exhausted live attempt, or accepting search snippets as body evidence. One CLI regression proves a fixed-feed failure no longer prevents a non-Seoul fixture from reaching the reviewed local package; existing source-reader tests retain unavailable-source and immutable-replay protections. Actual model-driven publication remains separately unverified.

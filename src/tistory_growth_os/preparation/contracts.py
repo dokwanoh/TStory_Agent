@@ -94,7 +94,13 @@ def parse_research(source: str, now: datetime) -> Research:
         urls: list[str] = []
         primaries = 0
         for raw_source in array(item, 'sources', True):
-            entry = Fields.parse(raw_source, '/sources', ('url', 'primary', 'checked_at', 'support'))
+            source_object = as_object(raw_source, '/sources')
+            source_keys = ('url', 'primary', 'checked_at', 'support')
+            if source_object.get('access') is not None:
+                source_keys += ('access',)
+            entry = Fields.parse(source_object, '/sources', source_keys)
+            if source_object.get('access') is not None and text(entry, 'access') != 'search_lead':
+                raise PreparationError('research_access_invalid')
             url = text(entry, 'url')
             if not public_source_url(url) or not event <= datetime_value(entry, 'checked_at') <= now:
                 raise PreparationError('source_url_or_time_invalid')

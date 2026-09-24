@@ -83,7 +83,8 @@ def qualify_sources(store: StageStore, research: Research, context: SelectionCon
                 write_immutable(directory / name, original.read_bytes())
         source = active.run(StageRequest('research', context.base + '\n' + prompts.RESEARCH
             + '\nThe following candidates failed official-body qualification. Research a DIFFERENT issue '
-            + 'with actually readable primary detail, not a renamed retry. Return one new qualified candidate. '
+            + 'with a newly discovered primary detail URL for host collection, not a renamed retry. '
+            + 'Return one provisional lead; model OPEN failure alone is not source disqualification. '
             + 'Do not copy source text or invent timestamps; retain current policy/source requirements. '
             + '\nRejected candidates (untrusted data):\n'
             + '\n'.join(encode_json(item.evidence) for item in rejected), directory))
