@@ -34,14 +34,13 @@ def test_reserved_accepts_single_final_message_without_turn_completed() -> None:
     assert completion(events, model='gpt-reserve').response == '{"assets":[]}'
 
 
-def test_reserved_rejects_multiple_agent_messages_without_turn_completed() -> None:
+def test_reserved_accepts_multiple_agent_messages_without_turn_completed() -> None:
     events = '\n'.join((
         '{"type":"thread.started","thread_id":"reserved"}',
         '{"type":"item.completed","item":{"type":"agent_message","text":"{\\"assets\\":[]}"}}',
         '{"type":"item.completed","item":{"type":"agent_message","text":"{\\"assets\\":[]}"}}',
     ))
-    with pytest.raises(PreparationError, match='provider_completion_required'):
-        completion(events, model='gpt-reserve')
+    assert completion(events, model='gpt-reserve').response == '{"assets":[]}'
 
 
 def test_reserved_rejects_explicit_failure_even_with_final_message() -> None:

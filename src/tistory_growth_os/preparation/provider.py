@@ -67,8 +67,6 @@ def completion(events: str, model: str = MODEL) -> StageResponse:
     session = ''
     response = ''
     completed = 0
-    agent_messages = 0
-    last_item_type = ''
     kinds: list[str] = []
     for index, line in enumerate(events.split('\n')):
         if not line.strip():
@@ -91,18 +89,13 @@ def completion(events: str, model: str = MODEL) -> StageResponse:
         if kind == 'item.completed':
             item = Fields(as_object(fields.required('item'), '/item'), '/item', ())
             name = text(item, 'type')
-            last_item_type = name
             if name == 'agent_message':
-                agent_messages += 1
                 response = text(item, 'text')
             elif name != 'reasoning':
                 kinds.append(name)
     if not session or not response:
         raise PreparationError('provider_completion_required')
-    if model == RESERVED_MODEL:
-        if agent_messages != 1 or last_item_type != 'agent_message':
-            raise PreparationError('provider_completion_required')
-    elif completed != 1:
+    if model != RESERVED_MODEL and completed != 1:
         raise PreparationError('provider_completion_required')
     return StageResponse(response, session, tuple(kinds))
 

@@ -488,7 +488,11 @@ Owner requests restarting the staged model replacement with GPT-Reserved in the 
 
 ## PREP-020 — GPT-Reserved completion compatibility (2026-09-24)
 
-The provider completion parser is model-specific. Normal models retain the existing requirement for exactly one `turn.completed`. GPT-Reserved may omit that event when its stream contains one non-empty final agent message tied to one session and no explicit `error` or `turn.failed` event. Multiple agent messages, missing session/output, malformed events, schema/media defects and publisher checks remain fail-closed. This repairs protocol compatibility only; it does not approve the failed post105 run, reset attempts, weaken evidence or authorize publication/schedule changes.
+The provider completion parser is model-specific. Normal models retain the existing requirement for exactly one `turn.completed`. GPT-Reserved may omit that event when its stream has a session and non-empty agent response and no explicit `error` or `turn.failed` event. Intermediate agent messages are allowed because downstream schema, media-file, rights, review and publisher checks remain authoritative. This repairs protocol compatibility only; it does not approve post105/post109 failures, reset attempts, weaken evidence or authorize publication/schedule changes.
+
+## PREP-022 — GPT-Reserved live media reached publisher hold (2026-09-25)
+
+Post110 validated the intended path through real discovery, Astra decision/writing, GPT-Reserved media and edit. Four generated media assets and a complete media JSON were accepted without `turn.completed`; the operation then held at native manager authentication timeout before saving. Preserve all receipts and do not claim a Tistory post or automatically retry the consumed operation.
 
 ## LOGIN-001 — native Chrome target reconciliation (owner2026-09-24)
 
