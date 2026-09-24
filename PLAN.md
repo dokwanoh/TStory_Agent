@@ -7,9 +7,10 @@
 3. Completed: text review is now also routed to GPT-Reserved; post107 provides the fresh article proof. Discovery, evidence, decision, writing and final review remain Astra.
 4. Completed: final `review` is now also routed to GPT-Reserved; post108 provides the fresh article proof. Discovery, evidence, decision and writing remain Astra.
 5. Completed: writing is now also routed to GPT-Reserved while discovery and topic decision remain Astra; post109 provides the fresh article proof. One bounded media replacement was completed before publication.
-6. Completed: reserved-model completion compatibility tests and provider routing tests pass locally for writing, media, edit, text review and final review.
-7. Completed: post110 reached GPT-Reserved media, produced four assets, passed edit/package handoff, and created a publication authority.
-8. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
+6. Completed: opportunity ranking is now also routed to GPT-Reserved while discovery and final topic decision remain Astra; post110 provides the fresh article proof.
+7. Completed: reserved-model completion compatibility tests and provider routing tests pass locally for opportunity, writing, media, edit, text review and final review.
+8. Completed: post110 reached GPT-Reserved opportunity through media/edit, passed package handoff, and verified a new public post.
+9. Completed after owner-authorized continuation: reconciled zero prior save attempts, resumed the same package with native saved-account login, and verified public post105. Earlier manager timeout remains preserved; no preparation reset. STOP restored and schedules/reservations remain paused. Exact receipt and digest are in STATUS.md.
 
 ## GPT-Reserved completion-rule repair (2026-09-24)
 

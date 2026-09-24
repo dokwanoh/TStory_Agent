@@ -24,7 +24,7 @@ RESERVED_MODEL: Final = 'gpt-reserve'
 STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'discovery': MODEL,
     'research': MODEL,
-    'opportunity': MODEL,
+    'opportunity': RESERVED_MODEL,
     'selection': MODEL,
     'evidence': MODEL,
     'writing': RESERVED_MODEL,
