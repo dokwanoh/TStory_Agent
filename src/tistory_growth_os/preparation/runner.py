@@ -202,7 +202,9 @@ def execute(run: PreparationRun, provider: Provider) -> Path:
             write_immutable(repair_clock, run.clock().isoformat().encode())
         repaired_subject = text_subject(revised, candidate, datetime.fromisoformat(repair_clock.read_text()))
         prior_sessions.add(repair.receipt('writing').session_id)
-        repaired_text_review = review_text(repair, repaired_subject, prior_sessions)
+        from .review_reuse import ReviewContext
+        repaired_text_review = review_text(repair, repaired_subject,
+            ReviewContext(frozenset(prior_sessions), prepared.subject.payload, text_review))
         for image in images:
             write_immutable(output_directory / 'media' / image.name, image.read_bytes())
         if candidate.evidence.get('source_snapshots') is not None:

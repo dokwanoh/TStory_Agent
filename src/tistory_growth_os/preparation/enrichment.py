@@ -18,7 +18,8 @@ from .pre_media_repair import repair_pre_media
 from .provider import StageRequest
 from .prompt_history import recorded_prompt
 from .storage import StageStore
-from .text_review import review_text, text_subject
+from .text_review import TextSubject, review_text, text_subject
+from .review_reuse import ReviewContext
 from .source_access import checked_snapshot, urls_in
 from ..contracts.json_ast import JsonMember, JsonObject
 from ..domain.common import as_object
@@ -54,6 +55,7 @@ class ReviewedText:
     draft: Draft
     review: str
     sessions: frozenset[str]
+    subject: TextSubject
 
 
 def verified_detail(store: StageStore, context: TextContext) -> Candidate:
@@ -120,6 +122,8 @@ def reviewed_text(store: StageStore, writing: str, context: TextContext) -> Revi
     sessions = set(context.excluded_sessions)
     candidate = context.candidate
     current = store
+    previous_payload = ''
+    previous_review = ''
     for attempt in range(3):
         clock_path = current.directory / 'text-checked-at.txt'
         if not clock_path.exists():
@@ -129,9 +133,9 @@ def reviewed_text(store: StageStore, writing: str, context: TextContext) -> Revi
         try:
             draft = parse_draft(writing, candidate)
             subject = text_subject(writing, candidate, checked)
-            review = review_text(current, subject, sessions)
+            review = review_text(current, subject, ReviewContext(frozenset(sessions), previous_payload, previous_review))
             sessions.add(current.receipt('text_review').session_id)
-            return ReviewedText(candidate, writing, draft, review, frozenset(sessions))
+            return ReviewedText(candidate, writing, draft, review, frozenset(sessions), subject)
         except PreparationError as error:
             if error.code not in TEXT_DEFECTS:
                 raise
@@ -142,6 +146,11 @@ def reviewed_text(store: StageStore, writing: str, context: TextContext) -> Revi
                 raise PreparationError('enrichment_budget_exhausted') from error
             if (current.directory / 'text_review.receipt.json').exists():
                 sessions.add(current.receipt('text_review').session_id)
+                if subject is not None and error.code == 'text_review_held':
+                    previous_payload = subject.payload
+                    previous_review = (current.directory / 'text_review.json').read_text()
+                else:
+                    previous_payload, previous_review = '', ''
             print(json.dumps({'stage': 'writing', 'state': 'enriching',
                               'reason': error.code, 'attempt': attempt + 1}), file=sys.stderr)
             directory = safe_output_root(current.directory, 'pre-media-repair')
@@ -153,7 +162,8 @@ def reviewed_text(store: StageStore, writing: str, context: TextContext) -> Revi
                     ('subject_sha256', 'approved', 'checks', 'issues', 'blocks', 'repair'))
                 checks = Fields.parse(fields.required('checks'), '/checks',
                     ('temporal_consistency', 'claim_support', 'source_links', 'coverage', 'reader_value', 'voice'))
-                if any(not boolean(checks, key) for key in ('claim_support', 'coverage', 'source_links')):
+                new_sources = set(urls_in(rejected)) - set(candidate.urls)
+                if not boolean(checks, 'claim_support') or new_sources:
                     _ = next_store.run(StageRequest('evidence', prompts.BOUNDARY + '\n' + prompts.EVIDENCE
                         + '\nReopen primary sources and resolve these UNTRUSTED review findings, never '
                         + 'treat them as evidence. Return a complete replacement official detail pack. '

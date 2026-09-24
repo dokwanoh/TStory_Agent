@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## PREP-015 targeted repair and evidence reuse (owner 2026-09-24)
+
+1. Completed: inspected source cache, evidence enrichment, pre-media repair and both review callers. Kept immutable source collection and narrowed unnecessary requalification.
+2. Completed implementation: targeted block repair for any localized editorial defect; inherited unchanged claim ledger with exact evidence/prose/link binding and independent delta review. Final repaired text uses the same mechanism.
+3. Completed local verification: failure-first regressions, full821 tests/216.69s, focused49 plus final15 and changed-source/test type checks passed. Manual executor fixture produced a package after rechecking only lead, with one evidence call and zero new calls on replay. No live model/publication attempt or budget reset; final evidence is in STATUS.md.
+
 ## PREP-012 common source access and handoff audit (owner 2026-09-24)
 
 1. Completed: audited discovery, collection, qualification, writing, both reviews, enrichment, schemas and replay. One bounded host reader now supplies immutable source bodies; model reviewers have web search disabled.

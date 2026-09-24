@@ -5,6 +5,7 @@ import json
 from typing import Final
 
 from ..contracts.json_decode import JsonDecodeError, parse_json
+from ..contracts.json_ast import JsonArray
 from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, as_object, boolean, strings, text
 from .contracts import Candidate, PreparationError
@@ -12,6 +13,7 @@ from .editorial import parse_draft
 from .provider import StageRequest
 from .storage import StageStore
 from . import prompts
+from .review_reuse import ReviewContext, merge_review, reusable_blocks
 
 
 TEXT_CHECKS: Final = ('temporal_consistency', 'claim_support', 'source_links', 'coverage', 'reader_value', 'voice')
@@ -39,16 +41,22 @@ class TextSubject:
     facts: tuple[EvidenceFact, ...]
 
 
-def review_text(store: StageStore, subject: TextSubject, excluded_sessions: set[str]) -> str:
+def review_text(store: StageStore, subject: TextSubject, context: ReviewContext) -> str:
     payload = Fields(as_object(parse_json(subject.payload), ''), '', ())
     evidence = as_object(parse_json(text(payload, 'candidate_evidence')), '')
     captured = '\n' + prompts.COLLECTED_SOURCES if evidence.get('source_snapshots') is not None else ''
+    reused = reusable_blocks(context, subject.payload)
+    identities = {text(Fields(row, '', ()), 'identity') for row in reused}
+    envelope = {'subject_sha256': subject.digest, 'payload': subject.payload,
+        'review_block_ids': [block.identity for block in subject.blocks if block.identity not in identities],
+        'reused_blocks_json': encode_json(JsonArray(reused))}
     response = store.run(StageRequest('text_review', prompts.BOUNDARY + '\n' + prompts.TEXT_REVIEW
-        + captured + '\nText subject:\n' + json.dumps({'subject_sha256': subject.digest, 'payload': subject.payload}), store.directory,
+        + captured + '\nText subject:\n' + json.dumps(envelope), store.directory,
         source_urls=tuple(dict.fromkeys(url for fact in subject.facts for url in fact.source_urls))))
-    if store.receipt('text_review').session_id in excluded_sessions:
+    if store.receipt('text_review').session_id in context.excluded_sessions:
         raise PreparationError('independent_text_review_session_required')
     try:
+        response = merge_review(response, reused)
         check_text_review(response, subject)
     except JsonDecodeError as error:
         raise PreparationError('text_review_record_invalid') from error

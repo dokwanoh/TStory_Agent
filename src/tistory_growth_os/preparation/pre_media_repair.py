@@ -25,9 +25,9 @@ def repair_pre_media(store: StageStore, subject: TextSubject, candidate: Candida
     blocks = set(strings(scope, 'block_ids', False, r'[\w/-]+'))
     if text(fields, 'subject_sha256') != subject.digest:
         raise PreparationError('text_review_subject_mismatch')
-    narrow = (text(scope, 'scope') == 'temporal_source_binding'
+    narrow = (text(scope, 'scope') == 'targeted' or (text(scope, 'scope') == 'temporal_source_binding'
               and bool(failed.intersection({'temporal_consistency', 'claim_support', 'source_links'}))
-              and failed <= {'temporal_consistency', 'claim_support', 'source_links', 'voice'})
+              and failed <= {'temporal_consistency', 'claim_support', 'source_links', 'voice'}))
     if narrow and (not blocks or not blocks <= {block.identity for block in subject.blocks} - {'title'}):
         raise PreparationError('text_review_held')
     if not narrow:

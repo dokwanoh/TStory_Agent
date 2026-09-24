@@ -1,5 +1,5 @@
 {"type":"object","additionalProperties":false,"required":["subject_sha256","approved","checks","issues","blocks","repair"],"properties":{
-"repair":{"type":"object","additionalProperties":false,"required":["scope","block_ids"],"properties":{"scope":{"type":"string","enum":["none","temporal_source_binding"]},"block_ids":{"type":"array","items":{"type":"string"}}}},
+"repair":{"type":"object","additionalProperties":false,"required":["scope","block_ids"],"properties":{"scope":{"type":"string","enum":["none","temporal_source_binding","targeted"]},"block_ids":{"type":"array","items":{"type":"string"}}}},
 "subject_sha256":{"type":"string"},"approved":{"type":"boolean"},"issues":{"type":"array","items":{"type":"string"}},
 "checks":{"type":"object","additionalProperties":false,"required":["temporal_consistency","claim_support","source_links","coverage","reader_value","voice"],"properties":{"temporal_consistency":{"type":"boolean"},"claim_support":{"type":"boolean"},"source_links":{"type":"boolean"},"coverage":{"type":"boolean"},"reader_value":{"type":"boolean"},"voice":{"type":"boolean"}}},
 "blocks":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["identity","no_factual_claims","claims"],"properties":{
