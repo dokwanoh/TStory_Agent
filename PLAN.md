@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## Post99 follow-up single article (2026-09-24)
+
+1. Completed: scope one new immediate article and six-hour grant; daily/reservations remain paused.
+2. Completed: integrated discovery selected the toll-exemption reader question; original sources, independent decision, prose/four fresh images and first correcting editor completed.
+3. Completed: single command returned verified/reasons=[]/post_id=100 with one save and exact public readback. STOP restored byte-for-byte. Normal saved-origell login assisted in the publisher's own window; daily/reservations remain paused.
+
 ## Post98 follow-up single article (2026-09-24)
 
 1. Completed: owner accepts98-level checks and authorizes one new immediate article; preserve paused schedules/reservations.

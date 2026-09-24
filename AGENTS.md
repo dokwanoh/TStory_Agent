@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-24 after99 requests ONE new article through immediate publication, manual-20260924-post99-followup-01. Use the unchanged successful simple route with invocation-only STOP suspension/restoration and a six-hour grant. Preserve bounded review, original sources, four fresh media, duplicate and exact public checks; no prior-attempt reset, old-post mutation or daily/reservation restart.
+
 - Owner2026-09-24 approves ONE writing-only recovery for manual-20260924-post98-followup-01 after explicit composition-tool instructions are aligned. Preserve first failed attempt/completion/schema in a named archive; reuse discovery/decision/sources and original grant, then continue review/media/publication. No second writing retry, fabricated receipt, new identity or recurring/reservation restart.
 
 - Owner2026-09-24 after98: existing editorial/review level is sufficient; do not add new certification or repeat excluded display checks. Approve ONE new simple-route integrated immediate-public article, manual-20260924-post98-followup-01, with invocation-only STOP suspension/restoration and a six-hour grant. Preserve facts/rights, bounded correcting editor, four fresh images, duplicate and exact saved/public checks. No old-post changes or recurring/reservation resumption.

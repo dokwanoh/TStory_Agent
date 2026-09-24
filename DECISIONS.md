@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Post99 follow-up immediate article (2026-09-24)
+
+Owner requests another new article through publication in one continuous run. Allocate manual-20260924-post99-followup-01 with six-hour scoped grant and invocation-only STOP suspension/restoration. Reuse the successful simple-route implementation, not previous topic/media or consumed approval. Retain current correcting-editor limits and exact saved/public checks; add no new certification. Actual result: single command exit0, first editor review, one save and verified public100. Native saved-account login was assisted. Daily scheduling and reservations remain paused; original STOP bytes restored. Shell LSP is unavailable; bash -n passed without installing dependencies.
+
 ## Writing contract recovery and public99 (2026-09-24)
 
 Owner explicitly approved retaining the topic/originals and one writing-only retry. Preserve original failed attempt/completion/schema in failed-writing-01, retain operation/grant and reuse completed research/decision. Make text-only tool prohibition explicit in v2 composition; preserve provider enforcement and retain safe tool-class diagnostics for future rejection. Actual first tool details remain unknown; do not retroactively certify the rejected draft. The one approved retry produced no tool calls, passed first correcting editor and published99 with one save/exact public readback. Reject fabricated receipts, arbitrary repeated retries, lowered factual/rights review and schedule restart. Same-window native saved-account login was assisted; no credentials extracted. No deterministic prompt-prose unit test; diagnostic regression and actual execution cover their respective claims.
