@@ -4,6 +4,8 @@ Updated 2026-09-24. This is current state, not an execution diary. Canonical row
 
 ## Current outcome and boundary
 
+2026-09-25 staged replacement restart: the media stage now routes to GPT-Reserved instead of GPT-6 Luna. All other preparation/review stages remain on Astra. Local routing, completion compatibility and failure-closed tests pass. This is an offline configuration validation; no live provider retry, Tistory write, post mutation or schedule/reservation restart has occurred. The prior post105 failure remains immutable.
+
 GPT-Reserved completion handling is now model-specific: one non-empty agent message can be accepted without a `turn.completed` event, but only when the stream has a session and no explicit provider failure. Multiple agent messages, missing output/session, explicit `error`/`turn.failed`, schema/media defects and all publisher gates still fail closed. This is a parser compatibility repair, not a media, quality or publication waiver. The post105 failure remains immutable and no live retry or schedule change is authorized.
 
 GPT-Reserved isolated media diagnostic reproduced the completion defect without touching Tistory: event sequence was `thread.started → turn.started → agent_message(assets:[]) → command_execution(read imagegen skill) → command_execution completed → agent_message(assets:[])`, with no `turn.completed` before the diagnostic was stopped. This explains the live `provider_turn_failed`: the runner requires one completed turn and treats an incomplete/failed event stream as ineligible even when local media files or a last-message JSON exist. Exact provider-side error text is not available from the current runner because it discards `turn.failed` payload details.

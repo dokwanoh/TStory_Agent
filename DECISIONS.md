@@ -482,6 +482,10 @@ The owner requested one newly produced article through the combined command to a
 Rejected manual article replacement, editing a failed review to approved, deleting attempts, repeated repair-until-pass, new operation IDs and manual publisher substitution. Broader repair/reliability remains deferred. Live same-identity resumption produced post97 with one save and verified readback; it does not establish clean first-attempt reliability. Bounded STOP release was restored; recurring operation/reservations remain paused. Evidence and tests: docs/61_combined_live_proof.md.
 # MVP-001 — bounded completion contract (owner2026-09-21)
 
+## PREP-021 — staged GPT-Reserved media replacement (2026-09-25)
+
+Owner requests restarting the staged model replacement with GPT-Reserved in the media stage instead of GPT-6 Luna. Keep Astra for discovery, evidence, writing, review and edit; preserve the model-specific reserved completion rule and all downstream gates. This authorizes local routing validation only. A new live provider invocation, Tistory write, old-run retry, schedule or reservation restart requires its existing explicit scope.
+
 ## PREP-020 — GPT-Reserved completion compatibility (2026-09-24)
 
 The provider completion parser is model-specific. Normal models retain the existing requirement for exactly one `turn.completed`. GPT-Reserved may omit that event when its stream contains one non-empty final agent message tied to one session and no explicit `error` or `turn.failed` event. Multiple agent messages, missing session/output, malformed events, schema/media defects and publisher checks remain fail-closed. This repairs protocol compatibility only; it does not approve the failed post105 run, reset attempts, weaken evidence or authorize publication/schedule changes.

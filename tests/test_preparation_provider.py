@@ -6,14 +6,14 @@ from tistory_growth_os.preparation.contracts import PreparationError
 from tistory_growth_os.preparation.provider import completion, model_for_stage
 
 
-def test_stage_model_routing_keeps_media_on_verified_luna() -> None:
-    # Given the failed GPT-Reserved media experiment.
+def test_stage_model_routing_uses_reserved_for_media_only() -> None:
+    # Given the staged GPT-Reserved replacement request.
     # When model routing is resolved for each current v2 stage.
-    # Then media returns to verified Luna while discovery and quality-critical stages retain Astra.
+    # Then media uses GPT-Reserved while discovery and quality-critical stages retain Astra.
     assert model_for_stage('discovery') == 'gpt-6-astra'
     assert model_for_stage('decision') == 'gpt-6-astra'
     assert model_for_stage('writing') == 'gpt-6-astra'
-    assert model_for_stage('media') == 'gpt-6-luna'
+    assert model_for_stage('media') == 'gpt-reserve'
     assert model_for_stage('edit') == 'gpt-6-astra'
 
 

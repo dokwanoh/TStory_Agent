@@ -29,7 +29,7 @@ STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'evidence': MODEL,
     'writing': MODEL,
     'text_review': MODEL,
-    'media': 'gpt-6-luna',
+    'media': RESERVED_MODEL,
     'review': MODEL,
     'decision': MODEL,
     'edit': MODEL,

@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## GPT-Reserved staged replacement restart (2026-09-25)
+
+1. Completed: media routing is switched from GPT-6 Luna to GPT-Reserved only; discovery, writing, review and edit remain Astra.
+2. Completed: reserved-model completion compatibility tests and provider routing tests pass locally.
+3. Pending: a new isolated provider/media run is required to validate the real GPT-Reserved response stream; post105 remains immutable and schedules/reservations remain paused.
+
 ## GPT-Reserved completion-rule repair (2026-09-24)
 
 1. Completed: the provider parser now keeps the strict `turn.completed` requirement for every normal model.
