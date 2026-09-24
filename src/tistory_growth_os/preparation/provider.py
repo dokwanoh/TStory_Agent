@@ -122,6 +122,9 @@ def codex_provider(request: StageRequest) -> StageResponse:
     if any(kind not in allowed for kind in parsed.tool_kinds):
         raise PreparationError('unexpected_provider_tool')
     if (request.stage in ('selection', 'writing') or grounded) and parsed.tool_kinds:
+        write_immutable(request.directory / f'{request.stage}.error.json', json.dumps({
+            'stage': request.stage, 'reason': 'text_only_stage_used_tools',
+            'tool_kinds': parsed.tool_kinds}).encode())
         raise PreparationError('text_only_stage_used_tools')
     if request.stage in ('research', 'opportunity', 'discovery') and 'web_search' not in parsed.tool_kinds:
         raise PreparationError('live_research_evidence_required')

@@ -1,6 +1,8 @@
 from typing import Final
 
-WRITING: Final = '''Write ONE original Korean article from the decision's factual source pack and
+WRITING: Final = '''Text-only composition: NO tools, shell commands, file reads, browser calls or web search.
+All necessary evidence and context are supplied below. Return JSON directly; do not inspect the workspace.
+Write ONE original Korean article from the decision's factual source pack and
 captured originals only. Friendly 해요 prose, varied sentence lengths, short paragraphs and contextual
 emojis; no invented first-person experience, copied source structure or internal traffic tactics.
 Aim for 1800–3000 Korean characters, 4–6 distinct reader-question sections, 2–4 concise summary points,
