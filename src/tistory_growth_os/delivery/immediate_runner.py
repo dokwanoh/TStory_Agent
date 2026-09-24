@@ -61,7 +61,9 @@ def _execute(package: ImmediatePackage, authority: ImmediateAuthority, *, recove
                 page.set_default_timeout(5000)
                 if not resume_editor:
                     _ = page.goto('https://nedamma.tistory.com/manage/posts/', wait_until='domcontentloaded')
-                    wait_manager_ready(page)
+                    print(json.dumps({'state': 'manager_wait', 'login_recovery_seconds': 120,
+                        'operation_id': intent.operation_id}), flush=True)
+                    wait_manager_ready(page, timeout_ms=120000)
                 anonymous_browser = runtime.chromium.launch(channel='chrome', headless=True, chromium_sandbox=True)
                 try:
                     anonymous = anonymous_browser.new_context(accept_downloads=False, service_workers='block')
@@ -88,7 +90,8 @@ def _execute(package: ImmediatePackage, authority: ImmediateAuthority, *, recove
                     checkpoint(result.execution.state.value, surface.uploads)
                     print(json.dumps({'state': result.execution.state.value, 'reasons': result.execution.reasons,
                         'post_id': None if result.target is None else result.target.identity.post_id,
-                        'operation_id': package.article.intent.operation_id, 'save_attempted': surface.save_attempted}))
+                        'operation_id': package.article.intent.operation_id, 'save_attempted': surface.save_attempted,
+                        'remote_image_display': 'EXCLUDED_BY_OWNER'}))
                     return 0 if result.execution.state is ExecutionState.VERIFIED else 2
                 finally:
                     anonymous_browser.close()

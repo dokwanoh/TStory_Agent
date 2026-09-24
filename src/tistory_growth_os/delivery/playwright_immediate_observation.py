@@ -93,7 +93,9 @@ def immediate_observation(
                 ' '.join(public_body.inner_text().split()) == native_text
                 and tuple(link.get_attribute('href') for link in public_body.locator('a').all()) == native_links
                 and images.count() == 4
-                and all(image.get_attribute('src') == expected.source_url
+                and all((image.get_attribute('src') == expected.source_url
+                         or (image.get_attribute('src') == 'https://t1.daumcdn.net/tistory_admin/static/images/pc-image-censoring-v1.gif'
+                             and image.get_attribute('data-filename') == expected.filename))
                         and image.get_attribute('alt') == expected.alt
                         for image, expected in zip(images.all(), snapshot.media, strict=True)))
     return ImmediateObservation(SavedIdentity(identity, f'https://nedamma.tistory.com/{identity}'),

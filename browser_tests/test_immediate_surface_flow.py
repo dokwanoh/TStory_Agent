@@ -1,6 +1,7 @@
 from contextlib import closing
 from datetime import datetime, timedelta
 from pathlib import Path
+import re
 from urllib.parse import urlsplit
 
 import pytest
@@ -22,6 +23,8 @@ from browser_tests.test_native_surface_flow import article_fixture, manager_fixt
     ('saved_body', ExecutionState.MISMATCH),
     ('anonymous_body', ExecutionState.MISMATCH),
     ('anonymous_private', ExecutionState.MISMATCH),
+    ('platform_media_review', ExecutionState.VERIFIED),
+    ('platform_media_wrong_filename', ExecutionState.MISMATCH),
     ('saved_source', ExecutionState.UNKNOWN),
     ('stop_input', ExecutionState.BLOCKED),
     ('repair_body', ExecutionState.VERIFIED),
@@ -92,6 +95,10 @@ def test_immediate_flow_when_real_browser_reads_both_surfaces(case: str, expecte
                     body = page.frame_locator('#editor-tistory_ifr').locator('#tinymce').inner_html()
                     if case == 'anonymous_body':
                         body = body.replace('검수 본문', 'different text')
+                    if case in ('platform_media_review', 'platform_media_wrong_filename'):
+                        body = re.sub(r'src="[^"]+"', 'src="https://t1.daumcdn.net/tistory_admin/static/images/pc-image-censoring-v1.gif"', body)
+                        if case == 'platform_media_wrong_filename':
+                            body = re.sub(r'data-filename="[^"]+"', 'data-filename="wrong.jpg"', body)
                     status = 403 if case == 'anonymous_private' else 200
                     route.fulfill(status=status, content_type='text/html; charset=utf-8',
                                   body='<h1>검수 제목</h1><div class="tt_article_useless_p_margin">' + body + '</div>')

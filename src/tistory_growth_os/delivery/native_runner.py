@@ -29,8 +29,8 @@ class Arguments(argparse.Namespace):
     resume: bool = False
 
 
-def wait_manager_ready(page: Page) -> None:
-    page.get_by_role('heading', name='티스토리 관리센터 본문', exact=True).wait_for(state='attached', timeout=10000)
+def wait_manager_ready(page: Page, *, timeout_ms: int = 10000) -> None:
+    page.get_by_role('heading', name='티스토리 관리센터 본문', exact=True).wait_for(state='attached', timeout=timeout_ms)
     page.locator('#mArticle input[id^="inpCheck"]').first.wait_for(state='attached', timeout=10000)
 
 
