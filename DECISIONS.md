@@ -492,6 +492,8 @@ Owner answered 허용 to preserving the failed19:00claim and re-entering the sam
 
 The one `decision`-stage GPT-Reserved trial (`manual-20260925-post117-reserve-decision-live-01`) returned `editorial_candidates_exhausted` before writing, media, save or publication. The failed identity and receipts remain immutable; decision routing was restored to Astra. A subsequent new post118 delivery run reached the publisher but held during the bounded native manager wait, and fresh post119 preparation exhausted candidates because the captured originals did not support a current timestamp at selection. No save or public write occurred in either run. GPT-Reserved remains approved only for the previously verified opportunity, writing, text review, final review, media and edit stages; discovery and decision stay on Astra. Daily and reservation operation remain paused.
 
+Post120 then completed fresh discovery, Astra decision, Reserved writing/media/edit and package validation for the IonQ/FIU announcement, but the native publisher again held at the 120-second manager wait because the independent Chrome profile was not exposed to CUA. No save or public write occurred. The package and hold are immutable; further live publication requires owner-side foreground authentication in the independent runner.
+
 
 ## MEM-001 — current memory separated from history (accepted, 2026-09-21)
 

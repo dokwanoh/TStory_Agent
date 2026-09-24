@@ -6,6 +6,8 @@ Updated 2026-09-24. This is current state, not an execution diary. Canonical row
 
 2026-09-25 post119 fresh Reserved delivery attempt FAILED safely before writing: `manual-20260925-post119-reserve-delivery-live-01` exhausted its bounded candidates with `editorial_candidates_exhausted`. Candidate 1 had readable FIU evidence but no occurrence/announcement date in the captured original; candidate 2 used `2026-09-25 새벽` and was conservatively outside the fully-inside-00:00–12:00 window at selection time; candidate 3 used unsupported `2026-09-24 주간` precision. No media, editor, save or public publication occurred. Preserve all receipts; do not retry or reset the operation. The previously tested Reserved range remains opportunity/writing/text_review/review/media/edit; discovery and decision remain Astra.
 
+2026-09-25 post120 preparation COMPLETE, publication HELD: `manual-20260925-post120-reserve-delivery-live-01` selected the readable IonQ/FIU announcement, produced the article and four fresh media, and passed edit/package checks. It reached the native publisher but the dedicated runner's 120-second manager wait expired because CUA remained attached to an unrelated Chrome process; no save or public publication occurred. STOP was restored byte-for-byte. Preserve the package and hold; do not retry this identity or claim a post.
+
 ## Current outcome and boundary
 
 2026-09-25 staged replacement: the media stage routes to GPT-Reserved instead of GPT-6 Luna; other preparation/review stages remain on Astra. Local compatibility tests and the public post105 proof below succeeded. Earlier failed operation IDs remain immutable (the failed post105-named operation is distinct from actual public post105). Daily/reservation operation has not resumed.
