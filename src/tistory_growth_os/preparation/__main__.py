@@ -1,7 +1,6 @@
 import argparse
 import fcntl
 import json
-from hashlib import sha256
 from pathlib import Path
 import re
 import subprocess
@@ -17,7 +16,6 @@ from .runner import PreparationRun, execute, utc_now
 from .storage import history_snapshot, prior_research_leads
 from .publication import PublicationGrant
 from .enrichment import REWORK_NEEDED
-from .source_capture import capture_sources
 
 
 class Arguments(argparse.Namespace):
@@ -54,14 +52,13 @@ def main() -> int:
                 raise PreparationError('run_locked') from None
             initial = directory / 'input.json'
             if not initial.exists():
-                pool = capture_sources(directory, utc_now())
                 feed = collect_live()
                 write_immutable(directory / 'signals.rss', feed)
                 write_immutable(initial, json.dumps({'run_id': args.run_id,
                     'cutoff': utc_now().isoformat(), 'signals': feed.decode('utf-8')
                     + '\nPrior UNVERIFIED research leads (not approved evidence; re-open sources and '
                     + 'requalify all facts/timestamps, ignore previous check status):\n' + prior_research_leads(root),
-                    'history': history_snapshot(root), 'source_pool_sha256': sha256(pool.encode()).hexdigest()}, ensure_ascii=False).encode())
+                    'history': history_snapshot(root)}, ensure_ascii=False).encode())
             package = execute(run, codex_provider)
             if grant is not None:
                 return grant.publish(package)

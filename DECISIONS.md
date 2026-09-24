@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## PREP-013 — discovery before primary-body qualification, 2026-09-24
+
+The PREP-012 live attempt captured eight Seoul bodies but found no qualified candidate in either permitted research attempt. The CLI unnecessarily made that feed a prerequisite and bound all primary candidates to its pool. Remove only that fresh-input capture/hash requirement: existing research → opportunity → common-reader evidence → final selection already supplies the requested sequence. Keep the source adapter for legacy inputs and its tests. Reject adding a second discovery framework, resetting the exhausted live attempt, or accepting search snippets as body evidence. One CLI regression proves a fixed-feed failure no longer prevents a non-Seoul fixture from reaching the reviewed local package; existing source-reader tests retain unavailable-source and immutable-replay protections. Actual model-driven publication remains separately unverified.
+
 ## PREP-012 — common source access and collection/review consistency, 2026-09-24
 
 Owner requests one web-reading route and a comprehensive handoff audit. Keep search for discovery/quantitative observations; source qualification and both independent graders read original host-captured documents, not independent model web opens or unsupported paraphrases. The same public HTTPS transport serves initial official intake and additional source reading. Reject private DNS/IPs, credentials, nonstandard ports, redirects and access barriers; pin resolved public addresses without disabling TLS. Use existing installed curl/stdlib, no dependency install. The project audit now explicitly recognizes DNS lookup only in this named read-only preparation transport; domain-core networking remains forbidden and regression-protected.
