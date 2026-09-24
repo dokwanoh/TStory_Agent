@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Post100 follow-up immediate article (2026-09-24)
+
+Owner requests one further fresh article through immediate publication. Use manual-20260924-post100-followup-01 and a six-hour grant; suspend STOP only inside this invocation and restore its bytes. Reuse successful code and current editorial level, never prior content, consumed grants or failed-attempt budgets. Initial login timeout preceded editor/save: exact journal counts0 and no editor checkpoint. Same-operation continuation reused all completed preparation checkpoints and original grant, then saved public101 once and verified it. This is a reconciled pre-input recovery, not permission to replay uncertain saves. Keep daily/reservation pauses and excluded audit lanes unchanged.
+
 ## Post99 follow-up immediate article (2026-09-24)
 
 Owner requests another new article through publication in one continuous run. Allocate manual-20260924-post99-followup-01 with six-hour scoped grant and invocation-only STOP suspension/restoration. Reuse the successful simple-route implementation, not previous topic/media or consumed approval. Retain current correcting-editor limits and exact saved/public checks; add no new certification. Actual result: single command exit0, first editor review, one save and verified public100. Native saved-account login was assisted. Daily scheduling and reservations remain paused; original STOP bytes restored. Shell LSP is unavailable; bash -n passed without installing dependencies.

@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## Post100 follow-up single article (2026-09-24)
+
+1. Completed: one new immediate article scoped to a six-hour grant; schedules/reservations remain paused.
+2. Completed: candidate03 selected, prose/four new images and first correcting editor approved.
+3. Completed: initial manager/login timeout reconciled with exact journal attempt/save/receipt=0 and no editor checkpoint. Same command resumed all immutable preparation receipts; one save produced verified public101/reasons=[]. STOP restored; no stage reset, source change or recurring/reservation restart.
+
 ## Post99 follow-up single article (2026-09-24)
 
 1. Completed: scope one new immediate article and six-hour grant; daily/reservations remain paused.
