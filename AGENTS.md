@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-24 approves ONE writing-only recovery for manual-20260924-post98-followup-01 after explicit composition-tool instructions are aligned. Preserve first failed attempt/completion/schema in a named archive; reuse discovery/decision/sources and original grant, then continue review/media/publication. No second writing retry, fabricated receipt, new identity or recurring/reservation restart.
+
 - Owner2026-09-24 after98: existing editorial/review level is sufficient; do not add new certification or repeat excluded display checks. Approve ONE new simple-route integrated immediate-public article, manual-20260924-post98-followup-01, with invocation-only STOP suspension/restoration and a six-hour grant. Preserve facts/rights, bounded correcting editor, four fresh images, duplicate and exact saved/public checks. No old-post changes or recurring/reservation resumption.
 
 - PREP-019 source handoff: validate captured source AST values directly; never NFC-reserialize a source body before comparing its original digest. Preserve exact source bytes/digests and reject genuine changes. This fixes a false integrity failure, not permission to waive evidence checks or reset run attempts.

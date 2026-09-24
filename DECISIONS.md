@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Writing contract recovery and public99 (2026-09-24)
+
+Owner explicitly approved retaining the topic/originals and one writing-only retry. Preserve original failed attempt/completion/schema in failed-writing-01, retain operation/grant and reuse completed research/decision. Make text-only tool prohibition explicit in v2 composition; preserve provider enforcement and retain safe tool-class diagnostics for future rejection. Actual first tool details remain unknown; do not retroactively certify the rejected draft. The one approved retry produced no tool calls, passed first correcting editor and published99 with one save/exact public readback. Reject fabricated receipts, arbitrary repeated retries, lowered factual/rights review and schedule restart. Same-window native saved-account login was assisted; no credentials extracted. No deterministic prompt-prose unit test; diagnostic regression and actual execution cover their respective claims.
+
 ## Post98 accepted baseline and one new article (2026-09-24)
 
 Owner sees98 normally and explicitly accepts this review level, requesting another new article through public delivery in one turn. Reuse editorial-simple-v1 and the same correcting-editor/native publisher, without new audit gates or excluded display rechecks. Scope manual-20260924-post98-followup-01, six-hour grant, invocation-only STOP suspension/restoration. Preserve facts, source rights, fresh four-image production and exact single-save readback. No recurring/reservation restart, old-post mutation or reset of old failed attempts.

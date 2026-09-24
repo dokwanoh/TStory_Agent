@@ -3,8 +3,8 @@
 ## Post98 follow-up single article (2026-09-24)
 
 1. Completed: owner accepts98-level checks and authorizes one new immediate article; preserve paused schedules/reservations.
-2. Blocked: discovery/decision completed; writing produced completion JSON but provider rejected tool usage (text_only_stage_used_tools). No writing receipt or publisher call. Actual tool details were not retained; do not fabricate a receipt or reset the attempt.
-3. Completed: STOP restored, failure and draft retained. No new public identity exists; publication verification is blocked behind scoped writing recovery.
+2. Completed: owner-approved writing-only retry reused discovery/decision/sources and retained failed-writing-01. Explicit no-tools composition returned tool_kinds=[]; media and first editor review completed.
+3. Completed: native publisher saved99 once and returned verified/reasons=[]; STOP restored byte-for-byte. Sports/baseball classification retained. No recurring/reservation restart; normal saved-account login was agent-assisted.
 
 ## PREP-018 same-operation recovery (2026-09-24)
 
