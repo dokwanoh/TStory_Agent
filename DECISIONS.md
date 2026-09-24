@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Lowered conversation model proof and post102 (2026-09-24)
+
+Owner requested one fresh immediate-public article after lowering the conversation model. Keep the internal preparation, writing, media and independent review provider on the existing Astra configuration; this is a bounded orchestration/browser-assistance experiment, not a quality-gate downgrade or a cheapest-model promotion. Operation manual-20260924-post101-followup-01 ran once, selected a readable-source topic, produced four fresh media, passed the existing correcting editor and saved/publicly rechecked post102 exactly once. Native saved-origell authentication was assisted; unattended login is not certified. STOP was restored and daily/reservations remain paused. Remote image display remains EXCLUDED_BY_OWNER. The result supports continuing the unchanged production route under a lower conversation model; it does not authorize changing the internal model, relaxing checks, or resuming recurring publication.
+
 ## Post100 follow-up immediate article (2026-09-24)
 
 Owner requests one further fresh article through immediate publication. Use manual-20260924-post100-followup-01 and a six-hour grant; suspend STOP only inside this invocation and restore its bytes. Reuse successful code and current editorial level, never prior content, consumed grants or failed-attempt budgets. Initial login timeout preceded editor/save: exact journal counts0 and no editor checkpoint. Same-operation continuation reused all completed preparation checkpoints and original grant, then saved public101 once and verified it. This is a reconciled pre-input recovery, not permission to replay uncertain saves. Keep daily/reservation pauses and excluded audit lanes unchanged.

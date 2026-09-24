@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — current plan
 
+## Post101 follow-up single article (2026-09-24)
+
+1. Completed: one new immediate article ran under the lowered conversation model; schedules/reservations remain paused.
+2. Completed: candidate02 selected, readable sources bound, prose/four fresh images and first correcting editor approved; internal preparation/review remained Astra-backed.
+3. Completed: native 생활정보/공연·전시·축제 input saved once and returned verified/reasons=[]/post_id=102 with exact public readback. STOP restored; assisted saved-account authentication recorded; remote image display remains EXCLUDED_BY_OWNER.
+
 ## Post100 follow-up single article (2026-09-24)
 
 1. Completed: one new immediate article scoped to a six-hour grant; schedules/reservations remain paused.
