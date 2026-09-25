@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 requests ONE new all-Reserve immediate-public article, `manual-20260925-post114-reserve-followup-01`, as a new scoped operation after the prior hold. This operation completed post114; preserve its proof, no retry/reset or existing-post mutation, and keep daily/reservations paused.
+
 - Owner2026-09-25 all-Reserve follow-up `manual-20260925-post113-reserve-followup-01` exhausted the bounded four-turn editor budget before package promotion (`needs_enrichment`, publication_eligible=false). Preserve its candidate and media checkpoints; no save/publication occurred, no retry/reset is authorized for that identity, and STOP/daily/reservations remain paused. A later article requires a new scoped owner request.
 
 - Owner2026-09-25 after112 requests ONE further all-Reserve new immediate-public article, manual-20260925-post112-reserve-followup-01, on the unchanged successful route. Six-hour scoped grant and invocation-only STOP suspension/restoration; preserve sources, bounded correcting editor, four fresh media, duplicate and exact public checks. No old-attempt reset, existing-post mutation or daily/reservation restart.

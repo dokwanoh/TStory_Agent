@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — decisions
 
+## Third all-Reserve public proof: post114 (2026-09-25)
+
+The owner issued a new scoped request after the prior editor-budget hold. Operation `manual-20260925-post114-reserve-followup-01` used the unchanged immediate-public route with all configured LLM stages set to gpt-reserve. The topic was “신유빈·임종훈 혼합복식 8강 시간과 9월 25일 탁구 일정”; discovery, decision, writing, four fresh media and one correcting-editor pass completed without manual content or publisher substitution.
+
+Actual post114 PUBLIC VERIFIED: https://nedamma.tistory.com/114. Save receipt2026-09-25T02:27:59.040698+00:00 (11:27KST), package digest91f3f4912d7d047080898931cbbb8d589c2a0a859a656609cd244d2d11358370. Runner exit0 with verified/reasons=[]/save_attempted=true, exact saved/public readback, and remote image display EXCLUDED_BY_OWNER. STOP restored byte-for-byte to46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d; daily/reservations remain paused. Evidence: `.artifacts/post114-reserve-followup-20260925/run.log`, same-operation preparation package and native save receipt114. Completed identity is read-only; no retry follows.
+
 ## All-Reserve follow-up held before publication (2026-09-25)
 
 Operation `manual-20260925-post113-reserve-followup-01` completed Reserve discovery, decision, writing and four-image media production. The correcting editor used all four bounded turns; the final record was `ready` with exact captured KPX source spans, but the preparation runner returned `needs_enrichment`, `retry_safe=false`, `publication_eligible=false` at the editorial budget boundary. No package handoff, save, post or remote mutation occurred. STOP was restored byte-for-byte; daily/reservations remain paused. Preserve all checkpoints and do not reset or replay this identity. Evidence: `.artifacts/post113-reserve-followup-20260925/run.log` and `.artifacts/preparation/manual-20260925-post113-reserve-followup-01/edit-turn-04/`.

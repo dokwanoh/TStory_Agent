@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest verification2026-09-25: third all-Reserve integrated proof `manual-20260925-post114-reserve-followup-01` PUBLIC VERIFIED as post114, https://nedamma.tistory.com/114, at11:27KST. Discovery/decision/writing/media/edit all used gpt-reserve; four fresh images and one bounded editor pass completed. Publisher exit0/verified/reasons=[]/save_attempted=true with exact saved/public readback and no manual substitution or login intervention. Digest91f3f4912d7d047080898931cbbb8d589c2a0a859a656609cd244d2d11358370. STOP restored byte-for-byte; daily/reservations paused. Remote pixels excluded. Broader unattended reliability remains deferred.
+
 Latest verification2026-09-25: all-Reserve follow-up `manual-20260925-post113-reserve-followup-01` held safely before publication with `needs_enrichment`, `retry_safe=false`, `publication_eligible=false` after the bounded four-turn editor budget was exhausted. Final editor record was ready with exact captured-source spans; no publisher handoff, save or public post occurred. STOP restored byte-for-byte; daily/reservations paused. Preserve this failed identity; a later attempt needs a new scoped owner request.
 
 Latest verification2026-09-25: second all-Reserve integrated proof manual-20260925-post112-reserve-followup-01 PUBLIC VERIFIED as post113, https://nedamma.tistory.com/113, at10:41KST. First candidate qualified; writing/four fresh media and two bounded editor revisions followed by ready completed with all LLM stages gpt-reserve. Unchanged publisher exit0/verified/reasons=[]/save_attempted=true and exact saved/public readback; no manual substitution or login intervention. Package16a720fd5e749af944e528c7e5ed014e78246a4edbb158f33b3754edd4989b92. STOP restored byte-for-byte; daily/reservations paused. Evidence: DECISIONS.md, .artifacts/post112-reserve-followup-20260925/run.log and receipt113. Remote pixels excluded. No behavior code changed; bash syntax and memory consistency checks passed. Two successes do not certify broad unattended reliability.
@@ -156,10 +158,10 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | source-fallback | DONE | Bounded alternate-candidate qualification and different-issue research; immutable replay tests pass | `STATUS.md` |
 | current-source-intake | DONE | Eight official bodies captured and bound; actual research and quantitative opportunity stages completed | `STATUS.md` |
 | common-source-access | DONE | Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression | `STATUS.md` |
-| fresh-integrated-proof | DONE | Posts98 through113 publicly verified; posts112 and113 all-Reserve integrated preparation and independent publication without login intervention; remote display excluded, not broad unattended certification | `STATUS.md` |
+| fresh-integrated-proof | DONE | Posts98 through114 publicly verified; posts112 through114 all-Reserve integrated preparation and independent publication without login intervention; remote display excluded, not broad unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
-| low-cost-model | DEFERRED | All-Reserve public proofs112 and113 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
+| low-cost-model | DEFERRED | All-Reserve public proofs112 through114 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
 | recurring-pilot | DEFERRED | BL-006 requires explicit resumption, live proof and agreed canary limits | `docs/49_immediate_publication_mode.md` |

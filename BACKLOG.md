@@ -4,7 +4,7 @@
 
 Derived from contracts/current-work.tsv. These items are not present blockers and do not revive paused operation or excluded checks.
 
-2026-09-25: all-Reserve preparation through immediate publication succeeded as posts112 and113 without login intervention. Broader operational reliability and unattended authentication recovery remain deferred; two successful runs do not certify them. Recurring operation and reservations remain paused.
+2026-09-25: all-Reserve preparation through immediate publication succeeded as posts112, 113 and114 without login intervention. Broader operational reliability and unattended authentication recovery remain deferred; three successful runs do not certify them. Recurring operation and reservations remain paused.
 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
@@ -13,7 +13,7 @@ Derived from contracts/current-work.tsv. These items are not present blockers an
 | pre-media-repair-proof | DEFERRED | Historical pre-media failure retained; current end-to-end proof owns completion | `docs/66_bounded_pre_media_repair.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
-| low-cost-model | DEFERRED | All-Reserve public proofs112 and113 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
+| low-cost-model | DEFERRED | All-Reserve public proofs112 through114 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
 | recurring-pilot | DEFERRED | BL-006 requires explicit resumption, live proof and agreed canary limits | `docs/49_immediate_publication_mode.md` |
