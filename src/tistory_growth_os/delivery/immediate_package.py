@@ -7,7 +7,7 @@ from ..artifacts.layout import safe_output_root
 from ..artifacts.package_review import check_review, payload_digest
 from ..artifacts.review_contract import ReviewCheck, ReviewCode, ReviewDigest, ReviewSubject
 from ..contracts.json_decode import parse_json, parse_json_file
-from ..domain.common import Fields, array, datetime_value, identifier, literal, strings, text
+from ..domain.common import Fields, array, as_object, datetime_value, identifier, literal, strings, text
 from ..domain.ids import MediaId
 from ..domain.publishing_errors import PublishingInvariantError
 from .editor_body_fingerprint import BODY_ALGORITHM, article_body_digest
@@ -37,12 +37,18 @@ def load_immediate_package(root: Path, folder: Path, now: datetime) -> Immediate
                 for name in ('manifest.json', 'article.html', 'evidence.md', 'quality.md')}
     if any(not body.strip() for body in payloads.values()):
         raise PublishingInvariantError('PACKAGE_EMPTY', '/artifacts', 'nonempty package artifacts required')
-    fields = Fields.parse(parse_json(payloads['manifest.json'].decode('utf-8')), '',
+    raw = parse_json(payloads['manifest.json'].decode('utf-8'))
+    version = text(Fields(as_object(raw, ''), '', ()), 'schema_version')
+    owner_supplied = version == 'native-immediate-owner-v1'
+    owner_keys = ('owner_topic_reference', 'owner_source_url') if owner_supplied else ()
+    fields = Fields.parse(raw, '',
         ('schema_version', 'body_algorithm', 'title', 'operation_id', 'valid_until', 'event_at', 'selected_at',
-         'evidence_checked_at', 'category', 'home_topic', 'tags', 'representative', 'media'))
-    version = text(fields, 'schema_version')
-    if version not in ('native-immediate-v1', 'native-immediate-v2'):
+         'evidence_checked_at', 'category', 'home_topic', 'tags', 'representative', 'media') + owner_keys)
+    if version not in ('native-immediate-v1', 'native-immediate-v2', 'native-immediate-owner-v1'):
         raise PublishingInvariantError('PACKAGE_VERSION', '/schema_version', 'supported immediate package required')
+    if owner_supplied:
+        _ = identifier(fields, 'owner_topic_reference', r'owner-[a-zA-Z0-9_-]+')
+        _ = identifier(fields, 'owner_source_url', r'https://[^\s]+')
     _ = literal(fields, 'body_algorithm', BODY_ALGORITHM)
     title = text(fields, 'title')
     expires = datetime_value(fields, 'valid_until')
@@ -50,7 +56,8 @@ def load_immediate_package(root: Path, folder: Path, now: datetime) -> Immediate
     selected = datetime_value(fields, 'selected_at')
     evidence = datetime_value(fields, 'evidence_checked_at')
     if (now.utcoffset() is None or not event <= selected <= evidence <= now < expires
-            or selected >= event + timedelta(hours=24) or expires > evidence + timedelta(hours=24)
+            or (not owner_supplied and selected >= event + timedelta(hours=24))
+            or expires > evidence + timedelta(hours=24)
             or (version == 'native-immediate-v1' and expires > event + timedelta(hours=24))):
         raise PublishingInvariantError('PACKAGE_EXPIRED', '/time', 'fresh selection, ordered timestamps and unexpired evidence required')
     uploads: list[LocalUpload] = []

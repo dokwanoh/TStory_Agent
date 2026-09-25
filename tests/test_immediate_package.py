@@ -9,6 +9,39 @@ from tistory_growth_os.contracts.json_decode import JsonDecodeError
 from tistory_growth_os.delivery.immediate_package import ImmediateAuthority, load_immediate_package
 
 
+@pytest.mark.parametrize('owner_supplied', [True, False])
+def test_old_owner_topic_exempts_age_only(tmp_path: Path, owner_supplied: bool) -> None:
+    # Given an old event with current evidence and an explicit owner-topic contract.
+    folder = immediate_package_fixture(tmp_path)
+    manifest = folder / 'manifest.json'
+    raw = manifest.read_text().replace('native-immediate-v1',
+        'native-immediate-owner-v1' if owner_supplied else 'native-immediate-v2')
+    raw = raw.replace('2030-01-01T01:00:00', '2029-12-01T01:00:00')
+    if owner_supplied:
+        raw = raw.replace('"schema_version":', '"owner_topic_reference":"owner-request-20300101",'
+            + '"owner_source_url":"https://www.youtube.com/watch?v=example", "schema_version":')
+    _ = manifest.write_text(raw)
+    now = datetime.fromisoformat('2030-01-01T15:00:00+09:00')
+    # When loading, then only owner-supplied material may pass the age criterion.
+    if not owner_supplied:
+        with pytest.raises(ValueError):
+            _ = load_immediate_package(tmp_path, folder, now)
+        return
+    loaded = load_immediate_package(tmp_path, folder, now)
+    assert loaded.review(now).code is ReviewCode.REQUIRED
+    # Expired assembly/evidence validity is never waived.
+    with pytest.raises(ValueError):
+        _ = load_immediate_package(tmp_path, folder, datetime.fromisoformat('2030-01-02T15:00:00+09:00'))
+
+
+def test_owner_version_requires_origin_fields(tmp_path: Path) -> None:
+    folder = immediate_package_fixture(tmp_path)
+    manifest = folder / 'manifest.json'
+    _ = manifest.write_text(manifest.read_text().replace('native-immediate-v1', 'native-immediate-owner-v1'))
+    with pytest.raises(JsonDecodeError):
+        _ = load_immediate_package(tmp_path, folder, datetime.fromisoformat('2030-01-01T15:00:00+09:00'))
+
+
 def immediate_package_fixture(root: Path) -> Path:
     folder = fixture_package(root)
     path = folder / 'manifest.json'
