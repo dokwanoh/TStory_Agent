@@ -12,7 +12,7 @@ Derived from contracts/current-work.tsv. These items are not present blockers an
 | three-live-proofs | DEFERRED | Historical failed quota superseded by PREP-011 single-proof scope; not a current finish gate | `docs/63_bounded_mvp_acceptance.md` |
 | pre-media-repair-proof | DEFERRED | Historical pre-media failure retained; current end-to-end proof owns completion | `docs/66_bounded_pre_media_repair.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
-| performance-learning | DEFERRED | Post-ID joins, comparable windows and separately approved production hint trial; BL-002/010 | `METRICS.md` |
+| performance-learning | DEFERRED | Direct stat-link identities, complete comparable windows and approved production hint trial; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | All-Reserve public proofs112 through114 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |

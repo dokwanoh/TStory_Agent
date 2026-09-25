@@ -8,6 +8,7 @@ from typing import Final, TypedDict
 
 from .contracts.json_decode import JsonDecodeError, parse_json
 from .learning_snapshot import Snapshot, decode_snapshot
+from .learning_catalog import CatalogMatch, decode_catalog, match_catalog
 
 MAX_BYTES: Final = 1_000_000
 
@@ -26,6 +27,7 @@ class Advisory(TypedDict):
     observed_lead_titles: list[str]
     next_action: str
     limitations: list[str]
+    catalog_match: CatalogMatch | None
 
 
 def advise(snapshot: Snapshot, digest: str) -> Advisory:
@@ -55,11 +57,13 @@ def advise(snapshot: Snapshot, digest: str) -> Advisory:
             if leads else "관측된 양수 조회 행이 없어 참고 후보를 제안하지 않습니다."
         ),
         limitations=limitations,
+        catalog_match=None,
     )
 
 
 class Arguments(argparse.Namespace):
     snapshot: Path = Path()
+    catalog: Path | None = None
 
 
 def main() -> int:
@@ -68,6 +72,7 @@ def main() -> int:
         + "Output contains private titles; keep stdout local, outside public logs/Git.",
     )
     _ = parser.add_argument("snapshot", type=Path)
+    _ = parser.add_argument("--catalog", type=Path, help="Optional trusted local publication catalogue; read only")
     args = parser.parse_args(namespace=Arguments())
     try:
         with args.snapshot.open("rb") as stream:
@@ -76,10 +81,22 @@ def main() -> int:
             print(json.dumps({"status": "unavailable", "reason": "input_too_large", "production_applied": False}))
             return 2
         snapshot = decode_snapshot(parse_json(raw))
+        result = advise(snapshot, sha256(raw).hexdigest())
+        if args.catalog is not None:
+            with args.catalog.open("rb") as stream:
+                catalog_raw = stream.read(MAX_BYTES + 1)
+            if len(catalog_raw) > MAX_BYTES:
+                print(json.dumps({"status": "unavailable", "reason": "catalog_too_large", "production_applied": False}))
+                return 2
+            posts = decode_catalog(parse_json(catalog_raw))
+            result["catalog_match"] = match_catalog(snapshot, posts, sha256(catalog_raw).hexdigest())
+            if snapshot.rows and result["catalog_match"]["matched_rows"] == len(snapshot.rows):
+                result["limitations"] = [item for item in result["limitations"] if item != "post_ids_unjoined"]
+                result["limitations"].append("post_ids_matched_by_catalog_title_and_date_only")
     except (OSError, JsonDecodeError, RecursionError):
         print(json.dumps({"status": "unavailable", "reason": "input_unavailable_or_invalid", "production_applied": False}))
         return 2
-    print(json.dumps(advise(snapshot, sha256(raw).hexdigest()), ensure_ascii=False, indent=2))
+    print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
 

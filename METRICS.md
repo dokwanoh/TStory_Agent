@@ -45,7 +45,19 @@ Valid output binds the original snapshot SHA-256 and reporting provenance, lists
 
 Verification:15 synthetic tests cover CLI happy/error paths, immutable input, duplicate/mismatched/partial/zero/tied observations and production disconnection. Actual private observation ran successfully with `descriptive_only`, `production_applied=false`, `comparison_eligible=false` and a populated research lead; raw analytics were not printed to shared logs. CLI help and missing-input surface exercised. Fresh basedpyright reports0errors/0warnings; compilation, three-file no-excuse and diff checks pass. Initial red run failed because the new command did not exist, then passed after implementation. Existing venv lacks pytest, so tests use the installed pytest with project PYTHONPATH; no installation performed.
 
-Remaining work: obtain stable post IDs and comparable observation windows, then run a separately approved optional-hint trial. No collector service, production consumer or automated learning has been enabled. The existing publisher, Chrome sessions, STOP and paused schedules/reservations were untouched.
+### Catalogue matching and period diagnostics — 2026-09-25
+
+The same command accepts `--catalog .artifacts/performance-learning/2026-09-25-publication-catalog.json`. The optional trusted catalogue uses `publication-catalog-v1` with posts containing numeric Tistory post_id, matching nedamma URL, exact title, created_date and evidence_ref. It is read with a1MB bound and its original SHA-256 travels into the output. No publisher module, database constructor, browser or network is called by this command.
+
+Each observation joins only to one catalogue entry with an exactly matching title AND creation date. Duplicate post IDs or foreign/mismatched URLs reject that catalogue; multiple matching titles/dates are ambiguous and missing matches remain null. Evidence references are caller-supplied provenance, not automatically authenticated proof. The first local catalogue was explicitly assembled from recorded successful public proofs and cross-checked against five native save receipts using `sqlite3 -readonly`; receipt timestamps were used only to corroborate KST creation dates, not asserted as exact public times.
+
+Actual observation: all5 visible rows matched the reviewed local catalogue. This is `catalog_title_date_match`, NOT direct verification of each statistics-row link, a complete historic inventory or a guarantee against unlisted same-title posts. Matched IDs must not be used for automatic article mutation. Raw observations/catalogue remain ignored private artifacts.
+
+Period diagnostics expose shared selected calendar window, per-row calendar-age days and whether creation dates are equal. Same creation day does NOT imply equal exposure hours. This current partial/truncated calendar-day source cannot yield a first-seven-day cohort, so comparison_eligible stays false even after all joins. No automatic winner ranking or fabricated normalized rate is produced. Actual CLI reported same_calendar_window=true and same_creation_day=false.
+
+Added8 synthetic CLI cases covering exact match, title/date mismatch, ambiguous entries, duplicate IDs, wrong blog/URL and missing provenance; combined advisory tests23pass. Actual private snapshot+catalogue and --help exercised. Scoped basedpyright reports0errors/0warnings, four-file no-excuse passes. JSON Biome LSP unavailable under prior declined installation; strict application decoder exercised instead. No new dependency installed.
+
+Remaining work: capture direct statistics-row identities and comparable complete post-age windows, then run a separately approved optional-hint trial. The trusted catalogue currently requires explicit assembly; no unattended collector or catalogue exporter is claimed. No production consumer or automated learning has been enabled. The existing publisher, Chrome sessions, STOP and paused schedules/reservations were untouched.
 
 ## PREP-009 topic comparison inputs
 

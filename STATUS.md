@@ -160,8 +160,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | common-source-access | DONE | Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression | `STATUS.md` |
 | fresh-integrated-proof | DONE | Posts98 through114 publicly verified; posts112 through114 all-Reserve integrated preparation and independent publication without login intervention; remote display excluded, not broad unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
-| performance-advisory | DONE | Isolated read-only snapshot CLI; private observation exercised; no production consumer | `METRICS.md` |
-| performance-learning | DEFERRED | Post-ID joins, comparable windows and separately approved production hint trial; BL-002/010 | `METRICS.md` |
+| performance-advisory | DONE | Read-only snapshot CLI with catalogue ID matching and period diagnostics; private data exercised; no production consumer | `METRICS.md` |
+| performance-learning | DEFERRED | Direct stat-link identities, complete comparable windows and approved production hint trial; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | All-Reserve public proofs112 through114 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
@@ -179,6 +179,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:end -->
 
 ## Verification ledger
+
+2026-09-25 catalogue advisory:744 local tests passed in57.33s, including23 advisory tests. Read-only SQLite receipt cross-check and actual private snapshot/catalogue CLI matched5visible rows by unique title/date. Same calendar window but unequal creation days; comparison_eligible=false and production_applied=false. Fresh scoped types0errors/0warnings and no-excuse4files pass. JSON Biome unavailable under previously declined installation. No browser test or live mutation; production/STOP/schedules unchanged. Catalogue matching is not direct stat-link verification; see METRICS.md for limits.
 
 2026-09-25 performance advisory:736 local tests passed in56.58s, including15 new synthetic advisory cases. Actual private snapshot CLI, --help and missing-input behavior exercised; output descriptive_only, comparison_eligible=false, production_applied=false. Fresh scoped basedpyright0errors/0warnings, compilation, no-excuse and diff checks passed. Existing cached LSP reports were superseded by fresh CLI type diagnostics. Browser suite intentionally not invoked: no browser/publisher code changed and the Mac is shared with another project. Production, STOP and schedules unchanged. Scope/remaining limits: METRICS.md.
 

@@ -134,7 +134,7 @@ def test_production_modules_remain_disconnected() -> None:
     source = Path("src/tistory_growth_os")
     # When
     references = [path for path in source.rglob("*.py")
-                  if path.name not in {"learning.py", "learning_snapshot.py"}
+                  if path.name not in {"learning.py", "learning_snapshot.py", "learning_catalog.py"}
                   and ("import learning" in path.read_text() or "from .learning" in path.read_text()
                        or "from tistory_growth_os.learning" in path.read_text())]
     # Then
