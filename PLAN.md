@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current plan
 
+All-Reserved trial2026-09-25: routing change and local checks complete; live manual-20260925-all-reserve-live-01 exhausted three candidates before writing. Last decision quoted policy text with changed whitespace/wording rather than exact captured bytes. No new article or publication; preserve receipts and fix quotation handoff before any separately authorized retest. No silent Astra fallback, budget reset or schedule resumption.
+
 ## GPT-Reserved staged replacement restart (2026-09-25)
 
 1. Completed: media routing is switched from GPT-6 Luna to GPT-Reserved only; discovery, writing and review remain Astra.

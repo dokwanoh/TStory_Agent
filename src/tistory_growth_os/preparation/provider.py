@@ -22,16 +22,16 @@ Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', '
 MODEL: Final = 'gpt-6-astra'
 RESERVED_MODEL: Final = 'gpt-reserve'
 STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
-    'discovery': MODEL,
-    'research': MODEL,
+    'discovery': RESERVED_MODEL,
+    'research': RESERVED_MODEL,
     'opportunity': RESERVED_MODEL,
-    'selection': MODEL,
-    'evidence': MODEL,
+    'selection': RESERVED_MODEL,
+    'evidence': RESERVED_MODEL,
     'writing': RESERVED_MODEL,
     'text_review': RESERVED_MODEL,
     'media': RESERVED_MODEL,
     'review': RESERVED_MODEL,
-    'decision': MODEL,
+    'decision': RESERVED_MODEL,
     'edit': RESERVED_MODEL,
 })
 SCHEMAS: Final = Path(__file__).resolve().parents[3] / 'contracts/preparation'

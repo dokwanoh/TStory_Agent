@@ -6,13 +6,16 @@ from tistory_growth_os.preparation.contracts import PreparationError
 from tistory_growth_os.preparation.provider import completion, model_for_stage
 
 
-def test_stage_model_routing_uses_reserved_for_media_and_edit() -> None:
-    # Given the staged GPT-Reserved replacement request.
+def test_stage_model_routing_uses_reserved_for_all_stages() -> None:
+    # Given the owner's all-Reserved trial request.
     # When model routing is resolved for each current v2 stage.
-    # Then media and the low-risk correcting editor use GPT-Reserved while discovery and quality-critical stages retain Astra.
-    assert model_for_stage('discovery') == 'gpt-6-astra'
+    # Then every model stage uses the requested model without an Astra fallback.
+    assert model_for_stage('discovery') == 'gpt-reserve'
     assert model_for_stage('opportunity') == 'gpt-reserve'
-    assert model_for_stage('decision') == 'gpt-6-astra'
+    assert model_for_stage('decision') == 'gpt-reserve'
+    assert model_for_stage('research') == 'gpt-reserve'
+    assert model_for_stage('selection') == 'gpt-reserve'
+    assert model_for_stage('evidence') == 'gpt-reserve'
     assert model_for_stage('writing') == 'gpt-reserve'
     assert model_for_stage('text_review') == 'gpt-reserve'
     assert model_for_stage('review') == 'gpt-reserve'
@@ -53,7 +56,7 @@ def test_reserved_rejects_explicit_failure_even_with_final_message() -> None:
         '{"type":"turn.failed","error":{"message":"provider stopped"}}',
     ))
     with pytest.raises(PreparationError, match='provider_turn_failed'):
-        completion(events, model='gpt-reserve')
+        _ = completion(events, model='gpt-reserve')
 
 
 def test_cli_web_search_duplicate_transport_id_is_compatible() -> None:

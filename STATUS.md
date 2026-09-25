@@ -153,7 +153,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | fresh-integrated-proof | DONE | Posts98 through111 publicly verified; post111 same-package independent publish after login recovery; executed Reserved writing/media/edit with Astra discovery/decision; remote display excluded, not unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
-| low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |
+| low-cost-model | DEFERRED | All-Reserved trial exhausted before writing; source-quote fidelity unresolved, no end-to-end certification; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
 | recurring-pilot | DEFERRED | BL-006 requires explicit resumption, live proof and agreed canary limits | `docs/49_immediate_publication_mode.md` |

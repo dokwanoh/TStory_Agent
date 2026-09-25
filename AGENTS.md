@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 requests one all-GPT-Reserved cycle, manual-20260925-all-reserve-live-01. This explicitly permits replacing highest-model topic selection for this evaluated trial, with every configured LLM stage using gpt-reserve and no silent Astra fallback. One new immediate-public article, six-hour grant and invocation-only STOP suspension/restoration; retain source/rights/quality/native/public checks, immutable prior attempts and paused daily/reservations.
+
 - Owner2026-09-24 after100 requests ONE further new immediate-public article, manual-20260924-post100-followup-01. Permit six-hour scoped grant and invocation-only STOP suspension/restoration using the unchanged successful route. Preserve current editorial/source/media/duplicate/public checks; no prior-attempt reset, existing-post mutation or recurring/reservation restart.
 
 - Owner2026-09-24 after99 requests ONE new article through immediate publication, manual-20260924-post99-followup-01. Use the unchanged successful simple route with invocation-only STOP suspension/restoration and a six-hour grant. Preserve bounded review, original sources, four fresh media, duplicate and exact public checks; no prior-attempt reset, old-post mutation or daily/reservation restart.
