@@ -1,9 +1,17 @@
 {
   "operation_id": "manual-20260926-samsung-loan-live-01",
-  "status": "blocked_before_publish",
-  "reason": "native_file_picker_not_exposed_to_controlled_chrome_window",
-  "article_body": "present_and_path_text_removed",
-  "images_uploaded": 0,
-  "publish_clicked": false,
-  "next_action": "owner_focuses_tistory_editor_window_and_selects_four_jpeg_assets_in_native_picker"
+  "status": "published_and_verified",
+  "published_at_kst": "2026-09-26T01:26:00+09:00",
+  "public_url": "https://nedamma.tistory.com/entry/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-15-%EC%82%AC%EB%82%B4%EB%8C%80%EC%B6%9C-%EC%98%81%ED%86%B5%C2%B7%EC%9A%A9%EC%9D%B8%C2%B7%EB%8F%99%ED%83%84-%EC%A7%91%EA%B0%92%EC%9D%84-%EC%A0%95%EB%A7%90-%EB%81%8C%EC%96%B4%EC%98%AC%EB%A0%B8%EC%9D%84%EA%B9%8C",
+  "title_verified": true,
+  "public_state_verified": true,
+  "category_verified": "경제",
+  "home_topic_verified": "경제",
+  "image_count_verified": 4,
+  "alt_count_verified": 4,
+  "body_readback_verified": true,
+  "source_readback_verified": true,
+  "publish_mode": "immediate_public",
+  "publish_clicked": true,
+  "previous_blocker_resolved": "native_file_picker_not_exposed_to_controlled_chrome_window"
 }
