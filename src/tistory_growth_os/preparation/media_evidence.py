@@ -7,7 +7,7 @@ import subprocess
 from tempfile import TemporaryDirectory
 
 from ..artifacts.layout import ArtifactWriteError, safe_output_root
-from ..contracts.json_decode import parse_json
+from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..domain.common import Fields, array, as_object, strings, text
 from .contracts import PreparationError
 from .package import write_immutable
@@ -133,7 +133,7 @@ def _handoff_generation_evidence(
             records.append({'file': name, 'sha256': expected})
         if {path.name for path in directory.glob('exec-*.png')} != names:
             raise failure
-    except (OSError, TypeError, ValueError, AttributeError, ArtifactWriteError) as error:
+    except (JsonDecodeError, OSError, TypeError, ValueError, AttributeError, ArtifactWriteError) as error:
         raise failure from error
     return json.dumps({'kind': 'native_generation_outputs', 'session_id': session,
                        'handoff': 'image_generation_handoff', 'outputs': records}, sort_keys=True)

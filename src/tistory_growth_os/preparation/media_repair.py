@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 from typing import Final
 
-from ..contracts.json_decode import parse_json
+from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..domain.common import Fields, boolean, strings, text
 from .contracts import CHECKS, PreparationError
 from .media_evidence import GenerationContext, bind_generated_media
@@ -38,7 +38,7 @@ def prepare_media(store: StageStore, request: StageRequest, history: str) -> Med
         try:
             handoff_fields = Fields.parse(parse_json(handoff.read_text()), '', ('session_id',))
             session = text(handoff_fields, 'session_id')
-        except (OSError, TypeError, ValueError, AttributeError) as error:
+        except (JsonDecodeError, OSError, TypeError, ValueError, AttributeError) as error:
             raise PreparationError('generation_tool_evidence_required') from error
     context = GenerationContext(codex_home, session, started, handoff_path)
     derivations = bind_generated_media(store.directory, response, context)

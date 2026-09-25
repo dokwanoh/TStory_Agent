@@ -57,6 +57,13 @@ def test_native_generation_accepts_only_real_image_generation_handoff(tmp_path: 
         _ = native_generation_evidence(tmp_path, 'wrong-session', 0, 1, handoff)
 
 
+def test_native_generation_converts_malformed_handoff_to_evidence_hold(tmp_path: Path) -> None:
+    handoff = tmp_path / 'image-generation.handoff.json'
+    _ = handoff.write_text('{"kind":"image_generation_handoff"')
+    with pytest.raises(PreparationError, match='generation_tool_evidence_required'):
+        _ = native_generation_evidence(tmp_path, SESSION, 0, 1, handoff)
+
+
 @pytest.mark.parametrize(('source_name', 'replace_final', 'reason'), [
     ('', False, ''),
     ('../outside.png', False, 'generated_source_binding_invalid'),
