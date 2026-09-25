@@ -6,5 +6,7 @@
     {"file": "03-inline.jpg", "alt": "비슷한 규모의 중형 아파트 동들이 이어진 주거지 전경", "scene": "국민평형 중심 수요를 설명하는 원거리 주거지 풍경, 숫자·간판·워터마크 없음"},
     {"file": "04-inline.jpg", "alt": "아파트 매물 안내판과 주거지 도로를 멀리서 바라본 모습", "scene": "호가와 실거래 차이를 설명하는 부동산 현장 분위기의 원거리 장면, 읽을 수 있는 가짜 문구 없음"}
   ],
-  "status": "planning_only_no_native_generation_or_upload"
+  "status": "native_generated_ready_for_editor_upload",
+  "handoff": "image-generation.handoff.json",
+  "rights": "native_generated_assets; no external source license required"
 }

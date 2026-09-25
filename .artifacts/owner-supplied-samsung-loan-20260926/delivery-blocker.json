@@ -1,0 +1,9 @@
+{
+  "operation_id": "manual-20260926-samsung-loan-live-01",
+  "status": "blocked_before_publish",
+  "reason": "native_file_picker_not_exposed_to_controlled_chrome_window",
+  "article_body": "present_and_path_text_removed",
+  "images_uploaded": 0,
+  "publish_clicked": false,
+  "next_action": "owner_focuses_tistory_editor_window_and_selects_four_jpeg_assets_in_native_picker"
+}
