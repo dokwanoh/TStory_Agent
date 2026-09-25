@@ -37,12 +37,29 @@ class EditorialWork:
     history: str
     sessions: frozenset[str]
     budget: EditBudget
+    interactive_media: bool = False
 
 
 @dataclass(frozen=True, slots=True)
 class EditOutcome:
     package: Path | None
     budget: EditBudget
+
+
+def _require_interactive_media(work: EditorialWork, directory: Path, draft: Draft) -> None:
+    if not work.interactive_media:
+        return
+    handoff = directory / 'image-generation.handoff.json'
+    if handoff.is_file():
+        return
+    pending = directory / 'interactive-media.pending.json'
+    if not pending.exists():
+        payload = {'kind': 'interactive_media_pending', 'operation_id': work.run.run_id,
+            'media_directory': directory.relative_to(work.run.root).as_posix(),
+            'scenes': [{'index': index, 'brief': scene.brief, 'alt': scene.alt}
+                for index, scene in enumerate(draft.scenes, 1)]}
+        write_immutable(pending, json.dumps(payload, ensure_ascii=False, sort_keys=True).encode())
+    raise PreparationError('interactive_media_required')
 
 
 def edit_package(work: EditorialWork, provider: Provider) -> EditOutcome:
@@ -78,6 +95,7 @@ def edit_package(work: EditorialWork, provider: Provider) -> EditOutcome:
             feedback = error.code if isinstance(error, PreparationError) else 'writing_contract_invalid'
         if draft is not None and media is None:
             try:
+                _require_interactive_media(work, media_directory, draft)
                 media_store = StageStore(media_directory, provider)
                 if not media_prompt:
                     media_prompt = (prompts.BOUNDARY + '\n' + prompts.MEDIA + '\nArticle:\n' + writing

@@ -175,6 +175,8 @@ media/01.jpg,media/02.jpg,media/03.jpg,media/04.jpg, matching the provided scene
 You may write media/ and, only when the orchestrator has actually called the native image-generation
 tool in the interactive route, read image-generation.handoff.json inside this run. Never fabricate or
 edit that handoff; it is the host's immutable proof. Never edit any other input/checkpoint/source file.
+If the handoff already exists, do not call another image tool and do not replace its originals; return
+the four recorded source_file names with metadata/alt/scene values that match the article.
 First search official source images with clear reuse rights, keep visible credit and rights URL/basis.
 Otherwise use the available BUILT-IN image generation tool, one call per distinct scene. Read imagegen
 skill as needed. Do not use paid API/CLI fallback, stock substitution, old images, programmatic drawing,

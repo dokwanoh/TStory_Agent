@@ -4,7 +4,7 @@ from pathlib import Path
 from ..artifacts.layout import safe_output_root
 from ..contracts.json_decode import parse_json
 from ..contracts.json_encode import encode_json
-from ..domain.common import Fields, datetime_value, text
+from ..domain.common import Fields, as_object, datetime_value, text
 from .contracts import PreparationError
 from .editorial import CATEGORIES, TOPICS
 from .package import write_immutable
@@ -18,7 +18,11 @@ from . import prompts, v2_prompts
 
 def execute_v2(run: PreparationRun, provider: Provider) -> Path:
     source = (run.directory / 'input.json').read_text()
-    fields = Fields.parse(parse_json(source), '', ('workflow_version', 'run_id', 'cutoff', 'signals', 'history'))
+    initial = as_object(parse_json(source), '')
+    keys = ('workflow_version', 'run_id', 'cutoff', 'signals', 'history')
+    if initial.get('media_mode') is not None:
+        keys += ('media_mode',)
+    fields = Fields.parse(initial, '', keys)
     if text(fields, 'run_id') != run.run_id:
         raise PreparationError('run_identity_changed')
     if text(fields, 'workflow_version') not in ('editorial-v2', 'editorial-simple-v1'):
@@ -62,7 +66,8 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
             sessions |= {store.receipt('opportunity').session_id}
         if (directory / 'decision-repair/decision.receipt.json').is_file():
             sessions |= {StageStore(directory / 'decision-repair', provider).receipt('decision').session_id}
-        outcome = edit_package(EditorialWork(run, directory, selection, writing, text(fields, 'history'), sessions, budget), provider)
+        outcome = edit_package(EditorialWork(run, directory, selection, writing, text(fields, 'history'), sessions, budget,
+            text(fields, 'media_mode') == 'interactive' if fields.value.get('media_mode') is not None else False), provider)
         if outcome.package is not None:
             return outcome.package
         budget = outcome.budget

@@ -88,6 +88,21 @@ def test_v2_uses_editor_not_boolean_review_and_replays(tmp_path: Path) -> None:
     assert len(list((tmp_path / 'contracts/reviews').glob('*.json'))) == 1
 
 
+def test_interactive_media_pauses_after_writing_with_scene_checkpoint(tmp_path: Path) -> None:
+    run, provider = v2_run(tmp_path), EditorialFixture()
+    initial = json.loads((run.directory / 'input.json').read_text())
+    initial['media_mode'] = 'interactive'
+    _ = (run.directory / 'input.json').write_text(json.dumps(initial))
+    with pytest.raises(PreparationError, match='interactive_media_required'):
+        _ = execute(run, provider)
+    assert provider.calls == ['discovery', 'opportunity', 'decision', 'writing']
+    pending = next(run.directory.glob('candidate-01/interactive-media.pending.json'))
+    payload = json.loads(pending.read_text())
+    assert payload['kind'] == 'interactive_media_pending'
+    assert len(payload['scenes']) == 4
+    assert not (run.directory / 'candidate-01/media.receipt.json').exists()
+
+
 def test_v2_editor_changes_title_without_writer_replay(tmp_path: Path) -> None:
     run, provider = v2_run(tmp_path), EditorialFixture(('revise',))
     package = execute(run, provider)
