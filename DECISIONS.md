@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## All-Reserve follow-up held before publication (2026-09-25)
+
+Operation `manual-20260925-post113-reserve-followup-01` completed Reserve discovery, decision, writing and four-image media production. The correcting editor used all four bounded turns; the final record was `ready` with exact captured KPX source spans, but the preparation runner returned `needs_enrichment`, `retry_safe=false`, `publication_eligible=false` at the editorial budget boundary. No package handoff, save, post or remote mutation occurred. STOP was restored byte-for-byte; daily/reservations remain paused. Preserve all checkpoints and do not reset or replay this identity. Evidence: `.artifacts/post113-reserve-followup-20260925/run.log` and `.artifacts/preparation/manual-20260925-post113-reserve-followup-01/edit-turn-04/`.
+
 ## Second all-Reserve public proof: post113 (2026-09-25)
 
 Owner requested one further new article using only Reserve as before. Operation manual-20260925-post112-reserve-followup-01 used a six-hour grant with invocation-only STOP suspension/restoration, unchanged successful integrated route and all configured LLM stages gpt-reserve. First candidate qualified; writing and four fresh images completed. Two correcting-editor revisions were followed by ready on edit-turn-03; no manual content/publisher substitution or login intervention. Image pixels were produced by the existing built-in image generation tool under Reserve orchestration, not by a text model alone.
