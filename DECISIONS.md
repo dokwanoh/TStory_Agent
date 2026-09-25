@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Hourly proof attempt held at manager wait (2026-09-25)
+
+Operation `manual-20260925-hourly-1700-reserve-01` was explicitly authorized by the owner for a one-off test of the hourly publisher. Discovery, decision, writing, media and two bounded Reserve editor turns completed. The native publisher handoff reached its 120-second manager/authentication wait and returned `TimeoutError`, `retry_safe=false`; no save/public receipt or post ID exists, and no retry was attempted. Preserve the run as an unresolved native-state hold; the active hourly automation must not claim publication until an exact saved/public readback is observed. Evidence: `.artifacts/hourly-20260925-1700/run.log`.
+
 ## Hourly publisher pinned to GPT-Reserved (2026-09-25)
 
 Per owner request, automation3 now pins every configured text/reasoning/research/topic-selection/writing/review/edit LLM stage to `gpt-reserve`. Astra, Luna, the thread default and any other model are forbidden as silent fallbacks or mixed stages. Image generation remains a separate media tool; its textual instructions and review remain Reserve-routed. The first scheduled run still requires the unchanged publication gates and must not be reported successful without exact public readback.
