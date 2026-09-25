@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — owner input register
 
+2026-09-25: owner directs all future completed project changes to be committed/pushed directly to main at https://github.com/dokwanoh/TStory_Agent. Supersedes feature-branch/PR-auto-merge delivery. Current208-commit feature history can be fast-forwarded onto origin/main (zero remote-only commits at inspection); retain old branch, exclude unrelated untracked files, never force-push or bypass protection.
+
 2026-09-25 latest standing decision: “내가 소재를 직접 제공하는건 신선도(24시간) 기준을 예외처리합니다. 루프전체에서 기억하세요.” Owner-supplied topics/links/videos are EXEMPT_BY_OWNER from issue-age24h throughout selection→writing→review→package→delivery, including GhTj2EP_pdA; do not ask again. Automatic discovery retains selection-time24h. Keep actual dates, current factual validity, rights and existing publication/STOP boundaries. This supersedes the immediately preceding video's pending freshness-exception note, not other quality/authority checks.
 
 2026-09-25 latest: owner pauses statistics/performance work and requests a new article based on https://youtu.be/GhTj2EP_pdA. Keep the existing publishing bot unchanged; use the configured gpt-reserve LLM stages. This turn prepares a local link-based manuscript, not a publication receipt. Original video metadata is dated2026-09-21, so do not label it a new24h event or silently grant a freshness exception. Daily/reservations remain paused. Browser ownership remains Chrome for this project and in-app browser for the separate diffusion project.
