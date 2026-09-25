@@ -22,6 +22,9 @@ Stage = Literal['research', 'opportunity', 'selection', 'evidence', 'writing', '
                 'discovery', 'decision', 'edit']
 MODEL: Final = 'gpt-6-astra'
 RESERVED_MODEL: Final = 'gpt-reserve'
+SKILL_BUDGET_WARNING: Final = (
+    'Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, '
+    'but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.')
 STAGE_MODELS: Final[Mapping[Stage, str]] = MappingProxyType({
     'discovery': RESERVED_MODEL,
     'research': RESERVED_MODEL,
@@ -58,6 +61,7 @@ class StageResponse:
     session_id: str
     tool_kinds: tuple[str, ...]
     sources: str = ''
+    warnings: tuple[str, ...] = ()
 
 
 class Provider(Protocol):
@@ -69,6 +73,7 @@ def completion(events: str, model: str = MODEL) -> StageResponse:
     response = ''
     completed = 0
     kinds: list[str] = []
+    warnings: list[str] = []
     for index, line in enumerate(events.split('\n')):
         if not line.strip():
             continue
@@ -90,15 +95,18 @@ def completion(events: str, model: str = MODEL) -> StageResponse:
         if kind == 'item.completed':
             item = Fields(as_object(fields.required('item'), '/item'), '/item', ())
             name = text(item, 'type')
+            if name == 'error' and text(item, 'message') == SKILL_BUDGET_WARNING:
+                warnings.append('skill_descriptions_shortened')
+                continue
             if name == 'agent_message':
                 response = text(item, 'text')
             elif name != 'reasoning':
                 kinds.append(name)
     if not session or not response:
         raise PreparationError('provider_completion_required')
-    if model != RESERVED_MODEL and completed != 1:
+    if (model != RESERVED_MODEL or warnings) and completed != 1:
         raise PreparationError('provider_completion_required')
-    return StageResponse(response, session, tuple(kinds))
+    return StageResponse(response, session, tuple(kinds), warnings=tuple(warnings))
 
 
 def require_stage_tools(request: StageRequest, parsed: StageResponse) -> None:
@@ -162,8 +170,11 @@ def codex_provider(request: StageRequest) -> StageResponse:
             _ = stream.write(json.dumps(diagnostic))
         raise PreparationError('provider_execution_failed')
     parsed = completion(result.stdout, model=model_for_stage(request.stage))
+    if parsed.warnings:
+        write_immutable(request.directory / f'{request.stage}.warnings.json', json.dumps({
+            'stage': request.stage, 'warnings': parsed.warnings}).encode())
     require_stage_tools(request, parsed)
     response = bind_detail_sources(parsed.response, sources) if request.stage == 'evidence' else parsed.response
     if spans is not None:
         response = spans.resolve(response)
-    return StageResponse(response, parsed.session_id, parsed.tool_kinds, sources)
+    return StageResponse(response, parsed.session_id, parsed.tool_kinds, sources, parsed.warnings)

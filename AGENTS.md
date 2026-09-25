@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 approves ONE diagnostic-enabled all-Reserve immediate-public retry: manual-20260925-reserve-diagnostic-live-01. Preserve previous failed run unchanged; use a new explicitly approved retry identity, six-hour grant, scoped STOP suspension/restoration and unchanged checks. No further automatic retry or recurring/reservation resumption.
+
 - Owner2026-09-25 requests a new article through immediate public verification after search-first repair: manual-20260925-reserve-search-live-01. All configured stages remain gpt-reserve; one six-hour grant and invocation-only STOP suspension/restoration. Preserve prior failed operations, bounded source/editor/media/native/public checks and daily/reservation pauses. No silent model fallback or old-attempt reset.
 
 - Owner2026-09-25 approves exact-source span selection and ONE fresh all-Reserved immediate-public proof manual-20260925-reserve-spans-live-01. Model selects source span IDs; host copies original URL/quote without rewriting. Preserve semantic review and previous exhausted attempts. Six-hour grant, invocation-only STOP suspension/restoration; no Astra fallback, recurring or reservation restart.
