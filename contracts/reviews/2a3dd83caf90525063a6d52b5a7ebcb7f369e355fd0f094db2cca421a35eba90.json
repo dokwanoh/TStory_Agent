@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "local_package_only",
+  "review_id": "review_independent_immediate_20260920_euclid",
+  "reviewer_id": "euclid_new_article_topic_review_20260920",
+  "reviewer_kind": "independent_agent",
+  "decision": "approved",
+  "subject_sha256": "2a3dd83caf90525063a6d52b5a7ebcb7f369e355fd0f094db2cca421a35eba90",
+  "reviewed_at": "2026-09-20T22:29:17+09:00",
+  "valid_until": "2026-09-21T00:00:00+09:00",
+  "evidence_valid_until": "2026-09-21T00:00:00+09:00",
+  "policy_valid_until": "2026-09-21T00:00:00+09:00"
+}

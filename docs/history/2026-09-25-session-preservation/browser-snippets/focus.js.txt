@@ -1,0 +1,3 @@
+HISTORICAL ONLY. Not an approved execution route. Never execute against a live account.
+Embedded long image payloads omitted; original retained locally.
+(()=>{const b=document.querySelector('#editor-tistory_ifr').contentDocument.querySelector('#tinymce'); b.focus(); const r=b.ownerDocument.createRange(); r.selectNodeContents(b); const s=b.ownerDocument.getSelection(); s.removeAllRanges(); s.addRange(r); return !!b})()

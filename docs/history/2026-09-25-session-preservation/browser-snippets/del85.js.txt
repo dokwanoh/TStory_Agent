@@ -1,0 +1,3 @@
+HISTORICAL ONLY. Not an approved execution route. Never execute against a live account.
+Embedded long image payloads omitted; original retained locally.
+(()=>{let li=document.querySelector('#inpCheck85')?.closest('li'); let a=li?.querySelectorAll('a.btn_post')[1]; a?.click(); return !!a})()

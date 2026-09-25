@@ -1,0 +1,3 @@
+HISTORICAL ONLY. Not an approved execution route. Never execute against a live account.
+Embedded long image payloads omitted; original retained locally.
+(()=>{document.querySelector('#mceu_0-open')?.click(); setTimeout(()=>{[...document.querySelectorAll('*')].find(x=>x.innerText==='사진'&&x.offsetParent)?.click()},300); return 'ok'})()

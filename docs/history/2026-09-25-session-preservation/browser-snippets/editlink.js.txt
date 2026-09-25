@@ -1,0 +1,3 @@
+HISTORICAL ONLY. Not an approved execution route. Never execute against a live account.
+Embedded long image payloads omitted; original retained locally.
+(()=>Array.from(document.querySelectorAll('a')).map(a=>a.href).filter(h=>h.includes('manage')||h.includes('edit')).slice(-20))()

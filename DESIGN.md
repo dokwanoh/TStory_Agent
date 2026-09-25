@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS Design System
 
+## Live article-body extension — owner2026-09-19
+
+For same-post editorial revisions, reuse the warm editorial palette below inside the article only: ink #26231f, muted #625c54, quiet #f6f2eb, border #d8d1c6, link #075f9c. Use native editor-supported HTML styles: body 17px/1.8, lead 20px/1.7, h2 24px/1.45 with 40px top and 16px bottom space, paragraphs 16px bottom. Summary has 24px padding and a 4px left rule; only one summary box per article. No fixed widths, new fonts, animation, global CSS or ad/skin changes. Prefer question-led headings, short paragraphs and selective bold. Preserve four existing media in reader-relevant positions. Layout/text checks do not restore excluded image-pixel, Lighthouse, print or narration lanes.
+
 This contract governs the self-contained, offline `article.html` review bundle.
 It is an operational editorial surface for an owner deciding whether a Korean
 article is ready to copy into Tistory. It is not a marketing page or a public

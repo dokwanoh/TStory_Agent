@@ -1,0 +1,3 @@
+HISTORICAL ONLY. Not an approved execution route. Never execute against a live account.
+Embedded long image payloads omitted; original retained locally.
+(()=>{const f=document.querySelector('#editor-tistory_ifr'); const b=f?.contentDocument?.querySelector('#tinymce'); const h=document.querySelector('#editor-tistory'); if(b&&h){h.value=b.innerHTML; ['input','change','keyup'].forEach(t=>h.dispatchEvent(new Event(t,{bubbles:true}))); b.dispatchEvent(new Event('input',{bubbles:true}));} return {len:b?.innerHTML?.length,hidden:h?.value?.length}})()

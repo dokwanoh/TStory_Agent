@@ -1,0 +1,3 @@
+HISTORICAL ONLY. Not an approved execution route. Never execute against a live account.
+Embedded long image payloads omitted; original retained locally.
+(()=>{let f=document.querySelector('#editor-tistory_ifr');return {title:document.querySelector('#post-title-inp')?.outerHTML, iframe:!!f, hidden:document.querySelector('#editor-tistory')?.outerHTML?.slice(0,500), publish:document.querySelector('#publish-layer-btn')?.outerHTML}})()
