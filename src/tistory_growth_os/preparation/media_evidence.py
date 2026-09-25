@@ -48,7 +48,10 @@ def bind_generated_media(directory: Path, response: str, context: GenerationCont
                 '-Z', '900', str(original), '--out', str(converted)], capture_output=True, check=False, timeout=30)
             if result.returncode or not converted.is_file():
                 raise PreparationError('generated_media_conversion_failed')
-            if not final.is_file() or final.read_bytes() != converted.read_bytes():
+            if not final.is_file():
+                final.parent.mkdir(parents=True, exist_ok=True)
+                write_immutable(final, converted.read_bytes())
+            elif final.read_bytes() != converted.read_bytes():
                 raise PreparationError('generated_media_derivation_mismatch')
         preserved = safe_output_root(directory, 'media/originals/' + name)
         write_immutable(preserved, original.read_bytes())
