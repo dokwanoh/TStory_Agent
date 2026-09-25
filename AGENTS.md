@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 discovery pool: collect up to five distinct supported leads per discovery response, merge same-event/same-question reports, then choose ONE topic before writing/media. Fewer supported leads are acceptable; five is exploration capacity, never a five-article quota. Existing three bounded discovery rounds and four editor turns remain unchanged; old exhausted operations are not reopened. Preserve source/freshness/rights checks and all-Reserve production models.
+
 - Owner2026-09-25 Git delivery: canonical remote is https://github.com/dokwanoh/TStory_Agent.git. Work on local main and commit/push completed scoped changes directly to origin/main; this supersedes the previous feature-branch/PR-auto-merge default. Fetch and preserve remote changes, verify relevant changes, stage only owned files. No force-push, history rewriting, protection bypass or unrelated files; stop for genuine conflicts/protected-branch rejection. Preserve existing feature branches as history.
 
 - Owner2026-09-25 “그럼 게시까지 ㄱㄱ”: ONE owner-supplied KNN video article, manual-20260925-knn-owner-link-01, immediate-public delivery authorized. Topic-age exception applies, not an event-time rewrite. Scoped invocation-only STOP suspension/restoration, expiry19:55KST, four native generated images and independent exact package review required. Preserve prior operations, daily/reservations/statistics pauses and Chrome-only ownership. This assisted owner-link package is not an all-Reserve autonomous discovery proof.

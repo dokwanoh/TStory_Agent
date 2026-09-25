@@ -51,6 +51,8 @@ def discover(source: str, now: datetime) -> tuple[Candidate, ...]:
     if len(leads) > 5:
         raise PreparationError('discovery_candidate_limit')
     result: list[Candidate] = []
+    seen_ids: set[str] = set()
+    seen_questions: set[tuple[str, str]] = set()
     for raw in leads:
         item = Fields.parse(raw, '', ('id', 'title', 'event_at', 'event_time_basis', 'reader_question', 'source_urls'))
         morning = re.fullmatch(r'(\d{4}-\d{2}-\d{2})\s+(?:오전|새벽)\s*\(한국시간\)', text(item, 'event_at'))
@@ -70,10 +72,14 @@ def discover(source: str, now: datetime) -> tuple[Candidate, ...]:
         if not timedelta(0) <= now - event < timedelta(hours=24):
             continue
         _ = text(item, 'event_time_basis'), text(item, 'reader_question')
-        result.append(Candidate(identifier(item, 'id', r'[a-z0-9_-]{3,60}'), text(item, 'title'),
-                                event, urls, item.value))
-    if len({item.candidate_id for item in result}) != len(result):
-        raise PreparationError('duplicate_candidate_identity')
+        identity = identifier(item, 'id', r'[a-z0-9_-]{3,60}')
+        question = (' '.join(text(item, 'title').split()).casefold(),
+                    ' '.join(text(item, 'reader_question').split()).casefold())
+        if identity in seen_ids or question in seen_questions:
+            continue
+        seen_ids.add(identity)
+        seen_questions.add(question)
+        result.append(Candidate(identity, text(item, 'title'), event, urls, item.value))
     return tuple(result)
 
 

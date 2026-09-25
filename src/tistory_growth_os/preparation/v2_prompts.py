@@ -21,7 +21,11 @@ No operational footer or repetitive image-example disclaimer; preserve necessary
 POLICY_URLS: Final = ('https://www.tistory.com/info/contract',
     'https://developers.google.com/search/docs/essentials/spam-policies')
 
-DISCOVERY: Final = '''Discover one promising Korean reader issue, with alternatives only when useful.
+DISCOVERY: Final = '''Collect up to FIVE distinct promising Korean reader issues for ONE final article.
+Aim for five useful leads when available; fewer supported leads are valid, never pad the list.
+Merge reports of the same event answering the same reader question into one lead with its source URLs.
+Diversify issues and sources. Do not repeat prior unsuitable leads; research different issues instead.
+The host reads originals and the decision stage chooses exactly ONE topic before writing or media.
 Invoke the web search tool BEFORE returning candidates, including an empty candidate list.
 RSS/history are leads, not a substitute for this tool call. JSON-only applies to your FINAL response,
 not to tool calls. Use observed search results for exact URLs and occurrence/announcement timing;
