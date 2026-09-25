@@ -26,7 +26,7 @@ Owner requests starting portfolio learning without degrading the currently satis
 - A later approved trial may add a bounded optional topic hint only; final topic selection still requires current readable evidence and existing editorial judgment. One switch removes the hint, restoring baseline behavior.
 - Tests must cover disabled behavior, absent/malformed/duplicate/mismatched data, valid comparable observations and independence from the publishing path. Synthetic observations are never reported as real blog performance.
 
-First unresolved dependency: whether per-article Tistory statistics or an existing search-console export is available and authorized for this lane. No actual performance baseline has been collected during this kickoff.
+Kickoff dependency resolved for read-only Tistory statistics below. Comparable post-age performance and post-ID joins remain unavailable; the first partial-day observation is not a performance baseline.
 
 ### Read-only surface proof — 2026-09-25
 
@@ -34,7 +34,18 @@ Owner subsequently authorized Tistory statistics reading. A separate Chrome task
 
 Important observed collection constraints: asynchronous loading initially displays zero values and empty rows; wait for loading completion. Header summary and detail chart may have different update cutoffs and must not be silently combined. The popular table is truncated behind 더보기; absent posts are NOT zero-view observations. Current partial-day counts across different publication ages are descriptive only, not a first-seven-day comparison. Aggregate keywords/channels cannot be attributed to a specific article without a post-level source.
 
-Next deliverable: an isolated read-only snapshot importer and advisory output using this provenance. No collector service, production consumer or automated learning has been enabled. First observation is a UI feasibility check, not an unattended collector certification.
+### Isolated snapshot advisory — implemented 2026-09-25
+
+Run locally: `PYTHONPATH=src .venv/bin/python -m tistory_growth_os.learning .artifacts/performance-learning/2026-09-25-observation.json`.
+Stdout contains private article titles; keep it local and out of public logs/Git. The command writes no files and performs no browser, network, model or publisher calls. It is not imported or called by production. No installation or configuration change was needed.
+
+The strict snapshot decoder reuses the existing JSON AST and typed boundary helpers. It rejects incomplete loading, malformed input, duplicate/ambiguous titles, negative/noninteger counts, rows exceeding the detail total, wrong source/surface and creation dates after the reporting day. Missing/invalid input returns advisory-only `unavailable` (exit2), without raw payload/path/error disclosure; it never changes production eligibility. A bounded1MB read limits input size.
+
+Valid output binds the original snapshot SHA-256 and reporting provenance, lists titles tied for highest observed views in the visible table, and offers a follow-up research action. These are descriptive leads, NOT winning topics, search demand or forecasts. Even a complete calendar day cannot establish equivalent article-age windows. Unknown detail cutoff stays null; the header cutoff is never substituted. Aggregate channels stay separate, absent rows never become zero, and title-only rows are not silently promoted to PostMetrics with invented IDs. No eligible comparison or automatic topic selection is claimed.
+
+Verification:15 synthetic tests cover CLI happy/error paths, immutable input, duplicate/mismatched/partial/zero/tied observations and production disconnection. Actual private observation ran successfully with `descriptive_only`, `production_applied=false`, `comparison_eligible=false` and a populated research lead; raw analytics were not printed to shared logs. CLI help and missing-input surface exercised. Fresh basedpyright reports0errors/0warnings; compilation, three-file no-excuse and diff checks pass. Initial red run failed because the new command did not exist, then passed after implementation. Existing venv lacks pytest, so tests use the installed pytest with project PYTHONPATH; no installation performed.
+
+Remaining work: obtain stable post IDs and comparable observation windows, then run a separately approved optional-hint trial. No collector service, production consumer or automated learning has been enabled. The existing publisher, Chrome sessions, STOP and paused schedules/reservations were untouched.
 
 ## PREP-009 topic comparison inputs
 
@@ -83,4 +94,4 @@ When Naver data is authorized, preserve `source`, `surface`, `period_start`, `pe
 
 ## OWNER_DECISION_REQUIRED
 
-Private read-only analytics availability and the public privacy boundary are unknown (`ODR-001`, `ODR-005`). Public page availability is not traffic, ranking, revenue, or reader-value evidence. Do not enable a connector, cookie, tag, or analytics collection merely to fill a metric field.
+Tistory read-only statistics availability is confirmed under the scoped owner decision above. Other analytics connections and any public use of private metrics remain unapproved (`ODR-001`, `ODR-005`). Public page availability is not traffic, ranking, revenue, or reader-value evidence. Do not enable a connector, cookie or tag merely to fill a metric field.

@@ -160,7 +160,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | common-source-access | DONE | Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression | `STATUS.md` |
 | fresh-integrated-proof | DONE | Posts98 through114 publicly verified; posts112 through114 all-Reserve integrated preparation and independent publication without login intervention; remote display excluded, not broad unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
-| performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
+| performance-advisory | DONE | Isolated read-only snapshot CLI; private observation exercised; no production consumer | `METRICS.md` |
+| performance-learning | DEFERRED | Post-ID joins, comparable windows and separately approved production hint trial; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | All-Reserve public proofs112 through114 complete; broader cost-quality reliability evaluation deferred; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
@@ -178,6 +179,8 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:end -->
 
 ## Verification ledger
+
+2026-09-25 performance advisory:736 local tests passed in56.58s, including15 new synthetic advisory cases. Actual private snapshot CLI, --help and missing-input behavior exercised; output descriptive_only, comparison_eligible=false, production_applied=false. Fresh scoped basedpyright0errors/0warnings, compilation, no-excuse and diff checks passed. Existing cached LSP reports were superseded by fresh CLI type diagnostics. Browser suite intentionally not invoked: no browser/publisher code changed and the Mac is shared with another project. Production, STOP and schedules unchanged. Scope/remaining limits: METRICS.md.
 
 PREP-007 verification (2026-09-23): full tests/browser_tests 762 passed / 217.12s. Delayed writing/review/media and next-day replay, including expanded research, pass selection-time freshness tests; stale initial selection still rejects. Seven intercepted real-Chrome scenarios cover title/body/alt/source/missing-image correction, final-preflight drift and same-editor interruption/resume. Manual driver separately exercised body/alt/missing-image/resume through one save and saved/public fixture readback; no live Tistory writes. Five resume-boundary/checkpoint tests preserve unknown-save and unowned-editor protections and verify no signed URLs in durable checkpoints. Fresh source and scoped-test type checks, compilation, memory and diff checks pass. Cached MCP LSP import warnings for newly created modules are superseded by fresh CLI diagnostics, not claimed as a clean MCP run. Personal editorial skill and delivery reference updated; optional skill validator unavailable because PyYAML is absent (no installation). STOP and daily/reservation pauses unchanged. Native body-field restoration preserves the approved representation; arbitrary per-node patching and real Tistory certification are not claimed.
 

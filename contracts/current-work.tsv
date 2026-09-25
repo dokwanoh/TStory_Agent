@@ -22,7 +22,8 @@ current-source-intake	task	DONE	Eight official bodies captured and bound; actual
 common-source-access	task	DONE	Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression	STATUS.md
 fresh-integrated-proof	task	DONE	Posts98 through114 publicly verified; posts112 through114 all-Reserve integrated preparation and independent publication without login intervention; remote display excluded, not broad unattended certification	STATUS.md
 operational-reliability	task	DEFERRED	Whole-loop failure/recovery and actionable alerts under real operating conditions	docs/59_preparation_publication_handoff.md
-performance-learning	task	DEFERRED	Authorized measured portfolio feedback and refresh; BL-002/010	METRICS.md
+performance-advisory	task	DONE	Isolated read-only snapshot CLI; private observation exercised; no production consumer	METRICS.md
+performance-learning	task	DEFERRED	Post-ID joins, comparable windows and separately approved production hint trial; BL-002/010	METRICS.md
 low-cost-model	task	DEFERRED	All-Reserve public proofs112 through114 complete; broader cost-quality reliability evaluation deferred; BL-008	DECISIONS.md
 legacy-assets	task	DEFERRED	Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001	RISKS.md
 monetization	task	DEFERRED	Owner-only monetization/disclosure decisions; no external-ad audit; BL-003	OWNER_INPUT.md
