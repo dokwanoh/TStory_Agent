@@ -28,8 +28,19 @@ class MediaMaterial:
 def prepare_media(store: StageStore, request: StageRequest, history: str) -> MediaMaterial:
     response = store.run(request)
     images = media_files(store.directory, response)
-    context = GenerationContext(Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))),
-        store.receipt('media').session_id, (store.directory / 'media.attempt').stat().st_mtime)
+    codex_home = Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex')))
+    handoff = store.directory / 'image-generation.handoff.json'
+    handoff_path = handoff if handoff.is_file() else None
+    session = store.receipt('media').session_id
+    started = (handoff.stat().st_mtime if handoff_path is not None
+               else (store.directory / 'media.attempt').stat().st_mtime)
+    if handoff_path is not None:
+        try:
+            handoff_fields = Fields.parse(parse_json(handoff.read_text()), '', ('session_id',))
+            session = text(handoff_fields, 'session_id')
+        except (OSError, TypeError, ValueError, AttributeError) as error:
+            raise PreparationError('generation_tool_evidence_required') from error
+    context = GenerationContext(codex_home, session, started, handoff_path)
     derivations = bind_generated_media(store.directory, response, context)
     write_immutable(store.directory / 'media-derivations.json', derivations.encode())
     if any(sha256(image.read_bytes()).hexdigest() in history for image in images):

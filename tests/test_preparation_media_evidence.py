@@ -37,6 +37,26 @@ def test_native_generation_rejects_symlink_and_untrusted_identity(tmp_path: Path
         _ = native_generation_evidence(tmp_path, SESSION, 0, 1)
 
 
+def test_native_generation_accepts_only_real_image_generation_handoff(tmp_path: Path) -> None:
+    folder = tmp_path / 'generated_images' / SESSION
+    folder.mkdir(parents=True)
+    image = folder / 'exec-9425f8a4-4ed8-4f5b-aeae-4f96e96cbaf1.png'
+    body = b'\x89PNG\r\n\x1a\n' + b'x' * 2000
+    _ = image.write_bytes(body)
+    handoff = tmp_path / 'image-generation.handoff.json'
+    handoff.write_text(json.dumps({'kind': 'image_generation_handoff', 'session_id': SESSION,
+        'tool_kinds': ['image_generation'], 'outputs': [{'file': image.name,
+        'sha256': sha256(body).hexdigest()}]}))
+    from tistory_growth_os.preparation.media_evidence import native_generation_evidence
+    proof = native_generation_evidence(tmp_path, SESSION, 0, 1, handoff)
+    assert 'image_generation_handoff' in proof
+    handoff.write_text(handoff.read_text().replace('image_generation', 'command_execution'))
+    with pytest.raises(PreparationError, match='generation_tool_evidence_required'):
+        _ = native_generation_evidence(tmp_path, SESSION, 0, 1, handoff)
+    with pytest.raises(PreparationError, match='generation_tool_evidence_required'):
+        _ = native_generation_evidence(tmp_path, 'wrong-session', 0, 1, handoff)
+
+
 @pytest.mark.parametrize(('source_name', 'replace_final', 'reason'), [
     ('', False, ''),
     ('../outside.png', False, 'generated_source_binding_invalid'),

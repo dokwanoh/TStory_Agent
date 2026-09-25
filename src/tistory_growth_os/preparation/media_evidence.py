@@ -8,7 +8,7 @@ from tempfile import TemporaryDirectory
 
 from ..artifacts.layout import ArtifactWriteError, safe_output_root
 from ..contracts.json_decode import parse_json
-from ..domain.common import Fields, array, as_object, text
+from ..domain.common import Fields, array, as_object, strings, text
 from .contracts import PreparationError
 from .package import write_immutable
 
@@ -18,6 +18,7 @@ class GenerationContext:
     codex_home: Path
     session: str
     started: float
+    handoff: Path | None = None
 
 
 def bind_generated_media(directory: Path, response: str, context: GenerationContext) -> str:
@@ -26,7 +27,7 @@ def bind_generated_media(directory: Path, response: str, context: GenerationCont
     generated = [asset for asset in assets if text(asset, 'origin') == 'generated']
     if not generated:
         return json.dumps({'kind': 'generated_derivations', 'bindings': []})
-    inventory = native_generation_evidence(context.codex_home, context.session, context.started, len(generated))
+    inventory = native_generation_evidence(context.codex_home, context.session, context.started, len(generated), context.handoff)
     used: set[str] = set()
     bindings: list[dict[str, str]] = []
     for asset in generated:
@@ -58,11 +59,19 @@ def bind_generated_media(directory: Path, response: str, context: GenerationCont
                        'bindings': bindings}, sort_keys=True)
 
 
-def native_generation_evidence(codex_home: Path, session: str, started: float, count: int) -> str:
+def native_generation_evidence(
+    codex_home: Path,
+    session: str,
+    started: float,
+    count: int,
+    handoff: Path | None = None,
+) -> str:
     failure = PreparationError('generation_tool_evidence_required')
     if not re.fullmatch(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}', session):
         raise failure
     try:
+        if handoff is not None:
+            return _handoff_generation_evidence(codex_home, handoff, session, started, count)
         directory = safe_output_root(codex_home, f'generated_images/{session}')
         files = sorted(directory.glob('exec-*.png'))
         if len(files) != count or count < 1:
@@ -82,3 +91,49 @@ def native_generation_evidence(codex_home: Path, session: str, started: float, c
         raise failure from error
     return json.dumps({'kind': 'native_generation_outputs', 'session_id': session,
                        'outputs': outputs}, sort_keys=True)
+
+
+def _handoff_generation_evidence(
+    codex_home: Path,
+    handoff: Path,
+    session: str,
+    _started: float,
+    count: int,
+) -> str:
+    failure = PreparationError('generation_tool_evidence_required')
+    if handoff.is_symlink() or not handoff.is_file():
+        raise failure
+    try:
+        fields = Fields.parse(parse_json(handoff.read_text()), '', ('kind', 'session_id', 'tool_kinds', 'outputs'))
+        if (text(fields, 'kind') != 'image_generation_handoff'
+                or text(fields, 'session_id') != session
+                or 'image_generation' not in strings(fields, 'tool_kinds', True, r'[a-z_]+')):
+            raise failure
+        outputs = array(fields, 'outputs', True)
+        if len(outputs) != count or count < 1:
+            raise failure
+        names: set[str] = set()
+        records: list[dict[str, str]] = []
+        directory = safe_output_root(codex_home, f'generated_images/{session}')
+        for index, output in enumerate(outputs):
+            output_fields = Fields.parse(output, f'/outputs/{index}', ('file', 'sha256'))
+            name = text(output_fields, 'file')
+            expected = text(output_fields, 'sha256')
+            if (re.fullmatch(r'exec-[0-9a-f-]{36}\.png', name) is None
+                    or name in names or re.fullmatch(r'[0-9a-f]{64}', expected) is None):
+                raise failure
+            names.add(name)
+            path = safe_output_root(directory, name)
+            if path.is_symlink() or not path.is_file() or path.stat().st_mtime > handoff.stat().st_mtime:
+                raise failure
+            body = path.read_bytes()
+            if (not 1000 <= len(body) <= 50_000_000 or not body.startswith(b'\x89PNG\r\n\x1a\n')
+                    or sha256(body).hexdigest() != expected):
+                raise failure
+            records.append({'file': name, 'sha256': expected})
+        if {path.name for path in directory.glob('exec-*.png')} != names:
+            raise failure
+    except (OSError, TypeError, ValueError, AttributeError, ArtifactWriteError) as error:
+        raise failure from error
+    return json.dumps({'kind': 'native_generation_outputs', 'session_id': session,
+                       'handoff': 'image_generation_handoff', 'outputs': records}, sort_keys=True)
