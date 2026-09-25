@@ -1,5 +1,11 @@
 # TISTORY GROWTH OS — decisions
 
+## Reserve unexpected-tool diagnostic retention (2026-09-25)
+
+Owner-requested manual-20260925-reserve-search-live-01 held at discovery with unexpected_provider_tool/retry_safe=false before writing, media, editor or save. Its completion contains an unqualified train-fare candidate, not an approved article. The old guard discarded tool-kind metadata with subprocess output, so the exact triggering tool is UNKNOWN. One isolated read-only diagnostic with the same discovery prompt/schema completed with two web_search tools and did not reproduce the failure; this is not a production retry or proof of root-cause repair. Original attempts remain immutable. STOP restored to46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d; daily/reservations paused.
+
+Repair only observability: the existing tool policy now writes an immutable stage.error.json containing stage/reason/tool_kinds before rejection. No response text, session, secrets, policy relaxation or new retry authority. Three failure-first regressions cover unknown tools, required/forbidden search and accepted search. Evidence: .artifacts/reserve-search-live-20260925/run.log and the original preparation directory. All-Reserved publication remains unverified; recording diagnostics is not publication success or a proven fix for the triggering tool.
+
 ## Reserve discovery search-first contract (2026-09-25)
 
 Owner continuation permits investigation and scoped repair, not resetting the held reserve-spans operation. Two isolated read-only calls used the existing gpt-reserve account/CLI0.155.1 with --search and read-only sandbox. The first explicit-search diagnostic emitted two web_search completions and turn.completed with nonzero usage; the existing parser recognized both. The second used the actual codex_provider, discovery schema and prior history/signals with a fresh diagnostic runtime: three web_search completions and one concert lead returned. This refutes permanent search unavailability or a general parser-shape defect. The previous run's raw events were not retained, so its exact model-internal reason remains unknown; prompt causality is not proven by a deterministic toggle.

@@ -101,6 +101,22 @@ def completion(events: str, model: str = MODEL) -> StageResponse:
     return StageResponse(response, session, tuple(kinds))
 
 
+def require_stage_tools(request: StageRequest, parsed: StageResponse) -> None:
+    allowed = {'web_search', 'image_generation', 'command_execution', 'file_change'}
+    text_only = request.stage in ('selection', 'writing', 'evidence', 'text_review', 'review', 'decision', 'edit')
+    reason = ''
+    if any(kind not in allowed for kind in parsed.tool_kinds):
+        reason = 'unexpected_provider_tool'
+    elif text_only and parsed.tool_kinds:
+        reason = 'text_only_stage_used_tools'
+    elif request.stage in ('research', 'opportunity', 'discovery') and 'web_search' not in parsed.tool_kinds:
+        reason = 'live_research_evidence_required'
+    if reason:
+        write_immutable(request.directory / f'{request.stage}.error.json', json.dumps({
+            'stage': request.stage, 'reason': reason, 'tool_kinds': parsed.tool_kinds}).encode())
+        raise PreparationError(reason)
+
+
 def codex_provider(request: StageRequest) -> StageResponse:
     grounded = request.stage in ('evidence', 'text_review', 'review', 'decision', 'edit')
     sources = collect_context(request.directory, request.prompt, request.source_urls) if grounded else ''
@@ -146,16 +162,7 @@ def codex_provider(request: StageRequest) -> StageResponse:
             _ = stream.write(json.dumps(diagnostic))
         raise PreparationError('provider_execution_failed')
     parsed = completion(result.stdout, model=model_for_stage(request.stage))
-    allowed = {'web_search', 'image_generation', 'command_execution', 'file_change'}
-    if any(kind not in allowed for kind in parsed.tool_kinds):
-        raise PreparationError('unexpected_provider_tool')
-    if (request.stage in ('selection', 'writing') or grounded) and parsed.tool_kinds:
-        write_immutable(request.directory / f'{request.stage}.error.json', json.dumps({
-            'stage': request.stage, 'reason': 'text_only_stage_used_tools',
-            'tool_kinds': parsed.tool_kinds}).encode())
-        raise PreparationError('text_only_stage_used_tools')
-    if request.stage in ('research', 'opportunity', 'discovery') and 'web_search' not in parsed.tool_kinds:
-        raise PreparationError('live_research_evidence_required')
+    require_stage_tools(request, parsed)
     response = bind_detail_sources(parsed.response, sources) if request.stage == 'evidence' else parsed.response
     if spans is not None:
         response = spans.resolve(response)

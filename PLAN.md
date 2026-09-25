@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current plan
 
-All-Reserved trial2026-09-25: exact-source span handoff locally verified. The held reserve-spans run remains immutable. Explicit search-first discovery now produced three real web_search completions through the actual provider/schema in a separate read-only diagnostic. Next is qualified source/time evidence and live span-decision validation; the diagnostic date-only candidate is not an approved article. No publication proof, silent Astra fallback, attempt reset or daily/reservation resumption.
+All-Reserved trial2026-09-25: reserve-search-live held at discovery with unexpected_provider_tool; the old guard omitted the triggering kind. An isolated read-only diagnostic did not reproduce it. Preserve failed operation; tool-kind diagnostic retention is repaired, but root cause and all-Reserved publication remain unverified. Next requires identifying the rejected tool and scoped recovery authority, not silently resetting an attempt. No model fallback or daily/reservation resumption.
 
 ## GPT-Reserved staged replacement restart (2026-09-25)
 

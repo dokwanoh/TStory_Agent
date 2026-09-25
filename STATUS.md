@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current status
 
-Latest search-first verification: tests/browser_tests872 passed in229.06s; scoped types0 errors/warnings, memory audit, compile, source rules and diff checks passed. Real Reserve diagnostics confirmed two search calls without schema and three via the production discovery provider/schema. Candidate date/source qualification and all-Reserved publication remain unverified. STOP unchanged; no external blog writes. Evidence: DECISIONS.md and .artifacts/reserve-search-diagnostic-20260925/.
+Latest verification2026-09-25: new reserve-search-live operation held at discovery on unexpected_provider_tool, before writing/media/editor/save; exact triggering kind was not retained by the old guard. Isolated read-only diagnostic did not reproduce it. Diagnostic retention repaired without relaxing tool policy; related tests181 passed in31.00s, scoped types0 errors/warnings, source rules, memory and diff checks passed. All-Reserved publication and triggering root cause remain unverified. STOP restored; daily/reservations paused. Evidence: DECISIONS.md and .artifacts/reserve-search-live-20260925/run.log. Prior full suite872 passed before this narrow repair; full browser suite not repeated because browser/publisher code is unchanged.
 
 Latest verification2026-09-25: source-span adapter and four regressions pass (177 related tests; scoped types0 errors/warnings; no-excuse3 files). Read-only driver on actual prior originals resolved561 spans with exact quote binding. Fresh all-Reserved proof manual-20260925-reserve-spans-live-01 held at discovery: live_research_evidence_required, retry_safe=false. Candidate output exists but no completed web_search was observed; decision/writing/media/publisher were not reached. No new post. STOP restored byte-for-byte; daily/reservations paused. Evidence: DECISIONS.md and .artifacts/reserve-spans-live-20260925/run.log.
 
@@ -157,7 +157,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | fresh-integrated-proof | DONE | Posts98 through111 publicly verified; post111 same-package independent publish after login recovery; executed Reserved writing/media/edit with Astra discovery/decision; remote display excluded, not unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
-| low-cost-model | DEFERRED | Reserve search-first discovery verified read-only; source/time qualification and all-Reserved publication remain unverified; BL-008 | `DECISIONS.md` |
+| low-cost-model | DEFERRED | Reserve discovery held on unknown tool kind; diagnostic retention repaired, root cause and all-Reserved publication unverified; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
 | recurring-pilot | DEFERRED | BL-006 requires explicit resumption, live proof and agreed canary limits | `docs/49_immediate_publication_mode.md` |
