@@ -1,12 +1,12 @@
 # TISTORY GROWTH OS — current status
 
-Updated 2026-09-24. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
+Updated 2026-09-25. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
 
 2026-09-25 post118 delivery continuation HELD safely: `manual-20260925-post118-reserve-delivery-live-01` completed discovery/decision/writing/media/edit, then timed out during the bounded native manager wait before any save or publication. Read-only reconciliation found the CUA-selected Chrome window was an unrelated Google page; no retry, duplicate or existing-post mutation occurred. STOP was restored byte-for-byte. The operation and grant remain immutable; daily/reservations stay paused.
 
 2026-09-25 post119 fresh Reserved delivery attempt FAILED safely before writing: `manual-20260925-post119-reserve-delivery-live-01` exhausted its bounded candidates with `editorial_candidates_exhausted`. Candidate 1 had readable FIU evidence but no occurrence/announcement date in the captured original; candidate 2 used `2026-09-25 새벽` and was conservatively outside the fully-inside-00:00–12:00 window at selection time; candidate 3 used unsupported `2026-09-24 주간` precision. No media, editor, save or public publication occurred. Preserve all receipts; do not retry or reset the operation. The previously tested Reserved range remains opportunity/writing/text_review/review/media/edit; discovery and decision remain Astra.
 
-2026-09-25 post120 preparation COMPLETE, publication HELD: `manual-20260925-post120-reserve-delivery-live-01` selected the readable IonQ/FIU announcement, produced the article and four fresh media, and passed edit/package checks. It reached the native publisher but the dedicated runner's 120-second manager wait expired because CUA remained attached to an unrelated Chrome process; no save or public publication occurred. STOP was restored byte-for-byte. Preserve the package and hold; do not retry this identity or claim a post.
+2026-09-25 post120-named operation PUBLIC VERIFIED as actual post111: https://nedamma.tistory.com/111, “아이온큐 FIU 공급 계약, 256큐비트 양자컴퓨터는 언제 쓰이나”. Owner requested publication after login recovery. Reconciliation found zero intent/attempt/receipt/media records and no editor checkpoint. The same reviewed package and original unexpired authority ran through the unchanged independent publisher without preparation/model replay. Result: verified, reasons=[], post_id=111, save_attempted=true; receipt2026-09-25T00:02:30.698914+00:00, exact saved/public readback completed00:02:35UTC. Body/title, four images/alts, representative and classification verified; remote pixels excluded. Digest ea4428404c3c5fa020e3922f0fff73d359032d86904e919b9f2e44200daf37eb. Original timeout preserved; evidence .artifacts/post120-reserve-delivery-live-20260925/resume.log and save journal. STOP restored byte-for-byte; daily/reservations paused. Only read-only reconciliation is valid for this completed operation.
 
 ## Current outcome and boundary
 
@@ -150,7 +150,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | source-fallback | DONE | Bounded alternate-candidate qualification and different-issue research; immutable replay tests pass | `STATUS.md` |
 | current-source-intake | DONE | Eight official bodies captured and bound; actual research and quantitative opportunity stages completed | `STATUS.md` |
 | common-source-access | DONE | Common captured bodies and review access; source/time/link/enrichment/replay audit and local regression | `STATUS.md` |
-| fresh-integrated-proof | DONE | Posts98 through110 publicly verified with assisted login; post110 uses GPT-Reserved opportunity, writing, final review, text review, media and edit; remote image display excluded, not unattended certification | `STATUS.md` |
+| fresh-integrated-proof | DONE | Posts98 through111 publicly verified; post111 same-package independent publish after login recovery; executed Reserved writing/media/edit with Astra discovery/decision; remote display excluded, not unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
 | low-cost-model | DEFERRED | Cheapest model passing unchanged evaluations; no further token-savings side project; BL-008 | `DECISIONS.md` |
