@@ -1,5 +1,33 @@
 # TISTORY GROWTH OS — measurement contract
 
+## Owner2026-09-25: performance feedback, observation-first
+
+Owner requests starting portfolio learning without degrading the currently satisfactory publisher. Initial scope is a separate read-only observation/advisory lane, not an automatic production change. Existing preparation prompts, model configuration, editorial format, media production, gates and publisher remain unchanged. No new article, STOP suspension, recurring job or reservation is authorized here.
+
+### Small first deliverable
+
+1. Establish one authorized data source and its actual available fields. Prefer an owner-supplied export or explicitly authorized read-only statistics surface; no credential extraction, tracker installation or undocumented API.
+2. Join measured per-post observations to actual published post IDs. Reuse PostMetrics provenance (source, surface, reporting interval, update basis, ingestion time and truncation). Keep private data under ignored local artifacts, never public Git.
+3. Produce a compact private advisory: observed stronger/weaker topics, evidence window and one proposed next-topic angle. Separate observations from hypotheses. A single hit does not establish a repeatable winner or justify changing style/images/models.
+4. Run this beside normal production first. The advisory is NOT consumed by production until a separately approved opt-in trial. Initial implementation must have no import/call from preparation or delivery.
+
+### Comparison rules
+
+- Compare the same metric, source, surface, reporting definition and equivalent post-age windows. Start with complete first-seven-day windows only when the source actually supplies them; otherwise report available periods without a winner ranking.
+- Missing, partial, delayed, truncated or mismatched observations are unknown/incomparable, never zero. Deduplicate observations before aggregating. Preserve publication time and measurement cutoff.
+- Search clicks and total views are different metrics. CTR requires matching impressions and clicks; zero impressions means undefined CTR. Do not infer search demand from likes/comments or public page availability.
+- Small samples, seasonal effects and exposure differences remain explicit limitations; correlation is not a causal result. Do not auto-suppress topics after one weak post or copy a winner repeatedly.
+
+### Non-regression acceptance before opt-in
+
+- With the feature off, production inputs/outputs and model prompts are unchanged; no extra model/network call, blocking check or publication latency is added.
+- Missing data, malformed input, unavailable login or analysis failure affects only advisory generation. Existing facts/rights/publisher protections remain mandatory.
+- No writes to existing articles, source checkpoints, approved packages, save journal, browser profile, STOP or schedules.
+- A later approved trial may add a bounded optional topic hint only; final topic selection still requires current readable evidence and existing editorial judgment. One switch removes the hint, restoring baseline behavior.
+- Tests must cover disabled behavior, absent/malformed/duplicate/mismatched data, valid comparable observations and independence from the publishing path. Synthetic observations are never reported as real blog performance.
+
+First unresolved dependency: whether per-article Tistory statistics or an existing search-console export is available and authorized for this lane. No actual performance baseline has been collected during this kickoff.
+
 ## PREP-009 topic comparison inputs
 
 Per preparation run, retain opportunity-context.json (captured RSS hashes/times), opportunity.json (observed search sample) and opportunity-comparison.json (deterministic derived metrics). These are machine checkpoints, not extra narrative reports. Selection receives the exact comparison plus the full-text-qualified candidate. Never include growth tactics in public prose.
