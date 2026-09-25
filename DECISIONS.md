@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — decisions
 
+## Second all-Reserve public proof: post113 (2026-09-25)
+
+Owner requested one further new article using only Reserve as before. Operation manual-20260925-post112-reserve-followup-01 used a six-hour grant with invocation-only STOP suspension/restoration, unchanged successful integrated route and all configured LLM stages gpt-reserve. First candidate qualified; writing and four fresh images completed. Two correcting-editor revisions were followed by ready on edit-turn-03; no manual content/publisher substitution or login intervention. Image pixels were produced by the existing built-in image generation tool under Reserve orchestration, not by a text model alone.
+
+Actual post113 PUBLIC VERIFIED: https://nedamma.tistory.com/113, “2026 추석 남산골한옥마을 남산달빛마당, 오늘부터 무엇을 볼 수 있나”. Save receipt2026-09-25T01:41:57.575019+00:00 (10:41KST); package16a720fd5e749af944e528c7e5ed014e78246a4edbb158f33b3754edd4989b92. Combined CLI exit0, verified/reasons=[]/save_attempted=true with exact saved/public readback; remote pixels EXCLUDED_BY_OWNER. STOP bytes match original46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d. Daily/reservations remain paused. Completed identity is read-only; no retry or existing-post mutation follows.
+
+Evidence: .artifacts/post112-reserve-followup-20260925/run.log, preparation same-identity edit-turn-03/package, native-runtime/save-intents.sqlite3 receipt113. No behavior code changed; bash syntax and memory consistency are the scoped local checks, plus actual end-to-end CLI/public proof. Missing Bash LSP was not installed; bash -n passed. Broader reliability is not certified by two successes.
+
 ## All-Reserve public proof completed: post112 (2026-09-25)
 
 Owner approved manual-20260925-reserve-warning-fixed-live-01 after the exact CLI-warning fix. Unchanged combined command completed discovery, captured-original decision, writing, four fresh native-generated media and independent correcting edit, all configured gpt-reserve, then automatically invoked the normal immediate publisher. Candidate01 was not qualified; candidate02 was selected. First ready record had inexact article quotes; the bounded second edit corrected the review record without rewriting the article. No manual content/publisher substitution or extra budget reset.
