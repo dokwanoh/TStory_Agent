@@ -28,6 +28,14 @@ Owner requests starting portfolio learning without degrading the currently satis
 
 First unresolved dependency: whether per-article Tistory statistics or an existing search-console export is available and authorized for this lane. No actual performance baseline has been collected during this kickoff.
 
+### Read-only surface proof — 2026-09-25
+
+Owner subsequently authorized Tistory statistics reading. A separate Chrome task tab reached the authenticated manager without login intervention and opened the visible 방문 통계 link. The loaded UI exposes selected calendar day, per-post popular-table views and creation dates, aggregate search/referral channels and keywords. Raw counts remain private in ignored `.artifacts/performance-learning/`; no private analytics are committed to Git.
+
+Important observed collection constraints: asynchronous loading initially displays zero values and empty rows; wait for loading completion. Header summary and detail chart may have different update cutoffs and must not be silently combined. The popular table is truncated behind 더보기; absent posts are NOT zero-view observations. Current partial-day counts across different publication ages are descriptive only, not a first-seven-day comparison. Aggregate keywords/channels cannot be attributed to a specific article without a post-level source.
+
+Next deliverable: an isolated read-only snapshot importer and advisory output using this provenance. No collector service, production consumer or automated learning has been enabled. First observation is a UI feasibility check, not an unattended collector certification.
+
 ## PREP-009 topic comparison inputs
 
 Per preparation run, retain opportunity-context.json (captured RSS hashes/times), opportunity.json (observed search sample) and opportunity-comparison.json (deterministic derived metrics). These are machine checkpoints, not extra narrative reports. Selection receives the exact comparison plus the full-text-qualified candidate. Never include growth tactics in public prose.

@@ -1,5 +1,8 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 shared Mac coordination: this project uses Chrome ONLY; the separate 티스토리_확산봇 project is intended to use the Codex in-app browser. Do not control its tabs, change/close its browser/profile or launch global quit/kill operations. Use explicitly owned task tabs and tab-scoped actions; browser separation alone does not isolate OS keyboard/mouse/clipboard. On ambiguous ownership or concurrent native interaction, pause that UI action and coordinate. BL-012 is a future integration point, not current authorization for comments/likes/subscriptions or cross-project changes.
+- Owner2026-09-25 authorizes read-only Tistory per-post views/referral analysis. Keep observations private and separate from production; no automatic topic/prompt/model/media/gate changes. Preserve current publisher, STOP and daily/reservation pauses. Loading placeholders are not measurements; retain reporting period, cutoff, truncation and unequal article age. No new article authority follows.
+
 - Owner2026-09-25 requests ONE new all-Reserve immediate-public article, `manual-20260925-post114-reserve-followup-01`, as a new scoped operation after the prior hold. This operation completed post114; preserve its proof, no retry/reset or existing-post mutation, and keep daily/reservations paused.
 
 - Owner2026-09-25 all-Reserve follow-up `manual-20260925-post113-reserve-followup-01` exhausted the bounded four-turn editor budget before package promotion (`needs_enrichment`, publication_eligible=false). Preserve its candidate and media checkpoints; no save/publication occurred, no retry/reset is authorized for that identity, and STOP/daily/reservations remain paused. A later article requires a new scoped owner request.

@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — owner input register
 
+2026-09-25: owner approves read-only Tistory per-post views and referral analysis while preserving the satisfactory publishing bot. This project uses Chrome; the separately started 티스토리_확산봇 project is intended to use Codex in-app browser and may later integrate with BL-012. Respect owned tabs and shared OS input; do not infer browser isolation guarantees or permission to operate the other project. No production learning activation, comments, likes, subscriptions, new posts or schedule resumption authorized.
+
 2026-09-21 PREP-004: “네 승인” accepts one bounded automatic temporal/source-binding correction plus independent re-review, then ONE fresh combined-command immediate-public article proof. Identity manual-20260921-pre-media-proof-01; temporarily release STOP for this invocation and restore afterward. No manual prose/publish substitution, second correction, old-failure reset, scheduled resumption or reservation. Existing quality/rights/freshness/native-public-readback gates remain.
 
 2026-09-20 latest: owner requests one NEW article to demonstrate independent-executable immediate publication. Scopeoperationmanual-20260920-independent-immediate; allow reviewed fourimage/title/body/taxonomy entry and one immediatepublic save through normaleditor CLI with exact saved+anonymous verification. Runtime STOP temporarily scoped to this invocation then restored; daily/reservationpause unchanged. New approval does not authorize oldpost mutation, duplicate retry, account/settings/install/cost expansion.
