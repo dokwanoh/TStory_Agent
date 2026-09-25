@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current plan
 
-All-Reserved trial2026-09-25: exact-source span handoff implemented and locally verified. Fresh manual-20260925-reserve-spans-live-01 held at discovery because no completed web_search evidence was observed, before exercising live decision or publishing. Preserve both failed operations. Next live work requires resolving discovery tool use and scoped continuation, not resetting attempts or silently falling back to Astra. Daily/reservations remain paused.
+All-Reserved trial2026-09-25: exact-source span handoff locally verified. The held reserve-spans run remains immutable. Explicit search-first discovery now produced three real web_search completions through the actual provider/schema in a separate read-only diagnostic. Next is qualified source/time evidence and live span-decision validation; the diagnostic date-only candidate is not an approved article. No publication proof, silent Astra fallback, attempt reset or daily/reservation resumption.
 
 ## GPT-Reserved staged replacement restart (2026-09-25)
 

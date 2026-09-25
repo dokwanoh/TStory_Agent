@@ -22,6 +22,10 @@ POLICY_URLS: Final = ('https://www.tistory.com/info/contract',
     'https://developers.google.com/search/docs/essentials/spam-policies')
 
 DISCOVERY: Final = '''Discover one promising Korean reader issue, with alternatives only when useful.
+Invoke the web search tool BEFORE returning candidates, including an empty candidate list.
+RSS/history are leads, not a substitute for this tool call. JSON-only applies to your FINAL response,
+not to tool calls. Use observed search results for exact URLs and occurrence/announcement timing;
+never invent a URL or claim you searched when no search ran. If unavailable, return candidates [].
 Use current public search, supplied signals and prior history. Return concise leads: id, title,
 event_at (observed occurrence OR new announcement, not a future event), event_time_basis,
 reader_question and exact source_urls. No draft, mandatory second domain, three-topic fact checklist
