@@ -1,5 +1,13 @@
 # TISTORY GROWTH OS — decisions
 
+## All-Reserve public proof completed: post112 (2026-09-25)
+
+Owner approved manual-20260925-reserve-warning-fixed-live-01 after the exact CLI-warning fix. Unchanged combined command completed discovery, captured-original decision, writing, four fresh native-generated media and independent correcting edit, all configured gpt-reserve, then automatically invoked the normal immediate publisher. Candidate01 was not qualified; candidate02 was selected. First ready record had inexact article quotes; the bounded second edit corrected the review record without rewriting the article. No manual content/publisher substitution or extra budget reset.
+
+Verified actual post112: https://nedamma.tistory.com/112, “2026 추석 차례상 비용 19만6630원, 대형마트와 전통시장 어디가 저렴할까”. Save receipt2026-09-25T01:27:23.106310+00:00 (10:27KST), digest bc690736e2c4a98b93e648a448882f91a9f02e4c09b92b54825c874ccf4d3bf4. Runner exit0/state=verified/reasons=[]/save_attempted=true after exact native and anonymous public readback. Four media identities/alts, representative and classification checked by the unchanged publisher. Remote pixels remain EXCLUDED_BY_OWNER. Separate web-tool open could not access the URL; success evidence is the native publisher readback and SQLite save receipt, not that failed fetch. No login intervention was needed in this run; this single result does not prove permanent sessions or general unattended reliability.
+
+STOP restored byte-for-byte to46c641dbf72fae7645c6552ca0ac0555d22593e6c13525accecf93b66696fb5d; daily/reservations remain paused. Previous failed operations untouched. Evidence: .artifacts/reserve-warning-fixed-live-20260925/run.log, preparation same-identity receipts/edit-turn-02/package and native-runtime/save-intents.sqlite3 receipt112. Completed operation is read-only from now on. No behavior code changed this run; preceding related183 tests and live warning QA remain the implementation evidence.
+
 ## Exact CLI skill-budget warning compatibility (2026-09-25)
 
 Owner approved ONE diagnostic-enabled all-Reserve retry manual-20260925-reserve-diagnostic-live-01 with six-hour grant. It held before writing at unexpected_provider_tool; retained tool_kinds=[error,web_search]. No editor/save/post occurred; STOP restored byte-for-byte. The original item message was not retained, so do not fabricate a receipt or retroactively declare that production attempt successful.

@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current plan
 
-All-Reserved trial2026-09-25: diagnostic retry held on item.error plus web_search. Read-only reproduction identified exact skill-description-budget warning misclassified as tool. Narrow compatibility fix passed real provider QA with that warning plus two searches. Preserve original failed attempts; next is owner-scoped production recovery, source qualification and publication. No inferred receipts, automatic reset, model fallback or daily/reservation resumption.
+All-Reserve single public proof COMPLETE2026-09-25: manual-20260925-reserve-warning-fixed-live-01 published actual112 with automatic preparation→publisher handoff and exact saved/public verification. Discovery/decision/writing/media/edit all gpt-reserve; one bounded review-record correction, no manual replacement or login intervention. Prior failures retained. STOP restored; daily/reservations paused. Further posts need new owner requests; broad reliability remains deferred, not a prerequisite to this completed single proof.
 
 ## GPT-Reserved staged replacement restart (2026-09-25)
 

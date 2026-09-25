@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 approves ONE all-Reserve immediate-public retry after exact skill-warning repair: manual-20260925-reserve-warning-fixed-live-01. Six-hour grant, invocation-only STOP suspension/restoration, unchanged source/editor/media/native/public protections. Preserve all earlier attempts; no further retry/reset, model fallback or daily/reservation restart.
+
 - Owner2026-09-25 approves ONE diagnostic-enabled all-Reserve immediate-public retry: manual-20260925-reserve-diagnostic-live-01. Preserve previous failed run unchanged; use a new explicitly approved retry identity, six-hour grant, scoped STOP suspension/restoration and unchanged checks. No further automatic retry or recurring/reservation resumption.
 
 - Owner2026-09-25 requests a new article through immediate public verification after search-first repair: manual-20260925-reserve-search-live-01. All configured stages remain gpt-reserve; one six-hour grant and invocation-only STOP suspension/restoration. Preserve prior failed operations, bounded source/editor/media/native/public checks and daily/reservation pauses. No silent model fallback or old-attempt reset.
