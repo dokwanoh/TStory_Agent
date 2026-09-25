@@ -104,6 +104,11 @@ def test_cli_when_independent_immediate_attempt_and_recovery_use_real_chrome(
         return context
 
     monkeypatch.chdir(tmp_path)
+    profile = tmp_path / 'browser-profile'
+    profile.mkdir()
+    (profile / 'Local State').write_text(json.dumps({'profile': {'info_cache': {'Default': {'name': '내 Chrome'}}}}))
+    (profile / 'tistory-profile.json').write_text(json.dumps({
+        'logical_name': '티스토리 게시봇', 'blog_host': 'nedamma.tistory.com', 'profile_directory': 'Default'}))
     monkeypatch.setattr(immediate_runner, 'datetime', Clock)
     monkeypatch.setattr(ImmediateNativeSurface, 'now', surface_clock)
     monkeypatch.setattr(BrowserType, 'launch_persistent_context', launch)

@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Chrome profile identity guard (2026-09-25)
+
+The immediate publisher now refuses to launch unless the owned `browser-profile` contains an exact role marker for logical profile `티스토리 게시봇`, host `nedamma.tistory.com`, and Chrome directory `Default`, and the profile's `Local State` contains that directory. This separates the publisher from the other Chrome/Codex project before navigation and preserves the existing worker lock. Missing or mismatched identity is a fail-closed hold; no cookie/session copying or global browser control is introduced.
+
 ## Hourly proof attempt held at manager wait (2026-09-25)
 
 Operation `manual-20260925-hourly-1700-reserve-01` was explicitly authorized by the owner for a one-off test of the hourly publisher. Discovery, decision, writing, media and two bounded Reserve editor turns completed. The native publisher handoff reached its 120-second manager/authentication wait and returned `TimeoutError`, `retry_safe=false`; no save/public receipt or post ID exists, and no retry was attempted. Preserve the run as an unresolved native-state hold; the active hourly automation must not claim publication until an exact saved/public readback is observed. Evidence: `.artifacts/hourly-20260925-1700/run.log`.

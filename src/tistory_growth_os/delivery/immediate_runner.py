@@ -19,6 +19,7 @@ from .playwright_immediate_surface import ImmediateNativeSurface
 from .playwright_native_surface import NativePreparationError
 from .playwright_observation import UploadedAsset
 from .reservation_execution import ExecutionState
+from .chrome_profile import ensure_publisher_profile
 
 
 class Arguments(argparse.Namespace):
@@ -46,9 +47,10 @@ def _execute(package: ImmediatePackage, authority: ImmediateAuthority, *, recove
             print(json.dumps({'state': 'held', 'reason': 'original_receipts_required',
                               'retry_safe': False, 'external_write_count': 0}))
             return 2
+        profile = ensure_publisher_profile(root)
         with sync_playwright() as runtime:
             context = runtime.chromium.launch_persistent_context(
-                str(safe_output_root(root, 'browser-profile')), channel='chrome', headless=False,
+                str(profile), channel='chrome', headless=False,
                 chromium_sandbox=True, accept_downloads=False, service_workers='block')
             try:
                 editors = tuple(page for page in context.pages if '/manage/newpost' in page.url)
@@ -135,6 +137,7 @@ def main() -> int:
         return run(args)
     except (BrowserError, NativePreparationError, JsonDecodeError, OSError, sqlite3.Error, ValueError, AssertionError) as error:
         print(json.dumps({'state': 'held', 'error_type': type(error).__name__, 'retry_safe': False,
+                          'reason': str(error),
                           'detail': 'Reconcile journal and native state; no automatic retry.'}))
         return 2
 
