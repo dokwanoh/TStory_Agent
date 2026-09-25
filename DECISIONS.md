@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Hourly immediate-public automation resumed (2026-09-25)
+
+The owner explicitly requested a new article at every KST hour exactly at minute 00. Existing automation3 was updated in place to `티스토리 정각 게시봇`, ACTIVE, with an hourly recurrence and immediate-public mode. The legacy three-daily schedule was not reused as a semantic shortcut, the separate 30-minute 티스토리_확산봇 automation was not changed, and reservations remain paused. Each run must preserve the existing source/evidence, freshness, rights/policy, duplicate, four-fresh-media/alt, native editor, classification, save and anonymous public-readback gates; failures stop external writes and are recorded rather than retried or claimed as success. This schedule change is authorization to run recurring operations, not evidence that the first hourly run has succeeded.
+
 ## Third all-Reserve public proof: post114 (2026-09-25)
 
 The owner issued a new scoped request after the prior editor-budget hold. Operation `manual-20260925-post114-reserve-followup-01` used the unchanged immediate-public route with all configured LLM stages set to gpt-reserve. The topic was “신유빈·임종훈 혼합복식 8강 시간과 9월 25일 탁구 일정”; discovery, decision, writing, four fresh media and one correcting-editor pass completed without manual content or publisher substitution.

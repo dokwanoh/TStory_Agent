@@ -188,9 +188,12 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | external-ads | EXCLUDED_BY_OWNER | ADR-039; no external-ad investigation, audit or remediation | `DECISIONS.md` |
 | print | EXCLUDED_BY_OWNER | ADR-041; ALL print text/image/layout/PDF certification excluded | `DECISIONS.md` |
 | remote-image-pixels | EXCLUDED_BY_OWNER | ADR-042; no remote pixel/display/lightbox comparisons | `DECISIONS.md` |
-| daily-schedule | PAUSED | Owner2026-09-20; three-daily worker remains paused, STOP retained | `docs/49_immediate_publication_mode.md` |
-| reservations | PAUSED | Owner2026-09-20; no new reservations until explicitly resumed | `docs/49_immediate_publication_mode.md` |
+| daily-schedule | PAUSED | Legacy three-daily schedule remains paused; it was not resumed or reused | `docs/49_immediate_publication_mode.md` |
+| hourly-publisher | ACTIVE | Owner2026-09-25 explicitly resumed recurring immediate-public execution at every KST minute 00; automation3 updated in place, no reservations | `/Users/yeondu/.codex/automations/3/automation.toml` |
+| reservations | PAUSED | Owner2026-09-20 pause retained; hourly publisher is immediate-public and creates no reservations | `docs/49_immediate_publication_mode.md` |
 <!-- work:end -->
+
+2026-09-25 hourly publisher: owner explicitly requested one new article at every KST hour exactly at minute 00. Existing automation3 was updated (not duplicated) from the paused legacy three-daily heartbeat to ACTIVE hourly immediate-public execution. The separate 30-minute 티스토리_확산봇 automation was not touched. Each run retains source/fact/policy/rights/duplicate/native editor/four-media/alt/classification/public-readback gates, Chrome-only ownership, fail-closed login or editor handling, and no reservation fallback. The first scheduled run is not itself proof of publication; only an observed exact public readback may be recorded as success.
 
 ## Verification ledger
 
