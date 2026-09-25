@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+- Owner2026-09-25 approves exact-source span selection and ONE fresh all-Reserved immediate-public proof manual-20260925-reserve-spans-live-01. Model selects source span IDs; host copies original URL/quote without rewriting. Preserve semantic review and previous exhausted attempts. Six-hour grant, invocation-only STOP suspension/restoration; no Astra fallback, recurring or reservation restart.
+
 - Owner2026-09-25 requests one all-GPT-Reserved cycle, manual-20260925-all-reserve-live-01. This explicitly permits replacing highest-model topic selection for this evaluated trial, with every configured LLM stage using gpt-reserve and no silent Astra fallback. One new immediate-public article, six-hour grant and invocation-only STOP suspension/restoration; retain source/rights/quality/native/public checks, immutable prior attempts and paused daily/reservations.
 
 - Owner2026-09-24 after100 requests ONE further new immediate-public article, manual-20260924-post100-followup-01. Permit six-hour scoped grant and invocation-only STOP suspension/restoration using the unchanged successful route. Preserve current editorial/source/media/duplicate/public checks; no prior-attempt reset, existing-post mutation or recurring/reservation restart.

@@ -12,6 +12,7 @@ from ..contracts.json_decode import JsonDecodeError, parse_json
 from ..domain.common import Fields, as_object, text
 from .contracts import PreparationError
 from .source_schema import writing_schema
+from .decision_spans import DecisionSpans
 from .package import write_immutable
 from .source_access import bind_detail_sources, collect_context
 from . import prompts
@@ -104,6 +105,10 @@ def codex_provider(request: StageRequest) -> StageResponse:
     grounded = request.stage in ('evidence', 'text_review', 'review', 'decision', 'edit')
     sources = collect_context(request.directory, request.prompt, request.source_urls) if grounded else ''
     schema = SCHEMAS / f'{request.stage}.json'
+    spans = DecisionSpans.from_sources(sources) if request.stage == 'decision' else None
+    if spans is not None:
+        schema = request.directory / 'decision.schema.json'
+        write_immutable(schema, spans.schema().encode())
     if request.stage == 'writing':
         if not request.source_urls:
             raise PreparationError('writing_source_catalog_required')
@@ -118,7 +123,7 @@ def codex_provider(request: StageRequest) -> StageResponse:
     for image in request.images:
         argv.extend(('--image', str(image)))
     argv.append('-')
-    prompt = request.prompt
+    prompt = request.prompt + (spans.prompt() if spans is not None else '')
     if grounded:
         prompt = prompt.replace(prompts.EVIDENCE, prompts.CAPTURED_EVIDENCE)
         prompt = prompt.replace(prompts.TEXT_REVIEW, prompts.CAPTURED_TEXT_REVIEW)
@@ -152,4 +157,6 @@ def codex_provider(request: StageRequest) -> StageResponse:
     if request.stage in ('research', 'opportunity', 'discovery') and 'web_search' not in parsed.tool_kinds:
         raise PreparationError('live_research_evidence_required')
     response = bind_detail_sources(parsed.response, sources) if request.stage == 'evidence' else parsed.response
+    if spans is not None:
+        response = spans.resolve(response)
     return StageResponse(response, parsed.session_id, parsed.tool_kinds, sources)

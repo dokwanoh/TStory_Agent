@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — current status
 
+Final full regression: tests/browser_tests871 passed in229.11s; memory audit, compile, source rules and diff checks passed. This does not certify the held all-Reserved live proof below.
+
+Latest verification2026-09-25: source-span adapter and four regressions pass (177 related tests; scoped types0 errors/warnings; no-excuse3 files). Read-only driver on actual prior originals resolved561 spans with exact quote binding. Fresh all-Reserved proof manual-20260925-reserve-spans-live-01 held at discovery: live_research_evidence_required, retry_safe=false. Candidate output exists but no completed web_search was observed; decision/writing/media/publisher were not reached. No new post. STOP restored byte-for-byte; daily/reservations paused. Evidence: DECISIONS.md and .artifacts/reserve-spans-live-20260925/run.log.
+
 Updated 2026-09-25. This is current state, not an execution diary. Canonical rows: contracts/current-work.tsv. Historical evidence: docs/history/2026-09-21-memory-cleanup/.
 
 2026-09-25 post118 delivery continuation HELD safely: `manual-20260925-post118-reserve-delivery-live-01` completed discovery/decision/writing/media/edit, then timed out during the bounded native manager wait before any save or publication. Read-only reconciliation found the CUA-selected Chrome window was an unrelated Google page; no retry, duplicate or existing-post mutation occurred. STOP was restored byte-for-byte. The operation and grant remain immutable; daily/reservations stay paused.
@@ -153,7 +157,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 | fresh-integrated-proof | DONE | Posts98 through111 publicly verified; post111 same-package independent publish after login recovery; executed Reserved writing/media/edit with Astra discovery/decision; remote display excluded, not unattended certification | `STATUS.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
-| low-cost-model | DEFERRED | All-Reserved trial exhausted before writing; source-quote fidelity unresolved, no end-to-end certification; BL-008 | `DECISIONS.md` |
+| low-cost-model | DEFERRED | Exact source spans implemented; fresh All-Reserved trial held at discovery without web-search evidence; no end-to-end certification; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
 | recurring-pilot | DEFERRED | BL-006 requires explicit resumption, live proof and agreed canary limits | `docs/49_immediate_publication_mode.md` |

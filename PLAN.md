@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current plan
 
-All-Reserved trial2026-09-25: routing change and local checks complete; live manual-20260925-all-reserve-live-01 exhausted three candidates before writing. Last decision quoted policy text with changed whitespace/wording rather than exact captured bytes. No new article or publication; preserve receipts and fix quotation handoff before any separately authorized retest. No silent Astra fallback, budget reset or schedule resumption.
+All-Reserved trial2026-09-25: exact-source span handoff implemented and locally verified. Fresh manual-20260925-reserve-spans-live-01 held at discovery because no completed web_search evidence was observed, before exercising live decision or publishing. Preserve both failed operations. Next live work requires resolving discovery tool use and scoped continuation, not resetting attempts or silently falling back to Astra. Daily/reservations remain paused.
 
 ## GPT-Reserved staged replacement restart (2026-09-25)
 

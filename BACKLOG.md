@@ -13,7 +13,7 @@ Derived from contracts/current-work.tsv. These items are not present blockers an
 | pre-media-repair-proof | DEFERRED | Historical pre-media failure retained; current end-to-end proof owns completion | `docs/66_bounded_pre_media_repair.md` |
 | operational-reliability | DEFERRED | Whole-loop failure/recovery and actionable alerts under real operating conditions | `docs/59_preparation_publication_handoff.md` |
 | performance-learning | DEFERRED | Authorized measured portfolio feedback and refresh; BL-002/010 | `METRICS.md` |
-| low-cost-model | DEFERRED | All-Reserved trial exhausted before writing; source-quote fidelity unresolved, no end-to-end certification; BL-008 | `DECISIONS.md` |
+| low-cost-model | DEFERRED | Exact source spans implemented; fresh All-Reserved trial held at discovery without web-search evidence; no end-to-end certification; BL-008 | `DECISIONS.md` |
 | legacy-assets | DEFERRED | Legacy article rights/alt inventory; historical findings need fresh evidence; BL-001 | `RISKS.md` |
 | monetization | DEFERRED | Owner-only monetization/disclosure decisions; no external-ad audit; BL-003 | `OWNER_INPUT.md` |
 | recurring-pilot | DEFERRED | BL-006 requires explicit resumption, live proof and agreed canary limits | `docs/49_immediate_publication_mode.md` |
