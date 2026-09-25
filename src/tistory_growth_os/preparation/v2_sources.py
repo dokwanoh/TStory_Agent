@@ -7,6 +7,7 @@ import re
 
 from ..artifacts.layout import safe_output_root
 from ..contracts.json_decode import JsonDecodeError, parse_json
+from ..contracts.json_ast import JsonValue
 from ..contracts.json_encode import encode_json
 from ..domain.common import Fields, array, as_object, datetime_value, identifier, strings, text
 from ..research.intake import public_source_url
@@ -22,11 +23,46 @@ from . import prompts, v2_prompts
 
 
 @dataclass(frozen=True, slots=True)
+class DiscoveryPool:
+    store: StageStore
+    context: str
+
+
+@dataclass(frozen=True, slots=True)
+class SelectionContext:
+    text: str
+    excluded: frozenset[str] = frozenset()
+    pool: DiscoveryPool | None = None
+
+
+@dataclass(frozen=True, slots=True)
 class SourceSelection:
     candidate: Candidate
     documents: tuple[SourceDocument, ...]
     selected_at: datetime
     record: str
+    pool: DiscoveryPool | None = None
+
+
+def discovery_candidate(raw: JsonValue, now: datetime) -> Candidate | None:
+    item = Fields.parse(raw, '', ('id', 'title', 'event_at', 'event_time_basis', 'reader_question', 'source_urls'))
+    morning = re.fullmatch(r'(\d{4}-\d{2}-\d{2})\s+(?:오전|새벽)\s*\(한국시간\)', text(item, 'event_at'))
+    if morning is None:
+        event = datetime_value(item, 'event_at')
+    else:
+        try:
+            event = datetime.fromisoformat(morning.group(1) + 'T00:00:00+09:00')
+        except ValueError:
+            raise PreparationError('discovery_date_invalid') from None
+        if event + timedelta(hours=12) > now:
+            return None
+    urls = strings(item, 'source_urls', True, r'https://\S+')
+    if len(urls) > 8 or any(not public_source_url(url) for url in urls):
+        raise PreparationError('source_destination_denied')
+    if not timedelta(0) <= now - event < timedelta(hours=24):
+        return None
+    _ = text(item, 'event_time_basis'), text(item, 'reader_question')
+    return Candidate(identifier(item, 'id', r'[a-z0-9_-]{3,60}'), text(item, 'title'), event, urls, item.value)
 
 
 def documents_from(raw: str) -> tuple[SourceDocument, ...]:
@@ -54,32 +90,25 @@ def discover(source: str, now: datetime) -> tuple[Candidate, ...]:
     seen_ids: set[str] = set()
     seen_questions: set[tuple[str, str]] = set()
     for raw in leads:
-        item = Fields.parse(raw, '', ('id', 'title', 'event_at', 'event_time_basis', 'reader_question', 'source_urls'))
-        morning = re.fullmatch(r'(\d{4}-\d{2}-\d{2})\s+(?:오전|새벽)\s*\(한국시간\)', text(item, 'event_at'))
-        if morning is None:
-            event = datetime_value(item, 'event_at')
-        else:
-            try:
-                event = datetime.fromisoformat(morning.group(1) + 'T00:00:00+09:00')
-            except ValueError:
-                raise PreparationError('discovery_date_invalid') from None
-            # Conservative lower bound, not an asserted midnight event; preserve raw evidence.
-            if event + timedelta(hours=12) > now:
-                continue
-        urls = strings(item, 'source_urls', True, r'https://\S+')
-        if len(urls) > 8 or any(not public_source_url(url) for url in urls):
-            raise PreparationError('source_destination_denied')
-        if not timedelta(0) <= now - event < timedelta(hours=24):
+        try:
+            candidate = discovery_candidate(raw, now)
+        except JsonDecodeError:
             continue
-        _ = text(item, 'event_time_basis'), text(item, 'reader_question')
-        identity = identifier(item, 'id', r'[a-z0-9_-]{3,60}')
+        except PreparationError as error:
+            if error.code != 'discovery_date_invalid':
+                raise
+            continue
+        if candidate is None:
+            continue
+        item = Fields(candidate.evidence, '', ())
+        identity = candidate.candidate_id
         question = (' '.join(text(item, 'title').split()).casefold(),
                     ' '.join(text(item, 'reader_question').split()).casefold())
         if identity in seen_ids or question in seen_questions:
             continue
         seen_ids.add(identity)
         seen_questions.add(question)
-        result.append(Candidate(identity, text(item, 'title'), event, urls, item.value))
+        result.append(candidate)
     return tuple(result)
 
 
@@ -107,13 +136,14 @@ def selection_record(raw: str, choices: tuple[Candidate, ...], docs: tuple[Sourc
     return replace(candidate, evidence=evidence)
 
 
-def select_sources(store: StageStore, context: str, clock: Callable[[], datetime]) -> SourceSelection | None:
+def select_sources(store: StageStore, context: SelectionContext, clock: Callable[[], datetime]) -> SourceSelection | None:
     stamp_path = store.directory / 'selected-at.txt'
     now = datetime.fromisoformat(stamp_path.read_text()) if stamp_path.exists() else clock()
-    source = store.run(StageRequest('discovery', prompts.BOUNDARY + '\n' + v2_prompts.DISCOVERY
-                                    + context, store.directory))
+    pool = context.pool or DiscoveryPool(store, context.text)
+    source = pool.store.run(StageRequest('discovery', prompts.BOUNDARY + '\n' + v2_prompts.DISCOVERY
+                                    + pool.context, pool.store.directory))
     try:
-        candidates = discover(source, now)
+        candidates = tuple(item for item in discover(source, now) if item.candidate_id not in context.excluded)
     except (PreparationError, JsonDecodeError) as error:
         if isinstance(error, PreparationError) and error.code == 'source_destination_denied':
             raise
@@ -128,7 +158,7 @@ def select_sources(store: StageStore, context: str, clock: Callable[[], datetime
     simple = text(initial, 'workflow_version') == 'editorial-simple-v1'
     comparison = text(initial, 'signals')
     decision_prompt = v2_prompts.SIMPLE_DECISION
-    prior_sessions = {store.receipt('discovery').session_id}
+    prior_sessions = {pool.store.receipt('discovery').session_id}
     if not simple:
         comparison = ranked_choices(store, Research(choices, research_source),
                                     snapshot_context(operation_root(store.directory))).comparison
@@ -167,4 +197,4 @@ def select_sources(store: StageStore, context: str, clock: Callable[[], datetime
     if stamp.utcoffset() is None or stamp > clock() or not timedelta(0) <= stamp - candidate.event_at < timedelta(hours=24):
         raise PreparationError('selection_clock_invalid')
     return SourceSelection(candidate, tuple(doc for doc in documents if doc.url in candidate.urls), stamp,
-                           source + '\n' + comparison + '\n' + selected)
+                           source + '\n' + comparison + '\n' + selected, pool)

@@ -12,7 +12,7 @@ from .provider import Provider, StageRequest
 from .run_contract import PreparationRun
 from .storage import StageStore
 from .v2_editor import EditBudget, EditorialWork, edit_package
-from .v2_sources import select_sources
+from .v2_sources import DiscoveryPool, SelectionContext, discover, select_sources
 from . import prompts, v2_prompts
 
 
@@ -32,6 +32,7 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
     context = '\nCutoff: ' + cutoff.isoformat() + '\nSignals: ' + text(fields, 'signals') + '\nHistory: ' + text(fields, 'history')
     budget = EditBudget()
     rejected: set[str] = set()
+    pool: DiscoveryPool | None = None
     for attempt in range(3):
         if budget.turns >= 4:
             raise PreparationError('editorial_budget_exhausted')
@@ -41,9 +42,11 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
         if (run.directory / 'signals.rss').is_file():
             write_immutable(directory / 'signals.rss', (run.directory / 'signals.rss').read_bytes())
         store = StageStore(directory, provider)
-        selection = select_sources(store, context, run.clock)
+        selection = select_sources(store, SelectionContext(context, frozenset(rejected), pool), run.clock)
         if selection is None:
-            context += '\nPrior unsuitable leads; choose a different evidence-supported issue:\n' + (directory / 'discovery.json').read_text()
+            discovery_directory = pool.store.directory if pool is not None else directory
+            context += '\nPrior unsuitable leads; choose a different evidence-supported issue:\n' + (discovery_directory / 'discovery.json').read_text()
+            pool = None
             continue
         if selection.candidate.candidate_id in rejected:
             context += '\nRepeated rejected candidate is ineligible; choose a different issue.'
@@ -52,7 +55,9 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
             + '\nComposition time: ' + selection.selected_at.isoformat()
             + '\nEvidence:\n' + encode_json(selection.candidate.evidence) + '\nCategories: ' + repr(CATEGORIES)
             + '\nHome topics: ' + repr(TOPICS), directory, source_urls=selection.candidate.urls))
-        sessions = frozenset(store.receipt(stage).session_id for stage in ('discovery', 'decision', 'writing'))
+        discovery_store = selection.pool.store if selection.pool is not None else store
+        sessions = frozenset(store.receipt(stage).session_id for stage in ('decision', 'writing'))
+        sessions |= {discovery_store.receipt('discovery').session_id}
         if text(fields, 'workflow_version') == 'editorial-v2':
             sessions |= {store.receipt('opportunity').session_id}
         if (directory / 'decision-repair/decision.receipt.json').is_file():
@@ -62,5 +67,9 @@ def execute_v2(run: PreparationRun, provider: Provider) -> Path:
             return outcome.package
         budget = outcome.budget
         rejected.add(selection.candidate.candidate_id)
+        pool = selection.pool
+        if pool is not None and not any(item.candidate_id not in rejected
+                for item in discover((pool.store.directory / 'discovery.json').read_text(), run.clock())):
+            pool = None
         context += '\nEditor rejected this topic; choose another:\n' + encode_json(selection.candidate.evidence)
     raise PreparationError('editorial_candidates_exhausted')

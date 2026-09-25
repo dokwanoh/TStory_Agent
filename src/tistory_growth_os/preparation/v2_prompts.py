@@ -81,6 +81,9 @@ Actions:
   First use existing originals or narrow unsupported claims. Never ask for evidence already supplied.
 - media: request correction of the unsuitable/unlicensed image set, describing precise defects.
 - replace_topic: no evidence-supported useful article is possible; explain why.
+- Before replace_topic or requesting more sources, try narrowing the angle to the reader question
+  answerable from captured facts. Remove unsupported forecasts or numbers; revise title, summary
+  and body together. Preserve concrete reader value and material caveats. Never invent missing facts.
 - ready: only when a package SHA is supplied and writing remains UNCHANGED. Return that exact SHA,
   concise review notes and claim mappings for the article's material facts (article_quote, source_url,
   source_quote). Quotes must be exact substrings, sources captured full_text and links in article.
