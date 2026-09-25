@@ -1,0 +1,35 @@
+{
+  "operation": "manual-20260925-muse-charm-owner-link-01",
+  "outcome": "published_public_partial_readback",
+  "title": "메타 뮤즈 참, 12월 출시 예고…스마트폰을 대신할 AI 펜던트일까?",
+  "remote_id": "116",
+  "remote_url": "https://nedamma.tistory.com/entry/%EB%A9%94%ED%83%80-%EB%AE%A4%EC%A6%88-%EC%B0%B8-12%EC%9B%94-%EC%B6%9C%EC%8B%9C-%EC%98%88%EA%B3%A0%E2%80%A6%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0%EC%9D%84-%EB%8C%80%EC%8B%A0%ED%95%A0-AI-%ED%8E%9C%EB%8D%98%ED%8A%B8%EC%9D%BC%EA%B9%8C",
+  "category": "IT",
+  "home_topic": "IT 제품리뷰",
+  "published_at": "2026-09-25T15:27:00+09:00",
+  "source_url": "https://www.aitimes.com/news/articleView.html?idxno=215647",
+  "source_readback": "anonymous_public_html_contains_article_source_link",
+  "local_article_sha256": "e52fc23a94041c7b3d91348bd00e21a74afcb6bf0889297c94835821e1384c1b",
+  "media": [
+    {"file": "media/01.jpg", "sha256": "f89008a35d6ca237f55e64a0dc1905e3c59f9fba11446b3f6056d62219d88984"},
+    {"file": "media/02.jpg", "sha256": "aecc9cd1a9db180a9a18543d9ea7909824a16adc6517395d24467354a69bae4c"},
+    {"file": "media/03.jpg", "sha256": "71070f2acc4c4e9299f67685e95e229332891dca46814655764270a40f125a3d"},
+    {"file": "media/04.jpg", "sha256": "6e3ab3d316a3c390c6ffc135ff68295383359c9439d858998b1ab89e3fc7377a"}
+  ],
+  "editor_upload_observation": "four native image uploads observed before final publish",
+  "public_readback": {
+    "http_status": 200,
+    "title_present": true,
+    "body_present": true,
+    "source_link_present": true,
+    "replacement_character": false,
+    "inline_img_tag_count": 0,
+    "image_readback": "MISMATCH_UNRESOLVED"
+  },
+  "save_attempts": 1,
+  "authentication": "assisted_native_saved_account",
+  "remote_image_display": "EXCLUDED_BY_OWNER; inline public HTML still requires follow-up",
+  "daily_and_reservations": "PAUSED",
+  "stop_restored": true,
+  "note": "Public publication and exact title/body/source readback succeeded. Anonymous public HTML contains zero inline image tags despite four native uploads; no post mutation or retry was attempted after publication."
+}
