@@ -25,10 +25,15 @@ class MediaMaterial:
     derivations: str
 
 
+def configured_codex_home() -> Path:
+    configured = os.environ.get('CODEX_HOME', '').strip()
+    return Path(configured) if configured else Path.home() / '.codex'
+
+
 def prepare_media(store: StageStore, request: StageRequest, history: str) -> MediaMaterial:
     response = store.run(request)
     images = media_files(store.directory, response)
-    codex_home = Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex')))
+    codex_home = configured_codex_home()
     handoff = store.directory / 'image-generation.handoff.json'
     handoff_path = handoff if handoff.is_file() else None
     session = store.receipt('media').session_id

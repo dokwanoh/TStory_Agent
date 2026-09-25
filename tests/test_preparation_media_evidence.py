@@ -7,9 +7,15 @@ import pytest
 
 from tistory_growth_os.preparation.contracts import PreparationError
 from tistory_growth_os.preparation.media_evidence import native_generation_evidence
+from tistory_growth_os.preparation.media_repair import configured_codex_home
 
 
 SESSION = '01a0c105-e3f3-7231-b726-d0dd1281fb5a'
+
+
+def test_configured_codex_home_uses_default_when_environment_is_empty(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv('CODEX_HOME', '')
+    assert configured_codex_home() == Path.home() / '.codex'
 
 
 def test_native_generation_requires_same_session_fresh_outputs(tmp_path: Path) -> None:
