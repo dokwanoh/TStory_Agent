@@ -30,6 +30,11 @@ def configured_codex_home() -> Path:
     return Path(configured) if configured else Path.home() / '.codex'
 
 
+def handoff_session(handoff: Path) -> str:
+    fields = Fields.parse(parse_json(handoff.read_text()), '', ('kind', 'session_id', 'tool_kinds', 'outputs'))
+    return text(fields, 'session_id')
+
+
 def prepare_media(store: StageStore, request: StageRequest, history: str) -> MediaMaterial:
     response = store.run(request)
     images = media_files(store.directory, response)
@@ -41,8 +46,7 @@ def prepare_media(store: StageStore, request: StageRequest, history: str) -> Med
                else (store.directory / 'media.attempt').stat().st_mtime)
     if handoff_path is not None:
         try:
-            handoff_fields = Fields.parse(parse_json(handoff.read_text()), '', ('session_id',))
-            session = text(handoff_fields, 'session_id')
+            session = handoff_session(handoff)
         except (JsonDecodeError, OSError, TypeError, ValueError, AttributeError) as error:
             raise PreparationError('generation_tool_evidence_required') from error
     context = GenerationContext(codex_home, session, started, handoff_path)
