@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+2026-09-26 owner-supplied Samsung housing-loan article draft: created a reader-facing synthesis from the supplied material and checked the primary Seoul신문 report. The draft avoids asserting that the employee loan alone caused prices to rise, qualifies the DSR discussion, and includes a four-scene media plan. Local draft only; no image-generation call, Tistory upload, save or publication.
+
 2026-09-26 automation3 00:00 diagnosis: all three bounded discovery responses were recorded, but every lead used a date-only `event_at` of `2026-09-25`. At the 00:00 KST selection cutoff those values conservatively resolve to 00:00 and are outside the trailing24h window; no exact time or explicit 오전/새벽 interval was supplied. The resulting `editorial_candidates_exhausted` was a correct freshness hold, not a media or publisher failure. The consumed operation remains immutable and was not retried.
 
 2026-09-25 automation3 23:00 diagnosis: native media dispatch completed all four real image-generation calls, wrote the exact handoff and resumed the same operation. The run then held after `media.response_recorded` because malformed/transient handoff JSON could escape as raw `JsonDecodeError` before provenance validation. The media boundary now converts that parser failure into the existing `generation_tool_evidence_required` hold; no retry or publication was performed for the consumed identity.
