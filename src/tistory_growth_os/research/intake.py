@@ -14,6 +14,14 @@ FEED_URL: Final = 'https://trends.google.com/trending/rss?geo=KR'
 MAX_BYTES: Final = 2_000_000
 HT: Final = '{https://trends.google.com/trending/rss}'
 
+TREND_SOURCE_REGISTRY: Final[tuple[str, ...]] = (
+    'google_trends_trending_now_rss',
+    'naver_datalab_search_trend',
+    'internettrend_portal_signal',
+    'signallab_keyword_signal',
+    'sometrend_keyword_signal',
+)
+
 
 @dataclass(frozen=True, slots=True)
 class IntakeError(ValueError):
@@ -54,6 +62,7 @@ class ReviewPacket(TypedDict):
     publish_eligible: Literal[False]
     input_digest: str
     source: str
+    trend_sources: tuple[str, ...]
     collected_at: str
     raw_bytes: int
     item_count: int
@@ -145,7 +154,8 @@ def parse_feed(raw: bytes, now: datetime) -> SignalBatch:
 
 def review_packet(batch: SignalBatch) -> ReviewPacket:
     return ReviewPacket(schema_version='topic-intake-v1', state='research_required', publish_eligible=False,
-        input_digest=batch.input_digest, source=FEED_URL, collected_at=batch.collected_at.isoformat(),
+        input_digest=batch.input_digest, source=FEED_URL, trend_sources=TREND_SOURCE_REGISTRY,
+        collected_at=batch.collected_at.isoformat(),
         raw_bytes=batch.raw_bytes, item_count=batch.item_count, rejections=batch.rejections,
         candidates=[CandidatePacket(lead_id=lead.lead_id, query=lead.query,
             trend_started_at=lead.signal_at.isoformat(), approximate_traffic_floor=lead.traffic_floor,

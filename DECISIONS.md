@@ -624,3 +624,7 @@ Independent gpt-reserve final review approved exact5deeef5a20826d672a03c444d697c
 ## DESIGN-030 — summary note styling (owner 2026-09-26)
 
 Remove blanket background fills from the article. The desired `30초 요약` treatment is a restrained note/post-it-like emphasis, not a full-width highlighted paragraph. In the native editor, the accepted fallback is a readable warm-orange, bold summary heading with the body left unfilled; do not apply the quote/block tool because its block scope can reformat following sections. Preserve reader-v5 spacing, conversational prose and source binding.
+
+## TOPIC-031 — multi-source search-demand signals (owner 2026-09-26)
+
+Use Google Trends Trending Now as the currently executable RSS signal, then corroborate candidates with Naver DataLab and, when publicly readable and semantically defined, InternetTrend, 시그널랩 or 썸트렌드. These are demand signals rather than evidence of the article's facts, exact traffic or guaranteed 유입. The final topic still requires a readable original, a concrete reader question and an original useful angle. Missing or unavailable secondary signals remain UNKNOWN and do not silently become zero. Internal rankings and source names are not exposed in reader-facing copy.
