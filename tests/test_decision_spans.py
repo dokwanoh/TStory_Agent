@@ -5,6 +5,28 @@ import pytest
 
 from tistory_growth_os.preparation.contracts import PreparationError
 from tistory_growth_os.preparation.decision_spans import DecisionSpans
+from tistory_growth_os.contracts.json_decode import JsonDecodeError
+from tistory_growth_os.preparation.v2_sources import selection_record
+
+
+def test_none_with_empty_angle_reaches_candidate_reselection() -> None:
+    # Given a valid rejection with no proposed article angle.
+    raw = '{"candidate_id":"NONE","angle":"","reason":"unsupported","facts":[]}'
+    # When the provider boundary and selection boundary consume it.
+    resolved = DecisionSpans(()).resolve(raw)
+    # Then it remains a rejection, not an exception or a selected article.
+    assert json.loads(resolved) == json.loads(raw)
+    assert selection_record(resolved, (), ()) is None
+
+
+def test_selected_candidate_still_requires_nonempty_angle() -> None:
+    # Given an actual selection missing its angle.
+    raw = '{"candidate_id":"candidate","angle":"","reason":"supported","facts":[]}'
+    # When either boundary parses it, then selection remains invalid.
+    with pytest.raises(JsonDecodeError):
+        _ = DecisionSpans(()).resolve(raw)
+    with pytest.raises(JsonDecodeError):
+        _ = selection_record(raw, (), ())
 
 
 def source(body: str, url: str = 'https://example.org/source') -> str:

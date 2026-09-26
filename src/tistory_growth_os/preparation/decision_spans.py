@@ -4,6 +4,7 @@ import json
 import re
 
 from ..contracts.json_decode import parse_json
+from ..contracts.json_ast import JsonString
 from ..domain.common import Fields, array, as_object, text
 from .contracts import PreparationError
 from .shared_sources import document_from_value
@@ -54,6 +55,8 @@ class DecisionSpans:
 
     def resolve(self, raw: str) -> str:
         fields = Fields.parse(parse_json(raw), '', ('candidate_id', 'angle', 'reason', 'facts'))
+        candidate_id = text(fields, 'candidate_id')
+        angle = '' if candidate_id == 'NONE' and fields.required('angle') == JsonString('') else text(fields, 'angle')
         catalogue = {span.identity: span for span in self.spans}
         facts: list[dict[str, str]] = []
         for value in array(fields, 'facts', False):
@@ -62,5 +65,5 @@ class DecisionSpans:
             if span is None:
                 raise PreparationError('decision_span_unknown')
             facts.append({'claim': text(fact, 'claim'), 'source_url': span.url, 'source_quote': span.quote})
-        return json.dumps({'candidate_id': text(fields, 'candidate_id'), 'angle': text(fields, 'angle'),
+        return json.dumps({'candidate_id': candidate_id, 'angle': angle,
             'reason': text(fields, 'reason'), 'facts': facts}, ensure_ascii=False)

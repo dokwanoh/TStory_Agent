@@ -114,9 +114,13 @@ def discover(source: str, now: datetime) -> tuple[Candidate, ...]:
 
 def selection_record(raw: str, choices: tuple[Candidate, ...], docs: tuple[SourceDocument, ...]) -> Candidate | None:
     fields = Fields.parse(parse_json(raw), '', ('candidate_id', 'angle', 'reason', 'facts'))
-    _ = text(fields, 'angle'), text(fields, 'reason')
+    _ = text(fields, 'reason')
     if text(fields, 'candidate_id') == 'NONE':
+        from ..contracts.json_ast import JsonString
+        if fields.required('angle') != JsonString(''):
+            _ = text(fields, 'angle')
         return None
+    _ = text(fields, 'angle')
     matches = [candidate for candidate in choices if candidate.candidate_id == text(fields, 'candidate_id')]
     if len(matches) != 1:
         raise PreparationError('selection_not_researched')

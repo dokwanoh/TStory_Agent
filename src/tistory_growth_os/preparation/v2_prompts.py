@@ -32,6 +32,10 @@ not to tool calls. Use observed search results for exact URLs and occurrence/ann
 never invent a URL or claim you searched when no search ran. If unavailable, return candidates [].
 Use current public search, supplied signals and prior history. Return concise leads: id, title,
 event_at (observed occurrence OR new announcement, not a future event), event_time_basis,
+event_at must be an observed RFC3339 timestamp with timezone (YYYY-MM-DDTHH:MM:SS+09:00),
+or an explicitly sourced YYYY-MM-DD 오전(한국시간) / 새벽(한국시간) interval.
+Date-only values cannot establish the selection-time24h window; find a timestamped report instead.
+Never invent a time to satisfy this format.
 reader_question and exact source_urls. No draft, mandatory second domain, three-topic fact checklist
 or per-article policy-link quota. Leads are NOT evidence. Host acquires originals before selection.
 Exclude fabricated experience, gossip, unsupported high-risk advice and duplicate prior articles.
