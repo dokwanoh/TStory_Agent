@@ -74,12 +74,15 @@ def test_native_generation_rejects_symlink_and_untrusted_identity(tmp_path: Path
         _ = native_generation_evidence(tmp_path, SESSION, 0, 1)
 
 
-def test_native_generation_accepts_only_real_image_generation_handoff(tmp_path: Path) -> None:
+@pytest.mark.parametrize('historical_sibling', [False, True])
+def test_native_generation_accepts_only_real_image_generation_handoff(tmp_path: Path, historical_sibling: bool) -> None:
     folder = tmp_path / 'generated_images' / SESSION
     folder.mkdir(parents=True)
     image = folder / 'exec-9425f8a4-4ed8-4f5b-aeae-4f96e96cbaf1.png'
     body = b'\x89PNG\r\n\x1a\n' + b'x' * 2000
     _ = image.write_bytes(body)
+    if historical_sibling:
+        _ = (folder / 'exec-00000000-0000-0000-0000-000000000001.png').write_bytes(body)
     handoff = tmp_path / 'image-generation.handoff.json'
     handoff.write_text(json.dumps({'kind': 'image_generation_handoff', 'session_id': SESSION,
         'tool_kinds': ['image_generation'], 'outputs': [{'file': image.name,

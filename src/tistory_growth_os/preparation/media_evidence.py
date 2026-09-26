@@ -28,6 +28,9 @@ def bind_generated_media(directory: Path, response: str, context: GenerationCont
     if not generated:
         return json.dumps({'kind': 'generated_derivations', 'bindings': []})
     inventory = native_generation_evidence(context.codex_home, context.session, context.started, len(generated), context.handoff)
+    inventory_fields = Fields(as_object(parse_json(inventory), ''), '', ())
+    listed = {text(Fields(as_object(item, '/outputs'), '/outputs', ()), 'file')
+              for item in array(inventory_fields, 'outputs', True)}
     used: set[str] = set()
     bindings: list[dict[str, str]] = []
     for asset in generated:
@@ -35,7 +38,7 @@ def bind_generated_media(directory: Path, response: str, context: GenerationCont
         if source_file is None:
             raise PreparationError('generated_source_binding_required')
         name = text(asset, 'source_file')
-        if re.fullmatch(r'exec-[0-9a-f-]{36}\.png', name) is None or name in used:
+        if re.fullmatch(r'exec-[0-9a-f-]{36}\.png', name) is None or name in used or name not in listed:
             raise PreparationError('generated_source_binding_invalid')
         used.add(name)
         original = safe_output_root(context.codex_home, f'generated_images/{context.session}/{name}')
@@ -134,8 +137,6 @@ def _handoff_generation_evidence(
                     or sha256(body).hexdigest() != expected):
                 raise failure
             records.append({'file': name, 'sha256': expected})
-        if {path.name for path in directory.glob('exec-*.png')} != names:
-            raise failure
     except (JsonDecodeError, OSError, TypeError, ValueError, AttributeError, ArtifactWriteError) as error:
         raise failure from error
     return json.dumps({'kind': 'native_generation_outputs', 'session_id': session,
