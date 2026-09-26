@@ -621,6 +621,6 @@ KNN owner material was captured through normal Chrome transcript export and the 
 
 Independent gpt-reserve final review approved exact5deeef5a20826d672a03c444d697cf25c571edf1b65569a21588fec0b78061e9. Native publication held at body_verification after one correction; no final save attempted. Hypotheses still distinguishable: native HTML normalization vs input/content loss vs delayed editor state. No observed native HTML snapshot establishes which; do not invent a diagnosis. Login and four uploads succeeded. Native UI reconciliation unavailable because Mac is locked. Original failure/intent/checkpoint preserved; STOP restored and no automatic retry. This operation is NOT public_verified.
  
-## DESIGN-030 — full summary paragraph highlight (owner 2026-09-26)
+## DESIGN-030 — summary note styling (owner 2026-09-26)
 
-The `30초 요약` treatment is a single visual emphasis block: keep the summary heading and apply the same light background color across every visual line of the immediately following summary paragraph. Verify the rendered public readback after save; preserve the established reader-v5 spacing, conversational prose and source binding.
+Remove blanket background fills from the article. The desired `30초 요약` treatment is a restrained note/post-it-like emphasis, not a full-width highlighted paragraph. Until a native editor treatment is selected and verified, keep the summary unfilled and preserve reader-v5 spacing, conversational prose and source binding.
