@@ -623,4 +623,4 @@ Independent gpt-reserve final review approved exact5deeef5a20826d672a03c444d697c
  
 ## DESIGN-030 — summary note styling (owner 2026-09-26)
 
-Remove blanket background fills from the article. The desired `30초 요약` treatment is a restrained note/post-it-like emphasis, not a full-width highlighted paragraph. Until a native editor treatment is selected and verified, keep the summary unfilled and preserve reader-v5 spacing, conversational prose and source binding.
+Remove blanket background fills from the article. The desired `30초 요약` treatment is a restrained note/post-it-like emphasis, not a full-width highlighted paragraph. In the native editor, the accepted fallback is a readable warm-orange, bold summary heading with the body left unfilled; do not apply the quote/block tool because its block scope can reformat following sections. Preserve reader-v5 spacing, conversational prose and source binding.
