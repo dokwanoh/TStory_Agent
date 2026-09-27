@@ -16,6 +16,12 @@ Anonymous readback confirmed four images with their exact alts. The initial read
 
 The repair used exact package assets through the regular native picker, not altered/re-encoded assets or a URL workaround. No signed image URLs were persisted. This is not unattended-publisher certification.
 
+## Owner editorial feedback (2026-09-28)
+
+Anonymous link inspection found repeated destinations in post123: the GPT-6 Astra API model page, ChatGPT pricing page and Claude pricing page each appear under “비용을 읽는 기준,” their respective main pricing sections, and “같은 요청을 100회 처리하면 얼마일까요?” The GPT-6 Luna and GPT-5.6 Luna model pages each appear under the main API-price and 100-request calculation sections. Their anchor prefixes differ but the hrefs are identical. No article edit was made in response to this observation. Keep future articles to one anchor per unique destination in the most relevant source block, and request current owner approval before changing these links on the existing public post.
+
+For future articles, render “30초 요약” as a concise table with clear labels, comparable values and units, mobile-friendly short cells, and a short caveat below if required. This supersedes the prose-only summary in post123 as the forward style; it does not authorize a post123 text edit.
+
 Owner request2026-09-27: prepare and immediately publish ONE article comparing current Codex and Claude Code model prices, especially GPT-6 Astra, GPT-6 Luna and GPT-5.6 Luna. Research, writing and independent review must use `gpt-6-luna`. This is current one-article authority; historical post122 approvals were not reused.
 
 Operation: `manual-20260927-model-pricing-luna-01`. Artifacts: `.artifacts/preparation/manual-20260927-model-pricing-luna-01/`. Route: assisted owner-topic preparation, with `native-immediate-owner-v1` inspection. The owner-topic age exception was retained; source dates were not relabeled as today's news. No recurring model, STOP or scheduling setting changed.
