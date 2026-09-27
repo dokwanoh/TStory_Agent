@@ -1,5 +1,13 @@
 # Luna pricing article: held before publication
 
+## Current operation and public completion
+
+The held `manual-20260927-model-pricing-luna-01` record was preserved. A separate fresh owner-authorized operation, `manual-20260927-model-pricing-luna-02`, reused the approved article package only after binding a new grant and current exact-package review record. Research, writing and the independent review stage were recorded as `gpt-6-luna`; historical post122 approval and receipts were not reused.
+
+The native Tistory save created public post123 at `https://nedamma.tistory.com/123`. Anonymous verification then found that the first save had retained duplicate image tokens. The existing post was edited in the native editor, the duplicated tokens were removed, and the four exact approved image blocks were restored in `01.jpg` through `04.jpg` order. A second native update added the exact manifest alt text to each image and publicly republished the same post.
+
+Final readback is recorded at `.artifacts/preparation/manual-20260927-model-pricing-luna-02/public-readback.json`. All checks passed: anonymous HTTP 200, exact title, 42 body blocks, 18 source links, four images, ordered filenames, exact alt text, representative first image, case-insensitive tags and zero replacement characters. The save receipt is `.artifacts/preparation/manual-20260927-model-pricing-luna-02/save-receipt.json`. This is a user-authorized native public update with anonymous verification; it does not establish unattended-publisher certification.
+
 Owner request2026-09-27: prepare and immediately publish ONE article comparing current Codex and Claude Code model prices, especially GPT-6 Astra, GPT-6 Luna and GPT-5.6 Luna. Research, writing and independent review must use `gpt-6-luna`. This is current one-article authority; historical post122 approvals were not reused.
 
 Operation: `manual-20260927-model-pricing-luna-01`. Artifacts: `.artifacts/preparation/manual-20260927-model-pricing-luna-01/`. Route: assisted owner-topic preparation, with `native-immediate-owner-v1` inspection. The owner-topic age exception was retained; source dates were not relabeled as today's news. No recurring model, STOP or scheduling setting changed.
@@ -41,4 +49,4 @@ Use direct subject relevance in the initial scene briefs. Avoid forcing unrelate
 
 When reusing review prompts, remove already-resolved imperative repair instructions from the current feedback. Retaining old defect wording can encourage redundant revisions and spend the bounded review budget. Earlier successful turns do not make a later `media` decision ready.
 
-The four-turn budget is exhausted and immutable. Current authority does not authorize silently resetting it or importing post122's extra assisted review. Continuation requires an explicit owner decision permitting image replacement and an additional independent exact-package review. Until then preserve this operation and do not start a replacement identity or save. If later approved, correct the same article, obtain current exact approval and current remote-state evidence, then use the post122 native one-save/readback procedure.
+The original four-turn budget remains exhausted and immutable. The owner then explicitly replied “계속” to a concrete request to replace the four images and allow exactly one additional independent exact-package review. This authorization applies only to this existing article and does not import post122's approval or reuse its review receipt. Continuation record: `.artifacts/preparation/manual-20260927-model-pricing-luna-01/followup-approval.json`. The one additional review must approve the exact replacement package; any non-ready result remains held. After approval, obtain current duplicate and publisher state, bind the current package under the still-valid one-article publication grant, and use the post122 native one-save/readback procedure.
