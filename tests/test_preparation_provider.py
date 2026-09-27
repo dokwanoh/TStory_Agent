@@ -92,7 +92,7 @@ def test_failed_provider_diagnostic_classifies_error_without_persisting_raw_stde
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     # Given: the CLI fails with an actionable schema error that also contains a secret-shaped value.
-    stderr = 'invalid JSON schema: enum limit exceeded; api_key=private-marker'
+    stderr = 'invalid JSON schema: enum limit exceeded; api_key=example-private-marker'
     def captured_context(directory: Path, prompt: str, urls: tuple[str, ...]) -> str:
         return '{"documents":[]}'
 

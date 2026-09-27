@@ -1,5 +1,5 @@
 id	kind	state	title	evidence
-decision-models-20260927	task	BLOCKED	Fresh approval consumed by manual-20260927-decision-models-live-03; 15 fresh source snapshots, then decision provider exited1 and sanitized classification recorded rate_limited; no writing/media/review/package/publisher/save; preserve run, another attempt needs fresh approval	.artifacts/preparation/manual-20260927-decision-models-live-03/candidate-02/decision.error.json
+decision-models-20260927	task	DONE	Public post122 verified through assisted native delivery; exact independent review, four images and full anonymous readback; input-size, classification and quote-feedback fixes verified	docs/68_decision_input_recovery.md
 weather-20260927	task	DONE	Current-approved weather article native publication; public post121 verified	.artifacts/preparation/manual-20260927-weather-live-01/recovery-20260927-1100/publication-evidence.md
 editorial-v2	task	DONE	PREP-016 replacement preparation and action-based editing; fixture handoff and replay verified, real-model public proof remains separate	STATUS.md
 targeted-review-reuse	task	DONE	PREP-015 local delta review and scoped repair; exact evidence/claim reuse; real-model semantics not certified	STATUS.md
