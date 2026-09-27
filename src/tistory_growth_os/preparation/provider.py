@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import subprocess
 from collections.abc import Mapping
+from enum import StrEnum
 from types import MappingProxyType
 from typing import Final, Literal, Protocol
 
@@ -66,6 +67,34 @@ class StageResponse:
 
 class Provider(Protocol):
     def __call__(self, request: StageRequest) -> StageResponse: ...
+
+
+class ProviderFailureClass(StrEnum):
+    AUTHENTICATION = 'authentication'
+    RATE_LIMITED = 'rate_limited'
+    SCHEMA_REJECTED = 'schema_rejected'
+    REQUEST_TOO_LARGE = 'request_too_large'
+    NETWORK_ERROR = 'network_error'
+    SERVICE_UNAVAILABLE = 'service_unavailable'
+    UNCLASSIFIED = 'unclassified'
+
+
+def classify_provider_failure(stderr: str) -> ProviderFailureClass:
+    """Map CLI stderr to a safe category without retaining arbitrary text."""
+    lowered = stderr.casefold()
+    if 'schema' in lowered and any(word in lowered for word in ('invalid', 'unsupported', 'reject', 'limit')):
+        return ProviderFailureClass.SCHEMA_REJECTED
+    if any(word in lowered for word in ('unauthorized', 'authentication required', 'not logged in', 'invalid api key', '401')):
+        return ProviderFailureClass.AUTHENTICATION
+    if any(word in lowered for word in ('rate limit', 'too many requests', '429')):
+        return ProviderFailureClass.RATE_LIMITED
+    if any(word in lowered for word in ('request too large', 'payload too large', 'context length', 'token limit')):
+        return ProviderFailureClass.REQUEST_TOO_LARGE
+    if any(word in lowered for word in ('502', '503', '504', 'service unavailable', 'overloaded')):
+        return ProviderFailureClass.SERVICE_UNAVAILABLE
+    if any(word in lowered for word in ('connection refused', 'connection reset', 'failed to connect', 'timed out', 'dns error')):
+        return ProviderFailureClass.NETWORK_ERROR
+    return ProviderFailureClass.UNCLASSIFIED
 
 
 def completion(events: str, model: str = MODEL) -> StageResponse:
@@ -165,7 +194,9 @@ def codex_provider(request: StageRequest) -> StageResponse:
                             check=False, timeout=900)
     if result.returncode != 0:
         diagnostic = {'stage': request.stage, 'exit_code': result.returncode,
-                      'stderr_sha256': sha256(result.stderr.encode()).hexdigest()}
+                      'stderr_sha256': sha256(result.stderr.encode()).hexdigest(),
+                      'stderr_bytes': len(result.stderr.encode()),
+                      'stderr_classification': classify_provider_failure(result.stderr).value}
         with (request.directory / f'{request.stage}.error.json').open('x') as stream:
             _ = stream.write(json.dumps(diagnostic))
         raise PreparationError('provider_execution_failed')
