@@ -169,8 +169,7 @@ def select_sources(store: StageStore, context: SelectionContext, clock: Callable
         decision_prompt = v2_prompts.DECISION
         prior_sessions.add(store.receipt('opportunity').session_id)
     prompt = (prompts.BOUNDARY + '\n' + decision_prompt
-        + '\nCandidates:\n' + research_source + '\nOpportunity:\n' + comparison
-        + '\nOriginal documents:\n' + json.dumps([asdict(doc) for doc in documents], ensure_ascii=False))
+        + '\nCandidates:\n' + research_source + '\nOpportunity:\n' + comparison)
     candidate: Candidate | None = None
     selected = ''
     decision_store = store

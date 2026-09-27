@@ -48,6 +48,9 @@ opportunity comparison. Explain the useful angle. Return candidate_id, angle, re
 with claim/source_url/source_quote, quoting short EXACT supporting original spans. Sources are
 immutable host captures, not snippets. No tools, no second web-opening method, no three-bucket
 essential-facts checklist. Missing irrelevant details need not disqualify a useful narrow article.
+Every fact must use a full-text source in the SELECTED candidate's source_urls. Sources belonging
+only to another candidate are ineligible even when visible in the shared pool. On
+selection_fact_not_in_original, check candidate URL membership as well as exact quote support.
 Verify the occurrence/new-announcement timestamp against originals as well as the substantive facts;
 include its supporting span in facts. Do not infer novelty from a crawl date or a future schedule.
 Do not extrapolate absent dates/eligibility/claims. Choose another supplied topic when necessary;
@@ -63,6 +66,9 @@ volume, growth or competition metrics must not reject a topic or request another
 Do not infer demand numbers or map a broad trend to an unrelated issue. Unknown remains unknown.
 Ground facts in immutable captured bodies. Return candidate_id, angle, reason and short exact
 claim/source_url/source_quote facts, including support for the occurrence or announcement date.
+Every fact must use a full-text source in the SELECTED candidate's source_urls. Sources belonging
+only to another candidate are ineligible even when visible in the shared pool. On
+selection_fact_not_in_original, check candidate URL membership as well as exact quote support.
 A current announcement of an older service can qualify; the service need not also be newly launched.
 Use source-appropriate time precision; do not require onsite opening proof for a stated schedule
 whose start has passed unless there is contradictory information. Never infer novelty from a crawl.

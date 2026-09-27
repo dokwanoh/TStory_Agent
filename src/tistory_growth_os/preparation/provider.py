@@ -82,15 +82,17 @@ class ProviderFailureClass(StrEnum):
 def classify_provider_failure(stderr: str) -> ProviderFailureClass:
     """Map CLI stderr to a safe category without retaining arbitrary text."""
     lowered = stderr.casefold()
+    statuses = re.findall(r'\b(?:http(?:/\d(?:\.\d)?)?|status(?:\s+code)?)\s*[:=]?\s*(401|429|50[234])\b', lowered)
     if 'schema' in lowered and any(word in lowered for word in ('invalid', 'unsupported', 'reject', 'limit')):
         return ProviderFailureClass.SCHEMA_REJECTED
-    if any(word in lowered for word in ('unauthorized', 'authentication required', 'not logged in', 'invalid api key', '401')):
+    if '401' in statuses or any(word in lowered for word in ('unauthorized', 'authentication required', 'not logged in', 'invalid api key')):
         return ProviderFailureClass.AUTHENTICATION
-    if any(word in lowered for word in ('rate limit', 'too many requests', '429')):
+    if '429' in statuses or any(word in lowered for word in ('rate limit', 'too many requests')):
         return ProviderFailureClass.RATE_LIMITED
-    if any(word in lowered for word in ('request too large', 'payload too large', 'context length', 'token limit')):
+    if any(word in lowered for word in ('request too large', 'payload too large', 'context length', 'token limit',
+                                       'input_too_large', 'exceeds the maximum length')):
         return ProviderFailureClass.REQUEST_TOO_LARGE
-    if any(word in lowered for word in ('502', '503', '504', 'service unavailable', 'overloaded')):
+    if any(status in statuses for status in ('502', '503', '504')) or any(word in lowered for word in ('service unavailable', 'overloaded')):
         return ProviderFailureClass.SERVICE_UNAVAILABLE
     if any(word in lowered for word in ('connection refused', 'connection reset', 'failed to connect', 'timed out', 'dns error')):
         return ProviderFailureClass.NETWORK_ERROR

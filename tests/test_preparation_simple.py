@@ -7,6 +7,22 @@ import pytest
 from tests.test_preparation_v2 import EditorialFixture, v2_run
 from tistory_growth_os.preparation.contracts import PreparationError
 from tistory_growth_os.preparation.runner import execute
+from tistory_growth_os.preparation.provider import StageRequest, StageResponse
+
+
+def test_decision_delegates_original_bodies_to_host_without_duplicate_prompt_copy(tmp_path: Path) -> None:
+    run, fixture = v2_run(tmp_path), EditorialFixture()
+    initial = run.directory / 'input.json'
+    _ = initial.write_text(initial.read_text().replace('editorial-v2', 'editorial-simple-v1'))
+
+    def provider(request: StageRequest) -> StageResponse:
+        if request.stage == 'decision':
+            assert request.source_urls
+            assert '"body":' not in request.prompt
+        return fixture(request)
+
+    package = execute(run, provider)
+    assert (package / 'article.html').is_file()
 
 
 def test_simple_selection_prepares_and_replays_without_opportunity(tmp_path: Path) -> None:

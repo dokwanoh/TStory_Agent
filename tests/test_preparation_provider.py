@@ -7,7 +7,9 @@ import pytest
 
 from tistory_growth_os.preparation import provider as provider_module
 from tistory_growth_os.preparation.contracts import PreparationError
-from tistory_growth_os.preparation.provider import StageRequest, completion, codex_provider, model_for_stage
+from tistory_growth_os.preparation.provider import (
+    StageRequest, classify_provider_failure, completion, codex_provider, model_for_stage,
+)
 
 
 def test_stage_model_routing_uses_reserved_for_all_stages() -> None:
@@ -25,6 +27,20 @@ def test_stage_model_routing_uses_reserved_for_all_stages() -> None:
     assert model_for_stage('review') == 'gpt-reserve'
     assert model_for_stage('media') == 'gpt-reserve'
     assert model_for_stage('edit') == 'gpt-reserve'
+
+
+@pytest.mark.parametrize(('message', 'expected'), [
+    ('2026-09-27T06:15:14.429Z ERROR unknown failure', 'unclassified'),
+    ('2026-09-27T06:15:14.401Z ERROR unknown failure', 'unclassified'),
+    ('2026-09-27T06:15:14.502Z ERROR unknown failure', 'unclassified'),
+    ('trace hash=abcdef429abcdef unknown failure', 'unclassified'),
+    ('2026-09-27T06:15:14.401Z HTTP 429 Too Many Requests', 'rate_limited'),
+    ('unexpected status 401', 'authentication'),
+    ('HTTP/1.1 503', 'service_unavailable'),
+    ('Input exceeds the maximum length of 1048576 characters. input_too_large', 'request_too_large'),
+])
+def test_failure_classification_uses_error_context_not_timestamp_digits(message: str, expected: str) -> None:
+    assert classify_provider_failure(message).value == expected
 
 
 def test_jsonl_preserves_unicode_line_separator_in_message() -> None:
