@@ -16,7 +16,7 @@ from .provider import Provider, StageRequest
 from .run_contract import PreparationRun
 from .storage import StageStore
 from .v2_attestation import Attestation, approve
-from .v2_contracts import check_claims, parse_edit
+from .v2_contracts import check_claims, claim_feedback, parse_edit
 from .v2_sources import SourceSelection, bind_documents, captured
 from . import prompts, v2_prompts
 
@@ -63,7 +63,9 @@ def _require_interactive_media(work: EditorialWork, directory: Path, draft: Draf
 
 
 def edit_package(work: EditorialWork, provider: Provider) -> EditOutcome:
-    writing, selection, budget = work.writing, work.selection, work.budget
+    writing: str = work.writing
+    selection: SourceSelection = work.selection
+    budget: EditBudget = work.budget
     media: MediaMaterial | None = None
     media_directory = work.directory
     media_prompt: str = ''
@@ -98,8 +100,8 @@ def edit_package(work: EditorialWork, provider: Provider) -> EditOutcome:
                 _require_interactive_media(work, media_directory, draft)
                 media_store = StageStore(media_directory, provider)
                 if not media_prompt:
-                    media_prompt = (prompts.BOUNDARY + '\n' + prompts.MEDIA + '\nArticle:\n' + writing
-                        + '\nEvidence:\n' + encode_json(selection.candidate.evidence) + '\nCorrection:\n' + feedback)
+                    media_prompt = '\n'.join((prompts.BOUNDARY, prompts.MEDIA, 'Article:', writing,
+                        'Evidence:', encode_json(selection.candidate.evidence), 'Correction:', feedback))
                 media = prepare_media(media_store, StageRequest('media', media_prompt, media_directory), work.history)
                 sessions.add(media_store.receipt('media').session_id)
             except PreparationError as error:
@@ -109,10 +111,9 @@ def edit_package(work: EditorialWork, provider: Provider) -> EditOutcome:
         if draft is not None and media is not None:
             for image in media.images:
                 write_immutable(directory / 'media' / image.name, image.read_bytes())
-            evidence = (selection.record + '\nCaptured evidence:\n' + encode_json(selection.candidate.evidence)
-                + '\nMedia provenance:\n' + media.derivations + '\nPolicy originals:\n'
-                + json.dumps([asdict(doc) for doc in policies], ensure_ascii=False)
-                + '\nPrior editorial action:\n' + previous)
+            evidence = '\n'.join((selection.record, 'Captured evidence:', encode_json(selection.candidate.evidence),
+                'Media provenance:', media.derivations, 'Policy originals:',
+                json.dumps([asdict(doc) for doc in policies], ensure_ascii=False), 'Prior editorial action:', previous))
             digest = assemble(directory, PackageInput(work.run.run_id, selection.candidate, draft,
                 selection.selected_at, checked, evidence, media.response, checked))
             html = (directory / 'inspection/article.html').read_text()
@@ -145,7 +146,7 @@ def edit_package(work: EditorialWork, provider: Provider) -> EditOutcome:
                 try:
                     check_claims(result, draft.title + '\n' + html, selection.documents)
                 except PreparationError as error:
-                    feedback = error.code
+                    feedback = error.code + '\n' + claim_feedback(result, draft.title + '\n' + html, selection.documents)
                     continue
                 package = approve(Attestation(work.run.root, work.run.run_id, directory, digest,
                     checked, min(evidence_checked_at(selection.candidate, checked), *policy_times), work.run.clock()))
