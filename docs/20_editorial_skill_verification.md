@@ -1,5 +1,13 @@
 # Reusable editorial skill verification
 
+## Post122 lessons promoted for reuse, 2026-09-27
+
+On the owner's explicit request, updated the installed SKILL.md entrypoint and references/delivery.md with the observed post122 full-body transfer route, complete readback, partial-AX and confirmation-dialog recovery, tag normalization and one-save/public verification. AGENTS.md and STATUS.md point the next operator to docs/68_decision_input_recovery.md “Next-article reuse”, which retains the complete portable procedure in Git. DECISIONS.md records the owner's reuse instruction. Historical approval and the separately assisted review do not become new article authority or an extra automatic review allowance.
+
+Installed files remain in `/Users/yeondu/.codex/skills/tistory-editorial-cycle/`; they are outside this repository. SKILL.md SHA-256 `ce5d0ad8456a3c4b5650f49486fe21e2ee782e81ccf5b4fa714666b25294565d`; references/delivery.md SHA-256 `02bab08dfcc7021afa77220faad4c23125e76d80aa7b30db43e0a6e9332ed8d0`. This documentation increment performs no browser interaction, new post or scheduler change. Existing prior verification records below retain their historical scope.
+
+Validation: quick_validate.py could not start because PyYAML is absent; no dependency was installed. Installed Ruby independently passed YAML/name/description/scaffold checks and all7 relative links. Project-audit/memory tests returned31 passed/1 failed in12.90s; the sole failure is the already documented scheduling-control view drift, not a new skill failure. Read-only memory audit reports the same STATUS managed-view issue; PLAN/BACKLOG and the completed publication task remain consistent. `git diff --check` passed. These are documentation checks, not a new live publication proof.
+
 Owner asks for skill-first reuse of the three good final articles. Created `${USER_HOME}/.codex/skills/tistory-editorial-cycle/` with SKILL.md, two routed references, agents/openai.yaml and assets/run-record.json. No package/plugin installation, scheduler update, browser write or post mutation in this skill-creation increment.
 
 ## Evidence and actual cause limits

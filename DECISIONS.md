@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Retain post122 lessons for subsequent articles (2026-09-27)
+
+The owner explicitly asked to retain the completed publication process in memory and instructions and use it for subsequent articles. Promote the verified diagnostic and native-transfer methods into AGENTS.md and the existing tistory-editorial-cycle skill; keep the detailed evidence and next-article procedure in docs/68_decision_input_recovery.md. Reuse methods, not historical authority, source freshness, asset identities or review receipts. The separate assisted exact-record review does not become an automatic extra-turn allowance. This is an instruction/memory update only, with no new publication, runtime-control or schedule change.
+
 ## Chrome profile identity guard (2026-09-25)
 
 The immediate publisher now refuses to launch unless the owned `browser-profile` contains an exact role marker for logical profile `티스토리 게시봇`, host `nedamma.tistory.com`, and Chrome directory `Default`, and the profile's `Local State` contains that directory. This separates the publisher from the other Chrome/Codex project before navigation and preserves the existing worker lock. Missing or mismatched identity is a fail-closed hold; no cookie/session copying or global browser control is introduced.
