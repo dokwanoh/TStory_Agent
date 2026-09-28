@@ -2,7 +2,7 @@
 
 Owner-authorized operation `manual-20260928-seouldal-moon-01` completed at 2026-09-29 00:14 KST with one native public-save click. Public URL: https://nedamma.tistory.com/128 . Title: 서울달 추석 행사, 탑승 안 해도 돼요 🌕 10월 5일까지 참여법.
 
-Owner subsequently requested a recurring visual/caption rule, with the existing post's first-image caption as the example. A same-ID style-only revision is pending: the Mac hosting publisher Chrome became locked during editor-mode switching, before any article-body change or save, so post128 remains in its previously published state. No second save or revision is claimed. See `docs/76_editorial_pace_20260929.md`.
+Owner subsequently requested a recurring visual/caption rule, with the existing post's first-image caption as the example. A same-ID style-only revision was published after switching the editor to HTML mode, wrapping the full summary heading/table/caveat in one pale yellow note and removing all three image captions. The article URL/title and four images/alts remain intact; public-page readback confirmed the new background and no caption text. The earlier “Mac locked” report was incorrect: the editor was paused at Tistory's native confirmation dialog for switching writing mode. See `docs/76_editorial_pace_20260929.md`.
 
 ## Current evidence
 
