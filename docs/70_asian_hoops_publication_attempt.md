@@ -1,5 +1,11 @@
 # Asian Games basketball article publication attempt
 
+## Later public-page reconciliation and requested rewrite — 2026-09-28
+
+At approximately09:20KST, the normal Chrome public page `https://nedamma.tistory.com/124` was read anonymously. Contrary to the 06:57 checkpoint below, post124 now exists publicly (page timestamp 2026-09-28 07:35) under the original title and contains the old copy, including the supplied-Short reference, a YouTube link, the AI-image disclaimer, the defensive officiating caveat and the sentence distinguishing the two finals. Preserve this readback as evidence that the 06:57 “no public post” state was true then but later stale; do not create a second post.
+
+The user explicitly requested a fully original rewrite of this existing article and persistent future style guidance. The currently open native Chrome editor for post124 now contains a different title/body, a compact 30-second table, four ordered images between relevant sections and four unique OCA source links. Image alts are neutral scene descriptions. The independent draft reviewer verified medal results and scores against the four OCA reports and approved the requested wording; its nonblocking factual precision suggestion on men's 3x3 pacing was applied. Current editor text scan: no requested prohibited phrases, four OCA links, four image nodes, five table rows. Screenshots confirmed image placement between sections. No final save was made during this continuation. The old `80f55fc8…` review receipt is not bound to this rewritten candidate; do not cite it as approval for the current bytes. Before a save, capture the exact current candidate and ensure its package/review evidence matches. The action-time confirmation requirement recorded for final public publication still applies. See also `docs/72_post124_revision_candidate_20260928.md`.
+
 Operation: `manual-20260928-asian-hoops-owner-01`\
 Status: **HELD at native image-picker boundary; not published**\
 Recorded: 2026-09-28 06:57 KST
