@@ -2,6 +2,8 @@
 
 These are persistent editorial preferences for future Tistory posts. They do not grant publication authority, waive factual/source/rights checks, extend a review receipt, or make old approvals reusable.
 
+Owner update 2026-09-29: wrap the full “30초 요약” heading, compact table and short caveat in one soft sticky-note color so the whole block reads as one note. Remove visible image-caption text and any nearby sentence whose only job is explaining the image. Keep accurate neutral alt text. Ordinary article runs use one concise pre-save pass and one post-save public-result check; skip redundant repeated surface/hash/full-body checks and unrelated tests, while retaining source facts, ordered media/alts, duplicate protection and a verified public result. See `docs/76_editorial_pace_20260929.md`.
+
 - Treat a supplied video or Short as a topic pointer. Research the underlying subject and write a fully original article; do not mention the supplied clip or use source-revealing terms such as “쇼츠” in the article.
 - Place contextual images among relevant body sections rather than collecting them in one block. Keep each image's alt text neutral and descriptive. Do not add generic AI-image disclaimers such as “AI 생성 예시 이미지입니다. 실제 경기 사진은 아닙니다.”; do not imply that generated imagery documents a real event.
 - Use natural, conversational Korean with purposeful emojis. Avoid stiff, overqualified prose and defensive meta caveats about evidence limitations that do not help readers.

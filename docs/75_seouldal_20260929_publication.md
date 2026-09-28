@@ -2,6 +2,8 @@
 
 Owner-authorized operation `manual-20260928-seouldal-moon-01` completed at 2026-09-29 00:14 KST with one native public-save click. Public URL: https://nedamma.tistory.com/128 . Title: 서울달 추석 행사, 탑승 안 해도 돼요 🌕 10월 5일까지 참여법.
 
+Owner subsequently requested a recurring visual/caption rule, with the existing post's first-image caption as the example. A same-ID style-only revision is pending: the Mac hosting publisher Chrome became locked during editor-mode switching, before any article-body change or save, so post128 remains in its previously published state. No second save or revision is claimed. See `docs/76_editorial_pace_20260929.md`.
+
 ## Current evidence
 
 - Official source: https://www.seoul.go.kr/news/news_report.do?nttNo=466894 , registered 2026-09-21. Its September 28 start of the second-week game program supplied the selected current event phase. The source publication itself was seven days old at selection; this assisted run is not evidence that an automatic trailing-24-hour source-publication gate passed.
