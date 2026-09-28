@@ -1,5 +1,13 @@
 # Asian Games basketball article publication attempt
 
+## Completed same-post update — verified 2026-09-28 09:42 KST
+
+Fresh owner instruction “네 갱신바랍니다” authorized saving the presented revision. The native post124 publish panel showed the revised title, 공개 selected, 스포츠일반 home topic, the existing slug and original2026-09-28 07:35 publication date. One click on 공개 발행 returned to the manager. No creation, duplicate save, Safari interaction or schedule change occurred.
+
+The public URL `https://nedamma.tistory.com/124` now displays the revised title and article in `docs/72_post124_revision_candidate_20260928.md` (reviewed record SHA-256 `a36b76e4d764016ad5d38101ba5d9d32511f4402d3f454b4f4e5d01f0eda55fe`). Chrome public-page readback preserves the original timestamp, six tags and sports category; native pre-save settings retained 스포츠일반. Ordinary scrolling screenshots show all four images at the requested section boundaries and the summary table. A separate cookie-free HTTP request returned200 with the revised title, four ordered neutral image alts, four unique OCA source links, five table rows and no specified prohibited phrases. These are observed saved/public results, not a click-only claim. Current status: public_verified; no further save is pending.
+
+Observation correction: the earlier Chrome public-page reads below used the authenticated publisher profile. They were public-URL readbacks, not anonymous-browser tests. The separate cookie-free HTTP read above supplies anonymous accessibility evidence.
+
 ## Later public-page reconciliation and requested rewrite — 2026-09-28
 
 At approximately09:20KST, the normal Chrome public page `https://nedamma.tistory.com/124` was read anonymously. Contrary to the 06:57 checkpoint below, post124 now exists publicly (page timestamp 2026-09-28 07:35) under the original title and contains the old copy, including the supplied-Short reference, a YouTube link, the AI-image disclaimer, the defensive officiating caveat and the sentence distinguishing the two finals. Preserve this readback as evidence that the 06:57 “no public post” state was true then but later stale; do not create a second post.
