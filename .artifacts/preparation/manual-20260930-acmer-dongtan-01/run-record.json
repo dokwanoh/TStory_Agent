@@ -1,0 +1,56 @@
+{
+  "operation_id": "manual-20260930-acmer-dongtan-01",
+  "status": "public_verified",
+  "post_id": 137,
+  "public_url": "https://nedamma.tistory.com/entry/%EC%95%84%ED%81%AC%EB%A9%94%EB%A5%B4-%EB%8F%99%ED%83%84-1808%EA%B0%80%EA%B5%AC-10%EC%9B%94-%EB%B6%84%EC%96%91-%EC%98%88%EC%A0%95%E2%80%A625m-%EC%B2%9C%EC%9E%A5%C2%B7%EA%B4%91%ED%8F%AD-%EC%A3%BC%EC%B0%A8-%ED%95%B5%EC%8B%AC-%F0%9F%8F%99%EF%B8%8F",
+  "title": "아크메르 동탄 1,808가구 10월 분양 예정…2.5m 천장·광폭 주차 핵심 🏙️",
+  "published_at": "2026-09-30T11:46:00+09:00",
+  "category": "생활정보",
+  "home_topic": "생활정보",
+  "tags": ["아크메르 동탄", "동탄 분양", "동탄 아파트", "청약 정보", "입주자모집공고"],
+  "new_post_count": 1,
+  "initial_public_save_count": 1,
+  "corrective_save_count": 1,
+  "corrections": [
+    "The first public save rendered the article text and pale-yellow summary but omitted media because pasted Tistory image markers were not committed as editor media. The same post137 was edited to insert two photos and one Blender GIF through the native editor, then publicly saved again."
+  ],
+  "media": [
+    {
+      "file": ".artifacts/preparation/manual-20260930-acmer-dongtan-01/media/photo01-metapolis.jpg",
+      "bytes": 254206,
+      "role": "context photograph",
+      "credit": "Matt872000, Wikimedia Commons, CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Metapolis_Towers.jpg"
+    },
+    {
+      "file": ".artifacts/preparation/manual-20260930-acmer-dongtan-01/media/photo02-lake.jpg",
+      "bytes": 558316,
+      "role": "context photograph",
+      "credit": "Masterhatch, Wikimedia Commons, CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dongtan_Lake_Park,_Hwaseong.jpg"
+    },
+    {
+      "file": ".artifacts/preparation/manual-20260930-acmer-dongtan-01/media/motion-ceiling-20cm.gif",
+      "bytes": 144304,
+      "role": "Blender 5.2.2 LTS 3D motion GIF; simplified 2.3m vs 2.5m scene, 48 frames, 720x405",
+      "license": "Original locally rendered work"
+    }
+  ],
+  "sources": [
+    "https://www.xn--2q1b89hgtam35a9rngpa.kr/",
+    "https://www.michuhol.go.kr/main/board/view.do?board_code=board_1&search=eyJib2FyZF9jb2RlIjoiYm9hcmRfMSJ9&sq=313927",
+    "https://v.daum.net/v/Q1DwU6SrZo",
+    "https://www.lawissue.co.kr/view.php?ud=20260929142205200267191f6c6e_12"
+  ],
+  "summary_card": "One complete pale-yellow block, including heading, table and caveat; public computed background rgb(255, 242, 189)",
+  "visible_image_captions": 0,
+  "infographics": 0,
+  "browser_profile": "티스토리 게시봇",
+  "browser_extension_instance_id": "81fa47e6-c506-4465-b002-74bf935a8da8",
+  "recovery": "No mobile-session history was read or edited; mobile recovery remains unverified.",
+  "verification": "Signed-in public page showed post137 public; title, article references, summary-card background and three loaded images were confirmed. Photo images were 1280x960 and motion GIF was 720x405.",
+  "mobile_task_recovery": "unverified",
+  "anonymous_readback": "not_performed",
+  "older_posts_edited": false,
+  "image_generation_used": false
+}
