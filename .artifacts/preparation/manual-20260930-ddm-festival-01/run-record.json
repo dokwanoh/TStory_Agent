@@ -1,0 +1,41 @@
+{
+  "operation_id": "manual-20260930-ddm-festival-01",
+  "status": "public_verified",
+  "post_id": 136,
+  "public_url": "https://nedamma.tistory.com/entry/이번-토요일-장한로가-무대가-돼요-🎪-동대문페스티벌-관람-가이드",
+  "title": "이번 토요일 장한로가 무대가 돼요 🎪 동대문페스티벌 관람 가이드",
+  "published_at": "2026-09-30T10:42:00+09:00",
+  "category": "생활정보",
+  "home_topic": "생활정보",
+  "tags": ["동대문페스티벌", "서울축제", "주말나들이", "거리축제", "장한로"],
+  "new_post_count": 1,
+  "initial_public_save_count": 1,
+  "corrective_save_count": 2,
+  "corrections": [
+    "Initial HTML paste did not commit to CodeMirror, leaving markers in saved content. Replaced through browser clipboard and actual Meta+V, returned to basic mode, saved same post.",
+    "Observed original alleged street photograph was an indoor corridor and GIF text extended below frame. Replaced photo and motion with an actual Janghanpyeong station photograph and corrected 720x405 composition."
+  ],
+  "media": [
+    {"path": "media/motion-ddm-festival-corrected.gif", "role": "photo_based_motion", "frames": 24, "size": [720,405], "alt": "장한평역 출입구 사진 위에 동대문페스티벌 날짜와 시간을 안내하는 움직이는 그래픽", "public_loaded": true},
+    {"path": "media/photo02-street-performance-web.jpg", "role": "real_photo", "alt": "서울 신촌 거리에서 가수가 마이크를 들고 버스킹하는 모습", "public_loaded": true},
+    {"path": "media/photo03-janghanpyeong-web.jpg", "role": "real_photo", "alt": "서울 지하철 5호선 장한평역 6번 출입구", "public_loaded": true}
+  ],
+  "sources": [
+    "https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=517",
+    "https://www.ddmf.co.kr/",
+    "https://commons.wikimedia.org/wiki/File:Seoul-metro-543-Janghanpyeong-station-entrance-6-20180915-080410.jpg",
+    "https://commons.wikimedia.org/wiki/File:240831_나윤권_신촌_버스킹.jpg"
+  ],
+  "station_photo_and_motion_license": "LERK, CC BY-SA 4.0; derivative changes and license credited in article",
+  "summary_card": "One div with #fff3b0 background including heading, six-row table and note",
+  "visible_image_captions": 0,
+  "infographics": 0,
+  "browser_profile": "티스토리 게시봇",
+  "browser_extension_instance_id": "81fa47e6-c506-4465-b002-74bf935a8da8",
+  "recovery": "Existing publisher profile filechooser.setFiles succeeded; no extension permission changes. Native Return resolved mode-confirm dialogs when browser dialog.accept hung. Generic paste and native typeText were unreliable for CodeMirror/Korean; browser clipboard.writeText and input Meta+A/Meta+V committed correct Unicode.",
+  "verification": "Manager ID136 and 124-post count; public title/time/category/five tags; all final media complete with naturalWidth > 0 after ordinary scroll; screenshot shows corrected motion content; no draft markers.",
+  "mobile_task_recovery": "unverified",
+  "anonymous_readback": "not_checked",
+  "older_posts_edited": false,
+  "image_generation_used": false
+}
