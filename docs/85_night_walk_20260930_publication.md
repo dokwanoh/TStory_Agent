@@ -15,7 +15,7 @@
 - Browser readback reported all three images loaded: one 720×900 GIF and two 1100×733 JPEGs.
 - Article covers the 18:00–24:00 three-destination mission, the two-person/3,000-step mission and 500 points per person, and the 25-district route challenge and 10,000 points; it also notes recipient limits and point timing.
 - A same-post correction applied the pale-yellow background to the entire 30-second summary card. On the signed-in public page, the summary container's computed background was `rgb(255, 242, 189)`.
-- After owner feedback, a same-post edit moved the riverside photo directly after the introduction, the landmark photo directly after the first mission's location list, and the three-mission GIF after the district-route explanation and before the closing checklist. Public DOM readback confirmed that order and loaded dimensions of 1100×733, 1100×733 and 720×900.
+- After follow-up owner feedback, a same-post edit moved the three-mission GIF directly after the 30-second summary; the landmark photo follows the three-destination/GPS explanation, and the riverside photo follows the together-walk explanation. Public DOM readback confirmed this contextual sequence, all three assets loaded at 720×900, 1100×733 and 1100×733, and the pale-yellow summary card remained intact. The title, article prose, official source, date, category and tags were retained.
 - Anonymous and mobile readback were not performed.
 
 ## Local assets
