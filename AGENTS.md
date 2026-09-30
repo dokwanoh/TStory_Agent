@@ -1,5 +1,10 @@
 # TISTORY GROWTH OS — current repository instructions
 
+## 최우선 주제 범위 — 사용자 확정 2026-09-30
+
+앞으로 새 글은 **금융/보험, 법률, 부동산, IT/소프트웨어** 네 카테고리의 주제만 다룬다. 모든 주제 탐색·선정·작성·게시에서 먼저 적용하며, 범위 밖 주제는 후보로 선정하거나 새 글로 게시하지 않는다. 과거 게시 사례와 기존의 넓은 카테고리 지침보다 이 최신 제한을 우선한다. 사용자가 명시적으로 변경하기 전까지 유지한다. 글로벌 지침 `~/.codex/AGENTS.md` 최상단에도 같은 결정을 기록했다.
+
+
 - Owner2026-09-29 layout and pace: render “30초 요약” as a single sticky-note style block with one light background color covering the heading, compact summary table and brief caveat; avoid leaving any part of the block on the white page. Keep the existing compact-table structure. Remove visible image captions and explanatory prose that merely describes a nearby image; retain accurate, neutral `alt` text for accessibility. For ordinary direct-public articles, use one compact pre-save pass for source facts, final copy, ordered media/alts, tags, category/home topic and representative image, followed by one save and one concise public ID/URL/title/status check. Do not repeat the same checks through extra screenshots, reopened editors, duplicate full-body comparisons, checksum passes or unrelated tests. Investigate only a concrete mismatch, error or uncertain save. This reduces redundant verification; factual accuracy, correct image identity/alt order, duplicate protection, exact save authority and observable public success remain required. Apply the same visual/caption rules to requested edits of the current article only when the owner's instruction names its affected content.
 
 - Owner2026-09-28 post124 process memory: before the next article or revision, read `docs/71_owner_article_style_20260928.md` “Reuse the verified post124 procedure”. Reconcile live post identity against stale status, verify native summary-table header placement, bind final-copy review, save once under current scoped authority, distinguish signed-in public-page checks from anonymous HTTP readback, and record the actual result. Reuse the successful method and editorial preferences, never historical grants, review receipts, image codes or save claims.

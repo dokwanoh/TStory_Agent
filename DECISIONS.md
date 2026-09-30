@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Limit future topics to four owner-selected categories (2026-09-30)
+
+The owner explicitly restricted future article topics to **금융/보험, 법률, 부동산, IT/소프트웨어** and requested that this remain at the top of global memory. Record the rule first in `~/.codex/AGENTS.md` and in the canonical repository instructions, with the decision mirrored in OWNER_INPUT.md. Apply the restriction to discovery, selection, writing and publication; historical broader categories do not override it. This is a durable editorial scope decision, not a request to rename live Tistory categories or edit/delete existing posts. No runtime configuration or schedules are changed by this documentation update.
+
 ## Retain post122 lessons for subsequent articles (2026-09-27)
 
 The owner explicitly asked to retain the completed publication process in memory and instructions and use it for subsequent articles. Promote the verified diagnostic and native-transfer methods into AGENTS.md and the existing tistory-editorial-cycle skill; keep the detailed evidence and next-article procedure in docs/68_decision_input_recovery.md. Reuse methods, not historical authority, source freshness, asset identities or review receipts. The separate assisted exact-record review does not become an automatic extra-turn allowance. This is an instruction/memory update only, with no new publication, runtime-control or schedule change.
