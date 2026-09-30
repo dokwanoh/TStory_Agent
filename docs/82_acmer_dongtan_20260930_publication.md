@@ -3,19 +3,19 @@
 - Title: 아크메르 동탄 1,808가구 10월 분양 예정…2.5m 천장·광폭 주차 핵심 🏙️
 - Tistory post ID: 137
 - Public URL: https://nedamma.tistory.com/entry/%EC%95%84%ED%81%AC%EB%A9%94%EB%A5%B4-%EB%8F%99%ED%83%84-1808%EA%B0%80%EA%B5%AC-10%EC%9B%94-%EB%B6%84%EC%96%91-%EC%98%88%EC%A0%95%E2%80%A625m-%EC%B2%9C%EC%9E%A5%C2%B7%EA%B4%91%ED%8F%AD-%EC%A3%BC%EC%B0%A8-%ED%95%B5%EC%8B%AC-%F0%9F%8F%99%EF%B8%8F
-- Published: 2026-09-30 11:46 KST; one new post and one same-post media correction
+- Published: 2026-09-30 11:46 KST; one new post and two same-post media corrections (latest update 13:07 KST)
 - Category: 생활정보
 - Tags: 아크메르 동탄, 동탄 분양, 동탄 아파트, 청약 정보, 입주자모집공고
 
 ## Article and media
 
-One article combines the two supplied reports. It distinguishes official project scale from reported design plans and labels the October 15, 2026 recruitment notice date as expected. The full 30-second summary block, including its table and caveat, uses one pale-yellow background. Customer-facing copy uses emojis; there is no infographic or image-caption prose.
+One article combines the two supplied reports. It distinguishes official project scale from reported design plans and labels the October 15, 2026 recruitment notice date as expected. The full 30-second summary block, including its table and caveat, uses one pale-yellow background. Customer-facing copy uses emojis. Two contextual photographs accompany a vivid 96-frame, 720×900 animated infographic that summarizes the project scale, reported ceiling-height, storage and parking plans, and expected recruitment date. No prose caption explains the image.
 
-The published page contains two contextual photographs and one Blender-rendered 3D motion GIF comparing simplified 2.3m and 2.5m ceiling-height scenes. The GIF is placed in the ceiling-height section. Public readback confirmed all three media files loaded. Photo credits and CC BY-SA 4.0 terms are included in the article.
+The infographic GIF is placed in the ceiling-height section and retains the surrounding explanation of how 2.5m compares with 2.3m. The original ceiling-only Blender render and its explanatory sentence were removed. Public readback confirmed two photographs at 1280×960 and the new GIF at 720×900 loaded. Photo credits and CC BY-SA 4.0 terms are included in the article.
 
 ## Publication evidence
 
-The signed-in publisher page showed the article public at post137. Public-page readback confirmed the title, full article text and references, the complete pale-yellow summary background (`rgb(255, 242, 189)`), and three loaded images: two at 1280×960 and the GIF at 720×405. Media was corrected on the same post after the initial save exposed that pasted Tistory image markers were not rendered. No second article was created. Mobile rendering and anonymous readback were not tested.
+The signed-in publisher page showed the article public at post137. Public-page readback confirmed the title, article text, absence of the image-explaining sentence, and three loaded images: two at 1280×960 and the new GIF at 720×900. It also showed the complete pale-yellow summary background (`rgb(255, 242, 189)`). The original publication time and URL were preserved; all media changes were saved to the same post. Mobile rendering and anonymous readback were not tested.
 
 ## Sources
 

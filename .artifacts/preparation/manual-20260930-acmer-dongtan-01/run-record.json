@@ -10,9 +10,9 @@
   "tags": ["아크메르 동탄", "동탄 분양", "동탄 아파트", "청약 정보", "입주자모집공고"],
   "new_post_count": 1,
   "initial_public_save_count": 1,
-  "corrective_save_count": 1,
+  "corrective_save_count": 2,
   "corrections": [
-    "The first public save rendered the article text and pale-yellow summary but omitted media because pasted Tistory image markers were not committed as editor media. The same post137 was edited to insert two photos and one Blender GIF through the native editor, then publicly saved again."
+    "The first public save rendered the article text and pale-yellow summary but omitted media because pasted Tistory image markers were not committed as editor media. A first same-post correction inserted two photos and one Blender GIF. At the owner's request, a second same-post correction replaced the ceiling-only GIF with a 96-frame 720x900 animated infographic covering the article's project scale, reported features and expected schedule, removed the image-explaining sentence, and was publicly saved."
   ],
   "media": [
     {
@@ -30,9 +30,9 @@
       "source": "https://commons.wikimedia.org/wiki/File:Dongtan_Lake_Park,_Hwaseong.jpg"
     },
     {
-      "file": ".artifacts/preparation/manual-20260930-acmer-dongtan-01/media/motion-ceiling-20cm.gif",
-      "bytes": 144304,
-      "role": "Blender 5.2.2 LTS 3D motion GIF; simplified 2.3m vs 2.5m scene, 48 frames, 720x405",
+      "file": ".artifacts/preparation/manual-20260930-acmer-dongtan-01/media/motion-article-overview.gif",
+      "bytes": 356440,
+      "role": "2D animated infographic GIF covering project scale, reported design features and expected schedule; 96 frames, 720x900",
       "license": "Original locally rendered work"
     }
   ],
@@ -44,11 +44,11 @@
   ],
   "summary_card": "One complete pale-yellow block, including heading, table and caveat; public computed background rgb(255, 242, 189)",
   "visible_image_captions": 0,
-  "infographics": 0,
+  "infographics": 1,
   "browser_profile": "티스토리 게시봇",
   "browser_extension_instance_id": "81fa47e6-c506-4465-b002-74bf935a8da8",
   "recovery": "No mobile-session history was read or edited; mobile recovery remains unverified.",
-  "verification": "Signed-in public page showed post137 public; title, article references, summary-card background and three loaded images were confirmed. Photo images were 1280x960 and motion GIF was 720x405.",
+  "verification": "Signed-in public page showed the same post137 public with its original title/date; article references, absence of the image-explaining sentence, pale-yellow summary-card background, two loaded 1280x960 photos and the loaded 720x900 infographic GIF were confirmed.",
   "mobile_task_recovery": "unverified",
   "anonymous_readback": "not_performed",
   "older_posts_edited": false,
