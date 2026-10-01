@@ -1,0 +1,11 @@
+# AI model distillation security: public article (2026-10-01)
+
+- Published as post159 on 2026-10-01 at 14:58 KST in Tistory category `IT`.
+- Title: `AI 추론 흔적 노린 ‘증류 공격’ ⚠️ OpenAI 발표에서 볼 방어 3가지`.
+- Public URL: <https://nedamma.tistory.com/entry/AI-%EC%B6%94%EB%A1%A0-%ED%9D%94%EC%A0%81-%EB%85%B8%EB%A6%B0-%E2%80%98%EC%A6%9D%EB%A5%98-%EA%B3%B5%EA%B2%A9%E2%80%99-%E2%9A%A0%EF%B8%8F-OpenAI-%EB%B0%9C%ED%91%9C%EC%97%90%EC%84%9C-%EB%B3%BC-%EB%B0%A9%EC%96%B4-3%EA%B0%80%EC%A7%80>.
+- Home topic: `IT 제품리뷰`. Tags appear in Tistory as `ai`, `사이버보안`, `llm`, `AI보안`, and `모델증류`.
+- The article distinguishes legitimate model distillation from attempts to extract protected reasoning. It attributes the incident numbers and actor assessment to OpenAI and says explicitly that the request counts represent attempts, not confirmed successful extractions. It treats the arXiv paper as related research rather than proof of the same campaign.
+- Public-page readback confirmed the exact title and full article. The 30-second summary renders in pale yellow (`rgb(255, 242, 189)`). Scrolling loaded all three media in order: server-room photo (1280×720), workflow GIF (960×540), and operations-center photo (1280×720). The two photos have contextual positions and no visible captions; there is no infographic. Public `alt` attributes are empty despite attempts to set them in the editor; this is a known limitation to repair using the native image alt-text control on a future pass. Phone readback was not performed.
+- Sources: [OpenAI incident report](https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/), [OpenAI API distillation explainer](https://openai.com/index/api-model-distillation/), and [arXiv paper](https://arxiv.org/abs/2608.09867).
+- Image credits: server-room photo, NOIRLab/NSF/AURA/T. Slovinský, CC BY 4.0 ([Commons file page](https://commons.wikimedia.org/wiki/File:NOIRLab_HQ_Server_Racks_(6V6A0402-CC).jpg)); operations-center photo, Patsy Lynch/FEMA, US federal public-domain material ([Commons file page](https://commons.wikimedia.org/wiki/File:FEMA_-_37322_-_Texas_operations_command_center_in_Weslaco,_interior.jpg)).
+- Generated media remain outside Git in `/tmp/tistory-distillation-20261001/`.
