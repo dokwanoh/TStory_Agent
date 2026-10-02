@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest publication 2026-10-03 08:51 KST: [AI 앱을 실전에 올릴 때 🤖 GPT-6 워크플로 5단계](https://nedamma.tistory.com/entry/AI-%EC%95%B1%EC%9D%84-%EC%8B%A4%EC%A0%84%EC%97%90-%EC%98%AC%EB%A6%B4-%EB%95%8C-%F0%9F%A4%96-GPT-6-%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C-5%EB%8B%A8%EA%B3%84) is public in IT under the AI-software workflow goal. The public publisher-profile page shows the exact title, yellow 30-second summary and three contextual media nodes: two stills and one animated workflow GIF, with descriptive alts and no video. Home topic 직장·자기계발 > IT 인터넷; five tags. Evidence: `docs/117_gpt6_workflow_20261003_publication.md`; media remain outside Git.
+
 Latest publication 2026-10-03 07:44 KST: [제주 10월 3~6일 날씨](https://nedamma.tistory.com/174) is public as post174 in 생활정보 under the explicit regional-weather goal. It covers5October local rain, strengthening wind and named sea-wave areas. Two Korean photorealistic stills and an original14.4-second workflow GIF accompany the yellow summary. All browser work used Chrome Silvia (티스토리 게시봇); public readback confirmed title,3media,3alts and2official links. Evidence: `docs/116_jeju_weather_20261003_publication.md`; media remain outsideGit.
 
 Latest publication 2026-10-03 06:49 KST: [서울·부산·제주 지역별 비 시간](https://nedamma.tistory.com/173) is public as post173 in 생활정보 under the explicit regional-weather goal. Current KMA05h bulletin supports October4–5regional windows/amounts. Two Korean photorealistic stills and an original14.4-second preparation GIF accompany the yellow summary. All browser work used Chrome Silvia (티스토리 게시봇); public readback confirmed title,3media,3alts andofficiallink. Evidence: `docs/115_regional_rain_20261003_publication.md`; media remain outsideGit.
@@ -305,6 +307,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| gpt6-workflow-20261003 | DONE | Public GPT-6 production workflow article; two contextual still photos and one animated workflow GIF; publisher-profile-only delivery | `docs/117_gpt6_workflow_20261003_publication.md` |
 | jeju-weather-20261003 | DONE | Public post174; 제주 October3–6 rain, wind and wave forecast; two Korean photorealistic stills and original14.4-second workflow GIF; publisher-profile-only delivery | `docs/116_jeju_weather_20261003_publication.md` |
 | regional-rain-20261003 | DONE | Public post173; October4–5regional rain windows and amounts, two Korean photorealistic stills and original14.4-second workflow GIF; publisher-profile-only delivery | `docs/115_regional_rain_20261003_publication.md` |
 | next-week-weather-20261003 | DONE | Public post172; full-week October5–11 outlook, two Korean photorealistic stills and original 12-second preparation GIF; publisher-profile-only delivery | `docs/114_next_week_weather_20261003_publication.md` |
