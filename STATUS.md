@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest correction 2026-10-02: [post162](https://nedamma.tistory.com/162) now has two still photos and the existing workflow GIF, with no video. Native public save and anonymous HTTP 200 readback confirmed the replacement photo and corrected credits. Evidence: `docs/105_post162_still_photo_repair_20261002.md`.
+
 Latest publication 2026-10-02 10:08 KST: [Barclays가 Claude를 은행 업무에 넓힌 이유 🏦 검색·메일·개발, 어디까지 왔나](https://nedamma.tistory.com/entry/Barclays%EA%B0%80-Claude%EB%A5%BC-%EC%9D%80%ED%96%89-%EC%97%85%EB%AC%B4%EC%97%90-%EB%84%93%ED%9E%8C-%EC%9D%B4%EC%9C%A0-%F0%9F%8F%A6-%EA%B2%80%EC%83%89%C2%B7%EB%A9%94%EC%9D%BC%C2%B7%EA%B0%9C%EB%B0%9C-%EC%96%B4%EB%94%94%EA%B9%8C%EC%A7%80-%EC%99%94%EB%82%98) is public in IT. Same-post media correction removed two MP4 elements and their unrelated poster, replacing them with three context-matched Pexels photos and Korean alt text; photo credits were updated and the 780×438 workflow GIF was preserved. Anonymous HTTP 200 confirms zero videos and four images; publisher Chrome confirms all four images loaded. Five tags were selected; IT 인터넷 was selected in the publish dialog. Evidence: `docs/104_barclays_claude_20261002_publication.md`; media remain outside Git.
 
 Latest publication 2026-10-01 15:25 KST: [Gemini 4 Argon 공개 🤖 AI가 보안 취약점 찾고 고친다, 일반 공개는 언제?](https://nedamma.tistory.com/entry/Gemini-4-Argon-%EA%B3%B5%EA%B0%9C-%F0%9F%A4%96-AI%EA%B0%80-%EB%B3%B4%EC%95%88-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%B0%BE%EA%B3%A0-%EA%B3%A0%EC%B9%9C%EB%8B%A4-%EC%9D%BC%EB%B0%98-%EA%B3%B5%EA%B0%9C-%EC%96%B8%EC%A0%9C) is public as post160 in IT, with five tags and home topic IT 제품리뷰. Signed-in public Chrome confirmed the article and yellow summary card; scrolling to the bottom loaded both photos and the workflow GIF. Public alt attributes are empty; see `docs/103_gemini4_argon_20261001_publication.md`.
@@ -281,6 +283,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| post162-still-photo-20261002 | DONE | Post162 video replaced by contextual still photo; same-post public save and anonymous readback confirmed | `docs/105_post162_still_photo_repair_20261002.md` |
 | seouldal-20260929 | DONE | Post128 public verified after one save; independent exact-copy review, three photos, animated infographic and anonymous readback | `docs/75_seouldal_20260929_publication.md` |
 | mock-exam-fee-20260928 | DONE | Post127 public and same-post factual correction verified anonymously; pre-save independent exact-package review criterion remains unmet | `docs/74_mock_exam_fee_20260928_attempt.md` |
 | model-pricing-luna-20260927 | BLOCKED | Luna pricing article held after four review turns; current images rejected, no Tistory write; explicit continuation decision required | `docs/69_luna_pricing_attempt.md` |
