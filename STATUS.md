@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest publication 2026-10-02 22:13 KST: [Microsoft 실시간 음성 AI](https://nedamma.tistory.com/166) is public as post166 in IT. Two Korean-context photorealistic stills and an original 12-second voice workflow GIF were uploaded natively. All browser research, image generation, delivery and public readback used only Chrome Silvia (티스토리 게시봇). The yellow summary card and all three media were visibly rendered. Evidence: `docs/108_mai_streaming_voice_20261002_publication.md`; media remain outside Git.
+
 Latest publication 2026-10-02 21:01 KST: [새도약기금 4차 소각](https://nedamma.tistory.com/165) is public as post165 in 경제. Two contextual still photos and an original9-second branching workflow GIF were uploaded natively. All browser research, downloads, publication and rendered public readback used only Chrome Silvia (티스토리 게시봇). Evidence: `docs/107_newleap_fourth_cancellation_20261002_publication.md`; media remain outside Git.
 
 Latest publication 2026-10-02 20:36 KST: [GitHub Copilot Dynamic workflows](https://nedamma.tistory.com/164) is public as post164 in IT. Two contextual still photos and one original 9.6-second workflow GIF were uploaded natively, with descriptive Korean alts and photographer credits. Anonymous public content and media GETs returned HTTP200; zero videos. Evidence: `docs/106_dynamic_workflows_20261002_publication.md`; media remain outside Git.
@@ -287,6 +289,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| mai-streaming-20261002 | DONE | Public post166; two Korean photorealistic stills and original 12-second voice workflow GIF; publisher-profile-only delivery | `docs/108_mai_streaming_voice_20261002_publication.md` |
 | newleap-fourth-20261002 | DONE | Public post165; two photos and original branching workflow GIF; publisher-profile-only research delivery and rendered readback | `docs/107_newleap_fourth_cancellation_20261002_publication.md` |
 | dynamic-workflows-20261002 | DONE | Public post164; two still photos and original workflow GIF; native save and anonymous content/media delivery confirmed | `docs/106_dynamic_workflows_20261002_publication.md` |
 | post162-still-photo-20261002 | DONE | Post162 video replaced by contextual still photo; same-post public save and anonymous readback confirmed | `docs/105_post162_still_photo_repair_20261002.md` |
