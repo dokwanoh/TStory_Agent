@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest publication 2026-10-02 21:01 KST: [새도약기금 4차 소각](https://nedamma.tistory.com/165) is public as post165 in 경제. Two contextual still photos and an original9-second branching workflow GIF were uploaded natively. All browser research, downloads, publication and rendered public readback used only Chrome Silvia (티스토리 게시봇). Evidence: `docs/107_newleap_fourth_cancellation_20261002_publication.md`; media remain outside Git.
+
 Latest publication 2026-10-02 20:36 KST: [GitHub Copilot Dynamic workflows](https://nedamma.tistory.com/164) is public as post164 in IT. Two contextual still photos and one original 9.6-second workflow GIF were uploaded natively, with descriptive Korean alts and photographer credits. Anonymous public content and media GETs returned HTTP200; zero videos. Evidence: `docs/106_dynamic_workflows_20261002_publication.md`; media remain outside Git.
 
 Latest correction 2026-10-02: [post162](https://nedamma.tistory.com/162) now has two still photos and the existing workflow GIF, with no video. Native public save and anonymous HTTP 200 readback confirmed the replacement photo and corrected credits. Evidence: `docs/105_post162_still_photo_repair_20261002.md`.
@@ -285,6 +287,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| newleap-fourth-20261002 | DONE | Public post165; two photos and original branching workflow GIF; publisher-profile-only research delivery and rendered readback | `docs/107_newleap_fourth_cancellation_20261002_publication.md` |
 | dynamic-workflows-20261002 | DONE | Public post164; two still photos and original workflow GIF; native save and anonymous content/media delivery confirmed | `docs/106_dynamic_workflows_20261002_publication.md` |
 | post162-still-photo-20261002 | DONE | Post162 video replaced by contextual still photo; same-post public save and anonymous readback confirmed | `docs/105_post162_still_photo_repair_20261002.md` |
 | seouldal-20260929 | DONE | Post128 public verified after one save; independent exact-copy review, three photos, animated infographic and anonymous readback | `docs/75_seouldal_20260929_publication.md` |
