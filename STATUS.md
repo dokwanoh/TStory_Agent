@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest publication 2026-10-03 01:20 KST: [설악산 산행 날씨](https://nedamma.tistory.com/171) is public as post171 in 생활정보 under the explicit weather goal. Two Korean photorealistic stills and an original12-second hiking preparation GIF were uploaded natively. All browser work used Chrome Silvia (티스토리 게시봇). Public readback confirmed the yellow summary,3media,3alts and2official links. Evidence: `docs/113_mountain_weather_20261003_publication.md`; media remain outsideGit.
+
 Latest publication 2026-10-03 00:52 KST: [한글날 연휴 날씨 전망](https://nedamma.tistory.com/170) is public as post170 in 생활정보 under the explicit weather goal. Two Korean photorealistic stills and an original12-second travel preparation GIF accompany the yellow summary and city temperature table. All browser work used Chrome Silvia (티스토리 게시봇); public readback confirmed3media,3alts andKMA source link. Evidence: `docs/112_hangeul_weather_20261003_publication.md`; media remain outsideGit.
 
 Latest publication 2026-10-03 00:16 KST: [10월3일 오늘 날씨](https://nedamma.tistory.com/169) is public as post169 in 생활정보 under the owner's explicit weather-topic goal. Two Korean photorealistic stills and an original12-second outing workflow GIF were uploaded natively. All browser work used Chrome Silvia (티스토리 게시봇). Public readback confirmed the yellow summary,3media,3alts and2KMA links. Evidence: `docs/111_weather_20261003_publication.md`; media remain outsideGit.
@@ -297,6 +299,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| mountain-weather-20261003 | DONE | Public post171; two Korean photorealistic stills and original 12-second hiking preparation GIF; publisher-profile-only delivery | `docs/113_mountain_weather_20261003_publication.md` |
 | hangeul-weather-20261003 | DONE | Public post170; two Korean photorealistic stills and original 12-second travel preparation GIF; publisher-profile-only delivery | `docs/112_hangeul_weather_20261003_publication.md` |
 | weather-20261003 | DONE | Public post169; two Korean photorealistic stills and original 12-second outing workflow GIF; explicit weather goal and publisher-profile-only delivery | `docs/111_weather_20261003_publication.md` |
 | climate-insurance-20261002 | DONE | Public post168; two Korean photorealistic stills and original 12-second claim workflow GIF; publisher-profile-only delivery | `docs/110_climate_insurance_20261002_publication.md` |
