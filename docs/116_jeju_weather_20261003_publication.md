@@ -22,6 +22,6 @@
 | File | SHA256 |
 | --- | --- |
 | article.html | 6ceda0e8f3b6eadc9ac840726a59a1f3cab21b7bf179d1fc488dedb6733b1ba6 |
-| photo1.jpg | a41f4ce0e950d7ea5c34659fddedcffcce98dc6cfee963017bb672a1909ad0 |
+| photo1.jpg | a41f4ce0e950d7ea5c34659fddedcdffcce98dc6cfee963017bb672a1909ad0 |
 | workflow.gif | 9feb9982111bc7c51f565c2a72c81aec78def8d5a34063cd9348f7cbf62dadb0 |
 | photo2.jpg | adcab78cae5a14a8d1cd3e7f0c1ae9143a18d64c65a5df24ed7b4a1d2d034fa4 |
