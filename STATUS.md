@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current status
 
+Latest publication 2026-10-03 06:49 KST: [서울·부산·제주 지역별 비 시간](https://nedamma.tistory.com/173) is public as post173 in 생활정보 under the explicit regional-weather goal. Current KMA05h bulletin supports October4–5regional windows/amounts. Two Korean photorealistic stills and an original14.4-second preparation GIF accompany the yellow summary. All browser work used Chrome Silvia (티스토리 게시봇); public readback confirmed title,3media,3alts andofficiallink. Evidence: `docs/115_regional_rain_20261003_publication.md`; media remain outsideGit.
+
 Latest publication 2026-10-03 01:43 KST: [다음 주 10월5~11일 날씨](https://nedamma.tistory.com/172) is public as post172 in 생활정보 under the explicit full-week weather goal. Two Korean photorealistic stills and an original12-second preparation GIF accompany a yellow seven-day summary. All browser work used Chrome Silvia (티스토리 게시봇). Public readback confirmed the title,3media,3alts and2official links. Evidence: `docs/114_next_week_weather_20261003_publication.md`; media remain outsideGit.
 
 Latest publication 2026-10-03 01:20 KST: [설악산 산행 날씨](https://nedamma.tistory.com/171) is public as post171 in 생활정보 under the explicit weather goal. Two Korean photorealistic stills and an original12-second hiking preparation GIF were uploaded natively. All browser work used Chrome Silvia (티스토리 게시봇). Public readback confirmed the yellow summary,3media,3alts and2official links. Evidence: `docs/113_mountain_weather_20261003_publication.md`; media remain outsideGit.
@@ -301,6 +303,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| regional-rain-20261003 | DONE | Public post173; October4–5regional rain windows and amounts, two Korean photorealistic stills and original14.4-second workflow GIF; publisher-profile-only delivery | `docs/115_regional_rain_20261003_publication.md` |
 | next-week-weather-20261003 | DONE | Public post172; full-week October5–11 outlook, two Korean photorealistic stills and original 12-second preparation GIF; publisher-profile-only delivery | `docs/114_next_week_weather_20261003_publication.md` |
 | mountain-weather-20261003 | DONE | Public post171; two Korean photorealistic stills and original 12-second hiking preparation GIF; publisher-profile-only delivery | `docs/113_mountain_weather_20261003_publication.md` |
 | hangeul-weather-20261003 | DONE | Public post170; two Korean photorealistic stills and original 12-second travel preparation GIF; publisher-profile-only delivery | `docs/112_hangeul_weather_20261003_publication.md` |
