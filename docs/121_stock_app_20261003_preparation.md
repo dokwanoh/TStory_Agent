@@ -26,3 +26,14 @@ The ChatGPT browser extension in the same 티스토리 게시봇 Chrome profile 
 The exact saved stock-app draft was restored before upload. The unrelated older iOS editor was inspected only and not modified. Switching the stock-app editor from basic mode to HTML triggered a browser-control timeout. The dialog API then returned no active dialog, while page controls continued timing out. Native-app control again returned the disputed Mac-lock diagnostic. The attempted close did not remove the owned stock-app tab; inventory confirmed it remains open as tab `959316978`, and its handoff preservation call succeeded.
 
 Resume that same live editor first. Do not re-upload while its three uploaded images remain present. Reconcile the mode-change dialog and body, bind the existing filename-matched image codes to the three placeholders with neutral alts, set photo1 as representative, select home topic 경제 and publish once. No public save was attempted, no new public ID exists, and final image placement/alts/representative are still incomplete. The older temporary save is a text-only fallback; persistence of the newly uploaded media beyond the current tab has not been verified.
+
+## Recovery diagnosis — 2026-10-03 16:47 KST
+
+- A new read-only manager tab in the same publisher profile navigated and returned its DOM successfully. The browser connection works; the failure is specific to the preserved editor tab. The diagnostic manager tab was then closed.
+- The OS session query returned `CGSSessionScreenIsLocked=true`, `kCGSSessionOnConsoleKey=true`, and `kCGSessionLoginDoneKey=true`, independently matching the native tool's lock diagnostic. This records the current OS flags; it does not establish the physical screen appearance or prove that the lock caused the editor timeout.
+- The original editor's dialog API returned no active dialog while page commands timed out. A mode-change modal remains a hypothesis, not a verified visible dialog.
+- Targeted current-day app logs did not establish a browser disconnect or modal. Unrelated in-app-browser warnings predated the successful upload.
+- Normal extension-sidepanel navigation was rejected by the browser tool's URL security policy. No alternate route around that rejection was attempted. No app/profile files, permissions, session history, or installed code were changed.
+- Existing editor tab959316978 was successfully marked for handoff again. Its three uploaded filenames were last confirmed before the mode-switch failure. Native access needs an authenticated, unlocked OS session before a native dialog recovery can be attempted; do not claim this happened without observation.
+
+Official troubleshooting consulted: https://learn.chatgpt.com/docs/chrome-extension. No browser/app restart was performed because persistence of the uploaded media outside the live editor is unverified. Recovery and public publication remain incomplete.
