@@ -2,8 +2,38 @@
 
 TISTORY GROWTH OS automation, introduced in independently testable slices.
 
-The first tracked slice is a local SQLite save-intent guard, not a live publisher.
-It uses Python 3.11+ and the standard library. With pytest already available:
+## Install for Codex
+
+Give Codex this repository and ask:
+
+> Install the Tistory Growth OS skill from `dokwanoh/TStory_Agent`, path `skills/tistory-growth-os`.
+
+Codex can install the skill with its built-in skill installer. It becomes available
+on the next Codex turn. For an even shorter request after sharing this repository,
+say: **“Install this repository's Codex skill.”** The root `AGENTS.md` contains
+the project-wide rules when Codex is working in a checkout.
+
+The Python command-line package is separate from the Codex skill. To install it
+from a checkout:
+
+```sh
+python3 -m pip install .
+tistory-growth-os --help
+```
+
+To install directly from GitHub:
+
+```sh
+python3 -m pip install "git+https://github.com/dokwanoh/TStory_Agent.git"
+tistory-growth-os --help
+```
+
+The skill provides the repository workflow and safeguards; installing it does
+not transfer a publisher login, Chrome profile, API keys, or permission to
+publish. The current Python package provides local/offline commands and does
+not itself sign in to Tistory or publish articles.
+
+The project uses Python 3.11+ and the standard library. With pytest already available:
 
 ```sh
 PYTHONPATH=src pytest -q
