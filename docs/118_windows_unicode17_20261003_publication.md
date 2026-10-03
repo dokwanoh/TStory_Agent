@@ -1,0 +1,16 @@
+# Windows 11 Unicode 17 publication
+
+- Published post176: [윈도우 11 베타 새 빌드 🔤 Unicode 17·설정·복구, 달라진 점](https://nedamma.tistory.com/176), observed 2026-10-03 11:43 KST in Chrome Silvia (티스토리 게시봇).
+- One final 공개 발행 action returned to the manager. The manager showed the exact title, IT category and 11:43 timestamp. Its public link opened the matching article; the page exposed the post176 management link, summary heading and three ordered media/alts. This was authenticated publisher-profile readback, not an anonymous or mobile check.
+- Category IT; home topic 직장·자기계발 > IT 인터넷. Tags: 윈도우11, WindowsInsider, Unicode17, 베타업데이트, PC설정. Immediate public mode, no reservation.
+- Official sources: [Windows Insider, October 2](https://blogs.windows.com/windows-insider/2026/10/02/announcing-new-builds-for-2-october-2026/), [Microsoft Learn beta 26220.9587](https://learn.microsoft.com/en-us/windows-insider/release-notes/beta/preview-build-26220-9587). Source selection and original copy were retained from the existing draft; no new topic was substituted during recovery.
+- Article distinguishes Insider beta from general release and covers Unicode 17 text shaping, Settings home performance and the Cloud Rebuild entry point. A pale yellow #fff2bd summary block covers heading, compact table and caveat.
+- Media order: photo1.jpg, workflow.gif, photo2.jpg. Two Pexels laptop-work photos and the original beta-channel/build/check/feedback motion graphic. All three have neutral Korean alts, no visible explanatory captions and no video element. Photo1 was separately selected through the native publication-thumbnail picker as representative.
+- Photo credits are linked in the article: [Mikhail Nilov](https://www.pexels.com/photo/woman-in-a-beige-blazer-working-on-her-laptop-9304667/) and [Zen Chung](https://www.pexels.com/photo/serious-woman-writing-in-notepad-looking-at-laptop-5538321/). These are stock photos, not claimed to document Korean Windows users.
+- Recovery: connected the actual current draft tab 959316437 in the publisher profile. Reused two intact native media codes; replaced the malformed second-photo code through the normal picker. Restored the original template through the visible native HTML input and confirmed all three ordered alts in basic mode. No image generation or duplicate article creation.
+- Browser lessons: browser numeric IDs changed across sessions, so resolve by profile name. HTML mode confirmations blocked CDP until handled in native Chrome; stale dialog handles then needed reconciliation. Both HTML and hidden Markdown CodeMirror nodes were present, so broad DOM code reads mixed two representations. Read only the visible code editor. Clipboard attempts were unreliable; supported visible-input fill followed by basic-mode readback recovered the article.
+- Local package: `.artifacts/manual-20261003-unicode17-build/`. Media and signed image codes are not committed. No application code or tests changed; no test suite or excluded audit was run.
+
+## Repository record limit
+
+The existing memory-view generator stops at missing/outside-root evidence for `weather-20260927`. This predates this publication. The new DONE registry row and matching STATUS row were added directly; PLAN and BACKLOG filters exclude DONE rows and required no change. No broad memory repair or test run was undertaken.
