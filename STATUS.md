@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current status
 
-Latest publication 2026-10-03 11:43 KST: [윈도우 11 베타 새 빌드](https://nedamma.tistory.com/176) is public as post176 in IT. Two still photos and one workflow GIF appear in the intended sections with neutral alts; yellow summary and no video. Home topic IT 인터넷. Evidence: `docs/118_windows_unicode17_20261003_publication.md`; media remain outside Git.
+Latest publication 2026-10-03 14:28 KST: [iOS 27.0.1 업데이트](https://nedamma.tistory.com/178) is public as post178 in IT. Signed-in public readback confirmed two loaded still photos and one workflow GIF, three alts, and the complete pale-yellow summary with native table headers. Home topic IT 제품리뷰. Evidence: `docs/119_ios2701_20261003_publication.md`; media remain outside Git. The prior post176 record remains in `docs/118_windows_unicode17_20261003_publication.md`.
 
 Latest publication 2026-10-03 07:44 KST: [제주 10월 3~6일 날씨](https://nedamma.tistory.com/174) is public as post174 in 생활정보 under the explicit regional-weather goal. It covers5October local rain, strengthening wind and named sea-wave areas. Two Korean photorealistic stills and an original14.4-second workflow GIF accompany the yellow summary. All browser work used Chrome Silvia (티스토리 게시봇); public readback confirmed title,3media,3alts and2official links. Evidence: `docs/116_jeju_weather_20261003_publication.md`; media remain outsideGit.
 
@@ -307,6 +307,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| ios2701-20261003 | DONE | Public post178; iOS update support and preparation; two still photos and one workflow GIF; publisher-profile-only delivery | `docs/119_ios2701_20261003_publication.md` |
 | windows-unicode17-20261003 | DONE | Public post176; Windows 11 beta Unicode17 settings and recovery; two stills and one workflow GIF; publisher-profile-only delivery | `docs/118_windows_unicode17_20261003_publication.md` |
 | gpt6-workflow-20261003 | DONE | Public GPT-6 production workflow article; two contextual still photos and one animated workflow GIF; publisher-profile-only delivery | `docs/117_gpt6_workflow_20261003_publication.md` |
 | jeju-weather-20261003 | DONE | Public post174; 제주 October3–6 rain, wind and wave forecast; two Korean photorealistic stills and original14.4-second workflow GIF; publisher-profile-only delivery | `docs/116_jeju_weather_20261003_publication.md` |
