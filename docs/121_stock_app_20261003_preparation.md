@@ -1,4 +1,10 @@
-# Stock app outage article — prepared, not published
+# Stock app outage article — public post180 reconciled
+
+## Current reconciliation — 2026-10-04
+
+Read-only `티스토리 게시봇` Chrome manager shows the exact title below at 2026-10-03 18:52 in 경제. Its public entry renders the article and exposes the edit link `/manage/post/180?returnURL=ENTRY`, establishing the existing identity as post180. No editor was reopened, no media uploaded and no save performed in this restoration. The older remaining-delivery instructions below are historical and must not trigger a duplicate or another save. Original media/source/review notes remain in the original checkout's `.artifacts/manual-20261003-stock-app/`. This confirms the existing public outcome; it does not reconstruct the previous save count or repeat its production review. See `122_session_handoff_20261004.md`.
+
+## Historical preparation — 2026-10-03
 
 - Operation: `manual-20261003-stock-app`.
 - Title: **주식 앱 먹통일 때 📱 보상 신청 전에 남길 기록 5가지**.

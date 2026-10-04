@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — decisions
 
+## Restore current handoff and distinct thumbnail requirement (2026-10-04)
+
+The owner's fresh handoff request takes precedence over older four-photo/three-inline-media examples: future articles need two Korean-context photorealistic body photos, a separate title-specific thumbnail in a completely different style from the previous cover, and an actual-procedure motion GIF. Retain the four subject categories and compact verification rules. Read-only publisher Chrome reconciliation found post180 and post181 already published, superseding the stock-app editor hold in remote main. Preserve the dirty original checkout and use a separate main checkout for subsequent records. This is readiness restoration, not another publication or recurring restart; phone access and broad unattended reliability remain unverified. Preserve the original post121 publication evidence verbatim in a tracked document so a fresh clone can resolve the existing registry reference. See `docs/122_session_handoff_20261004.md`.
+
 ## Limit future topics to four owner-selected categories (2026-09-30)
 
 The owner explicitly restricted future article topics to **금융/보험, 법률, 부동산, IT/소프트웨어** and requested that this remain at the top of global memory. Record the rule first in `~/.codex/AGENTS.md` and in the canonical repository instructions, with the decision mirrored in OWNER_INPUT.md. Apply the restriction to discovery, selection, writing and publication; historical broader categories do not override it. This is a durable editorial scope decision, not a request to rename live Tistory categories or edit/delete existing posts. No runtime configuration or schedules are changed by this documentation update.

@@ -1,5 +1,7 @@
 # TISTORY GROWTH OS — current repository instructions
 
+Owner2026-10-04 handoff: use only Chrome profile `티스토리 게시봇` for Tistory. Every new article has two photorealistic Korean-context body photographs, one separate title-specific thumbnail in a completely different style from the immediately previous thumbnail, and one motion GIF explaining the article's actual procedure. Vary people and scenes across articles; no infographic or embedded video. Keep the entire 30-second summary on one sticky-note background, remove image-description prose and visible captions, and use friendly Korean with useful emojis. Apply one compact fact/editor check and one post-save public confirmation; investigate concrete errors only. Never print original image data, base64 or large tool responses. Media may stay outside Git; completed work records go directly to main. Verify actual tool connection and login instead of inferring a locked Mac. This request restores handoff/readiness only; it does not authorize a new post or schedule resumption. See `docs/122_session_handoff_20261004.md`.
+
 ## 최우선 주제 범위 — 사용자 확정 2026-09-30
 
 앞으로 새 글은 **금융/보험, 법률, 부동산, IT/소프트웨어** 네 카테고리의 주제만 다룬다. 모든 주제 탐색·선정·작성·게시에서 먼저 적용하며, 범위 밖 주제는 후보로 선정하거나 새 글로 게시하지 않는다. 과거 게시 사례와 기존의 넓은 카테고리 지침보다 이 최신 제한을 우선한다. 사용자가 명시적으로 변경하기 전까지 유지한다. 글로벌 지침 `~/.codex/AGENTS.md` 최상단에도 같은 결정을 기록했다.
