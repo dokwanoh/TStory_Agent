@@ -15,7 +15,7 @@
 
 1. Restrict topics to 금융/보험, 법률, 부동산, IT/소프트웨어. Historical weather posts do not widen this scope.
 2. All Tistory interaction uses the authenticated `티스토리 게시봇` Chrome profile.
-3. Produce two photorealistic Korean-context body photographs, a separate title-specific thumbnail in a completely different style from the immediately previous cover, and one motion GIF showing the article's actual procedure. Compare recent people/scenes/compositions; no infographic or embedded video. Do not reuse the former first-photo-as-cover rule when it conflicts.
+3. Current user objective supersedes this handoff's two-photo package: produce one photorealistic Korean-context body still, one separate title-matched thumbnail in a wholly different still-image style, and one motion graphic that integrates the real workflow with active motion effects. Vary people/scenes across articles; no infographic or embedded video. The present user request authorizes new in-scope article production and direct-public delivery; schedules remain paused.
 4. Apply one background to the entire sticky-note 30-second summary. Keep its compact table, natural friendly Korean and useful emojis; remove visible captions and image-description-only sentences. Retain descriptive alt text.
 5. Use one compact factual/editor/classification/media check, one authorized save and one concise public confirmation. Investigate a concrete failure or uncertain outcome; do not restore excluded audits or repeat certification.
 6. Keep image originals/base64/data URLs and large raw responses out of conversation. Media can remain outside Git. Commit only scoped work records to main and push normally.
