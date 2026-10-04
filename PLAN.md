@@ -173,6 +173,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| financial-malware-check-20261004 | IN_PROGRESS | Finance-security explainer prepared; editor state and summary table need readback before continuing; no images uploaded or publication attempted | `docs/124_financial_malware_account_check_20261004_handoff.md` |
 | model-pricing-luna-20260927 | BLOCKED | Luna pricing article held after four review turns; current images rejected, no Tistory write; explicit continuation decision required | `docs/69_luna_pricing_attempt.md` |
 <!-- work:end -->
 

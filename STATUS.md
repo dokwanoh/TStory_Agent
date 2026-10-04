@@ -1,6 +1,6 @@
 # TISTORY GROWTH OS — current status
 
-Handoff restored 2026-10-04: publisher-profile Chrome connection and manager login work. Existing public post181 (domestic stock-market holiday guide, 2026-10-03 21:30) is the latest manager entry; the previously held stock-app guide is already public post180 (18:52). The earlier editor timeout is historical and must not trigger a duplicate save. A clean main checkout is ready in the current workspace, preserving the dirty original. Future media requires two Korean-context body photos, a separate contrasting-style thumbnail and an actual-procedure GIF. Verification and remaining limits: `docs/122_session_handoff_20261004.md`.
+Latest verified public post remains post181 (domestic stock-market holiday guide, 2026-10-03 21:30); post180 (stock-app outage guide, 18:52) is also public. On 2026-10-04 a new finance-security article was researched and its draft/media prepared, but the existing editor became unreadable after mode confirmation. No image was uploaded and no save/publication was attempted. Continue only after reading the existing editor state; never infer that autosave or publication succeeded. Resume details: `docs/124_financial_malware_account_check_20261004_handoff.md`. The prior clean-checkout and account handoff remains documented in `docs/122_session_handoff_20261004.md`.
 
 Handoff validation: memory audit and31memory/document tests passed; preserved post121 evidence is byte-identical and now tracked. Full regression could not collect because this Python environment lacks Playwright (32 import errors); no full-suite or unattended-runtime success is claimed. The new checkout has a local STOP. Live automation state and phone loading remain unverified; no scheduler was resumed.
 
@@ -315,6 +315,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| financial-malware-check-20261004 | IN_PROGRESS | Finance-security explainer prepared; editor state and summary table need readback before continuing; no images uploaded or publication attempted | `docs/124_financial_malware_account_check_20261004_handoff.md` |
 | handoff-20261004 | DONE | Read-only handoff restored; clean main checkout and publisher Chrome login verified; latest owner media rules persisted | `docs/122_session_handoff_20261004.md` |
 | stock-market-holiday-20261003 | DONE | Existing public post181 identity and latest manager entry reconciled; no new save or production re-audit | `docs/122_session_handoff_20261004.md` |
 | stock-app-20261003 | DONE | Existing public post180 reconciled; historical editor hold superseded; no new save | `docs/121_stock_app_20261003_preparation.md` |

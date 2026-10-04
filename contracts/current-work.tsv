@@ -1,4 +1,5 @@
 id	kind	state	title	evidence
+financial-malware-check-20261004	task	IN_PROGRESS	Finance-security explainer prepared; editor state and summary table need readback before continuing; no images uploaded or publication attempted	docs/124_financial_malware_account_check_20261004_handoff.md
 handoff-20261004	task	DONE	Read-only handoff restored; clean main checkout and publisher Chrome login verified; latest owner media rules persisted	docs/122_session_handoff_20261004.md
 stock-market-holiday-20261003	task	DONE	Existing public post181 identity and latest manager entry reconciled; no new save or production re-audit	docs/122_session_handoff_20261004.md
 stock-app-20261003	task	DONE	Existing public post180 reconciled; historical editor hold superseded; no new save	docs/121_stock_app_20261003_preparation.md
