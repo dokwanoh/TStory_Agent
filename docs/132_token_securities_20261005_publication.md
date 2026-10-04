@@ -20,7 +20,8 @@
 - Body photo 1: woman reviewing an artwork and phone at a Seoul museum; alt: `서울 미술관에서 작품을 살펴보며 휴대전화를 든 여성`.
 - Body photo 2: middle-aged man checking a leaflet and phone at a Seoul financial district plaza; alt: `서울 금융가 광장에서 안내 자료와 휴대전화를 확인하는 중년 남성`.
 - Representative thumbnail: separate mint token-securities artwork matched to the title; alt: `분산원장 증권과 2027년 일정을 상징하는 민트색 토큰증권 썸네일`.
-- Motion GIF: animates the article's four checks: proposal/notice, limit, final review and planned effective date; alt: `토큰증권 입법예고와 한도, 최종 심사, 시행 예정일까지의 네 단계 확인 절차`.
+- Motion GIF: 80 frames at 110 ms each (8.8 seconds), animating the article's four checks: proposal/notice, limit, final review and planned effective date. The authored motion uses eased progress, sliding step content, a pulsing CTA and a moving pointer cue; alt: `토큰증권 입법예고와 한도, 최종 심사, 시행 예정일까지의 네 단계 확인 절차`.
+- The ignored handoff records `kind=image_generation_handoff`, `tool_kinds` containing `image_generation`, and three native-generated PNG originals. These remain the source package for the two photos and separate thumbnail; the GIF is the authored workflow animation.
 - Generated media remain in ignored `.artifacts/manual-20261004-token-securities-01/`; no image binaries, original image data or signed media URLs are committed. The local run record contains the publication outcome.
 
 ## Reusable notes for the next low-cost run
