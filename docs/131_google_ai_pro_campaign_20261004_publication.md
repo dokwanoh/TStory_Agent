@@ -7,6 +7,12 @@
 - Category: `IT`; visibility: public; publication: immediate.
 - The authenticated `티스토리 게시봇` Chrome public page showed the title, IT category, post date, and manager edit link for post189. Its article body, four-row native summary table, source links, two body photos/alts, workflow GIF/alt and representative image/alt were present. Ordinary scrolling visibly confirmed the entire pale-yellow summary background. Anonymous HTTP and remote image-pixel checks were not performed.
 
+## Completion revalidation
+
+- The current manager listed this title first at 22:05 KST with the post count unchanged at 177. Opening that exact manager row loaded the complete post189 public page in the same `티스토리 게시봇` Chrome profile.
+- A fresh direct navigation initially showed Tistory's generic permission/not-found error; the authenticated manager row resolved to the live article without editing or saving anything. On a future recovery, reconcile a transient direct-navigation error against the manager's exact post row before treating it as a publication failure.
+- The saved article contains 3,076 visible-text characters, a styled official-offer CTA and an internal link to the related Gemini model-access guide. The workflow GIF is 1,000×560; its 80-frame render script animates four sequential checks with an eased progress bar, sliding card, moving glow and pulsing marker (8.8 seconds).
+
 ## Factual basis
 
 - Google Korea's October 2 campaign announcement says eligible new annual subscribers can receive 40% off the annual plan, reducing the stated annual price from ₩290,000 to ₩174,000 through October 31, 2026: https://blog.google/intl/ko-kr/company-news/google-gemini-ai-pro-campaign-kr/
