@@ -34,7 +34,7 @@ Planned neutral alt text, not yet entered:
 
 ## Exact stop point
 
-The editor was open in a newly created Chrome tab under the correct publisher profile and showed the autosaved title/body before the browser session was stopped cleanly. On resume, use Tistory’s normal “continue editing saved draft” prompt if shown. The editor category and tags are not yet selected. No representative image is set. No post ID or public URL exists for this draft.
+The editor was open in a newly created Chrome tab under the correct publisher profile and showed the autosaved title/body before the browser session was stopped cleanly. On resume, Tistory offered the 12:54 KST saved draft and it restored with the full title/body. Category IT and the seven tags below are now visible in the editor; the latest editor status says autosaved at 13:04 KST. No representative image is set. No post ID or public URL exists for this draft.
 
 The attached browser’s documented `tool.upload` action for the generated cover returned `Not allowed` after the file was prepared and the visible Tistory photo control was opened. The browser session was stopped cleanly. No alternate automation surface, DOM mutation, native-app assumption, final save or publication was used after the refusal. This was an upload-tool restriction; Chrome was connected, the editor was logged into `내담마`, and this does not establish that the Mac was locked.
 
@@ -44,5 +44,9 @@ The attached browser’s documented `tool.upload` action for the generated cover
 2. If the standard browser upload action is allowed, upload the four exact files above, insert the cover before the lead and the two stills/GIF at their markers, then apply the alt text above. If the browser again returns `Not allowed`, stop and ask the owner to select the prepared files through the normal visible Tistory photo control; do not use another browser-control route to get around the refusal.
 3. Select IT / IT 인터넷 and the planned tags (`모두의AI`, `무료AI`, `AI베타`, `SK텔레콤`, `카카오`, `KT`, `인공지능`). Make one compact final review of title, key facts/links, sticky summary, ordered assets/alts, absence of markers/captions/video, category and duplicate state.
 4. Save once as a new immediate-public article only after all four assets and final content are present. Confirm the actual public post ID, URL, title and loaded media once. Then update `STATUS.md`, this record, and `OWNER_INPUT.md`; keep schedules paused.
+
+## Latest continuation evidence
+
+After the original upload refusal, a fresh inspection found no user-selected media or open editor tab. The saved draft was restored in the same publisher Chrome profile. The editor now has category IT and the tags `모두의AI`, `무료AI`, `AI베타`, `SK텔레콤`, `카카오`, `KT`, and `인공지능`; the latest editor status says autosaved at 13:04 KST. The normal publish form was opened, public visibility and home topic IT 인터넷 were selected, then the form was canceled to return to the editor. No article save/publication was triggered by that sequence. The editor is left open and marked for handoff. The same connected-browser media upload refusal remains the single outstanding action.
 
 No next attempt, extra article, existing-post edit, schedule resumption or media-provider retry is authorized by this record alone.
