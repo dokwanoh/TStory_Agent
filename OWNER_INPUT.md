@@ -1,4 +1,6 @@
 # TISTORY GROWTH OS — owner input register
+2026-10-05 continuation/recurrence prevention: the user directly clarified that the Mac was not locked and asked Codex to act through the available controls. Treat native-app inventory errors independently from Chrome connection/login state; use the existing authenticated `티스토리 게시봇` tab and actual manager UI. One Googlebook public-submit attempt was stopped by Tistory's daily maximum of 15 new public posts; no public ID was returned, and later browser control timed out. Do not retry while capped or infer lock. Reconcile this exact title and draft read-only before any continuation. Record in docs/150_googlebook_publication_cap_hold_20261005.md.
+
 
 2026-10-05 newest NEW easy AI-tech article objective retains36h selection, approximately3000characters, paragraph-relevant varied stills, independent huge-title thumbnail, continuous workflow GIF, official/action/own-post buttons and one publisher/editor/check/save/public result. Completed as post204 at18:14KST,3307characters and six links. Actual media/public limits and source/localization/native-form/new-read-only-tab lessons are recorded in docs/149_gemini_skills_20261005_publication.md; cover/GIF/photo2 intended delivery confirmed, photo1 platform-review replacement retained without bypass. No prior-post replay or schedule resumption.
 
