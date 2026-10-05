@@ -10,6 +10,10 @@ Do not repeat the public-submit action while the daily cap is in force. When con
 
 The existing signed-in manager tab `959318540` responded. It reported 192 managed posts and showed posts 190–204, all dated 2026-10-05; no Googlebook title appeared among those latest entries. This supports the daily-limit notice and confirms the one attempted post did not appear in the current recent-public list. The manager page did not show draft state. Rebinding the existing writer tab still timed out, so its current autosaved-draft state remains unknown. No further publish/save action was taken.
 
+## Tab recheck (2026-10-05 19:45 KST)
+
+The `티스토리 게시봇` inventory now lists only the original writer tab `959317935`; the formerly responsive manager tab is no longer listed. The writer tab is still present, but read-only accessibility retrieval timed out again. No editor, publish, or save action was attempted. The daily cap has not had time to reset since the 19:39 recheck.
+
 ## Recovery that worked
 
 A browser inventory included an unrelated native-app error claiming the Mac was locked, while the browser inventory still showed the existing `티스토리 게시봇` profile and its signed-in manager tab. The user has explicitly said the Mac was not locked. The existing manager tab opened the post list while authenticated; title search for `Googlebook` returned zero before this article. A newly opened task tab was logged out, so it was not used. The reliable path is to inspect the Chrome profile and actual manager UI separately from native-app inventory errors, then reuse the existing authenticated publisher tab. Do not infer Mac lock from a native-app inventory error and do not create a second writable editor.
