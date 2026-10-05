@@ -1,6 +1,12 @@
 # 모두의 AI beta-access article — attempt handoff (2026-10-05)
 
-## Result
+## Resolved — 2026-10-05 14:01 KST
+
+The SAME operation completed as **public post195**, [모두의 AI, 10월 베타라는데 지금 누구나 쓸 수 있나? 🤖](https://nedamma.tistory.com/195). All four reviewed media were uploaded through the documented CUA `filechooser` event and `setFiles`; no owner file selection was required. The exact public title, post ID and all four loaded ordered alts were confirmed. See [publication and recovery evidence](140_ai_for_all_20261005_publication_recovery.md).
+
+Everything below is the preserved historical pre-publication attempt. Its HOLD, “not uploaded”, pending-alt and post194-latest statements are superseded. The earlier absence of a visible OS picker and foreground/window probes did not prove upload was unavailable or establish the physical lock state; the successful browser-only route is the current operational evidence. Do not replay this completed save.
+
+## Historical result
 
 The in-scope IT/software article is fully written and autosaved in Tistory, but **not published**. The exact title is “모두의 AI, 10월 베타라는데 지금 누구나 쓸 수 있나? 🤖”. The current latest public article remains post194. No publishing schedules or reservations were resumed.
 
