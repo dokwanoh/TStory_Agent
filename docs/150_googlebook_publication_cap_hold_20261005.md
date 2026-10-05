@@ -6,6 +6,10 @@ The article preparation completed in the already authenticated `티스토리 게
 
 Do not repeat the public-submit action while the daily cap is in force. When continuation is possible, first use read-only manager access to check whether this exact title is public and whether the existing draft is still available. Continue the same article only if there is no public duplicate and the saved content is intact; do not create a second editor or a new article identity. Do not switch profile, bypass the limit, or resume schedules. If the cap remains, leave the draft and report the exact hold.
 
+## Read-only recheck (2026-10-05 19:39 KST)
+
+The existing signed-in manager tab `959318540` responded. It reported 192 managed posts and showed posts 190–204, all dated 2026-10-05; no Googlebook title appeared among those latest entries. This supports the daily-limit notice and confirms the one attempted post did not appear in the current recent-public list. The manager page did not show draft state. Rebinding the existing writer tab still timed out, so its current autosaved-draft state remains unknown. No further publish/save action was taken.
+
 ## Recovery that worked
 
 A browser inventory included an unrelated native-app error claiming the Mac was locked, while the browser inventory still showed the existing `티스토리 게시봇` profile and its signed-in manager tab. The user has explicitly said the Mac was not locked. The existing manager tab opened the post list while authenticated; title search for `Googlebook` returned zero before this article. A newly opened task tab was logged out, so it was not used. The reliable path is to inspect the Chrome profile and actual manager UI separately from native-app inventory errors, then reuse the existing authenticated publisher tab. Do not infer Mac lock from a native-app inventory error and do not create a second writable editor.
