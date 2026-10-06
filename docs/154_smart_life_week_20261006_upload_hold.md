@@ -1,5 +1,11 @@
 # Smart Life Week draft and upload hold — 2026-10-06
 
+## Continuation correction — 2026-10-06
+
+The owner confirms that both the VAT article (post206) and AI Festa (post205) were published using the ordinary browser tools and controls. The post205 record specifically documents the same native `첨부 → 사진` plus `filechooser.setFiles` route succeeding in the publisher profile. Post206's record confirms its four editorial assets were published, though it does not preserve the exact upload route. Therefore a new upload failure must not be generalized from these prior successes or diagnosed as a Mac lock.
+
+Browser IDs are volatile across CUA reconnects. In this continuation, fresh inventory mapped extension `81fa47e6-c506-4465-b002-74bf935a8da8` (`티스토리 게시봇`) to browser ID `1`, while ID `2` was `티스토리 확산봇`. The first reconnect mistakenly bound tab `959318102` through stale ID `2`; the `Allow access to file URLs` error observed on that binding is not evidence about the publisher profile and must be disregarded. Rebinding that tab, listing tabs in the publisher profile, and opening a read-only manager tab there timed out. The native Chrome app emitted a lock diagnostic, but the owner states the Mac is not locked; do not infer a lock from that diagnostic. No write or upload was performed on the corrected publisher binding. Resume by resolving the publisher profile from its extension identity, then identify the signed-in manager and sole writer tab before any edit/upload. Never rely on a remembered numeric browser ID.
+
 ## Current state
 
 This is the next-article continuation after post207. Read-only Tistory manager access in the confirmed `티스토리 게시봇` profile showed 195 posts. The newest entry was [post207, 티빙 보상 추가 신청 시작! 🔐 대상·마감 확인 3단계](https://nedamma.tistory.com/entry/티빙-보상-추가-신청-시작-🔐-대상·마감-확인-3단계), saved at 13:54 KST. Do not duplicate or edit post207 as part of this new-article operation.
