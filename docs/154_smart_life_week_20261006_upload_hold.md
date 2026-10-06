@@ -1,5 +1,11 @@
 # Smart Life Week draft and upload hold — 2026-10-06
 
+## Latest connection attempt — 2026-10-06
+
+Fresh CUA inventory again mapped the stable publisher extension to browser ID `2` and the expansion profile to ID `1`. Numeric IDs in older paragraphs are historical observations only. Selecting the publisher by extension identity succeeded, but session naming, direct binding of editor `959318102`, and publisher tab enumeration timed out. The native Chrome app bridge also returned its lock diagnostic; this does not establish an actual Mac lock. No editor input, upload, final save, or permission change was performed in this continuation. Current live draft contents could not be re-read.
+
+The delivery reference and OWNER_INPUT ADR-043 explicitly authorize the normal Mac file picker for reviewed project assets when the browser chooser fails. That route does not require renewed upload approval, but could not be exercised because native app control failed. Do not mistake this for a tested file-picker failure or infer a new cause for the earlier file-URL denial. Recover the control connection, re-read the same draft, and use the supported chooser or normal picker; preserve the one-editor and one-save boundaries.
+
 ## Continuation correction — 2026-10-06
 
 The owner confirms that both the VAT article (post206) and AI Festa (post205) were published using the ordinary browser tools and controls. The post205 record specifically documents the same native `첨부 → 사진` plus `filechooser.setFiles` route succeeding in the publisher profile. Post206's record confirms its four editorial assets were published, though it does not preserve the exact upload route. Therefore a new upload failure must not be generalized from these prior successes or diagnosed as a Mac lock.
