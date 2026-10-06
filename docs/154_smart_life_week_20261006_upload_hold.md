@@ -1,5 +1,9 @@
 # Smart Life Week draft and upload hold — 2026-10-06
 
+## Latest publisher-profile check — 2026-10-06
+
+On a fresh CUA connection, stable extension identity `81fa47e6-c506-4465-b002-74bf935a8da8` maps to `티스토리 게시봇` (browser ID `2` in this connection); the expansion profile maps to ID `1`. These numeric IDs are volatile. The publisher tab inventory includes Kakao login tab `959318821`, and direct accessibility inspection shows the blank account and password fields plus the login button. The same inventory does not include the Smart Life Week editor `959318102`; it includes other existing Tistory tabs, which were left untouched. No credentials were entered, no editor was created, and no article content, uploads, permissions, or publication state were changed. Recheck the same publisher profile after the owner completes sign-in, then locate the existing Smart Life Week draft before resuming.
+
 ## Publisher tab ownership and fresh access check — 2026-10-06
 
 A fresh CUA inventory maps extension `81fa47e6-c506-4465-b002-74bf935a8da8` to `티스토리 게시봇` (numeric ID `1`) and `40e47298-97a8-4b9e-a326-feb7f875447b` to `티스토리 확산봇` (ID `2`). In the browser API selected by the publisher extension ID, the read-only user-tab inventory showed the Tistory manager tab `959318821` at a Tistory login redirect and did not list the Smart Life Week writer `959318102`. The manager tab's `ChatGPT` tab group is visible in its metadata. Scoped `cua.listTabs` and browser tab listing timed out; claiming and reading the manager tab also timed out. Opening the normal `카카오계정으로 로그인` control showed Kakao's account/password form; no credentials were entered and no login completed. The expansion profile, editor content, images, and publication controls were not touched. No article write, upload, permission change, or save occurred.
