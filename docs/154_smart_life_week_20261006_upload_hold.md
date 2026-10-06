@@ -1,5 +1,11 @@
 # Smart Life Week draft and upload hold — 2026-10-06
 
+## Publisher tab ownership and fresh access check — 2026-10-06
+
+A fresh CUA inventory maps extension `81fa47e6-c506-4465-b002-74bf935a8da8` to `티스토리 게시봇` (numeric ID `1`) and `40e47298-97a8-4b9e-a326-feb7f875447b` to `티스토리 확산봇` (ID `2`). In the browser API selected by the publisher extension ID, the read-only user-tab inventory showed the Tistory manager tab `959318821` at a Tistory login redirect and did not list the Smart Life Week writer `959318102`. The manager tab's `ChatGPT` tab group is visible in its metadata. Scoped `cua.listTabs` and browser tab listing timed out; claiming and reading the manager tab also timed out. This attempt did not interact with the expansion profile, editor content, images, publication controls, or login form. No article write, upload, permission change, or save occurred.
+
+The earlier writer handle cannot be treated as a publisher-profile tab based on stale numeric IDs. Keep the draft on hold unless it can be re-identified and read inside the stable publisher extension connection. Do not take the writer from the expansion profile or create a replacement writer. Once the existing draft is verifiably available in the authenticated publisher profile, continue with the documented one-editor chooser route and ADR-043 native picker fallback.
+
 ## Latest connection attempt — 2026-10-06
 
 Fresh CUA inventory again mapped the stable publisher extension to browser ID `2` and the expansion profile to ID `1`. Numeric IDs in older paragraphs are historical observations only. Selecting the publisher by extension identity succeeded, but session naming, direct binding of editor `959318102`, and publisher tab enumeration timed out. The native Chrome app bridge also returned its lock diagnostic; this does not establish an actual Mac lock. No editor input, upload, final save, or permission change was performed in this continuation. Current live draft contents could not be re-read.
