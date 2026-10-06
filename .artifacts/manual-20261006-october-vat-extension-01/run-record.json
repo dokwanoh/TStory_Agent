@@ -1,0 +1,85 @@
+{
+  "article_id": "206",
+  "operation": "manual-20261006-october-vat-extension-01",
+  "observed_before_state": "POST205_PUBLIC; manager showed 193 posts before the new publication per same-run record",
+  "before_state_evidence": "Same-profile publisher manager; exact post206 row and count 194 after one save",
+  "edit_method": "Native editor for article/media/classification; scoped HTML formatting; comment entered through the native public comment form",
+  "intended_changes": [
+    "Publish one fresh reader-facing VAT payment-extension explainer",
+    "Add two Korean-context body photos, separate large-title cover and continuous Hometax workflow GIF",
+    "Add three product banners, image affiliate links, one disclosure and one author product comment"
+  ],
+  "preservation_check_evidence": "Public page readback retained all seven article/banner images, summary, action links and one author product comment",
+  "metadata_preserved": "Public manager and article show exact title, post206, category 경제 and seven tags; home topic not independently read",
+  "blog_url": "https://nedamma.tistory.com/",
+  "slot": "manual",
+  "timezone": "Asia/Seoul",
+  "authority_refs": [
+    "Active owner request to publish one new article and record reusable process"
+  ],
+  "scoped_exceptions": [],
+  "event_at": "2026-10-05 12:00 KST",
+  "selected_at": "2026-10-06 12:38 KST",
+  "intended_release_at": null,
+  "actual_release_at": "2026-10-06 13:19 KST",
+  "local_artifacts": [
+    ".artifacts/manual-20261006-october-vat-extension-01/article-draft.md",
+    ".artifacts/manual-20261006-october-vat-extension-01/source-ledger.md",
+    ".artifacts/manual-20261006-october-vat-extension-01/vat-eligibility-bakery.jpg",
+    ".artifacts/manual-20261006-october-vat-extension-01/vat-records-workshop.jpg",
+    ".artifacts/manual-20261006-october-vat-extension-01/vat-extension-cover.jpg",
+    ".artifacts/manual-20261006-october-vat-extension-01/vat-hometax-workflow.gif"
+  ],
+  "title": "부가세 12월 28일까지 내도 될까? 피해사업자 대상 확인 3단계",
+  "body_sha256": null,
+  "images": [
+    {
+      "path": ".artifacts/manual-20261006-october-vat-extension-01/vat-eligibility-bakery.jpg",
+      "sha256": null,
+      "alt": "한국 동네 빵집에서 휴대폰 알림을 확인하는 소상공인",
+      "role": "body_photo_1"
+    },
+    {
+      "path": ".artifacts/manual-20261006-october-vat-extension-01/vat-records-workshop.jpg",
+      "sha256": null,
+      "alt": "한국 동네 수리점에서 영수증을 세금철 파일에 정리하는 사업자",
+      "role": "body_photo_2"
+    },
+    {
+      "path": ".artifacts/manual-20261006-october-vat-extension-01/vat-hometax-workflow.gif",
+      "sha256": null,
+      "alt": "홈택스 신고자료 통합조회에서 세정지원 대상과 부가세 납부일을 확인하는 순서",
+      "role": "motion_workflow"
+    },
+    {
+      "path": ".artifacts/manual-20261006-october-vat-extension-01/vat-extension-cover.jpg",
+      "sha256": null,
+      "alt": "피해 사업자 납부기한과 부가세 12월 28일을 강조한 표지 이미지",
+      "role": "representative_thumbnail"
+    }
+  ],
+  "category": "경제",
+  "home_topic": null,
+  "representative_verified": true,
+  "duplicate_check_evidence": "Authenticated manager listed exact new title at post206; no retry after final save",
+  "required_gates": [
+    "Read current primary source and verify 36-hour selection freshness",
+    "Compact fact and final-copy review",
+    "Native editor text/media/alts/tags/category/representative check",
+    "One final save and one signed-in public title/ID/status confirmation"
+  ],
+  "deferred_gates": [
+    "Anonymous HTTP readback not performed",
+    "Home-topic metadata not independently read",
+    "Pixel/print audit excluded by owner policy"
+  ],
+  "editor_readback_evidence": "Article copy and four media were present in the one editor before publication; public body text measured 2,623 characters",
+  "final_save_attempts": 1,
+  "remote_id": "206",
+  "remote_url_without_signed_query": "https://nedamma.tistory.com/entry/%EB%B6%80%EA%B0%80%EC%84%B8-12%EC%9B%94-28%EC%9D%BC%EA%B9%8C%EC%A7%80-%EB%82%B4%EB%8F%84-%EB%90%A0%EA%B9%8C-%ED%94%BC%ED%95%B4%EC%82%AC%EC%97%85%EC%9E%90-%EB%8C%80%EC%83%81-%ED%99%95%EC%9D%B8-3%EB%8B%A8%EA%B3%84",
+  "remote_state": "PUBLIC",
+  "saved_readback_evidence": "Manager showed 194 posts and the matching new post206 title/time after one submit",
+  "public_readback_evidence": "Authenticated public page showed exact title, body/category/tags, disclosure placement, full sticky-note summary, six affiliate image links, seven loaded images after ordinary scrolling and one author comment",
+  "outcome": "published",
+  "next_action": "Use docs/153_october_vat_extension_20261006_publication.md; keep schedules paused"
+}
