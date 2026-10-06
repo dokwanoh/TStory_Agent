@@ -1,0 +1,7 @@
+# AI Festa 2026 draft recovery hold — 2026-10-06
+
+The draft `AI페스타 2026 오늘 개막 🤖 무료 관람 전 확인할 3가지` is still open in the existing authenticated `티스토리 게시봇` writer tab (959318708). The compact editor check showed category IT, seven tags, the title-matched cover, affiliate disclosure and article body. The cover was visibly marked as the representative image, and autosave was shown at 11:37 KST.
+
+The editor accessibility tree contained the cover, the workflow GIF and one Korean-context body photo. The package requires two body photos, so one still is absent. No public submission was attempted; there is no public post ID or URL. The draft remains incomplete and schedules remain paused.
+
+For continuation, reuse the same profile and editor after verifying the current draft. Read the current browser file-upload instructions and register `waitForEvent("filechooser")` before clicking the visible Photo control; use the chooser's `setFiles` with the exact authorized local still. This `cua_repl` surface exposed only basic tab controls and did not expose the documented Playwright chooser methods. Do not infer a locked Mac from native-app inventory output, blindly type into an assumed file dialog, inject page state, open another writer, or submit before all four package assets are present. Once the still is uploaded, complete the compact fact/editor check, submit once, and confirm the resulting public post before recording publication details.
