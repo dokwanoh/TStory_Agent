@@ -1,5 +1,9 @@
 # Smart Life Week draft and upload hold — 2026-10-06
 
+## Login completed, existing draft not found — 2026-10-06
+
+After the owner reported completion, a fresh inventory again mapped extension `81fa47e6-c506-4465-b002-74bf935a8da8` to `티스토리 게시봇` (browser ID `2` in this connection). Manager tab `959318821` now visibly shows the signed-in Tistory management page for `내담마의 지식저장소` with 195 posts. The manager's private-post filter showed 0 entries, and an exact title search for `스마트라이프위크 무료 관람 🤖 신청 전 동의 3가지` returned 0 results. The publisher tab inventory still does not contain the prior editor `959318102`. No replacement editor was created; no post content, uploads, or publication state changed. Continue only if the existing draft editor is restored in this same publisher profile.
+
 ## Latest publisher-profile check — 2026-10-06
 
 On a fresh CUA connection, stable extension identity `81fa47e6-c506-4465-b002-74bf935a8da8` maps to `티스토리 게시봇` (browser ID `2` in this connection); the expansion profile maps to ID `1`. These numeric IDs are volatile. The publisher tab inventory includes Kakao login tab `959318821`, and direct accessibility inspection shows the blank account and password fields plus the login button. The same inventory does not include the Smart Life Week editor `959318102`; it includes other existing Tistory tabs, which were left untouched. No credentials were entered, no editor was created, and no article content, uploads, permissions, or publication state were changed. Recheck the same publisher profile after the owner completes sign-in, then locate the existing Smart Life Week draft before resuming.
