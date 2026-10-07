@@ -29,9 +29,19 @@ Removed only the two authored wrappers in the normal217editor. Seven exact nativ
 
 1. Qualify freshness at selection from primary timestamps; capture full bodies; independently review exact text before fresh media and hash-bound media review.
 2. Keep the publisher profile and existing writer. After connection reset numeric browser IDs can change: current inventory retained writer959319158, while publisher entry changed from2to1. Two300-second tool timeouts cleared after tool reset; no page reload/replacement/user unlock needed. Deeper transport cause UNKNOWN. An unrelated native-app locked-Mac diagnostic did not establish a browser blocker.
-3. Immediate paste/Return can join paragraphs; inspect and fix boundaries. Image tools can retain an earlier target; inspect filename/current ALT dialog before editing. Missing metadata can be corrected in the same native source editor, preserving real image identity.
+3. Immediate paste/Return can join paragraphs; inspect and fix boundaries. Image tools can retain an earlier target. Scroll the intended image into the visible viewport, select it with native input, verify its existing ALT dialog, then submit the image-specific link dialog. HTML image-link repair does not meet the owner's native-tool requirement.
 4. For late HTML mode changes, handle confirm while click is pending with `mode-confirm.mjs`. Entire-source selection followed by paste with null target retains selection; exact memory readback proves replacement.
 5. **Current rule: reuse common middle slots. Do not add article-level `.adfit-post-middle1/2` while the skin supplies them.** The common4-slot structure and1/3,2/3 placement supersede earlier manual-wrapper recipes. Article-only counts cannot certify total live-page ad count; compare full public structure to reference.
 6. Submit once/reconcile actual identity. Record distinct necessary same-ID repair honestly. Verify one authorized author comment, save evidence with **성공 경로**, and stage only owned documentation/status rows.
 
 No tests added/run. Owner-excluded Print/Lighthouse/remote-image-pixel/lightbox/whole-site ad investigation remained excluded; the ad comparison was limited to required post204 quantity/placement acceptance. Photos are conceptual, not actual OpenAI facilities/model output/Epson product photography.
+
+## Native-tool completion audit — 성공 경로
+
+The first completion report had a procedural gap: section3/4/5 links were correct publicly, but their initial metadata repair used HTML. On2026-10-08KST, reopened the same217editor in publisher profile1. A DOM image click scrolled but did not select the intended image. Native scroll/screenshot/click selected the visible scanner, cup and trial photos. Each existing ALT dialog matched its intended asset, and each affiliate URL was submitted through `kimage-link-submit` with the new-window setting already enabled. This is the reusable successful route; it does not erase the earlier deviation.
+
+One bounded same-ID correction save started `2026-10-07T17:50:18.330Z`. Actual public return confirmed the same217URL and seven linked editorial images, three banners, existing comment19722088 and four common AdFit units. Empty editor caption placeholders did not appear publicly. Total saves: initial publication1, known ad correction1, native-tool completion1; no unknown-save resubmission.
+
+Evidence: `outputs/decisions-native-link-completion.json`, `outputs/decisions-native-link-proof.png`. Public AdSense DOM varied on this load: one authored entry-content slot3825649038 plus two platform revenue wrappers without slot IDs, unlike the earlier single-slot observation. Do not claim a fixed total platform ad count from either observation. No additional advertising mutation was made in this bounded native-link correction.
+
+The requested quick single-save path was not achieved historically. Future work must finish all native image links before late HTML formatting and reuse the common AdFit containers before the final save.
