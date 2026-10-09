@@ -30,6 +30,12 @@
     "local_identifiers_redacted": false
   },
   {
+    "path": "outputs/codex28-day4-current-goal.txt",
+    "bytes": 8800,
+    "sha256": "5356353dc263ca8298d304f2e33ee66f33bd013a0307c77c7c16b88d1fc5af11",
+    "local_identifiers_redacted": false
+  },
+  {
     "path": "outputs/codex28-source-check.txt",
     "bytes": 5481,
     "sha256": "54176e01004ddbc24ee8e04e3d487ea22ba8c13f05349c02ca36f11c790efebc",
