@@ -1,0 +1,25 @@
+{
+  "httpStatus": 200,
+  "rCode": "0",
+  "products": [
+    {
+      "id": 9769704261,
+      "name": "작고 쓸모 있는 코딩 딴짓 : 코덱스와 시작하는 10분 바이브 코딩 프로젝트 29",
+      "price": 25200,
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=9769704261&itemId=29242402874&vendorItemId=96160858801&traceid=V0-153-cebaa786bf00fbdd&requestid=20261010005105603176198590&token=31850C%7CGM&pt=0&slot=1"
+    },
+    {
+      "id": 9770625101,
+      "name": "(권경열) 작고 쓸모 있는 코딩 딴짓 + 책갈피 -코덱스와 시작하는 10분 바이브 코딩 프로젝트 29 (예약판매 2026/10/15~)",
+      "price": 25200,
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=9770625101&itemId=29245262158&vendorItemId=96163577308&traceid=V0-153-924deb494cff9d38&requestid=20261010005105603176198590&token=31850C%7CGM&pt=0&slot=2"
+    },
+    {
+      "id": 9768385713,
+      "name": "(베스트) AI 자율학습 클로드 코드·코덱스 CLI 완전 활용법+Do it! 바이브 코딩 + 클로드 코드+된다! 하루 만에 끝내는 클로드 활용법+에이전트 워크플로우 (전4권)",
+      "price": 96120,
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=9768385713&itemId=29238051348&vendorItemId=96156689730&traceid=V0-153-519fe3c9fcaca75d&requestid=20261010005105603176198590&token=31850C%7CGM&pt=0&slot=3"
+    }
+  ],
+  "count": 3
+}

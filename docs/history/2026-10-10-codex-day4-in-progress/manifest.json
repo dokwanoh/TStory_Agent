@@ -1,0 +1,161 @@
+{
+  "status": "active_goal_not_published",
+  "publication_url": null,
+  "files": [
+    {
+      "file": "codex4-article.md",
+      "bytes": 8154,
+      "sha256": "50e11d3d3fb63640e6460b8ab1ed7929218d8b973e92f7ebeec3648f44d8f04c"
+    },
+    {
+      "file": "codex4-author-comment.txt",
+      "bytes": 232,
+      "sha256": "c960664828c26a6cb3434a69d33720824e34d76af66854d67f5b7d95b9a3cd5f"
+    },
+    {
+      "file": "codex4-cover.jpg",
+      "bytes": 217288,
+      "sha256": "da41c749da45f5f397e70f7e74cb170799229da960894d5c99172185cdbcae16"
+    },
+    {
+      "file": "codex4-cover.png",
+      "bytes": 1492072,
+      "sha256": "d9068e4679ff57a2aea476b5b29d00fb0b6261b96f3fcbb8ce14ef09581ce78a"
+    },
+    {
+      "file": "codex4-image-prompts-full.json",
+      "bytes": 4915,
+      "sha256": "d1f16e3ec0fe4526a634f2ffbce3016cbd83e615ecf57eb46de222a3ac46a64c"
+    },
+    {
+      "file": "codex4-image-prompts.json",
+      "bytes": 568,
+      "sha256": "4da202096a6189c2242b667a738b36583c4f0e9cd8564571ae099d34380da2a0"
+    },
+    {
+      "file": "codex4-infographic.jpg",
+      "bytes": 352024,
+      "sha256": "816ff09864dff6fb2ebe7a33b71e68eb78f89c2289bdddfd15b4e136e280a322"
+    },
+    {
+      "file": "codex4-infographic.png",
+      "bytes": 1715691,
+      "sha256": "021d220dae470f131db7fd08eaffa24c8e83a13e0d00a3866e698a5dad82d305"
+    },
+    {
+      "file": "codex4-media-manifest.json",
+      "bytes": 2598,
+      "sha256": "b1145186299464ba10e9f7ec9871f0e5120903b976ce55eaaf487b93db153e60"
+    },
+    {
+      "file": "codex4-motion-contract.md",
+      "bytes": 850,
+      "sha256": "75e0f02374651a10b7ec240d9b812ca172cea218efef29a265ae50e4784ac74f"
+    },
+    {
+      "file": "codex4-motion-playback-later.png",
+      "bytes": 52136,
+      "sha256": "47039fc3a1de5fd6aad8a2ec27d555578f0d2324cf255323999984c488a97cba"
+    },
+    {
+      "file": "codex4-motion-playback-start.png",
+      "bytes": 49932,
+      "sha256": "518072ea770c48bd13490a4afbafa330497eed1dc3a34f4b53f3dde0346f915e"
+    },
+    {
+      "file": "codex4-motion-preview.html",
+      "bytes": 472,
+      "sha256": "c983b868de90cfb081dd5eb570a0654e0d2267c610d96de3f34cfcf16fea83b7"
+    },
+    {
+      "file": "codex4-native-draft-proof.png",
+      "bytes": 116392,
+      "sha256": "229ff7e4a5df2a40661372df8f3b577e75fc0019b7fc897ee0749ea0092c74b9"
+    },
+    {
+      "file": "codex4-preview.html",
+      "bytes": 16009,
+      "sha256": "bab76a5e887f25caca6d0d2fc641dc81304291c6f2bcaf0086311362b496dee6"
+    },
+    {
+      "file": "codex4-product.json",
+      "bytes": 1451,
+      "sha256": "b4dec9d32b51ecf04c0f70411c4c9b2c2303cc39e6e24ff5193f882031e07a6e"
+    },
+    {
+      "file": "codex4-progress-record.md",
+      "bytes": 2985,
+      "sha256": "b458f4cda476bfdf5874079c3f6e4cd1510029e4c0f61784927d2e0cdc9fd474"
+    },
+    {
+      "file": "codex4-section1.jpg",
+      "bytes": 191898,
+      "sha256": "dad90f09a6be61212bb7a8755b1ac93b775d62bc7ba638c2acb8e6429079eb4e"
+    },
+    {
+      "file": "codex4-section1.png",
+      "bytes": 1877331,
+      "sha256": "e97396b900ac77d6cb85a8d0a3a931cb1fd1495dddf25209c16e5de55e46a6b7"
+    },
+    {
+      "file": "codex4-section2.jpg",
+      "bytes": 196659,
+      "sha256": "e700954f815bda7b35148eee58a852202c9ebe02fba9bb0ab3fc2c0977bb836c"
+    },
+    {
+      "file": "codex4-section2.png",
+      "bytes": 1287590,
+      "sha256": "ebaa541ec0f0ec3250aeb82f0805f23d3a030f9b35dd65efd85143541fc067f6"
+    },
+    {
+      "file": "codex4-section3.jpg",
+      "bytes": 223973,
+      "sha256": "11511601b546b534f43815b206c71081ab4b27e7b799b6fddbe2118d110074dc"
+    },
+    {
+      "file": "codex4-section3.png",
+      "bytes": 2452223,
+      "sha256": "d96970418b1d6cc0ccdfd4429941b0ef69c6e0d87daf09efe3f8545db8d9c992"
+    },
+    {
+      "file": "codex4-source-pack.md",
+      "bytes": 4892,
+      "sha256": "1be45da87467dd30e7ac379fd10e840da5eb92c5b6b547b037c164f43dc080bb"
+    },
+    {
+      "file": "codex4-workflow-frame-0.png",
+      "bytes": 149664,
+      "sha256": "2b3be8f9c485365e6587cc8c8e6695d88c4b9cd6aaa1d7821ed4f9c66de7c057"
+    },
+    {
+      "file": "codex4-workflow-frame-100.png",
+      "bytes": 150033,
+      "sha256": "4bc706add682e38f5971fe437fd5a0dd747a7761fc180aa3cfb74ddf58f0f6eb"
+    },
+    {
+      "file": "codex4-workflow-frame-200.png",
+      "bytes": 149789,
+      "sha256": "4225a14e1ced66c8c3c0c48b425b59de20b047889e2bb67a357112797f4b0722"
+    },
+    {
+      "file": "codex4-workflow-frame-259.png",
+      "bytes": 149097,
+      "sha256": "b146e8e83bc711db69beffb3e82de7ccd91aee7b44f1064ade23be0b32063e6d"
+    },
+    {
+      "file": "codex4-workflow.gif",
+      "bytes": 94255,
+      "sha256": "04434526ccb33303b504175019572936c8ccbced364785056912ac47c27ec42a"
+    },
+    {
+      "file": "codex4-workflow.swift",
+      "bytes": 4535,
+      "sha256": "164fa660d85422ebb25c2146728d2ab74b7e6bbc6e35a375885e9151c35e99d5"
+    },
+    {
+      "file": "review.md",
+      "bytes": 5767,
+      "sha256": "398b4351ead72eb99120eb9e07858ac8bffbe6e1f4aff4f9cde26b2edbe76b1b"
+    }
+  ]
+}

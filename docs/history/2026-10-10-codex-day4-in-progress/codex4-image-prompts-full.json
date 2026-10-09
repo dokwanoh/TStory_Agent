@@ -1,0 +1,25 @@
+{
+  "tool": "built-in image_gen",
+  "prompts": [
+    {
+      "asset": "cover",
+      "prompt": "Use case: stylized-concept. Create a finished Korean Tistory cover, square 1024x1024. Toss-style restrained premium 3D illustration with huge perfectly legible Korean headline and airy warm ivory backdrop, coral and fresh lime accents. Text exactly: small top \"Codex 4일차\", enormous central \"최대 8배?\", lower large \"속도 · 방향 수정 · 비용\". Show a sculptural chrome fast-forward symbol and one coral branching direction arrow, with a small abstract cost token, no real product UI. Main lesson is speed needs direction and cost judgment, no guaranteed 8x whole task or accuracy claim. New composition not usual purple/blue screen poster. All text large, clean, ample safe margins. No logos, watermark, fake screenshot, other text. Opaque background."
+    },
+    {
+      "asset": "infographic",
+      "prompt": "Use case: infographic-diagram. Finished Korean pastel handdrawn sketchnote infographic portrait 4:5, generous white margins, clear black pen strokes and pastel peach/mint/lilac panels, neat big Korean letters for phone readability. Title exact \"Codex 4일차, 무엇이 달라졌나요?\". Two top equal panels with icons: \"빠른 생성\" / \"토큰 생성 최대 8배\" / \"전체 완료시간 보장 아님\"; \"빠른 방향 수정\" / \"작업 중 추가 지시에 더 빨리 반응\" / \"원하는 결과는 직접 확인\". Middle wide three mini panels: \"속도\" / \"최대 8배\"; \"포함 한도 소모\" / \"Standard의 8배\"; \"추가 크레딧 과금\" / \"Standard의 6배\". Label below \"API 요금은 별도 기준\". Bottom readable decision with arrows: \"내 계정이 지원하나요?\" arrow yes \"대기시간·결과·비용 비교\"; no \"현재 모드로 작은 요청부터\". Footer \"구매나 업그레이드는 필수가 아니에요\". Explain differences, accurate relation arrows, no billing equals speed claim, no extra facts. Do not draw internal writing/publishing flow. All Korean exact, no clipping, not a dense article copy."
+    },
+    {
+      "asset": "section1",
+      "prompt": "Use case: photorealistic-natural. Landscape editorial still 3:2 explaining faster writing versus mid-task direction changes in Coding Agent article. Natural studio photograph of a laptop in a coral-toned workspace, viewed at side 30degree, laptop display has generic abstract text lines WITHOUT real application UI, beside it two large physical cards standing upright. Card one has a stream of short printed line marks ending in fast-forward icon, exact big caption \"빠르게 쓰기\". Card two has a bent route arrow and a fresh small request card joining the route, exact big caption \"방향 바꾸기\". They are equally prominent; scene clearly distinguishes generation pace from correcting instructions. Realistic paper, brushed metal, soft window light. No person required. No timer measurement, no claimed official screenshot, no invented service or result. Caption at bottom small but readable \"개념 설명 이미지\". Sparse meaningful composition."
+    },
+    {
+      "asset": "section2",
+      "prompt": "Use case: scientific-educational. Create a finished landscape 3:2 Korean price-comparison illustration for coding agent API example. Crisp diagram, ivory and dark teal, coral bars. Title \"API 비용 비교 · 가정 예시\". Subtitle exact \"입력 10만 토큰 + 출력 1만 토큰\". Two separated panels: \"Standard\" / \"$0.30\"; \"Ultrafast\" / \"$1.80\". Left short bar1unit, right longer bar6units, baseline same. Below: \"짧은 컨텍스트 · 캐시 미적용\" and \"세금·도구 요금 등 제외\". Footer \"구독 포함 한도와는 별도 기준\". Neatly rendered big Korean and decimal digits, high mobile readability. No exchange rate, no performance comparison or misleading subscription price. Clean polished editorial diagram is preferable to an irrelevant photo."
+    },
+    {
+      "asset": "section3",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 overhead editorial photo for a coding agent lesson: turn vague requests into three checkable conditions. Pale mint surface, single large paper prototype of a simple checklist tool, clearly conceptual not real service screenshot. Exactly three task rows each with empty check box, Korean task labels \"할 일 1\", \"할 일 2\", \"할 일 3\", and large outlined paper button \"체크 초기화\". To the right, three large verification notes with exact text \"3개\", \"저장 없음\", \"초기화 확인\". A fine curved arrow from button to empty checkboxes. All conditions visible immediately. Actual natural paper folds, soft realistic shadows, no person or unrelated objects. Small readable label \"가정 예시\". No app brand or claimed real result. Different composition and green color from other section photos."
+    }
+  ]
+}
