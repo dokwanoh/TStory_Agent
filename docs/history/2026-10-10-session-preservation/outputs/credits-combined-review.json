@@ -1,0 +1,73 @@
+{
+  "reviewer": "docs_editorial_review",
+  "decision": "PASS",
+  "scope": "Independent editorial review of exact local copy, six generated JPG images and workflow relationships. Actual browser replay and publication checks remain root's execution evidence.",
+  "review_date": "2026-10-08",
+  "article": {
+    "path": "outputs/credits-article.json",
+    "sha256": "dffa3e2788dc53425897fa9160c95789ec2347372e22b321639932b0f904a03f",
+    "scenario": "Beginner understanding, factual conditions, hypothetical example and selective emphasis",
+    "invocation": "cat outputs/credits-article.json; Node JSON parse/count; shasum -a 256",
+    "observables": {
+      "section_count": 4,
+      "paragraph_count": 18,
+      "bold_sentence_occurrences_per_section": [1,1,1,1],
+      "author_comment_lines": 3,
+      "team_example_result_usd": 260,
+      "hypothetical_example_explicitly_marked": true,
+      "hypothetical_example_preserves": ["우유 2개", "무가당", "달걀 10개"],
+      "intro_explains_reader_question_and_conclusion": true
+    },
+    "result": "PASS"
+  },
+  "facts": {
+    "scenario": "Dates, amounts, eligibility, billing exceptions and actual API prerequisites",
+    "invocation": "Independent web.run open/find on official release notes, help, platform credit documentation, get-started and subscription/API distinction",
+    "observables": [
+      "October7 announcement confirmed; exact hour/timezone and strict within36h qualification not claimed.",
+      "Max5x USD100 and Max20x USD200; Team USD20/Standard and USD100/Premium with pooled USD500 cap.",
+      "New eligible subscribers wait seven days; Free/Pro/Enterprise excluded; web claim and role constraints retained.",
+      "Chat limits stay separate; credits are API cost balance, not cash refund.",
+      "No card needed to claim/use benefit; actual API setup needs Console account and API key.",
+      "Included balance first, purchased balance afterward; auto-reload can occur while included balance remains.",
+      "Expiry/no rollover, organization sharing, sales-invoiced exception and separate spend limits preserved."
+    ],
+    "source_urls": [
+      "https://support.claude.com/en/articles/12138966-release-notes",
+      "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+      "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+      "https://platform.claude.com/docs/en/get-started",
+      "https://support.claude.com/en/articles/9876003-i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-is-claude-api-usage-billed-separately-from-my-paid-claude-plan",
+      "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage"
+    ],
+    "result": "PASS"
+  },
+  "product": {
+    "scenario": "Specific reader need rather than generic AI accessory relevance",
+    "invocation": "Publisher page and table of contents directly opened during current credits topic review; exact current author_comment read",
+    "observable": "The reader wanting to implement repeated memo-file processing may use Python functions and file input/output fundamentals. The book is not described as a Claude API manual or a required purchase. Comment includes product name, one specific friendly rationale and affiliate URL.",
+    "source": "https://www.easyspub.co.kr/20_Menu/BookView/594",
+    "api_option_limit": "Coupang API transaction and exact option execution are root's evidence, not repeated by this reviewer.",
+    "result": "PASS"
+  },
+  "assets": [
+    {"path":"outputs/credits-media/cover.jpg","sha256":"805801e193afbc2fa05eb8dee4b04719e63ca6ea322c2ef6d6610a316e11ec1e","invocation":"view_image","observable":"Large readable Korean; API wallet and chat separated by vertical line; no equality claim.","result":"PASS"},
+    {"path":"outputs/credits-media/infographic.jpg","sha256":"63ac64821aaf8bb7123e10e07a20c521193972fe264151967628d5d41dd91d90","invocation":"view_image","observable":"Chat allowance versus program cost balance, Max/Team eligibility, one organization and expiry/auto-reload checks are clear; no rollover noted.","result":"PASS"},
+    {"path":"outputs/credits-media/section1.jpg","sha256":"3cf265ce6468342ab5a898083b03223b8282f860ce93ec67d9a75134c2326551","invocation":"view_image","observable":"Direct question contrasted with program→API request→response flow; readable labels and correct arrows.","result":"PASS"},
+    {"path":"outputs/credits-media/section2.jpg","sha256":"502811acaa625c68263882c126d65b98f097793f5211a3f72df68b1a42124cd7","invocation":"view_image","observable":"Standard3×20 and Premium2×100 join one USD260 pool; team maximum USD500/month clearly separate.","result":"PASS"},
+    {"path":"outputs/credits-media/section3.jpg","sha256":"6d0fd9c568daa42685b2cbc4906b5f6ed0266507c214fbb737c54e0c49ff7e5e","invocation":"view_image","observable":"Memo labels preserve milk2, unsweetened condition and eggs10; scene illustrates the explicitly hypothetical input without posing as official service output.","result":"PASS"},
+    {"path":"outputs/credits-media/section4.jpg","sha256":"77589620219e20b6a579df7da50c34a06f9af6b57784ac21c3939d7325a7a95c","invocation":"view_image after final file confirmation","observable":"Readable remaining balance, expiry and auto-reload labels directly explain section4's three checks; no fabricated charge amount or date.","result":"PASS"},
+    {"path":"outputs/credits-media/workflow.gif","sha256":"3832aac650b19123e97ae63a20eb40765c2ec98d213f2b47b61d7e477f775a22","invocation":"shasum; contract read; view_image of final frame","observable":"Need→eligibility→organization connection→own program request→reader result/balance judgment; noneligible exit and repeat-request feedback; explanatory time distinguished from service time.","result":"PASS_EDITORIAL_RELATIONSHIPS"}
+  ],
+  "workflow": {
+    "contract_path": "outputs/credits-workflow-contract.json",
+    "final_frame_path": "outputs/credits-media/workflow-frame-219.png",
+    "final_frame_sha256": "a254031f91013dcfb1e2d89312b594cd101a0f7fea684bf0269a127a2bf42773",
+    "visual_observable": "Korean actors, inputs, conditions and arrows are readable without cut-off. Feedback leads from continued need and usable funds back to API request. Final five-second whole-flow reading instruction visible.",
+    "scope_limit": "Actual timed playback, encoded220frames/22seconds and finalhold verification are root's observations. This reviewer inspected the final-frame relationships and does not claim an independent real-time replay."
+  },
+  "reader_action": "Identify one repeated task, decide whether a program connection is useful, then check eligibility, shared balance, expiry and auto-reload; retain chat for occasional single tasks.",
+  "required_changes": [],
+  "remaining_execution_checks": ["Native links and representative image", "Disclosure/banner/intro and summary placement", "Final once-only editor check and save", "Public post/home/list verification", "One author comment", "App verification reported separately"],
+  "evidence_pointer": ".omo/evidence/credits-combined-review-evidence.json"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "cover",
+    "alt": "내 PC와 클라우드 사이의 권한과 제공 시점을 묻는 큰 한국어 표지",
+    "prompt": "Use case: stylized-concept. Asset type: separate Korean blog cover 1:1. Primary request: Toss-like polished minimal cover for article about Windows hybrid AI, local computer plus cloud processing and user permission. Scene/backdrop: entire small home computing nook built as tactile off-white architectural diorama, miniature laptop at left, paper cloud-shaped light at right connected by a soft violet physical ribbon, small coral key-shaped permission object in center. This is independent fresh cover, NOT an infographic, NOT screenshot, no Microsoft/Windows logo. Composition: enormous bold Korean typography in upper half, illustrated spatial context lower half, square-safe margins. Color: creamy ivory, near black, rich purple and coral, fresh different from prior giant blue touch-screen cover. Text verbatim only: upper title 'AI가 내 PC에서' next line '일한다면?' lower small line '위치 · 권한 · 제공 시점'. Typography must render flawless exact Korean as large readable black and purple type. No additional text, fake UI, watermark. Background opaque.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-88c22361-62ae-4ce8-add4-359b6e269b8b.png"
+  },
+  {
+    "name": "section1",
+    "alt": "유리창 너머 데이터센터와 실내 소형 컴퓨터가 함께 보이는 공간",
+    "prompt": "Use case: photorealistic-natural. Korean blog inline section explaining local versus cloud computation. Wide architectural editorial photograph through two connected spaces: foreground small edge-computing workstation inside a compact makerspace, distant sealed server racks visible through glass across courtyard, visible real building context, contrasting warm foreground and cool distant light. Objects correctly sized, natural glass reflections, rich documentary-quality textures, slight 35mm grain, no staged studio objects, no readable text, logos, holograms, neon AI symbols, screens with text, watermark. Conceptual scene, not a named real company facility.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-eefbf0ef-7388-4755-a0ed-fd8ac2220e93.png"
+  },
+  {
+    "name": "section2",
+    "alt": "기록보관실에서 열람할 자료만 골라 건네는 모습",
+    "prompt": "Use case: photorealistic-natural. Korean blog inline metaphor for limiting access. Wide quiet archive room with numbered-free storage shelves, librarian in side profile handing one plain unmarked slim document folder to a visitor across a waist-high wooden counter while the rest stays on shelves behind closed glass. Environment fills frame, candid natural action, soft side lighting, teal and aged-wood palette, subtle medium-format film grain, realistic people hands, not close-up, no readable text/logo/watermark, no computer/security icon. A permission metaphor not documentary news.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-783efdd4-b933-4c31-8c1c-e2266326e0ad.png"
+  },
+  {
+    "name": "section3",
+    "alt": "사진 보관 작업실에서 원본과 복사본을 나눠 정리하는 작업",
+    "prompt": "Use case: photorealistic-natural. Korean blog inline explanatory photograph of preserving originals before arranging copies. Wide artist photography conservation workshop viewed from doorway: six photo print copies spread in two small neat groups on a light table, original print sleeves protected in archival box at side; worker wearing casual cardigan reviewing arrangements, laptop folded or turned away, no readable text. Spacious visible environment, matte analog film look, amber daylight, authentic paper textures, realistic perspective, no generic phone-calendar desk, no logos, no fake official screen, no watermark.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-2faf695d-8da7-435b-9efc-fcc04270fbfb.png"
+  },
+  {
+    "name": "section4",
+    "alt": "컴퓨터 수리 공간에서 노트북 기기 구성을 살피는 모습",
+    "prompt": "Use case: photorealistic-natural. Korean blog inline device availability and support conditions. Wide neighborhood computer repair workspace: technician examining an opened laptop chassis on grounded repair mat, two different closed laptop units stored on a background shelf, tools naturally arranged, interior context, daylight plus fluorescent practical light, realistic subtle 35mm documentary grain, no readable branding/text on screens or paperwork, no logos, no watermark, no studio-card product layout, no close-up. Do not imply this is official Windows service or a real release event.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-863138d4-6fbc-4047-a018-b6b7272a37ce.png"
+  },
+  {
+    "name": "infographic",
+    "alt": "Windows 하이브리드 AI의 처리 위치·권한·제공 시점과 작은 파일 정리 연습을 묶은 손그림 요약",
+    "prompt": "Use case: infographic-diagram. Asset type: completed Korean vertical pastel handdrawn infographic, 4:5 proportion, all labels large and legible on mobile. Topic entire approved article: Windows hybrid AI uses local PC and cloud; reading and changing permissions differ; cautious reader file sorting exercise; rollout timing differs. Ivory paper texture, slightly irregular dark ink outlines, gentle pastel blue/green/pink/yellow panels, handmade sketchnote, lots of margins, no logo/watermark, no fake software screenshot. Text verbatim at top '내 PC에서 일하는 AI' and subline '위치 · 권한 · 제공 시점'. Four panels reading top-left→top-right→bottom-left→bottom-right. Panel1 title '1. 처리 위치' labels '내 PC + 클라우드' and '파일 접근 ≠ 완전 오프라인', draw laptop and cloud connected with bidirectional noncausal dashed data lines. Panel2 title '2. 허용 범위' labels '읽을 자료' and '바꿀 행동' and '범위가 좁을수록 판단하기 쉬워요'; draw separate folder-reading and file-moving icons, no all-safe badge. Panel3 title '3. 작은 연습' exact flow '복사본 6개 → 범위 이해 → 작은 작업 → 결과 비교'; below '모르면 요청 좁히기' arrow BACK to 범위 이해, and '개수 · 이름 · 위치'; a clearly attached label '독자 연습 예시'. Panel4 title '4. 제공 시점' labels 'MXC: Windows 11 정식 제공' and 'Copilot+ 새 기능: 앞으로 몇 달' and '기기 · 시장 · 칩 · 업데이트에 따라 다름'. Footer text exactly '10월 7일 Microsoft 발표 기준'. These are all permitted text. Preserve Korean, six-file count only hypothetical reader exercise; do NOT invent performance percentages, universal Korean availability, release day, price, full offline or guaranteed safe assertions. Arrows only exercise sequence/explicit feedback, not guaranteed product processing flow.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-3c4a791c-df5a-4830-9b2a-247ad3c02efd.png",
+    "revision": "One targeted imagegen edit clarified the scope feedback arrow and replaced unintended brand screens with generic icons."
+  }
+]

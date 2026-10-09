@@ -1,0 +1,57 @@
+{
+  "decision": "PASS",
+  "decisionMeaning": "Local editorial copy and still-media corrections accepted. This is not a publication or motion-playback certification.",
+  "correctionReview": {
+    "scope": "Only the two corrected images and the affected article paragraph were revisited; accepted material was not re-reviewed.",
+    "F1": "RESOLVED: view_image shows only the intended horizontal action arrow between steps1 and2; all three lower purple arrows have been removed, so Gemini is no longer the destination of source/date verification.",
+    "F2": "RESOLVED: view_image shows provider names only on the five sample cards; the unverified model-output provenance wording is gone. Detector/Gemini scope and Apple future status remain readable.",
+    "F3": "RESOLVED: sections[2].paragraphs[0] now explicitly says Gemini는 영상에서 표식이 감지된 구간을 알려줄 수 있지만 and preserves the following limitation.",
+    "invocation": "view_image on infographic.jpg and section2.jpg; Python read of the affected paragraph and hashlib SHA256 of changed files."
+  },
+  "finalChangedHashes": {
+    "outputs/synthid-article.json": "b1bff1afa67b2941e3d809fa023d50b90375a0df2e8c62f20e16b5f5fa444a14",
+    "outputs/synthid-media/infographic.jpg": "ff1d2a5038dba3303cf28b37a46219d954fdabb74656009a71dc51992f52bbc3",
+    "outputs/synthid-media/section2.jpg": "e7fe15ac82cb00de1b2672613e952b5f759195fb8d2623bc24c841cb7d36b7f7",
+    "outputs/synthid-media-manifest.json": "c63970ca3d07aba31067dd9a32dd6b8e7b76b81e8fdb96abfca5fc09bba6a193"
+  },
+  "scope": "Exact local copy, generated still images, source/product records and workflow final-frame editorial review before native upload",
+  "reviewerActions": {
+    "text": "Read entire synthid-article.json, image-prompts.json, media-manifest.json, workflow-contract.json and previously read source-pack.md/product.json; substantive official source claims were independently reviewed in topic review.",
+    "images": "Used view_image on cover.jpg, section1.jpg, section2.jpg, section3.jpg, section4.jpg, infographic.jpg and workflow-frame-179.png.",
+    "binding": "Ran shasum -a 256 on the listed exact files.",
+    "playback": "Not observed by this reviewer. Root owns actual Chrome playback verification. A final static frame is not playback evidence."
+  },
+  "initialFindingsResolvedInCorrectionReview": [
+    {"id":"F1","status":"OPEN","file":"outputs/synthid-media/infographic.jpg","issue":"Downward arrow from 출처·날짜 대조 to Gemini wrongly implies Gemini performs the separate source/date verification step.","requiredChange":"Remove the downward step-to-tool arrows or separate tool comparison from the two-step action sequence. Root is already editing this part."},
+    {"id":"F2","status":"OPEN","file":"outputs/synthid-media/section2.jpg","issue":"Generated sample photos carry labels such as Google 계열 생성 이미지 and OpenAI 계열 생성 이미지, implying model-specific image provenance that was not established.","requiredChange":"Reduce mini-card labels to company names only or remove 생성 이미지 wording; retain the supported-provider comparison and Apple future marker. Do not claim these sample photos are genuine outputs of the named providers."},
+    {"id":"F3","status":"OPEN","file":"outputs/synthid-article.json","location":"sections[2].paragraphs[0]","issue":"The sentence about identifying video segments omits the tool name, while the supporting source is Gemini help.","requiredChange":"Replace 영상도 표식이 감지된 구간을 알려줄 수 있지만 with Gemini는 영상에서 표식이 감지된 구간을 알려줄 수 있지만. Preserve the limitation following it."}
+  ],
+  "adequateAsRead": {
+    "readerUtility":"Clear question, source/date comparison example explicitly hypothetical, supported versus unsupported conclusions explained, sharing decision at end.",
+    "numbersConditions":"100MB inclusive, 90 seconds and one hour exclusive, one file, login and account conditions are expressly Gemini-specific. Detector support and Apple future status remain distinct.",
+    "readability":"Short Korean paragraphs, terms explained, examples lead to concrete action, source and next-reading buttons have descriptive purposes. Repetition of the central negative-result limit is proportionate to this topic.",
+    "product":"Optional beginner media-literacy book directly extends source-checking and searching behavior. No product promotion prose in article; no claim the 2020 book teaches 2026 SynthID.",
+    "cover":"Readable large Korean title, direct rainbow-photo examination motif, key limit present.",
+    "section1":"Concept-labelled cutaway directly explains invisible signal without pretending to be a detected official watermark.",
+    "section3":"Two matching rainbow photos and present-versus-earlier labels directly explain the hypothetical date-check example; 가정 예시 is visible.",
+    "section4":"Both AI signal and source/date checks feed a human sharing judgment; no automatic factual verification implied.",
+    "workflowFinalFrame":"Six readable nodes, sequential checks, evidence-supported versus unclear branches and restrained conclusions match the article. No replay/timing certification by this reviewer."
+  },
+  "initialHashes": {
+    "outputs/synthid-article.json":"f9b3f399406b4a57923c77c2613fd82e3757a140f5992a8fa3a37f43d35bca0f",
+    "outputs/synthid-source-pack.md":"69554a589fcebeebd07cc3b5150e54a91e18f1337db804dfd2f1f92e9ee37fe2",
+    "outputs/synthid-product.json":"faf49377579a9b66106c76dd9b55262f404f1f8749405049393865e784cce34c",
+    "outputs/synthid-media-manifest.json":"118b4e1e1d14aaec484abb7f2b967b5782ce1771805ba6f3a24b2e027b60100e",
+    "outputs/synthid-image-prompts.json":"665a3acaa102c02a3f8a4e3068b0d0bf1b27722e1cc3e7f7ce96fc6bc6ed5854",
+    "outputs/synthid-workflow-contract.json":"5c4a334c67465aa2b615700ea1b570883cb04c48d999419154190f3178b5c65d",
+    "outputs/synthid-media/cover.jpg":"f5d136aabdb3bd5826f4c93bb8b9275f9e28302172d99bedd84dddd6d2db28b1",
+    "outputs/synthid-media/section1.jpg":"ec0df6a481be69e8616f739069c3c2bd2cacc5b821c4b1ce39dccfce5aa7c6ee",
+    "outputs/synthid-media/section2.jpg":"4a994b3c2a9fe8f597d37e277208faedcbabcd2497d988728a427fb56399f9aa",
+    "outputs/synthid-media/section3.jpg":"e82a7f0e31c0459e80289adbb9da1fe3c672707229513b976e0be69232f20906",
+    "outputs/synthid-media/section4.jpg":"a9b52bbfe044601074ef702b35188733b674795541d1adf26cc27127d389043f",
+    "outputs/synthid-media/infographic.jpg":"333801940dad070b56690244c3ec5635496935d27f48f3da1f49ededafc08dac",
+    "outputs/synthid-media/workflow-frame-179.png":"14ef10a9a1dfb82f920685860fb383bcb49c021f2d200e82eb51e21f2eff307e",
+    "outputs/synthid-media/workflow.gif":"0fd1c2d85081d1fb1452a4d30eb5747c1daeac11cf3ccdb077af94941a0739a1"
+  },
+  "publicationVerified": false
+}

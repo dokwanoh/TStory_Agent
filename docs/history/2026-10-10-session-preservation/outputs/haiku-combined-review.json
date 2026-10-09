@@ -1,0 +1,149 @@
+{
+  "run": "haiku-20261008",
+  "review_turn": 1,
+  "verdict": "PASS",
+  "scope": "Combined exact prose and local seven-asset review before public save. Native upload placement, links, final formatting and author-comment posting are outside observed scope.",
+  "article_sha256": "e51480da57975fe02299aa2fcd916ced310991350afb9dfb1a33fe06236b2c09",
+  "source_pack_sha256": "d737338cc1d3ba9db06945514635ac35885d3480c09585fa69a7d9c0034b865e",
+  "manifest_sha256": "38c150d282461f81c56a308a368cc0e32319a3fd2e442720c48397d88754ef21",
+  "product_sha256": "43a4a0e43b9cf6dda24944211d3f42a20558f83a0b9ca4ec4db705b8af5a51a8",
+  "prose": {
+    "paragraphs": 20,
+    "characters_without_paragraph_separators": 2756,
+    "observations": [
+      "Approximately3000-character beginner article; explained model/API/token and input/output distinctions.",
+      "Fastest claim attributed to vendor standard-speed comparison and explicitly excludes faster Opus Fast Mode.",
+      "Per1million tokens prices correct: prompts<=100000 input$0.10/output$0.50; >100000 input$0.50/output$2.50. Does not confuse API pricing with subscription or fixed question charge.",
+      "No universal personal-plan/model-menu availability, highest accuracy, automatic model-routing or firsthand-use guarantee.",
+      "Complex agentic coding recommendation matches source; broader suggested escalation is editorial guidance, not a capability prohibition.",
+      "User-proposed summary/draft/source-check practice is clear; no body affiliate promotion.",
+      "Four buttons provide official launch/update and two relevant own-blog posts. Supplemental release-notes Oct7 entry supports launch date."
+    ]
+  },
+  "checks": [
+    {
+      "scenario": "Source and prose claims",
+      "invocation": "Read haiku-article.json and complete captured official launch source; read relevant October7 entry in supplemental haiku-release-notes.txt",
+      "binary_observable": "PASS",
+      "artifacts": [
+        "outputs/haiku-article.json",
+        "outputs/haiku-source-pack.json",
+        "outputs/haiku-release-notes.txt"
+      ]
+    },
+    {
+      "scenario": "Six final stills and infographic",
+      "invocation": "view_image cover.jpg, section1.jpg,section2.jpg,section3.jpg,section4.jpg,infographic.jpg",
+      "binary_observable": "PASS",
+      "observations": [
+        "Large Korean cover legible; source-check message accurate.",
+        "Flowers depict narrow repeated preparation; theatre rehearsal depicts source comparison; unit weighing is a conceptual usage-unit metaphor; print proofs depict comparing drafts.",
+        "Different color/scene/action compositions from prior220-216; some abstract movement/inspection motifs recur but no same image reuse.",
+        "Infographic labels API pricing versus subscription and rejects fixed-character token equivalence.",
+        "Complexity bubble pointing to request narrowing is acceptable: splitting work/larger-model consideration informs scoped request; no false automatic routing. Return from source-check to request narrowing is clear.",
+        "No official software screenshot, documentary event, endorsement or private-data claims."
+      ],
+      "artifacts": [
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-media/cover.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-media/section1.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-media/section2.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-media/section3.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-media/section4.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-media/infographic.jpg"
+      ]
+    },
+    {
+      "scenario": "Continuous workflow and feedback",
+      "invocation": "Read haiku-workflow-contract.json and work/haiku-workflow.swift; view_image frames0/85/135/179 and supplied replay1/2 captures; parse actual GIF image descriptors/control delays",
+      "binary_observable": "PASS",
+      "observations": {
+        "frames": 180,
+        "duration_seconds": 18,
+        "canvas": "fixed900x900",
+        "animation": "Moving marker traverses branch, merge, main flow and source-check feedback; final3seconds hold complete flow.",
+        "meaning": "Prepare original; judge narrow task; user-selected division/larger-model option; draft in supported environment; source check; correct request after omission/misunderstanding.",
+        "limits": "Reader exercise and non-product/non-processing-time disclaimer present. Replay captures inspected; reviewer did not independently control a live browser playback."
+      },
+      "artifacts": [
+        "outputs/haiku-workflow-contract.json",
+        "work/haiku-workflow.swift",
+        "outputs/haiku-media/workflow.gif",
+        "outputs/haiku-media/workflow-frame-0.png",
+        "outputs/haiku-media/workflow-frame-85.png",
+        "outputs/haiku-media/workflow-frame-135.png",
+        "outputs/haiku-media/workflow-frame-179.png",
+        "outputs/haiku-media/replay-1.png",
+        "outputs/haiku-media/replay-2.png"
+      ]
+    },
+    {
+      "scenario": "Exact package hashes",
+      "invocation": "SHA256 actual finals/generated PNGs/retained PNGs against manifest",
+      "binary_observable": "PASS",
+      "assets": [
+        {
+          "name": "cover",
+          "final_sha256": "814c50cf1b8dbc66b5e79fb5e6bbfc390d7fa3b8dc3c5955efd4c1cce534b3de",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section1",
+          "final_sha256": "d1443e3503ba7d014fa4e2211ee6fa5f420ed4648b85ea8fb12b89b765f49c4e",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section2",
+          "final_sha256": "c39deab12b35ea9aef4e01685b6eab62c41e098664426d155c588d06e7fa3380",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section3",
+          "final_sha256": "8bb092be4a9a7dd8279eb451b586c04039afd3e2957c0cd236be0527bc151b95",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section4",
+          "final_sha256": "658c01bd10eeb53391d89747ae344bbf0bfe7c4cd5209ae3ecab94c0923bb7b6",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "infographic",
+          "final_sha256": "553a296e3a06c76f87b6605d17d664ed8bfdf97c80fed2c469c2f08cd46ddb1b",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "workflow",
+          "final_sha256": "11ff437b77386b127e68fa8f4f0d69298d016b086eedfeb1e3ad99ce0b7fb0a1",
+          "final_match": true,
+          "original_match": null
+        }
+      ],
+      "artifact": "outputs/haiku-media-manifest.json"
+    },
+    {
+      "scenario": "Product option and comment plan",
+      "invocation": "Read haiku-product.json and caller-supplied short comment text",
+      "binary_observable": "PASS for editorial option consistency",
+      "observations": [
+        "ID9006013099; K120+G102 wired set, black/full set agrees with banner ALT.",
+        "Optional desktop input equipment; no AI feature unlock or required-purchase claim.",
+        "Proposed short comment: 로지텍 K120+G102 유선 세트 · 블랙 followed by short affiliate URL.",
+        "API/UI verification claims not independently replayed."
+      ],
+      "artifact": "outputs/haiku-product.json"
+    }
+  ],
+  "required_placement": {
+    "infographic": "Immediately below complete30초요약 card, per latest owner steering.",
+    "workflow": "Section4 afterparagraph3 and beforeparagraph4.",
+    "author_comment": "Very short product label plus short affiliate URL.",
+    "status": "Matches article/manifest plan; actual editor/public placement not observed."
+  },
+  "mandatory_revisions": []
+}

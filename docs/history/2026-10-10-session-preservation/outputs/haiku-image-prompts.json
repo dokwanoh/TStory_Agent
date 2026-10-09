@@ -1,0 +1,38 @@
+[
+  {
+    "name": "cover",
+    "alt": "빠른 AI를 요약·초안·원문 대조에 활용하는 큰 한글 제목 표지",
+    "prompt": "Use case: ads-marketing. Independent square Korean blog cover, Toss-inspired polished clarity, giant flawless bold Korean typography exact two lines '빠른 AI,' '언제 쓸까?' and smaller line '요약 · 초안 · 원문 대조'. Mint green and vivid tangerine palette, generous pale peach negative space. Lower half tactile playful premium 3D editorial installation of three folded paper message envelopes moving along a very short curved mint track towards a glass magnifying lens. Not a literal parcel sorting facility, no people/computers/logos. Huge clear typography dominates phone thumbnail, rounded tasteful shapes, soft studio shadows, no other text. Completely different from computing diorama and blue touchscreen covers.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-a8cd3074-5cb6-4034-ae68-c410d0cfafb9.png"
+  },
+  {
+    "name": "section1",
+    "alt": "넓은 꽃 도매 작업장에서 작은 꽃다발을 종류별로 준비하는 장면",
+    "prompt": "Use case: photorealistic editorial metaphor. Wide 3:2 real-looking flower wholesale greenhouse interior, environmental context fills frame: towering glass roof, many vivid orange/magenta/purple flower buckets, distant cropped florist hands grouping small bunches by type on several long racks. Fresh vibrant documentary digital color photography, crisp daylight, wide angle, not warm film, not a desktop/laptop, no readable letters or logos. Conveys frequent small well-defined tasks. Conceptual illustration not a real AI facility or launch event. A single natural photographic scene, no collage/no overlay text.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-e13fe7a7-29e4-4a57-bc24-e9f4760cd619.png"
+  },
+  {
+    "name": "section2",
+    "alt": "연극 리허설 무대에서 대본과 동작을 나란히 확인하는 넓은 장면",
+    "prompt": "Use case: photorealistic editorial metaphor. Wide 3:2 black-and-white high-contrast environmental theatre rehearsal photograph: expansive simple stage, dark auditorium rows in foreground, small rehearsal group in far mid-ground comparing plain paper pages with the staged props, no readable script text, candid actions within full theatre space. Dramatic sidelight, excellent real monochrome tonal range, wide framing rather than portrait. Conveys checking a draft against its source. No screens/logos/composites; not documentary of actual people or AI event.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-401d73fc-74c8-467c-954a-8b59c1ed91a0.png"
+  },
+  {
+    "name": "section3",
+    "alt": "공장 작업실에서 작은 자재 묶음을 단위별로 계량하는 장면",
+    "prompt": "Use case: photorealistic editorial metaphor. Wide 3:2 bright industrial workshop environmental photo, entire spacious room with orderly bins of small colorful wooden components, open mechanical weighing scale, several batches of differently sized plain component bundles on a teal workbench, skylights and industrial orange structural details. Saturated clean commercial digital photography, wide realistic context, no numbers/text/logos, no people needed, not a parcel sorter or office. Metaphor for usage measured in units, NOT asserting tokens equal objects or Korean characters. Single photograph.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-b0f137dc-6890-4fda-973a-cae1436601a1.png"
+  },
+  {
+    "name": "section4",
+    "alt": "밝은 인쇄 작업실에서 교정지를 원고와 나란히 대조하는 장면",
+    "prompt": "Use case: photorealistic editorial metaphor. Wide 3:2 vivid cyan-and-magenta editorial environmental photograph of a full small modern printmaking workshop, sheets with abstract nonreadable marks displayed on a broad light table, one plain original sheet and three short draft sheets aligned side by side, cropped hands comparing margins using a small ruler, presses and drying racks visible in background. Cool overhead daylight, fresh clean sharp contemporary photo, not old archive/library/conservation/desktop. Illustrates short draft and source comparison, no readable text, no logos, no collage.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-a5cb10a8-b0cf-4fd0-909f-91d804ea24fa.png"
+  },
+  {
+    "name": "infographic",
+    "alt": "하이쿠 5.5의 작은 작업·원문 대조·API 요금 구분·연습 순서를 정리한 파스텔 손그림 인포그래픽",
+    "prompt": "Use case: infographic. Finished Korean whole-article pastel handdrawn sketchnote, tall 4:5, warm ivory paper with organic ink strokes, spacious 4 large pastel panels and simple sketch icons, all Korean huge readable accurate type. Exact title '빠른 AI, 작게 시작해요'. Small subtitle '클로드 하이쿠 5.5 · 10월 7일 공개'. Panel1 mint exact title '1. 작은 일을 자주' text '짧은 원문 요약 · 답변 초안' flower bunch sketch. Panel2 pale pink exact title '2. 원문과 대조' text '이름 · 날짜 · 조건 확인' two pages and magnifier. Panel3 pale blue exact title '3. 요금의 뜻 확인' text 'API 요금 ≠ 월 구독료' second line '토큰은 고정 글자 수가 아니에요' simple ruler units sketch. Panel4 pastel yellow exact title '4. 작게 연습하기' main pen arrows '원문 준비' → '요청 좁히기' → '초안' → '원문 대조', readable return arrow from 원문 대조 back 요청 좁히기 label '누락·오해가 있으면 수정'. Side branch near 요청좁히기 '복잡하면 작업 나누기·큰 모델 검토', arrow to 초안. Footer exact '제공 여부와 이용 제한은 내 서비스에서 확인' and tiny '출처: Anthropic 공식 발표'. No tiny dense tables, no cost guarantees, no fake official UI. Hand-drawn not flat slide layout, use cute paper and lens doodles and ample margins.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-e1d3ea2b-621e-46d0-b0a0-ecf0b236bee2.png"
+  }
+]

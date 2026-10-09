@@ -1,0 +1,19 @@
+{
+  "message":"독자가 사진의 AI 표식을 읽고 출처·날짜를 비교한 뒤 불명확하면 공유를 보류하는 흐름",
+  "source":"outputs/synthid-article.json section4 paragraphs1~4 and section2",
+  "nodes":[
+    {"id":"file","label":"파일 준비","actor":"독자","input":"확인할 사진","output":"가능한 고품질 파일","passage":"section2 paragraph5"},
+    {"id":"scope","label":"지원 범위·조건 확인","actor":"독자","input":"파일과 공식 안내","output":"선택한 도구","passage":"section2 paragraphs1~4"},
+    {"id":"result","label":"워터마크 결과 읽기","actor":"도구가 표식 확인; 독자가 해석","input":"파일","output":"감지·미검출·불명확","passage":"section3 paragraphs1~2"},
+    {"id":"source","label":"출처·날짜 대조","actor":"독자","input":"결과와 사진에 붙은 설명","output":"추가 자료와 설명의 비교","passage":"section3 paragraph4; section4 paragraph1"},
+    {"id":"known","label":"확인된 범위만 전달","actor":"독자","input":"대조한 근거","output":"근거 범위에 맞는 설명","passage":"section4 paragraph4"},
+    {"id":"hold","label":"공유 보류","actor":"독자","input":"불명확한 근거","output":"확인되지 않은 상태 유지","passage":"section4 paragraphs1,4"}
+  ],
+  "edges":[{"from":"file","to":"scope","type":"sequence"},{"from":"scope","to":"result","type":"sequence","condition":"선택한 도구의 조건에 맞는 파일"},{"from":"result","to":"source","type":"sequence","condition":"어떤 결과든 설명의 출처는 별도 확인"},{"from":"source","to":"known","type":"branch","condition":"설명을 뒷받침할 근거 있음"},{"from":"source","to":"hold","type":"branch","condition":"근거 불명확"}],
+  "start":"file","ends":["known","hold"],
+  "omissions":["로그인·세부 파일 제한은 본문에서 도구별로 설명; 모션에 숫자를 압축하지 않음", "근거 없는 자동 판정·자동 공유·자동 도구 전환·임의 피드백을 만들지 않음"],
+  "timeline":[{"seconds":[0,3],"active":"file"},{"seconds":[3,6],"active":"scope"},{"seconds":[6,9],"active":"result"},{"seconds":[9,12],"active":"source"},{"seconds":[12,15],"active":"hold","motion":"불명확한 사례의 보류 경로; 근거 있는 대안도 표시"},{"seconds":[15,18],"active":"all","motion":"전체 흐름 정지 읽기"}],
+  "delivery":{"format":"GIF","dimensions":[900,1000],"duration_seconds":18,"frames":180,"renderer":"Swift AppKit and ImageIO, verified local path adapted for subject","output":"outputs/synthid-media/workflow.gif"},
+  "playback_verified":true,
+  "playback_evidence":{"surface":"Chrome actual GIF replay","observed_seconds":[0,6.5,12,16.5],"branch":"불명확 → 공유 보류 observed at 12 seconds","final_hold":"Whole workflow visible at 16.5 seconds; designed final 3-second hold","screenshots":"synthid-media/playback-{0,6500,12000,16500}.png"}
+}

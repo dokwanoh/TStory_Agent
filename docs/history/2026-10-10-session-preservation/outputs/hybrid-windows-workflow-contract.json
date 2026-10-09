@@ -1,0 +1,126 @@
+{
+  "message": "원본을 보존하고 작은 파일 정리 요청의 범위와 결과를 비교한다",
+  "source": "hybrid-windows-article.json section3",
+  "type": "reader suggested example, not promised vendor UI",
+  "start": "copy",
+  "ends": [
+    "compare"
+  ],
+  "nodes": [
+    {
+      "id": "copy",
+      "label": "복사본 6개",
+      "actor": "독자",
+      "input": "원본파일",
+      "output": "연습용6개",
+      "quote": "가상의 연습에서는 파일 6개를 복사해 둔다고 해볼게요. 첫 요청은 ‘파일을 삭제하지 말고 이름을 기준으로 분류안을 보여줘’로 좁힙니다. 원래 이름 목록도 남겨두면 AI의 설명과 실제 자료가 맞는지 대조하기 쉬워요."
+    },
+    {
+      "id": "scope",
+      "label": "범위 이해?",
+      "actor": "독자",
+      "input": "읽기/변경범위",
+      "output": "이해/미이해",
+      "quote": "범위나 동작이 이해되지 않으면 그 지점에서 멈추고 요청을 다시 작게 만듭니다. 이해됐다면 지원되는 환경에서 정리안을 보고, 이동을 허용할지 따로 판단해요. 말로 받은 분류안과 실제 파일 변경을 같은 것으로 취급하지 않는 것이 핵심입니다."
+    },
+    {
+      "id": "narrow",
+      "label": "요청 좁히기",
+      "actor": "독자",
+      "input": "미이해",
+      "output": "좁힌범위",
+      "quote": "범위나 동작이 이해되지 않으면 그 지점에서 멈추고 요청을 다시 작게 만듭니다. 이해됐다면 지원되는 환경에서 정리안을 보고, 이동을 허용할지 따로 판단해요. 말로 받은 분류안과 실제 파일 변경을 같은 것으로 취급하지 않는 것이 핵심입니다."
+    },
+    {
+      "id": "try",
+      "label": "작은 작업",
+      "actor": "독자와 지원되는AI기능",
+      "input": "이해된요청",
+      "output": "분류안및허용한변경",
+      "quote": "범위나 동작이 이해되지 않으면 그 지점에서 멈추고 요청을 다시 작게 만듭니다. 이해됐다면 지원되는 환경에서 정리안을 보고, 이동을 허용할지 따로 판단해요. 말로 받은 분류안과 실제 파일 변경을 같은 것으로 취급하지 않는 것이 핵심입니다."
+    },
+    {
+      "id": "compare",
+      "label": "개수·이름·위치 비교",
+      "actor": "독자",
+      "input": "전후결과",
+      "output": "맞으면종료/다르면범위조정",
+      "quote": "작업 뒤에는 파일 6개가 남아 있는지, 이름과 위치가 의도한 대로인지 비교해보세요. 개수가 같아도 내용을 잘못 묶었을 수 있으니 개수 확인만으로 끝내지 않습니다. 예상과 다르면 원본을 보존한 상태에서 원인을 살피고 범위를 다시 정하면 돼요."
+    }
+  ],
+  "edges": [
+    {
+      "from": "copy",
+      "to": "scope",
+      "type": "sequence"
+    },
+    {
+      "from": "scope",
+      "to": "try",
+      "type": "branch",
+      "condition": "이해함"
+    },
+    {
+      "from": "scope",
+      "to": "narrow",
+      "type": "branch",
+      "condition": "모름"
+    },
+    {
+      "from": "narrow",
+      "to": "scope",
+      "type": "feedback",
+      "condition": "범위좁힌뒤"
+    },
+    {
+      "from": "try",
+      "to": "compare",
+      "type": "sequence"
+    },
+    {
+      "from": "compare",
+      "to": "scope",
+      "type": "feedback",
+      "condition": "예상과다름"
+    }
+  ],
+  "omissions": [
+    "내부AI라우팅구현은미확인이라그리지않음",
+    "연습예시이며실제서비스버튼/개별동의보장없음"
+  ],
+  "timeline": [
+    {
+      "seconds": "0–3",
+      "active": "copy",
+      "meaning": "복사본준비"
+    },
+    {
+      "seconds": "3–7",
+      "active": "scope→narrow→scope",
+      "meaning": "모르면범위조정"
+    },
+    {
+      "seconds": "7–10",
+      "active": "scope→try",
+      "meaning": "이해한범위에서시도"
+    },
+    {
+      "seconds": "10–13",
+      "active": "try→compare",
+      "meaning": "결과비교"
+    },
+    {
+      "seconds": "13–16",
+      "active": "all",
+      "meaning": "전체흐름정지및피드백조건읽기"
+    }
+  ],
+  "delivery": {
+    "format": "GIF",
+    "width": 900,
+    "height": 900,
+    "seconds": 16,
+    "frames": 160,
+    "renderer": "existing Swift AppKit/ImageIO; handwritten line/pastel panel styling"
+  }
+}

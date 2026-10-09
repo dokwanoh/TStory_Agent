@@ -1,0 +1,37 @@
+{
+  "run": "hybrid-windows-20261008",
+  "verdict": "ACCEPT",
+  "scope": "Independent topic review only; no prose, media or publication approval",
+  "source_pack_sha256": "68c69ed2107b1a9e0ea585a5916277a3ccbee88c7dd682a81d4fc31ad81b483b",
+  "source_url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/",
+  "scenario": "Read the complete captured Microsoft announcement, including rollout text and footnotes, then assess the proposed beginner angle.",
+  "invocation": "cat outputs/hybrid-windows-source-pack.json",
+  "binary_observable": "ACCEPT with explicit source-scope boundaries",
+  "assessment": {
+    "category": "IT/software, within allowed categories",
+    "reader_demand": "Qualitative inference: PC users benefit from knowing where AI processing occurs, what file/network access is permitted, and whether the feature is available on their own machine. Search volume and future traffic are unknown.",
+    "evidence": "Direct Microsoft announcement supports local/cloud routing, containment/identity/manageability, MXC GA, Copilot+ future rollout and device/market/silicon limitations. Promotional superiority claims are not independent comparative evidence.",
+    "usefulness": "Practical three-part decision guide: processing location; allowed data/actions; availability and device conditions.",
+    "durability": "Conceptual distinctions remain useful after announcement; rollout dates and requirements require later updates.",
+    "differentiation": "Windows execution/data boundaries and device rollout differ from post219 response UI and post218 game creation.",
+    "freshness": "Oct7 date is within36h at the supplied selection instant under publisher US-calendar or UTC-calendar interpretation. Exact publication time/timezone unknown; not a fully measured exact age.",
+    "risk": "Conflating MXC GA with universal Copilot availability; treating local context as guaranteed local-only processing; treating containment as perfect safety or every action as separately confirmed; implying a new PC or RTX Spark is required for all features."
+  },
+  "required_boundaries": [
+    "Describe local/cloud as a hybrid architecture; local file access and local model inference are separate concepts. Do not promise fully offline use, no outbound data, or universal cost savings.",
+    "MXC is announced generally available on Windows11; individual safeguards still require Windows Update and have staged availability by device, market and silicon. GA does not imply all agents/features are already supported everywhere.",
+    "Copilot hybrid capabilities on Copilot+ PCs are expected to begin rolling out in coming months. Do not describe them as already available to every current Windows PC.",
+    "Local context/actions are permission-based according to Microsoft. Do not invent a specific permission dialog, per-action confirmation guarantee, scope or user flow without another source.",
+    "If mentioned, GitHub HydraFusion Windows integration is experimental preview later in October; new Search actions first roll out to Insider experimental channel; Search/Copilot integration is opt-in in selected markets later this year. Keep those timelines distinct.",
+    "Frame suggested first steps as checking Windows/device eligibility, release information and permission scope; no firsthand-use claims or guaranteed current click-by-click procedure.",
+    "Do not reproduce Microsoft promotional performance/safety superiority as established fact. Omit hardware benchmark details unless the exact tests and qualifications are essential.",
+    "Exact publication instant, measured search volume, velocity and traffic forecast remain unknown."
+  ],
+  "recommended_outline": [
+    "로컬과 클라우드는 무엇이 다른가",
+    "AI가 읽는 자료와 할 수 있는 일을 어떻게 구분할까",
+    "이미 제공된 기반과 앞으로 나올 Copilot 기능은 무엇인가",
+    "내 PC에서는 무엇부터 확인할까"
+  ],
+  "evidence_path": "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-source-pack.json"
+}

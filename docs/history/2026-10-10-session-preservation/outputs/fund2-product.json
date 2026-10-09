@@ -1,0 +1,22 @@
+{
+  "product": "만년가계부 캐시북 다이어리 금전출납부 스프링 제본, 아이보리, 1개",
+  "productId": 9609052061,
+  "itemId": 28687620626,
+  "vendorItemId": 92174229979,
+  "listedPriceAtSearchKRW": 12800,
+  "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=9609052061&itemId=28687620626&vendorItemId=92174229979&traceid=V0-153-9bd200e6d8b66866&clickBeacon=db2a0b80-c303-11f1-93c7-a68b4ccb06af%7E3&requestid=20261008193435293119627454&token=<REDACTED>&pt=1&slot=1",
+  "apiVerified": {
+    "httpStatus": 200,
+    "rCode": "0",
+    "searchQuery": "투자 기록 노트 재테크 가계부",
+    "checkedAtKST": "2026-10-08 19:34",
+    "exactOptionFromAPI": "아이보리, 1개"
+  },
+  "readerNeed": "펀드에 가입할지와 별개로 5년 동안 쓰지 않을 자금, 월별 지출, 가입액과 점검 시점을 종이에 기록하며 가계 흐름을 비교하려는 독자에게 쓸 수 있는 금전출납부다.",
+  "limits": [
+    "가계부 구매나 펀드 가입은 필수가 아니다.",
+    "이 상품이 투자 판단이나 수익을 보장한다고 말하지 않는다.",
+    "가격은 검색 시점 API 값이며 게시 시점에 달라질 수 있어 본문에 넣지 않는다."
+  ],
+  "authorCommentReason": "5년 만기 상품을 검토하면서 생활비와 투자 가능 금액을 종이에 따로 기록해 비교하고 싶은 분이라면, 아이보리 1개 구성의 금전출납부를 예산 기록용으로 참고할 수 있어요."
+}

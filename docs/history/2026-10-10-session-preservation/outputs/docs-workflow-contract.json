@@ -1,0 +1,29 @@
+{
+  "subject": "Google Docs 기존 문단을 기본 승인 모드에서 수정하고 원문 조건을 대조하는 독자 흐름",
+  "source": "docs-article.json sections 2,3,4; official help paragraphs on Ask before edits, direct edits, Undo/version history",
+  "nodes": [
+    {"id":"select","actor":"독자","input":"열린 원문","output":"선택 문단","label":"문단 선택"},
+    {"id":"request","actor":"독자","input":"선택 문단·보존할 조건","output":"수정 요청","label":"조건 적어 요청"},
+    {"id":"plan","actor":"Claude","input":"수정 요청","output":"수정 계획","label":"수정 계획 제시"},
+    {"id":"approval","actor":"독자","input":"계획","output":"승인/미승인 판단","label":"계획을 읽고 승인 여부 결정"},
+    {"id":"edit","actor":"Claude","input":"승인된 계획","output":"직접 편집된 문서","label":"승인된 수정 적용"},
+    {"id":"compare","actor":"독자","input":"원문·수정문","output":"조건 유지/누락 판단","label":"원문과 조건 대조"},
+    {"id":"adopt","actor":"독자","input":"조건 유지 확인","output":"채택","label":"조건 유지 → 채택"},
+    {"id":"undo","actor":"독자","input":"조건 누락 확인","output":"실행 취소 후 재요청","label":"누락 → 실행 취소"}
+  ],
+  "edges": [
+    {"from":"select","to":"request","type":"sequence"},
+    {"from":"request","to":"plan","type":"sequence"},
+    {"from":"plan","to":"approval","type":"sequence"},
+    {"from":"approval","to":"request","type":"feedback","condition":"미승인"},
+    {"from":"approval","to":"edit","type":"branch","condition":"승인"},
+    {"from":"edit","to":"compare","type":"sequence"},
+    {"from":"compare","to":"adopt","type":"branch","condition":"조건 유지"},
+    {"from":"compare","to":"undo","type":"branch","condition":"누락"},
+    {"from":"undo","to":"request","type":"feedback","condition":"재요청"}
+  ],
+  "simplification": "수정 계획과 독자 승인 판단을 한 시각 패널로 묶고 역할을 두 줄로 구분. 사전 설치·요금 조건은 본문에서 설명; 글 소재의 수정 흐름에 한정.",
+  "timing": {"fps":10,"frames":220,"duration_seconds":22,"final_hold_seconds":5,"stages":"0~14초 5개 단계, 14~17초 결과·피드백,17~22초 전체 흐름","meaning":"읽기용 시간, 실제 처리 시간 아님"},
+  "format": "1000x1250 handdrawn AppKit/ImageIO GIF",
+  "repair": "초기 피드백 선이 채택 상자의 글자를 지나갔으므로 상자 아래로 우회시킴. 재생 검사는 수정된 최종 파일에서 실행."
+}

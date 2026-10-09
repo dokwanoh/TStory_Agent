@@ -1,0 +1,26 @@
+{
+  "api": {
+    "operation": "search",
+    "query": "로지텍 M100 유선 마우스",
+    "httpStatus": 200,
+    "rCode": "0",
+    "count": 3,
+    "observedAtKST": "2026-10-08 06:54"
+  },
+  "selected": {
+    "id": 9724855476,
+    "name": "로지텍 리프트 버티컬 인체공학 무선 마우스, MR0094, 그래파이트",
+    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=9724855476&itemId=29101950238&vendorItemId=94880728421&traceid=V0-153-7964f200ff6c7f16&clickBeacon=9bd81310-c299-11f1-bf3e-05c77f7a19fe%7E3&requestid=20261008065402497246673627&token=<REDACTED>&pt=1&slot=2",
+    "type": "무선 버티컬 마우스",
+    "model": "MR0094",
+    "color": "그래파이트"
+  },
+  "relevance": "컴퓨터에서 대화 속 버튼·입력칸을 조작할 때 쓰는 선택형 마우스. ChatGPT 사용 필수품이나 요금제/제공일정을 해결하는 제품이라고 주장하지 않음. API 결과 중 정확한 종류·모델·색상이 명시된 두 번째 상품을 선택; 첫 번째는 요청 브랜드와 불일치, 세 번째는 구체 옵션 불명확.",
+  "officialBanner": {
+    "html": "<a href=\"https://link.coupang.com/a/hFm8KyV7Fk\" target=\"_blank\" referrerpolicy=\"unsafe-url\"><img src=\"https://img5a.coupangcdn.com/image/affiliate/banner/<REDACTED_EMAIL>\" alt=\"로지텍 리프트 버티컬 인체공학 무선 마우스, MR0094, 그래파이트\" width=\"120\" height=\"240\"></a>",
+    "url": "https://partners.coupang.com/#affiliate/ws/linkgeneration/PRODUCT/9724855476/29101950238?product%5Btype%5D=PRODUCT&product%5BitemId%5D=29101950238&product%5BproductId%5D=9724855476&product%5BvendorItemId%5D=94880728421&product%5Bimage%5D=https%3A%2F%2Fthumbnail13.coupangcdn.com%2Fthumbnails%2Fremote%2F212x212ex%2Fimage%2Fretail%2Fimages%2F1065146982889953-e44327c1-75ab-424b-8a32-0fb374ccd667.jpg&product%5Btitle%5D=%EB%A1%9C%EC%A7%80%ED%85%8D%20%EB%A6%AC%ED%94%84%ED%8A%B8%20%EB%B2%84%ED%8B%B0%EC%BB%AC%20%EC%9D%B8%EC%B2%B4%EA%B3%B5%ED%95%99%20%EB%AC%B4%EC%84%A0%20%EB%A7%88%EC%9A%B0%EC%8A%A4%2C%20MR0094%2C%20%EA%B7%B8%EB%9E%98%ED%8C%8C%EC%9D%B4%ED%8A%B8&product%5BdiscountRate%5D=18&product%5BoriginPrice%5D=88390&product%5BsalesPrice%5D=72200&product%5BdeliveryBadgeImage%5D=https%3A%2F%2Fimg1a.coupangcdn.com%2Fimage%2Frds%2Fdelivery_badge_ext%2Fbadge_1998ab96bf7.png&product%5Btravel%5D=false",
+    "visibleOption": "로지텍 리프트 버티컬 인체공학 무선 마우스, MR0094, 그래파이트",
+    "shortUrl": "https://link.coupang.com/a/hFm7oIsZR6",
+    "observedAt": "2026-10-07T21:58:33.710Z"
+  }
+}

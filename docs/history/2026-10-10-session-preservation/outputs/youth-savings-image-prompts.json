@@ -1,0 +1,29 @@
+{
+  "mode": "built-in imagegen",
+  "prompts": [
+    [
+      "cover",
+      "Use case: stylized-concept. Asset type: square Korean finance article cover, Toss-style large typography and refined dimensional visual. Create an entirely new warm coral and cream cover with a translucent glass piggy bank, a small orderly stream of metallic coins entering it, subtle peach shadows and generous whitespace. Realistic glass/metal rendering, no papercraft, no calendar or cursor. Huge bold Korean title across upper half, verbatim two lines: '청년미래적금' / '월 50만원, 얼마나 더?' Small subtitle: '기여금 6%·12% 쉽게 이해하기'. Do not show19.4% or imply guaranteed return. Only this exact text. Legible mobile thumbnail, no bank/Toss logos, no watermark, one cohesive square image."
+    ],
+    [
+      "section1",
+      "Use case: photorealistic-natural. Korean finance explainer still. Real macro studio photograph of two groups of plain metallic coins beside one much larger neat coin stack on a light ivory stone surface. Two small coin groups differ in size, representing government contribution matching6% and12% to deposits, without promising yield. Tight low oblique perspective, coral ceramic backdrop, honest metallic texture, soft warm light. No text, digits, phones, desk, people, banknotes, logos, papercraft, UI, watermark. Elegant physical objects, no documentary claim."
+    ],
+    [
+      "section2",
+      "Use case: photorealistic-natural. Korean finance eligibility explanation still. A realistic studio still life of three different small savings vessels on pale textured linen: a clear glass cylinder with a few coins, an opaque ceramic cylinder with coins, and an empty transparent cylinder, all separated, not a comparative amount chart. Overhead diagonal close composition with gentle long afternoon shadows, sage and ivory tones, physical textures. Concept different contribution eligibility, not universal support. No text, numeric labels, phones, papers, calendars, people, bank logos, papercraft, illustration, watermark."
+    ],
+    [
+      "section3",
+      "Use case: photorealistic-natural. Finance explainer section about support eligibility and maintaining conditions. A refined real macro still-life of an open small brass padlock alongside three abstract smooth ceramic condition tokens with a simple embossed checkmark, on dark green felt inside a shallow tray. Very shallow depth of field, side light, brass wear texture, no people. Small padlock physical, not security gadget, no implication official eligibility proof. No letters, digits, phones, computers, calendars, bank logos, paper diagrams, illustration, watermark."
+    ],
+    [
+      "section4",
+      "Use case: photorealistic-natural. Finance explainer section explaining monthly deposits have different interest-holding periods. Realistic physical coin stacks on a long five-step pale stone riser, from larger early stack to smaller later stack, visible at a lateral diagonal camera perspective. Beautiful raking sunlight, muted sand/rust palette, realistic metal and travertine textures. Conceptual still, not bank data or actual yield chart. No text, digits, upward return arrow, phones, people, calendars, desk, papercraft, logos, watermark."
+    ],
+    [
+      "section5",
+      "Use case: photorealistic-natural. Finance planning explainer still. Single unbranded small cream budget card with exactly three blank writing rows and a simple graphite pencil set diagonally beside it, a small closed coral cash envelope and three plain metallic coins on woven fabric, close top-down composition. Photographic film grain and soft cool window light, quiet practical mood. The card is blank, no names, no financial personal data, no Korean writing or logos. No laptop, phone, calendar, people, paperwork pile, papercraft illustration, watermark. Different from piggy bank or jar composition."
+    ]
+  ]
+}

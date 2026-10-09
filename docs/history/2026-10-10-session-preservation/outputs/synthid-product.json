@@ -1,0 +1,22 @@
+{
+  "status": "ACCEPT_after_independent_revised_review",
+  "official_banner_html": "<iframe src=\"https://coupa.ng/cp0law\" width=\"120\" height=\"240\" frameborder=\"0\" scrolling=\"no\" referrerpolicy=\"unsafe-url\"></iframe>",
+  "official_short_url": "https://link.coupang.com/a/hFAx9IkTAq",
+  "partners_ui_verification": "Exact product4507403883/item5418289388/vendor72718209674 in live linkgeneration URL; preview title matches book/publisher/author; ISBN in product image filename matches independently checked contents book",
+  "api": {"httpStatus": 200, "rCode": "0", "query": "미디어 리터러시 쫌 아는 10대", "count": 3},
+  "id": 4507403883,
+  "itemId": 5418289388,
+  "vendorItemId": 72718209674,
+  "name": "미디어 리터러시 쫌 아는 10대:보이는 대로 보지 않는 법",
+  "type": "종이책 단권",
+  "author": "금준경",
+  "publisher": "풀빛",
+  "isbn": "9791161727820",
+  "options": "단권 종이책; 세트·전자책·예약판매 후보와 구분",
+  "affiliate_url": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=4507403883&itemId=5418289388&vendorItemId=72718209674&traceid=V0-153-0831caff44d06a44&requestid=20261008095550949258585075&token=<REDACTED>&pt=0&slot=1",
+  "relevance": "AI 표식 미검출 이후에도 사진·영상의 출처와 맥락을 살펴보려는 초보 독자를 위한 선택형 미디어 판별 학습서. 실제 목차에 사진·영상으로 퍼지는 가짜뉴스와 출처 확인·재검색이 있어 글의 후반 판단 행동과 직접 연결된다.",
+  "verified_contents": ["3장 가짜 뉴스 시대: 가짜 뉴스가 퍼지는 경로 — 사진, 영상", "4장 가짜 뉴스와 나쁜 뉴스를 가려내는 법: 출처를 확인하자, 한 번 더 검색하자"],
+  "contents_sources": ["https://www.yes24.com/Product/Goods/95597417", "https://series.naver.com/ebook/detail.series?productNo=6855302"],
+  "limitations": ["2020년 출간된 미디어 리터러시 입문서이며 2026년 SynthID 화면·기능 안내서라고 주장하지 않는다", "청소년 눈높이의 기초 설명; 전문가 수준의 이미지 감정 또는 특정 AI 판별법 수록을 주장하지 않는다", "서비스 이용이나 단발 확인에 구매가 필요하지 않다", "본문에 상품 홍보 문장·텍스트 제휴 링크를 추가하지 않는다"],
+  "rejected_candidate": {"id": 1593334322, "name": "삼성전자 외장SSD T7, 1TB, 타이탄 그레이", "reason": "반복 원본 보관자에게만 보조 관련성이 있으며 일반 독자의 사진 확인 핵심 행동과 연결이 약하다는 독립 검토 반영"}
+}

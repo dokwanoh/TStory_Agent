@@ -1,0 +1,41 @@
+{
+  "collectedAt": "2026-10-07T19:16:16.454Z",
+  "sources": [
+    {
+      "id": "google",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "body": "Home\nInnovation & AI\nTechnology\nAI\nIntroducing Playground: Create and play custom games\n\nOct 07, 2026\n\n3 min read\n\nIf you can think it, you can play it. Create, play, and share custom games — no coding required.\n\nMaryam Karimzadehgan\n\nSoftware Engineer, AI Innovation + Research\n\nShare\n00:00\nListen to article\n3:25 minutes\nRead AI-generated summary\n\nGames are one of the most creative forms of expression, and the gaming community keeps growing. But game creation has historically been limited to a select group of people who have technical experience and knowledge of complex game engines.\n\nToday, we’re introducing Playground, an experimental gaming platform that lets you create, play, and share custom games. Playground lowers the barriers to creation, so bringing game ideas to life can now be as easy as describing it through a few prompts — no coding experience required.\n\nCreate your custom game\n\nWith Playground’s conversational interface, you can direct the game just by typing what you want to build. Start from a blank canvas, remix starter prompts, or use guided support to shape your concept — and then test it right away. Want to tweak the physics, rewrite the rules, customize the characters, or overhaul the environment? Just ask. You stay in complete control of the creative direction from rough concept to final product.\n\nCreate games in Playground using text prompts\n\nPlay, compete, and share across devices\n\nThe fun doesn’t stop at creation. Playground is home to an ever-growing catalog of community games. And because it’s browser-based, you can play these games on your phone or laptop.\n\nOnce your game is ready, you can keep your game private, drop a shareable link to challenge friends and family, or publish it to the Playground Explore gallery for the broader Playground community. To have fun with your friends, Playground games support in-game leaderboards and multiplayer gameplay in select genres. With a Play Games profile, you can claim a custom handle, like your favorite games, battle for the top spot, and follow creators to catch their latest releases.\n\nOur gallery uses player ratings and play activity to spotlight games that are fresh, creative, and fun. To keep the experience safe and welcoming, every published game undergoes safety screenings aligned with our Community Guidelines, along with user reporting.\n\nExplore the Playground gallery\n\nStay tuned for Unity Spark\n\nFor dedicated creators ready to expand their concepts, Playground will soon offer an integration with Unity Spark. Unity Spark unlocks robust, professional-level mechanics, high-fidelity 3D capabilities, and the flexibility of the Unity runtime. The accessibility of Playground and the world-class, game-building expertise of Unity provides the building blocks for an ecosystem where you can start with a simple text prompt and eventually grow into building immersive experiences with Unity. And these games will be available for everyone using Playground to enjoy.\n\nUnity Spark is currently in testing, with closed beta coming soon. Check out the demo games on playground.google, and learn more at unity.com/spark.\n\nGet started today\n\nPlayground is an early experiment designed to make game creation more approachable and ignite everyday creativity. Playground will continue to evolve alongside our community, and we invite you to share your games and your feedback. Playground launches today for users in the U.S. (18+) at playground.google, with tiered creation access rolling out based on your Google AI subscription.\n\nPosted in:\nAI",
+      "dates": {
+        "meta": [
+          {
+            "name": "article:publisher",
+            "value": "https://www.facebook.com/Google/"
+          },
+          {
+            "name": "article:published_time",
+            "value": "2026-10-07"
+          },
+          {
+            "name": "published_time",
+            "value": "2026-10-07T12:00:00+00:00"
+          }
+        ],
+        "time": []
+      }
+    },
+    {
+      "id": "unity",
+      "url": "https://unity.com/en/spark",
+      "body": "COMING SOON\n\nUnity Spark\n\nPrompt it. Perfect it. Publish it.\nInspired games, with artist-created assets, built with Unity.\n\nJoin the waitlist\nPlay games created with Unity Spark\n\nSpace Corridor\n\nHorror story\n\nInvestigate a haunted house and survive what lurks around every corner.\n\nPlay now\n\nEmberwell\n\nRobot Race"
+    },
+    {
+      "id": "labs",
+      "url": "https://labs.google/playground",
+      "body": "Playground\nPlayground\nCreate custom games in minutes.\nPRESS START\nOverview\nCapabilities\nDiscover\nAccess\nIf you can think it, you can play it.\nIntroducing Playground, an experimental gaming platform where you can create custom games in minutes, no coding required.\nCREATE\nPLAY\nSHARE\n\nStop dreaming of games and start making them. With Playground, you can create custom games in minutes using simple text prompts, no coding experience required. Whether you’re a hobbyist with a notebook full of ideas or just curious about AI, our chat-based interface makes it easy to bring your vision to life. Choose from popular genres like Trivia, Tower Defense, and Racing, or create from scratch. It's your game, you make the rules.\n\nStart Creating\n\nScreen images simulated\n\nScreen images simulated\n\nScreen images simulated\n\nDISCOVER\nGET INSPIRED\nExplore what others are making\nPLATFORMER\nSINGLE PLAYER\nSNOOZE JUMP\nCLIMB THROUGH THE CLOUDS IN THIS DREAM-THEMED PLATFORMER, FEATURING BOTH A RELAXING NORMAL MODE AND A HIGH-STAKES SPEEDRUN MODE.\nUNDYINGPARABLE124\nTRIVIA\nSINGLE PLAYER\nTRUTH NINJA\nA FAST-PACED REACTION AND TRIVIA GAME WHERE PLAYERS PROTECT THE TEMPLE OF TRUTH.\nTOMMYTHEOOZER\nARCADE SHOOTER\nSINGLE PLAYER\nPOLYGON PAZER\nA RETRO 3D TURN-BASED TANK BATTLE GAME FEATURING SOLID POLYGON TANKS AND MODE-7 STYLE TEXTURED GROUND PERSPECTIVE IN A TACTICAL 3V3 TEAM DEATHMATCH.\nSIEGEJOTA\nFALLING OBJECT\nSINGLE PLAYER\nPITFALLS\nSKYSCRAPER PHYSICS STACKING GAME.\nFOOLHARDYDONKEY129\nPLATFORMER\nSINGLE PLAYER\nSNOOZE JUMP\nCLIMB THROUGH THE CLOUDS IN THIS DREAM-THEMED PLATFORMER, FEATURING BOTH A RELAXING NORMAL MODE AND A HIGH-STAKES SPEEDRUN MODE.\nUNDYINGPARABLE124\nTRIVIA\nSINGLE PLAYER\nTRUTH NINJA\nA FAST-PACED REACTION AND TRIVIA GAME WHERE PLAYERS PROTECT THE TEMPLE OF TRUTH.\nTOMMYTHEOOZER\nARCADE SHOOTER\nSINGLE PLAYER\nPOLYGON PAZER\nA RETRO 3D TURN-BASED TANK BATTLE GAME FEATURING SOLID POLYGON TANKS AND MODE-7 STYLE TEXTURED GROUND PERSPECTIVE IN A TACTICAL 3V3 TEAM DEATHMATCH.\nSIEGEJOTA\nFALLING OBJECT\nSINGLE PLAYER\nPITFALLS\nSKYSCRAPER PHYSICS STACKING GAME.\nFOOLHARDYDONKEY129\nARCADE SHOOTER\nSINGLE PLAYER\nOCTO POP\nDESCENT INTO THE BIOLUMINESCENT TRENCH WITH OLLIE THE OCTOPUS IN THIS GORGEOUS CHUNKY PIXEL RETRO ARCADE SHOOTER.\nUNFAMILIARANKLE7\nWORD PUZZLE\nSINGLE PLAYER\nWORD CUBE\nA 3D WORD SPELLING CHALLENGE.\nPAULHOOVER\nSPORTS\nSINGLE PLAYER\nFOOSBALL SHOOTOUT\nA HIGH-STAKES, HYPERCASUAL FOOSBALL SHOOTOUT.\nFUNCTIONALMOTIVE84\nADVENTURE\nSINGLE PLAYER\nSUMMIT SWOOP\nCHAMPIONSHIP SNOWBOARDING SIMULATOR WITH STRICT COMBO MULTIPLIER TIMER.\nDELICIOUSBACON01\nARCADE SHOOTER\nSINGLE PLAYER\nOCTO POP\nDESCENT INTO THE BIOLUMINESCENT TRENCH WITH OLLIE THE OCTOPUS IN THIS GORGEOUS CHUNKY PIXEL RETRO ARCADE SHOOTER.\nUNFAMILIARANKLE7\nWORD PUZZLE\nSINGLE PLAYER\nWORD CUBE\nA 3D WORD SPELLING CHALLENGE.\nPAULHOOVER\nSPORTS\nSINGLE PLAYER\nFOOSBALL SHOOTOUT\nA HIGH-STAKES, HYPERCASUAL FOOSBALL SHOOTOUT.\nFUNCTIONALMOTIVE84\nADVENTURE\nSINGLE PLAYER\nSUMMIT SWOOP\nCHAMPIONSHIP SNOWBOARDING SIMULATOR WITH STRICT COMBO MULTIPLIER TIMER.\nDELICIOUSBACON01\nACCESS\nSubscription may be required. Available in select countries. Available to 18+ users.\nExplore Playground\nFrequently Asked Questions"
+    }
+  ],
+  "selectionTime": "2026-10-07T19:17:21.002Z",
+  "freshnessHours": 7.289167222222222,
+  "duplicate": "Authenticated manager title search Playground returned 0, before opening a new writer.",
+  "topicReview": "ACCEPT by /root/codex28_text_review"
+}

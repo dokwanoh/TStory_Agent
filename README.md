@@ -48,3 +48,7 @@ fails because it rejects the word `published` even in a negative diagnostic.
 Do not interpret that known failure as waived or this branch as merge-ready.
 No credentials, browser state, generated articles or runtime databases belong
 in this repository. Local account labels and home paths are redacted.
+
+## Latest editorial instructions and records
+
+The [2026-10-10 session archive](docs/history/2026-10-10-session-preservation/README.md) preserves the current goal, post223 editorial layout, native-editor success/recovery paths and final publication ledger through post244. Coding Agent goal240–244 is complete; Tistory app confirmation remains unverified. Generated article/media bytes stay local; the archive includes sanitized records and a media hash manifest.

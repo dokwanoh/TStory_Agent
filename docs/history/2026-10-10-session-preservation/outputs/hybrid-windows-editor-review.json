@@ -1,0 +1,155 @@
+{
+  "run": "hybrid-windows-20261008",
+  "stage": "combined_editorial_media_review",
+  "review_turn": 1,
+  "verdict": "PASS",
+  "article_sha256": "642e0c9f913f561bc3e378225012488ed16cc287271f081724399764c9b9ef4e",
+  "source_pack_sha256": "d104a6c2a6a71c642250c6d21c6077747d25a62aff3ed2977417d16f3239b90a",
+  "manifest_sha256": "adb75a98a230051fef84c143e70df17f3b3ef26e056c66f84948882e3f278a4c",
+  "scope": "Exact local prose and seven-asset editorial package. No published-page, native-link, editor-font or banner-placement verification.",
+  "prose": {
+    "paragraphs": 21,
+    "characters_without_separators": 3011,
+    "observations": [
+      "Beginner definitions of local/cloud and MXC present.",
+      "MXC Windows11 general availability and upcoming Copilot+ rollout are distinguished. Device, market, silicon and update limits stated.",
+      "Local access is explicitly separated from offline/local-only processing; no universal safety, availability or savings guarantee.",
+      "Reader file-copy exercise is explicitly a suggestion, not an existing Microsoft procedure or dialog.",
+      "No firsthand-use claim or product promotion in prose.",
+      "Four buttons correspond to two supplied official sources and distinct own-blog related articles.",
+      "Summary four rows/two columns; heading/body style metadata23px700 versus16px400. Actual editor rendering unobserved."
+    ]
+  },
+  "checks": [
+    {
+      "scenario": "Editorial claim review",
+      "invocation": "Read full hybrid-windows-article.json, primary source and added complete MXC developer source; compare conditions and examples",
+      "binary_observable": "PASS",
+      "artifacts": [
+        "outputs/hybrid-windows-article.json",
+        "outputs/hybrid-windows-source-pack.json"
+      ]
+    },
+    {
+      "scenario": "Final still/infographic semantic review",
+      "invocation": "view_image cover.jpg, section1.jpg through section4.jpg and infographic.jpg",
+      "binary_observable": "PASS",
+      "observations": [
+        "Large Korean cover is legible and conditional.",
+        "Sections portray connected computing spaces, limited archive access, photo originals/copies and device inspection; relevant distinct scenes.",
+        "Infographic clearly distinguishes processing location, allowed reading/actions, reader exercise and availability. Scope uncertainty returns to narrowing request.",
+        "No identifiable actual vendor UI, official event claim, private data or guaranteed AI result."
+      ],
+      "artifacts": [
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media/cover.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media/section1.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media/section2.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media/section3.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media/section4.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media/infographic.jpg"
+      ]
+    },
+    {
+      "scenario": "Motion flow and delivery",
+      "invocation": "Read workflow-contract.json and work/hybrid-windows-workflow.swift; view_image frames0/55/159; parse actual GIF graphic-control delays and image descriptors using Python standard library",
+      "binary_observable": "PASS",
+      "observations": {
+        "frames": 160,
+        "seconds": 16,
+        "canvas": "fixed900x900",
+        "motion": "Continuous token travel on sequence and scope/narrowing return paths, with active node emphasis; last3seconds hold complete flow. Result-mismatch return arrow is visible rather than separately traversed.",
+        "meaning": "Copies -> scope understanding; unknown -> narrow -> reassess; understood -> supported small task -> compare count/name/location; unexpected -> revisit scope.",
+        "disclaimer": "독자 연습 예시 · 실제 제품 화면이나 처리 시간 아님",
+        "live_browser_playback": "Not performed; source, actual GIF structure and representative pixels inspected."
+      },
+      "artifacts": [
+        "outputs/hybrid-windows-workflow-contract.json",
+        "work/hybrid-windows-workflow.swift",
+        "outputs/hybrid-windows-media/workflow.gif",
+        "outputs/hybrid-windows-media/workflow-frame-0.png",
+        "outputs/hybrid-windows-media/workflow-frame-55.png",
+        "outputs/hybrid-windows-media/workflow-frame-159.png"
+      ]
+    },
+    {
+      "scenario": "Exact asset provenance/identity",
+      "invocation": "SHA256 actual generated originals, retained originals and finals against manifest",
+      "binary_observable": "PASS",
+      "assets": [
+        {
+          "name": "cover",
+          "final_sha256": "991983559679e8dafc18b2ad20c534fce04b513cbbd85c59dd4b9f664ad5cca5",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section1",
+          "final_sha256": "cdfd129ba2a7fb6c43ad9bea70abd4d2513be76ffd5fab8519771c768d05e698",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section2",
+          "final_sha256": "b26b3dab76073e22a3fefeec5d85d378c831830f0fedf532204cb2758c9797af",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section3",
+          "final_sha256": "bc1e3c168c1798f105a5418acc441eff2bf4ed2b86f42b6d00e3b5046be16770",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "section4",
+          "final_sha256": "226ca0c711fe8db3c57da8c5fc403377c4576f4f403f02c72f72356a8a7e946a",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "infographic",
+          "final_sha256": "b66e84eb37442f019c3d90b46d36d74bb3e0025072034da95eb561086a99e1bf",
+          "final_match": true,
+          "original_match": true
+        },
+        {
+          "name": "workflow",
+          "final_sha256": "6d16b2aeb45dabed8408ef413b05f4a2002873c6594d66d7dc025080bb51a8bc",
+          "final_match": true,
+          "original_match": null
+        }
+      ],
+      "artifact": "outputs/hybrid-windows-media-manifest.json"
+    },
+    {
+      "scenario": "Contextual novelty",
+      "invocation": "Compare actual current stills with prior219-215 local prompt records read during these reviews",
+      "binary_observable": "PASS",
+      "observations": "Broad home/workroom/archive settings recur, but focal actions and compositions differ from touch-wall/meal/prism, marble games, routing/scanning, security and farmland scenes. No identical asset reuse.",
+      "artifacts": [
+        "intelligent-ui-image-prompts.json",
+        "playground-image-prompts.json",
+        "decisions-image-prompts.json",
+        "ai-cvp-image-prompts.json",
+        "farmland-image-prompts.json"
+      ]
+    },
+    {
+      "scenario": "Product claim/option scope",
+      "invocation": "Read hybrid-windows-product.json and banner HTML",
+      "binary_observable": "PASS for product type/model/capacity/bundle consistency",
+      "observations": [
+        "Selected T9 MU-PG1T0B/WW black1TB+pouch matches banner ALT despite search query naming T7.",
+        "Optional original/copy storage relevance, not AI support/mandatory equipment.",
+        "API URL and Partners source have different vendorItemId values; same pageKey/itemId/model/options. Do not claim identical seller/offer. No price or same-seller assertion appears in prose.",
+        "API request and affiliate destination were not independently replayed in this review."
+      ],
+      "artifact": "outputs/hybrid-windows-product.json"
+    }
+  ],
+  "mandatory_revisions": [],
+  "evidence_paths": [
+    "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-article.json",
+    "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/hybrid-windows-media-manifest.json"
+  ]
+}

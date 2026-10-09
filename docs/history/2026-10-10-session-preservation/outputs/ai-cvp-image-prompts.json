@@ -1,0 +1,32 @@
+[
+  {
+    "name": "cover",
+    "prompt": "Create a new Korean blog title cover, square. Toss-inspired clear editorial typography and restrained white/cyan/cobalt palette, no Toss branding. Top-left two huge perfectly legible Korean headline lines exactly: '클로드 보안 질문' and '왜 멈출까?'. Underneath smaller perfectly legible line exactly '내 작업 · 인증 대상 · 데이터 보관'. Lower half is a realistic wide-angle sunlit modern home workspace: open laptop with abstract unreadable pale interface and a plain smartphone, a small neutral physical USB security key rests beside it, no logos. A translucent pale-blue rounded shield motif gently integrated into the photographic composition, tasteful modern fintech editorial visual. Generous whitespace, huge bold text, naturally photographed hardware and wood texture; completely different from farmland, coins, paper-craft and weather covers. No invented claims or approval checkmarks.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-6c0be7a4-0bd1-433e-8692-64753a483545.png"
+  },
+  {
+    "name": "section1",
+    "prompt": "Create one original editorial still image. It must be photorealistic, a wide environment-visible composition with natural perspective, not a studio cutout, diagram, collage, slide, linocut, paper craft or illustration. No real logos, readable invented screen text, watermark, hacker hoodie or documentary implication. No people required. Landscape 3:2 composition. Scene for why AI may refuse a security request: an empty comfortable Korean apartment living-room desk, laptop showing a subdued abstract orange caution icon with no readable text, smartphone next to a notebook, afternoon window light and visible sofa and plants. Real editorial interior photography, calm approachable mood, lens35mm, no close-up crop.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-be70729e-8666-4201-9364-bc3ec10d66ce.png"
+  },
+  {
+    "name": "section2",
+    "prompt": "Create one original editorial still image. It must be photorealistic, a wide environment-visible composition with natural perspective, not a studio cutout, diagram, collage, slide, linocut, paper craft or illustration. No real logos, readable invented screen text, watermark, hacker hoodie or documentary implication. No people required. Landscape 3:2 composition. Scene for allowed review of one's own source code: quiet university study library, several desks and shelves in visible context, a single workstation with abstract unreadable syntax colors on its screen, a blank notebook and pencil. Soft overcast daylight, balanced documentary-inspired editorial photography, no identifiable person, no claim actual Claude screen.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-b7a36eb0-7c71-43f1-84de-bc389d648437.png"
+  },
+  {
+    "name": "section3",
+    "prompt": "Create one original editorial still image. It must be photorealistic, a wide environment-visible composition with natural perspective, not a studio cutout, diagram, collage, slide, linocut, paper craft or illustration. No real logos, readable invented screen text, watermark, hacker hoodie or documentary implication. No people required. Landscape 3:2 composition. Scene for different access scopes: spacious modern office corridor with three distinct real glass meeting-room entrances and discreet unlettered access readers, warm natural lighting and visible depth. No fictional tier labels and no hierarchy arrows. Architectural photography, lens24mm, exact purpose is verifying access scope, not promising access.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-419aac2f-b667-442f-9fe7-de701e40fe15.png"
+  },
+  {
+    "name": "section4",
+    "prompt": "Create one original editorial still image. It must be photorealistic, a wide environment-visible composition with natural perspective, not a studio cutout, diagram, collage, slide, linocut, paper craft or illustration. No real logos, readable invented screen text, watermark, hacker hoodie or documentary implication. No people required. Landscape 3:2 composition. Scene for preparing a professional application: wide quiet coworking consultation desk with two empty chairs, open laptop with unreadable blank form rectangles, a short stack of unlettered documents and organized folders, broad windows and city view in background. Bright candid editorial workspace photography, no seals, IDs, signatures, personal data or approval stamps.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-bdf4c2e2-207e-40d8-88fe-931d4fdd7f51.png"
+  },
+  {
+    "name": "section5",
+    "prompt": "Create one original editorial still image. It must be photorealistic, a wide environment-visible composition with natural perspective, not a studio cutout, diagram, collage, slide, linocut, paper craft or illustration. No real logos, readable invented screen text, watermark, hacker hoodie or documentary implication. No people required. Landscape 3:2 composition. Scene for authentication and data responsibility: wide modern home office viewed from doorway in cool early-evening light, monitor with abstract unreadable login interface, laptop with a small plain black USB-A hardware security key plugged into visible USB-A port, smartphone and closed document folder on desk. Device support illustrated generically, not a branded product rendering or assertion mandatory purchase. Realistic materials, natural photography.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-1e4ee842-dc95-4e0a-b2f4-4d48485aa1fc.png"
+  }
+]

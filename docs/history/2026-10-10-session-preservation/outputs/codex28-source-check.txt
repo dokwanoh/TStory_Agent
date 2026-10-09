@@ -1,0 +1,30 @@
+Codex 28일 연속 업데이트 — 새 글 준비 기록
+확인일: 2026-10-07 KST
+상태: 주제 핵심 주장 원문 확인 대기. 본문/이미지 생성 및 원격 작성/저장/댓글 작업0회.
+
+확정 목표: 약3,000자 새 IT 글, post204 형식, 문단별 신규 정지 이미지, 별도 제목 표지, 연속 워크플로 모션, 네이티브 이미지 제휴 링크, 상중하 제품배너, 플레인 고지문, 작성자 제품 댓글1개. 기존212번 글의 완료를 이 목표에 적용하지 않음.
+
+공식 원문 확인:
+- https://developers.openai.com/codex/changelog 는 https://learn.chatgpt.com/docs/changelog 로 연결된다.
+- 공식 변경기록의2026-10-07 항목은 ChatGPT for iOS 1.2026.272의 페이지 미리보기·Codex 작업링크 직접열기·승인 선택기·스트리밍 및작업목록 개선이다. 날짜 기준36시간 내의 새 항목이지만 이것만으로 ‘28일 연속 업데이트’라는 발표의 존재나 기간을 증명하지 않는다.
+- 공식 자료에서 ‘28 days of Codex’, ‘28일’, ‘28 consecutive updates’와 관련된 제목/발표기간을 확인하지 못했다. 근거부재를 발표가 없었다는 결론으로 바꾸지 않음.
+- 원문 링크/공지 이미지 요청을 사용자에게 제출했다. 해당 답변을 기존 작업의 보완 정보로 반영한다. 확인 전 최근 변경기록만으로 주제를 대체하거나28개항목/28일기간을 임의로 작성하지 않는다.
+
+다른 준비 결과:
+- 같은 티스토리 게시봇 Chrome 연결로 관리자에 접근, 글관리200개 및 최신212번 확인. 새 편집기는 열지 않음.
+- 관리자 제목검색Codex 결과1개: ‘Codex vs Claude Code 요금 비교: GPT-6 Astra·Luna API 가격과 구독료’. 연관 글 후보이며 원문을 아직 읽지 않아 구체적인 가격 사실을 재사용하지 않음. 전체 언어/본문 중복검색 완료를 주장하지 않음.
+- 참조204번 글의 대중적인 질문형 문단 제목·이모지·연한 노랑 표배경과2열 구조를 실제 확인. 모든 표를 합친 행수는10이며 이를 요약표4행으로 오기하지 않음. 사용자 확정 형식은2열4행 및 제목만23px볼드·본문16px평문을 적용한다.
+- 쿠팡API 실제검색‘로지텍 MX KEYS S’ 성공HTTP200/rCode0. 후보‘로지텍 MX KEYS S 무선 일반형 키보드’, product7398594596. 옵션1 item19144593701/vendor86263772571, 옵션2 item19656106012/vendor86263772559. API 가격141,700원은 조회 시점만의 값. 작업환경 입력장치 후보이며 Codex 사용의 필수품이나 성능향상 보장으로 소개하지 않음. 색상 등 검색 결과에 없는 옵션은 미확인. 본문 광고문구 없이 배너와 이미지링크·작성자댓글에서만 제품 안내 예정.
+- API키는 기존Mac Keychain에서 내부 사용. 출력·복사·설정변경 없음.
+- 참고만 읽은 미완료 단계는 ‘성공 경로’ 게시 완료 기록으로 승격하지 않음. 향후 실제 저장·공개 결과가 확인되면 검증된 단계만 해당 태그로 기록한다.
+
+다음 필요한 증거: 사용자 지칭28일연속 발표의 원문 또는 실제 기간. 확인 후 해당 원문과 공식 기능문서를 대조해 주요내용 선정→본문/새미디어→같은프로필 단일편집기 네이티브 업로드/ALT/링크/분류/태그/대표→후반HTML→최종확인1회→저장1회→실제결과 및 댓글1개 확인으로 진행.
+
+추가 직접 원문 조사 — 두 번째 목표 턴:
+공식 https://learn.chatgpt.com/docs/changelog 를 실제 Chrome에서 열고 문서의 time 요소를 읽었다. 최근28개 달력 날짜의 한 구간인2026-09-10~2026-10-07에는 서로 다른 릴리스 날짜14개가 기록돼 있었다: 09-11,09-14,09-18,09-22,09-23,09-25,09-26,09-28,09-29,09-30,10-01,10-02,10-05,10-07. 이는 ChatGPT와Codex의 합동 변경기록 날짜 집계이며28개기능 수나Codex만의 출시 횟수가 아니다.
+문서 전체의 보이는 텍스트에는 ‘28 days’, ‘28 consecutive’, ‘28일’ 및‘consecutive’가 없었다. 따라서 최근28일 변경기록을 사용자 지칭28일연속 발표로 간주할 수 없다. 원문기간이 명시되지 않아 다른 시기의 캠페인 존재도 부정하지 않는다.
+이번 턴은 새 직접 증거를 확보한 진행이며 검증된 대기나 게시완료가 아니다. 동일한 핵심 원문 미확인이 두 목표 턴 연속 남았다. 사용자에게 이미 제출한 질문을 중복 제출하지 않는다. 원격 편집기·저장·본문/이미지 생성0회를 유지한다.
+2026-10-07 correction / source blocker resolved:
+Official OpenAI community announcements supplied the exact28-daycampaign original addresses. The publisher Chrome reader directly displayed @thsottiaux's original campaign, Day1 speed and Day2 freeAutoReview posts, and @ChatGPT's Meetings announcement. Web reader403 did not prevent authorized read-only CUA access to the same public originals.
+The campaign promises improvements OR usage resets for the NEXT28days; it is not28completed consecutive release days. Changelog absence was an overly narrow search result, not proof of no campaign.
+Fresh36h developments: AutoReview Oct6 16:13KST and Meetings Oct7 05:25KST, timestamps observed in original pages. Original source catalogue is saved in work/codex28-source-evidence.txt. Source request to owner is no longer necessary.

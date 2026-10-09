@@ -1,0 +1,27 @@
+[
+  {
+    "name": "cover",
+    "prompt": "Use case: ads-marketing. Create a polished square Korean blog cover, Toss-inspired clarity: white and very pale blue generous space, vivid cobalt blue accents, rounded forms, modern confident typography, huge legible Korean headline exactly '말로 만드는 게임' and second line exactly '한국에서도 될까?'. Small eyebrow '구글 Playground'. Main imagery lower half: photorealistic bright creative play exhibition, a broad freestanding miniature obstacle course with colorful physical ramps and a small ball, elegant glass partitions, natural daylight. Compose image as independent article cover, typography at upper half with clear margin, exceptionally readable Korean, no other words, no logos/watermarks. Friendly premium fintech editorial feel. Not a fake official UI. Single still image, not collage.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-51e624d1-4ccb-484c-bb70-f76367d2f143.png"
+  },
+  {
+    "name": "section1",
+    "prompt": "Use case: photorealistic-natural. Square editorial photo, medium-wide view in a bright hands-on science exhibition workshop. An adult wearing casual neutral clothes lays out colorful large physical ramp pieces on a waist-high obstacle-course installation; visible room windows and shelving give context. Small ball at starting point, varied practical rules can be assembled without a computer. Fresh original visual metaphor for no-code game ideas, not documentary Google software. Soft real daylight, tactile matte wood and plastic, natural perspective and coherent physical geometry. No readable text, no logos, no infographic, no isolated studio object, no phone, no generic office desk.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-6c25c397-7f06-47bc-99d4-32f5afe0dc3a.png"
+  },
+  {
+    "name": "section2",
+    "prompt": "Use case: photorealistic-natural. Square photo, wide eye-level perspective at an outdoor paved community play area, a casually dressed adult adjusts the spacing of two low foam obstacles along a chalk path while another adult watches a ball rolling toward a goal. Visible trees and courtyard create natural environment. The scene conveys trying a game, noticing a difficult obstacle, then adjusting it. Bright morning natural light, realistic motion/tactile surfaces, calm vivid blue and yellow details. No readable writing, logos, numbers, computer or phone. No close crop, no collage, no UI mockup.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-2a6730d5-91b4-46a3-bd96-e71a8d34adb7.png"
+  },
+  {
+    "name": "section3",
+    "prompt": "Use case: photorealistic-natural. Square editorial photograph, wide contextual composition inside a friendly public creative festival gallery. Three small groups of adult visitors trying different tabletop marble games on distinct standing plinths spaced through a sunlit spacious hall. One person demonstrating rules to a friend, others watching; open layout conveys sharing a creation and getting feedback. Natural varied people, real perspective, tasteful architecture, blue accent panels without text, warm daylight. No close-up hero object, no generic office desk, no phones, no readable signs, no logos or watermarks. Not a real Google launch event.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-b2f43f87-0f39-4341-b436-82a89cd66e75.png"
+  },
+  {
+    "name": "section4",
+    "prompt": "Use case: photorealistic-natural. Square contextual photo of a scenic miniature 3D world being developed inside a spacious theatrical model workshop: a broad model landscape with cliffs, a bridge and small game-like path on a work platform; an adult model maker stands at a distance checking the unfinished bridge against completed terrain. Camera medium-wide, environment and tools visible, unfinished portion clearly distinguishable but elegant. Symbolizes upcoming more detailed 3D game creation still under development. Realistic plaster, timber and foliage textures, natural window light, no UI, no typography, no logo, no close crop, no reused parcel/coin/security-key imagery.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-386749ab-ebce-442b-9b95-2b98d05914c6.png"
+  }
+]

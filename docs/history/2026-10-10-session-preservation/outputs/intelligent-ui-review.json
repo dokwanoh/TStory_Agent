@@ -1,0 +1,119 @@
+{
+  "stage": "correcting_editor_turn_2_final_package",
+  "verdict": "APPROVE",
+  "scope": "Exact prose and local media package before editor upload/public save; not a published-page or editor-formatting verification.",
+  "article_sha256": "bdace02e2a05d8eb6b68cc5ba89c2fbd58ed326567906a04d79a67701f4eec0e",
+  "manifest_sha256": "1a6cb53132330bb2d98137b98bcd38ee83930b532b1da8caffbb6e05bf5c42a9",
+  "source_pack_sha256": "a9d3aeef0ef971ffa3b94b5e87a4a08d328c45a829eb921b8282ee97e6cb0d78",
+  "product_sha256": "5688ea70df6b8af6ab4ba28c80ec8356ba3042dae8efc370be17ac79cd70a25e",
+  "previous_review": {
+    "stage": "correcting_editor_turn_1_prose_only",
+    "verdict": "REVISE",
+    "article_sha256": "224831accce485a21f80cd9c22cfdc923b7dc1dfacf9bc0220051803da174910",
+    "source_pack_sha256": "a9d3aeef0ef971ffa3b94b5e87a4a08d328c45a829eb921b8282ee97e6cb0d78",
+    "scenario": "Read every prose paragraph and supplied official source bodies; compare availability, UI scope, examples, arithmetic, data controls and button targets.",
+    "invocation": "cat article/source-pack/product; shasum -a 256 article/source-pack; independent semantic comparison",
+    "observables": {
+      "body_paragraphs": 19,
+      "body_characters_without_separators": 2744,
+      "summary_shape": [
+        4,
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "buttons": 4,
+      "availability_and_chat_scope": "PASS",
+      "example_arithmetic": "80000/4=20000; 80000/5=16000",
+      "data_control_claims": "PASS: new chats training opt-out, retained history, feedback exception supported",
+      "affiliate_body_prose": "none",
+      "media_review": "not performed; media not ready"
+    },
+    "required_correction": {
+      "location": "sections[2].paragraphs[3]",
+      "current_quote": "아래 모션그래픽에서 식사비 8만원은 그대로 두고 인원만 바꿔보세요.",
+      "reason": "The planned animated GIF is not an interactive control. This imperative falsely suggests the reader can change the amount or headcount in the graphic.",
+      "replacement": "아래 모션그래픽에서 식사비 8만원은 그대로 두고 인원만 바뀌는 과정을 살펴보세요."
+    },
+    "title_assessment": "Acceptable as an announcement headline in context; summary and section4 explicitly qualify staged rollout.",
+    "evidence_paths": [
+      "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-article.json",
+      "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-source-pack.json",
+      "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-product.json"
+    ]
+  },
+  "checks": [
+    {
+      "scenario": "Required prose correction only",
+      "invocation": "Reverse the one requested sentence replacement and SHA256 the reconstructed prior bytes",
+      "observable": true,
+      "artifact": "outputs/intelligent-ui-article.json"
+    },
+    {
+      "scenario": "Five final photographs and ALT semantic review",
+      "invocation": "view_image cover.jpg and section1.jpg through section4.jpg",
+      "observable": "PASS: clear Korean cover; touch selection, meal division, condition adjustment and independent result checking correspond to sections. No actual ChatGPT screenshot, release event, endorsement, identity or guaranteed availability claims.",
+      "artifacts": [
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-media/cover.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-media/section1.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-media/section2.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-media/section3.jpg",
+        "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/intelligent-ui-media/section4.jpg"
+      ]
+    },
+    {
+      "scenario": "Animation structure and arithmetic",
+      "invocation": "Read work/intelligent-ui-workflow.swift; view_image workflow-frame-0/50/99.png; parse GIF image descriptors and graphic-control delays with Python standard library",
+      "observable": {
+        "frames": 100,
+        "duration_seconds": 10,
+        "canvas": "fixed",
+        "continuous_changes": "progress line and pointer motion; input/result changes in same composition",
+        "initial": "80000 / 4 = 20000",
+        "changed": "80000 / 5 = 16000",
+        "simulation_label": "가상 예제로 이해하는 연속 흐름 · 실제 서비스 화면 아님"
+      },
+      "artifacts": [
+        "work/intelligent-ui-workflow.swift",
+        "outputs/intelligent-ui-media/workflow.gif",
+        "outputs/intelligent-ui-media/workflow-frame-0.png",
+        "outputs/intelligent-ui-media/workflow-frame-50.png",
+        "outputs/intelligent-ui-media/workflow-frame-99.png"
+      ]
+    },
+    {
+      "scenario": "Original provenance and package identity",
+      "invocation": "SHA256 actual generated PNGs, retained originals, final JPGs and GIF; compare manifest",
+      "observable": "All five generated originals equal retained originals and manifest hashes; all six final asset hashes match.",
+      "artifact": "outputs/intelligent-ui-media-manifest.json"
+    },
+    {
+      "scenario": "Prior five scene comparison",
+      "invocation": "Read playground, decisions, ai-cvp, farmland and youth-savings image prompt records",
+      "observable": "PASS: new focal actions and compositions. Gallery/home settings recur as broad contexts, but no duplicate image or same narrative scene.",
+      "artifacts": [
+        "playground-image-prompts.json",
+        "decisions-image-prompts.json",
+        "ai-cvp-image-prompts.json",
+        "farmland-image-prompts.json",
+        "youth-savings-image-prompts.json"
+      ]
+    },
+    {
+      "scenario": "Product and banner consistency",
+      "invocation": "Read intelligent-ui-product.json selected product and officialBanner HTML",
+      "observable": "Product ID9724855476; MR0094 graphite wireless vertical mouse consistent across selected option and banner ALT; optional PC input accessory only, no body product promotion. API/network result and banner browser capture were not independently replayed.",
+      "artifact": "outputs/intelligent-ui-product.json"
+    }
+  ],
+  "required_corrections": [],
+  "not_observed": [
+    "Native editor upload and IMAGE links",
+    "Rendered heading/body font styles and disclosure/banner placement",
+    "Public save and published page",
+    "Browser GIF playback"
+  ]
+}

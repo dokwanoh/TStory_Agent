@@ -1,0 +1,29 @@
+{
+  "api": {
+    "httpStatus": 200,
+    "rCode": "0",
+    "query": "삼성 T7 Shield 외장 SSD 1TB",
+    "count": 3
+  },
+  "selected": {
+    "id": 8501988779,
+    "name": "삼성전자 포터블 외장 SSD T9 (정품), 블랙 MU-PG1T0B/WW + 정품파우치, 1TB",
+    "kind": "포터블 외장 SSD",
+    "model": "MU-PG1T0B/WW",
+    "color": "블랙",
+    "capacity": "1TB",
+    "bundle": "정품파우치",
+    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF3837370&pageKey=8501988779&itemId=25710816489&vendorItemId=87515381451&traceid=V0-153-2a7b363e2801fea7&clickBeacon=2bca41a0-c29f-11f1-9128-8edbf1025a0a%7E3&requestid=20261008073351467290547644&token=<REDACTED>&pt=1&slot=2"
+  },
+  "rationale": "원본과 복사본을 나누는 파일 정리 연습에 보관용 SSD 관련성; AI 기능 필수 장비/지원 기기라고 주장하지 않음",
+  "banner": {
+    "html": "<a href=\"https://link.coupang.com/a/hFpUwk9wxE\" target=\"_blank\" referrerpolicy=\"unsafe-url\"><img src=\"https://img1a.coupangcdn.com/image/affiliate/banner/<REDACTED_EMAIL>\" alt=\"삼성전자 포터블 외장 SSD T9 (정품), 블랙 MU-PG1T0B/WW + 정품파우치, 1TB\" width=\"120\" height=\"240\"></a>",
+    "source": "https://partners.coupang.com/#affiliate/ws/linkgeneration/PRODUCT/8501988779/25710816489?product%5Btype%5D=PRODUCT&product%5BitemId%5D=25710816489&product%5BproductId%5D=8501988779&product%5BvendorItemId%5D=95438649914&product%5Bimage%5D=https%3A%2F%2Ft4c.coupangcdn.com%2Fthumbnails%2Fremote%2F212x212ex%2Fimage%2Fvendor_inventory%2F9b9f%2F8293c0cacb913fc1c3e6f4784331e10c3f3d52cb0ff9641ca3fd00d227e0.jpg&product%5Btitle%5D=%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90%20%ED%8F%AC%ED%84%B0%EB%B8%94%20%EC%99%B8%EC%9E%A5%20SSD%20T9%20%28%EC%A0%95%ED%92%88%29%2C%20%EB%B8%94%EB%9E%99%20MU-PG1T0B%2FWW%20%2B%20%EC%A0%95%ED%92%88%ED%8C%8C%EC%9A%B0%EC%B9%98%2C%201TB&product%5BdiscountRate%5D=9&product%5BoriginPrice%5D=368000&product%5BsalesPrice%5D=332000&product%5Btravel%5D=false",
+    "method": "exact visible DOM snapshot code; clipboard did not refresh"
+  },
+  "rejected": [
+    "T7 Shield 검색 세번째는 1TB~4TB로 옵션 불명확",
+    "첫번째 T7 번들은 모델이 다름"
+  ],
+  "checkedAt": "2026-10-07T22:37:10.095Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name":"보고서의 정석: 공무원 공공기관",
+  "author":"임영균",
+  "publisher":"소운서가",
+  "isbn":"9791185192611",
+  "type":"종이책 단권",
+  "api":{"httpStatus":200,"rCode":"0","query":"보고서 작성"},
+  "productId":5625226928,
+  "itemId":9131604022,
+  "vendorItemId":93690303098,
+  "affiliate_url":"https://link.coupang.com/a/hFIOHJcXzU",
+  "official_banner_html":"<iframe src=\"https://coupa.ng/cp0tAU\" width=\"120\" height=\"240\" frameborder=\"0\" scrolling=\"no\" referrerpolicy=\"unsafe-url\"></iframe>",
+  "verified_options":"API 검색 및 실제 Partners 링크 생성 URL에서 동일 product/item/vendor 확인",
+  "confirmed_contents":["구조화 표현력","문장의 생명은 정확함에 있다","문장은 간결하고 또 간결하게 쓴다"],
+  "contents_source":"https://www.yes24.com/Product/Goods/98836671",
+  "reason":"AI가 고친 보고서의 구조와 문장이 적절한지 판단하고 싶은 분이, 구조화·정확한 문장·간결한 표현의 기본기를 살펴볼 때 참고할 수 있어 선정했어요.",
+  "limit":"선택적 기본기 참고서이며 Claude 설치 매뉴얼·필수 구매·사용 경험으로 설명하지 않음"
+}

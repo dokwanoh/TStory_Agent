@@ -1,0 +1,34 @@
+{
+  "run": "haiku-20261008",
+  "verdict": "ACCEPT",
+  "scope": "Independent topic selection only; no prose/media/publication approval",
+  "source_pack_sha256": "d737338cc1d3ba9db06945514635ac35885d3480c09585fa69a7d9c0034b865e",
+  "scenario": "Read complete captured Anthropic Haiku5.5 introduction, benchmarks, pricing, availability, further updates and both footnotes; evaluate mainstream beginner model-choice angle.",
+  "invocation": "cat outputs/haiku-source-pack.json",
+  "binary_observable": "ACCEPT with explicit factual boundaries",
+  "assessment": {
+    "category": "IT/software",
+    "reader_value": "Choose a narrowly scoped repeated task, provide source material and output constraints, inspect small draft outputs, and escalate complex work. This is useful even without API development.",
+    "demand": "Practical usefulness inferred from everyday summary/draft workflows and a new major-vendor small-model release; no measured search volume, velocity or traffic forecast.",
+    "evidence": "Official announcement explicitly identifies summaries/classification/compaction and narrow subagent work, contrasts larger models for complex coding, and provides price/speed caveats. Benchmarks and customer anecdotes are vendor-presented evidence, not independent guarantees.",
+    "novelty": "Model choice and checking textual draft quality differ from Windows permissions, ChatGPT UI, Playground creation and security certification. Some overlap with Decisions classification is acceptable if this article emphasizes short summaries/drafts and appropriate task scope rather than fixed-choice API mechanics.",
+    "durability": "Task scoping, source comparison and escalation remain useful; specific prices and plan availability are date-bound.",
+    "freshness": "Oct7 publisher date qualifies under stated UTC/US calendar interpretation at supplied selection time; exact hour/timezone unknown and no hour-precise certification."
+  },
+  "required_boundaries": [
+    "Fastest must be attributed to Anthropic and qualified as standard speed; Opus Fast Mode is faster. Do not promise fastest in every environment or task.",
+    "Narrow/simple tasks are recommended fit, not a prohibition on all reasoning. Adjustable effort exists; do not invent effort controls in every consumer plan.",
+    "Complex coding/work may favor Sonnet/Opus per source; larger model choice is not a guarantee of correctness. Require source/output review.",
+    "All platforms availability includes named cloud/API platforms; it does not establish identical Claude consumer plan menus or universal free access.",
+    "API prices are per1million tokens, not monthly subscriptions or price per question. Up to100000-token prompts: input$0.10/output$0.50; over100000: input$0.50/output$2.50. Explain token as text-processing units, not fixed Korean-character equivalents. Cache categories have separate prices.",
+    "Around75percent less to run is an average vendor estimate considering workload mix and changed tokenizer, not universal90percent savings. Avoid oversimplified savings claims.",
+    "If credits are included: rollout this week; Max5x$100/month,Max20x$200/month,Team up to$500 pooled across users; do not call Team$500perperson or allcreditsalreadyactive. Prefer omitting to preserve narrow beginner angle.",
+    "Examples must be labelled proposed/fictional and not firsthand benchmark results; no automatic publication, accuracy or unrestricted sensitive-work guarantees."
+  ],
+  "suggested_focus": "A short supplied-text summary or three-line reply draft, manually check omissions/names/dates, broaden task only after checking; reserve classification as a secondary example.",
+  "placement_requirements_for_later_review": [
+    "Workflow immediately below30초요약",
+    "Very short author comment"
+  ],
+  "evidence_path": "<LOCAL_USER>/Documents/Codex/2026-10-06/smart-life-week-recovery/outputs/haiku-source-pack.json"
+}

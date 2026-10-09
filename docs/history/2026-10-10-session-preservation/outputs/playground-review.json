@@ -1,0 +1,14 @@
+{
+  "topic": "ACCEPT by /root/codex28_text_review; primary publication selected at age approximately 7.29 hours",
+  "text": "APPROVE after exactly one question-heading correction",
+  "article_sha256": "7d7a58e3698f79261ced95acc572dc80eeff715a7e3fd9095b45e3abdda1b57b",
+  "review_turns_so_far": 3,
+  "final_package_review": "APPROVE by /root/codex28_text_review; actual five JPGs, 100frame10second GIF, provenance/hash and product checked",
+  "review_budget": "Existing correcting-editor budget retained; registry status returned SESSION_STATE_UNAVAILABLE, never reset or bootstrapped",
+  "manufacturer_evidence": {
+    "url": "https://www.logitech.com/en-gb/shop/p/k120-usb-standard-computer",
+    "confirmed": "K120 is a corded plug-and-play USB keyboard",
+    "excluded": "Earlier support table had contradictory wireless/battery entries; those are not used for compatibility claims"
+  },
+  "manifest_sha256": "708159ffe5a280a5b04223e569cfa25e7016fe358900dbde18de4aea9b6a5e83"
+}

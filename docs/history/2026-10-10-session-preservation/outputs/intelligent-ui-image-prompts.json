@@ -1,0 +1,32 @@
+[
+  {
+    "name": "cover",
+    "alt": "ChatGPT 답변 속 버튼과 입력값 변경을 설명하는 큰 한글 제목 표지",
+    "prompt": "Use case: ads-marketing. Square Korean blog cover with Toss-inspired clarity, giant extremely legible Korean exact headline '눌러보는 ChatGPT' and second line '숫자를 바꾸면?'. Small label exactly 'Intelligent UI'. Wide high-key photorealistic scene in bottom half: elegant daylight modern public interior with a freestanding large touchscreen on a curved white architectural pedestal displaying only blue round buttons and a simple chart, no text/no fake ChatGPT logos. Upper half generous white and pale lavender space, vivid cobalt typography, beautiful rounded visual rhythm and optimistic premium fintech editorial feeling. This is an independent conceptual cover, not official app screenshot. Huge accurate Korean text, no other text, no watermarks. Still photography with editorial type overlay, not a slide or collage.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-e5b8781e-ec3c-4808-a0f6-f22037a55579.png"
+  },
+  {
+    "name": "section1",
+    "alt": "체험 공간에서 큰 터치 화면의 그림 요소를 선택하는 장면",
+    "prompt": "Use case: photorealistic-natural. Square medium-wide candid editorial photo inside a dim contemporary interactive museum, one adult standing beside a full-height touch projection wall with luminous abstract blue shapes that can be selected, the person's finger reaching naturally toward one illuminated circle. Visible dark concrete gallery architecture and floor reflections, overhead warm lights. Scene conveys exploring an explanation by touching one part. No text, no logos, no fake branded software, no marble game, no office desk, no phone, no collage, no close hero crop. Natural believable light, geometry and skin.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-0472296d-d723-4084-9f6f-e78b00575c7d.png"
+  },
+  {
+    "name": "section2",
+    "alt": "친구들이 함께 먹은 식사 뒤 비용을 나누며 계산하는 식당 풍경",
+    "prompt": "Use case: photorealistic-natural. Square wide natural photograph from a slightly elevated doorway angle of a cozy Korean neighborhood restaurant after an adult group meal, four friends sitting around a broad wooden dining table, finished shared dishes placed naturally, one person writing small amounts on plain blank-looking paper with a simple calculator nearby while others casually discuss. Restaurant windows and stools visible. This is the context of splitting a meal bill, friendly relaxed documentary-like original conceptual photography. Faces secondary, not staged ad posing. No readable numbers/receipts/text, no logos, no closeup cups or isolated props, no phone or laptop. Real textures, warm daylight.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-07cf4d31-9680-4a67-9bce-4f1bc421e42b.png"
+  },
+  {
+    "name": "section3",
+    "alt": "빛의 방향을 바꾸며 결과를 관찰하는 과학 체험 공간",
+    "prompt": "Use case: photorealistic-natural. Square medium-wide photograph in a spacious dim optics science laboratory exhibit: a waist-high long optical bench with a small adjustable light source and transparent prism creating a visible rainbow line on a large matte white projection panel, an adult visitor standing at the side turns one adjustment knob while looking at how the rainbow shifts. Include room architecture, floor and broad bench context. Conveys changing one condition and observing the result, distinctly different from touch walls or dinner scenes. Physically believable prism refraction, natural perspective, calm cinematic light, no text, logos, infographic, phone, computer, close crop, marble/ramp/coin/security props.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-5d98c159-390c-4c25-92c6-5af15cb86ec9.png"
+  },
+  {
+    "name": "section4",
+    "alt": "거실에서 노트북 화면과 손으로 적은 계산을 함께 살펴보는 장면",
+    "prompt": "Use case: photorealistic-natural. Square wide candid editorial photograph in a bright contemporary Korean apartment living room, adult seated on a floor cushion beside a low table, open laptop angled away so the screen is not readable, simple calculator and handwritten paper nearby, the adult compares a note with the screen. Large window, curtain, books and couch give full environment context, not generic office desk closeup. Scene conveys checking the content on one's own account and verifying a simple calculation. Warm afternoon natural light, realistic posture and proportions. No readable text, no logos, no phone, no padlocks or security keys, no collage, no fake official UI.",
+    "generated_path": "<LOCAL_USER>/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-1b873ba5-572f-4981-9f65-57dab303d2a7.png"
+  }
+]

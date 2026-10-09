@@ -1,0 +1,82 @@
+{
+  "scope": "Independent topic and product-fit decision before article/media generation",
+  "decision": "ACCEPT",
+  "topicDecision": "ACCEPT",
+  "productDecision": "ACCEPT",
+  "revisionHistory": [
+    {"decision": "REVISE", "productId": 1593334322, "reason": "SSD의 원본 보관 수요는 일반 사진 확인 독자의 핵심 행동과 연결이 약해 탈락시켰다."},
+    {"decision": "ACCEPT", "productId": 4507403883, "reason": "재선정 도서의 실제 목차가 사진·영상 허위정보와 출처 확인·재검색을 다룬다는 점을 독립 확인했다."}
+  ],
+  "candidate": "AI 사진인지 확인하는 법: SynthID Detector 공개 확대와 결과 해석",
+  "readerQuestion": "온라인에서 본 사진을 공유하기 전에 AI 흔적을 어디서 확인하고 결과를 어떻게 해석할까?",
+  "coreConclusion": "지원되는 워터마크 확인 결과를 출처·날짜·이미지 검색과 함께 읽으면 공유 판단에 도움이 되며, 미감지는 실제 사진이라는 보증이 아니다.",
+  "rationale": {
+    "usefulness": "사진 공유 전 확인이라는 일상 행동으로 시작할 수 있고 로그인·업로드·결과 해석까지 초보자가 수행할 수 있다.",
+    "demand": "공식 전 세계 공개 확대와 기존 통합 검증 기능의 일일 100만 건 이상 요청은 실사용 관심의 근거다. 새 Detector 자체의 요청량이나 검색량으로 해석하지 않는다.",
+    "durability": "지원 범위와 음성·영상까지 확대되는 투명성 도구를 이해하는 방법은 발표 당일 이후에도 활용 가능하다. 향후 독자 수 증가를 수치로 예측하지 않는다.",
+    "differentiation": "부모가 제시한 최근 216~221 주제와 핵심 질문이 다르다. 이 검토는 전체 게시물 목록을 독립 재조회하지 않았다."
+  },
+  "freshness": {
+    "officialPublishedDate": "2026-10-07",
+    "selectionTimeProvidedByParent": "2026-10-08T00:55:00Z",
+    "exactPublicationTime": null,
+    "assessment": "공식 전일 발표로 36시간 우선 조건에 부합하는 유력 후보다. 공식 발표 시각과 시간대가 없으므로 정확한 경과 시간 통과를 인증하지 않는다. 사용자 조건은 36시간 이내 우선이며 절대 중단 조건이 아니다."
+  },
+  "essentialEditorialConstraints": [
+    "SynthID Detector의 Google·OpenAI·NVIDIA·Kakao 지원, Apple 향후 지원과 Gemini의 현재 Google AI SynthID 감지 범위를 구분한다.",
+    "특정 워터마크 감지를 모든 AI 검출 또는 사건의 진실 판정으로 확대하지 않는다. 감지됨·미감지·불확실 각각 이후에 출처를 확인할 수 있게 한다.",
+    "워터마크와 원본 파일 메타데이터는 다른 정보다. 파일을 보관하는 행위가 출처나 메타데이터의 진위를 보장하지 않는다.",
+    "공식 도움말의 파일 조건이나 횟수를 쓰면 Gemini 조건인지 Detector 조건인지 명시한다. 두 서비스의 제한을 합치지 않는다."
+  ],
+  "rejectedProductAssessment": {
+    "candidateReportedByParent": "삼성 T7 외장 SSD 1TB 타이탄 그레이, productId 1593334322",
+    "apiEvidence": "부모는 HTTP 200 / rCode 0 및 정확한 옵션 확인을 보고했다. 이 검토에 API 응답 원본은 제공되지 않았으므로 독립 API 확인으로 기록하지 않는다.",
+    "finding": "반복적으로 원본 사진·동영상을 보관하는 일부 독자에게는 보조 관련성이 있다. 그러나 현재 글의 주요 독자는 온라인 사진을 한 번 확인하고 공유 여부를 판단하려는 초보자다. 외장 SSD는 그 핵심 행동에 필요하지 않고, 고가 저장장치를 연결하려고 별도의 보관 수요를 확장할 위험이 있다. 이전 키보드 선정 문제를 충분히 해결한 강한 연결로 판단하기 어렵다.",
+    "requiredRevision": "상품 후보를 먼저 재탐색한다. 디지털 미디어 팩트체크·이미지 출처 확인을 실제로 가르치는 입문 실용서가 있다면 목차와 상품 종류·옵션을 확인해 비교한다. 제목에 AI만 들어간 일반 서적은 대체 후보로 통과시키지 않는다. 해당 상품이 실제 판매 중이거나 적합하다고 단정하지 않는다.",
+    "ssdBoundary": "SSD를 유지하려면 실제 대상 독자가 반복 검증과 원본 아카이빙을 하는 사람이라는 근거가 필요하다. 광고에 맞추기 위해 대중적인 판별 글을 저장장치 글로 바꾸지 않는다. 구매 필수·감지율 향상·진본 보증 주장을 금지한다."
+  },
+  "productAssessment": {
+    "name": "미디어 리터러시 쫌 아는 10대: 보이는 대로 보지 않는 법",
+    "author": "금준경",
+    "publisher": "풀빛",
+    "publicationDate": "2020-11-25",
+    "isbn": "9791161727820",
+    "productId": 4507403883,
+    "itemId": 5418289388,
+    "vendorItemId": 72718209674,
+    "type": "단권 종이책",
+    "apiEvidence": "outputs/synthid-product.json의 HTTP200 / rCode0 / 상품·옵션 기록을 읽었다. API는 부모가 실행했으며 이 검토에서 다시 호출하지 않았다.",
+    "independentObservation": "YES24 상품 본문에서 저자·출판사·출간일·ISBN을 확인했다. YES24 목차와 네이버 시리즈 목차 모두 사진·영상 허위정보, 출처 확인, 재검색을 포함한다.",
+    "relevance": "워터마크 결과 이후에도 사진·영상의 출처와 맥락을 판단하는 법을 더 배우려는 초보 독자에게 직접 연결되는 선택형 입문 학습서다. 추가 장비 필요를 만들어내지 않으며 글의 확인 행동을 확장한다.",
+    "essentialLimits": ["청소년 눈높이의 기초 미디어 리터러시 도서로 한정한다.", "2026 SynthID 사용법 또는 전문 이미지 감정 기술 수록을 주장하지 않는다.", "서비스 사용에 구매가 필요하지 않다.", "본문에 상품 홍보 문구를 추가하지 않는다."]
+  },
+  "parentEvidenceRead": ["outputs/synthid-source-pack.md", "outputs/synthid-product.json"],
+  "independentlyReadEvidence": [
+    {
+      "url": "https://www.yes24.com/Product/Goods/95597417",
+      "access": "web open succeeded; lines395,627-629 and683 inspected",
+      "supports": "도서 정체성·출간일·ISBN 및 실제 목차와 상품 관련성"
+    },
+    {
+      "url": "https://series.naver.com/ebook/detail.series?productNo=6855302",
+      "access": "web open succeeded; lines198-215 inspected",
+      "supports": "동일 도서 목차의 사진·영상 허위정보와 출처 확인·재검색 교차 확인. 제휴 상품의 전자책 옵션으로 오인하지 않음"
+    },
+    {
+      "url": "https://blog.google/intl/ko-kr/company-news/technology/synth-id-ai-content-kr/",
+      "access": "web search returned the full short official announcement; subsequent open returned Internal Error",
+      "supports": "Oct7 announcement date, global English public access, partner scope, existing integrated verification usage"
+    },
+    {
+      "url": "https://deepmind.google/models/synthid/",
+      "access": "web open succeeded, 177 lines",
+      "supports": "SynthID watermark definition and Detector versus Google integrated tools scope"
+    },
+    {
+      "url": "https://support.google.com/gemini/answer/16722517?co=GENIE.Platform%3DDesktop&hl=ko-KR",
+      "access": "web search returned complete substantive Korean help sections",
+      "supports": "Google-only Gemini SynthID detection, results and limitations, reverse image search, original-file metadata"
+    }
+  ],
+  "notCertified": ["Exact publication hour", "Full recent-post inventory", "Product API response bytes", "Synthid.com live UI", "Article or media quality before generation"]
+}
