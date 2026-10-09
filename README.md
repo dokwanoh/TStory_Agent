@@ -52,3 +52,5 @@ in this repository. Local account labels and home paths are redacted.
 ## Latest editorial instructions and records
 
 The [2026-10-10 session archive](docs/history/2026-10-10-session-preservation/README.md) preserves the current goal, post223 editorial layout, native-editor success/recovery paths and final publication ledger through post244. Coding Agent goal240–244 is complete; Tistory app confirmation remains unverified. Generated article/media bytes stay local; the archive includes sanitized records and a media hash manifest.
+
+The [post245 completion record](docs/history/2026-10-10-post245-completed/README.md) supersedes the Codex day4 blocked snapshot: one public save, author comment, six linked/loaded media, web introduction summaries and actual motion confirmed. It records the current successful native-editor UI route and failed selection/focus paths; Tistory app and old unresponsive tab cleanup remain unverified.

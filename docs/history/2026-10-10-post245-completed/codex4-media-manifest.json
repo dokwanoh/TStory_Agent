@@ -1,0 +1,70 @@
+{
+  "status": "published_verified",
+  "tool": "built-in image_gen",
+  "link": "https://link.coupang.com/a/hIfQGt0vLM",
+  "assets": [
+    {
+      "file": "codex4-cover.jpg",
+      "bytes": 217288,
+      "sha256": "da41c749da45f5f397e70f7e74cb170799229da960894d5c99172185cdbcae16",
+      "purpose": "전체 핵심: 속도·방향 수정·비용을 함께 판단",
+      "alt": "Codex 4일차의 속도와 방향 수정 및 비용을 설명하는 표지",
+      "native_uploaded": true,
+      "native_linked": true,
+      "public_loaded": true
+    },
+    {
+      "file": "codex4-infographic.jpg",
+      "bytes": 352024,
+      "sha256": "816ff09864dff6fb2ebe7a33b71e68eb78f89c2289bdddfd15b4e136e280a322",
+      "purpose": "토큰 생성/추가지시와 속도·소모·비용의 서로 다른 기준",
+      "alt": "Codex 4일차의 두 변화와 속도·포함 한도 소모·크레딧 과금을 나눈 손그림 요약",
+      "native_uploaded": true,
+      "native_linked": true,
+      "public_loaded": true
+    },
+    {
+      "file": "codex4-section1.jpg",
+      "bytes": 191898,
+      "sha256": "dad90f09a6be61212bb7a8755b1ac93b775d62bc7ba638c2acb8e6429079eb4e",
+      "purpose": "빠른 생성과 방향 수정의 구분",
+      "alt": "빠르게 쓰기와 추가 요청으로 방향을 바꾸기를 나눈 개념 이미지",
+      "native_uploaded": true,
+      "native_linked": true,
+      "public_loaded": true
+    },
+    {
+      "file": "codex4-section2.jpg",
+      "bytes": 196659,
+      "sha256": "e700954f815bda7b35148eee58a852202c9ebe02fba9bb0ab3fc2c0977bb836c",
+      "purpose": "동일 토큰 가정의 API비용 차이",
+      "alt": "입력10만 출력1만 토큰의 가정에서 API Standard0.30달러와 Ultrafast1.80달러를 비교한 도해",
+      "native_uploaded": true,
+      "native_linked": true,
+      "public_loaded": true
+    },
+    {
+      "file": "codex4-section3.jpg",
+      "bytes": 223973,
+      "sha256": "11511601b546b534f43815b206c71081ab4b27e7b799b6fddbe2118d110074dc",
+      "purpose": "요청과 추가요청을 확인가능한 조건3개로 연결",
+      "alt": "할 일3개 저장없음 체크초기화의 확인 조건을 보여 주는 가정 예시",
+      "native_uploaded": true,
+      "native_linked": true,
+      "public_loaded": true
+    },
+    {
+      "file": "codex4-workflow.gif",
+      "bytes": 94255,
+      "sha256": "04434526ccb33303b504175019572936c8ccbced364785056912ac47c27ec42a",
+      "purpose": "독자 자격·비용 판단과 결과 확인·재요청 흐름",
+      "alt": "독자가 계정 자격과 비용을 확인하고 작은 요청의 조건과 결과를 비교하는 손그림 모션",
+      "native_uploaded": true,
+      "native_linked": true,
+      "public_loaded": true
+    }
+  ],
+  "post_id": 245,
+  "public_url": "https://nedamma.tistory.com/entry/Codex-28%EC%9D%BC-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-4%EC%9D%BC%EC%B0%A8-%E2%9A%A1-%E2%80%98%EC%B5%9C%EB%8C%80-8%EB%B0%B0%E2%80%99-%EB%82%B4-%EC%9E%91%EC%97%85%EB%8F%84-%EB%B9%A8%EB%9D%BC%EC%A7%88%EA%B9%8C%EC%9A%94",
+  "published_at_kst": "2026-10-10 01:53"
+}
