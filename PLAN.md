@@ -1,5 +1,9 @@
 # TISTORY GROWTH OS — current plan
 
+## Owner-scoped publication complete (2026-10-07)
+
+Post210 is public after one native-editor publication of the current real-estate article. The selected OPM housing event was dated 2026-10-06, so publication at 05:28 KST on 2026-10-07 met the 36-hour freshness limit. Public readback confirmed the cover and four other media links, plain affiliate disclosure, source/internal links, summary labels, tags, and one author product comment. Product promotion uses linked image banners rather than standalone sales copy; the comment URL remains plain text rather than a clickable anchor, the summary appears as labeled lines rather than verified semantic table markup, and the source links are not confirmed as styled buttons. Record these next-run lessons in `docs/156_cooperative_rental_20261007_publication.md`. No daily schedule or reservation was resumed.
+
 All-Reserve third proof COMPLETE2026-09-25: post114 passed the unchanged integrated preparation→publisher route with exact saved/public verification. All LLM stages used gpt-reserve; four fresh media and one bounded editor pass; no manual substitution or login intervention. STOP restored; daily/reservations remain paused. Further posts need new scoped requests.
 
 Latest all-Reserve follow-up is safely held before publication: editor budget exhausted after four bounded turns despite a final ready record. No retry/reset is permitted for that identity; preserve checkpoints and require a new scoped request for any later article. Daily/reservations remain paused.
@@ -173,7 +177,7 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| financial-malware-check-20261004 | IN_PROGRESS | Finance-security explainer prepared; editor state and summary table need readback before continuing; no images uploaded or publication attempted | `docs/124_financial_malware_account_check_20261004_handoff.md` |
+| stock-pnl-20261006 | IN_PROGRESS | Post208 same-ID media correction is public; audit record created. Existing author comment edit remains blocked by observed Tistory JavaScript error; demand receipt unavailable | `docs/155_stock_pnl_20261006_publication.md` |
 | model-pricing-luna-20260927 | BLOCKED | Luna pricing article held after four review turns; current images rejected, no Tistory write; explicit continuation decision required | `docs/69_luna_pricing_attempt.md` |
 <!-- work:end -->
 

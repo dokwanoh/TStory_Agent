@@ -4,6 +4,8 @@
 
 Derived from contracts/current-work.tsv. These items are not present blockers and do not revive paused operation or excluded checks.
 
+2026-10-07: the owner-scoped real-estate article was completed as public post210. This creates no new deferred work; evidence and observed next-run improvements are in `docs/156_cooperative_rental_20261007_publication.md`.
+
 2026-09-25: all-Reserve preparation through immediate publication succeeded as posts112, 113 and114 without login intervention. Broader operational reliability and unattended authentication recovery remain deferred; three successful runs do not certify them. Recurring operation and reservations remain paused.
 
 <!-- work:start -->
