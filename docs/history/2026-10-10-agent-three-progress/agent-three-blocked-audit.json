@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-10 13:41 KST",
+  "goal_createdAt": 1791602938,
+  "goal_status": "blocked (stored tool status from13:15; owner resumed work13:25)",
+  "completed_publications": 1,
+  "required_publications": 3,
+  "published_url": "https://nedamma.tistory.com/258",
+  "blocking_condition": "Tistory daily maximum15 new public posts; actual alert from13:02, same date and15 entries still present at13:15",
+  "consecutive_goal_turns_with_same_blocker": 1,
+  "current_authoritative_evidence": {
+    "manager_count": 246,
+    "latest_post": 258,
+    "today_rows": 15,
+    "second_title_present": false,
+    "owned_writer": "959320658 retained and handoff marked"
+  },
+  "previous_turn_classification": "progress: actual playback of remaining two GIFs observed and recorded; current publication still blocked",
+  "remaining": {
+    "article2": "Native editor complete, one public submit rejected by daily cap; local playback checked; no postID/comment/home public proof",
+    "article3": "Exact reviewed text and selected images/GIF preserved; local playback checked; no editor/upload/publication"
+  },
+  "blocked_audit": "Same condition persisted original turn plus two automatic continuations; all independent preparation and remaining local playback done; next required action is publication, which needs external cap change. No resubmit or fresh-editor bypass.",
+  "resume": "When cap changes, inspect existing manager entries first, then resume owned writer; if lost recreate once from selected manifest and native controls. Preserve three-post scope.",
+  "completion_claim": false,
+  "owner_resume": "마저 수행해도 좋아. 승인할게. 또, codex 28일 업데이트 5일차도 놓치지마.",
+  "previous_blocked_audit_turns": 3,
+  "current_turn_progress": "5일차 추가글3329자, 독립주제/원고READY,5정지이미지/22초모션실제재생,상품옵션/이유/native전송/HTML준비",
+  "new_goal_status_write": "none; no new blocked/complete update in resumed turn",
+  "additional_day5": "codex-day5-progress.md; NOT_PUBLISHED; existing3 preserved"
+}

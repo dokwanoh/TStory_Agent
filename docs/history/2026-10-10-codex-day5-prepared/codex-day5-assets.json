@@ -1,0 +1,95 @@
+{
+  "article": "codex-day5-article.md",
+  "article_sha256": "19ae3c513f45d4dd5b7debe6945e57f9e56f512a9c5d95e618fb1abd061c655a",
+  "media": [
+    {
+      "role": "cover",
+      "original": "codex-day5-cover.png",
+      "original_sha256": "38b0daa153693c1ab30512b3285e4ecbed5942c62c59bf2a2504907019cb98bf",
+      "upload": "codex-day5-cover-web.jpg",
+      "upload_sha256": "b9ffe4f2705f3d6ef1f516922168ea4722dca742b2855479fad3b8df9c065952",
+      "explains": "다음 요청 제안은 초안이며 전송은 사람의 선택",
+      "alt": "Codex 28일 업데이트 5일차: 다음 요청을 미리 써주지만 Tab은 입력이고 전송은 내 선택임을 보여주는 개념 표지",
+      "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+      "visual_check": "PASS generated result actually viewed; Korean, labels, explanatory match and crop inspected; no fake official UI"
+    },
+    {
+      "role": "infographic",
+      "original": "codex-day5-infographic-v2.png",
+      "original_sha256": "1a802c02e7094c60c29755c7ef961374532476b71c8a89c9efd659f8008aac8c",
+      "upload": "codex-day5-infographic-v2-web.jpg",
+      "upload_sha256": "3772cd5a301e6b11a758bdcab84d9982b1f7d1da780a4babced67416b3b7a75a",
+      "explains": "수락 또는 직접 작성과 검토·전송, 대상과 베타 사용량",
+      "alt": "제안 보기, Tab 수락 또는 직접 쓰기, 읽고 고쳐 직접 전송하는 손그림 흐름과 개인 Pro 등 대상·베타 사용량 조건",
+      "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+      "visual_check": "PASS generated result actually viewed; Korean, labels, explanatory match and crop inspected; no fake official UI"
+    },
+    {
+      "role": "section1",
+      "original": "codex-day5-section1.png",
+      "original_sha256": "13c01dbf72b6becae9bbc35978ac6f3d499defb0681024b793246e034d4b5404",
+      "upload": "codex-day5-section1-web.jpg",
+      "upload_sha256": "da52a984ae05e20f36fa8ea8cd692ee8674e999af0f57c42b499c89fd06e67cb",
+      "explains": "Tab으로 입력창에 담기와 전송의 분리",
+      "alt": "Tab 입력창에 담기와 별도의 전송 동작을 키보드·메모로 표현한 생성 설명 사진. 공식 화면이 아님",
+      "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+      "visual_check": "PASS generated result actually viewed; Korean, labels, explanatory match and crop inspected; no fake official UI"
+    },
+    {
+      "role": "section2",
+      "original": "codex-day5-section2.png",
+      "original_sha256": "d9a2414fbffd5d62cc002d4a03112f615016875cf39bb039df5277819c3b6195",
+      "upload": "codex-day5-section2-web.jpg",
+      "upload_sha256": "4e467606a41835712563fe6e1c294253e1fa7837a0b27a3367f9fce2a3fe2218",
+      "explains": "가정 예약폼의 검토 범위를 유지하는 다음 요청",
+      "alt": "검토만 하고 파일을 바꾸지 않는 원래 요청을 문제 후보·위치·근거 표로 명확하게 고치는 설명용 가정 카드",
+      "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+      "visual_check": "PASS generated result actually viewed; Korean, labels, explanatory match and crop inspected; no fake official UI"
+    },
+    {
+      "role": "section3",
+      "original": "codex-day5-section3.png",
+      "original_sha256": "6a859241ce36e553e09d649e34c9e8902835603ef82a9753f70979eeb625ff99",
+      "upload": "codex-day5-section3-web.jpg",
+      "upload_sha256": "f92905b76e4df83f9a9ab5e3e9b671704555358ad282e7efa22af0f226377b9c",
+      "explains": "제안 생성과 메시지 전송의 비용 조건 구분",
+      "alt": "베타 중 제안 생성은 추가 사용량이 없고 메시지 전송에는 일반 사용량·과금 조건이 적용됨을 보여주는 생성 설명 카드",
+      "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+      "visual_check": "PASS generated result actually viewed; Korean, labels, explanatory match and crop inspected; no fake official UI"
+    },
+    {
+      "role": "workflow",
+      "original": "codex-day5-workflow-v2.gif",
+      "original_sha256": "345df1cf937d83f84897ddca09f283d90246ce87952d4df30c545d2b41b9ec39",
+      "upload": "codex-day5-workflow-v2.gif",
+      "upload_sha256": "345df1cf937d83f84897ddca09f283d90246ce87952d4df30c545d2b41b9ec39",
+      "explains": "제안 수락 또는 직접 작성 후 사람이 검토·전송하는 독자 흐름",
+      "alt": "22초 손그림: 제안 수락과 직접 작성의 두 예시를 따로 따라가고 사람이 목적·범위·받을 결과를 읽고 직접 전송. 마지막5초 전체흐름. 설명용 시간",
+      "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+      "visual_check": "PASS local Chrome actual22-second GIF playback at450px: example1accept/read/send, alternative direct-write branch, final5-second full-flow state and loop boundary observed. PublicTistory playback NOT_VERIFIED."
+    }
+  ],
+  "native_status": "NOT_UPLOADED",
+  "publish_status": "NOT_PUBLISHED",
+  "failures": [
+    {
+      "asset": "codex-day5-infographic-v1-rejected.png",
+      "cause": "Other-request diamond had an unlabeled arrow into Tab stage",
+      "repair": "v2 removes incorrect arrow and labels direct-writing branch",
+      "reuse": "Only selected v2 from manifest"
+    },
+    {
+      "asset": "codex-day5-workflow.gif",
+      "cause": "Both alternative paths animated concurrently, could suggest parallel execution",
+      "repair": "v2 shows example1 and example2 sequentially with explicit captions",
+      "reuse": "Only codex-day5-workflow-v2.gif"
+    }
+  ],
+  "actual_playback": "PASS local Chrome actual22-second GIF playback at450px: example1accept/read/send, alternative direct-write branch, final5-second full-flow state and loop boundary observed. PublicTistory playback NOT_VERIFIED.",
+  "playback_evidence": [
+    "codex-day5-motion-v2-playback-d.png",
+    "codex-day5-motion-v2-playback-alt.png",
+    "codex-day5-motion-v2-playback-hold.png",
+    "codex-day5-motion-v2-playback-loop.png"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Codex 28일 업데이트 5일차 ⌨️ 다음 요청을 제안해도, 보내는 건 내 선택이에요",
+  "article_sha256": "19ae3c513f45d4dd5b7debe6945e57f9e56f512a9c5d95e618fb1abd061c655a",
+  "visible_characters": 3329,
+  "category": "IT",
+  "tags": [
+    "Codex",
+    "28일업데이트",
+    "5일차",
+    "ComposerPredictions",
+    "AI코딩"
+  ],
+  "topic_review": ".omo/evidence/codex-day5-topic-review.md",
+  "text_review": ".omo/evidence/codex-day5-text-review.md",
+  "topic_origin": "OWNER_SUPPLIED",
+  "freshness": "EXEMPT_BY_OWNER; exact announcement time UNKNOWN; help display Updated10hoursago not converted to release timestamp",
+  "product": {
+    "id": 7580731390,
+    "item_id": 20010985725,
+    "vendor_item_id": 95635610988,
+    "name": "프롬프트 엔지니어링 교과서",
+    "isbn": "9791198240828",
+    "publication_date": "2023-09-05",
+    "pages": 196,
+    "type": "single paper book; ebook and two-volume set excluded",
+    "api_search": "HTTP200/rCode0",
+    "api_deeplink": "HTTP200/rCode0",
+    "affiliate": "https://link.coupang.com/a/hI8X8ATkGG",
+    "reason": "AI가 제안한 요청을 내 목적과 원하는 답변 형식에 맞게 고치는 기초를 배우려는 분께 참고가 되는 책이에요.",
+    "required_purchase": false
+  },
+  "planned_author_comment": "프롬프트 엔지니어링 교과서 — AI가 제안한 요청을 내 목적과 원하는 답변 형식에 맞게 고치는 기초를 배우려는 분께 참고가 되는 책이에요.\nhttps://link.coupang.com/a/hI8X8ATkGG",
+  "publish_status": "NOT_PUBLISHED; daily15 cap remains",
+  "editor_status": "Not opened; existing article2 writer preserved",
+  "source_status": "official whole body captured",
+  "web_status": "NOT_PUBLISHED",
+  "app_status": "UNVERIFIED",
+  "workflow_playback": "PASS local Chrome actual22-second GIF playback at450px: example1accept/read/send, alternative direct-write branch, final5-second full-flow state and loop boundary observed. PublicTistory playback NOT_VERIFIED.",
+  "goal_scope": "additional day5; remaining2 of existing3 kept",
+  "actual_playback": "PASS local Chrome actual22-second GIF playback at450px: example1accept/read/send, alternative direct-write branch, final5-second full-flow state and loop boundary observed. PublicTistory playback NOT_VERIFIED.",
+  "playback_evidence": [
+    "codex-day5-motion-v2-playback-d.png",
+    "codex-day5-motion-v2-playback-alt.png",
+    "codex-day5-motion-v2-playback-hold.png",
+    "codex-day5-motion-v2-playback-loop.png"
+  ],
+  "prepared_at": "2026-10-10 13:40 KST",
+  "source_snapshots": [
+    {
+      "url": "https://help.openai.com/en/articles/20001601-composer-predictions-in-codex",
+      "sha256": "741d51e73e7f7649cb35c6a30a101775dcb52d03c8092dd25fb4e37ae43ad7a9",
+      "local_path": "work/source-codex-day5.txt",
+      "privacy": "public article only"
+    },
+    {
+      "url": "https://www.coupang.com/vp/products/7580731390?itemId=20010985725&vendorItemId=95635610988",
+      "sha256": "739983e3a6f3592eaa27d01c76aad8f416a2290427d9804ca40ad1877e948eb0",
+      "local_path": "work/source-codex-day5-book.txt",
+      "privacy": "main product text only; no account/header data"
+    }
+  ],
+  "selected_assets": "codex-day5-assets.json"
+}

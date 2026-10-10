@@ -1,0 +1,138 @@
+{
+  "message": "현재 대화 이후 선택 가능한 다음 요청을 받아 수정하거나 직접 작성한 뒤 사람이 전송",
+  "source": "codex-day5-article.md",
+  "source_sha256": "19ae3c513f45d4dd5b7debe6945e57f9e56f512a9c5d95e618fb1abd061c655a",
+  "nodes": [
+    {
+      "id": "response",
+      "label": "Codex 답변",
+      "actor": "Codex",
+      "input": "현재 요청",
+      "output": "답변",
+      "section": 1
+    },
+    {
+      "id": "prediction",
+      "label": "제안이 나타날 수 있음",
+      "actor": "Codex",
+      "input": "현재 대화",
+      "output": "다음 요청 초안 또는 제안 없음",
+      "section": 1
+    },
+    {
+      "id": "accept",
+      "label": "Tab 수락",
+      "actor": "사용자",
+      "input": "선택한 제안",
+      "output": "입력창에 담긴 초안",
+      "section": 1
+    },
+    {
+      "id": "write",
+      "label": "직접 작성·수정",
+      "actor": "사용자",
+      "input": "다른 요청이나 제안 없음",
+      "output": "직접 쓴 초안",
+      "section": 1
+    },
+    {
+      "id": "review",
+      "label": "목적·범위·받을 결과 대조",
+      "actor": "사용자",
+      "input": "초안과 원래 목적",
+      "output": "전송할 메시지",
+      "section": 2
+    },
+    {
+      "id": "send",
+      "label": "직접 전송",
+      "actor": "사용자",
+      "input": "검토한 메시지",
+      "output": "일반 사용량·과금 조건이 적용되는 요청",
+      "section": 3
+    }
+  ],
+  "edges": [
+    {
+      "from": "response",
+      "to": "prediction",
+      "type": "conditional",
+      "condition": "제안이 생성될 수 있음; 매 응답 뒤 항상 아님"
+    },
+    {
+      "from": "prediction",
+      "to": "accept",
+      "type": "branch",
+      "condition": "제안을 쓰려면"
+    },
+    {
+      "from": "prediction",
+      "to": "write",
+      "type": "branch",
+      "condition": "다른 요청 또는 제안 없음"
+    },
+    {
+      "from": "accept",
+      "to": "review",
+      "type": "sequence",
+      "condition": "초안은 아직 전송되지 않음"
+    },
+    {
+      "from": "write",
+      "to": "review",
+      "type": "sequence",
+      "condition": "직접 쓴 초안 검토"
+    },
+    {
+      "from": "review",
+      "to": "send",
+      "type": "conditional",
+      "condition": "사람이 준비됐다고 판단하고 직접 전송"
+    }
+  ],
+  "start": "response",
+  "ends": [
+    "send"
+  ],
+  "omissions": [
+    "앱 업데이트와 요금제/모델 설정은 별도 이용 조건으로 표시; 자동 처리 단계 추가 없음",
+    "전송 후 답변 내용이나 성능을 보장하지 않음"
+  ],
+  "timeline": [
+    {
+      "seconds": "0–6",
+      "meaning": "답변과 선택적 제안"
+    },
+    {
+      "seconds": "6–12",
+      "meaning": "예시1:Tab수락→검토→사람전송"
+    },
+    {
+      "seconds": "12–17",
+      "meaning": "예시2:직접쓰기→검토→사람전송"
+    },
+    {
+      "seconds": "17–22",
+      "meaning": "전체 흐름 정지읽기; 설명용 시간"
+    }
+  ],
+  "delivery": {
+    "format": "GIF",
+    "width": 900,
+    "height": 1180,
+    "frames": 220,
+    "duration_seconds": 22,
+    "final_hold_seconds": 5,
+    "renderer": "existing native Swift/AppKit/ImageIO path",
+    "file": "codex-day5-workflow-v2.gif"
+  },
+  "selected_sha256": "345df1cf937d83f84897ddca09f283d90246ce87952d4df30c545d2b41b9ec39",
+  "actual_playback": "PASS local Chrome actual22-second GIF playback at450px: example1accept/read/send, alternative direct-write branch, final5-second full-flow state and loop boundary observed. PublicTistory playback NOT_VERIFIED.",
+  "playback_evidence": [
+    "codex-day5-motion-v2-playback-d.png",
+    "codex-day5-motion-v2-playback-alt.png",
+    "codex-day5-motion-v2-playback-hold.png",
+    "codex-day5-motion-v2-playback-loop.png"
+  ],
+  "prepared_at": "2026-10-10 13:40 KST"
+}

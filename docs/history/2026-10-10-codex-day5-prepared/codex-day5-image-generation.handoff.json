@@ -1,0 +1,42 @@
+{
+  "kind": "image_generation_handoff",
+  "session_id": "a39ace7b-b772-4856-b095-2dbcb1637510",
+  "tool_kinds": [
+    "image_generation"
+  ],
+  "generated_files": [
+    {
+      "filename": "codex-day5-cover.png",
+      "sha256": "38b0daa153693c1ab30512b3285e4ecbed5942c62c59bf2a2504907019cb98bf",
+      "tool": "image_generation",
+      "generated_source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-cb270a09-e3cf-420f-889c-e6ee95653318.png"
+    },
+    {
+      "filename": "codex-day5-infographic-v2.png",
+      "sha256": "1a802c02e7094c60c29755c7ef961374532476b71c8a89c9efd659f8008aac8c",
+      "tool": "image_generation",
+      "generated_source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-fdf4cbf6-db27-430f-b755-683247be7171.png"
+    },
+    {
+      "filename": "codex-day5-section1.png",
+      "sha256": "13c01dbf72b6becae9bbc35978ac6f3d499defb0681024b793246e034d4b5404",
+      "tool": "image_generation",
+      "generated_source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-2b815114-b5f9-452e-8ab3-b2afed7d1e65.png"
+    },
+    {
+      "filename": "codex-day5-section2.png",
+      "sha256": "d9a2414fbffd5d62cc002d4a03112f615016875cf39bb039df5277819c3b6195",
+      "tool": "image_generation",
+      "generated_source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-a2c322b6-c050-4875-8eba-30c18be477a0.png"
+    },
+    {
+      "filename": "codex-day5-section3.png",
+      "sha256": "6a859241ce36e553e09d649e34c9e8902835603ef82a9753f70979eeb625ff99",
+      "tool": "image_generation",
+      "generated_source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-d4be9baa-89e1-4730-ac94-e6bd8659fced.png"
+    }
+  ],
+  "generated_count": 5,
+  "selected_count": 5,
+  "post_generation_copy": true
+}
