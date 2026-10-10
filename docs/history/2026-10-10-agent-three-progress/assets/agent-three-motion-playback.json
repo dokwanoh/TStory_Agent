@@ -1,0 +1,37 @@
+{
+  "observedAt": "2026-10-10 13:12 KST",
+  "surface": "Actual publisher Chrome tab displaying two GIFs on local loopback preview, not Tistory public article",
+  "media": [
+    {
+      "article": 2,
+      "sha256": "47b46b2bb83abd61f5cb6ae41d33b64971c66307dd1dc8cf63c5cd570c851217",
+      "size": [
+        900,
+        1180
+      ],
+      "duration_seconds": 20,
+      "display_width_px": 450
+    },
+    {
+      "article": 3,
+      "sha256": "ee64c63fbca37c60d3be434338385fd0861c298537969382a54bab99f92ff507",
+      "size": [
+        900,
+        1180
+      ],
+      "duration_seconds": 20,
+      "display_width_px": 450
+    }
+  ],
+  "observed": "Moving marks and current-node emphasis differ across captures; approval branch then alternative branch/return route and full-flow highlighted reading state observed over two loops. Labels and connecting lines fit at450px.",
+  "captures": [
+    "agent-three-motion-playback-a.png",
+    "agent-three-motion-playback-b.png",
+    "agent-three-motion-playback-c.png",
+    "agent-three-motion-playback-d.png",
+    "agent-three-motion-playback-e.png"
+  ],
+  "public_playback": "UNVERIFIED until actual publication",
+  "cleanup": "Preview tab closed; temporary loopback server stopped; native writer retained",
+  "publication_state": "Daily15 limit from13:02 not bypassed or resubmitted; current same date manager list15 entries"
+}

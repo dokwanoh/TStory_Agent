@@ -60,14 +60,21 @@
       "upload": "agent-three-2-workflow.gif",
       "upload_sha256": "47b46b2bb83abd61f5cb6ae41d33b64971c66307dd1dc8cf63c5cd570c851217",
       "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
-      "visual_check": "Static frames inspected; actual playback pending"
+      "visual_check": "PASS local rendered animation at 450px displayed width; Korean and branches fit. Public Tistory playback not verified."
     }
   ],
   "workflow": {
     "frames": 200,
     "duration_seconds": 20,
     "final_hold_seconds": 5,
-    "actual_playback": "UNVERIFIED; must play once before completion"
+    "actual_playback": "PASS local browser preview 2026-10-10 13:12 KST; two loops observed with moving branch marks, return path and full-flow reading state; public Tistory playback pending",
+    "evidence": [
+      "agent-three-motion-playback-a.png",
+      "agent-three-motion-playback-b.png",
+      "agent-three-motion-playback-c.png",
+      "agent-three-motion-playback-d.png",
+      "agent-three-motion-playback-e.png"
+    ]
   },
   "native_status": "6 media uploaded and linked; publication rejected by daily cap",
   "publish_status": "NOT_PUBLISHED",
