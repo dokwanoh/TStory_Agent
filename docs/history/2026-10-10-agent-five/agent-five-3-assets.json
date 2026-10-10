@@ -1,0 +1,45 @@
+{
+  "native_uploads": [
+    {
+      "role": "cover",
+      "file": "agent-five-3-cover-web.jpg",
+      "link": "https://link.coupang.com/a/hIS3Ael4xM",
+      "sha256": "132935d8adaf6645ce26b087e379dd9fb9483a55393c98532ccae25d4e7faca4"
+    },
+    {
+      "role": "infographic",
+      "file": "agent-five-3-infographic-web.jpg",
+      "link": "https://link.coupang.com/a/hIS3Ael4xM",
+      "sha256": "9c2d22e88d89522902efa007030c9644d5ba4848e6e8dca55d2d7e510ba35bf3"
+    },
+    {
+      "role": "section1",
+      "file": "agent-five-3-section1-web.jpg",
+      "link": "https://link.coupang.com/a/hIS3Ael4xM",
+      "sha256": "61cb335ed51c1e19d03a8242f42e49ee0a814bde782370b5aed1277caa2a0191"
+    },
+    {
+      "role": "section2",
+      "file": "agent-five-3-section2-web.jpg",
+      "link": "https://link.coupang.com/a/hIS3Ael4xM",
+      "sha256": "533f0d2702ecbc66fa573a729bba16e443394931b7ca759aeaaf395efd5c8dae"
+    },
+    {
+      "role": "section3",
+      "file": "agent-five-3-section3-web.jpg",
+      "link": "https://link.coupang.com/a/hIS3Ael4xM",
+      "sha256": "18fae5fc2290fe7a19cc5e8c7b5cf635f17f561c63a78191306ef0a0029bae4c"
+    },
+    {
+      "role": "workflow",
+      "file": "agent-five-3-workflow.gif",
+      "link": "https://link.coupang.com/a/hIS3Ael4xM",
+      "sha256": "75c75fcf5e0620a7088bff8cbbe1b11e6447dca888729cf47b16fd4df3c9596d"
+    }
+  ],
+  "visual_review": {
+    "cover": "PC 실행 권한·모델 선택, 큰 한글 표지",
+    "infographic": "이용 계정·실행 권한·모델의 세 판단과 작은 수정 검토",
+    "photos": "작업 폴더 경계·독서기록 검색 가정·변경 결과 비교, 설명용 가상 화면"
+  }
+}

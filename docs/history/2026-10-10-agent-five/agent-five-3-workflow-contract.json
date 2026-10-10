@@ -1,0 +1,74 @@
+{
+  "message": "가정 독서 기록 프로그램의 제목 검색을 작은 범위로 맡기고 검토",
+  "source": "agent-five-3-article.md",
+  "nodes": [
+    {
+      "id": "request",
+      "actor": "독자",
+      "input": "기존 독서 기록",
+      "output": "변경·보존·반환 결과 조건"
+    },
+    {
+      "id": "environment",
+      "actor": "독자",
+      "input": "요청과 기존 환경",
+      "output": "접근 범위·계정·모델 확인"
+    },
+    {
+      "id": "edit",
+      "actor": "Copilot",
+      "input": "조건과 지원 환경",
+      "output": "수정안·변경 목록"
+    },
+    {
+      "id": "review",
+      "actor": "독자",
+      "input": "수정안",
+      "output": "검색·원본·변경 비교"
+    }
+  ],
+  "edges": [
+    {
+      "from": "request",
+      "to": "environment",
+      "type": "sequence"
+    },
+    {
+      "from": "environment",
+      "to": "edit",
+      "type": "sequence",
+      "condition": "지원 환경과 허용 범위 확인"
+    },
+    {
+      "from": "edit",
+      "to": "review",
+      "type": "sequence"
+    },
+    {
+      "from": "review",
+      "to": "request",
+      "type": "feedback",
+      "condition": "결과가 조건과 다름"
+    }
+  ],
+  "start": "request",
+  "ends": [
+    "독자가 결과 사용 판단",
+    "요청 보완"
+  ],
+  "omissions": "앱·CLI 개별 설정 절차는 본문 버튼에 분리. 새 모델 설치나 자동 배포 단계는 없음.",
+  "timeline": {
+    "duration_seconds": 18,
+    "final_hold_seconds": 4,
+    "fps": 10,
+    "frames": 180,
+    "explanation_not_actual_speed": true
+  },
+  "delivery": {
+    "format": "gif",
+    "width": 900,
+    "height": 1000,
+    "renderer": "기존 Swift AppKit/ImageIO 경로",
+    "playback": "네이티브 작성기에서 900×1000 실제 GIF의 단계 강조→요청 보완 강조→강조 없는 마지막 읽기 구간→처음 단계 복귀를 관찰. 브라우저 file URL 차단은 우회하지 않음. 공개 게시물 전달 여부는 게시 후 별도 확인."
+  }
+}
