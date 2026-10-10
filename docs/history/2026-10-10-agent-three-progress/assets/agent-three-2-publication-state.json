@@ -24,6 +24,7 @@
   },
   "next_action": "After the cap changes, first reconcile existing manager entries, resume preserved writer if available; do not resend while capped or reopen to bypass cap. If writer lost, rebuild once from preserved text/assets using native tools.",
   "success_route_tag": false,
-  "revalidatedAt": "2026-10-10 13:13 KST",
-  "consecutive_goal_turns_with_daily_cap": 2
+  "revalidatedAt": "2026-10-10 13:15 KST",
+  "consecutive_goal_turns_with_daily_cap": 3,
+  "goal_status": "blocked"
 }

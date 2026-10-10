@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-10 13:15 KST",
+  "goal_createdAt": 1791602938,
+  "goal_status": "blocked",
+  "completed_publications": 1,
+  "required_publications": 3,
+  "published_url": "https://nedamma.tistory.com/258",
+  "blocking_condition": "Tistory daily maximum15 new public posts; actual alert from13:02, same date and15 entries still present at13:15",
+  "consecutive_goal_turns_with_same_blocker": 3,
+  "current_authoritative_evidence": {
+    "manager_count": 246,
+    "latest_post": 258,
+    "today_rows": 15,
+    "second_title_present": false,
+    "owned_writer": "959320658 retained and handoff marked"
+  },
+  "previous_turn_classification": "progress: actual playback of remaining two GIFs observed and recorded; current publication still blocked",
+  "remaining": {
+    "article2": "Native editor complete, one public submit rejected by daily cap; local playback checked; no postID/comment/home public proof",
+    "article3": "Exact reviewed text and selected images/GIF preserved; local playback checked; no editor/upload/publication"
+  },
+  "blocked_audit": "Same condition persisted original turn plus two automatic continuations; all independent preparation and remaining local playback done; next required action is publication, which needs external cap change. No resubmit or fresh-editor bypass.",
+  "resume": "When cap changes, inspect existing manager entries first, then resume owned writer; if lost recreate once from selected manifest and native controls. Preserve three-post scope.",
+  "completion_claim": false
+}

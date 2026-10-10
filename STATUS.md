@@ -402,7 +402,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| agent-three-20261010 | IN_PROGRESS | Three NEW Coding Agent posts:1of3 public258;second native writer preserved after actual daily15 cap;third assets ready;remaining public checks pending | `docs/agent_three_20261010_publication.md` |
+| agent-three-20261010 | BLOCKED | Three NEW Coding Agent posts:1of3 public258;actual daily15 cap persists3goal turns;remaining text media playback prepared;writer preserved;resume after cap change | `docs/agent_three_20261010_publication.md` |
 | agent-next-five-20261010 | DONE | Five additional Coding Agent articles253-257 public media comments home verified;successful native route recorded;app unverified | `docs/agent_next_five_20261010_publication.md` |
 | agent-five-20261010 | DONE | Coding Agent major-news goal5of5 complete;248-252 public media comments home verified;original GIF playback observed;app unverified | `docs/agent_five_20261010_publication.md` |
 | weather-two-20261010 | DONE | Posts246/247 public;two distinct weather-app IT explainers;6linked media and3banners each;author reason comment and web home verified;app unverified | `docs/weather_two_20261010_publication.md` |
