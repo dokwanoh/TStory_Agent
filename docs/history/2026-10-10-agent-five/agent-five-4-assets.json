@@ -1,0 +1,50 @@
+{
+  "native_uploads": [
+    {
+      "role": "cover",
+      "file": "agent-five-4-cover-web.jpg",
+      "link": "https://link.coupang.com/a/hIUm0FU76i",
+      "bytes": 184170,
+      "sha256": "d3f370591f9df497e75fca5d21f4f3b9b67919ef27b0f4d47a2fe48f59494502"
+    },
+    {
+      "role": "infographic",
+      "file": "agent-five-4-infographic-web.jpg",
+      "link": "https://link.coupang.com/a/hIUm0FU76i",
+      "bytes": 376446,
+      "sha256": "944f54c50155b8c0aa7bdebd7a6739fea7f7e647a7e70cfd767282ff5d82a641"
+    },
+    {
+      "role": "section1",
+      "file": "agent-five-4-section1-web.jpg",
+      "link": "https://link.coupang.com/a/hIUm0FU76i",
+      "bytes": 254719,
+      "sha256": "4fedf241d567c77e2fd66ab0dc0c735bbd415543486d71a87102b891c0fad5a5"
+    },
+    {
+      "role": "section2",
+      "file": "agent-five-4-section2-web.jpg",
+      "link": "https://link.coupang.com/a/hIUm0FU76i",
+      "bytes": 282867,
+      "sha256": "0992fec2263df5bff177bcdb152d35dc7b1d2ecaaeb8dca4b245e8e2cd9954bc"
+    },
+    {
+      "role": "section3",
+      "file": "agent-five-4-section3-web.jpg",
+      "link": "https://link.coupang.com/a/hIUm0FU76i",
+      "bytes": 175930,
+      "sha256": "0f97a893e621fc02cd619e27d3de7feeb369c655d6be7bfbabab057fad6dce40"
+    },
+    {
+      "role": "workflow",
+      "file": "agent-five-4-workflow.gif",
+      "link": "https://link.coupang.com/a/hIUm0FU76i",
+      "bytes": 109173,
+      "sha256": "8c6e583215c238656793dcee9c5629e31ecd55f0d18d06741fb0785e79b24864"
+    }
+  ],
+  "review": "5 new subject-specific illustrations inspected; readable Korean and arrows; no official UI",
+  "visual_review": "All five newly generated assets inspected: correct Korean cover/infographic, readable arrows, no clipped text; three distinct explanatory photographs; illustrative not official screenshots.",
+  "banner_link": "https://link.coupang.com/a/hIU4RGWTQa",
+  "clipboard_recovery": "Partners copy returned stale clipboard; discarded it and saved the completed visible generic banner code. Native signed codes not retained in final files."
+}

@@ -1,0 +1,17 @@
+{
+  "subject": "公開 설치안내A와변경기록B의 가정 비교",
+  "input": "공개원문목록·비교기준·실패표시·자료범위",
+  "nodes": [
+    "내가요청",
+    "A분석/B분석 병렬",
+    "다음검토자가원문A/B전건대조",
+    "내가검토목록/실제결과로판단"
+  ],
+  "feedback": "누락이면요청보완",
+  "frames": 180,
+  "fps": 10,
+  "seconds": 18,
+  "final_hold_seconds": 4,
+  "playback": "OBSERVED_NATIVE_EDITOR_AND_PUBLIC_252",
+  "note": "API베타;속도정확도보장없음;같은파일공간;내부집필절차아님"
+}

@@ -402,7 +402,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| agent-five-20261010 | IN_PROGRESS | Coding Agent major-news goal3of5 complete;248 249 250 public body media comments home verified;250 saved10:01;249 platform review finished original GIF playback verified;2posts remain;app unverified | `docs/agent_five_20261010_publication.md` |
+| agent-five-20261010 | DONE | Coding Agent major-news goal5of5 complete;248-252 public media comments home verified;original GIF playback observed;app unverified | `docs/agent_five_20261010_publication.md` |
 | weather-two-20261010 | DONE | Posts246/247 public;two distinct weather-app IT explainers;6linked media and3banners each;author reason comment and web home verified;app unverified | `docs/weather_two_20261010_publication.md` |
 | haiku-20261008 | DONE | Post221 public08:23 KST;new beginner article,cover+4photos+infographic below summary+18-second workflow,7native IMAGE links,3banners,plain disclosure,4buttons,home cover match,1veryshort author comment;one public save;success path recorded | `docs/167_haiku_20261008_publication.md` |
 | hybrid-windows-20261008 | DONE | Post220 public07:50 KST;3011-character beginner prose,cover+4fresh photos+handdrawn infographic+16-second continuous GIF,7native IMAGE links,3banners,plain disclosure,summary,4buttons,home cover match,1author comment;one public save;success path recorded | `docs/166_hybrid_windows_20261008_publication.md` |

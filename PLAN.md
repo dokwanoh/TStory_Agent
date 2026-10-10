@@ -177,7 +177,6 @@ Current queue is derived from contracts/current-work.tsv. Phase definitions belo
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
-| agent-five-20261010 | IN_PROGRESS | Coding Agent major-news goal3of5 complete;248 249 250 public body media comments home verified;250 saved10:01;249 platform review finished original GIF playback verified;2posts remain;app unverified | `docs/agent_five_20261010_publication.md` |
 | stock-pnl-20261006 | IN_PROGRESS | Post208 same-ID media correction is public; audit record created. Existing author comment edit remains blocked by observed Tistory JavaScript error; demand receipt unavailable | `docs/155_stock_pnl_20261006_publication.md` |
 | model-pricing-luna-20260927 | BLOCKED | Luna pricing article held after four review turns; current images rejected, no Tistory write; explicit continuation decision required | `docs/69_luna_pricing_attempt.md` |
 <!-- work:end -->

@@ -1,0 +1,47 @@
+{
+  "native_uploads": [
+    {
+      "role": "cover",
+      "file": "agent-five-5-cover-web.jpg",
+      "link": "https://link.coupang.com/a/hIVNcFPKhw",
+      "bytes": 130916,
+      "sha256": "8af36cddcb2fe04eeb2e6178400a67338d508ae962a2f67095b4d14cf9c6add8"
+    },
+    {
+      "role": "infographic",
+      "file": "agent-five-5-infographic-web.jpg",
+      "link": "https://link.coupang.com/a/hIVNcFPKhw",
+      "bytes": 241977,
+      "sha256": "535c66a0d87cb42907fc7ef5f9db6c142396cebc145aac782c5305d484ccc65c"
+    },
+    {
+      "role": "section1",
+      "file": "agent-five-5-section1-web.jpg",
+      "link": "https://link.coupang.com/a/hIVNcFPKhw",
+      "bytes": 265194,
+      "sha256": "5899481f949bff04dee9fc0c1f11449cd2d2f8c6ea467c5d78171d86bc03ed09"
+    },
+    {
+      "role": "section2",
+      "file": "agent-five-5-section2-web.jpg",
+      "link": "https://link.coupang.com/a/hIVNcFPKhw",
+      "bytes": 158540,
+      "sha256": "a7eb1f0a2a46c5aa951995f96eab2ffe773beb6102df76bf09976221bfd02873"
+    },
+    {
+      "role": "section3",
+      "file": "agent-five-5-section3-web.jpg",
+      "link": "https://link.coupang.com/a/hIVNcFPKhw",
+      "bytes": 183289,
+      "sha256": "c9e1225b6143165643b9c74789d7d524d5de9e335de9dea2f135c19f2f482568"
+    },
+    {
+      "role": "workflow",
+      "file": "agent-five-5-workflow.gif",
+      "link": "https://link.coupang.com/a/hIVNcFPKhw",
+      "bytes": 120322,
+      "sha256": "8a2557c1952b5ec1a6187331e6d3ecc6659657ff4ce0a1ad8f22d1c27baeb926"
+    }
+  ],
+  "review": "5 new images inspected; section2 botanical content removed with imagegen edit and technical document comparison inspected; Korean cover/info, arrows/margins readable; photographs not service screens"
+}
