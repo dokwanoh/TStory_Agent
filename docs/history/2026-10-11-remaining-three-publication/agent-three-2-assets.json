@@ -1,0 +1,83 @@
+{
+  "article": "agent-three-2-article.md",
+  "article_sha256": "a1b3e920c2af2f8a0b11466208bcd5b4a5870606cf05cebd18e9927d3835e952",
+  "media": [
+    {
+      "role": "cover",
+      "explains": "배포 후 관측과 세 가지 판정",
+      "original": "agent-three-2-cover.png",
+      "sha256": "86b2e543452deba76edd1574cc54444ec24fd9aa58870f870276281ad6d8dac6",
+      "upload": "agent-three-2-cover-web.jpg",
+      "upload_sha256": "e37f1fc2097117d5a06d376e6e44bbaefec4bff1c8998aeeddc4adbadfafe28d",
+      "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "infographic",
+      "explains": "계획부터 환경별 판정과 사람의 조치까지",
+      "original": "agent-three-2-infographic-v2.png",
+      "sha256": "6eb4c3440b0bf605e745295d3eae4c2a306df0a8dbb764fe6b98a7414c714a29",
+      "upload": "agent-three-2-infographic-v2-web.jpg",
+      "upload_sha256": "6b8c81f84088445ab080c9509f5327019b3174cc6a475a04945c3a87d17fff3f",
+      "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "section1",
+      "explains": "주소가 열리는 것과 신청 기능 정상은 다른 확인",
+      "original": "agent-three-2-section1.png",
+      "sha256": "f64ce0b879ae8ea7afc378b10486b711dd3f5f75156e8670b0a4d186e93800a2",
+      "upload": "agent-three-2-section1-web.jpg",
+      "upload_sha256": "3aef0a0cd3f174096cb65d0036df2f73fc66d38cb5e029907c8a7b126b6407b9",
+      "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "section2",
+      "explains": "정상·이상·판단 불가를 환경별로 구분",
+      "original": "agent-three-2-section2.png",
+      "sha256": "ce4aeda27b8248ee1f493f09dfee694450eb4908585d862e6945ef1be10844e7",
+      "upload": "agent-three-2-section2-web.jpg",
+      "upload_sha256": "c15e7253f160d613f20ad1a266e44a2e22d1e7bfaa382b12bf83ba39926bc8c1",
+      "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "section3",
+      "explains": "되돌림 검토안과 사람 결정 및 실제 복구를 구분",
+      "original": "agent-three-2-section3.png",
+      "sha256": "ea372f6a2ddb8981d30d4c96a78df8b2d9732de96f1f7da8a3e4d0cf6ffd79fb",
+      "upload": "agent-three-2-section3-web.jpg",
+      "upload_sha256": "9573a741520fed393b3b991f04c7f0e14bc036540fb69b83325aa10752690953",
+      "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "workflow",
+      "explains": "관측 결과에 따른 분기와 재관측",
+      "original": "agent-three-2-workflow.gif",
+      "sha256": "47b46b2bb83abd61f5cb6ae41d33b64971c66307dd1dc8cf63c5cd570c851217",
+      "upload": "agent-three-2-workflow.gif",
+      "upload_sha256": "47b46b2bb83abd61f5cb6ae41d33b64971c66307dd1dc8cf63c5cd570c851217",
+      "affiliate": "https://link.coupang.com/a/hI6abbi3Vs",
+      "visual_check": "PASS local rendered animation at 450px displayed width; Korean and branches fit. Public Tistory playback not verified."
+    }
+  ],
+  "workflow": {
+    "frames": 200,
+    "duration_seconds": 20,
+    "final_hold_seconds": 5,
+    "actual_playback": "PASS local browser preview 2026-10-10 13:12 KST; two loops observed with moving branch marks, return path and full-flow reading state; public Tistory playback pending",
+    "evidence": [
+      "agent-three-motion-playback-a.png",
+      "agent-three-motion-playback-b.png",
+      "agent-three-motion-playback-c.png",
+      "agent-three-motion-playback-d.png",
+      "agent-three-motion-playback-e.png"
+    ],
+    "public_playback": "VERIFIED_ACTUAL_PLAYBACK"
+  },
+  "native_status": "6 media uploaded with native ALT/LINK;exact native codes preserved in memory during lateHTML",
+  "publish_status": "PUBLIC259;VERIFIED",
+  "freshness": "Outside 24-hour preference; exact announcement time unavailable; preserved actual source date"
+}

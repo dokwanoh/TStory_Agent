@@ -1,0 +1,125 @@
+{
+  "checked_at": "2026-10-11 00:20 KST",
+  "goal_original_scope": {
+    "public_posts": [
+      258,
+      259,
+      261
+    ],
+    "publications": 3,
+    "fully_verified": 2,
+    "required": 3
+  },
+  "additional_day5": 260,
+  "today_new_publications": 3,
+  "cap": "CLEARED_AFTER_DATE_CHANGE;actual successful publication proves available capacity",
+  "login": "Saved Kakao account restored via normal visible login;no credentials copied",
+  "posts": [
+    {
+      "id": 259,
+      "key": "agent-three-2",
+      "title": "AI가 만든 앱, 배포하면 끝일까요? 🚦 Cursor Rollouts의 세 가지 판정 읽기",
+      "time": "2026-10-11 00:03 KST",
+      "verified": true,
+      "tag": "성공 경로",
+      "seconds": 20,
+      "product_reason": "실제 서비스의 오류·지연·관측을 배우는 선택적 SRE 도서",
+      "url": "https://nedamma.tistory.com/259",
+      "category": "IT",
+      "home_topic": "IT 인터넷",
+      "native_media": 6,
+      "affiliate_links": 6,
+      "banners": 3,
+      "heading_px": 23,
+      "body_px": 16,
+      "disclosure_px": 14,
+      "summary_background": "rgb(246,251,253)",
+      "author_comment_count": 1,
+      "home_introduction": "VERIFIED",
+      "home_thumbnail": "VERIFIED",
+      "public_motion": "VERIFIED_ACTUAL_PLAYBACK",
+      "app": "UNVERIFIED",
+      "reuploads": 0,
+      "article_sha256": "a1b3e920c2af2f8a0b11466208bcd5b4a5870606cf05cebd18e9927d3835e952"
+    },
+    {
+      "id": 260,
+      "key": "codex-day5",
+      "title": "Codex 28일 업데이트 5일차 ⌨️ 다음 요청을 제안해도, 보내는 건 내 선택이에요",
+      "time": "2026-10-11 00:08 KST",
+      "verified": true,
+      "tag": "성공 경로",
+      "seconds": 22,
+      "product_reason": "제안된 요청을 목적·범위·답변 형식에 맞게 고치는 선택적 프롬프트 기초 도서",
+      "url": "https://nedamma.tistory.com/260",
+      "category": "IT",
+      "home_topic": "IT 인터넷",
+      "native_media": 6,
+      "affiliate_links": 6,
+      "banners": 3,
+      "heading_px": 23,
+      "body_px": 16,
+      "disclosure_px": 14,
+      "summary_background": "rgb(246,251,253)",
+      "author_comment_count": 1,
+      "home_introduction": "VERIFIED",
+      "home_thumbnail": "VERIFIED",
+      "public_motion": "VERIFIED_ACTUAL_PLAYBACK",
+      "app": "UNVERIFIED",
+      "reuploads": 0,
+      "article_sha256": "19ae3c513f45d4dd5b7debe6945e57f9e56f512a9c5d95e618fb1abd061c655a"
+    },
+    {
+      "id": 261,
+      "key": "agent-three-3",
+      "title": "AI에게 같은 일을 또 맡긴다면? 📝 Kiro Workflows, 단계와 멈출 조건을 저장해요",
+      "time": "2026-10-11 00:10 KST",
+      "verified": false,
+      "tag": null,
+      "seconds": 20,
+      "product_reason": "요구사항과 검토 기준을 분리해 정하는 선택적 소프트웨어공학 도서",
+      "url": "https://nedamma.tistory.com/261",
+      "category": "IT",
+      "home_topic": "IT 인터넷",
+      "native_media": 6,
+      "affiliate_links": 6,
+      "banners": 3,
+      "heading_px": 23,
+      "body_px": 16,
+      "disclosure_px": 14,
+      "summary_background": "rgb(246,251,253)",
+      "author_comment_count": 1,
+      "home_introduction": "VERIFIED",
+      "home_thumbnail": "PENDING_PLATFORM_REVIEW",
+      "public_motion": "PENDING_PLATFORM_REVIEW",
+      "app": "UNVERIFIED",
+      "reuploads": 0,
+      "article_sha256": "168d21485a799583744fb613d08a4dece3c08fb949f597ac190996e2bb76573d"
+    }
+  ],
+  "editor_route": "preserved Cursor native writer658 resumed;fresh one native writer737 for day5,745 forKiro;normal individual filechooser→immediate nativeALT/LINK→tags/IT/explicit cover→lateHTML with exact native image codes only in memory→single final check→single public save→public/comment/home",
+  "failures": [
+    {
+      "issue": "Tistory daily15 cap10/10",
+      "reuse_condition": "Do not resubmit while unchanged;reconcile and resume after actualdate change"
+    },
+    {
+      "issue": "HTML mode button stale selector",
+      "repair": "Select currently visible HTML 더보기 button;mode-confirm before waiting trigger;no new editor needed"
+    },
+    {
+      "issue": "last image is not day5workflow",
+      "repair": "Bind public workflow by selected manifest ALT;wrong-last-image evidence retained;no public edits"
+    },
+    {
+      "issue": "Kiro images platform illegal-content review",
+      "repair": "No reupload/reencoding/URL change;normal page refresh only;verification pending"
+    }
+  ],
+  "goal_complete": false,
+  "elapsed_minutes_this_resume": 18,
+  "remaining": "post261 original images and GIF under explicit platform illegal-content review;normal reload still pending at00:20",
+  "goal_tool_status": "stored blocked from prior daily-cap audit;no new blocked/complete write during this resumed turn",
+  "fresh_blocked_audit_turns": 1,
+  "review_evidence": "agent-three-3-public-review-final.png"
+}
