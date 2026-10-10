@@ -402,6 +402,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| agent-five-20261010 | IN_PROGRESS | Coding Agent major-news goal1of5 complete;post248 public09:17;6native linked media3banners;reason comment and web home verified;4new posts remain;app unverified | `docs/agent_five_20261010_publication.md` |
 | weather-two-20261010 | DONE | Posts246/247 public;two distinct weather-app IT explainers;6linked media and3banners each;author reason comment and web home verified;app unverified | `docs/weather_two_20261010_publication.md` |
 | haiku-20261008 | DONE | Post221 public08:23 KST;new beginner article,cover+4photos+infographic below summary+18-second workflow,7native IMAGE links,3banners,plain disclosure,4buttons,home cover match,1veryshort author comment;one public save;success path recorded | `docs/167_haiku_20261008_publication.md` |
 | hybrid-windows-20261008 | DONE | Post220 public07:50 KST;3011-character beginner prose,cover+4fresh photos+handdrawn infographic+16-second continuous GIF,7native IMAGE links,3banners,plain disclosure,summary,4buttons,home cover match,1author comment;one public save;success path recorded | `docs/166_hybrid_windows_20261008_publication.md` |

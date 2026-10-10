@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cover",
+    "prompt": "Use case: stylized-concept. Asset type: Korean Tistory article cover 1:1. Primary request: Clear Toss-inspired editorial design for Google AI coding subscription transition, NOT a software screenshot. White warm-white canvas, deep forest-teal huge Korean typography, coral-orange accent. Two large rounded 3D document cards with different door/compass icon symbolizing subscription choice, roomy non-busy flat composition. Text verbatim main very large: \"구글 AI 코딩\\n구독이 바뀐다\"; smaller legible subtitle: \"새 가입 · 기존 계약은 다르게\"; bottom short label: \"Code Assist → Antigravity\". All Korean correct and uncropped, large mobile readability. No Google logo, no claim all service stopped, no price or additional words. Distinct from generic laptop/robot thumbnail, emphasize changed subscription path."
+  },
+  {
+    "id": "infographic",
+    "prompt": "Use case: infographic-diagram. Asset type: actual Korean pastel handdrawn sketchnote 4:5. Ivory paper, imperfect black pen outlines, pastel mint/peach/lilac panels, big readable Korean. Explain ONLY Google Code Assist Standard/Enterprise subscription timeline. Text verbatim header \"구글 AI 코딩, 바뀌는 선택\"; two separated panels labeled \"신규 구독\" with \"2026.10.09부터 구매 불가\" and \"기존 구독\" with \"계약 종료일까지 사용 · 지원\". Third panel \"갱신 가능 기한\" two rows \"연간: 2027.01.31까지\" and \"월간: 2027.12.31까지\". Small but clear extra row \"라이선스 추가: 2027.01.31까지\". Bottom decision short three-box arrow flow \"내 계약 확인\" → \"새 이용 조건 비교\" → \"작은 작업으로 판단\". Exact footnote \"갱신 기한 ≠ 최종 사용 종료일\". No arrows suggesting auto migration or automatic cancellation, no additional numbers, no tiny text. Handdrawn timeline/card comparison, spacious and clean."
+  },
+  {
+    "id": "section1",
+    "prompt": "Use case: photorealistic-natural. Korean blog section explanatory image wide 4:3. Wide-angle real-photo quality view of a light-filled small meeting room, empty table centered with two large organized subscription paper folders, subtle labeled cover strips in legible Korean only \"연간\" and \"월간\", each with a different date tab as generic blank colored calendar tabs, not actual official document, no extra numbers/text. A pen and paper checklist at side, naturally visibly different renewal tracking folders, pale morning olive/lime palette and soft natural textures. Primary content to immediately explain distinguishing annual vs monthly subscription contracts; environment visible, not close-up studio isolated objects; no people required, no brands, no logos, no service screenshot, no fabricated government seals."
+  },
+  {
+    "id": "section2",
+    "prompt": "Use case: photorealistic-natural. Wide 4:3 editorial photograph of a practical small software workspace, photographed from doorway at medium-wide distance, one large monitor shows a plain generic dark terminal with abstract unreadable code lines and another large monitor shows a plain light code editor with abstract unreadable code lines. Both screens distinctly represent choosing terminal vs editing workspace; no official service UI, no logos, no brand, no invented legible code or feature claims, no robots. Clean steel-gray blue light with warm rust seating and visible room context. The image explains multiple ways of working with a coding agent, not speed or guaranteed success. Real camera optics, natural screen reflections, avoid generic phone/calendar desk close-up."
+  },
+  {
+    "id": "section3",
+    "prompt": "Use case: photorealistic-natural. Wide 4:3 photograph of a modest bright home study corner seen from medium-wide angle. A laptop screen clearly displays ONLY a simple conceptual study timer at \"25:00\" and three neutral circular controls play,pause,reset; this is a hypothetical visual example not actual Antigravity software. Adjacent upright large paper checklist with simple three icons play,pause,reset in matching order, no text or extra digits. Warm daylight, soft ochre walls, blue fabric chair, visible study environment. Directly illustrate checking requested timer controls against expected behavior, no people, no official logos, no marketing effect claims, no floating holograms. Real photography with a believable simple timer visualization."
+  }
+]

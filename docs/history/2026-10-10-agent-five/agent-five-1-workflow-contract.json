@@ -1,0 +1,92 @@
+{
+  "message": "내 계약 확인→Antigravity 이용 조건 비교→작은 결과물 시험→기능·권한·조건이 맞으면 전환 계획; 요청과 다르면 수정 후 시험으로 되돌림",
+  "source": "agent-five-1-article.md",
+  "nodes": [
+    {
+      "id": "contract",
+      "actor": "독자",
+      "input": "현재 구독·계약",
+      "output": "종류·갱신일·계약 종료일",
+      "quote": "먼저 현재 이용 중인 구독이 무엇인지 확인하고"
+    },
+    {
+      "id": "conditions",
+      "actor": "독자",
+      "input": "기존 계약·새 조건",
+      "output": "기능·권한 비교",
+      "quote": "회사 계정으로 옮기려면 이용 자격과 관리자 설정이 중요해요."
+    },
+    {
+      "id": "trial",
+      "actor": "독자와 요청받은 에이전트",
+      "input": "가정: 25분 타이머 요청",
+      "output": "요청 대비 버튼 동작",
+      "quote": "일시정지했을 때 시간이 멈추는지… 초기화하면 25분으로 돌아오는지를 살펴봅니다."
+    },
+    {
+      "id": "revise",
+      "actor": "독자",
+      "input": "요청과 결과의 차이",
+      "output": "차이를 설명한 수정 요청",
+      "quote": "그 차이를 다시 설명해 수정해달라고 할 수 있어요."
+    },
+    {
+      "id": "decide",
+      "actor": "독자",
+      "input": "확인한 기능·권한·조건",
+      "output": "전환 여부 판단",
+      "quote": "기존 이용자는 계약과 갱신 일정 안에서 전환 계획을 세우고 작은 작업부터 비교해보면 됩니다."
+    }
+  ],
+  "edges": [
+    {
+      "from": "contract",
+      "to": "conditions",
+      "type": "sequence"
+    },
+    {
+      "from": "conditions",
+      "to": "trial",
+      "type": "sequence"
+    },
+    {
+      "from": "trial",
+      "to": "revise",
+      "type": "branch",
+      "condition": "요청과 다름"
+    },
+    {
+      "from": "revise",
+      "to": "trial",
+      "type": "feedback",
+      "condition": "수정 후 다시 시험"
+    },
+    {
+      "from": "trial",
+      "to": "decide",
+      "type": "branch",
+      "condition": "기능·권한·이용 조건 맞음"
+    }
+  ],
+  "start": "contract",
+  "ends": [
+    "decide"
+  ],
+  "omissions": [
+    "세부 갱신 날짜는 인포그래픽과 본문에 유지",
+    "조건 미확인 시 전체 작업을 옮기지 않는 결론은 본문에 유지"
+  ],
+  "timeline": "0–2 계약,2–4 조건,4–6 시험,6–10 차이/수정/되돌림,10–14 시험/판단,14–18 전체 흐름 정지",
+  "delivery": {
+    "format": "GIF",
+    "size": [
+      900,
+      1000
+    ],
+    "renderer": "AppKit/ImageIO existing verified template",
+    "encodedFrames": 180,
+    "durationMs": 18000,
+    "finalHoldSeconds": 4,
+    "playback": "Actual uploaded GIF opened in Chrome; moving node/path and full-flow final hold observed; one cycle elapsed."
+  }
+}
