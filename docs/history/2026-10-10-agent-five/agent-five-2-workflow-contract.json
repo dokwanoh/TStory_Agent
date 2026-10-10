@@ -1,0 +1,19 @@
+{
+  "input": "가정: 독서 기록에 검색 추가, 원본 보존 요청",
+  "steps": [
+    "reader scopes change and preserve",
+    "dot connects existing Codex thread",
+    "Codex runs in prepared cloud or online local with ChatGPT open",
+    "reader reviews result in Activity"
+  ],
+  "branch": "cloud vs connected online local with app open",
+  "feedback": "different result -> amend request -> dot/Codex follow-up",
+  "duration_seconds": 18,
+  "final_hold_seconds": 4,
+  "frames": 180,
+  "fps": 10,
+  "sources": [
+    "https://learn.chatgpt.com/docs/dots/getting-started",
+    "https://learn.chatgpt.com/docs/dots/controls"
+  ]
+}

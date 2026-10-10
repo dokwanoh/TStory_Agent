@@ -1,0 +1,48 @@
+{
+  "native_uploads": [
+    {
+      "role": "cover",
+      "file": "agent-five-2-cover-web.jpg",
+      "link": "https://link.coupang.com/a/hIRxcCY9OS",
+      "sha256": "8fda28e399e3bde27231e2fb5c1ad84e793f464c481f620e97ee82dd44e77211",
+      "bytes": 145212
+    },
+    {
+      "role": "infographic",
+      "file": "agent-five-2-infographic-web.jpg",
+      "link": "https://link.coupang.com/a/hIRxcCY9OS",
+      "sha256": "1111c2b08f8c011bb968b8b195b0c14632b2681a3d8c85de6548ab475b37a373",
+      "bytes": 317758
+    },
+    {
+      "role": "section1",
+      "file": "agent-five-2-section1-web.jpg",
+      "link": "https://link.coupang.com/a/hIRxcCY9OS",
+      "sha256": "b0e24198b81caa25eb0aa9b74fa265ba1dd100cd298fa4b99e53a8badbc8131d",
+      "bytes": 206609
+    },
+    {
+      "role": "section2",
+      "file": "agent-five-2-section2-web.jpg",
+      "link": "https://link.coupang.com/a/hIRxcCY9OS",
+      "sha256": "3ddd6d259d66d01862a583c0e4e5d597fb01e7fa4d3cc335ebf87f8b96ff72db",
+      "bytes": 188503
+    },
+    {
+      "role": "section3",
+      "file": "agent-five-2-section3-web.jpg",
+      "link": "https://link.coupang.com/a/hIRxcCY9OS",
+      "sha256": "fdc13209fdcb8290ff86d88143c901ebce86b4fb72ed44a275bfe0dd5c59f3a6",
+      "bytes": 171443
+    },
+    {
+      "role": "workflow",
+      "file": "agent-five-2-workflow.gif",
+      "link": "https://link.coupang.com/a/hIRxcCY9OS",
+      "sha256": "5bd55bd2eebff5e4f738d8427561d9ab0a99f9eb1068851b7f364596301c934b",
+      "bytes": 112895
+    }
+  ],
+  "cover_v2": "dot creation wording",
+  "infographic_v2": "generic circles and paper diagrams; no official UI"
+}
