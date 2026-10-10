@@ -1,0 +1,4 @@
+2026-10-10 13:02 KST
+Publisher 티스토리게시봇 browser1 writer959320658
+One public submit returned alert: 하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지입니다.
+Native AX read confirmed actual alert; screenshots unavailable while alert open. No retry/bypass.

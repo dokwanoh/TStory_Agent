@@ -1,0 +1,27 @@
+{
+  "status": "NOT_PUBLISHED",
+  "postId": null,
+  "title": "AI가 만든 앱, 배포하면 끝일까요? 🚦 Cursor Rollouts의 세 가지 판정 읽기",
+  "observedAt": "2026-10-10 13:02 KST",
+  "public_submit_attempts": 1,
+  "error": "하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지입니다.",
+  "evidence": "Native alert accessibility text; alert screenshot unavailable while JS dialog open. Normal preserved writer screenshot is separate.",
+  "manager_reconciliation": "Latest actual post remains 258; total 246; new article absent from latest list after reload",
+  "writer": {
+    "browserId": "1",
+    "providerTabId": "959320658",
+    "profile": "티스토리 게시봇",
+    "state": "Prepared basic editor, publish modal canceled, handoff marked; no new server post ID confirmed"
+  },
+  "checks": {
+    "native_linked_media": 6,
+    "banners": 3,
+    "summary_full_background": true,
+    "category_tags_cover_checked": true,
+    "final_pre_save_check": 1,
+    "public_media_comment_home": "UNVERIFIED; not published",
+    "motion_actual_playback": "UNVERIFIED"
+  },
+  "next_action": "After the cap changes, first reconcile existing manager entries, resume preserved writer if available; do not resend while capped or reopen to bypass cap. If writer lost, rebuild once from preserved text/assets using native tools.",
+  "success_route_tag": false
+}

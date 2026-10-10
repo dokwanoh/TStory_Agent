@@ -1,0 +1,85 @@
+{
+  "article": "agent-three-3-article.md",
+  "article_sha256": "168d21485a799583744fb613d08a4dece3c08fb949f597ac190996e2bb76573d",
+  "media": [
+    {
+      "role": "cover",
+      "explains": "반복 작업의 절차와 멈출 조건을 재사용",
+      "original": "agent-three-3-cover.png",
+      "sha256": "ce01ba4396f84296ee54e5c32ce4fd7219d1b66e04e4704d7571cf78cba9c4ab",
+      "upload": "agent-three-3-cover-web.jpg",
+      "upload_sha256": "f04535daba7de280429be262b592f8fec415d8c13a60e5f97137151de569e70f",
+      "affiliate": "https://link.coupang.com/a/hI6iIY185k",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "infographic",
+      "explains": "요구사항·구현·검토·반복 상한 및 중단 흐름",
+      "original": "agent-three-3-infographic.png",
+      "sha256": "eee67d793f7ca342df26fca1765993462db81860379d4348aeb1c498990e16d2",
+      "upload": "agent-three-3-infographic-web.jpg",
+      "upload_sha256": "c8f8108885013307470e4eb96e6e6820a6d61fc965c37a6c86e7eb798d91426c",
+      "affiliate": "https://link.coupang.com/a/hI6iIY185k",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "section1",
+      "explains": "입력·출력·검토 조건·완료 증거를 함께 저장",
+      "original": "agent-three-3-section1-v2.png",
+      "sha256": "8c22cbe1172b876a6882a2d3c22cc8d74db912c8149a0445fbf7d137b487c430",
+      "upload": "agent-three-3-section1-v2-web.jpg",
+      "upload_sha256": "e6c221a8cdf4fe9cc1d1c9b1a5746af9d6b3a9ceacafe224ba7383ec934caf5f",
+      "affiliate": "https://link.coupang.com/a/hI6iIY185k",
+      "visual_check": "PASS: v2 generated and viewed; removal of unsupported small bullet text; completion card uses original requirements comparison",
+      "source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-b8e0eb63-6281-4951-a28b-fd34542a3aef.png"
+    },
+    {
+      "role": "section2",
+      "explains": "검토 결과에 따른 구현 재시도와 상한 중단",
+      "original": "agent-three-3-section2.png",
+      "sha256": "4d09da10058d1d1ead215b4807ec57808918493b715e83c593d3c99e5b76d533",
+      "upload": "agent-three-3-section2-web.jpg",
+      "upload_sha256": "3759ce29900219d7b01a7671109a9e2016e09ecc4f0e9ecb087500828293baf3",
+      "affiliate": "https://link.coupang.com/a/hI6iIY185k",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "section3",
+      "explains": "활성화 후 IDE 새 채팅과 크레딧 조건",
+      "original": "agent-three-3-section3.png",
+      "sha256": "d781c42580e24a6ca8bf812843926be3058ff32757bd0366d18d192f4daa9ed1",
+      "upload": "agent-three-3-section3-web.jpg",
+      "upload_sha256": "db2bada8e0f4ccf5d4dcec40cfc443b0e953466d52407d75aeeaf8be58680b8f",
+      "affiliate": "https://link.coupang.com/a/hI6iIY185k",
+      "visual_check": "PASS: selected image viewed; Korean/arrows/crop inspected"
+    },
+    {
+      "role": "workflow",
+      "explains": "검토 승인과 수정 반복 및 상한 중단",
+      "original": "agent-three-3-workflow.gif",
+      "sha256": "ee64c63fbca37c60d3be434338385fd0861c298537969382a54bab99f92ff507",
+      "upload": "agent-three-3-workflow.gif",
+      "upload_sha256": "ee64c63fbca37c60d3be434338385fd0861c298537969382a54bab99f92ff507",
+      "affiliate": "https://link.coupang.com/a/hI6iIY185k",
+      "visual_check": "Static frames inspected; actual playback pending"
+    }
+  ],
+  "workflow": {
+    "frames": 200,
+    "duration_seconds": 20,
+    "final_hold_seconds": 5,
+    "actual_playback": "UNVERIFIED; must play once before completion"
+  },
+  "native_status": "Not uploaded; editor not opened",
+  "publish_status": "NOT_PUBLISHED",
+  "freshness": "Outside 24-hour preference; exact announcement time unavailable; preserved actual source date",
+  "media_failures": [
+    {
+      "role": "section1",
+      "rejected": "agent-three-3-section1.png",
+      "cause": "Generated completion evidence card said save/reuse, which does not demonstrate required verification",
+      "repair": "v2 keeps four labels, requires requirements comparison and removes small unsupported bullet lists; original preserved",
+      "reuse": "Use only selected v2 upload from manifest"
+    }
+  ]
+}

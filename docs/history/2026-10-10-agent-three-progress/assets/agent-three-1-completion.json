@@ -1,0 +1,50 @@
+{
+  "postId": 258,
+  "url": "https://nedamma.tistory.com/258",
+  "title": "AI가 만든 코드에 비밀키가 섞였다면? 🔐 GitHub 새 탐지, 삭제만으로 끝나지 않아요",
+  "status": "public",
+  "publishedAt": "2026-10-10 12:49 KST",
+  "startedAt": "2026-10-10 12:28 KST",
+  "elapsedMinutes": 23,
+  "successRoute": "성공 경로",
+  "articleSHA256": "e7767efb94d3582c6ec3bd92929536284ef290e4107ad2e3b61c941c38805588",
+  "observed": {
+    "nativeMedia": 6,
+    "mediaLoaded": 6,
+    "mediaAffiliateLinks": 6,
+    "banners": 3,
+    "summaryBackground": "rgb(246, 251, 253)",
+    "summaryHeaderCells": 2,
+    "paragraphFontPx": 16,
+    "disclosureFontPx": 14,
+    "headingFontPx": 23,
+    "boldBodyItems": 3,
+    "order": "intro, disclosure, top banner, cover, summary, infographic",
+    "authorProductComments": 1,
+    "webHomeSummaryStartsWith": "AI에게 앱을 만들게 한 뒤 GitHub에 올릴 생각이라면",
+    "homeThumbnailLinksToPost": true,
+    "workflowPlayed": "18s observed moving route marks and final whole-flow hold",
+    "app": "UNVERIFIED"
+  },
+  "product": {
+    "productId": 8670467466,
+    "itemId": 25169526759,
+    "vendorItemId": 92143999305,
+    "isbn": "9791163036319",
+    "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+    "reason": "커밋과 원격 전송의 차이를 기초부터 익히려는 독자에게 참고 도서"
+  },
+  "freshness": "2026-10-07 announcement; exact time unavailable; outside 24h preference, not PASS",
+  "failures": [
+    {
+      "step": "generated section3 caption",
+      "cause": "claimed key replacement ensures safety",
+      "repair": "v2 masks illustrative key and changes caption to responsible owner revocation/replacement; original retained"
+    },
+    {
+      "step": "mode switch read",
+      "cause": "immediate CodeMirror read returned zero media while mode transition pending",
+      "repair": "read settled actual CodeMirror once, six codes preserved in memory; no republish/no writer reset"
+    }
+  ]
+}

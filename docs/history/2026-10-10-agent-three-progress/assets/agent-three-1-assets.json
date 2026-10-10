@@ -1,0 +1,55 @@
+{
+  "native_uploads": [
+    {
+      "role": "cover",
+      "source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-bf2864ba-98e9-469d-86d8-2880f2870071.png",
+      "original": "agent-three-1-cover.png",
+      "sha256": "bbe6b3a79146bd95f34f83083711f5be4704b49aa924d240269d425b93bb8bca",
+      "upload": "agent-three-1-cover-web.jpg",
+      "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+      "upload_sha256": "3ebf2706829173020fbe02418f77964d7f7ab6532f5bd96d1b8dd8b90f4598af"
+    },
+    {
+      "role": "infographic",
+      "source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-f838469e-421a-4819-b9d9-8a7aa2be6626.png",
+      "original": "agent-three-1-infographic.png",
+      "sha256": "e2176188e051dee7fdf91a2fadfba041ba0dba49541aa1652c61e6600f1c0021",
+      "upload": "agent-three-1-infographic-web.jpg",
+      "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+      "upload_sha256": "f75d850e7466984109f3d6da606a82843efb1aa034ad30f9952848d2d42ce4f4"
+    },
+    {
+      "role": "section1",
+      "source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-8b5e4eaf-9ae3-4216-965e-94a0c40a8292.png",
+      "original": "agent-three-1-section1.png",
+      "sha256": "53164e4bc3082d9598c5365d092f9ad8a91c26dbf2f03085b6cd7c4c932904a1",
+      "upload": "agent-three-1-section1-web.jpg",
+      "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+      "upload_sha256": "a1e28ed76d0c9d1fd39698e716917efcd169e2a94e7a1d06f46f986c79f64b50"
+    },
+    {
+      "role": "section2",
+      "source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-0ea7878c-80de-4427-907f-917f9932c7a5.png",
+      "original": "agent-three-1-section2.png",
+      "sha256": "b14633bfc56fb091f61aec35e3e8098150d8028079d287b0ede7ea319c322a4c",
+      "upload": "agent-three-1-section2-web.jpg",
+      "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+      "upload_sha256": "0de567c5561b176a5df07ad2a8f41fc8cdbe84fa09d0430f5798428b78df858d"
+    },
+    {
+      "role": "section3",
+      "source": "/Users/yeondu/.codex/generated_images/01a1107e-0797-71b0-af3f-83c510da3a10/exec-8316df93-c3d5-4ccb-914d-0c9f770a0017.png",
+      "original": "agent-three-1-section3-v2.png",
+      "sha256": "121d036e286704c8806eea90fbad8dd36d0ee875daa42134868a416915947249",
+      "upload": "agent-three-1-section3-v2-web.jpg",
+      "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+      "upload_sha256": "e239240d2bd982466f49f95e54c06f25330b39f409abf14e78f439a4199de5b5"
+    },
+    {
+      "role": "workflow",
+      "upload": "agent-three-1-workflow.gif",
+      "link": "https://link.coupang.com/a/hI4Y0jEo6C",
+      "upload_sha256": "7815c5066e5be9aa88deb83e418b517f0f54040d044c1f404a023759cd49adfd"
+    }
+  ]
+}
