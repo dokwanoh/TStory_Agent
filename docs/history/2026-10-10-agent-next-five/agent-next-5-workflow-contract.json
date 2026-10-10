@@ -1,0 +1,14 @@
+{
+  "article": 257,
+  "duration_seconds": 18,
+  "frames": 180,
+  "end_hold_seconds": 4,
+  "render_source": "agent-next-5-workflow.swift",
+  "subject": "본문에서 독자가 활용하거나 판단하는 흐름",
+  "playback": "actual native/public playback observed; see publication record",
+  "no_claims": [
+    "guaranteed result",
+    "internal publishing process",
+    "unverified automatic action"
+  ]
+}

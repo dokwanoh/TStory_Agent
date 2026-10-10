@@ -1,0 +1,34 @@
+{
+  "native_uploads": [
+    {
+      "role": "cover",
+      "file": "agent-next-3-cover-web.jpg",
+      "link": "https://link.coupang.com/a/hIZCpzJrpc"
+    },
+    {
+      "role": "infographic",
+      "file": "agent-next-3-infographic-web.jpg",
+      "link": "https://link.coupang.com/a/hIZCpzJrpc"
+    },
+    {
+      "role": "section1",
+      "file": "agent-next-3-section1-web.jpg",
+      "link": "https://link.coupang.com/a/hIZCpzJrpc"
+    },
+    {
+      "role": "section2",
+      "file": "agent-next-3-section2-web.jpg",
+      "link": "https://link.coupang.com/a/hIZCpzJrpc"
+    },
+    {
+      "role": "section3",
+      "file": "agent-next-3-section3-web.jpg",
+      "link": "https://link.coupang.com/a/hIZCpzJrpc"
+    },
+    {
+      "role": "workflow",
+      "file": "agent-next-3-workflow.gif",
+      "link": "https://link.coupang.com/a/hIZCpzJrpc"
+    }
+  ]
+}

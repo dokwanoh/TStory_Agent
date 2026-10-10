@@ -1,0 +1,36 @@
+{
+  "alts": [],
+  "banners": 3,
+  "disclosure": {
+    "bold": 0,
+    "size": "14px"
+  },
+  "headers": [
+    {
+      "size": "23px",
+      "text": "30초 요약 ⏱️",
+      "weight": "700"
+    },
+    {
+      "size": "23px",
+      "text": "1. 익숙한 설치 경로가 생겼어요 🪟",
+      "weight": "700"
+    },
+    {
+      "size": "23px",
+      "text": "2. 설치·AI 연결·비용은 따로 정해요 🔌",
+      "weight": "700"
+    },
+    {
+      "size": "23px",
+      "text": "3. 첫 자동화는 ‘엑셀 세 파일’처럼 작게 📁",
+      "weight": "700"
+    }
+  ],
+  "images": 0,
+  "intro": "Windows에서 AI에게 반복 업무를 맡겨보고 싶었다면 Hermes Agent의 Microsoft Store 진입이 반가운 소식이에요. 설치 경로는 쉬워졌지만, 사용할 AI와 비용을 정하고 작은 작업의 결과를 확인하는 과정은 여전히 필요합니다.",
+  "linked": 0,
+  "paragraphSize": "16px",
+  "strong": 0,
+  "summaryBg": "rgb(246, 251, 253)"
+}
