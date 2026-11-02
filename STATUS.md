@@ -1,6 +1,10 @@
-## Latest publication record — 2026-10-10 12:02KST
+## Publication record reconciliation — checked 2026-11-02 KST
 
-Additional five posts253–257 complete: native six affiliate-linked media, exactly3Coupang banners, summary background, plain notice after real introduction, author reason/link comment1 per post, actual GIF playback and web-home introduction/cover verified. App remains unverified. Successful route and failures: [current record](docs/agent_next_five_20261010_publication.md). Schedules/STOP unchanged; no runtime implementation or tests.
+Latest existing execution record: **2026-10-11 00:10 KST, post261**, with post259/260 in the same [original record](docs/remaining_three_20261011_publication.md). Post261 platform-media review and app checks remain historically unverified. The main commit `3fc5bef` is 2026-10-11 00:25:15 KST (2026-10-10 15:25:15 UTC).
+
+Public observation: latest post437 displays **2026-11-02 07:52:42 KST**. Since Oct11, 179 public articles were observed; 3 match existing records and 176 (262–437) have no matching record in the audited main snapshot. **Original local log loss and the current publishing system remain UNKNOWN.** See [read-only comparison evidence and limits](docs/public_record_reconciliation_20261102.md). Public metadata is not an execution receipt. Daily schedule/reservation controls and STOP were not changed.
+
+Previous top summary (historical): posts253–257 completed on 2026-10-10 12:02 KST; [original five-post record](docs/agent_next_five_20261010_publication.md). Later Oct11 records above supersede that summary's date.
 
 # TISTORY GROWTH OS — current status
 Historical publication record (2026-10-08): [post221 ‘클로드 하이쿠 5.5, 빠른 AI는 언제 쓰면 좋을까요? ⚡’](https://nedamma.tistory.com/221), IT / IT 인터넷 selected, 2026-10-08 08:23 KST. Beginner20-paragraph prose; new cover,4photos,infographic immediately below30초 요약,18-second180-frame GIF;7native IMAGE links,3official banners,plain14px disclosure,23px/700 headings,16px/400 prose,4-row summary,4buttons,home cover match,1veryshort author comment19722226. One finalcheck/publicsave. **성공 경로:** `docs/167_haiku_20261008_publication.md`. Schedules/reservations remain paused.
@@ -402,6 +406,7 @@ The authorized post-fix proof02 completed all six preparation stages, including 
 <!-- work:start -->
 | ID | State | Work / control | Evidence / entry condition |
 | --- | --- | --- | --- |
+| publication-origin-20261102 | BLOCKED | Public comparison checked179;3 existing records reused,176 absent in base main;operating Mac original logs and publishing actor unavailable | `docs/public_record_reconciliation_20261102.md` |
 | codex-day5-20261010 | DONE | Post260 public00:08;6linkedmedia/3banners/fullsummary/authorcomment1/homecover-intro/public22sGIF verified;success path;app unverified | `docs/remaining_three_20261011_publication.md` |
 | agent-three-20261010 | IN_PROGRESS | Original3 public258/259/261;2of3 fullyverified;dailycap cleared;Kiro publicmedia platformreview pending;additionalday5 public260 verified | `docs/remaining_three_20261011_publication.md` |
 | agent-next-five-20261010 | DONE | Five additional Coding Agent articles253-257 public media comments home verified;successful native route recorded;app unverified | `docs/agent_next_five_20261010_publication.md` |
